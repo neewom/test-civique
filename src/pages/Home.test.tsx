@@ -16,15 +16,29 @@ describe('Home', () => {
     localStorage.clear()
   })
 
-  it('affiche le titre "Test Civique"', () => {
+  it('affiche le titre "Test Civique" dans un h1', () => {
     renderHome()
-    expect(screen.getByRole('heading', { name: /test civique/i })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { level: 1, name: /test civique/i })).toBeInTheDocument()
   })
 
-  it('affiche les deux cards "Examen blanc" et "Mode révision"', () => {
+  it('a un conteneur principal avec role="main"', () => {
     renderHome()
-    expect(screen.getByText('Examen blanc')).toBeInTheDocument()
-    expect(screen.getByText('Mode révision')).toBeInTheDocument()
+    expect(screen.getByRole('main')).toBeInTheDocument()
+  })
+
+  it('affiche la card "Examen blanc" avec le bon aria-label', () => {
+    renderHome()
+    expect(screen.getByRole('button', { name: 'Démarrer un examen blanc' })).toBeInTheDocument()
+  })
+
+  it('affiche la card "Mode révision" avec le bon aria-label', () => {
+    renderHome()
+    expect(screen.getByRole('button', { name: 'Accéder au mode révision' })).toBeInTheDocument()
+  })
+
+  it('la section historique a le bon aria-label', () => {
+    renderHome()
+    expect(screen.getByRole('region', { name: 'Historique des examens récents' })).toBeInTheDocument()
   })
 
   it('affiche "Aucun examen passé" quand le localStorage est vide', () => {
