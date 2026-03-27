@@ -22,19 +22,20 @@ export default function Home() {
   const history = getRecentHistory()
 
   return (
-    <div className="min-h-screen bg-background text-foreground flex flex-col items-center px-4 py-16">
+    <div role="main" className="min-h-screen bg-background text-foreground flex flex-col items-center px-4 py-16">
       <div className="w-full max-w-lg space-y-12">
 
         {/* Header */}
         <div className="text-center space-y-2">
-          <h1 className="text-3xl font-semibold tracking-tight">Test Civique</h1>
+          <h1 className="text-3xl font-semibold tracking-tight text-foreground">Test Civique</h1>
           <p className="text-muted-foreground">Préparez votre examen de naturalisation</p>
-          <p className="text-sm text-muted-foreground/70 pt-1">191 questions officielles</p>
+          <p className="text-sm text-muted-foreground pt-1">191 questions officielles</p>
         </div>
 
         {/* Cards */}
         <div className="grid grid-cols-2 gap-4">
           <button
+            aria-label="Démarrer un examen blanc"
             onClick={() => navigate('/quiz')}
             className="group rounded-xl border border-border bg-card p-6 text-left transition-colors hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
           >
@@ -43,6 +44,7 @@ export default function Home() {
           </button>
 
           <button
+            aria-label="Accéder au mode révision"
             onClick={() => navigate('/revision')}
             className="group rounded-xl border border-border bg-card p-6 text-left transition-colors hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
           >
@@ -52,7 +54,7 @@ export default function Home() {
         </div>
 
         {/* Historique */}
-        <div className="space-y-3">
+        <section aria-label="Historique des examens récents" className="space-y-3">
           <h2 className="text-sm font-medium text-muted-foreground uppercase tracking-wider">
             Historique récent
           </h2>
@@ -76,7 +78,7 @@ export default function Home() {
               ))}
             </ul>
           )}
-        </div>
+        </section>
 
       </div>
     </div>
