@@ -36,7 +36,7 @@ export default function Home() {
         <div className="grid grid-cols-2 gap-4">
           <button
             aria-label="Démarrer un examen blanc"
-            onClick={() => navigate('/quiz')}
+            onClick={() => navigate('/examen')}
             className="group rounded-xl border border-border bg-card p-6 text-left transition-colors hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
           >
             <p className="font-medium text-card-foreground">Examen blanc</p>
