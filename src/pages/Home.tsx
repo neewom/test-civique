@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom'
 
 interface QuizResult {
+  id?: string
   date: string
   score: number
   total: number
@@ -63,17 +64,38 @@ export default function Home() {
           ) : (
             <ul className="space-y-2">
               {history.map((result, i) => (
-                <li key={i} className="flex items-center justify-between text-sm">
-                  <span className="text-muted-foreground">
-                    {new Date(result.date).toLocaleDateString('fr-FR', {
-                      day: 'numeric',
-                      month: 'long',
-                      year: 'numeric',
-                    })}
-                  </span>
-                  <span className="font-medium">
-                    {result.score}/{result.total}
-                  </span>
+                <li key={i}>
+                  {result.id ? (
+                    <button
+                      aria-label={`Voir le détail de l'examen du ${new Date(result.date).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' })}`}
+                      onClick={() => navigate(`/examen/${result.id}`)}
+                      className="w-full flex items-center justify-between text-sm rounded-lg px-3 py-2 hover:bg-muted transition-colors text-left"
+                    >
+                      <span className="text-muted-foreground">
+                        {new Date(result.date).toLocaleDateString('fr-FR', {
+                          day: 'numeric',
+                          month: 'long',
+                          year: 'numeric',
+                        })}
+                      </span>
+                      <span className="font-medium">
+                        {result.score}/{result.total}
+                      </span>
+                    </button>
+                  ) : (
+                    <div className="flex items-center justify-between text-sm px-3 py-2">
+                      <span className="text-muted-foreground">
+                        {new Date(result.date).toLocaleDateString('fr-FR', {
+                          day: 'numeric',
+                          month: 'long',
+                          year: 'numeric',
+                        })}
+                      </span>
+                      <span className="font-medium">
+                        {result.score}/{result.total}
+                      </span>
+                    </div>
+                  )}
                 </li>
               ))}
             </ul>

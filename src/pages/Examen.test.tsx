@@ -78,7 +78,7 @@ describe('saveResult', () => {
   beforeEach(() => localStorage.clear())
 
   it('crée une entrée dans quiz-history', () => {
-    saveResult(30, 40)
+    saveResult(30, 40, [])
     const history = JSON.parse(localStorage.getItem('quiz-history')!)
     expect(history).toHaveLength(1)
     expect(history[0].score).toBe(30)
@@ -86,15 +86,24 @@ describe('saveResult', () => {
   })
 
   it('accumule les résultats', () => {
-    saveResult(20, 40)
-    saveResult(35, 40)
+    saveResult(20, 40, [])
+    saveResult(35, 40, [])
     expect(JSON.parse(localStorage.getItem('quiz-history')!)).toHaveLength(2)
   })
 
   it('enregistre la date ISO', () => {
-    saveResult(10, 40)
+    saveResult(10, 40, [])
     const entry = JSON.parse(localStorage.getItem('quiz-history')!)[0]
     expect(entry.date).toMatch(/^\d{4}-\d{2}-\d{2}T/)
+  })
+
+  it('enregistre les réponses et un id', () => {
+    const answers = [{ questionId: 1, chosen: 'Paris', correct: true }]
+    saveResult(1, 40, answers)
+    const entry = JSON.parse(localStorage.getItem('quiz-history')!)[0]
+    expect(entry.id).toBeTruthy()
+    expect(entry.answers).toHaveLength(1)
+    expect(entry.answers[0].questionId).toBe(1)
   })
 })
 

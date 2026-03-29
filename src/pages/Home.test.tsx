@@ -45,4 +45,13 @@ describe('Home', () => {
     renderHome()
     expect(screen.getByText('Aucun examen passé')).toBeInTheDocument()
   })
+
+  it('les entrées d\'historique avec id sont cliquables', () => {
+    localStorage.setItem('quiz-history', JSON.stringify([
+      { id: '123', date: new Date().toISOString(), score: 30, total: 40, answers: [] },
+    ]))
+    renderHome()
+    const btn = screen.getByRole('button', { name: /voir le détail/i })
+    expect(btn).toBeInTheDocument()
+  })
 })
