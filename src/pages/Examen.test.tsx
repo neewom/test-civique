@@ -17,6 +17,15 @@ function renderExamen() {
   )
 }
 
+function getChoices() {
+  return screen
+    .getAllByRole('button')
+    .filter((btn) => btn.closest('[data-slot="card-content"]') !== null
+      && btn.textContent !== 'Valider'
+      && btn.textContent !== 'Question suivante'
+      && btn.textContent !== 'Voir les résultats')
+}
+
 // ─── Fonctions utilitaires ────────────────────────────────────────────────────
 
 describe('shuffle', () => {
@@ -41,6 +50,10 @@ describe('buildExam', () => {
   it('la bonne réponse est toujours dans les choix', () => {
     buildExam().forEach((q) => expect(q.choices).toContain(q.answer))
   })
+
+  it('chaque question a une explication', () => {
+    buildExam().forEach((q) => expect(q.explanation).toBeTruthy())
+  })
 })
 
 describe('saveResult', () => {
@@ -63,7 +76,6 @@ describe('saveResult', () => {
   it('enregistre la date ISO', () => {
     saveResult(10, 40)
     const entry = JSON.parse(localStorage.getItem('quiz-history')!)[0]
-    expect(() => new Date(entry.date)).not.toThrow()
     expect(entry.date).toMatch(/^\d{4}-\d{2}-\d{2}T/)
   })
 })
@@ -91,77 +103,96 @@ describe('Examen', () => {
 
   it('affiche 4 boutons de réponse', () => {
     renderExamen()
-    const choices = screen
-      .getAllByRole('button')
-      .filter((btn) => btn.closest('[data-slot="card-content"]') !== null)
-    expect(choices).toHaveLength(4)
+    expect(getChoices()).toHaveLength(4)
   })
 
-  it('désactive les boutons après sélection d\'une réponse', async () => {
+  it('le bouton Valider n\'est pas visible sans sélection', () => {
     renderExamen()
-    const choices = screen
-      .getAllByRole('button')
-      .filter((btn) => btn.closest('[data-slot="card-content"]') !== null)
-
-    await act(async () => {
-      fireEvent.click(choices[0])
-    })
-
-    choices.forEach((btn) => expect(btn).toBeDisabled())
+    expect(screen.queryByRole('button', { name: 'Valider' })).not.toBeInTheDocument()
   })
 
-  it('quand le temps expire, affiche le message de timeout', async () => {
+  it('le bouton Valider apparaît après sélection d\'une réponse', async () => {
     renderExamen()
-    await act(async () => {
-      vi.advanceTimersByTime(TIME_PER_QUESTION * 1000)
-    })
-    expect(screen.getByText('Temps écoulé — question suivante…')).toBeInTheDocument()
+    await act(async () => { fireEvent.click(getChoices()[0]) })
+    expect(screen.getByRole('button', { name: 'Valider' })).toBeInTheDocument()
   })
 
-  it('quand le temps expire, avance à la question suivante après 1.2s', async () => {
+  it('les boutons de réponse restent actifs après sélection (avant validation)', async () => {
     renderExamen()
+    await act(async () => { fireEvent.click(getChoices()[0]) })
+    // Tous les choix encore cliquables (phase 'pending')
+    getChoices().forEach((btn) => expect(btn).not.toBeDisabled())
+  })
+
+  it('après validation, les boutons sont désactivés et l\'explication apparaît', async () => {
+    renderExamen()
+    await act(async () => { fireEvent.click(getChoices()[0]) })
+    await act(async () => { fireEvent.click(screen.getByRole('button', { name: 'Valider' })) })
+    getChoices().forEach((btn) => expect(btn).toBeDisabled())
+    expect(screen.getByText('Explication')).toBeInTheDocument()
+  })
+
+  it('après validation, le bouton "Question suivante" apparaît', async () => {
+    renderExamen()
+    await act(async () => { fireEvent.click(getChoices()[0]) })
+    await act(async () => { fireEvent.click(screen.getByRole('button', { name: 'Valider' })) })
+    expect(screen.getByRole('button', { name: 'Question suivante' })).toBeInTheDocument()
+  })
+
+  it('"Question suivante" avance à la question 2', async () => {
+    renderExamen()
+    await act(async () => { fireEvent.click(getChoices()[0]) })
+    await act(async () => { fireEvent.click(screen.getByRole('button', { name: 'Valider' })) })
     await act(async () => {
-      vi.advanceTimersByTime(TIME_PER_QUESTION * 1000)
-    })
-    await act(async () => {
-      vi.advanceTimersByTime(1200)
+      fireEvent.click(screen.getByRole('button', { name: 'Question suivante' }))
     })
     expect(screen.getByText(`Question 2 / ${EXAM_SIZE}`)).toBeInTheDocument()
   })
 
-  it('après sélection, avance à la question suivante après 1.2s', async () => {
+  it('quand le temps expire, affiche directement la correction sans bouton Valider', async () => {
     renderExamen()
-    const choices = screen
-      .getAllByRole('button')
-      .filter((btn) => btn.closest('[data-slot="card-content"]') !== null)
+    await act(async () => { vi.advanceTimersByTime(TIME_PER_QUESTION * 1000) })
+    expect(screen.getByText('Temps écoulé')).toBeInTheDocument()
+    expect(screen.getByText('Explication')).toBeInTheDocument()
+    expect(screen.queryByRole('button', { name: 'Valider' })).not.toBeInTheDocument()
+  })
 
-    await act(async () => {
-      fireEvent.click(choices[0])
-    })
-    await act(async () => {
-      vi.advanceTimersByTime(1200)
-    })
-    expect(screen.getByText(`Question 2 / ${EXAM_SIZE}`)).toBeInTheDocument()
+  it('quand le temps expire, le bouton "Question suivante" est présent', async () => {
+    renderExamen()
+    await act(async () => { vi.advanceTimersByTime(TIME_PER_QUESTION * 1000) })
+    expect(screen.getByRole('button', { name: 'Question suivante' })).toBeInTheDocument()
+  })
+
+  it('quand le temps expire avec une sélection en cours, passe en correction sans valider', async () => {
+    renderExamen()
+    await act(async () => { fireEvent.click(getChoices()[0]) })
+    // Timer expire pendant la sélection
+    await act(async () => { vi.advanceTimersByTime(TIME_PER_QUESTION * 1000) })
+    expect(screen.getByText('Temps écoulé')).toBeInTheDocument()
+    expect(screen.queryByRole('button', { name: 'Valider' })).not.toBeInTheDocument()
   })
 
   it('affiche l\'écran de résultat après 40 questions', async () => {
     renderExamen()
-    // React diffère les effets entre deux appels advanceTimersByTime :
-    // 1er appel : ticks du chrono → timeLeft=0 + flush → phase=feedback + timeout set
-    // 2ème appel : avance le timeout feedback → question suivante
     for (let i = 0; i < EXAM_SIZE; i++) {
+      // Laisser expirer le timer
       await act(async () => { vi.advanceTimersByTime(TIME_PER_QUESTION * 1000) })
-      await act(async () => { vi.advanceTimersByTime(1200) })
+      // Cliquer sur "Question suivante" ou "Voir les résultats"
+      const nextBtn = screen.queryByRole('button', { name: 'Question suivante' })
+        ?? screen.getByRole('button', { name: 'Voir les résultats' })
+      await act(async () => { fireEvent.click(nextBtn) })
     }
     expect(screen.getByText(/Résultat/i)).toBeInTheDocument()
-    expect(screen.getByText(/Recommencer/i)).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: 'Recommencer' })).toBeInTheDocument()
   })
 
   it('sauvegarde le résultat dans localStorage après la fin', async () => {
     renderExamen()
     for (let i = 0; i < EXAM_SIZE; i++) {
       await act(async () => { vi.advanceTimersByTime(TIME_PER_QUESTION * 1000) })
-      await act(async () => { vi.advanceTimersByTime(1200) })
+      const nextBtn = screen.queryByRole('button', { name: 'Question suivante' })
+        ?? screen.getByRole('button', { name: 'Voir les résultats' })
+      await act(async () => { fireEvent.click(nextBtn) })
     }
     const history = JSON.parse(localStorage.getItem('quiz-history') ?? '[]')
     expect(history.length).toBeGreaterThan(0)
