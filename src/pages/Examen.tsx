@@ -7,7 +7,7 @@ import { Progress } from '@/components/ui/progress'
 import allQuestions from '@/data/questions.json'
 
 export const EXAM_SIZE = 40
-export const TIME_PER_QUESTION = 60
+export const GLOBAL_EXAM_TIME = 40 * 60 // 2400 secondes
 
 interface Question {
   id: number
@@ -60,7 +60,13 @@ export function saveResult(score: number, total: number): void {
   }
 }
 
-// 'question'   : timer actif, l'utilisateur choisit
+export function formatTime(seconds: number): string {
+  const m = Math.floor(seconds / 60)
+  const s = seconds % 60
+  return `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`
+}
+
+// 'question'   : en attente d'une réponse
 // 'pending'    : réponse sélectionnée, en attente de validation
 // 'correction' : correction affichée, en attente du clic "suivant"
 // 'result'     : écran de résultat final
@@ -71,33 +77,30 @@ export default function Examen() {
   const [questions] = useState<ExamQuestion[]>(() => buildExam())
   const [index, setIndex] = useState(0)
   const [score, setScore] = useState(0)
-  const [timeLeft, setTimeLeft] = useState(TIME_PER_QUESTION)
+  const [globalTimeLeft, setGlobalTimeLeft] = useState(GLOBAL_EXAM_TIME)
   const [selected, setSelected] = useState<string | null>(null)
-  const [timedOut, setTimedOut] = useState(false)
   const [phase, setPhase] = useState<Phase>('question')
   const scoreRef = useRef(0)
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null)
 
-  // Countdown tick (tourne aussi en phase 'pending' — réponse sélectionnée mais pas encore validée)
+  // Timer global — démarre une fois au montage et tourne jusqu'à la fin
   useEffect(() => {
-    if (phase !== 'question' && phase !== 'pending') return
     timerRef.current = setInterval(() => {
-      setTimeLeft((t) => (t > 0 ? t - 1 : 0))
+      setGlobalTimeLeft((t) => (t > 0 ? t - 1 : 0))
     }, 1000)
     return () => {
       if (timerRef.current) clearInterval(timerRef.current)
     }
-  }, [phase, index])
+  }, [])
 
-  // Timer expiry → correction directe (pas de validation manuelle)
+  // Expiration du timer global → terminer l'examen immédiatement
   useEffect(() => {
-    if ((phase === 'question' || phase === 'pending') && timeLeft === 0) {
+    if (globalTimeLeft === 0 && phase !== 'result') {
       if (timerRef.current) clearInterval(timerRef.current)
-      // Pas de point si la réponse sélectionnée n'a pas été validée
-      setTimedOut(true)
-      setPhase('correction')
+      saveResult(scoreRef.current, questions.length)
+      setPhase('result')
     }
-  }, [timeLeft, phase])
+  }, [globalTimeLeft, phase, questions.length])
 
   function handleSelect(choice: string) {
     if (phase !== 'question' && phase !== 'pending') return
@@ -107,7 +110,6 @@ export default function Examen() {
 
   function handleValidate() {
     if (!selected || phase !== 'pending') return
-    if (timerRef.current) clearInterval(timerRef.current)
     if (selected === questions[index].answer) {
       scoreRef.current += 1
       setScore(scoreRef.current)
@@ -119,10 +121,9 @@ export default function Examen() {
     if (index < questions.length - 1) {
       setIndex((i) => i + 1)
       setSelected(null)
-      setTimedOut(false)
-      setTimeLeft(TIME_PER_QUESTION)
       setPhase('question')
     } else {
+      if (timerRef.current) clearInterval(timerRef.current)
       saveResult(scoreRef.current, questions.length)
       setPhase('result')
     }
@@ -134,9 +135,11 @@ export default function Examen() {
 
   const current = questions[index]
   const isLastQuestion = index === questions.length - 1
-  const timerPct = (timeLeft / TIME_PER_QUESTION) * 100
+  const timerPct = (globalTimeLeft / GLOBAL_EXAM_TIME) * 100
   const timerColor =
-    timeLeft > 30 ? 'bg-green-500' : timeLeft > 15 ? 'bg-amber-500' : 'bg-red-500'
+    globalTimeLeft > 1200 ? 'bg-green-500'
+    : globalTimeLeft > 600 ? 'bg-amber-500'
+    : 'bg-red-500'
 
   // ── Écran résultat ──────────────────────────────────────────────────────────
   if (phase === 'result') {
@@ -195,29 +198,25 @@ export default function Examen() {
         <div className="space-y-3">
           <div className="flex items-center justify-between text-sm text-gray-500">
             <span>Question {index + 1} / {questions.length}</span>
-            {!inCorrection && (
-              <span
-                className={timeLeft <= 10 ? 'text-red-600 font-semibold' : ''}
-                aria-label={`Temps restant : ${timeLeft} secondes`}
-              >
-                {timeLeft}s
-              </span>
-            )}
+            <span
+              className={globalTimeLeft <= 300 ? 'text-red-600 font-semibold tabular-nums' : 'tabular-nums'}
+              aria-label={`Temps restant : ${formatTime(globalTimeLeft)}`}
+            >
+              {formatTime(globalTimeLeft)}
+            </span>
           </div>
 
-          {/* Timer bar */}
-          {!inCorrection && (
-            <div className="h-1.5 w-full rounded-full bg-muted overflow-hidden">
-              <div
-                className={`h-full rounded-full transition-all ${timerColor}`}
-                style={{ width: `${timerPct}%` }}
-                role="progressbar"
-                aria-valuenow={timeLeft}
-                aria-valuemin={0}
-                aria-valuemax={TIME_PER_QUESTION}
-              />
-            </div>
-          )}
+          {/* Timer bar global */}
+          <div className="h-1.5 w-full rounded-full bg-muted overflow-hidden">
+            <div
+              className={`h-full rounded-full transition-all ${timerColor}`}
+              style={{ width: `${timerPct}%` }}
+              role="progressbar"
+              aria-valuenow={globalTimeLeft}
+              aria-valuemin={0}
+              aria-valuemax={GLOBAL_EXAM_TIME}
+            />
+          </div>
 
           {/* Progression globale */}
           <Progress
@@ -278,9 +277,6 @@ export default function Examen() {
             {/* Correction */}
             {inCorrection && (
               <div className="mt-4 space-y-4">
-                {timedOut && (
-                  <p className="text-sm text-amber-700 font-medium">Temps écoulé</p>
-                )}
                 <div className="rounded-lg bg-zinc-50 border border-zinc-200 px-4 py-3">
                   <p className="text-xs font-medium text-zinc-500 mb-1">Explication</p>
                   <p className="text-sm text-zinc-800 leading-relaxed">
