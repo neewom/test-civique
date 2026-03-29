@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Progress } from '@/components/ui/progress'
 import allQuestions from '@/data/questions.json'
+import type { AnswerRecord, ExamRecord } from '@/lib/exam-types'
 
 export const EXAM_SIZE = 40
 export const GLOBAL_EXAM_TIME = 40 * 60 // 2400 secondes
@@ -49,11 +50,21 @@ export function buildExam(pool: Question[] = allQuestions as Question[]): ExamQu
     }))
 }
 
-export function saveResult(score: number, total: number): void {
+export function saveResult(
+  score: number,
+  total: number,
+  answers: AnswerRecord[],
+): void {
   try {
     const raw = localStorage.getItem('quiz-history')
-    const history = raw ? JSON.parse(raw) : []
-    history.push({ date: new Date().toISOString(), score, total })
+    const history: ExamRecord[] = raw ? JSON.parse(raw) : []
+    history.push({
+      id: String(Date.now()),
+      date: new Date().toISOString(),
+      score,
+      total,
+      answers,
+    })
     localStorage.setItem('quiz-history', JSON.stringify(history))
   } catch {
     // localStorage unavailable
@@ -81,6 +92,7 @@ export default function Examen() {
   const [selected, setSelected] = useState<string | null>(null)
   const [phase, setPhase] = useState<Phase>('question')
   const scoreRef = useRef(0)
+  const answersRef = useRef<AnswerRecord[]>([])
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null)
 
   // Timer global — démarre une fois au montage et tourne jusqu'à la fin
@@ -96,11 +108,22 @@ export default function Examen() {
   // Expiration du timer global → terminer l'examen immédiatement
   useEffect(() => {
     if (globalTimeLeft === 0 && phase !== 'result') {
-      if (timerRef.current) clearInterval(timerRef.current)
-      saveResult(scoreRef.current, questions.length)
-      setPhase('result')
+      finishExam()
     }
-  }, [globalTimeLeft, phase, questions.length])
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [globalTimeLeft, phase])
+
+  // Termine l'examen : complète les réponses manquantes et sauvegarde
+  function finishExam() {
+    if (timerRef.current) clearInterval(timerRef.current)
+    const allAnswers = [...answersRef.current]
+    // Questions non répondues (timer expiré avant d'y arriver)
+    for (let i = allAnswers.length; i < questions.length; i++) {
+      allAnswers.push({ questionId: questions[i].id, chosen: null, correct: false })
+    }
+    saveResult(scoreRef.current, questions.length, allAnswers)
+    setPhase('result')
+  }
 
   function handleSelect(choice: string) {
     if (phase !== 'question' && phase !== 'pending') return
@@ -110,10 +133,16 @@ export default function Examen() {
 
   function handleValidate() {
     if (!selected || phase !== 'pending') return
-    if (selected === questions[index].answer) {
+    const isCorrect = selected === questions[index].answer
+    if (isCorrect) {
       scoreRef.current += 1
       setScore(scoreRef.current)
     }
+    answersRef.current.push({
+      questionId: questions[index].id,
+      chosen: selected,
+      correct: isCorrect,
+    })
     setPhase('correction')
   }
 
@@ -123,9 +152,7 @@ export default function Examen() {
       setSelected(null)
       setPhase('question')
     } else {
-      if (timerRef.current) clearInterval(timerRef.current)
-      saveResult(scoreRef.current, questions.length)
-      setPhase('result')
+      finishExam()
     }
   }
 
