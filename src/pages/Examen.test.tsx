@@ -244,4 +244,31 @@ describe('Examen', () => {
     expect(history.length).toBeGreaterThan(0)
     expect(history[0].total).toBe(EXAM_SIZE)
   })
+
+  it('le bouton "← Retour" est visible pendant l\'examen', () => {
+    renderExamen()
+    expect(screen.getByRole('button', { name: 'Retour à l\'accueil' })).toBeInTheDocument()
+  })
+
+  it('cliquer sur "← Retour" ouvre le dialog de confirmation', async () => {
+    renderExamen()
+    await act(async () => {
+      fireEvent.click(screen.getByRole('button', { name: 'Retour à l\'accueil' }))
+    })
+    expect(screen.getByText('Quitter l\'examen ?')).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: 'Annuler' })).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: 'Quitter' })).toBeInTheDocument()
+  })
+
+  it('cliquer sur "Annuler" ferme le dialog et reste sur l\'examen', async () => {
+    renderExamen()
+    await act(async () => {
+      fireEvent.click(screen.getByRole('button', { name: 'Retour à l\'accueil' }))
+    })
+    await act(async () => {
+      fireEvent.click(screen.getByRole('button', { name: 'Annuler' }))
+    })
+    expect(screen.queryByText('Quitter l\'examen ?')).not.toBeInTheDocument()
+    expect(screen.getByText(`Question 1 / ${EXAM_SIZE}`)).toBeInTheDocument()
+  })
 })

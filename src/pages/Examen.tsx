@@ -4,6 +4,14 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Progress } from '@/components/ui/progress'
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+} from '@/components/ui/dialog'
 import allQuestions from '@/data/questions.json'
 import type { AnswerRecord, ExamRecord } from '@/lib/exam-types'
 
@@ -91,6 +99,7 @@ export default function Examen() {
   const [globalTimeLeft, setGlobalTimeLeft] = useState(GLOBAL_EXAM_TIME)
   const [selected, setSelected] = useState<string | null>(null)
   const [phase, setPhase] = useState<Phase>('question')
+  const [showQuitDialog, setShowQuitDialog] = useState(false)
   const scoreRef = useRef(0)
   const answersRef = useRef<AnswerRecord[]>([])
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null)
@@ -218,12 +227,39 @@ export default function Examen() {
   const inCorrection = phase === 'correction'
 
   return (
+    <>
+    <Dialog open={showQuitDialog} onOpenChange={setShowQuitDialog}>
+      <DialogContent showCloseButton={false}>
+        <DialogHeader>
+          <DialogTitle>Quitter l'examen ?</DialogTitle>
+          <DialogDescription>
+            Si vous quittez maintenant, votre progression sera perdue et l'examen ne sera pas sauvegardé.
+          </DialogDescription>
+        </DialogHeader>
+        <DialogFooter>
+          <Button variant="outline" onClick={() => setShowQuitDialog(false)}>
+            Annuler
+          </Button>
+          <Button variant="destructive" onClick={() => navigate('/')}>
+            Quitter
+          </Button>
+        </DialogFooter>
+      </DialogContent>
+    </Dialog>
+
     <div role="main" className="min-h-screen bg-background flex flex-col items-center px-4 py-10">
       <div className="w-full max-w-xl space-y-6">
 
         {/* Header */}
         <div className="space-y-3">
           <div className="flex items-center justify-between text-sm text-gray-500">
+            <button
+              onClick={() => setShowQuitDialog(true)}
+              aria-label="Retour à l'accueil"
+              className="text-gray-400 hover:text-gray-600 transition-colors"
+            >
+              ← Retour
+            </button>
             <span>Question {index + 1} / {questions.length}</span>
             <span
               className={globalTimeLeft <= 300 ? 'text-red-600 font-semibold tabular-nums' : 'tabular-nums'}
@@ -321,5 +357,6 @@ export default function Examen() {
 
       </div>
     </div>
+    </>
   )
 }
