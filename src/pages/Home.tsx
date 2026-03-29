@@ -41,7 +41,7 @@ export default function Home() {
             className="group rounded-xl border border-border bg-card p-6 text-left transition-colors hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
           >
             <p className="font-medium text-card-foreground">Examen blanc</p>
-            <p className="mt-1 text-xs text-muted-foreground">40 questions · 60s par question</p>
+            <p className="mt-1 text-xs text-muted-foreground">40 questions · 40 minutes</p>
           </button>
 
           <button
