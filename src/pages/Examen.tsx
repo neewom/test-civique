@@ -187,20 +187,20 @@ export default function Examen() {
       >
         <div className="w-full max-w-md space-y-8 text-center">
           <div className="space-y-2">
-            <p className="text-sm text-gray-500 uppercase tracking-wider">Résultat</p>
+            <p className="text-sm text-muted-foreground uppercase tracking-wider">Résultat</p>
             <p
-              className="text-6xl font-bold text-zinc-900"
+              className="text-6xl font-bold text-foreground"
               aria-label={`Score : ${score} sur ${questions.length}`}
             >
               {score}
-              <span className="text-3xl text-gray-400">/{questions.length}</span>
+              <span className="text-3xl text-muted-foreground">/{questions.length}</span>
             </p>
-            <p className="text-lg text-gray-600">{pct}%</p>
+            <p className="text-lg text-muted-foreground">{pct}%</p>
           </div>
 
           <Card>
             <CardContent className="pt-4">
-              <p className="text-sm text-gray-600">
+              <p className="text-sm text-muted-foreground">
                 {pct >= 80
                   ? 'Excellent résultat ! Vous êtes prêt(e).'
                   : pct >= 60
@@ -252,11 +252,11 @@ export default function Examen() {
 
         {/* Header */}
         <div className="space-y-3">
-          <div className="flex items-center justify-between text-sm text-gray-500">
+          <div className="flex items-center justify-between text-sm text-muted-foreground">
             <button
               onClick={() => setShowQuitDialog(true)}
               aria-label="Retour à l'accueil"
-              className="text-gray-400 hover:text-gray-600 transition-colors"
+              className="text-muted-foreground hover:text-foreground transition-colors"
             >
               ← Retour
             </button>
@@ -292,7 +292,7 @@ export default function Examen() {
         <Card>
           <CardHeader>
             <Badge variant="secondary">{current.theme}</Badge>
-            <CardTitle className="text-zinc-900 mt-2 text-base leading-snug">
+            <CardTitle className="text-foreground mt-2 text-base leading-snug">
               {current.question}
             </CardTitle>
           </CardHeader>
@@ -305,16 +305,16 @@ export default function Examen() {
 
               if (inCorrection) {
                 if (choice === current.answer) {
-                  style += ' border-green-400 bg-green-50 text-green-900'
+                  style += ' border-green-400 bg-green-50 dark:bg-green-950/20 text-green-800 dark:text-green-200'
                 } else if (choice === selected) {
-                  style += ' border-red-400 bg-red-50 text-red-900'
+                  style += ' border-red-400 bg-red-50 dark:bg-red-950/20 text-red-800 dark:text-red-200'
                 } else {
-                  style += ' border-border bg-card text-gray-400'
+                  style += ' border-border bg-card text-muted-foreground'
                 }
               } else if (choice === selected) {
-                style += ' border-zinc-900 bg-zinc-50 text-zinc-900 ring-1 ring-zinc-900'
+                style += ' border-foreground bg-muted text-foreground ring-1 ring-foreground'
               } else {
-                style += ' border-border bg-card text-zinc-900 hover:bg-muted cursor-pointer'
+                style += ' border-border bg-card text-foreground hover:bg-muted cursor-pointer'
               }
 
               return (
@@ -340,9 +340,9 @@ export default function Examen() {
             {/* Correction */}
             {inCorrection && (
               <div className="mt-4 space-y-4">
-                <div className="rounded-lg bg-zinc-50 border border-zinc-200 px-4 py-3">
-                  <p className="text-xs font-medium text-zinc-500 mb-1">Explication</p>
-                  <p className="text-sm text-zinc-800 leading-relaxed">
+                <div className="rounded-lg bg-muted border border-border px-4 py-3">
+                  <p className="text-xs font-medium text-muted-foreground mb-1">Explication</p>
+                  <p className="text-sm text-foreground leading-relaxed">
                     {current.explanation}
                   </p>
                 </div>

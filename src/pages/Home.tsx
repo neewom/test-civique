@@ -28,9 +28,9 @@ export default function Home() {
 
         {/* Header */}
         <div className="text-center space-y-2">
-          <h1 className="text-3xl font-semibold tracking-tight text-zinc-900">Test Civique</h1>
-          <p className="text-gray-600">Préparez votre examen de naturalisation</p>
-          <p className="text-sm text-gray-600 pt-1">191 questions officielles</p>
+          <h1 className="text-3xl font-semibold tracking-tight text-foreground">Test Civique</h1>
+          <p className="text-muted-foreground">Préparez votre examen de naturalisation</p>
+          <p className="text-sm text-muted-foreground pt-1">191 questions officielles</p>
         </div>
 
         {/* Cards */}
@@ -56,7 +56,7 @@ export default function Home() {
 
         {/* Historique */}
         <section aria-label="Historique des examens récents" className="space-y-3">
-          <h2 className="text-sm font-medium text-gray-700 uppercase tracking-wider">
+          <h2 className="text-sm font-medium text-foreground uppercase tracking-wider">
             Historique récent
           </h2>
           {history.length === 0 ? (
