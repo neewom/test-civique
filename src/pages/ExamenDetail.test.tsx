@@ -21,7 +21,7 @@ function renderDetail(id: string) {
   )
 }
 
-const q0 = (allQuestions as { id: number; answer: string; distractors: string[] }[])[0]
+const q0 = (allQuestions as { id: number; answers: string[]; distractors: string[] }[])[0]
 
 const RECORD: ExamRecord = {
   id: RECORD_ID,
@@ -29,7 +29,7 @@ const RECORD: ExamRecord = {
   score: 1,
   total: 40,
   answers: [
-    { questionId: q0.id, chosen: q0.answer, correct: true },
+    { questionId: q0.id, chosen: q0.answers[0], correct: true },
     { questionId: (allQuestions as { id: number }[])[1].id, chosen: null, correct: false },
   ],
 }

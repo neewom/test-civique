@@ -9,7 +9,7 @@ interface Question {
   id: number
   theme: string
   question: string
-  answer: string
+  answers: string[]
   explanation: string
 }
 
@@ -110,7 +110,7 @@ export default function ExamenDetail() {
                   {!answer.correct && (
                     <div className="rounded-lg border border-green-400 bg-green-50 px-4 py-2">
                       <p className="text-xs font-medium text-green-700 mb-0.5">Bonne réponse</p>
-                      <p className="text-sm text-green-900">{q.answer}</p>
+                      <p className="text-sm text-green-900">{q.answers[0]}</p>
                     </div>
                   )}
 

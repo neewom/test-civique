@@ -8,7 +8,7 @@ interface Question {
   id: number
   theme: string
   question: string
-  answer: string
+  answers: string[]
   explanation: string
 }
 
@@ -106,7 +106,7 @@ export default function Revision() {
                   <CardContent className="space-y-3">
                     <div className="rounded-lg bg-green-50 border border-green-200 dark:bg-green-950/20 dark:border-green-800/30 px-3 py-2">
                       <p className="text-xs font-medium text-green-600 dark:text-green-400 mb-0.5">Bonne réponse</p>
-                      <p className="text-sm text-green-800 dark:text-green-200">{q.answer}</p>
+                      <p className="text-sm text-green-800 dark:text-green-200">{q.answers[0]}</p>
                     </div>
                     <p className="text-xs text-muted-foreground leading-relaxed">{q.explanation}</p>
                   </CardContent>
