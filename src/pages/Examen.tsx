@@ -22,7 +22,7 @@ interface Question {
   id: number
   theme: string
   question: string
-  answer: string
+  answers: string[]
   distractors: string[]
   explanation: string
 }
@@ -52,8 +52,8 @@ export function buildExam(pool: Question[] = allQuestions as Question[]): ExamQu
       id: q.id,
       theme: q.theme,
       question: q.question,
-      answer: q.answer,
-      choices: shuffle([q.answer, ...shuffle(q.distractors).slice(0, 3)]),
+      answer: q.answers[0],
+      choices: shuffle([q.answers[0], ...shuffle(q.distractors).slice(0, 3)]),
       explanation: q.explanation,
     }))
 }
