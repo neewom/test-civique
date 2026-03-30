@@ -13,15 +13,15 @@ interface Question {
 }
 
 const THEME_COLORS: Record<string, string> = {
-  'République & valeurs': 'bg-blue-100 text-blue-800',
-  'Histoire de France': 'bg-amber-100 text-amber-800',
-  'Institutions': 'bg-purple-100 text-purple-800',
-  'Société française': 'bg-green-100 text-green-800',
-  'Europe': 'bg-sky-100 text-sky-800',
+  'République & valeurs': 'bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300',
+  'Histoire de France': 'bg-amber-100 text-amber-800 dark:bg-amber-900/30 dark:text-amber-300',
+  'Institutions': 'bg-purple-100 text-purple-800 dark:bg-purple-900/30 dark:text-purple-300',
+  'Société française': 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300',
+  'Europe': 'bg-sky-100 text-sky-800 dark:bg-sky-900/30 dark:text-sky-300',
 }
 
 function themeColor(theme: string) {
-  return THEME_COLORS[theme] ?? 'bg-gray-100 text-gray-700'
+  return THEME_COLORS[theme] ?? 'bg-gray-100 text-gray-700 dark:bg-gray-800/40 dark:text-gray-300'
 }
 
 const allQuestions = questions as Question[]
@@ -49,12 +49,12 @@ export default function Revision() {
         <div className="space-y-1">
           <button
             onClick={() => navigate('/')}
-            className="text-sm text-gray-500 hover:text-gray-700 transition-colors mb-3 block"
+            className="text-sm text-muted-foreground hover:text-foreground transition-colors mb-3 block"
           >
             ← Accueil
           </button>
-          <h1 className="text-2xl font-semibold tracking-tight text-zinc-900">Mode révision</h1>
-          <p className="text-gray-600">{allQuestions.length} questions par thème</p>
+          <h1 className="text-2xl font-semibold tracking-tight text-foreground">Mode révision</h1>
+          <p className="text-muted-foreground">{allQuestions.length} questions par thème</p>
         </div>
 
         {/* Filtre par thème */}
@@ -64,8 +64,8 @@ export default function Revision() {
             aria-pressed={activeTheme === null}
             className={`rounded-full px-3 py-1 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring ${
               activeTheme === null
-                ? 'bg-zinc-900 text-white'
-                : 'bg-muted text-zinc-700 hover:bg-zinc-200'
+                ? 'bg-foreground text-background'
+                : 'bg-muted text-foreground hover:bg-muted'
             }`}
           >
             Tous
@@ -77,8 +77,8 @@ export default function Revision() {
               aria-pressed={activeTheme === theme}
               className={`rounded-full px-3 py-1 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring ${
                 activeTheme === theme
-                  ? 'bg-zinc-900 text-white'
-                  : 'bg-muted text-zinc-700 hover:bg-zinc-200'
+                  ? 'bg-foreground text-background'
+                  : 'bg-muted text-foreground hover:bg-muted'
               }`}
             >
               {theme}
@@ -89,9 +89,9 @@ export default function Revision() {
         {/* Questions par thème */}
         {visibleThemes.map((theme) => (
           <section key={theme} aria-label={`Thème : ${theme}`} className="space-y-4">
-            <h2 className="text-base font-semibold text-zinc-900 border-b pb-2">
+            <h2 className="text-base font-semibold text-foreground border-b pb-2">
               {theme}
-              <span className="ml-2 text-sm font-normal text-gray-500">({byTheme[theme].length})</span>
+              <span className="ml-2 text-sm font-normal text-muted-foreground">({byTheme[theme].length})</span>
             </h2>
 
             <div className="space-y-3">
@@ -101,14 +101,14 @@ export default function Revision() {
                     <div className="flex items-start gap-3">
                       <Badge className={themeColor(q.theme)}>{q.theme}</Badge>
                     </div>
-                    <CardTitle className="text-zinc-900 mt-2">{q.question}</CardTitle>
+                    <CardTitle className="text-foreground mt-2">{q.question}</CardTitle>
                   </CardHeader>
                   <CardContent className="space-y-3">
-                    <div className="rounded-lg bg-green-50 border border-green-200 px-3 py-2">
-                      <p className="text-xs font-medium text-green-700 mb-0.5">Bonne réponse</p>
-                      <p className="text-sm text-green-900">{q.answer}</p>
+                    <div className="rounded-lg bg-green-50 border border-green-200 dark:bg-green-950/20 dark:border-green-800/30 px-3 py-2">
+                      <p className="text-xs font-medium text-green-600 dark:text-green-400 mb-0.5">Bonne réponse</p>
+                      <p className="text-sm text-green-800 dark:text-green-200">{q.answer}</p>
                     </div>
-                    <p className="text-xs text-gray-600 leading-relaxed">{q.explanation}</p>
+                    <p className="text-xs text-muted-foreground leading-relaxed">{q.explanation}</p>
                   </CardContent>
                 </Card>
               ))}

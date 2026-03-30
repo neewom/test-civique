@@ -2546,22 +2546,24 @@
       "Une philosophe et mystique française du XXe siècle"
     ],
     "explanation": "Simone de Beauvoir (1908-1986) était une philosophe existentialiste, romancière et féministe française. Son œuvre maîtresse, Le Deuxième Sexe (1949), analyse la condition des femmes dans la société et a profondément influencé le féminisme mondial. Elle était la compagne de Jean-Paul Sartre."
-  },{
-  "id": 151,
-  "theme": "Culture",
-  "question": "Qui était Albert Camus ?",
-  "answer": "Un écrivain et philosophe français né en Algérie, prix Nobel de littérature",
-  "distractors": [
-    "Un général et homme d'État français, chef de la France libre",
-    "Un peintre espagnol naturalisé français, fondateur du cubisme",
-    "Un compositeur et chef d'orchestre français du XXe siècle",
-    "Un homme politique français, président du Conseil sous la IIIe République",
-    "Un architecte franco-suisse pionnier du modernisme",
-    "Un physicien français, pionnier de la recherche nucléaire",
-    "Un cinéaste français fondateur de la Nouvelle Vague",
-    "Un juriste français père de la Déclaration universelle des droits de l'homme"
-  ]
-},
+  },
+  {
+    "id": 151,
+    "theme": "Culture",
+    "question": "Qui était Albert Camus ?",
+    "answer": "Un écrivain et philosophe français né en Algérie, prix Nobel de littérature",
+    "distractors": [
+      "Un général et homme d'État français, chef de la France libre",
+      "Un peintre espagnol naturalisé français, fondateur du cubisme",
+      "Un compositeur et chef d'orchestre français du XXe siècle",
+      "Un homme politique français, président du Conseil sous la IIIe République",
+      "Un architecte franco-suisse pionnier du modernisme",
+      "Un physicien français, pionnier de la recherche nucléaire",
+      "Un cinéaste français fondateur de la Nouvelle Vague",
+      "Un juriste français père de la Déclaration universelle des droits de l'homme"
+    ],
+    "explanation": "Albert Camus (1913-1960), né en Algérie française, est l'un des plus grands écrivains du XXe siècle. Auteur de L'Étranger et La Peste, il a reçu le prix Nobel de littérature en 1957. Sa philosophie de l'absurde est un pilier de la pensée française."
+  },
   {
     "id": 152,
     "theme": "Culture",
@@ -2576,7 +2578,8 @@
       "Un romancier naturaliste français du XIXe siècle",
       "Un cinéaste français fondateur de la Nouvelle Vague",
       "Un architecte français créateur des entrées du métro parisien"
-    ]
+    ],
+    "explanation": "Paul Cézanne (1839-1906) est un peintre post-impressionniste dont les œuvres ont jeté les bases du cubisme et de l'art moderne. Ses représentations de la montagne Sainte-Victoire sont parmi les plus célèbres de la peinture française."
   },
   {
     "id": 153,
@@ -2592,7 +2595,8 @@
       "Un sculpteur français du XIXe siècle auteur de bustes célèbres",
       "Un architecte italien concepteur du Centre Pompidou",
       "Un poète symboliste français du XIXe siècle"
-    ]
+    ],
+    "explanation": "Marc Chagall (1887-1985), né en Russie, a adopté la nationalité française. Ses tableaux aux couleurs vives mêlant rêve et tradition sont exposés dans les plus grands musées du monde. Il a notamment réalisé les vitraux de la cathédrale de Reims."
   },
   {
     "id": 154,
@@ -2608,7 +2612,8 @@
       "Une romancière française du XXe siècle élue à l'Académie française",
       "Une scientifique française double lauréate du prix Nobel",
       "Une danseuse italienne fondatrice du ballet romantique"
-    ]
+    ],
+    "explanation": "Joséphine Baker (1906-1975), artiste américaine naturalisée française, est devenue résistante pendant la Seconde Guerre mondiale. Militante pour les droits civiques, elle a été la première femme de couleur à entrer au Panthéon, en 2021."
   },
   {
     "id": 155,
