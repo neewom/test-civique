@@ -35,7 +35,11 @@
     ],
     "explanation": "Les symboles officiels de la République française sont : le drapeau tricolore bleu-blanc-rouge, la Marseillaise (hymne national), Marianne (allégorie féminine), la devise 'Liberté, Égalité, Fraternité' et le coq gaulois.",
     "answers": [
-      "Le drapeau tricolore bleu, blanc, rouge"
+      "Le drapeau tricolore bleu, blanc, rouge",
+      "La Marseillaise",
+      "Marianne",
+      "Le coq gaulois",
+      "La devise Liberté, Égalité, Fraternité"
     ],
     "group": "symboles-republique"
   },
@@ -1495,7 +1499,10 @@
     ],
     "explanation": "La Suisse n'est pas membre de l'UE. Elle a refusé d'adhérer par référendum en 1992. La Norvège, l'Islande et le Liechtenstein ne sont pas non plus membres, bien qu'ils participent à l'Espace économique européen (EEE).",
     "answers": [
-      "La Suisse"
+      "La Suisse",
+      "La Norvège",
+      "Le Royaume-Uni",
+      "La Turquie"
     ]
   },
   {
@@ -1552,7 +1559,12 @@
     ],
     "explanation": "Les 6 pays fondateurs de la CEE (Communauté économique européenne), créée par le traité de Rome en 1957, sont : la France, l'Allemagne de l'Ouest, l'Italie, la Belgique, les Pays-Bas et le Luxembourg. Cette CEE est devenue l'Union européenne en 1992.",
     "answers": [
-      "La France"
+      "La France",
+      "L'Allemagne",
+      "L'Italie",
+      "La Belgique",
+      "Les Pays-Bas",
+      "Le Luxembourg"
     ]
   },
   {
@@ -2239,6 +2251,10 @@
     ],
     "explanation": "Victor Hugo (1802-1885) est un grand écrivain français, auteur de nombreux chefs-d'œuvre : Les Misérables, Notre-Dame de Paris, Les Contemplations… Engagé politiquement, il fut aussi sénateur et défenseur des droits de l'homme. Ses funérailles nationales au Panthéon rassemblèrent des millions de personnes.",
     "answers": [
+      "Charles de Gaulle",
+      "Molière",
+      "Napoléon Bonaparte",
+      "Marie Curie",
       "Victor Hugo"
     ]
   },
@@ -2296,7 +2312,11 @@
     ],
     "explanation": "La France a constitué un vaste empire colonial aux XIXe et XXe siècles : en Afrique (Algérie, Maroc, Tunisie, Sénégal, Côte d'Ivoire…), en Asie (Vietnam, Cambodge, Laos), en Océanie (Polynésie, Nouvelle-Calédonie) et en Amérique (Québec, Antilles, Guyane). La plupart de ces territoires ont accédé à l'indépendance dans les années 1950-1960.",
     "answers": [
-      "L'Algérie, le Vietnam, le Maroc, la Tunisie et de nombreux pays d'Afrique subsaharienne"
+      "L'Algérie",
+      "Le Maroc",
+      "Le Vietnam",
+      "Le Sénégal",
+      "La Tunisie"
     ]
   },
   {
@@ -2601,7 +2621,14 @@
     ],
     "explanation": "Lyon est la deuxième agglomération de France (après Paris) avec environ 1,7 million d'habitants dans son aire urbaine. Située au confluent du Rhône et de la Saône, elle est réputée pour sa gastronomie, ses traboules et ses bouchons lyonnais. Son centre historique est classé au patrimoine mondial de l'UNESCO.",
     "answers": [
-      "Lyon"
+      "Paris",
+      "Lyon",
+      "Marseille",
+      "Bordeaux",
+      "Toulouse",
+      "Nantes",
+      "Strasbourg",
+      "Lille"
     ]
   },
   {
@@ -2698,7 +2725,10 @@
     ],
     "explanation": "La Martinique est l'un des 5 départements et régions d'outre-mer (DROM) français, avec la Guadeloupe, la Guyane, La Réunion et Mayotte. Ces territoires font partie intégrante de la République française et de l'Union européenne.",
     "answers": [
-      "La Martinique"
+      "La Martinique",
+      "La Guadeloupe",
+      "La Réunion",
+      "Mayotte"
     ]
   },
   {
@@ -2774,7 +2804,11 @@
     ],
     "explanation": "Nice est une grande ville de la Côte d'Azur, sur la mer Méditerranée. Cinquième ville de France par sa population, elle est réputée pour sa Promenade des Anglais, son carnaval et son musée Matisse. Nice était rattachée au Royaume de Piémont-Sardaigne jusqu'en 1860, quand elle est devenue française.",
     "answers": [
-      "Nice"
+      "Marseille",
+      "Nice",
+      "Montpellier",
+      "Toulon",
+      "Sète"
     ]
   },
   {
@@ -3040,7 +3074,11 @@
     ],
     "explanation": "Marcel Proust (1871-1922) est l'un des plus grands romanciers français. Son œuvre monumentale, À la recherche du temps perdu (7 volumes, 3 000 pages), explore la mémoire, le temps et la société de la Belle Époque. Cette œuvre est considérée comme l'un des plus grands romans de la littérature mondiale.",
     "answers": [
-      "Marcel Proust"
+      "Victor Hugo",
+      "Molière",
+      "Albert Camus",
+      "Gustave Flaubert",
+      "Émile Zola"
     ]
   },
   {

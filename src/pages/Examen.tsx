@@ -57,14 +57,17 @@ export function buildExam(pool: Question[] = allQuestions as Question[]): ExamQu
     }
     selected.push(q)
   }
-  return selected.map((q) => ({
-    id: q.id,
-    theme: q.theme,
-    question: q.question,
-    answer: q.answers[0],
-    choices: shuffle([q.answers[0], ...shuffle(q.distractors).slice(0, 3)]),
-    explanation: q.explanation,
-  }))
+  return selected.map((q) => {
+    const answer = shuffle(q.answers)[0]
+    return {
+      id: q.id,
+      theme: q.theme,
+      question: q.question,
+      answer,
+      choices: shuffle([answer, ...shuffle(q.distractors).slice(0, 3)]),
+      explanation: q.explanation,
+    }
+  })
 }
 
 export function saveResult(
