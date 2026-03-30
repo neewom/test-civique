@@ -16,7 +16,8 @@
     "explanation": "Le 14 juillet 1789, la prise de la Bastille marqua le début de la Révolution française. La loi du 6 juillet 1880 en fit la fête nationale officielle. Chaque année, un défilé militaire a lieu sur les Champs-Élysées.",
     "answers": [
       "C'est la fête nationale, qui commémore la prise de la Bastille en 1789"
-    ]
+    ],
+    "group": "fete-nationale"
   },
   {
     "id": 2,
@@ -35,7 +36,8 @@
     "explanation": "Les symboles officiels de la République française sont : le drapeau tricolore bleu-blanc-rouge, la Marseillaise (hymne national), Marianne (allégorie féminine), la devise 'Liberté, Égalité, Fraternité' et le coq gaulois.",
     "answers": [
       "Le drapeau tricolore bleu, blanc, rouge"
-    ]
+    ],
+    "group": "symboles-republique"
   },
   {
     "id": 3,
@@ -54,7 +56,8 @@
     "explanation": "L'égalité signifie que tous les individus ont les mêmes droits et sont traités sans discrimination devant la loi, quelles que soient leur origine, leur sexe, leur religion ou leur situation sociale.",
     "answers": [
       "Tous les individus ont les mêmes droits et sont traités de la même façon devant la loi"
-    ]
+    ],
+    "group": "egalite"
   },
   {
     "id": 4,
@@ -73,7 +76,8 @@
     "explanation": "La devise 'Liberté, Égalité, Fraternité' est la devise officielle de la République française, inscrite dans la Constitution de 1958. Elle figure sur tous les bâtiments publics, les pièces de monnaie et les timbres.",
     "answers": [
       "La devise de la République française"
-    ]
+    ],
+    "group": "devise"
   },
   {
     "id": 5,
@@ -149,7 +153,8 @@
     "explanation": "La France est une République démocratique, actuellement en Ve République depuis 1958. C'est un régime semi-présidentiel : le Président de la République a des pouvoirs importants, mais partage l'exécutif avec le Premier ministre.",
     "answers": [
       "Une République démocratique (la Ve République)"
-    ]
+    ],
+    "group": "regime-politique"
   },
   {
     "id": 9,
@@ -168,7 +173,8 @@
     "explanation": "Marianne est le symbole féminin et allégorique de la République française, incarnant les valeurs de Liberté, Égalité, Fraternité. Son buste figure dans toutes les mairies françaises et ses traits apparaissent sur les timbres et pièces de monnaie.",
     "answers": [
       "Marianne"
-    ]
+    ],
+    "group": "marianne"
   },
   {
     "id": 10,
@@ -187,7 +193,8 @@
     "explanation": "La devise 'Liberté, Égalité, Fraternité' est gravée ou affichée sur les façades de tous les bâtiments publics (mairies, écoles, tribunaux…), sur les pièces de monnaie françaises en euros et sur les timbres postaux.",
     "answers": [
       "Sur les bâtiments publics, les pièces de monnaie et les timbres"
-    ]
+    ],
+    "group": "devise"
   },
   {
     "id": 11,
@@ -206,7 +213,8 @@
     "explanation": "Les symboles officiels de la République française inscrits dans la Constitution sont : le drapeau tricolore bleu-blanc-rouge, la Marseillaise (hymne national), Marianne (allégorie), la devise 'Liberté, Égalité, Fraternité' et le coq gaulois (symbole non constitutionnel mais traditionnel).",
     "answers": [
       "Le drapeau tricolore, la Marseillaise, Marianne et la devise 'Liberté, Égalité, Fraternité'"
-    ]
+    ],
+    "group": "symboles-republique"
   },
   {
     "id": 12,
@@ -225,7 +233,8 @@
     "explanation": "L'égalité est l'un des trois piliers de la devise républicaine. Elle signifie que tous les individus, quelles que soient leur origine, leur sexe, leur religion ou leur condition sociale, ont les mêmes droits et sont traités de façon identique devant la loi.",
     "answers": [
       "Le fait que tous les individus aient les mêmes droits et soient traités de façon identique par la loi"
-    ]
+    ],
+    "group": "egalite"
   },
   {
     "id": 13,
@@ -244,7 +253,8 @@
     "explanation": "La liberté, premier terme de la devise républicaine, est le droit de faire tout ce qui ne nuit pas à autrui. Comme le stipule la Déclaration des droits de l'homme de 1789, les limites de la liberté ne peuvent être déterminées que par la loi.",
     "answers": [
       "Le droit de faire tout ce qui ne nuit pas à autrui et ne contrevient pas à la loi"
-    ]
+    ],
+    "group": "liberte-expression"
   },
   {
     "id": 14,
@@ -282,7 +292,8 @@
     "explanation": "Le coq gaulois est un symbole traditionnel de la France depuis l'Antiquité, en raison du jeu de mots latin entre 'gallus' (coq) et 'Gallus' (Gaulois). Il figure sur des monnaies, des sceaux officiels et le maillot des équipes de France.",
     "answers": [
       "Le coq gaulois"
-    ]
+    ],
+    "group": "coq-gaulois"
   },
   {
     "id": 16,
@@ -320,7 +331,8 @@
     "explanation": "La Marseillaise a été composée en 1792 par Rouget de Lisle. Elle est l'hymne national officiel de la France depuis 1879. Elle est jouée lors des cérémonies officielles, des compétitions sportives et des commémorations nationales.",
     "answers": [
       "La Marseillaise"
-    ]
+    ],
+    "group": "marseillaise"
   },
   {
     "id": 18,
@@ -339,7 +351,8 @@
     "explanation": "Le drapeau tricolore bleu, blanc, rouge est le symbole tricolore officiel de la République française. Né de la Révolution française, il associe les couleurs de Paris (bleu et rouge) à la couleur royale (blanc). Il est inscrit dans la Constitution.",
     "answers": [
       "Le drapeau"
-    ]
+    ],
+    "group": "symboles-republique"
   },
   {
     "id": 19,
@@ -358,7 +371,8 @@
     "explanation": "La fête nationale française est célébrée le 14 juillet, en commémoration de la prise de la Bastille le 14 juillet 1789, symbole du début de la Révolution française. Un défilé militaire est organisé chaque année sur les Champs-Élysées.",
     "answers": [
       "Le 14 juillet"
-    ]
+    ],
+    "group": "fete-nationale"
   },
   {
     "id": 20,
@@ -377,7 +391,8 @@
     "explanation": "La devise 'Liberté, Égalité, Fraternité' est inscrite dans l'article 2 de la Constitution de 1958. Elle est affichée sur tous les bâtiments publics, les pièces de monnaie et les timbres. Elle est née de la Révolution française.",
     "answers": [
       "Liberté, Égalité, Fraternité"
-    ]
+    ],
+    "group": "devise"
   },
   {
     "id": 21,
@@ -396,7 +411,8 @@
     "explanation": "L'article 2 de la Constitution dispose : 'La langue de la République est le français.' Il est obligatoire dans tous les actes officiels, contrats de travail et l'enseignement public.",
     "answers": [
       "Le français"
-    ]
+    ],
+    "group": "langue-francaise"
   },
   {
     "id": 22,
@@ -415,7 +431,8 @@
     "explanation": "Le français est la langue officielle de la République française (article 2 de la Constitution). Son usage est obligatoire dans toutes les relations avec les services publics, dans les contrats de travail, dans l'enseignement public et dans les actes officiels.",
     "answers": [
       "C'est la langue officielle de la République, obligatoire dans la vie publique"
-    ]
+    ],
+    "group": "langue-francaise"
   },
   {
     "id": 23,
@@ -434,7 +451,8 @@
     "explanation": "La liberté d'expression est le droit de chacun d'exprimer librement ses opinions par tous les moyens (oral, écrit, presse, Internet…). Elle est garantie par la Déclaration des droits de l'homme de 1789 et par la loi sur la presse de 1881. Elle n'est pas absolue : elle s'arrête là où commence la diffamation, l'injure ou l'incitation à la haine.",
     "answers": [
       "La liberté d'expression"
-    ]
+    ],
+    "group": "liberte-expression"
   },
   {
     "id": 24,
@@ -453,7 +471,8 @@
     "explanation": "La liberté d'expression est garantie en France mais elle n'est pas absolue. Elle s'arrête là où commence le délit : diffamation, injure publique, incitation à la haine raciale ou religieuse, négationnisme, menaces. Ces limitations visent à protéger la dignité et l'ordre public.",
     "answers": [
       "La liberté d'expression est garantie mais elle a des limites : elle interdit la diffamation, l'injure et l'incitation à la haine"
-    ]
+    ],
+    "group": "liberte-expression"
   },
   {
     "id": 25,
@@ -472,7 +491,8 @@
     "explanation": "Le drapeau tricolore bleu, blanc, rouge (de gauche à droite) est le drapeau national officiel. Le bleu et le rouge sont les couleurs de Paris, le blanc est la couleur royale traditionnelle. Il est inscrit dans l'article 2 de la Constitution.",
     "answers": [
       "Bleu, blanc, rouge"
-    ]
+    ],
+    "group": "symboles-republique"
   },
   {
     "id": 26,
@@ -491,7 +511,8 @@
     "explanation": "La Marseillaise a été composée en avril 1792 par Rouget de Lisle à Strasbourg, puis adoptée comme hymne national. Elle est jouée lors des cérémonies officielles, des matchs de l'équipe de France et des commémorations nationales.",
     "answers": [
       "L'hymne national de la République française, composé en 1792"
-    ]
+    ],
+    "group": "marseillaise"
   },
   {
     "id": 27,
@@ -510,7 +531,8 @@
     "explanation": "Le défilé militaire du 14 juillet sur les Champs-Élysées est une tradition républicaine depuis 1880. Il présente les différents corps de l'armée française (infanterie, cavalerie, aviation…) et se termine par le traditionnel feu d'artifice au Trocadéro le soir.",
     "answers": [
       "Un défilé militaire"
-    ]
+    ],
+    "group": "fete-nationale"
   },
   {
     "id": 28,
@@ -529,7 +551,8 @@
     "explanation": "Marianne est l'allégorie féminine de la République française, incarnant les valeurs de Liberté, Égalité, Fraternité. Son buste figure dans toutes les mairies. Elle est représentée coiffée du bonnet phrygien, symbole de la liberté.",
     "answers": [
       "Le symbole féminin et allégorique de la République française"
-    ]
+    ],
+    "group": "marianne"
   },
   {
     "id": 29,
@@ -605,7 +628,8 @@
     "explanation": "La laïcité garantit simultanément la liberté de conscience (chacun croit ce qu'il veut) et la neutralité de l'État (qui ne favorise ni ne pénalise aucune religion). C'est un équilibre entre liberté individuelle et égalité de traitement de tous les citoyens.",
     "answers": [
       "De garantir la liberté de croire ou de ne pas croire, tout en maintenant la neutralité de l'État vis-à-vis de toutes les religions"
-    ]
+    ],
+    "group": "laicite"
   },
   {
     "id": 33,
@@ -624,7 +648,8 @@
     "explanation": "La laïcité garantit en premier lieu la liberté de conscience : chaque personne est libre de croire en une religion, d'en changer ou de n'avoir aucune croyance religieuse, sans que l'État ne s'en mêle ni ne la favorise ou la pénalise.",
     "answers": [
       "La liberté de conscience : le droit de croire ou de ne pas croire"
-    ]
+    ],
+    "group": "laicite"
   },
   {
     "id": 34,
@@ -662,7 +687,8 @@
     "explanation": "La laïcité est le principe fondamental de séparation des Églises et de l'État, établi par la loi de 1905. L'État est neutre vis-à-vis de toutes les religions. Elle garantit la liberté de conscience : chacun peut croire ou ne pas croire librement.",
     "answers": [
       "La séparation des Églises et de l'État, garantissant la liberté de conscience pour tous"
-    ]
+    ],
+    "group": "laicite"
   },
   {
     "id": 36,
@@ -757,7 +783,8 @@
     "explanation": "Le pouvoir exécutif est le pouvoir de gouverner, c'est-à-dire d'appliquer les lois et de conduire la politique nationale. En France, il est exercé par le Président de la République et le gouvernement (Premier ministre et ministres).",
     "answers": [
       "Le pouvoir de gouverner et d'appliquer les lois, exercé par le Président et le gouvernement"
-    ]
+    ],
+    "group": "pouvoir-executif"
   },
   {
     "id": 41,
@@ -985,7 +1012,8 @@
     "explanation": "Les élections présidentielles permettent aux citoyens français d'élire directement le Président de la République pour un mandat de 5 ans (quinquennat). Elles ont lieu au scrutin uninominal à deux tours. Un même président ne peut pas effectuer plus de deux mandats consécutifs.",
     "answers": [
       "Le Président de la République, pour un mandat de 5 ans"
-    ]
+    ],
+    "group": "president"
   },
   {
     "id": 53,
@@ -1002,7 +1030,8 @@
     "explanation": "En France, le droit de vote est accordé à tout citoyen français à partir de 18 ans, à condition d'être inscrit sur les listes électorales. Depuis 2016, l'inscription est automatique pour les jeunes atteignant 18 ans.",
     "answers": [
       "18 ans"
-    ]
+    ],
+    "group": "vote-conditions"
   },
   {
     "id": 54,
@@ -1021,7 +1050,8 @@
     "explanation": "Depuis la réforme constitutionnelle de 2000, le Président est élu pour 5 ans (quinquennat). Avant cette réforme, le mandat était de 7 ans (septennat). Un même président ne peut pas effectuer plus de deux mandats consécutifs.",
     "answers": [
       "5 ans (quinquennat), renouvelable une fois"
-    ]
+    ],
+    "group": "president"
   },
   {
     "id": 55,
@@ -1078,7 +1108,8 @@
     "explanation": "En France, le pouvoir exécutif est partagé entre le Président de la République (qui définit les grandes orientations politiques) et le gouvernement dirigé par le Premier ministre (qui conduit au quotidien la politique de la nation).",
     "answers": [
       "Le Président de la République et le gouvernement (Premier ministre et ministres)"
-    ]
+    ],
+    "group": "pouvoir-executif"
   },
   {
     "id": 58,
@@ -1097,7 +1128,8 @@
     "explanation": "Pour voter en France, il faut : être de nationalité française, avoir au moins 18 ans, et être inscrit sur les listes électorales. Depuis 2016, les jeunes sont automatiquement inscrits à leurs 18 ans. Certaines condamnations pénales peuvent entraîner la privation du droit de vote.",
     "answers": [
       "Être citoyen français majeur (18 ans) et être inscrit sur les listes électorales"
-    ]
+    ],
+    "group": "vote-conditions"
   },
   {
     "id": 59,
@@ -1116,7 +1148,8 @@
     "explanation": "Seuls les citoyens français (de naissance ou naturalisés) de 18 ans et plus, inscrits sur les listes électorales, peuvent voter à toutes les élections françaises. Les ressortissants de l'UE peuvent voter aux élections européennes et municipales, mais pas aux élections nationales.",
     "answers": [
       "Tout citoyen français de 18 ans et plus, inscrit sur les listes électorales"
-    ]
+    ],
+    "group": "vote-conditions"
   },
   {
     "id": 60,
@@ -1211,7 +1244,8 @@
     "explanation": "Le pouvoir législatif appartient au Parlement, composé de l'Assemblée nationale (577 députés) et du Sénat (348 sénateurs). C'est lui qui vote les lois, vote le budget de l'État et contrôle l'action du gouvernement.",
     "answers": [
       "Le Parlement (Assemblée nationale et Sénat)"
-    ]
+    ],
+    "group": "pouvoir-legislatif"
   },
   {
     "id": 65,
@@ -1268,7 +1302,8 @@
     "explanation": "Les lois sont votées par le Parlement, composé de l'Assemblée nationale et du Sénat. En cas de désaccord entre les deux chambres, l'Assemblée nationale a le dernier mot. Le Président peut aussi soumettre certains textes directement aux citoyens par référendum.",
     "answers": [
       "Le Parlement (Assemblée nationale et Sénat)"
-    ]
+    ],
+    "group": "pouvoir-legislatif"
   },
   {
     "id": 68,
@@ -1287,7 +1322,8 @@
     "explanation": "Le palais de l'Élysée, situé à Paris dans le 8e arrondissement, est la résidence officielle et le lieu de travail du Président de la République française depuis 1848. Le Premier ministre, lui, réside à l'hôtel Matignon.",
     "answers": [
       "Le Président de la République"
-    ]
+    ],
+    "group": "president"
   },
   {
     "id": 69,
@@ -1401,7 +1437,8 @@
     "explanation": "Le Parlement (Assemblée nationale + Sénat) a trois missions principales : voter les lois, voter le budget annuel de l'État, et contrôler l'action du gouvernement (questions, commissions d'enquête, motion de censure pour renverser le gouvernement).",
     "answers": [
       "Voter les lois, voter le budget de l'État et contrôler le gouvernement"
-    ]
+    ],
+    "group": "pouvoir-legislatif"
   },
   {
     "id": 75,
@@ -1420,7 +1457,8 @@
     "explanation": "La France est en Ve République depuis la Constitution du 4 octobre 1958, instaurée par le général de Gaulle. C'est un régime semi-présidentiel : le Président a des pouvoirs importants mais partage l'exécutif avec un Premier ministre responsable devant le Parlement.",
     "answers": [
       "La Ve République, un régime semi-présidentiel depuis 1958"
-    ]
+    ],
+    "group": "regime-politique"
   },
   {
     "id": 76,
@@ -1705,7 +1743,8 @@
     "explanation": "La liberté d'expression est le droit de chacun d'exprimer librement ses opinions par tous les moyens. Elle est garantie par la DDHC de 1789 et la loi sur la presse de 1881. Elle a des limites légales : diffamation, injure, incitation à la haine, négationnisme.",
     "answers": [
       "Le droit d'exprimer ses opinions librement, dans le respect des limites fixées par la loi"
-    ]
+    ],
+    "group": "liberte-expression"
   },
   {
     "id": 91,
@@ -2009,7 +2048,8 @@
     "explanation": "La gendarmerie nationale est une force armée chargée des missions de sécurité publique principalement en zone rurale et périurbaine (tandis que la police nationale intervient en zone urbaine). Elle maintient l'ordre, protège les personnes et les biens, constate les infractions et mène des enquêtes judiciaires.",
     "answers": [
       "Maintenir l'ordre, protéger les personnes et les biens, et constater les infractions (en zone rurale et périurbaine)"
-    ]
+    ],
+    "group": "police-gendarmerie"
   },
   {
     "id": 107,
@@ -2028,7 +2068,8 @@
     "explanation": "La police nationale est chargée de maintenir l'ordre public, protéger les personnes et les biens, prévenir les infractions, mener des enquêtes judiciaires et lutter contre la délinquance, principalement dans les zones urbaines. Elle travaille en collaboration avec la gendarmerie.",
     "answers": [
       "Maintenir l'ordre public, protéger les personnes et les biens, et prévenir et réprimer les infractions"
-    ]
+    ],
+    "group": "police-gendarmerie"
   },
   {
     "id": 108,
@@ -2484,7 +2525,8 @@
     "explanation": "Le 14 juillet est la fête nationale française. Elle commémore la prise de la Bastille le 14 juillet 1789, événement emblématique du début de la Révolution française. Elle est célébrée par un défilé militaire sur les Champs-Élysées et des feux d'artifice dans toute la France.",
     "answers": [
       "La fête nationale française, en mémoire de la prise de la Bastille le 14 juillet 1789"
-    ]
+    ],
+    "group": "fete-nationale"
   },
   {
     "id": 132,
@@ -2598,7 +2640,8 @@
     "explanation": "Paris est la capitale de la France et sa plus grande ville (plus de 2 millions d'habitants, 12 millions en Île-de-France). C'est le siège des grandes institutions républicaines : Élysée (Présidence), Matignon (Premier ministre), Assemblée nationale, Sénat, et des grands ministères.",
     "answers": [
       "La capitale de la France"
-    ]
+    ],
+    "group": "paris-capitale"
   },
   {
     "id": 138,
@@ -2617,7 +2660,8 @@
     "explanation": "Paris est la capitale de la France depuis le Moyen Âge. Elle est le cœur politique, économique et culturel du pays. La région Île-de-France, dont Paris est le centre, concentre environ 20% de la population française.",
     "answers": [
       "Paris"
-    ]
+    ],
+    "group": "paris-capitale"
   },
   {
     "id": 139,
@@ -3016,7 +3060,8 @@
     "explanation": "La tour Eiffel est située à Paris, sur le Champ-de-Mars dans le 7e arrondissement. Construite par Gustave Eiffel pour l'Exposition universelle de 1889, elle mesure 330 mètres de hauteur. C'est le monument payant le plus visité au monde (plus de 7 millions de visiteurs par an).",
     "answers": [
       "À Paris (7e arrondissement, sur le Champ-de-Mars)"
-    ]
+    ],
+    "group": "paris-capitale"
   },
   {
     "id": 160,
@@ -3491,7 +3536,8 @@
     "explanation": "L'école est obligatoire de 3 à 16 ans pour tous les enfants résidant en France, quelle que soit leur nationalité. Au-delà de 16 ans, les jeunes peuvent continuer leurs études, entrer en apprentissage, ou chercher un emploi avec un contrat de travail.",
     "answers": [
       "16 ans"
-    ]
+    ],
+    "group": "ecole-obligatoire"
   },
   {
     "id": 185,
@@ -3529,7 +3575,8 @@
     "explanation": "L'école est obligatoire pour TOUS les enfants résidant sur le territoire français de 3 à 16 ans, sans distinction de nationalité ni de situation administrative des parents. C'est à la fois un droit fondamental et une obligation légale. Les enfants peuvent être scolarisés dans le public, le privé ou instruits à domicile.",
     "answers": [
       "Pour tous les enfants résidant en France de 3 à 16 ans, quelle que soit leur nationalité"
-    ]
+    ],
+    "group": "ecole-obligatoire"
   },
   {
     "id": 187,
@@ -3586,7 +3633,8 @@
     "explanation": "L'obligation scolaire s'applique à TOUS les enfants résidant en France, y compris ceux de familles étrangères quelle que soit leur situation administrative. C'est un droit fondamental. Les enfants sans papiers ont le même droit à l'éducation que les enfants français.",
     "answers": [
       "Pour tous les enfants résidant légalement sur le territoire, y compris les enfants étrangers"
-    ]
+    ],
+    "group": "ecole-obligatoire"
   },
   {
     "id": 190,

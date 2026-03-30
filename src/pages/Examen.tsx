@@ -25,6 +25,7 @@ interface Question {
   answers: string[]
   distractors: string[]
   explanation: string
+  group?: string
 }
 
 export interface ExamQuestion {
@@ -46,16 +47,24 @@ export function shuffle<T>(arr: T[]): T[] {
 }
 
 export function buildExam(pool: Question[] = allQuestions as Question[]): ExamQuestion[] {
-  return shuffle(pool)
-    .slice(0, EXAM_SIZE)
-    .map((q) => ({
-      id: q.id,
-      theme: q.theme,
-      question: q.question,
-      answer: q.answers[0],
-      choices: shuffle([q.answers[0], ...shuffle(q.distractors).slice(0, 3)]),
-      explanation: q.explanation,
-    }))
+  const seenGroups = new Set<string>()
+  const selected: Question[] = []
+  for (const q of shuffle(pool)) {
+    if (selected.length === EXAM_SIZE) break
+    if (q.group) {
+      if (seenGroups.has(q.group)) continue
+      seenGroups.add(q.group)
+    }
+    selected.push(q)
+  }
+  return selected.map((q) => ({
+    id: q.id,
+    theme: q.theme,
+    question: q.question,
+    answer: q.answers[0],
+    choices: shuffle([q.answers[0], ...shuffle(q.distractors).slice(0, 3)]),
+    explanation: q.explanation,
+  }))
 }
 
 export function saveResult(
