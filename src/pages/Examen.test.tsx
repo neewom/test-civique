@@ -72,6 +72,21 @@ describe('buildExam', () => {
   it('chaque question a une explication', () => {
     buildExam().forEach((q) => expect(q.explanation).toBeTruthy())
   })
+
+  it('un seul groupe est représenté dans la sélection — pas de doublons de groupe', () => {
+    const pool: Parameters<typeof buildExam>[0] = [
+      { id: 1, theme: 'T', question: 'Q1', answers: ['A'], distractors: ['B', 'C', 'D'], explanation: 'E', group: 'g1' },
+      { id: 2, theme: 'T', question: 'Q2', answers: ['A'], distractors: ['B', 'C', 'D'], explanation: 'E', group: 'g1' },
+      { id: 3, theme: 'T', question: 'Q3', answers: ['A'], distractors: ['B', 'C', 'D'], explanation: 'E', group: 'g2' },
+      { id: 4, theme: 'T', question: 'Q4', answers: ['A'], distractors: ['B', 'C', 'D'], explanation: 'E' },
+    ]
+    const result = buildExam(pool)
+    const groups = result.map((q) => (pool.find((p) => p.id === q.id) as typeof pool[0]).group).filter(Boolean)
+    const uniqueGroups = new Set(groups)
+    expect(uniqueGroups.size).toBe(groups.length) // chaque groupe apparaît au plus une fois
+    // pool: 2 questions groupe g1, 1 groupe g2, 1 sans groupe → 3 sélectionnées (doublon g1 exclu)
+    expect(result).toHaveLength(3)
+  })
 })
 
 describe('saveResult', () => {
