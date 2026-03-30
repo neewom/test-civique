@@ -73,6 +73,18 @@ describe('buildExam', () => {
     buildExam().forEach((q) => expect(q.explanation).toBeTruthy())
   })
 
+  it('la réponse choisie est toujours une des valeurs du tableau answers', () => {
+    const pool: Parameters<typeof buildExam>[0] = [
+      { id: 1, theme: 'T', question: 'Q', answers: ['A', 'B', 'C'], distractors: ['D', 'E', 'F'], explanation: 'E' },
+    ]
+    // On tire plusieurs fois pour couvrir les différentes valeurs possibles
+    for (let i = 0; i < 20; i++) {
+      const [result] = buildExam(pool)
+      expect(['A', 'B', 'C']).toContain(result.answer)
+      expect(result.choices).toContain(result.answer)
+    }
+  })
+
   it('un seul groupe est représenté dans la sélection — pas de doublons de groupe', () => {
     const pool: Parameters<typeof buildExam>[0] = [
       { id: 1, theme: 'T', question: 'Q1', answers: ['A'], distractors: ['B', 'C', 'D'], explanation: 'E', group: 'g1' },
