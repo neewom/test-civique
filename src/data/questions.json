@@ -292,7 +292,7 @@
     "id": 18,
     "theme": "République & valeurs",
     "question": "Quel symbole de la République française est tricolore ?",
-    "answer": "Le drapeau (bleu, blanc, rouge)",
+    "answer": "Le drapeau",
     "distractors": [
       "La cocarde présidentielle uniquement",
       "Le sceau officiel de la République",
@@ -893,10 +893,8 @@
       "17 ans",
       "20 ans",
       "21 ans",
-      "15 ans pour les élections locales",
-      "18 ans seulement après 5 ans de résidence",
       "19 ans",
-      "18 ans uniquement pour les citoyens nés en France"
+      "12 ans"
     ],
     "explanation": "En France, le droit de vote est accordé à tout citoyen français à partir de 18 ans, à condition d'être inscrit sur les listes électorales. Depuis 2016, l'inscription est automatique pour les jeunes atteignant 18 ans."
   },
@@ -1159,7 +1157,7 @@
     "id": 69,
     "theme": "Institutions",
     "question": "Combien y a-t-il de départements en France ?",
-    "answer": "101 départements (96 en métropole + 5 outre-mer)",
+    "answer": "101 départements",
     "distractors": [
       "96 départements",
       "98 départements",
@@ -1346,7 +1344,7 @@
     "id": 80,
     "theme": "Institutions",
     "question": "Quel pays est un pays fondateur de l'Union européenne ?",
-    "answer": "La France (avec l'Allemagne, l'Italie, la Belgique, les Pays-Bas et le Luxembourg)",
+    "answer": "La France",
     "distractors": [
       "L'Espagne",
       "Le Royaume-Uni",
@@ -1363,7 +1361,7 @@
     "id": 81,
     "theme": "Institutions",
     "question": "Quelle est la monnaie utilisée en France ?",
-    "answer": "L'euro (€)",
+    "answer": "L'euro",
     "distractors": [
       "Le franc français",
       "La livre sterling",
@@ -1414,7 +1412,7 @@
     "id": 84,
     "theme": "Droits & devoirs",
     "question": "Comment s'appelle la Constitution actuelle de la France ?",
-    "answer": "La Constitution de la Ve République (du 4 octobre 1958)",
+    "answer": "La Constitution de la Ve République",
     "distractors": [
       "La Déclaration des droits de l'homme et du citoyen",
       "La Charte des droits fondamentaux de l'UE",
@@ -1567,7 +1565,7 @@
     "id": 93,
     "theme": "Droits & devoirs",
     "question": "Quel texte a été adopté pendant la Révolution française ?",
-    "answer": "La Déclaration des droits de l'homme et du citoyen (26 août 1789)",
+    "answer": "La Déclaration des droits de l'homme et du citoyen",
     "distractors": [
       "La Constitution de la Ve République",
       "Le Code civil de Napoléon",
@@ -1635,7 +1633,7 @@
     "id": 97,
     "theme": "Droits & devoirs",
     "question": "La peine de mort en France est :",
-    "answer": "Abolie depuis 1981 (loi Badinter) et inscrite dans la Constitution depuis 2007",
+    "answer": "Abolie depuis 1981 et inscrite dans la Constitution depuis 2007",
     "distractors": [
       "Applicable pour les crimes terroristes avérés",
       "Suspendue mais pas officiellement abolie",
@@ -1941,16 +1939,16 @@
     "id": 115,
     "theme": "Histoire",
     "question": "Qui était Napoléon Ier ?",
-    "answer": "Un général de la Révolution devenu Consul puis Empereur des Français (1804-1815)",
+    "answer": "Un général de la Révolution devenu Empereur des Français",
     "distractors": [
-      "Louis XVI",
-      "Voltaire",
-      "Louis-Napoléon Bonaparte",
-      "Horatio Nelson",
-      "Maximilien Robespierre",
-      "Charles de Gaulle",
-      "Clovis Ier",
-      "Ferdinand Foch"
+      "Un roi de France renversé par la Révolution française",
+      "Un philosophe des Lumières critique de l'absolutisme",
+      "Un général britannique vainqueur de la bataille de Trafalgar",
+      "Un révolutionnaire chef du Comité de salut public",
+      "Un président du Conseil devenu chef de la France libre",
+      "Un roi des Francs fondateur de la première dynastie royale",
+      "Un maréchal de France commandant des armées alliées en 1918",
+      "Un neveu d'Empereur devenu président puis Empereur des Français"
     ],
     "explanation": "Napoléon Bonaparte (1769-1821) fut général de la Révolution, Premier Consul (1799-1804) puis Empereur des Français (1804-1815). Il a réformé l'administration française (Code civil, Légion d'honneur, lycées), mais fut vaincu à Waterloo en 1815."
   },
@@ -1958,7 +1956,7 @@
     "id": 116,
     "theme": "Histoire",
     "question": "Lequel de ces personnages historiques est français ?",
-    "answer": "Victor Hugo, écrivain et auteur des Misérables",
+    "answer": "Victor Hugo",
     "distractors": [
       "William Shakespeare",
       "Miguel de Cervantes",
@@ -1975,7 +1973,7 @@
     "id": 117,
     "theme": "Histoire",
     "question": "Dans quelle République est-on aujourd'hui en France ?",
-    "answer": "La Ve République, depuis 1958",
+    "answer": "La Ve République",
     "distractors": [
       "La IVe République",
       "La IIIe République",
@@ -2077,7 +2075,7 @@
     "id": 123,
     "theme": "Histoire",
     "question": "En quelle année a été créée la Communauté Économique Européenne (CEE), ancêtre de l'UE ?",
-    "answer": "1957 (Traité de Rome, 25 mars)",
+    "answer": "1957",
     "distractors": [
       "1945",
       "1950",
@@ -2094,7 +2092,7 @@
     "id": 124,
     "theme": "Histoire",
     "question": "Le 11 novembre est un jour férié. À quoi correspond cette date ?",
-    "answer": "L'armistice de la Première Guerre mondiale, signé le 11 novembre 1918",
+    "answer": "L'armistice de la Première Guerre mondiale",
     "distractors": [
       "La libération de Paris en août 1944",
       "La fin de la Seconde Guerre mondiale",
@@ -2111,7 +2109,7 @@
     "id": 125,
     "theme": "Histoire",
     "question": "Qui a été le premier Président élu sous la Ve République ?",
-    "answer": "Charles de Gaulle (élu en décembre 1958)",
+    "answer": "Charles de Gaulle",
     "distractors": [
       "Georges Pompidou",
       "Valéry Giscard d'Estaing",
@@ -2128,7 +2126,7 @@
     "id": 126,
     "theme": "Histoire",
     "question": "En quelle année l'esclavage a-t-il été aboli définitivement en France ?",
-    "answer": "1848 (sous la IIe République, grâce à Victor Schoelcher)",
+    "answer": "1848",
     "distractors": [
       "1789",
       "1794",
@@ -2145,7 +2143,7 @@
     "id": 127,
     "theme": "Histoire",
     "question": "Depuis quelle année l'école publique est-elle gratuite en France ?",
-    "answer": "1881 (loi Jules Ferry sur la gratuité de l'enseignement primaire)",
+    "answer": "1881",
     "distractors": [
       "1789",
       "1848",
@@ -2162,7 +2160,7 @@
     "id": 128,
     "theme": "Histoire",
     "question": "Combien y a-t-il eu de Républiques en France ?",
-    "answer": "Cinq Républiques (Ire, IIe, IIIe, IVe et Ve)",
+    "answer": "Cinq Républiques",
     "distractors": [
       "Deux Républiques",
       "Trois Républiques",
@@ -2196,7 +2194,7 @@
     "id": 130,
     "theme": "Histoire",
     "question": "Qui a fondé la Ve République ?",
-    "answer": "Le général Charles de Gaulle, en 1958",
+    "answer": "Le général Charles de Gaulle",
     "distractors": [
       "Georges Pompidou",
       "François Mitterrand",
@@ -2230,7 +2228,7 @@
     "id": 132,
     "theme": "Histoire",
     "question": "Quelle guerre a eu lieu entre 1914 et 1918 ?",
-    "answer": "La Première Guerre mondiale (la Grande Guerre)",
+    "answer": "La Première Guerre mondiale",
     "distractors": [
       "La Seconde Guerre mondiale",
       "La guerre franco-prussienne",
@@ -2264,16 +2262,16 @@
     "id": 134,
     "theme": "Géographie",
     "question": "Quel fleuve coule en France ?",
-    "answer": "La Loire (le plus long fleuve de France, 1 013 km)",
+    "answer": "La Loire",
     "distractors": [
-      "Le Rhin",
       "Le Danube",
       "La Tamise",
-      "L'Ebre",
+      "L'Elbe",
       "Le Tibre",
       "Le Tage",
       "La Volga",
-      "Le Nil"
+      "Le Nil",
+      "L'Amazone"
     ],
     "explanation": "La Loire est le plus long fleuve de France (1 013 km), qui prend sa source en Ardèche et se jette dans l'Atlantique à Saint-Nazaire. D'autres fleuves français sont la Seine (traversant Paris), le Rhône, la Garonne et le Rhin (frontière avec l'Allemagne)."
   },
@@ -2281,7 +2279,7 @@
     "id": 135,
     "theme": "Géographie",
     "question": "Quelle ville est française ?",
-    "answer": "Lyon, deuxième ville de France",
+    "answer": "Lyon",
     "distractors": [
       "Madrid",
       "Genève",
@@ -2315,7 +2313,7 @@
     "id": 137,
     "theme": "Géographie",
     "question": "Qu'est-ce que Paris ?",
-    "answer": "La capitale et la plus grande ville de France, siège des institutions républicaines",
+    "answer": "La capitale de la France",
     "distractors": [
       "Une région administrative du nord de la France",
       "La deuxième ville de France après Lyon",
@@ -2349,7 +2347,7 @@
     "id": 139,
     "theme": "Géographie",
     "question": "Sur quel continent se situe la France métropolitaine ?",
-    "answer": "En Europe (Europe occidentale)",
+    "answer": "En Europe occidentale",
     "distractors": [
       "En Afrique",
       "En Amérique du Nord",
@@ -2366,7 +2364,7 @@
     "id": 140,
     "theme": "Géographie",
     "question": "Quelle île est un département d'outre-mer français ?",
-    "answer": "La Martinique (île des Antilles)",
+    "answer": "La Martinique",
     "distractors": [
       "Madagascar",
       "La Jamaïque",
@@ -2400,16 +2398,16 @@
     "id": 142,
     "theme": "Géographie",
     "question": "Quelle ville française est un grand port maritime ?",
-    "answer": "Marseille (premier port de commerce français, sur la Méditerranée)",
+    "answer": "Marseille",
     "distractors": [
-      "Paris (ville enclavée sans accès à la mer)",
-      "Strasbourg (ville rhénane sans port maritime)",
-      "Lyon (ville au confluent du Rhône et de la Saône)",
-      "Toulouse (ville de l'Occitanie sans accès à la mer)",
-      "Dijon (ville de Bourgogne enclavée)",
-      "Clermont-Ferrand (ville du Massif central)",
-      "Limoges (ville du Limousin sans port)",
-      "Grenoble (ville des Alpes sans accès maritime)"
+      "Paris",
+      "Strasbourg",
+      "Lyon",
+      "Toulouse",
+      "Dijon",
+      "Clermont-Ferrand",
+      "Limoges",
+      "Grenoble"
     ],
     "explanation": "Marseille est le premier port de commerce de France (et de Méditerranée) et le troisième port européen. Fondée par les Grecs vers 600 av. J.-C. (Massalia), c'est la deuxième ville de France. Le port de Le Havre, sur la Manche, est le premier port de conteneurs français."
   },
@@ -2434,7 +2432,7 @@
     "id": 144,
     "theme": "Géographie",
     "question": "Quelle ville est située au bord de la mer Méditerranée ?",
-    "answer": "Nice (sur la Côte d'Azur)",
+    "answer": "Nice",
     "distractors": [
       "Bordeaux",
       "Brest",
@@ -2468,7 +2466,7 @@
     "id": 146,
     "theme": "Géographie",
     "question": "Quelle chaîne de montagnes est située entre la France et l'Italie ?",
-    "answer": "Les Alpes (avec le Mont-Blanc, 4 808 m, point culminant d'Europe occidentale)",
+    "answer": "Les Alpes",
     "distractors": [
       "Les Pyrénées",
       "Les Vosges",
@@ -2485,16 +2483,16 @@
     "id": 147,
     "theme": "Culture",
     "question": "Qui était Molière ?",
-    "answer": "Un grand dramaturge et comédien français du XVIIe siècle (Le Misanthrope, Tartuffe, L'Avare)",
+    "answer": "Un dramaturge et comédien français du XVIIe siècle",
     "distractors": [
-      "Claude Monet",
-      "Voltaire",
-      "Lazare Carnot",
-      "Victor Hugo",
-      "Émile Zola",
-      "Jean-Baptiste Lully",
-      "Michel-Ange",
-      "Jules Hardouin-Mansart"
+      "Un peintre impressionniste français du XIXe siècle",
+      "Un philosophe et écrivain des Lumières du XVIIIe siècle",
+      "Un compositeur et musicien à la cour de Louis XIV",
+      "Un architecte royal concepteur du château de Versailles",
+      "Un romancier naturaliste français du XIXe siècle",
+      "Un poète et romancier chef de file du romantisme français",
+      "Un sculpteur et peintre de la Renaissance italienne",
+      "Un mathématicien et homme politique de la Révolution française"
     ],
     "explanation": "Molière (Jean-Baptiste Poquelin, 1622-1673) est l'un des plus grands auteurs de la littérature française. Dramaturge et comédien, il a écrit des comédies qui mettent en scène les travers humains : Tartuffe, Le Misanthrope, L'Avare, Le Bourgeois Gentilhomme, Les Femmes savantes…"
   },
@@ -2502,16 +2500,16 @@
     "id": 148,
     "theme": "Culture",
     "question": "Qui était Charles Baudelaire ?",
-    "answer": "Un poète français du XIXe siècle, auteur des Fleurs du Mal (1857)",
+    "answer": "Un poète français du XIXe siècle",
     "distractors": [
-      "Claude Monet",
-      "Voltaire",
-      "Maréchal Ney",
-      "Honoré de Balzac",
-      "Molière",
-      "Frédéric Chopin",
-      "Auguste Rodin",
-      "Gustave Eiffel"
+      "Un peintre impressionniste français du XIXe siècle",
+      "Un philosophe et écrivain des Lumières du XVIIIe siècle",
+      "Un maréchal d'Empire chef militaire de Napoléon Ier",
+      "Un romancier français auteur de La Comédie humaine",
+      "Un dramaturge et comédien français du XVIIe siècle",
+      "Un compositeur polonais installé en France au XIXe siècle",
+      "Un sculpteur français auteur du Penseur",
+      "Un ingénieur français concepteur de la tour éponyme"
     ],
     "explanation": "Charles Baudelaire (1821-1867) est l'un des plus grands poètes français. Son recueil Les Fleurs du Mal (1857), d'abord censuré pour immoralité, est aujourd'hui considéré comme un chef-d'œuvre de la poésie moderne. Il a également traduit Edgar Allan Poe en français."
   },
@@ -2519,16 +2517,16 @@
     "id": 149,
     "theme": "Culture",
     "question": "Qui était George Sand ?",
-    "answer": "Une romancière française du XIXe siècle, figure du féminisme et de la littérature romantique",
+    "answer": "Une romancière française du XIXe siècle",
     "distractors": [
-      "Marie-Antoinette",
-      "Berthe Morisot",
-      "Lucie Aubrac",
-      "Marie Curie",
-      "La Champmeslé",
-      "Pauline Viardot",
-      "Marguerite Yourcenar",
-      "Simone Weil"
+      "Une reine de France exécutée pendant la Révolution",
+      "Une peintre impressionniste française du XIXe siècle",
+      "Une résistante française de la Seconde Guerre mondiale",
+      "Une scientifique française double lauréate du prix Nobel",
+      "Une comédienne française de la troupe de Molière",
+      "Une cantatrice franco-espagnole du XIXe siècle",
+      "Une romancière française du XXe siècle élue à l'Académie française",
+      "Une philosophe et mystique française du XXe siècle"
     ],
     "explanation": "George Sand (pseudonyme d'Aurore Dupin, 1804-1876) est une grande romancière française romantique, auteure de La Mare au Diable, Indiana, La Petite Fadette… Figure pionnière du féminisme, elle fut la compagne du compositeur Chopin et s'engagea politiquement pour les droits des femmes et des travailleurs."
   },
@@ -2536,92 +2534,87 @@
     "id": 150,
     "theme": "Culture",
     "question": "Qui était Simone de Beauvoir ?",
-    "answer": "Une philosophe et écrivaine française, figure majeure du féminisme (Le Deuxième Sexe, 1949)",
+    "answer": "Une philosophe et écrivaine française, figure majeure du féminisme",
     "distractors": [
-      "Marie-Antoinette",
-      "Lucie Aubrac",
-      "Marie Curie",
-      "Alice Guy",
-      "Simone Veil",
-      "Marie Laurencin",
-      "Louise Michel",
-      "Simone Weil"
+      "Une reine de France exécutée pendant la Révolution",
+      "Une résistante française de la Seconde Guerre mondiale",
+      "Une scientifique française double lauréate du prix Nobel",
+      "Une pionnière du cinéma française du début du XXe siècle",
+      "Une femme politique française auteure de la loi sur l'IVG",
+      "Une peintre française proche du mouvement cubiste",
+      "Une militante anarchiste française de la Commune de Paris",
+      "Une philosophe et mystique française du XXe siècle"
     ],
     "explanation": "Simone de Beauvoir (1908-1986) était une philosophe existentialiste, romancière et féministe française. Son œuvre maîtresse, Le Deuxième Sexe (1949), analyse la condition des femmes dans la société et a profondément influencé le féminisme mondial. Elle était la compagne de Jean-Paul Sartre."
-  },
-  {
-    "id": 151,
-    "theme": "Culture",
-    "question": "Qui était Albert Camus ?",
-    "answer": "Un écrivain et philosophe français né en Algérie, prix Nobel de littérature 1957 (L'Étranger, La Peste)",
-    "distractors": [
-      "Charles de Gaulle",
-      "Pablo Picasso",
-      "Pierre Boulez",
-      "Léon Blum",
-      "Le Corbusier",
-      "Frédéric Joliot-Curie",
-      "François Truffaut",
-      "René Cassin"
-    ],
-    "explanation": "Albert Camus (1913-1960) était un écrivain et philosophe né à Mondovi (Algérie française). Auteur de L'Étranger (1942), La Peste (1947) et de nombreux essais, il a reçu le prix Nobel de littérature en 1957. Sa pensée explore l'absurde, la révolte et la justice."
-  },
+  },{
+  "id": 151,
+  "theme": "Culture",
+  "question": "Qui était Albert Camus ?",
+  "answer": "Un écrivain et philosophe français né en Algérie, prix Nobel de littérature",
+  "distractors": [
+    "Un général et homme d'État français, chef de la France libre",
+    "Un peintre espagnol naturalisé français, fondateur du cubisme",
+    "Un compositeur et chef d'orchestre français du XXe siècle",
+    "Un homme politique français, président du Conseil sous la IIIe République",
+    "Un architecte franco-suisse pionnier du modernisme",
+    "Un physicien français, pionnier de la recherche nucléaire",
+    "Un cinéaste français fondateur de la Nouvelle Vague",
+    "Un juriste français père de la Déclaration universelle des droits de l'homme"
+  ]
+},
   {
     "id": 152,
     "theme": "Culture",
     "question": "Qui était Paul Cézanne ?",
-    "answer": "Un peintre français post-impressionniste du XIXe siècle, pionnier de l'art moderne",
+    "answer": "Un peintre français post-impressionniste du XIXe siècle",
     "distractors": [
-      "Paul Verlaine",
-      "Jean-Baptiste Carpeaux",
-      "Claude Debussy",
-      "Auguste Comte",
-      "Maréchal Ney",
-      "Émile Zola",
-      "François Truffaut",
-      "Hector Guimard"
-    ],
-    "explanation": "Paul Cézanne (1839-1906) est un peintre français originaire d'Aix-en-Provence, considéré comme le père de l'art moderne. Son œuvre, notamment ses séries sur la Montagne Sainte-Victoire et ses Grandes Baigneuses, a influencé le cubisme et les avant-gardes du XXe siècle."
+      "Un poète français symboliste du XIXe siècle",
+      "Un sculpteur français auteur de La Danse",
+      "Un compositeur français fondateur du symbolisme musical",
+      "Un philosophe français fondateur du positivisme",
+      "Un maréchal d'Empire chef militaire de Napoléon Ier",
+      "Un romancier naturaliste français du XIXe siècle",
+      "Un cinéaste français fondateur de la Nouvelle Vague",
+      "Un architecte français créateur des entrées du métro parisien"
+    ]
   },
   {
     "id": 153,
     "theme": "Culture",
     "question": "Qui était Marc Chagall ?",
-    "answer": "Un peintre et artiste franco-russe (naturalisé français) du XXe siècle, au style poétique et coloré",
+    "answer": "Un peintre franco-russe naturalisé français du XXe siècle",
     "distractors": [
-      "Camille Saint-Saëns",
-      "André Gide",
-      "Ferdinand Foch",
-      "Jean-Paul Sartre",
-      "Jean-Luc Godard",
-      "Jean-Baptiste Carpeaux",
-      "Renzo Piano",
-      "Stéphane Mallarmé"
-    ],
-    "explanation": "Marc Chagall (1887-1985) était un peintre et artiste né en Russie (actuellement en Biélorussie) qui a obtenu la nationalité française. Installé en France, il est connu pour ses peintures poétiques et colorées aux thèmes bibliques et folkloriques. Il a réalisé les plafonds de l'Opéra de Paris."
+      "Un compositeur français romantique du XIXe siècle",
+      "Un écrivain et philosophe français prix Nobel de littérature",
+      "Un maréchal de France commandant des armées alliées en 1918",
+      "Un philosophe existentialiste français du XXe siècle",
+      "Un cinéaste franco-suisse fondateur de la Nouvelle Vague",
+      "Un sculpteur français du XIXe siècle auteur de bustes célèbres",
+      "Un architecte italien concepteur du Centre Pompidou",
+      "Un poète symboliste français du XIXe siècle"
+    ]
   },
   {
     "id": 154,
     "theme": "Culture",
     "question": "Qui était Joséphine Baker ?",
-    "answer": "Une artiste américaine naturalisée française, résistante pendant la guerre, entrée au Panthéon en 2021",
+    "answer": "Une artiste américaine naturalisée française, résistante et entrée au Panthéon",
     "distractors": [
-      "Marie-Antoinette",
-      "Hélène Boucher",
-      "Simone de Beauvoir",
-      "Suzanne Valadon",
-      "Clara Barton",
-      "Marguerite Yourcenar",
-      "Marie Curie",
-      "Marie Taglioni"
-    ],
-    "explanation": "Joséphine Baker (1906-1975) était une danseuse, chanteuse et meneuse de revue américaine naturalisée française, star de music-hall à Paris dans les années 1920-1930. Elle fut également résistante active pendant la Seconde Guerre mondiale. En novembre 2021, elle est entrée au Panthéon, sixième femme à y être honorée."
+      "Une reine de France exécutée pendant la Révolution",
+      "Une aviatrice française pionnière du début du XXe siècle",
+      "Une philosophe et écrivaine française figure du féminisme",
+      "Une peintre française modèle puis artiste du mouvement impressionniste",
+      "Une infirmière américaine fondatrice de la Croix-Rouge",
+      "Une romancière française du XXe siècle élue à l'Académie française",
+      "Une scientifique française double lauréate du prix Nobel",
+      "Une danseuse italienne fondatrice du ballet romantique"
+    ]
   },
   {
     "id": 155,
     "theme": "Culture",
     "question": "Qui était une chanteuse française célèbre ?",
-    "answer": "Édith Piaf, surnommée 'La Môme', mondialement connue pour La Vie en rose",
+    "answer": "Édith Piaf",
     "distractors": [
       "Camille Claudel",
       "Simone de Beauvoir",
@@ -2638,7 +2631,7 @@
     "id": 156,
     "theme": "Culture",
     "question": "Qu'est-ce que le Louvre ?",
-    "answer": "Le plus grand musée du monde, situé à Paris, ancien palais royal (Joconde, Vénus de Milo…)",
+    "answer": "Le plus grand musée du monde",
     "distractors": [
       "Le palais présidentiel de la République française",
       "L'ancien parlement royal du Royaume de France",
@@ -2655,16 +2648,16 @@
     "id": 157,
     "theme": "Culture",
     "question": "Qui était Jean de la Fontaine ?",
-    "answer": "Un poète et fabuliste français du XVIIe siècle, auteur des célèbres Fables",
+    "answer": "Un poète et fabuliste français du XVIIe siècle",
     "distractors": [
-      "Nicolas Poussin",
-      "Voltaire",
-      "Lazare Carnot",
-      "Honoré de Balzac",
-      "Molière",
-      "Jean-Baptiste Lully",
-      "Antoine Coysevox",
-      "François Mansart"
+      "Un peintre français classique du XVIIe siècle",
+      "Un philosophe et écrivain des Lumières du XVIIIe siècle",
+      "Un mathématicien et homme politique de la Révolution française",
+      "Un romancier français auteur de La Comédie humaine",
+      "Un dramaturge et comédien français du XVIIe siècle",
+      "Un compositeur et musicien à la cour de Louis XIV",
+      "Un sculpteur français de la cour de Louis XIV",
+      "Un architecte français du XVIIe siècle concepteur de grands châteaux"
     ],
     "explanation": "Jean de la Fontaine (1621-1695) est un poète français du siècle de Louis XIV, célèbre pour ses Fables (12 livres), courtes histoires mettant en scène des animaux pour illustrer des maximes morales. La Cigale et la Fourmi, Le Corbeau et le Renard sont parmi les plus connues."
   },
@@ -2672,7 +2665,7 @@
     "id": 158,
     "theme": "Culture",
     "question": "Quel écrivain est français ?",
-    "answer": "Marcel Proust, auteur d'À la recherche du temps perdu",
+    "answer": "Marcel Proust",
     "distractors": [
       "Franz Kafka",
       "Fiodor Dostoïevski",
@@ -2757,7 +2750,7 @@
     "id": 163,
     "theme": "Vie en société",
     "question": "Après avoir obtenu le permis de conduire, que faut-il faire pour pouvoir conduire sa voiture ?",
-    "answer": "Assurer son véhicule (l'assurance responsabilité civile est obligatoire)",
+    "answer": "Assurer son véhicule",
     "distractors": [
       "Payer une taxe annuelle spéciale à la préfecture",
       "Obtenir une vignette de contrôle technique valide",
@@ -2876,7 +2869,7 @@
     "id": 170,
     "theme": "Vie en société",
     "question": "Quelle est la durée légale du temps de travail par semaine en France ?",
-    "answer": "35 heures par semaine (depuis la loi Aubry de 2000)",
+    "answer": "35 heures par semaine",
     "distractors": [
       "32 heures par semaine",
       "39 heures par semaine",
@@ -2944,7 +2937,7 @@
     "id": 174,
     "theme": "Vie en société",
     "question": "À partir de quel âge un mineur peut-il travailler en France ?",
-    "answer": "16 ans en règle générale (fin de la scolarité obligatoire)",
+    "answer": "16 ans en règle générale",
     "distractors": [
       "12 ans avec accord parental",
       "14 ans sans restriction",
@@ -3114,7 +3107,7 @@
     "id": 184,
     "theme": "Vie en société",
     "question": "Jusqu'à quel âge l'école est-elle obligatoire en France ?",
-    "answer": "16 ans (l'école est obligatoire de 3 à 16 ans)",
+    "answer": "16 ans",
     "distractors": [
       "14 ans",
       "15 ans",
