@@ -1,73 +1,77 @@
-# React + TypeScript + Vite
+# Test Civique 🇫🇷
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[![Netlify Status](https://api.netlify.com/api/v1/badges/placeholder/deploy-status)](https://test-civique.netlify.app)
 
-Currently, two official plugins are available:
+Application de préparation à l'examen civique requis pour l'obtention d'un titre de séjour pluriannuel, d'une carte de résident ou de la nationalité française.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## Fonctionnalités
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Examen blanc** — 40 questions tirées aléatoirement, timer global de 40 minutes. Deux modes au choix : questions classiques uniquement (191 questions officielles) ou avec les mises en situation (291 questions). La progression est sauvegardée automatiquement et peut être reprise depuis la page d'accueil.
+- **Mode révision** — listing complet des questions organisées par thème, avec la bonne réponse et une explication pour chacune. Filtres par thème et par type de question.
+- **Historique des examens** — les résultats passés sont conservés localement et accessibles depuis la page d'accueil.
+- **Dark mode** — thème clair/sombre persistant via `localStorage`.
 
-## Expanding the ESLint configuration
+## Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+| Outil | Rôle |
+|---|---|
+| [React](https://react.dev) + [TypeScript](https://www.typescriptlang.org) | Interface et logique applicative |
+| [Vite](https://vitejs.dev) | Bundler et serveur de développement |
+| [shadcn/ui](https://ui.shadcn.com) + [Tailwind CSS](https://tailwindcss.com) | Composants et styles |
+| [Vitest](https://vitest.dev) + [React Testing Library](https://testing-library.com) | Tests unitaires et d'intégration |
+| [Netlify](https://www.netlify.com) | Déploiement continu depuis `main` |
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Lancer le projet en local
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+git clone https://github.com/neewom/test-civique.git
+cd test-civique
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+L'application est disponible sur `http://localhost:5173`.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Pour lancer les tests :
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm test
 ```
+
+## Structure du projet
+
+```
+src/
+├── data/         Questions au format JSON
+├── lib/          Logique métier (types, gestion de la progression, utilitaires)
+├── pages/        Pages React (Home, Examen, Révision, Historique…)
+└── components/   Composants UI réutilisables (shadcn/ui + surcharges)
+```
+
+## Données
+
+Les questions sont définies dans `src/data/questions.json`. Le fichier peut être modifié manuellement pour ajouter, corriger ou supprimer des questions.
+
+Format d'une question :
+
+```json
+{
+  "id": 1,
+  "theme": "République & valeurs",
+  "question": "Quelle est la devise de la République française ?",
+  "answers": ["Liberté, Égalité, Fraternité"],
+  "distractors": ["Unité, Foi, Travail", "Liberté, Sécurité, Propriété", "Égalité, Justice, Paix"],
+  "explanation": "La devise « Liberté, Égalité, Fraternité » est inscrite dans la Constitution de 1958."
+}
+```
+
+| Champ | Description |
+|---|---|
+| `id` | Identifiant unique (entier). Les IDs 1–191 désignent les questions officielles ; 192 et au-delà désignent les mises en situation. |
+| `theme` | Thème de la question (utilisé pour les filtres en mode révision). |
+| `question` | Intitulé de la question. |
+| `answers` | Tableau des bonnes réponses (une ou plusieurs selon la question). |
+| `distractors` | Propositions incorrectes affichées comme choix. |
+| `explanation` | Explication affichée après validation de la réponse. |
