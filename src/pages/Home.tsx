@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { formatTime } from './Examen'
 import { loadProgress, clearProgress } from '@/lib/exam-types'
@@ -31,13 +31,29 @@ function getScoreColor(pct: number): string {
 export default function Home() {
   const navigate = useNavigate()
   const history = getRecentHistory()
-  const [excludeSituational, setExcludeSituational] = useState(false)
+  const [examExpanded, setExamExpanded] = useState(false)
   const [inProgress, setInProgress] = useState<ExamInProgress | null>(() => loadProgress())
+  const examCardRef = useRef<HTMLDivElement>(null)
+
+  // Ferme la card si clic en dehors
+  useEffect(() => {
+    if (!examExpanded) return
+    function handleClickOutside(e: MouseEvent) {
+      if (examCardRef.current && !examCardRef.current.contains(e.target as Node)) {
+        setExamExpanded(false)
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside)
+    return () => document.removeEventListener('mousedown', handleClickOutside)
+  }, [examExpanded])
 
   function handleDeleteProgress() {
     clearProgress()
     setInProgress(null)
   }
+
+  const subOptionClass =
+    'w-full rounded-lg border border-[#1a56db]/30 bg-[#1a56db]/5 px-5 py-3 text-left transition-colors hover:bg-[#1a56db]/10 hover:border-[#1a56db]/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1a56db] dark:border-[#1a56db]/40 dark:bg-[#1a56db]/10 dark:hover:bg-[#1a56db]/20'
 
   return (
     <div role="main" className="min-h-screen bg-background text-foreground flex flex-col items-center px-4 py-16">
@@ -54,11 +70,18 @@ export default function Home() {
 
         {/* Cards */}
         <div className="flex flex-col gap-4">
-          <div className="flex flex-col gap-2">
+
+          {/* Examen blanc — card expansible */}
+          <div ref={examCardRef} className="flex flex-col">
             <button
               aria-label="Démarrer un examen blanc"
-              onClick={() => navigate('/examen', { state: { excludeSituational } })}
-              className="group w-full rounded-xl border border-[#1a56db]/30 bg-[#1a56db]/5 px-8 py-6 text-left transition-all hover:bg-[#1a56db]/10 hover:border-[#1a56db]/60 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1a56db] dark:border-[#1a56db]/40 dark:bg-[#1a56db]/10 dark:hover:bg-[#1a56db]/20"
+              aria-expanded={examExpanded}
+              onClick={() => setExamExpanded((v) => !v)}
+              className={`group w-full rounded-xl border px-8 py-6 text-left transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1a56db] ${
+                examExpanded
+                  ? 'rounded-b-none border-[#1a56db]/60 bg-[#1a56db]/10 dark:bg-[#1a56db]/20'
+                  : 'border-[#1a56db]/30 bg-[#1a56db]/5 hover:bg-[#1a56db]/10 hover:border-[#1a56db]/60 hover:shadow-md dark:border-[#1a56db]/40 dark:bg-[#1a56db]/10 dark:hover:bg-[#1a56db]/20'
+              }`}
             >
               <div className="flex items-center gap-4">
                 <span className="text-3xl" aria-hidden="true">📝</span>
@@ -66,21 +89,42 @@ export default function Home() {
                   <p className="font-semibold text-base text-[#1a56db] dark:text-blue-400">Examen blanc</p>
                   <p className="mt-0.5 text-sm text-muted-foreground">40 questions · 40 minutes</p>
                 </div>
+                <span
+                  className={`ml-auto text-[#1a56db] dark:text-blue-400 transition-transform duration-200 ${examExpanded ? 'rotate-180' : ''}`}
+                  aria-hidden="true"
+                >
+                  ▾
+                </span>
               </div>
             </button>
-            <label className="flex items-center gap-2 cursor-pointer px-1 py-1 select-none w-fit">
-              <input
-                type="checkbox"
-                checked={excludeSituational}
-                onChange={(e) => setExcludeSituational(e.target.checked)}
-                className="h-4 w-4 rounded border-border accent-[#1a56db] cursor-pointer"
-              />
-              <span className="text-sm text-muted-foreground">
-                Exclure les questions de mise en situation
-              </span>
-            </label>
+
+            {/* Sous-options */}
+            <div
+              aria-hidden={!examExpanded}
+              className={`overflow-hidden transition-all duration-200 ${examExpanded ? 'max-h-56' : 'max-h-0'}`}
+            >
+              <div className="rounded-b-xl border border-t-0 border-[#1a56db]/60 bg-[#1a56db]/5 px-4 py-3 flex flex-col gap-2 dark:bg-[#1a56db]/10">
+                <button
+                  aria-label="Lancer un examen avec les questions classiques uniquement"
+                  onClick={() => navigate('/examen', { state: { excludeSituational: true } })}
+                  className={subOptionClass}
+                >
+                  <p className="font-medium text-sm text-[#1a56db] dark:text-blue-400">Questions classiques</p>
+                  <p className="text-xs text-muted-foreground mt-0.5">191 questions officielles</p>
+                </button>
+                <button
+                  aria-label="Lancer un examen avec les mises en situation"
+                  onClick={() => navigate('/examen', { state: { excludeSituational: false } })}
+                  className={subOptionClass}
+                >
+                  <p className="font-medium text-sm text-[#1a56db] dark:text-blue-400">Avec mises en situation</p>
+                  <p className="text-xs text-muted-foreground mt-0.5">Inclut les 100 questions situationnelles</p>
+                </button>
+              </div>
+            </div>
           </div>
 
+          {/* Mode révision */}
           <button
             aria-label="Accéder au mode révision"
             onClick={() => navigate('/revision')}
