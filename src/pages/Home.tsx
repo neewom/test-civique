@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 interface QuizResult {
@@ -27,6 +28,7 @@ function getScoreColor(pct: number): string {
 export default function Home() {
   const navigate = useNavigate()
   const history = getRecentHistory()
+  const [excludeSituational, setExcludeSituational] = useState(false)
 
   return (
     <div role="main" className="min-h-screen bg-background text-foreground flex flex-col items-center px-4 py-16">
@@ -43,19 +45,32 @@ export default function Home() {
 
         {/* Cards */}
         <div className="flex flex-col gap-4">
-          <button
-            aria-label="Démarrer un examen blanc"
-            onClick={() => navigate('/examen')}
-            className="group w-full rounded-xl border border-[#1a56db]/30 bg-[#1a56db]/5 px-8 py-6 text-left transition-all hover:bg-[#1a56db]/10 hover:border-[#1a56db]/60 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1a56db] dark:border-[#1a56db]/40 dark:bg-[#1a56db]/10 dark:hover:bg-[#1a56db]/20"
-          >
-            <div className="flex items-center gap-4">
-              <span className="text-3xl" aria-hidden="true">📝</span>
-              <div>
-                <p className="font-semibold text-base text-[#1a56db] dark:text-blue-400">Examen blanc</p>
-                <p className="mt-0.5 text-sm text-muted-foreground">40 questions · 40 minutes</p>
+          <div className="flex flex-col gap-2">
+            <button
+              aria-label="Démarrer un examen blanc"
+              onClick={() => navigate('/examen', { state: { excludeSituational } })}
+              className="group w-full rounded-xl border border-[#1a56db]/30 bg-[#1a56db]/5 px-8 py-6 text-left transition-all hover:bg-[#1a56db]/10 hover:border-[#1a56db]/60 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1a56db] dark:border-[#1a56db]/40 dark:bg-[#1a56db]/10 dark:hover:bg-[#1a56db]/20"
+            >
+              <div className="flex items-center gap-4">
+                <span className="text-3xl" aria-hidden="true">📝</span>
+                <div>
+                  <p className="font-semibold text-base text-[#1a56db] dark:text-blue-400">Examen blanc</p>
+                  <p className="mt-0.5 text-sm text-muted-foreground">40 questions · 40 minutes</p>
+                </div>
               </div>
-            </div>
-          </button>
+            </button>
+            <label className="flex items-center gap-2 cursor-pointer px-1 py-1 select-none w-fit">
+              <input
+                type="checkbox"
+                checked={excludeSituational}
+                onChange={(e) => setExcludeSituational(e.target.checked)}
+                className="h-4 w-4 rounded border-border accent-[#1a56db] cursor-pointer"
+              />
+              <span className="text-sm text-muted-foreground">
+                Exclure les questions de mise en situation
+              </span>
+            </label>
+          </div>
 
           <button
             aria-label="Accéder au mode révision"

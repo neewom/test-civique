@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useLocation } from 'react-router-dom'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
@@ -105,7 +105,15 @@ type Phase = 'question' | 'pending' | 'correction' | 'result'
 
 export default function Examen() {
   const navigate = useNavigate()
-  const [questions] = useState<ExamQuestion[]>(() => buildExam())
+  const location = useLocation()
+  const excludeSituational =
+    (location.state as { excludeSituational?: boolean } | null)?.excludeSituational ?? false
+  const [questions] = useState<ExamQuestion[]>(() => {
+    const pool = excludeSituational
+      ? (allQuestions as Question[]).filter((q) => q.id <= 191)
+      : (allQuestions as Question[])
+    return buildExam(pool)
+  })
   const [index, setIndex] = useState(0)
   const [score, setScore] = useState(0)
   const [globalTimeLeft, setGlobalTimeLeft] = useState(GLOBAL_EXAM_TIME)

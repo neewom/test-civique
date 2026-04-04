@@ -24,22 +24,28 @@ function themeColor(theme: string) {
   return THEME_COLORS[theme] ?? 'bg-gray-100 text-gray-700 dark:bg-gray-800/40 dark:text-gray-300'
 }
 
-const allQuestions = questions as Question[]
-const themes = [...new Set(allQuestions.map((q) => q.theme))]
-
-const byTheme = allQuestions.reduce<Record<string, Question[]>>(
-  (acc, q) => {
-    ;(acc[q.theme] ??= []).push(q)
-    return acc
-  },
-  {}
-)
+const allQuestionsData = questions as Question[]
 
 export default function Revision() {
   const navigate = useNavigate()
   const [activeTheme, setActiveTheme] = useState<string | null>(null)
+  const [excludeSituational, setExcludeSituational] = useState(false)
 
-  const visibleThemes = activeTheme ? [activeTheme] : themes
+  const displayedQuestions = excludeSituational
+    ? allQuestionsData.filter((q) => q.id <= 191)
+    : allQuestionsData
+
+  const themes = [...new Set(displayedQuestions.map((q) => q.theme))]
+
+  const byTheme = displayedQuestions.reduce<Record<string, Question[]>>(
+    (acc, q) => {
+      ;(acc[q.theme] ??= []).push(q)
+      return acc
+    },
+    {}
+  )
+
+  const visibleThemes = activeTheme && themes.includes(activeTheme) ? [activeTheme] : themes
 
   return (
     <div role="main" className="min-h-screen bg-background flex flex-col items-center px-4 py-12">
@@ -54,11 +60,11 @@ export default function Revision() {
             ← Accueil
           </button>
           <h1 className="text-2xl font-semibold tracking-tight text-foreground">Mode révision</h1>
-          <p className="text-muted-foreground">{allQuestions.length} questions par thème</p>
+          <p className="text-muted-foreground">{displayedQuestions.length} questions par thème</p>
         </div>
 
-        {/* Filtre par thème */}
-        <div className="flex flex-wrap gap-2" role="group" aria-label="Filtrer par thème">
+        {/* Filtres */}
+        <div className="flex flex-wrap gap-2" role="group" aria-label="Filtres">
           <button
             onClick={() => setActiveTheme(null)}
             aria-pressed={activeTheme === null}
@@ -84,6 +90,20 @@ export default function Revision() {
               {theme}
             </button>
           ))}
+          <button
+            onClick={() => {
+              setExcludeSituational((v) => !v)
+              setActiveTheme(null)
+            }}
+            aria-pressed={excludeSituational}
+            className={`rounded-full px-3 py-1 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring ${
+              excludeSituational
+                ? 'bg-foreground text-background'
+                : 'bg-muted text-foreground hover:bg-muted'
+            }`}
+          >
+            Sans les questions de mise en situation
+          </button>
         </div>
 
         {/* Questions par thème */}
