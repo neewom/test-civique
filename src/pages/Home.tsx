@@ -1,5 +1,8 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { formatTime } from './Examen'
+import { loadProgress, clearProgress } from '@/lib/exam-types'
+import type { ExamInProgress } from '@/lib/exam-types'
 
 interface QuizResult {
   id?: string
@@ -29,6 +32,12 @@ export default function Home() {
   const navigate = useNavigate()
   const history = getRecentHistory()
   const [excludeSituational, setExcludeSituational] = useState(false)
+  const [inProgress, setInProgress] = useState<ExamInProgress | null>(() => loadProgress())
+
+  function handleDeleteProgress() {
+    clearProgress()
+    setInProgress(null)
+  }
 
   return (
     <div role="main" className="min-h-screen bg-background text-foreground flex flex-col items-center px-4 py-16">
@@ -86,6 +95,56 @@ export default function Home() {
             </div>
           </button>
         </div>
+
+        {/* Examen en cours */}
+        {inProgress && (
+          <section aria-label="Examen en cours" className="space-y-3">
+            <h2 className="text-sm font-medium text-foreground uppercase tracking-wider">
+              Examen en cours
+            </h2>
+            <div className="rounded-lg border border-border bg-card px-4 py-3 space-y-3">
+              <div className="flex items-center justify-between text-sm">
+                <span className="font-medium text-foreground">
+                  Question {inProgress.index + 1} / {inProgress.questions.length}
+                </span>
+                <span className="tabular-nums text-muted-foreground">
+                  {formatTime(inProgress.timeLeft)} restant
+                </span>
+              </div>
+              <div className="h-1.5 w-full rounded-full bg-muted overflow-hidden">
+                <div
+                  className={`h-full rounded-full transition-all ${getScoreColor(
+                    (inProgress.answers.filter((a) => a.correct).length /
+                      Math.max(inProgress.answers.length, 1)) * 100,
+                  )}`}
+                  style={{
+                    width: `${(inProgress.index / inProgress.questions.length) * 100}%`,
+                  }}
+                  aria-hidden="true"
+                />
+              </div>
+              <p className="text-xs text-muted-foreground">
+                {inProgress.answers.length} réponse{inProgress.answers.length !== 1 ? 's' : ''} donnée{inProgress.answers.length !== 1 ? 's' : ''}
+              </p>
+              <div className="flex gap-2 pt-1">
+                <button
+                  aria-label="Reprendre l'examen en cours"
+                  onClick={() => navigate('/examen', { state: { resume: inProgress } })}
+                  className="flex-1 rounded-lg bg-[#1a56db] px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-[#1a56db]/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1a56db]"
+                >
+                  Reprendre
+                </button>
+                <button
+                  aria-label="Supprimer l'examen en cours"
+                  onClick={handleDeleteProgress}
+                  className="rounded-lg border border-border px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                >
+                  Supprimer
+                </button>
+              </div>
+            </div>
+          </section>
+        )}
 
         {/* Historique */}
         <section aria-label="Historique des examens récents" className="space-y-3">

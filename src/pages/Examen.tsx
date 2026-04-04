@@ -13,10 +13,14 @@ import {
   DialogTitle,
 } from '@/components/ui/dialog'
 import allQuestions from '@/data/questions.json'
-import type { AnswerRecord, ExamRecord } from '@/lib/exam-types'
+import type { AnswerRecord, ExamRecord, ExamQuestion, ExamInProgress } from '@/lib/exam-types'
+import { saveProgress, clearProgress } from '@/lib/exam-types'
 
 export const EXAM_SIZE = 40
 export const GLOBAL_EXAM_TIME = 40 * 60 // 2400 secondes
+
+// Re-export for consumers (tests, Home)
+export type { ExamQuestion }
 
 interface Question {
   id: number
@@ -26,15 +30,6 @@ interface Question {
   distractors: string[]
   explanation: string
   group?: string
-}
-
-export interface ExamQuestion {
-  id: number
-  theme: string
-  question: string
-  answer: string
-  choices: string[]
-  explanation: string
 }
 
 export function shuffle<T>(arr: T[]): T[] {
@@ -103,25 +98,43 @@ export function formatTime(seconds: number): string {
 // 'result'     : écran de résultat final
 type Phase = 'question' | 'pending' | 'correction' | 'result'
 
+type LocationState = {
+  resume?: ExamInProgress
+  excludeSituational?: boolean
+} | null
+
 export default function Examen() {
   const navigate = useNavigate()
   const location = useLocation()
-  const excludeSituational =
-    (location.state as { excludeSituational?: boolean } | null)?.excludeSituational ?? false
+  const locationState = location.state as LocationState
+  const resume = locationState?.resume ?? null
+
+  // Compute starting index: if we saved during 'correction' phase (answers.length > index),
+  // restore at the next unanswered question.
+  const startIndex = resume
+    ? resume.answers.length > resume.index
+      ? resume.index + 1
+      : resume.index
+    : 0
+
   const [questions] = useState<ExamQuestion[]>(() => {
+    if (resume) return resume.questions
+    const excludeSituational = locationState?.excludeSituational ?? false
     const pool = excludeSituational
       ? (allQuestions as Question[]).filter((q) => q.id <= 191)
       : (allQuestions as Question[])
     return buildExam(pool)
   })
-  const [index, setIndex] = useState(0)
-  const [score, setScore] = useState(0)
-  const [globalTimeLeft, setGlobalTimeLeft] = useState(GLOBAL_EXAM_TIME)
+  const [index, setIndex] = useState(startIndex)
+  const [globalTimeLeft, setGlobalTimeLeft] = useState(resume?.timeLeft ?? GLOBAL_EXAM_TIME)
   const [selected, setSelected] = useState<string | null>(null)
   const [phase, setPhase] = useState<Phase>('question')
   const [showQuitDialog, setShowQuitDialog] = useState(false)
-  const scoreRef = useRef(0)
-  const answersRef = useRef<AnswerRecord[]>([])
+
+  const scoreRef = useRef(resume ? resume.answers.filter((a) => a.correct).length : 0)
+  const [score, setScore] = useState(scoreRef.current)
+  const answersRef = useRef<AnswerRecord[]>(resume?.answers ?? [])
+  const startedAtRef = useRef(resume?.startedAt ?? new Date().toISOString())
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null)
 
   // Timer global — démarre une fois au montage et tourne jusqu'à la fin
@@ -134,6 +147,19 @@ export default function Examen() {
     }
   }, [])
 
+  // Sauvegarde de la progression à chaque tick du timer
+  useEffect(() => {
+    if (phase === 'result') return
+    saveProgress({
+      questions,
+      index,
+      answers: answersRef.current,
+      timeLeft: globalTimeLeft,
+      startedAt: startedAtRef.current,
+    })
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [globalTimeLeft, index])
+
   // Expiration du timer global → terminer l'examen immédiatement
   useEffect(() => {
     if (globalTimeLeft === 0 && phase !== 'result') {
@@ -145,6 +171,7 @@ export default function Examen() {
   // Termine l'examen : complète les réponses manquantes et sauvegarde
   function finishExam() {
     if (timerRef.current) clearInterval(timerRef.current)
+    clearProgress()
     const allAnswers = [...answersRef.current]
     // Questions non répondues (timer expiré avant d'y arriver)
     for (let i = allAnswers.length; i < questions.length; i++) {
@@ -172,12 +199,27 @@ export default function Examen() {
       chosen: selected,
       correct: isCorrect,
     })
+    saveProgress({
+      questions,
+      index,
+      answers: answersRef.current,
+      timeLeft: globalTimeLeft,
+      startedAt: startedAtRef.current,
+    })
     setPhase('correction')
   }
 
   function handleNext() {
     if (index < questions.length - 1) {
-      setIndex((i) => i + 1)
+      const newIndex = index + 1
+      saveProgress({
+        questions,
+        index: newIndex,
+        answers: answersRef.current,
+        timeLeft: globalTimeLeft,
+        startedAt: startedAtRef.current,
+      })
+      setIndex(newIndex)
       setSelected(null)
       setPhase('question')
     } else {
@@ -253,7 +295,7 @@ export default function Examen() {
         <DialogHeader>
           <DialogTitle>Quitter l'examen ?</DialogTitle>
           <DialogDescription>
-            Si vous quittez maintenant, votre progression sera perdue et l'examen ne sera pas sauvegardé.
+            Votre progression est sauvegardée. Vous pourrez reprendre depuis la page d'accueil.
           </DialogDescription>
         </DialogHeader>
         <DialogFooter>
