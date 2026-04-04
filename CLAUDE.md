@@ -14,7 +14,7 @@ Application d'entraînement à l'examen civique CSP (Carte de Séjour Pluriannue
 - localStorage pour l'historique des examens
 
 ## Structure
-- `src/data/questions.json` — les 191 questions officielles CSP
+- `src/data/questions.json` — les 191 questions officielles + 100 questions de mise en situation (optionnelles) CSP
 - `src/lib/` — logique métier
 - `src/pages/` — pages React
 - `src/components/` — composants UI

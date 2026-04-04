@@ -37,8 +37,8 @@ export default function Home() {
           <h1 className="text-3xl font-semibold tracking-tight text-foreground">
             Test Civique <span aria-hidden="true">🇫🇷</span>
           </h1>
-          <p className="text-muted-foreground">Préparez votre examen de naturalisation</p>
-          <p className="text-sm text-muted-foreground pt-1">191 questions officielles</p>
+          <p className="text-muted-foreground">Préparez votre examen civique — titre de séjour pluriannuel, carte de résident ou naturalisation</p>
+          <p className="text-sm text-muted-foreground pt-1">191 questions officielles + 100 questions de mise en situation (optionnelles)</p>
         </div>
 
         {/* Cards */}
