@@ -30,6 +30,7 @@ export default function Revision() {
   const navigate = useNavigate()
   const [activeTheme, setActiveTheme] = useState<string | null>(null)
   const [excludeSituational, setExcludeSituational] = useState(false)
+  const [filtersExpanded, setFiltersExpanded] = useState(false)
 
   const displayedQuestions = excludeSituational
     ? allQuestionsData.filter((q) => q.id <= 191)
@@ -47,66 +48,119 @@ export default function Revision() {
 
   const visibleThemes = activeTheme && themes.includes(activeTheme) ? [activeTheme] : themes
 
+  const activeFiltersCount = (activeTheme !== null ? 1 : 0) + (excludeSituational ? 1 : 0)
+
+  const filterBtnClass = (active: boolean) =>
+    `rounded-full px-3 py-1 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring ${
+      active
+        ? 'bg-foreground text-background'
+        : 'bg-muted text-foreground hover:bg-muted/80'
+    }`
+
   return (
-    <div role="main" className="min-h-screen bg-background flex flex-col items-center px-4 py-12">
-      <div className="w-full max-w-2xl space-y-8">
+    <div role="main" className="min-h-screen bg-background">
 
-        {/* Header */}
-        <div className="space-y-1">
-          <button
-            onClick={() => navigate('/')}
-            className="text-sm text-muted-foreground hover:text-foreground transition-colors mb-3 block"
-          >
-            ← Accueil
-          </button>
-          <h1 className="text-2xl font-semibold tracking-tight text-foreground">Mode révision</h1>
-          <p className="text-muted-foreground">{displayedQuestions.length} questions par thème</p>
-        </div>
+      {/* ── Sticky header ───────────────────────────────────────────────── */}
+      <div className="sticky top-0 z-20 bg-background/95 backdrop-blur-sm border-b border-border">
+        <div className="mx-auto max-w-2xl px-4">
 
-        {/* Filtres */}
-        <div className="flex flex-wrap gap-2" role="group" aria-label="Filtres">
-          <button
-            onClick={() => setActiveTheme(null)}
-            aria-pressed={activeTheme === null}
-            className={`rounded-full px-3 py-1 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring ${
-              activeTheme === null
-                ? 'bg-foreground text-background'
-                : 'bg-muted text-foreground hover:bg-muted'
-            }`}
-          >
-            Tous
-          </button>
-          {themes.map((theme) => (
+          {/* Ligne 1 : retour + espace pour le ThemeSwitch global (fixed top-4 right-4) */}
+          <div className="flex items-center pt-3 pb-1 pr-20">
             <button
-              key={theme}
-              onClick={() => setActiveTheme(theme)}
-              aria-pressed={activeTheme === theme}
-              className={`rounded-full px-3 py-1 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring ${
-                activeTheme === theme
-                  ? 'bg-foreground text-background'
-                  : 'bg-muted text-foreground hover:bg-muted'
-              }`}
+              onClick={() => navigate('/')}
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
             >
-              {theme}
+              ← Accueil
             </button>
-          ))}
-          <button
-            onClick={() => {
-              setExcludeSituational((v) => !v)
-              setActiveTheme(null)
-            }}
-            aria-pressed={excludeSituational}
-            className={`rounded-full px-3 py-1 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring ${
-              excludeSituational
-                ? 'bg-foreground text-background'
-                : 'bg-muted text-foreground hover:bg-muted'
-            }`}
-          >
-            Sans les questions de mise en situation
-          </button>
-        </div>
+          </div>
 
-        {/* Questions par thème */}
+          {/* Ligne 2 : titre + bouton Filtres */}
+          <div className="flex items-end justify-between pb-3">
+            <div className="space-y-0.5">
+              <h1 className="text-2xl font-semibold tracking-tight text-foreground">Mode révision</h1>
+              <p className="text-sm text-muted-foreground">{displayedQuestions.length} questions par thème</p>
+            </div>
+
+            <button
+              aria-expanded={filtersExpanded}
+              aria-label={
+                activeFiltersCount > 0
+                  ? `Filtres, ${activeFiltersCount} actif${activeFiltersCount > 1 ? 's' : ''}`
+                  : 'Filtres'
+              }
+              onClick={() => setFiltersExpanded((v) => !v)}
+              className="flex items-center gap-1.5 rounded-full border border-border bg-muted px-3 py-1.5 text-sm font-medium text-foreground transition-colors hover:bg-muted/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+            >
+              {/* Funnel icon */}
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 16 16"
+                fill="currentColor"
+                className="h-3.5 w-3.5"
+                aria-hidden="true"
+              >
+                <path d="M1.5 2a.5.5 0 000 1h13a.5.5 0 000-1h-13zM3 5.5a.5.5 0 01.5-.5h9a.5.5 0 010 1h-9a.5.5 0 01-.5-.5zM5 8.5a.5.5 0 01.5-.5h5a.5.5 0 010 1h-5A.5.5 0 015 8.5zm2 2.5a.5.5 0 000 1h2a.5.5 0 000-1H7z" />
+              </svg>
+              Filtres
+              {activeFiltersCount > 0 && (
+                <span className="flex h-4 min-w-4 items-center justify-center rounded-full bg-foreground px-1 text-[10px] font-bold text-background">
+                  {activeFiltersCount}
+                </span>
+              )}
+              <span
+                className={`text-xs transition-transform duration-200 ${filtersExpanded ? 'rotate-180' : ''}`}
+                aria-hidden="true"
+              >
+                ▾
+              </span>
+            </button>
+          </div>
+
+          {/* Panneau de filtres expansible */}
+          <div
+            aria-hidden={!filtersExpanded}
+            className={`overflow-hidden transition-all duration-200 ${filtersExpanded ? 'max-h-64' : 'max-h-0'}`}
+          >
+            <div
+              role="group"
+              aria-label="Filtres"
+              className="flex flex-wrap gap-2 pb-4"
+            >
+              <button
+                onClick={() => setActiveTheme(null)}
+                aria-pressed={activeTheme === null}
+                className={filterBtnClass(activeTheme === null)}
+              >
+                Tous
+              </button>
+              {themes.map((theme) => (
+                <button
+                  key={theme}
+                  onClick={() => setActiveTheme(theme)}
+                  aria-pressed={activeTheme === theme}
+                  className={filterBtnClass(activeTheme === theme)}
+                >
+                  {theme}
+                </button>
+              ))}
+              <button
+                onClick={() => {
+                  setExcludeSituational((v) => !v)
+                  setActiveTheme(null)
+                }}
+                aria-pressed={excludeSituational}
+                className={filterBtnClass(excludeSituational)}
+              >
+                Sans les questions de mise en situation
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      {/* ── Contenu scrollable ───────────────────────────────────────────── */}
+      <div className="mx-auto max-w-2xl px-4 py-8 space-y-8">
         {visibleThemes.map((theme) => (
           <section key={theme} aria-label={`Thème : ${theme}`} className="space-y-4">
             <h2 className="text-base font-semibold text-foreground border-b pb-2">
@@ -135,8 +189,8 @@ export default function Revision() {
             </div>
           </section>
         ))}
-
       </div>
+
     </div>
   )
 }
