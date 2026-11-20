@@ -19,5 +19,9 @@ export default defineConfig({
     globals: true,
     environment: 'jsdom',
     setupFiles: './src/test/setup.ts',
+    poolOptions: {
+      // Node 25 enables native Web Storage, whose localStorage shadows jsdom's
+      forks: { execArgv: ['--no-experimental-webstorage'] },
+    },
   },
 })
