@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { buildExam, EXAM_SIZE } from '../pages/Examen'
+import { buildExam, EXAM_SIZE } from './exam'
 import allQuestions from '@/data/questions.json'
 
 const SITUATIONAL_MIN_ID = 192
