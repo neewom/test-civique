@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { formatTime } from './Examen'
+import { formatTime } from '@/lib/exam'
 import { loadProgress, clearProgress } from '@/lib/exam-types'
 import type { ExamInProgress } from '@/lib/exam-types'
 

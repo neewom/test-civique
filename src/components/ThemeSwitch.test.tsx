@@ -1,6 +1,6 @@
 import { render, screen, fireEvent, act } from '@testing-library/react'
 import { describe, it, expect, beforeEach } from 'vitest'
-import { ThemeProvider } from '@/lib/theme-context'
+import { ThemeProvider } from '@/components/ThemeProvider'
 import { ThemeSwitch } from '@/components/ThemeSwitch'
 
 function renderSwitch() {

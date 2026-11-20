@@ -1,14 +1,14 @@
 import { render, screen, fireEvent, act } from '@testing-library/react'
 import { MemoryRouter } from 'react-router-dom'
 import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest'
-import Examen, {
+import Examen, { GLOBAL_EXAM_TIME } from './Examen'
+import {
   buildExam,
   saveResult,
   shuffle,
   formatTime,
   EXAM_SIZE,
-  GLOBAL_EXAM_TIME,
-} from './Examen'
+} from '@/lib/exam'
 
 function renderExamen() {
   return render(

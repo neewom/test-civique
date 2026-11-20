@@ -6,7 +6,7 @@ import Examen from '@/pages/Examen'
 import ExamenDetail from '@/pages/ExamenDetail'
 import Result from '@/pages/Result'
 import History from '@/pages/History'
-import { ThemeProvider } from '@/lib/theme-context'
+import { ThemeProvider } from '@/components/ThemeProvider'
 import { ThemeSwitch } from '@/components/ThemeSwitch'
 
 export default function App() {
