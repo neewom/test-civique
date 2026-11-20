@@ -7,3 +7,6 @@ Décisions de l'utilisateur : le TL est la seule session et confie le dev à des
 
 ## 2026-11-20 — [S] Remettre les tests au vert sous Node 25 (PR #28, v1.0.1)
 Sous Node 25, le `localStorage` natif de Node masquait celui de jsdom : 36 tests rouges. Correctif : `test.poolOptions.forks.execArgv: ['--no-experimental-webstorage']` dans `vite.config.ts` (option retenue plutôt qu'un flag dans les scripts npm, pour couvrir aussi `npx vitest`). 100/100 tests, build vert ; le lint garde ses 7 erreurs (carte suivante). Premier passage du workflow sous-agent : sans accroc. Au passage, règle ajoutée à `AGENTS.md` : lien de test de l'appli et lien de prod sur chaque entrée du tableau de bord.
+
+## 2026-11-20 — [S] Corriger les 7 erreurs de lint (PR #30, v1.0.2)
+Toutes `react-refresh/only-export-components`. `shuffle`, `buildExam`, `saveResult`, `formatTime` et `EXAM_SIZE` déplacés sans changement dans `src/lib/exam.ts` (corps comparés mécaniquement à main) ; thème scindé en `src/lib/theme-context.ts` (contexte, `useTheme`) et `src/components/ThemeProvider.tsx` ; règle coupée pour `src/components/ui/**` (fichiers shadcn). Lignes d'import de 3 tests ajustées (`Examen.test.tsx` en plus des deux prévus, écart accepté au TL). Lint 0 erreur, 100/100 tests, build vert : les trois checks sont enfin verts sur `main`.
