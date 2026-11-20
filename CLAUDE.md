@@ -1,45 +1,20 @@
-# Test Civique 🇫🇷
+# CLAUDE.md — Test Civique 🇫🇷
 
-Application d'entraînement à l'examen civique CSP (Carte de Séjour Pluriannuelle).
+@AGENTS.md
 
-## Fonctionnalités
-- Examen blanc : 40 questions aléatoires, chrono 60s par question, score final
-- Mode révision : listing de toutes les questions avec réponse et explication
+Le contenu portable (produit, données, workflow TL + sous-agents, Git, Trello, environnement) vit dans `AGENTS.md`, importé ci-dessus. Ce fichier ne garde que ce qui est propre à Claude Code. Depuis le 2026-11-20, une seule session tient le rôle de lead tech et confie chaque carte à un sous-agent dev (outil `Agent`, gabarit `docs/sous-agent-dev.md`).
 
-## Stack
-- React + TypeScript + Vite
-- React Router
-- shadcn/ui + Tailwind
-- Vitest + React Testing Library
-- localStorage pour l'historique des examens
+---
 
-## Structure
-- `src/data/questions.json` — les 191 questions officielles + 100 questions de mise en situation (optionnelles) CSP
-- `src/lib/` — logique métier
-- `src/pages/` — pages React
-- `src/components/` — composants UI
+## Mémoire persistante
 
-## Format questions.json
-{
-  "id": 1,
-  "theme": "République & valeurs",
-  "question": "...",
-  "answer": "...",
-  "distractors": ["...", "...", "..."],
-  "explanation": "..."
-}
+En complément d'`AGENTS.md`, Claude Code a une mémoire automatique (`~/.claude/projects/.../memory/`). Toute règle de fonctionnement durable et utile au projet doit aussi être écrite dans `AGENTS.md`, pas seulement mémorisée.
 
-## Workflow Git
-- Ne jamais pusher directement sur `main`
-- Toujours créer une branche : `feature/xxx` ou `fix/xxx`
-- Toujours créer une PR après le push
-- `main` déploie automatiquement sur Netlify
-- Exception : le commit initial peut aller sur `main`
+## Outils propres à Claude Code
 
-## Conventions de commit
-- `feat:` nouvelle fonctionnalité
-- `fix:` correction de bug
-- `docs:` documentation
+- Skill `impeccable:impeccable` pour le design et la relecture d'interface (voir `AGENTS.md` → Workflow)
+- Commandes globales `/save` (fichier de session dans `.claude/sessions/`, avant un `/clear`) et `/start` (reprise de la session TL)
 
-## Tests
-- Toujours écrire les tests avec Vitest
+---
+
+Règles génériques de collaboration (langue, rythme, git/PR, continuité) : `~/.claude/CLAUDE.md`.

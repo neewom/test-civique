@@ -22,3 +22,11 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Secrets locaux (Trello…)
+.env
+.env.*
+!.env.example
+
+# Graphify (cache local régénérable via `graphify update .`)
+graphify-out/
