@@ -33,7 +33,7 @@ Version complète : **`docs/workflow.md`** (copie du workflow commun `~/.claude/
 | Nom de la session | « Test civique - TL » |
 | Board Trello | « Test Civique » : Backlog · Todo · En cours · En review / test · Done (voir Board Trello) |
 | Migrations | aucune (pas de base : données dans `src/data/questions.json`, état dans `localStorage`) |
-| Tableau de bord des revues | API HTTP `http://100.123.59.74:8095` (Tailscale, sans jeton), projet `"Test civique"`, auteur `"Test civique - TL"` : le TL y écrit lui-même (`docs/workflow.md`, section 5) |
+| Tableau de bord des revues | API HTTP `http://100.123.59.74:8095` (Tailscale, sans jeton), projet `"Test civique"`, auteur `"Test civique - TL"` : le TL y écrit lui-même (`docs/workflow.md`, section 5). Chaque entrée porte un vrai lien de l'appli dans `lien_test` (serveur de revue HTTPS ou aperçu Netlify `https://deploy-preview-<n>--test-civique.netlify.app`, jamais Trello ni la doc) et le lien de prod dans `remarques` (demande de l'utilisateur, 2026-11-20) |
 | Numéro de version | `package.json` (`npm version <minor\|patch> --no-git-tag-version`), parti de **1.0.0** le 2026-11-20 |
 | Serveur accessible | **en HTTPS** : `https://mac-mini-de-vichith.tail5a5a34.ts.net:1<port>/` (revue **15212**, dev **15211**), publié par `tailscale serve` (réseau Tailscale seulement, **jamais `funnel`**), configuration persistante posée le 2026-11-20. On lance Vite comme d'habitude. Ne jamais lancer `tailscale serve reset` (Mothana et Panda y ont leurs entrées) ; retirer une entrée seulement par son port. Liens donnés à l'utilisateur et au tableau de bord : toujours ce lien HTTPS ; les contrôles des agents restent sur `http://localhost:<port>` |
 
@@ -88,7 +88,7 @@ Machine partagée (Mac mini, pilotée à distance via Claude Code Remote Control
 
 - **Ne jamais faire `pkill -f vite`** (ni aucun kill par nom de processus)
 - Arrêt d'un serveur uniquement par PID exact (le `node` de vite et son parent `npm exec`), après `lsof -nP -iTCP:<port> -sTCP:LISTEN`
-- Node 25 sur la machine : son `localStorage` natif masque celui de jsdom dans Vitest (`localStorage.clear is not a function`, 36 tests rouges au 2026-11-20) ; à corriger par une carte dédiée avant toute autre
+- Node 25 sur la machine : son `localStorage` natif masque celui de jsdom ; Vitest lance donc ses workers avec `--no-experimental-webstorage` (`vite.config.ts`, PR #28). Ne pas retirer ce réglage
 
 ## Git — spécificités Test Civique
 
