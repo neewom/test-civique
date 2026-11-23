@@ -1,7 +1,8 @@
 import { render, screen, fireEvent, act } from '@testing-library/react'
 import { MemoryRouter } from 'react-router-dom'
 import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest'
-import Home from './Home'
+import Home, { OFFICIAL_SITE_URL } from './Home'
+import { LEGIFRANCE_URL } from '@/components/ExamRules'
 
 // localStorage mock (jsdom dans ce projet ne fournit pas une implémentation complète)
 function makeLocalStorageMock() {
@@ -147,3 +148,59 @@ describe('Examen blanc — expansion', () => {
     ).toBeInTheDocument()
   })
 })
+
+describe('Accueil — règles officielles', () => {
+  it('le sous-titre ne promet que la carte de séjour pluriannuelle', () => {
+    renderHome()
+    expect(screen.getByText(/carte de séjour pluriannuelle/i)).toBeInTheDocument()
+    expect(screen.getByText('Carte de résident et naturalisation : bientôt')).toBeInTheDocument()
+    expect(screen.queryByText(/carte de résident ou naturalisation/i)).toBeNull()
+  })
+
+  it('la carte « Examen blanc » annonce 45 minutes', () => {
+    renderHome()
+    expect(screen.getByText('40 questions · 45 minutes')).toBeInTheDocument()
+  })
+
+  it('le rappel des règles apparaît dans la carte « Examen blanc » ouverte', async () => {
+    renderHome()
+    const reminder = screen.getByText(
+      'Comme le jour J : 40 questions en 45 minutes au maximum. Il faut 32 bonnes réponses sur 40 pour réussir.',
+    )
+    expect(reminder.closest('[aria-hidden="true"]')).not.toBeNull()
+    await act(async () => {
+      fireEvent.click(screen.getByRole('button', { name: 'Démarrer un examen blanc' }))
+    })
+    expect(reminder.closest('[aria-hidden="true"]')).toBeNull()
+  })
+
+  it('le bloc « Comment se passe l\'examen » est fermé par défaut', () => {
+    renderHome()
+    const toggle = screen.getByRole('button', { name: /comment se passe l'examen/i })
+    expect(toggle).toHaveAttribute('aria-expanded', 'false')
+    expect(screen.queryByText(/Réussite à 80 %/)).toBeNull()
+  })
+
+  it('ouvrir le bloc affiche les règles et le lien vers l\'arrêté', async () => {
+    renderHome()
+    const toggle = screen.getByRole('button', { name: /comment se passe l'examen/i })
+    await act(async () => { fireEvent.click(toggle) })
+    expect(toggle).toHaveAttribute('aria-expanded', 'true')
+    expect(screen.getByText('45 min')).toBeInTheDocument()
+    expect(screen.getByText('32/40')).toBeInTheDocument()
+    expect(screen.getByText('Réussite à 80 % de bonnes réponses, soit 32 sur 40.')).toBeInTheDocument()
+    expect(screen.getByText(/pas de point en moins/)).toBeInTheDocument()
+    expect(screen.getByText(/situation de handicap/)).toBeInTheDocument()
+    expect(screen.getByText('Vivre dans la société française')).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: /arrêté du 10 octobre 2025/i })).toHaveAttribute('href', LEGIFRANCE_URL)
+    await act(async () => { fireEvent.click(toggle) })
+    expect(toggle).toHaveAttribute('aria-expanded', 'false')
+  })
+
+  it('affiche la mention non officielle avec le lien vers le site officiel', () => {
+    renderHome()
+    expect(screen.getByText(/Site indépendant, non officiel/)).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: 'formation-civique.interieur.gouv.fr' })).toHaveAttribute('href', OFFICIAL_SITE_URL)
+  })
+})
+

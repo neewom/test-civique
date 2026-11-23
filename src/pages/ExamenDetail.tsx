@@ -2,6 +2,7 @@ import { useParams, useNavigate } from 'react-router-dom'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { ExamVerdict } from '@/components/ExamVerdict'
 import type { ExamRecord } from '@/lib/exam-types'
 import allQuestions from '@/data/questions.json'
 
@@ -53,7 +54,7 @@ export default function ExamenDetail() {
       <div className="w-full max-w-xl space-y-6">
 
         {/* Header */}
-        <div className="space-y-1">
+        <div className="space-y-2">
           <p className="text-sm text-muted-foreground uppercase tracking-wider">Résultat</p>
           <p
             className="text-4xl font-bold text-foreground"
@@ -63,6 +64,7 @@ export default function ExamenDetail() {
             <span className="text-2xl text-muted-foreground">/{record.total}</span>
             <span className="ml-3 text-xl text-muted-foreground font-normal">{pct}%</span>
           </p>
+          <ExamVerdict score={record.score} total={record.total} variant="compact" />
           <p className="text-sm text-muted-foreground">{dateStr}</p>
         </div>
 
