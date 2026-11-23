@@ -47,11 +47,59 @@ export function clearProgress(): void {
   }
 }
 
+function isRecord(value: unknown): value is Record<string, unknown> {
+  return typeof value === 'object' && value !== null
+}
+
+function isExamQuestion(value: unknown): value is ExamQuestion {
+  return (
+    isRecord(value) &&
+    typeof value.id === 'number' &&
+    typeof value.theme === 'string' &&
+    typeof value.question === 'string' &&
+    typeof value.answer === 'string' &&
+    typeof value.explanation === 'string' &&
+    Array.isArray(value.choices) &&
+    value.choices.every((c) => typeof c === 'string')
+  )
+}
+
+function isAnswerRecord(value: unknown): value is AnswerRecord {
+  return (
+    isRecord(value) &&
+    typeof value.questionId === 'number' &&
+    (value.chosen === null || typeof value.chosen === 'string') &&
+    typeof value.correct === 'boolean'
+  )
+}
+
+// Shape check of a stored progress: the value comes from localStorage and may
+// be corrupted or edited by hand, so the pages must never read it unchecked.
+function isExamInProgress(value: unknown): value is ExamInProgress {
+  if (!isRecord(value)) return false
+  const { questions, index, answers, timeLeft, startedAt } = value
+  return (
+    Array.isArray(questions) &&
+    questions.length > 0 &&
+    questions.every(isExamQuestion) &&
+    Number.isInteger(index) &&
+    (index as number) >= 0 &&
+    (index as number) < questions.length &&
+    Array.isArray(answers) &&
+    answers.every(isAnswerRecord) &&
+    typeof timeLeft === 'number' &&
+    Number.isFinite(timeLeft) &&
+    typeof startedAt === 'string'
+  )
+}
+
+// Saved progress, or null when missing, unreadable or malformed.
 export function loadProgress(): ExamInProgress | null {
   try {
     const raw = localStorage.getItem(EXAM_PROGRESS_KEY)
     if (!raw) return null
-    return JSON.parse(raw) as ExamInProgress
+    const parsed: unknown = JSON.parse(raw)
+    return isExamInProgress(parsed) ? parsed : null
   } catch {
     return null
   }
