@@ -19,3 +19,9 @@ Décision de l'utilisateur : les 5 thèmes officiels. Les 191 questions officiel
 
 ## 2026-11-23 — Maquettes de l'application (pas de PR)
 Toute l'appli maquettée dans un Artifact privé (https://claude.ai/artifact/GaE1VRaaqK5fqND5BsBiqx) : 8 écrans actuels et 6 écrans de la carte « Règles officielles », validés par l'utilisateur. Nouvelle règle : maquette validée avant tout go dev d'une carte d'interface (AGENTS.md, Workflow).
+
+## 2026-11-23 — Audit UX/UI et accessibilité (pas de PR)
+Sous-agent en lecture seule sur la production (impeccable critique + audit, Playwright 390 et 1280 px, clair et sombre, axe-core, clavier, texte à 200 %). Trois bloquants : un rechargement pendant l'examen efface la progression, « Recommencer » après une reprise produit un faux 0/40, la correction ne passe que par la couleur (et `lang="en"`). Constats répartis en cartes au Backlog (fiabiliser l'examen, socle accessibilité, question accessible, révision mobile, revoir ses erreurs, finitions), en partie fondues ensuite dans la refonte.
+
+## 2026-11-23 — PRODUCT.md et direction de design (pas de carte)
+`PRODUCT.md` rédigé avec impeccable à partir des réponses de l'utilisateur : primo-arrivants sur mobile, différence jouée sur l'accompagnement jusqu'au jour J et la révision par titre visé. Cinq pistes maquettées (tirage impeccable) ; l'utilisateur retient « la carte du parcours » (grandes zones organiques qui respirent lentement, pastilles, Atkinson Hyperlegible), déclinée sur 9 écrans avec les corrections de l'audit intégrées, et un design system léger au-dessus de shadcn. Pistes de nom proposées (Cap Civique, Repère, Jour J), non tranchées.
