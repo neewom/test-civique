@@ -22,7 +22,9 @@
   --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
   --mono: ui-monospace, Consolas, monospace;
 
-  font: 18px/145% var(--sans);
+  /* Relative sizes, so the text size chosen in the browser or phone applies
+     (16px by default, 18px by default above 1024px) */
+  font: 100%/145% var(--sans);
   letter-spacing: 0.18px;
   color-scheme: light dark;
   color: var(--text);
@@ -32,8 +34,8 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  @media (max-width: 1024px) {
-    font-size: 16px;
+  @media (min-width: 1025px) {
+    font-size: 112.5%;
   }
 
   --background: oklch(1 0 0);
