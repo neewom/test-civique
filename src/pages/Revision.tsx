@@ -1,8 +1,10 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Badge } from '@/components/ui/badge'
+import { cn } from '@/lib/utils'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import questions from '@/data/questions.json'
+import { themeColor } from '@/lib/themes'
 
 interface Question {
   id: number
@@ -10,18 +12,6 @@ interface Question {
   question: string
   answers: string[]
   explanation: string
-}
-
-const THEME_COLORS: Record<string, string> = {
-  'République & valeurs': 'bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300',
-  'Histoire de France': 'bg-amber-100 text-amber-800 dark:bg-amber-900/30 dark:text-amber-300',
-  'Institutions': 'bg-purple-100 text-purple-800 dark:bg-purple-900/30 dark:text-purple-300',
-  'Société française': 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300',
-  'Europe': 'bg-sky-100 text-sky-800 dark:bg-sky-900/30 dark:text-sky-300',
-}
-
-function themeColor(theme: string) {
-  return THEME_COLORS[theme] ?? 'bg-gray-100 text-gray-700 dark:bg-gray-800/40 dark:text-gray-300'
 }
 
 const allQuestionsData = questions as Question[]
@@ -173,7 +163,7 @@ export default function Revision() {
                 <Card key={q.id} size="sm">
                   <CardHeader>
                     <div className="flex items-start gap-3">
-                      <Badge className={themeColor(q.theme)}>{q.theme}</Badge>
+                      <Badge className={cn(themeColor(q.theme), 'h-auto max-w-full whitespace-normal py-px')}>{q.theme}</Badge>
                     </div>
                     <CardTitle className="text-foreground mt-2">{q.question}</CardTitle>
                   </CardHeader>
