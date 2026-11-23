@@ -8,13 +8,46 @@ import officialWording from '@/test/fixtures/official-csp-questions.json'
 
 const OFFICIAL_MAX_ID = 191
 
-// Exceptions documentées (voir PR fix/official-csp-wording) :
-// - 9 : le libellé officiel « Lequel de ces symboles représente officiellement la
-//   République française ? » ne correspond pas à nos réponses (allégorie, Marianne) ;
-//   à traiter avec le contenu des questions.
-// - 189 : doublon officiel de la 186 (« Pour qui l'école est elle obligatoire ? ») ;
-//   on garde un libellé distinct pour ne pas afficher deux questions identiques.
-const EXCEPTIONS = new Set([9, 189])
+// Exceptions documentées (voir PR fix/official-csp-wording), avec le libellé attendu.
+// La fixture reste la copie fidèle de la page du ministère.
+const EXCEPTIONS = new Map<number, { reason: string; expected: string }>([
+  [
+    9,
+    {
+      // Officiel : « Lequel de ces symboles représente officiellement la République
+      // française ? », qui ne correspond pas à nos réponses (allégorie, Marianne) ;
+      // à traiter avec le contenu des questions.
+      reason: 'sens différent',
+      expected: "Lequel de ces personnages est l'allégorie de la République française ?",
+    },
+  ],
+  [
+    27,
+    {
+      // Officiel : « Qu'est ce qui … sur les Champs Élysées … » (traits d'union manquants).
+      reason: 'faute corrigée',
+      expected:
+        "Qu'est-ce qui est traditionnellement organisé sur les Champs-Élysées le 14 juillet pour célébrer la fête nationale ?",
+    },
+  ],
+  [
+    133,
+    {
+      // Officiel : « Pourquoi l’année 1958 est importante pour la France ? » (inversion manquante).
+      reason: 'faute corrigée',
+      expected: 'Pourquoi l’année 1958 est-elle importante pour la France ?',
+    },
+  ],
+  [
+    189,
+    {
+      // Officiel : « Pour qui l'école est elle obligatoire ? », doublon de la 186 ;
+      // libellé distinct pour ne pas afficher deux questions identiques.
+      reason: 'doublon officiel',
+      expected: "Pour qui l'école est-elle obligatoire ? (question complémentaire)",
+    },
+  ],
+])
 
 const official = (allQuestions as { id: number; question: string }[]).filter(
   (q) => q.id <= OFFICIAL_MAX_ID,
@@ -34,10 +67,11 @@ describe('official CSP wording', () => {
     expect(mismatches).toEqual([])
   })
 
-  it('keeps the documented exceptions distinct from the official wording', () => {
-    for (const id of EXCEPTIONS) {
+  it('uses the documented wording for each exception, distinct from the official one', () => {
+    for (const [id, { expected }] of EXCEPTIONS) {
       const q = official.find((x) => x.id === id)
-      expect(q?.question).not.toBe(officialWording[id - 1])
+      expect(q?.question).toBe(expected)
+      expect(expected).not.toBe(officialWording[id - 1])
     }
   })
 

@@ -521,7 +521,7 @@
   {
     "id": 27,
     "theme": "Principes et valeurs de la République",
-    "question": "Qu'est ce qui est traditionnellement organisé sur les Champs Élysées le 14 juillet pour célébrer la fête nationale ?",
+    "question": "Qu'est-ce qui est traditionnellement organisé sur les Champs-Élysées le 14 juillet pour célébrer la fête nationale ?",
     "distractors": [
       "Un concert de la Marseillaise par l'armée",
       "Un feu d'artifice tiré depuis l'Arc de Triomphe",
@@ -2570,7 +2570,7 @@
   {
     "id": 133,
     "theme": "Histoire, géographie et culture",
-    "question": "Pourquoi l’année 1958 est importante pour la France ?",
+    "question": "Pourquoi l’année 1958 est-elle importante pour la France ?",
     "distractors": [
       "C'est l'année de la libération de Paris pendant la Seconde Guerre mondiale",
       "C'est l'année de l'abolition de la peine de mort",
