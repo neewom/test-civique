@@ -14,7 +14,7 @@ import {
 } from '@/components/ui/dialog'
 import allQuestions from '@/data/questions.json'
 import type { AnswerRecord, ExamQuestion, ExamInProgress } from '@/lib/exam-types'
-import { saveProgress, clearProgress } from '@/lib/exam-types'
+import { saveProgress, clearProgress, loadProgress, resumeIndex } from '@/lib/exam-types'
 import { buildExam, saveResult, formatTime, isPassed, type Question } from '@/lib/exam'
 import { ExamVerdict } from '@/components/ExamVerdict'
 
@@ -30,33 +30,65 @@ export type { ExamQuestion }
 // 'result'     : écran de résultat final
 type Phase = 'question' | 'pending' | 'correction' | 'result'
 
+// `start: 'new'` is set by the home page to draw a new exam; it is consumed on
+// arrival so that a reload resumes the stored progress instead of restarting.
 type LocationState = {
-  resume?: ExamInProgress
+  start?: 'new'
   excludeSituational?: boolean
 } | null
 
+type ExamSetup = {
+  questions: ExamQuestion[]
+  resume: ExamInProgress | null
+}
+
+// The stored progress always wins, except when a new exam is explicitly requested.
+function setupExam(startNew: boolean, excludeSituational: boolean): ExamSetup {
+  if (!startNew) {
+    const saved = loadProgress()
+    if (saved) return { questions: saved.questions, resume: saved }
+  }
+  clearProgress()
+  const pool = excludeSituational
+    ? (allQuestions as Question[]).filter((q) => q.id <= 191)
+    : (allQuestions as Question[])
+  return { questions: buildExam(pool), resume: null }
+}
+
+type Restart = { count: number; excludeSituational: boolean }
+
 export default function Examen() {
+  // "Recommencer" remounts the session through its key instead of reloading the page
+  const [restart, setRestart] = useState<Restart>({ count: 0, excludeSituational: false })
+  return (
+    <ExamSession
+      key={restart.count}
+      restart={restart.count > 0 ? restart : null}
+      onRestart={(excludeSituational) =>
+        setRestart((r) => ({ count: r.count + 1, excludeSituational }))
+      }
+    />
+  )
+}
+
+type ExamSessionProps = {
+  restart: Restart | null
+  onRestart: (excludeSituational: boolean) => void
+}
+
+function ExamSession({ restart, onRestart }: ExamSessionProps) {
   const navigate = useNavigate()
   const location = useLocation()
   const locationState = location.state as LocationState
-  const resume = locationState?.resume ?? null
 
-  // Compute starting index: if we saved during 'correction' phase (answers.length > index),
-  // restore at the next unanswered question.
-  const startIndex = resume
-    ? resume.answers.length > resume.index
-      ? resume.index + 1
-      : resume.index
-    : 0
+  const [setup] = useState<ExamSetup>(() =>
+    restart
+      ? setupExam(true, restart.excludeSituational)
+      : setupExam(locationState?.start === 'new', locationState?.excludeSituational ?? false),
+  )
+  const { questions, resume } = setup
+  const startIndex = resume ? resumeIndex(resume) : 0
 
-  const [questions] = useState<ExamQuestion[]>(() => {
-    if (resume) return resume.questions
-    const excludeSituational = locationState?.excludeSituational ?? false
-    const pool = excludeSituational
-      ? (allQuestions as Question[]).filter((q) => q.id <= 191)
-      : (allQuestions as Question[])
-    return buildExam(pool)
-  })
   const [index, setIndex] = useState(startIndex)
   const [globalTimeLeft, setGlobalTimeLeft] = useState(resume?.timeLeft ?? GLOBAL_EXAM_TIME)
   const [selected, setSelected] = useState<string | null>(null)
@@ -68,6 +100,24 @@ export default function Examen() {
   const answersRef = useRef<AnswerRecord[]>(resume?.answers ?? [])
   const startedAtRef = useRef(resume?.startedAt ?? new Date().toISOString())
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null)
+  const finishedRef = useRef(false)
+
+  // Consume the "new exam" marker: a reload must resume, not draw another exam
+  useEffect(() => {
+    if (locationState?.start) {
+      navigate(location.pathname, {
+        replace: true,
+        state: { excludeSituational: locationState.excludeSituational },
+      })
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
+  // Progress saved while correcting the last question: every answer is given
+  useEffect(() => {
+    if (startIndex >= questions.length) finishExam()
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   // Timer global — démarre une fois au montage et tourne jusqu'à la fin
   useEffect(() => {
@@ -81,7 +131,7 @@ export default function Examen() {
 
   // Sauvegarde de la progression à chaque tick du timer
   useEffect(() => {
-    if (phase === 'result') return
+    if (phase === 'result' || finishedRef.current) return
     saveProgress({
       questions,
       index,
@@ -102,6 +152,8 @@ export default function Examen() {
 
   // Termine l'examen : complète les réponses manquantes et sauvegarde
   function finishExam() {
+    if (finishedRef.current) return
+    finishedRef.current = true
     if (timerRef.current) clearInterval(timerRef.current)
     clearProgress()
     const allAnswers = [...answersRef.current]
@@ -159,8 +211,9 @@ export default function Examen() {
     }
   }
 
-  function restart() {
-    window.location.reload()
+  function handleRestart() {
+    clearProgress()
+    onRestart(questions.every((q) => q.id <= 191))
   }
 
   const current = questions[index]
@@ -210,7 +263,7 @@ export default function Examen() {
           </Card>
 
           <div className="flex flex-col gap-3">
-            <Button onClick={restart} className="w-full">
+            <Button onClick={handleRestart} className="w-full">
               Recommencer
             </Button>
             <Button variant="outline" onClick={() => navigate('/')} className="w-full">
@@ -221,6 +274,9 @@ export default function Examen() {
       </div>
     )
   }
+
+  // Resumed exam already complete: the result screen follows on the next render
+  if (!current) return null
 
   // ── Écran question / correction ─────────────────────────────────────────────
   const inCorrection = phase === 'correction'

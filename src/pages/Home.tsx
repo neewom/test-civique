@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { formatTime, isPassed } from '@/lib/exam'
-import { loadProgress, clearProgress } from '@/lib/exam-types'
+import { loadProgress, clearProgress, resumeIndex } from '@/lib/exam-types'
 import type { ExamInProgress } from '@/lib/exam-types'
 import { ExamRules } from '@/components/ExamRules'
 
@@ -55,6 +55,11 @@ export default function Home() {
     document.addEventListener('mousedown', handleClickOutside)
     return () => document.removeEventListener('mousedown', handleClickOutside)
   }, [examExpanded])
+
+  // Question the exam will resume on (1-based), capped when every answer is given
+  const resumeQuestion = inProgress
+    ? Math.min(resumeIndex(inProgress), inProgress.questions.length - 1) + 1
+    : 0
 
   function handleDeleteProgress() {
     clearProgress()
@@ -125,7 +130,7 @@ export default function Home() {
                   </p>
                   <button
                     aria-label="Lancer un examen avec les questions classiques uniquement"
-                    onClick={() => navigate('/examen', { state: { excludeSituational: true } })}
+                    onClick={() => navigate('/examen', { state: { start: 'new', excludeSituational: true } })}
                     className={subOptionClass}
                   >
                     <p className="font-medium text-sm text-[#1a56db] dark:text-blue-400">Questions classiques</p>
@@ -133,7 +138,7 @@ export default function Home() {
                   </button>
                   <button
                     aria-label="Lancer un examen avec les mises en situation"
-                    onClick={() => navigate('/examen', { state: { excludeSituational: false } })}
+                    onClick={() => navigate('/examen', { state: { start: 'new', excludeSituational: false } })}
                     className={subOptionClass}
                   >
                     <p className="font-medium text-sm text-[#1a56db] dark:text-blue-400">Avec mises en situation</p>
@@ -169,7 +174,7 @@ export default function Home() {
             <div className="rounded-lg border border-border bg-card px-4 py-3 space-y-3">
               <div className="flex items-center justify-between text-sm">
                 <span className="font-medium text-foreground">
-                  Question {inProgress.index + 1} / {inProgress.questions.length}
+                  Question {resumeQuestion} / {inProgress.questions.length}
                 </span>
                 <span className="tabular-nums text-muted-foreground">
                   {formatTime(inProgress.timeLeft)} restant
@@ -182,7 +187,7 @@ export default function Home() {
                       Math.max(inProgress.answers.length, 1)) * 100,
                   )}`}
                   style={{
-                    width: `${(inProgress.index / inProgress.questions.length) * 100}%`,
+                    width: `${((resumeQuestion - 1) / inProgress.questions.length) * 100}%`,
                   }}
                   aria-hidden="true"
                 />
@@ -193,7 +198,7 @@ export default function Home() {
               <div className="flex gap-2 pt-1">
                 <button
                   aria-label="Reprendre l'examen en cours"
-                  onClick={() => navigate('/examen', { state: { resume: inProgress } })}
+                  onClick={() => navigate('/examen')}
                   className="flex-1 rounded-lg bg-[#1a56db] px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-[#1a56db]/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1a56db]"
                 >
                   Reprendre

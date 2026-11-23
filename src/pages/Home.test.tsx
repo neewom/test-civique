@@ -235,3 +235,42 @@ describe('Accueil — couleur de l\'historique alignée sur le verdict', () => {
   })
 })
 
+
+describe('Accueil — carte « Examen en cours »', () => {
+  function storeProgress(index: number, answered: number) {
+    const questions = Array.from({ length: 40 }, (_, i) => ({
+      id: i + 1,
+      theme: 'Test',
+      question: `Question ${i + 1}`,
+      answer: 'A',
+      choices: ['A', 'B', 'C', 'D'],
+      explanation: '',
+    }))
+    localStorage.setItem('exam-in-progress', JSON.stringify({
+      questions,
+      index,
+      answers: questions.slice(0, answered).map((q) => ({ questionId: q.id, chosen: 'A', correct: true })),
+      timeLeft: 1500,
+      startedAt: '2026-11-23T10:00:00.000Z',
+    }))
+  }
+
+  it('affiche la question qui sera reprise', () => {
+    storeProgress(2, 2)
+    renderHome()
+    expect(screen.getByText('Question 3 / 40')).toBeInTheDocument()
+  })
+
+  it('affiche la question suivante quand la sauvegarde date de la correction', () => {
+    storeProgress(2, 3)
+    renderHome()
+    expect(screen.getByText('Question 4 / 40')).toBeInTheDocument()
+    expect(screen.getByText('3 réponses données')).toBeInTheDocument()
+  })
+
+  it('ne dépasse pas la dernière question quand toutes les réponses sont données', () => {
+    storeProgress(39, 40)
+    renderHome()
+    expect(screen.getByText('Question 40 / 40')).toBeInTheDocument()
+  })
+})

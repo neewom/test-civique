@@ -1,8 +1,9 @@
 import { render, screen, fireEvent, act } from '@testing-library/react'
-import { MemoryRouter } from 'react-router-dom'
+import { MemoryRouter, useLocation } from 'react-router-dom'
 import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest'
 import Examen, { GLOBAL_EXAM_TIME } from './Examen'
 import type { ExamInProgress } from '@/lib/exam-types'
+import { saveProgress, loadProgress, EXAM_PROGRESS_KEY } from '@/lib/exam-types'
 import {
   buildExam,
   saveResult,
@@ -319,9 +320,11 @@ function makeResume(timeLeft: number, correctCount: number): ExamInProgress {
   }
 }
 
+// La reprise lit la progression stockée (exam-in-progress) ; l'état de navigation ne la transporte plus
 function renderResumed(resume: ExamInProgress) {
+  saveProgress(resume)
   return render(
-    <MemoryRouter initialEntries={[{ pathname: '/examen', state: { resume } }]}>
+    <MemoryRouter initialEntries={['/examen']}>
       <Examen />
     </MemoryRouter>
   )
@@ -372,5 +375,126 @@ describe('Examen — règles officielles', () => {
     renderResumed(makeResume(2, 27))
     await act(async () => { vi.advanceTimersByTime(3000) })
     expect(screen.getByText('Encore 5 bonnes réponses pour atteindre 32/40')).toBeInTheDocument()
+  })
+})
+
+// ─── Fiabilité : rechargement, recommencer, reprise ───────────────────────────
+
+function LocationStateProbe() {
+  const location = useLocation()
+  return <pre data-testid="location-state">{JSON.stringify(location.state)}</pre>
+}
+
+function renderAt(state: unknown) {
+  return render(
+    <MemoryRouter initialEntries={[{ pathname: '/examen', state }]}>
+      <Examen />
+      <LocationStateProbe />
+    </MemoryRouter>
+  )
+}
+
+function currentQuestionText(): string {
+  return document.querySelector('[data-slot="card-title"]')?.textContent?.trim() ?? ''
+}
+
+function historyLength(): number {
+  return JSON.parse(localStorage.getItem('quiz-history') ?? '[]').length
+}
+
+describe('Examen — fiabilité', () => {
+  beforeEach(() => {
+    localStorage.clear()
+    vi.useFakeTimers()
+  })
+  afterEach(() => {
+    vi.useRealTimers()
+  })
+
+  it('un rechargement en cours d\'examen reprend les mêmes questions au même index', async () => {
+    const resume = makeResume(1500, 2)
+    saveProgress(resume)
+    // L'état d'historique survit au rechargement : il ne doit pas faire tirer un nouvel examen
+    renderAt({ excludeSituational: false })
+    expect(screen.getByText(`Question 3 / ${EXAM_SIZE}`)).toBeInTheDocument()
+    expect(currentQuestionText()).toBe(resume.questions[2].question)
+    expect(screen.getByText('25:00')).toBeInTheDocument()
+    await act(async () => { vi.advanceTimersByTime(1000) })
+    const saved = loadProgress()!
+    expect(saved.questions.map((q) => q.id)).toEqual(resume.questions.map((q) => q.id))
+    expect(saved.answers).toHaveLength(2)
+  })
+
+  it('reprend sur la question suivante quand la sauvegarde date de la correction', () => {
+    const resume = makeResume(1500, 3)
+    saveProgress({ ...resume, index: 2 })
+    renderAt(null)
+    expect(screen.getByText(`Question 4 / ${EXAM_SIZE}`)).toBeInTheDocument()
+    expect(currentQuestionText()).toBe(resume.questions[3].question)
+  })
+
+  it('le marqueur de nouvel examen est consommé : un rechargement reprend l\'examen tiré', async () => {
+    saveProgress(makeResume(1500, 2))
+    const first = renderAt({ start: 'new', excludeSituational: false })
+    // Nouvel examen demandé : la progression précédente est remplacée
+    expect(screen.getByText(`Question 1 / ${EXAM_SIZE}`)).toBeInTheDocument()
+    expect(screen.getByText('45:00')).toBeInTheDocument()
+    const drawn = currentQuestionText()
+    const leftState = JSON.parse(screen.getByTestId('location-state').textContent!)
+    expect(leftState).toEqual({ excludeSituational: false })
+    await act(async () => { vi.advanceTimersByTime(1000) })
+    first.unmount()
+
+    // Rechargement : même état d'historique, sans le marqueur
+    renderAt(leftState)
+    expect(screen.getByText(`Question 1 / ${EXAM_SIZE}`)).toBeInTheDocument()
+    expect(currentQuestionText()).toBe(drawn)
+    expect(screen.getByText('44:59')).toBeInTheDocument()
+  })
+
+  it('n\'utilise pas une progression « resume » périmée venue de l\'état de navigation', () => {
+    const stored = makeResume(1500, 2)
+    saveProgress(stored)
+    renderAt({ resume: makeResume(5, 30) })
+    expect(screen.getByText(`Question 3 / ${EXAM_SIZE}`)).toBeInTheDocument()
+    expect(currentQuestionText()).toBe(stored.questions[2].question)
+  })
+
+  it('« Recommencer » après une reprise lance un nouvel examen à 45:00 sans réponse', async () => {
+    renderResumed(makeResume(2, 10))
+    await act(async () => { vi.advanceTimersByTime(3000) })
+    expect(screen.getByLabelText('Score : 10 sur 40')).toBeInTheDocument()
+    expect(historyLength()).toBe(1)
+
+    await act(async () => {
+      fireEvent.click(screen.getByRole('button', { name: 'Recommencer' }))
+    })
+    expect(screen.getByText(`Question 1 / ${EXAM_SIZE}`)).toBeInTheDocument()
+    expect(screen.getByText('45:00')).toBeInTheDocument()
+    expect(loadProgress()!.answers).toHaveLength(0)
+    expect(loadProgress()!.timeLeft).toBe(GLOBAL_EXAM_TIME)
+
+    // Le nouvel examen ne se termine pas tout seul
+    await act(async () => { vi.advanceTimersByTime(5000) })
+    expect(screen.getByText('44:55')).toBeInTheDocument()
+    expect(historyLength()).toBe(1)
+  })
+
+  it('« Recommencer » garde le jeu sans mises en situation', async () => {
+    renderAt({ start: 'new', excludeSituational: true })
+    await act(async () => { vi.advanceTimersByTime(GLOBAL_EXAM_TIME * 1000) })
+    await act(async () => {
+      fireEvent.click(screen.getByRole('button', { name: 'Recommencer' }))
+    })
+    expect(loadProgress()!.questions.every((q) => q.id <= 191)).toBe(true)
+  })
+
+  it('une reprise dont toutes les réponses sont données affiche le résultat une seule fois', async () => {
+    const resume = makeResume(1200, EXAM_SIZE)
+    saveProgress({ ...resume, index: EXAM_SIZE - 1 })
+    await act(async () => { renderAt(null) })
+    expect(screen.getByLabelText(`Score : ${EXAM_SIZE} sur ${EXAM_SIZE}`)).toBeInTheDocument()
+    expect(historyLength()).toBe(1)
+    expect(localStorage.getItem(EXAM_PROGRESS_KEY)).toBeNull()
   })
 })

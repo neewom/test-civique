@@ -3,6 +3,7 @@ import {
   saveProgress,
   clearProgress,
   loadProgress,
+  resumeIndex,
   EXAM_PROGRESS_KEY,
 } from './exam-types'
 import type { ExamInProgress, ExamQuestion, AnswerRecord } from './exam-types'
@@ -155,5 +156,16 @@ describe('cycle complet sauvegarde → restauration', () => {
     saveProgress(makeProgress())
     clearProgress()
     expect(loadProgress()).toBeNull()
+  })
+})
+
+describe('resumeIndex', () => {
+  it('reprend à index quand la question courante n\'a pas de réponse', () => {
+    expect(resumeIndex(makeProgress())).toBe(2)
+  })
+
+  it('reprend à index + 1 quand la sauvegarde date de la correction', () => {
+    const p = makeProgress()
+    expect(resumeIndex({ ...p, answers: [...p.answers, { questionId: 3, chosen: 'Réponse 3', correct: true }] })).toBe(3)
   })
 })
