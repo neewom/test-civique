@@ -120,6 +120,16 @@ describe('addExamRecord', () => {
     expect(JSON.parse(localStorageMock.getItem(HISTORY_KEY)!)).toEqual([RECORD])
   })
 
+  it('n\'écrit rien si la lecture de localStorage lève une exception', () => {
+    const setItem = vi.fn()
+    vi.stubGlobal('localStorage', {
+      getItem: () => { throw new Error('denied') },
+      setItem,
+    })
+    expect(() => addExamRecord(RECORD)).not.toThrow()
+    expect(setItem).not.toHaveBeenCalled()
+  })
+
   it('ne lève pas d\'exception si localStorage refuse l\'écriture', () => {
     vi.stubGlobal('localStorage', {
       getItem: () => null,

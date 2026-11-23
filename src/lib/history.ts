@@ -26,13 +26,25 @@ function isHistoryEntry(value: unknown): value is HistoryEntry {
   )
 }
 
+// Raw stored value; throws when localStorage cannot be read.
+function readStored(): unknown {
+  const raw = localStorage.getItem(HISTORY_KEY)
+  if (!raw) return []
+  try {
+    return JSON.parse(raw)
+  } catch {
+    return [] // unparsable data: treated as an empty history
+  }
+}
+
+function toEntries(stored: unknown): HistoryEntry[] {
+  return Array.isArray(stored) ? stored.filter(isHistoryEntry) : []
+}
+
 // Stored history, oldest first. Unreadable data or malformed entries are skipped.
 export function loadHistory(): HistoryEntry[] {
   try {
-    const raw = localStorage.getItem(HISTORY_KEY)
-    if (!raw) return []
-    const parsed: unknown = JSON.parse(raw)
-    return Array.isArray(parsed) ? parsed.filter(isHistoryEntry) : []
+    return toEntries(readStored())
   } catch {
     return []
   }
@@ -46,8 +58,13 @@ export function findExamRecord(id: string): ExamRecord | null {
 }
 
 export function addExamRecord(record: ExamRecord): void {
+  let history: HistoryEntry[]
   try {
-    const history = loadHistory()
+    history = toEntries(readStored())
+  } catch {
+    return // storage unreadable: its content is unknown, so nothing is overwritten
+  }
+  try {
     history.push(record)
     localStorage.setItem(HISTORY_KEY, JSON.stringify(history))
   } catch {
