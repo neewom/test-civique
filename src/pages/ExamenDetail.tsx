@@ -80,9 +80,9 @@ export default function ExamenDetail() {
             return (
               <Card key={answer.questionId}>
                 <CardHeader>
-                  <div className="flex items-center justify-between">
-                    <Badge variant="secondary">{q.theme}</Badge>
-                    <span className="text-xs text-muted-foreground">Question {i + 1}</span>
+                  <div className="flex flex-wrap items-center justify-between gap-2">
+                    <Badge variant="secondary" className="h-auto max-w-full shrink whitespace-normal py-px">{q.theme}</Badge>
+                    <span className="shrink-0 text-xs text-muted-foreground">Question {i + 1}</span>
                   </div>
                   <CardTitle className="text-foreground mt-2 text-base leading-snug">
                     {q.question}

@@ -290,7 +290,7 @@ export default function Examen() {
         {/* Carte question */}
         <Card>
           <CardHeader>
-            <Badge variant="secondary">{current.theme}</Badge>
+            <Badge variant="secondary" className="h-auto max-w-full whitespace-normal py-px">{current.theme}</Badge>
             <CardTitle className="text-foreground mt-2 text-base leading-snug">
               {current.question}
             </CardTitle>

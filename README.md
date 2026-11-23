@@ -59,7 +59,7 @@ Format d'une question :
 ```json
 {
   "id": 1,
-  "theme": "République & valeurs",
+  "theme": "Principes et valeurs de la République",
   "question": "Quelle est la devise de la République française ?",
   "answers": ["Liberté, Égalité, Fraternité"],
   "distractors": ["Unité, Foi, Travail", "Liberté, Sécurité, Propriété", "Égalité, Justice, Paix"],

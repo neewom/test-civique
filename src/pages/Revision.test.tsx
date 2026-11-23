@@ -205,3 +205,19 @@ describe('Revision — filtres par thème', () => {
     expect(screen.getAllByText('Bonne réponse')).toHaveLength(questions.length)
   })
 })
+
+describe('Revision — badges de thème', () => {
+  // Les libellés officiels sont longs : avec un texte agrandi, le badge doit pouvoir passer à la ligne
+  // au lieu d'être coupé (h-5 + whitespace-nowrap + overflow-hidden du Badge partagé).
+  it('laisse les badges de thème passer à la ligne', () => {
+    renderRevision()
+    const badges = document.querySelectorAll('[data-slot="badge"]')
+    expect(badges.length).toBeGreaterThan(0)
+    for (const badge of badges) {
+      expect(badge.className).toMatch(/\bwhitespace-normal\b/)
+      expect(badge.className).toMatch(/\bh-auto\b/)
+      expect(badge.className).toMatch(/\bmax-w-full\b/)
+      expect(badge.className).not.toMatch(/\bwhitespace-nowrap\b/)
+    }
+  })
+})
