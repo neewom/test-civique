@@ -1,0 +1,14 @@
+{
+  "name": "Futur Citoyen",
+  "short_name": "Futur Citoyen",
+  "description": "Préparez l'examen civique : examens blancs et révision des questions officielles.",
+  "lang": "fr",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f5f1e4",
+  "theme_color": "#8ed462",
+  "icons": [
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
