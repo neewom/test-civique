@@ -5,6 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { ExamVerdict } from '@/components/ExamVerdict'
 import { findExamRecord } from '@/lib/history'
 import allQuestions from '@/data/questions.json'
+import { useDocumentTitle } from '@/lib/use-document-title'
 
 interface Question {
   id: number
@@ -15,6 +16,7 @@ interface Question {
 }
 
 export default function ExamenDetail() {
+  useDocumentTitle("Détail de l'examen")
   const { id } = useParams<{ id: string }>()
   const navigate = useNavigate()
   const record = id ? findExamRecord(id) : null

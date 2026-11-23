@@ -5,6 +5,8 @@ import { loadProgress, clearProgress, resumeIndex } from '@/lib/exam-types'
 import type { ExamInProgress } from '@/lib/exam-types'
 import { ExamRules } from '@/components/ExamRules'
 import { loadHistory, type HistoryEntry } from '@/lib/history'
+import { BrandLogo } from '@/components/BrandLogo'
+import { useDocumentTitle } from '@/lib/use-document-title'
 
 export const OFFICIAL_SITE_URL = 'https://formation-civique.interieur.gouv.fr'
 
@@ -25,6 +27,7 @@ function getHistoryBarColor(score: number, total: number, pct: number): string {
 }
 
 export default function Home() {
+  useDocumentTitle('Accueil')
   const navigate = useNavigate()
   const history = getRecentHistory()
   const [examExpanded, setExamExpanded] = useState(false)
@@ -62,8 +65,8 @@ export default function Home() {
 
         {/* Header */}
         <div className="text-center space-y-2">
-          <h1 className="text-3xl font-semibold tracking-tight text-foreground">
-            Test Civique <span aria-hidden="true">🇫🇷</span>
+          <h1 className="text-[1.625rem] font-semibold tracking-tight">
+            <BrandLogo />
           </h1>
           <p className="text-muted-foreground">Entraînez-vous à l'examen civique de la carte de séjour pluriannuelle</p>
           <p className="text-sm text-muted-foreground pt-1">191 questions officielles + 100 questions de mise en situation</p>

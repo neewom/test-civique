@@ -13,6 +13,7 @@ import {
   DialogTitle,
 } from '@/components/ui/dialog'
 import allQuestions from '@/data/questions.json'
+import { useDocumentTitle } from '@/lib/use-document-title'
 import type { AnswerRecord, ExamQuestion, ExamInProgress } from '@/lib/exam-types'
 import { saveProgress, clearProgress, loadProgress, resumeIndex } from '@/lib/exam-types'
 import { buildExam, saveResult, formatTime, isPassed, type Question } from '@/lib/exam'
@@ -94,6 +95,7 @@ function ExamSession({ restart, onRestart }: ExamSessionProps) {
   const [selected, setSelected] = useState<string | null>(null)
   const [phase, setPhase] = useState<Phase>('question')
   const [showQuitDialog, setShowQuitDialog] = useState(false)
+  useDocumentTitle(phase === 'result' ? 'Résultat' : 'Examen blanc')
 
   const scoreRef = useRef(resume ? resume.answers.filter((a) => a.correct).length : 0)
   const [score, setScore] = useState(scoreRef.current)

@@ -54,6 +54,12 @@ describe('ExamenDetail', () => {
     expect(screen.getByText(/Examen introuvable/i)).toBeInTheDocument()
   })
 
+  it('donne le titre "Détail de l\'examen · Futur Citoyen" à l\'onglet', () => {
+    seedHistory(RECORD)
+    renderDetail(RECORD_ID)
+    expect(document.title).toBe("Détail de l'examen · Futur Citoyen")
+  })
+
   it('affiche le score global', () => {
     seedHistory(RECORD)
     renderDetail(RECORD_ID)

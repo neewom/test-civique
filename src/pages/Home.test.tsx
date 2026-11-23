@@ -34,9 +34,17 @@ function renderHome() {
 }
 
 describe('Home', () => {
-  it('affiche le titre "Test Civique" dans un h1', () => {
+  it('affiche le logo "Futur Citoyen" dans un h1, sans drapeau', () => {
     renderHome()
-    expect(screen.getByRole('heading', { level: 1, name: /test civique/i })).toBeInTheDocument()
+    const h1 = screen.getByRole('heading', { level: 1, name: 'Futur Citoyen' })
+    expect(h1).toBeInTheDocument()
+    expect(h1.textContent).not.toMatch(/🇫🇷|test civique/i)
+    expect(h1.querySelector('svg')).toHaveAttribute('aria-hidden', 'true')
+  })
+
+  it('donne le titre "Accueil · Futur Citoyen" à l\'onglet', () => {
+    renderHome()
+    expect(document.title).toBe('Accueil · Futur Citoyen')
   })
 
   it('a un conteneur principal avec role="main"', () => {
@@ -76,7 +84,7 @@ describe('Home', () => {
   it('s\'affiche avec un historique qui n\'est pas du JSON', () => {
     localStorageMock.setItem('quiz-history', 'pas du json{')
     renderHome()
-    expect(screen.getByRole('heading', { level: 1, name: /test civique/i })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { level: 1, name: 'Futur Citoyen' })).toBeInTheDocument()
     expect(screen.getByText('Aucun examen passé')).toBeInTheDocument()
   })
 
