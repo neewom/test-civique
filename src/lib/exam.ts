@@ -1,5 +1,6 @@
 import allQuestions from '@/data/questions.json'
-import type { AnswerRecord, ExamRecord, ExamQuestion } from '@/lib/exam-types'
+import type { AnswerRecord, ExamQuestion } from '@/lib/exam-types'
+import { addExamRecord } from '@/lib/history'
 
 export const EXAM_SIZE = 40
 
@@ -63,20 +64,13 @@ export function saveResult(
   total: number,
   answers: AnswerRecord[],
 ): void {
-  try {
-    const raw = localStorage.getItem('quiz-history')
-    const history: ExamRecord[] = raw ? JSON.parse(raw) : []
-    history.push({
-      id: String(Date.now()),
-      date: new Date().toISOString(),
-      score,
-      total,
-      answers,
-    })
-    localStorage.setItem('quiz-history', JSON.stringify(history))
-  } catch {
-    // localStorage unavailable
-  }
+  addExamRecord({
+    id: String(Date.now()),
+    date: new Date().toISOString(),
+    score,
+    total,
+    answers,
+  })
 }
 
 export function formatTime(seconds: number): string {

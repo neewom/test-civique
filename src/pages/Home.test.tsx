@@ -72,6 +72,37 @@ describe('Home', () => {
     const btn = screen.getByRole('button', { name: /voir le détail/i })
     expect(btn).toBeInTheDocument()
   })
+
+  it('s\'affiche avec un historique qui n\'est pas du JSON', () => {
+    localStorageMock.setItem('quiz-history', 'pas du json{')
+    renderHome()
+    expect(screen.getByRole('heading', { level: 1, name: /test civique/i })).toBeInTheDocument()
+    expect(screen.getByText('Aucun examen passé')).toBeInTheDocument()
+  })
+
+  it('s\'affiche avec un historique qui est un objet et non un tableau', () => {
+    localStorageMock.setItem('quiz-history', JSON.stringify({ score: 30, total: 40 }))
+    renderHome()
+    expect(screen.getByText('Aucun examen passé')).toBeInTheDocument()
+  })
+
+  it('ignore les entrées incomplètes et garde les autres', () => {
+    localStorageMock.setItem('quiz-history', JSON.stringify([
+      { id: '1', date: new Date().toISOString(), score: 30, total: 40, answers: [] },
+      { id: '2', date: new Date().toISOString(), total: 40 },
+    ]))
+    renderHome()
+    expect(screen.getAllByRole('button', { name: /voir le détail/i })).toHaveLength(1)
+  })
+
+  it('affiche sans lien les anciens examens enregistrés sans id', () => {
+    localStorageMock.setItem('quiz-history', JSON.stringify([
+      { date: new Date().toISOString(), score: 30, total: 40 },
+    ]))
+    renderHome()
+    expect(screen.queryByText('Aucun examen passé')).toBeNull()
+    expect(screen.queryByRole('button', { name: /voir le détail/i })).toBeNull()
+  })
 })
 
 describe('Examen blanc — expansion', () => {

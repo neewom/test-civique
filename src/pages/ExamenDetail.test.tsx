@@ -42,6 +42,18 @@ describe('ExamenDetail', () => {
     expect(screen.getByText(/Examen introuvable/i)).toBeInTheDocument()
   })
 
+  it('affiche "Examen introuvable" si l\'historique n\'est pas du JSON', () => {
+    localStorage.setItem('quiz-history', 'pas du json{')
+    renderDetail(RECORD_ID)
+    expect(screen.getByText(/Examen introuvable/i)).toBeInTheDocument()
+  })
+
+  it('affiche "Examen introuvable" si l\'examen n\'a pas de réponses enregistrées', () => {
+    localStorage.setItem('quiz-history', JSON.stringify([{ ...RECORD, answers: undefined }]))
+    renderDetail(RECORD_ID)
+    expect(screen.getByText(/Examen introuvable/i)).toBeInTheDocument()
+  })
+
   it('affiche le score global', () => {
     seedHistory(RECORD)
     renderDetail(RECORD_ID)
