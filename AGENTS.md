@@ -68,7 +68,7 @@ Règles officielles (arrêté du 10 octobre 2025, art. 1 à 4) : 40 questions, 4
   - `answers` : une ou plusieurs bonnes réponses ; l'examen en tire une au hasard, la révision et le détail affichent `answers[0]`.
   - `distractors` : souvent plus de 3 ; l'examen en tire 3 au hasard.
   - `group` (facultatif) : deux questions du même groupe ne tombent jamais dans le même examen.
-- `localStorage` : `quiz-history` (liste d'`ExamRecord`), `exam-in-progress` (`ExamInProgress`), `theme` (`light` | `dark`). Types et accès à la progression dans `src/lib/exam-types.ts` ; l'historique est écrit par `saveResult` (`src/lib/exam.ts`) et encore lu directement dans `Home.tsx` et `ExamenDetail.tsx`. Changer la forme d'une de ces clés = penser aux données déjà stockées chez les utilisateurs.
+- `localStorage` : `quiz-history` (liste d'`ExamRecord`), `exam-in-progress` (`ExamInProgress`), `theme` (`light` | `dark`). Types et accès à la progression dans `src/lib/exam-types.ts` ; l'historique est lu et écrit uniquement par `src/lib/history.ts` (lecture tolérante : données illisibles ou entrées incomplètes ignorées ; les anciens examens sans `id` ni `answers` restent listés à l'accueil, sans lien vers le détail). Changer la forme d'une de ces clés = penser aux données déjà stockées chez les utilisateurs.
 
 ## Stack
 

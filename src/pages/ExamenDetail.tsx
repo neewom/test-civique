@@ -3,7 +3,7 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { ExamVerdict } from '@/components/ExamVerdict'
-import type { ExamRecord } from '@/lib/exam-types'
+import { findExamRecord } from '@/lib/history'
 import allQuestions from '@/data/questions.json'
 
 interface Question {
@@ -14,21 +14,10 @@ interface Question {
   explanation: string
 }
 
-function getRecord(id: string): ExamRecord | null {
-  try {
-    const raw = localStorage.getItem('quiz-history')
-    if (!raw) return null
-    const history: ExamRecord[] = JSON.parse(raw)
-    return history.find((r) => r.id === id) ?? null
-  } catch {
-    return null
-  }
-}
-
 export default function ExamenDetail() {
   const { id } = useParams<{ id: string }>()
   const navigate = useNavigate()
-  const record = id ? getRecord(id) : null
+  const record = id ? findExamRecord(id) : null
 
   if (!record) {
     return (

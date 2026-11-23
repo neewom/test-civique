@@ -4,25 +4,12 @@ import { formatTime, isPassed } from '@/lib/exam'
 import { loadProgress, clearProgress, resumeIndex } from '@/lib/exam-types'
 import type { ExamInProgress } from '@/lib/exam-types'
 import { ExamRules } from '@/components/ExamRules'
+import { loadHistory, type HistoryEntry } from '@/lib/history'
 
 export const OFFICIAL_SITE_URL = 'https://formation-civique.interieur.gouv.fr'
 
-interface QuizResult {
-  id?: string
-  date: string
-  score: number
-  total: number
-}
-
-function getRecentHistory(): QuizResult[] {
-  try {
-    const raw = localStorage.getItem('quiz-history')
-    if (!raw) return []
-    const parsed = JSON.parse(raw)
-    return Array.isArray(parsed) ? parsed.slice(-3).reverse() : []
-  } catch {
-    return []
-  }
+function getRecentHistory(): HistoryEntry[] {
+  return loadHistory().slice(-3).reverse()
 }
 
 function getScoreColor(pct: number): string {
