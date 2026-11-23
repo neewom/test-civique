@@ -204,3 +204,34 @@ describe('Accueil — règles officielles', () => {
   })
 })
 
+describe('Accueil — couleur de l\'historique alignée sur le verdict', () => {
+  function seedScore(score: number) {
+    localStorageMock.setItem('quiz-history', JSON.stringify([
+      { id: '1', date: new Date().toISOString(), score, total: 40, answers: [] },
+    ]))
+  }
+  function historyBar() {
+    const item = screen.getByRole('button', { name: /voir le détail/i })
+    return item.querySelector('[aria-hidden="true"].h-full') as HTMLElement
+  }
+
+  it('31/40 (78 %) n\'est pas vert', () => {
+    seedScore(31)
+    renderHome()
+    expect(historyBar()).not.toHaveClass('bg-green-500')
+    expect(historyBar()).toHaveClass('bg-orange-400')
+  })
+
+  it('32/40 est vert', () => {
+    seedScore(32)
+    renderHome()
+    expect(historyBar()).toHaveClass('bg-green-500')
+  })
+
+  it('un score sous 50 % reste rouge', () => {
+    seedScore(10)
+    renderHome()
+    expect(historyBar()).toHaveClass('bg-red-500')
+  })
+})
+

@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { formatTime } from '@/lib/exam'
+import { formatTime, isPassed } from '@/lib/exam'
 import { loadProgress, clearProgress } from '@/lib/exam-types'
 import type { ExamInProgress } from '@/lib/exam-types'
 import { ExamRules } from '@/components/ExamRules'
@@ -29,6 +29,12 @@ function getScoreColor(pct: number): string {
   if (pct >= 75) return 'bg-green-500'
   if (pct >= 50) return 'bg-orange-400'
   return 'bg-red-500'
+}
+
+// Historique : vert seulement si l'examen est réussi (seuil officiel), comme le verdict du détail
+function getHistoryBarColor(score: number, total: number, pct: number): string {
+  if (isPassed(score, total)) return 'bg-green-500'
+  return pct >= 50 ? 'bg-orange-400' : 'bg-red-500'
 }
 
 export default function Home() {
@@ -218,7 +224,7 @@ export default function Home() {
             <ul className="space-y-3">
               {history.map((result, i) => {
                 const pct = Math.round((result.score / result.total) * 100)
-                const barColor = getScoreColor(pct)
+                const barColor = getHistoryBarColor(result.score, result.total, pct)
                 const d = new Date(result.date)
                 const dateLabel = d.toLocaleDateString('fr-FR', {
                   day: 'numeric',

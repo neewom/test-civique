@@ -8,7 +8,7 @@ Application de préparation à l'examen civique requis pour l'obtention d'un tit
 
 ## Fonctionnalités
 
-- **Examen blanc** — 40 questions tirées aléatoirement, timer global de 40 minutes. Deux modes au choix : questions classiques uniquement (191 questions officielles) ou avec les mises en situation (291 questions). La progression est sauvegardée automatiquement et peut être reprise depuis la page d'accueil.
+- **Examen blanc** — 40 questions tirées aléatoirement, timer global de 45 minutes, réussite à 32/40 (80 %). Deux modes au choix : questions classiques uniquement (191 questions officielles) ou avec les mises en situation (291 questions). La progression est sauvegardée automatiquement et peut être reprise depuis la page d'accueil.
 - **Mode révision** — listing complet des questions organisées par thème, avec la bonne réponse et une explication pour chacune. Filtres par thème et par type de question.
 - **Historique des examens** — les résultats passés sont conservés localement et accessibles depuis la page d'accueil.
 - **Dark mode** — thème clair/sombre persistant via `localStorage`.
