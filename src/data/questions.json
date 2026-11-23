@@ -22,7 +22,7 @@
   {
     "id": 2,
     "theme": "Principes et valeurs de la République",
-    "question": "Quel est l'un des symboles de la République française ?",
+    "question": "Quel est l’un des symboles de la République française ?",
     "distractors": [
       "La fleur de lys royale",
       "L'aigle impérial napoléonien",
@@ -46,7 +46,7 @@
   {
     "id": 3,
     "theme": "Principes et valeurs de la République",
-    "question": "Le principe d'égalité signifie que :",
+    "question": "Le principe d’égalité signifie que :",
     "distractors": [
       "Tous les citoyens doivent avoir le même revenu",
       "Seuls les citoyens français ont des droits égaux",
@@ -66,7 +66,7 @@
   {
     "id": 4,
     "theme": "Principes et valeurs de la République",
-    "question": "'Liberté, Égalité, Fraternité', c'est :",
+    "question": "\"Liberté, égalité, fraternité\", c’est :",
     "distractors": [
       "Le titre de l'hymne national français",
       "Le nom d'un article de la Constitution de 1958",
@@ -86,7 +86,7 @@
   {
     "id": 5,
     "theme": "Principes et valeurs de la République",
-    "question": "A-t-on le droit d'insulter publiquement quelqu'un parce qu'il est différent (handicap, apparence physique, sexe…) ?",
+    "question": "A-t-on le droit d'insulter publiquement quelqu’un parce qu’il est différent (handicap, apparence physique, sexe…) ?",
     "distractors": [
       "Oui, c'est garanti par la liberté d'expression",
       "Oui, si cela reste une opinion personnelle",
@@ -143,7 +143,7 @@
   {
     "id": 8,
     "theme": "Principes et valeurs de la République",
-    "question": "Le régime politique de la France est :",
+    "question": "Le régime de la France est :",
     "distractors": [
       "Une monarchie constitutionnelle",
       "Une théocratie républicaine",
@@ -223,7 +223,7 @@
   {
     "id": 12,
     "theme": "Principes et valeurs de la République",
-    "question": "Qu'est-ce que l'égalité ?",
+    "question": "Qu’est-ce que l’égalité ?",
     "distractors": [
       "Le fait que tout le monde gagne le même salaire",
       "Le partage égal des richesses nationales entre tous les citoyens",
@@ -263,7 +263,7 @@
   {
     "id": 14,
     "theme": "Principes et valeurs de la République",
-    "question": "Que signifie le mot 'fraternité' dans la devise française ?",
+    "question": "Que signifie le mot \"fraternité\" dans la devise française ?",
     "distractors": [
       "L'appartenance à une même famille biologique",
       "L'amitié diplomatique entre les nations",
@@ -302,7 +302,7 @@
   {
     "id": 16,
     "theme": "Principes et valeurs de la République",
-    "question": "Quel est l'un des rôles des associations en France ?",
+    "question": "Quel est l’un des rôles des associations ?",
     "distractors": [
       "Remplacer les services publics défaillants de l'État",
       "Élire les représentants politiques locaux",
@@ -321,7 +321,7 @@
   {
     "id": 17,
     "theme": "Principes et valeurs de la République",
-    "question": "Quel est le nom de l'hymne national français ?",
+    "question": "Quel est le nom de l'hymne national ?",
     "distractors": [
       "Le Chant du Départ",
       "L'Internationale",
@@ -441,7 +441,7 @@
   {
     "id": 23,
     "theme": "Principes et valeurs de la République",
-    "question": "Quelle liberté permet à chacun d'exprimer ses idées ?",
+    "question": "Quelle liberté permet à chacun d’exprimer ses idées ?",
     "distractors": [
       "La liberté de circulation",
       "La liberté de conscience",
@@ -461,7 +461,7 @@
   {
     "id": 24,
     "theme": "Principes et valeurs de la République",
-    "question": "Quelle proposition est correcte concernant la liberté d'expression ?",
+    "question": "Quelle proposition est correcte ? La liberté d'expression :",
     "distractors": [
       "La liberté d'expression est absolue et sans aucune limite légale",
       "La liberté d'expression ne s'applique qu'aux journalistes professionnels",
@@ -561,7 +561,7 @@
   {
     "id": 29,
     "theme": "Principes et valeurs de la République",
-    "question": "Une personne peut-elle changer librement de religion en France ?",
+    "question": "Une personne peut-elle changer librement de religion ?",
     "distractors": [
       "Non, on garde toujours la religion déclarée à la naissance",
       "Oui, mais seulement une fois dans sa vie",
@@ -580,7 +580,7 @@
   {
     "id": 30,
     "theme": "Principes et valeurs de la République",
-    "question": "'La France est une République indivisible, ..., démocratique et sociale'. Quel mot manque dans cet extrait de l'article 1er de la Constitution ?",
+    "question": "\"La France est une République indivisible, ..., démocratique et sociale\". Complétez cette phrase extraite de l'article 1er de la Constitution :",
     "distractors": [
       "Unitaire",
       "Souveraine",
@@ -697,7 +697,7 @@
   {
     "id": 36,
     "theme": "Principes et valeurs de la République",
-    "question": "Un enfant peut-il refuser d'aller à l'école pour une raison religieuse ?",
+    "question": "Un enfant peut-il refuser d’aller à l’école pour une raison religieuse ?",
     "distractors": [
       "Oui, si ses parents le justifient par écrit auprès de la direction",
       "Oui, pour toutes les fêtes religieuses de sa confession",
@@ -773,7 +773,7 @@
   {
     "id": 40,
     "theme": "Système institutionnel et politique",
-    "question": "Qu'est-ce que le pouvoir exécutif ?",
+    "question": "Qu'est-ce que le pouvoir exécutif ? Le pouvoir :",
     "distractors": [
       "Le pouvoir de voter et d'adopter les lois",
       "Le pouvoir de juger et de sanctionner les infractions",
@@ -869,7 +869,7 @@
   {
     "id": 45,
     "theme": "Système institutionnel et politique",
-    "question": "Quel pouvoir détient un juge ?",
+    "question": "Quel pouvoir détient un juge ? Le pouvoir :",
     "distractors": [
       "Le pouvoir exécutif d'appliquer les lois",
       "Le pouvoir législatif de voter les lois",
@@ -945,7 +945,7 @@
   {
     "id": 49,
     "theme": "Système institutionnel et politique",
-    "question": "Combien de députés composent l'Assemblée nationale ?",
+    "question": "Combien de députés composent l’Assemblée nationale ?",
     "distractors": [
       "500 députés",
       "555 députés",
@@ -1022,7 +1022,7 @@
   {
     "id": 53,
     "theme": "Système institutionnel et politique",
-    "question": "À partir de quel âge a-t-on le droit de voter en France ?",
+    "question": "À partir de quel âge a-t-on le droit de voter ?",
     "distractors": [
       "16 ans",
       "17 ans",
@@ -1040,7 +1040,7 @@
   {
     "id": 54,
     "theme": "Système institutionnel et politique",
-    "question": "Pour combien de temps est élu le Président de la République française ?",
+    "question": "Pour combien de temps est élu le président de la République française ?",
     "distractors": [
       "4 ans",
       "6 ans",
@@ -1098,7 +1098,7 @@
   {
     "id": 57,
     "theme": "Système institutionnel et politique",
-    "question": "Qui possède le pouvoir exécutif en France ?",
+    "question": "Qui possède le pouvoir exécutif ?",
     "distractors": [
       "Uniquement le Président de la République",
       "Le Parlement (Assemblée nationale et Sénat)",
@@ -1158,7 +1158,7 @@
   {
     "id": 60,
     "theme": "Système institutionnel et politique",
-    "question": "Que signifie 'suffrage universel' ?",
+    "question": "Que signifie « suffrage universel » ?",
     "distractors": [
       "Que les élections se déroulent dans tous les pays du monde",
       "Que tout le monde est obligé d'aller voter sous peine d'amende",
@@ -1234,7 +1234,7 @@
   {
     "id": 64,
     "theme": "Système institutionnel et politique",
-    "question": "Qui possède le pouvoir législatif en France ?",
+    "question": "Qui possède le pouvoir législatif ?",
     "distractors": [
       "Le Président de la République seul",
       "Le gouvernement et le Premier ministre",
@@ -1292,7 +1292,7 @@
   {
     "id": 67,
     "theme": "Système institutionnel et politique",
-    "question": "Qui vote les lois en France ?",
+    "question": "Qui vote les lois ?",
     "distractors": [
       "Le Président de la République par décret",
       "Le gouvernement en conseil des ministres",
@@ -1389,7 +1389,7 @@
   {
     "id": 72,
     "theme": "Système institutionnel et politique",
-    "question": "Est-ce que le Président de la République a tous les pouvoirs ?",
+    "question": "Est-ce que le président de la République a tous les pouvoirs ?",
     "distractors": [
       "Oui, il est le chef suprême de l'État avec tous les pouvoirs",
       "Oui, il peut gouverner par décret sans l'accord du Parlement",
@@ -1508,7 +1508,7 @@
   {
     "id": 78,
     "theme": "Système institutionnel et politique",
-    "question": "Quelle condition est nécessaire pour voter aux élections européennes en France ?",
+    "question": "Quelle condition est nécessaire pour voter aux élections européennes ?",
     "distractors": [
       "Être exclusivement de nationalité française",
       "Résider en France depuis au moins 10 ans",
@@ -1627,7 +1627,7 @@
   {
     "id": 84,
     "theme": "Droits et devoirs",
-    "question": "Comment s'appelle la Constitution actuelle de la France ?",
+    "question": "Comment s’appelle la Constitution actuelle de la France ?",
     "distractors": [
       "La Déclaration des droits de l'homme et du citoyen",
       "La Charte des droits fondamentaux de l'UE",
@@ -1684,7 +1684,7 @@
   {
     "id": 87,
     "theme": "Droits et devoirs",
-    "question": "De quelle année date la Déclaration des droits de l'homme et du citoyen ?",
+    "question": "De quelle année date la Déclaration des droits de l’homme et du citoyen ?",
     "distractors": [
       "1776",
       "1804",
@@ -1741,7 +1741,7 @@
   {
     "id": 90,
     "theme": "Droits et devoirs",
-    "question": "Qu'est-ce que la liberté d'expression ?",
+    "question": "Qu’est-ce que la liberté d’expression ?",
     "distractors": [
       "Le droit absolu de dire tout ce que l'on pense sans conséquence",
       "Le droit de mentir librement si c'est pour une bonne cause",
@@ -1837,7 +1837,7 @@
   {
     "id": 95,
     "theme": "Droits et devoirs",
-    "question": "Une femme peut avorter en France :",
+    "question": "Une femme peut avorter :",
     "distractors": [
       "Non, l'avortement est totalement interdit en France",
       "Oui, mais seulement dans les 6 premières semaines de grossesse",
@@ -1856,7 +1856,7 @@
   {
     "id": 96,
     "theme": "Droits et devoirs",
-    "question": "Est-il toujours possible de divorcer en France ?",
+    "question": "Est-il toujours possible de divorcer ?",
     "distractors": [
       "Non, le divorce est interdit en France depuis 2000",
       "Non, le mariage religieux interdit le divorce civil",
@@ -1875,7 +1875,7 @@
   {
     "id": 97,
     "theme": "Droits et devoirs",
-    "question": "La peine de mort en France est :",
+    "question": "La peine de mort est :",
     "distractors": [
       "Applicable pour les crimes terroristes avérés",
       "Suspendue mais pas officiellement abolie",
@@ -1932,7 +1932,7 @@
   {
     "id": 100,
     "theme": "Droits et devoirs",
-    "question": "Faut-il réduire ses déchets en France ?",
+    "question": "Faut-il réduire ses déchets ?",
     "distractors": [
       "Non, c'est une obligation uniquement pour les entreprises",
       "Non, la gestion des déchets est entièrement à la charge de l'État",
@@ -1989,7 +1989,7 @@
   {
     "id": 103,
     "theme": "Droits et devoirs",
-    "question": "Que doit faire une personne en cas d'accident ?",
+    "question": "Que doit faire une personne en cas d’accident ?",
     "distractors": [
       "Continuer sa route si elle n'est pas en tort",
       "Appeler uniquement son assurance avant de faire quoi que ce soit",
@@ -2181,7 +2181,7 @@
   {
     "id": 113,
     "theme": "Droits et devoirs",
-    "question": "Quelle est l'infraction la plus grave en droit français ?",
+    "question": "Quelle est l'infraction la plus grave ?",
     "distractors": [
       "La contravention de 5e classe",
       "Le délit correctionnel aggravé",
@@ -2261,7 +2261,7 @@
   {
     "id": 117,
     "theme": "Histoire, géographie et culture",
-    "question": "Dans quelle République est-on aujourd'hui en France ?",
+    "question": "Dans quelle République est-on aujourd'hui ?",
     "distractors": [
       "La IVe République",
       "La IIIe République",
@@ -2322,7 +2322,7 @@
   {
     "id": 120,
     "theme": "Histoire, géographie et culture",
-    "question": "Qui a rendu l'école gratuite, laïque et obligatoire en France ?",
+    "question": "Qui a rendu l’école gratuite, laïque et obligatoire ?",
     "distractors": [
       "Napoléon Bonaparte avec le décret impérial de 1802",
       "Victor Hugo qui en fit son combat de toute sa vie",
@@ -2379,7 +2379,7 @@
   {
     "id": 123,
     "theme": "Histoire, géographie et culture",
-    "question": "En quelle année a été créée la Communauté Économique Européenne (CEE), ancêtre de l'UE ?",
+    "question": "En quelle année a été créée la Communauté Économique Européenne (CEE) ?",
     "distractors": [
       "1945",
       "1950",
@@ -2455,7 +2455,7 @@
   {
     "id": 127,
     "theme": "Histoire, géographie et culture",
-    "question": "Depuis quelle année l'école publique est-elle gratuite en France ?",
+    "question": "Depuis quelle année l'école publique est-elle gratuite ?",
     "distractors": [
       "1789",
       "1848",
@@ -2474,7 +2474,7 @@
   {
     "id": 128,
     "theme": "Histoire, géographie et culture",
-    "question": "Combien y a-t-il eu de Républiques en France ?",
+    "question": "Combien y a-t-il eu de républiques en France ?",
     "distractors": [
       "Deux Républiques",
       "Trois Républiques",
@@ -2493,7 +2493,7 @@
   {
     "id": 129,
     "theme": "Histoire, géographie et culture",
-    "question": "Qui était le roi de France au moment de la Révolution française de 1789 ?",
+    "question": "Qui était le roi de France au moment de la Révolution française ?",
     "distractors": [
       "Louis XIV",
       "Louis XV",
@@ -2570,7 +2570,7 @@
   {
     "id": 133,
     "theme": "Histoire, géographie et culture",
-    "question": "Pourquoi l'année 1958 est-elle importante pour la France ?",
+    "question": "Pourquoi l’année 1958 est-elle importante pour la France ?",
     "distractors": [
       "C'est l'année de la libération de Paris pendant la Seconde Guerre mondiale",
       "C'est l'année de l'abolition de la peine de mort",
@@ -2634,7 +2634,7 @@
   {
     "id": 136,
     "theme": "Histoire, géographie et culture",
-    "question": "Quel océan borde la côte ouest de la France ?",
+    "question": "Quel océan borde la côte ouest française ?",
     "distractors": [
       "L'océan Indien",
       "L'océan Arctique",
@@ -2753,7 +2753,7 @@
   {
     "id": 142,
     "theme": "Histoire, géographie et culture",
-    "question": "Quelle ville française est un grand port maritime ?",
+    "question": "Quelle ville est un grand port maritime ?",
     "distractors": [
       "Paris",
       "Strasbourg",
@@ -3104,7 +3104,7 @@
   {
     "id": 160,
     "theme": "Histoire, géographie et culture",
-    "question": "Quand célèbre-t-on Noël en France ?",
+    "question": "Quand célèbre-t-on Noël ?",
     "distractors": [
       "Le 24 décembre",
       "Le 31 décembre",
@@ -3123,7 +3123,7 @@
   {
     "id": 161,
     "theme": "Vie en société",
-    "question": "Quel numéro d'urgence permet d'appeler le SAMU (urgences médicales) ?",
+    "question": "Quel numéro d'urgence permet d'appeler le SAMU ?",
     "distractors": [
       "Le 17",
       "Le 18",
@@ -3180,7 +3180,7 @@
   {
     "id": 164,
     "theme": "Vie en société",
-    "question": "À quelles conditions un mariage est-il reconnu juridiquement en France ?",
+    "question": "À quelles conditions un mariage est-il reconnu juridiquement ?",
     "distractors": [
       "Une simple cérémonie religieuse devant un prêtre ou imam suffit",
       "Il faut obligatoirement combiner un mariage civil et religieux",
@@ -3218,7 +3218,7 @@
   {
     "id": 166,
     "theme": "Vie en société",
-    "question": "Le travail non déclaré ('au noir') est :",
+    "question": "Le travail non déclaré est :",
     "distractors": [
       "Toléré pour les petits travaux ponctuels entre particuliers",
       "Autorisé si le montant est inférieur à 500 euros par mois",
@@ -3294,7 +3294,7 @@
   {
     "id": 170,
     "theme": "Vie en société",
-    "question": "Quelle est la durée légale du temps de travail par semaine en France ?",
+    "question": "Quelle est la durée légale du temps de travail par semaine ?",
     "distractors": [
       "32 heures par semaine",
       "39 heures par semaine",
@@ -3313,7 +3313,7 @@
   {
     "id": 171,
     "theme": "Vie en société",
-    "question": "Qui est aidé par France Travail (anciennement Pôle Emploi) ?",
+    "question": "Qui est aidé par France Travail ?",
     "distractors": [
       "Uniquement les personnes de moins de 25 ans sans emploi",
       "Seulement les cadres et les ingénieurs au chômage",
@@ -3351,7 +3351,7 @@
   {
     "id": 173,
     "theme": "Vie en société",
-    "question": "Une femme peut-elle créer son entreprise en France ?",
+    "question": "Une femme peut-elle créer son entreprise ?",
     "distractors": [
       "Oui, mais elle a besoin de l'accord de son mari",
       "Non, certains secteurs sont réservés aux hommes",
@@ -3370,7 +3370,7 @@
   {
     "id": 174,
     "theme": "Vie en société",
-    "question": "À partir de quel âge un mineur peut-il travailler en France ?",
+    "question": "À partir de quel âge un mineur peut-il travailler ?",
     "distractors": [
       "12 ans avec accord parental",
       "14 ans sans restriction",
@@ -3408,7 +3408,7 @@
   {
     "id": 176,
     "theme": "Vie en société",
-    "question": "Qu'est-ce qu'un numéro d'urgence ?",
+    "question": "Qu’est-ce qu’un numéro d’urgence ?",
     "distractors": [
       "Un numéro permettant d'appeler le gouvernement en cas de problème",
       "Un numéro réservé aux médecins pour contacter les hôpitaux",
@@ -3427,7 +3427,7 @@
   {
     "id": 177,
     "theme": "Vie en société",
-    "question": "Concernant l'accès aux soins en France, quelle proposition est correcte ?",
+    "question": "Concernant l'accès aux soins, quelle proposition est correcte ?",
     "distractors": [
       "Seuls les citoyens français ont droit aux soins remboursés",
       "Les soins ne sont remboursés que pour les personnes qui travaillent",
@@ -3446,7 +3446,7 @@
   {
     "id": 178,
     "theme": "Vie en société",
-    "question": "En cas de problème de santé non urgent, à qui faut-il s'adresser en premier ?",
+    "question": "En cas de problème de santé non urgent, à qui faut-il s’adresser en premier ?",
     "distractors": [
       "Directement aux urgences de l'hôpital le plus proche",
       "À un spécialiste de son choix sans ordonnance",
@@ -3503,7 +3503,7 @@
   {
     "id": 181,
     "theme": "Vie en société",
-    "question": "Quel est l'objectif des vaccinations obligatoires ?",
+    "question": "Quel est l’objectif des vaccinations obligatoires ?",
     "distractors": [
       "Générer des profits pour les laboratoires pharmaceutiques",
       "Contrôler la population par des substances chimiques",
@@ -3541,7 +3541,7 @@
   {
     "id": 183,
     "theme": "Vie en société",
-    "question": "À quoi sert une mutuelle santé (complémentaire santé) ?",
+    "question": "À quoi sert une mutuelle santé ?",
     "distractors": [
       "À remplacer entièrement la Sécurité sociale",
       "À payer uniquement les médicaments non remboursés",
@@ -3560,7 +3560,7 @@
   {
     "id": 184,
     "theme": "Vie en société",
-    "question": "Jusqu'à quel âge l'école est-elle obligatoire en France ?",
+    "question": "Jusqu'à quel âge l'école est-elle obligatoire ?",
     "distractors": [
       "14 ans",
       "15 ans",
@@ -3599,7 +3599,7 @@
   {
     "id": 186,
     "theme": "Vie en société",
-    "question": "Pour qui l'école est-elle obligatoire en France ?",
+    "question": "Pour qui l'école est-elle obligatoire ?",
     "distractors": [
       "Uniquement pour les enfants de nationalité française",
       "Seulement pour les enfants dont les parents travaillent",
@@ -3619,7 +3619,7 @@
   {
     "id": 187,
     "theme": "Vie en société",
-    "question": "Quel diplôme obtient-on à la fin du lycée en France ?",
+    "question": "Quel diplôme obtient-on à la fin du lycée ?",
     "distractors": [
       "Le brevet des collèges (DNB)",
       "Le CAP (Certificat d'aptitude professionnelle)",
@@ -3696,7 +3696,7 @@
   {
     "id": 191,
     "theme": "Vie en société",
-    "question": "Les enfants qui ne parlent pas français à leur arrivée en France :",
+    "question": "Les enfants qui ne parlent pas français :",
     "distractors": [
       "Ne peuvent pas être scolarisés avant de parler français",
       "Sont automatiquement orientés vers l'enseignement professionnel",
