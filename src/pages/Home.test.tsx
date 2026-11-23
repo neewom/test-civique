@@ -273,4 +273,21 @@ describe('Accueil — carte « Examen en cours »', () => {
     renderHome()
     expect(screen.getByText('Question 40 / 40')).toBeInTheDocument()
   })
+
+  function progressBarWidth(): string {
+    const section = screen.getByRole('region', { name: 'Examen en cours' })
+    return (section.querySelector('[aria-hidden="true"]') as HTMLElement).style.width
+  }
+
+  it('remplit la barre selon les réponses données', () => {
+    storeProgress(2, 3)
+    renderHome()
+    expect(progressBarWidth()).toBe(`${(3 / 40) * 100}%`)
+  })
+
+  it('remplit entièrement la barre quand toutes les réponses sont données', () => {
+    storeProgress(39, 40)
+    renderHome()
+    expect(progressBarWidth()).toBe('100%')
+  })
 })

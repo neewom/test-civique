@@ -187,7 +187,7 @@ export default function Home() {
                       Math.max(inProgress.answers.length, 1)) * 100,
                   )}`}
                   style={{
-                    width: `${((resumeQuestion - 1) / inProgress.questions.length) * 100}%`,
+                    width: `${(Math.min(inProgress.answers.length, inProgress.questions.length) / inProgress.questions.length) * 100}%`,
                   }}
                   aria-hidden="true"
                 />

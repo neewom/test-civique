@@ -497,4 +497,15 @@ describe('Examen — fiabilité', () => {
     expect(historyLength()).toBe(1)
     expect(localStorage.getItem(EXAM_PROGRESS_KEY)).toBeNull()
   })
+
+  it('le chrono ne tourne pas sur le résultat d\'une reprise déjà complète', async () => {
+    const resume = makeResume(1200, EXAM_SIZE)
+    saveProgress({ ...resume, index: EXAM_SIZE - 1 })
+    await act(async () => { renderAt(null) })
+    expect(screen.getByLabelText(`Score : ${EXAM_SIZE} sur ${EXAM_SIZE}`)).toBeInTheDocument()
+    // Seuls des minuteurs ponctuels restent au montage : aucun intervalle ne survit
+    await act(async () => { vi.advanceTimersByTime(5000) })
+    expect(vi.getTimerCount()).toBe(0)
+    expect(historyLength()).toBe(1)
+  })
 })
