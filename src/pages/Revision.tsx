@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Badge } from '@/components/ui/badge'
+import { cn } from '@/lib/utils'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import questions from '@/data/questions.json'
 import { themeColor } from '@/lib/themes'
@@ -162,7 +163,7 @@ export default function Revision() {
                 <Card key={q.id} size="sm">
                   <CardHeader>
                     <div className="flex items-start gap-3">
-                      <Badge className={themeColor(q.theme)}>{q.theme}</Badge>
+                      <Badge className={cn(themeColor(q.theme), 'h-auto max-w-full whitespace-normal py-px')}>{q.theme}</Badge>
                     </div>
                     <CardTitle className="text-foreground mt-2">{q.question}</CardTitle>
                   </CardHeader>
