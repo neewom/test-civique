@@ -130,11 +130,48 @@ describe('loadProgress', () => {
     localStorage.setItem(EXAM_PROGRESS_KEY, 'not-json{')
     expect(loadProgress()).toBeNull()
   })
+
+  // Stored data may be corrupted or edited by hand: a malformed value is ignored
+  it.each([
+    ['un nombre', 42],
+    ['null', null],
+    ['un tableau', []],
+    ['un objet vide', {}],
+    ['sans questions', { ...makeProgress(), questions: [] }],
+    ['des questions mal formées', { ...makeProgress(), questions: [{ id: 1 }] }],
+    ['des choix qui ne sont pas des chaînes', {
+      ...makeProgress(),
+      questions: [{ ...makeQuestion(1), choices: [1, 2] }],
+    }],
+    ['un index hors limites', makeProgress({ index: 5 })],
+    ['un index négatif', makeProgress({ index: -1 })],
+    ['un index non entier', makeProgress({ index: 1.5 })],
+    ['des réponses mal formées', { ...makeProgress(), answers: [{ questionId: '1' }] }],
+    ['un temps restant non numérique', { ...makeProgress(), timeLeft: '1800' }],
+    ['sans date de début', { ...makeProgress(), startedAt: undefined }],
+  ])('retourne null pour une sauvegarde mal formée (%s)', (_label, value) => {
+    localStorage.setItem(EXAM_PROGRESS_KEY, JSON.stringify(value))
+    expect(loadProgress()).toBeNull()
+  })
+
+  it('accepte une réponse sans choix (chrono expiré)', () => {
+    saveProgress(makeProgress({ answers: [{ questionId: 1, chosen: null, correct: false }] }))
+    expect(loadProgress()?.answers[0].chosen).toBeNull()
+  })
+
+  it('retourne null quand localStorage est inaccessible', () => {
+    vi.stubGlobal('localStorage', {
+      getItem: () => { throw new Error('SecurityError') },
+    })
+    expect(loadProgress()).toBeNull()
+  })
 })
 
 describe('cycle complet sauvegarde → restauration', () => {
   it('saveProgress puis loadProgress retourne un objet identique', () => {
     const original = makeProgress({
+      // index must point to an existing question (shape check of loadProgress)
+      questions: Array.from({ length: 10 }, (_, i) => makeQuestion(i + 1)),
       index: 7,
       timeLeft: 500,
       answers: [
