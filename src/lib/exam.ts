@@ -3,6 +3,18 @@ import type { AnswerRecord, ExamRecord, ExamQuestion } from '@/lib/exam-types'
 
 export const EXAM_SIZE = 40
 
+// Arrêté du 10 octobre 2025, art. 4 : réussite à 80 % des points (32/40)
+export const PASS_RATIO = 0.8
+
+// Nombre de bonnes réponses requis pour réussir un examen de `total` questions
+export function passThreshold(total: number): number {
+  return Math.ceil(total * PASS_RATIO)
+}
+
+export function isPassed(score: number, total: number): boolean {
+  return total > 0 && score >= passThreshold(total)
+}
+
 export interface Question {
   id: number
   theme: string

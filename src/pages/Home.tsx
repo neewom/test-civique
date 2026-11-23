@@ -1,8 +1,11 @@
 import { useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { formatTime } from '@/lib/exam'
+import { formatTime, isPassed } from '@/lib/exam'
 import { loadProgress, clearProgress } from '@/lib/exam-types'
 import type { ExamInProgress } from '@/lib/exam-types'
+import { ExamRules } from '@/components/ExamRules'
+
+export const OFFICIAL_SITE_URL = 'https://formation-civique.interieur.gouv.fr'
 
 interface QuizResult {
   id?: string
@@ -26,6 +29,12 @@ function getScoreColor(pct: number): string {
   if (pct >= 75) return 'bg-green-500'
   if (pct >= 50) return 'bg-orange-400'
   return 'bg-red-500'
+}
+
+// Historique : vert seulement si l'examen est réussi (seuil officiel), comme le verdict du détail
+function getHistoryBarColor(score: number, total: number, pct: number): string {
+  if (isPassed(score, total)) return 'bg-green-500'
+  return pct >= 50 ? 'bg-orange-400' : 'bg-red-500'
 }
 
 export default function Home() {
@@ -64,8 +73,13 @@ export default function Home() {
           <h1 className="text-3xl font-semibold tracking-tight text-foreground">
             Test Civique <span aria-hidden="true">🇫🇷</span>
           </h1>
-          <p className="text-muted-foreground">Préparez votre examen civique — titre de séjour pluriannuel, carte de résident ou naturalisation</p>
-          <p className="text-sm text-muted-foreground pt-1">191 questions officielles + 100 questions de mise en situation (optionnelles)</p>
+          <p className="text-muted-foreground">Entraînez-vous à l'examen civique de la carte de séjour pluriannuelle</p>
+          <p className="text-sm text-muted-foreground pt-1">191 questions officielles + 100 questions de mise en situation</p>
+          <p className="pt-2">
+            <span className="inline-block rounded-full bg-muted px-2.5 py-1 text-xs text-muted-foreground">
+              Carte de résident et naturalisation : bientôt
+            </span>
+          </p>
         </div>
 
         {/* Cards */}
@@ -87,7 +101,7 @@ export default function Home() {
                 <span className="text-3xl" aria-hidden="true">📝</span>
                 <div>
                   <p className="font-semibold text-base text-[#1a56db] dark:text-blue-400">Examen blanc</p>
-                  <p className="mt-0.5 text-sm text-muted-foreground">40 questions · 40 minutes</p>
+                  <p className="mt-0.5 text-sm text-muted-foreground">40 questions · 45 minutes</p>
                 </div>
                 <span
                   className={`ml-auto text-[#1a56db] dark:text-blue-400 transition-transform duration-200 ${examExpanded ? 'rotate-180' : ''}`}
@@ -101,25 +115,31 @@ export default function Home() {
             {/* Sous-options */}
             <div
               aria-hidden={!examExpanded}
-              className={`overflow-hidden transition-all duration-200 ${examExpanded ? 'max-h-56' : 'max-h-0'}`}
+              inert={!examExpanded}
+              className={`grid transition-all duration-200 ${examExpanded ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'}`}
             >
-              <div className="rounded-b-xl border border-t-0 border-[#1a56db]/60 bg-[#1a56db]/5 px-4 py-3 flex flex-col gap-2 dark:bg-[#1a56db]/10">
-                <button
-                  aria-label="Lancer un examen avec les questions classiques uniquement"
-                  onClick={() => navigate('/examen', { state: { excludeSituational: true } })}
-                  className={subOptionClass}
-                >
-                  <p className="font-medium text-sm text-[#1a56db] dark:text-blue-400">Questions classiques</p>
-                  <p className="text-xs text-muted-foreground mt-0.5">191 questions officielles</p>
-                </button>
-                <button
-                  aria-label="Lancer un examen avec les mises en situation"
-                  onClick={() => navigate('/examen', { state: { excludeSituational: false } })}
-                  className={subOptionClass}
-                >
-                  <p className="font-medium text-sm text-[#1a56db] dark:text-blue-400">Avec mises en situation</p>
-                  <p className="text-xs text-muted-foreground mt-0.5">Inclut les 100 questions situationnelles</p>
-                </button>
+              <div className="overflow-hidden">
+                <div className="rounded-b-xl border border-t-0 border-[#1a56db]/60 bg-[#1a56db]/5 px-4 py-3 flex flex-col gap-2 dark:bg-[#1a56db]/10">
+                  <p className="rounded-lg bg-card px-3 py-2.5 text-left text-[0.8125rem] leading-normal text-foreground">
+                    Comme le jour J : 40 questions en 45 minutes au maximum. Il faut 32 bonnes réponses sur 40 pour réussir.
+                  </p>
+                  <button
+                    aria-label="Lancer un examen avec les questions classiques uniquement"
+                    onClick={() => navigate('/examen', { state: { excludeSituational: true } })}
+                    className={subOptionClass}
+                  >
+                    <p className="font-medium text-sm text-[#1a56db] dark:text-blue-400">Questions classiques</p>
+                    <p className="text-xs text-muted-foreground mt-0.5">191 questions officielles</p>
+                  </button>
+                  <button
+                    aria-label="Lancer un examen avec les mises en situation"
+                    onClick={() => navigate('/examen', { state: { excludeSituational: false } })}
+                    className={subOptionClass}
+                  >
+                    <p className="font-medium text-sm text-[#1a56db] dark:text-blue-400">Avec mises en situation</p>
+                    <p className="text-xs text-muted-foreground mt-0.5">Inclut les 100 questions situationnelles</p>
+                  </button>
+                </div>
               </div>
             </div>
           </div>
@@ -190,6 +210,9 @@ export default function Home() {
           </section>
         )}
 
+        {/* Règles officielles */}
+        <ExamRules />
+
         {/* Historique */}
         <section aria-label="Historique des examens récents" className="space-y-3">
           <h2 className="text-sm font-medium text-foreground uppercase tracking-wider">
@@ -201,7 +224,7 @@ export default function Home() {
             <ul className="space-y-3">
               {history.map((result, i) => {
                 const pct = Math.round((result.score / result.total) * 100)
-                const barColor = getScoreColor(pct)
+                const barColor = getHistoryBarColor(result.score, result.total, pct)
                 const d = new Date(result.date)
                 const dateLabel = d.toLocaleDateString('fr-FR', {
                   day: 'numeric',
@@ -254,6 +277,18 @@ export default function Home() {
             </ul>
           )}
         </section>
+
+        <p className="text-center text-xs leading-relaxed text-muted-foreground">
+          Site indépendant, non officiel. Informations officielles sur{' '}
+          <a
+            href={OFFICIAL_SITE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[#1a56db] underline underline-offset-4 hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1a56db] rounded-sm dark:text-blue-400 break-words"
+          >
+            formation-civique.interieur.gouv.fr
+          </a>
+        </p>
 
       </div>
     </div>

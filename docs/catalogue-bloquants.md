@@ -9,7 +9,7 @@ Lu par le sous-agent relecteur (`docs/relecteur.md`). Chaque défaut trouvé par
 - Question : que se passe-t-il avec un historique vide, une ancienne entrée sans `id` ou sans `answers`, une progression sauvegardée avant le changement, une question à plusieurs `answers`, un `group` absent, un chrono à 0 ?
 
 ## 3. Une règle d'`AGENTS.md` tenue par la prose seulement
-- Question : chaque règle touchée (IDs 1–191 = officielles, 40 questions / 40 minutes, pas deux questions du même `group`, UI en français) est-elle **tenue par le code** et un test, pas seulement écrite ?
+- Question : chaque règle touchée (IDs 1–191 = officielles, 40 questions / 45 minutes / seuil 32/40, pas deux questions du même `group`, UI en français) est-elle **tenue par le code** et un test, pas seulement écrite ?
 
 ## 4. Cas multiples et concurrence
 - Question : deux onglets ouverts, un examen repris puis abandonné, un double clic sur « Valider » ou « Question suivante », le chrono qui expire pendant la correction ?

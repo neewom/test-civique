@@ -15,9 +15,11 @@ import {
 import allQuestions from '@/data/questions.json'
 import type { AnswerRecord, ExamQuestion, ExamInProgress } from '@/lib/exam-types'
 import { saveProgress, clearProgress } from '@/lib/exam-types'
-import { buildExam, saveResult, formatTime, type Question } from '@/lib/exam'
+import { buildExam, saveResult, formatTime, isPassed, type Question } from '@/lib/exam'
+import { ExamVerdict } from '@/components/ExamVerdict'
 
-export const GLOBAL_EXAM_TIME = 40 * 60 // 2400 secondes
+// Arrêté du 10 octobre 2025, art. 4 : 45 minutes au maximum
+export const GLOBAL_EXAM_TIME = 45 * 60 // 2700 secondes
 
 // Re-export for consumers (tests, Home)
 export type { ExamQuestion }
@@ -163,7 +165,8 @@ export default function Examen() {
 
   const current = questions[index]
   const isLastQuestion = index === questions.length - 1
-  const timerPct = (globalTimeLeft / GLOBAL_EXAM_TIME) * 100
+  // Borné à [0, 100] : un examen repris peut porter un timeLeft d'une autre durée
+  const timerPct = Math.min(100, Math.max(0, (globalTimeLeft / GLOBAL_EXAM_TIME) * 100))
   const timerColor =
     globalTimeLeft > 1200 ? 'bg-green-500'
     : globalTimeLeft > 600 ? 'bg-amber-500'
@@ -172,6 +175,7 @@ export default function Examen() {
   // ── Écran résultat ──────────────────────────────────────────────────────────
   if (phase === 'result') {
     const pct = Math.round((score / questions.length) * 100)
+    const passed = isPassed(score, questions.length)
     return (
       <div
         role="main"
@@ -188,12 +192,15 @@ export default function Examen() {
               <span className="text-3xl text-muted-foreground">/{questions.length}</span>
             </p>
             <p className="text-lg text-muted-foreground">{pct}%</p>
+            <div className="pt-2">
+              <ExamVerdict score={score} total={questions.length} />
+            </div>
           </div>
 
           <Card>
             <CardContent className="pt-4">
               <p className="text-sm text-muted-foreground">
-                {pct >= 80
+                {passed
                   ? 'Excellent résultat ! Vous êtes prêt(e).'
                   : pct >= 60
                   ? 'Bon résultat, continuez à réviser.'

@@ -81,3 +81,30 @@ describe('ExamenDetail', () => {
     expect(screen.getAllByRole('button', { name: /Retour à l'accueil/i }).length).toBeGreaterThan(0)
   })
 })
+
+// La pastille de verdict mêle plusieurs nœuds de texte : on compare son texte complet
+function verdict(text: string) {
+  return screen.getByText((_, el) => el?.tagName === 'P' && el.textContent?.replace(/\s+/g, ' ') === text)
+}
+
+describe('ExamenDetail — verdict', () => {
+  beforeEach(() => localStorage.clear())
+
+  it('affiche « Réussi » pour un score enregistré de 32/40', () => {
+    seedHistory({ ...RECORD, score: 32 })
+    renderDetail(RECORD_ID)
+    expect(verdict('Réussi · seuil 32/40')).toBeInTheDocument()
+  })
+
+  it('affiche « Pas encore réussi » pour un score enregistré de 31/40', () => {
+    seedHistory({ ...RECORD, score: 31 })
+    renderDetail(RECORD_ID)
+    expect(verdict('Pas encore réussi · seuil 32/40')).toBeInTheDocument()
+  })
+
+  it('applique 80 % du total pour un ancien enregistrement dont le total n\'est pas 40', () => {
+    seedHistory({ ...RECORD, score: 16, total: 20 })
+    renderDetail(RECORD_ID)
+    expect(verdict('Réussi · seuil 16/20')).toBeInTheDocument()
+  })
+})

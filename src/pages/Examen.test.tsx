@@ -2,6 +2,7 @@ import { render, screen, fireEvent, act } from '@testing-library/react'
 import { MemoryRouter } from 'react-router-dom'
 import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest'
 import Examen, { GLOBAL_EXAM_TIME } from './Examen'
+import type { ExamInProgress } from '@/lib/exam-types'
 import {
   buildExam,
   saveResult,
@@ -150,15 +151,16 @@ describe('Examen', () => {
     expect(screen.getByText(`Question 1 / ${EXAM_SIZE}`)).toBeInTheDocument()
   })
 
-  it('affiche le timer global à "40:00" au démarrage', () => {
+  it('affiche le timer global à "45:00" au démarrage', () => {
     renderExamen()
-    expect(screen.getByText('40:00')).toBeInTheDocument()
+    expect(GLOBAL_EXAM_TIME).toBe(45 * 60)
+    expect(screen.getByText('45:00')).toBeInTheDocument()
   })
 
   it('le timer global décrémente', async () => {
     renderExamen()
     await act(async () => { vi.advanceTimersByTime(5000) })
-    expect(screen.getByText('39:55')).toBeInTheDocument()
+    expect(screen.getByText('44:55')).toBeInTheDocument()
   })
 
   it('affiche 4 boutons de réponse', () => {
@@ -297,5 +299,78 @@ describe('Examen', () => {
     })
     expect(screen.queryByText('Quitter l\'examen ?')).not.toBeInTheDocument()
     expect(screen.getByText(`Question 1 / ${EXAM_SIZE}`)).toBeInTheDocument()
+  })
+})
+
+// ─── Règles officielles : reprise et verdict ──────────────────────────────────
+
+function makeResume(timeLeft: number, correctCount: number): ExamInProgress {
+  const questions = buildExam()
+  return {
+    questions,
+    index: correctCount,
+    answers: questions.slice(0, correctCount).map((q) => ({
+      questionId: q.id,
+      chosen: q.answer,
+      correct: true,
+    })),
+    timeLeft,
+    startedAt: '2026-11-01T10:00:00.000Z',
+  }
+}
+
+function renderResumed(resume: ExamInProgress) {
+  return render(
+    <MemoryRouter initialEntries={[{ pathname: '/examen', state: { resume } }]}>
+      <Examen />
+    </MemoryRouter>
+  )
+}
+
+describe('Examen — règles officielles', () => {
+  beforeEach(() => {
+    localStorage.clear()
+    vi.useFakeTimers()
+  })
+  afterEach(() => {
+    vi.useRealTimers()
+  })
+
+  it('reprend un examen sauvegardé avec l\'ancienne durée (40 min) sans changer son temps restant', () => {
+    renderResumed(makeResume(40 * 60, 0))
+    expect(screen.getByText('40:00')).toBeInTheDocument()
+    const bar = screen.getAllByRole('progressbar').find((el) => el.getAttribute('aria-valuemax') === String(GLOBAL_EXAM_TIME))!
+    const width = parseFloat(bar.style.width)
+    expect(width).toBeGreaterThan(0)
+    expect(width).toBeLessThanOrEqual(100)
+    expect(width).toBeCloseTo((2400 / 2700) * 100, 5)
+  })
+
+  it('borne la barre du chrono à 100 % si le temps restant dépasse la durée', () => {
+    renderResumed(makeResume(GLOBAL_EXAM_TIME + 600, 0))
+    const bar = screen.getAllByRole('progressbar').find((el) => el.getAttribute('aria-valuemax') === String(GLOBAL_EXAM_TIME))!
+    expect(bar.style.width).toBe('100%')
+  })
+
+  it('affiche « Réussi » à 32/40', async () => {
+    renderResumed(makeResume(2, 32))
+    await act(async () => { vi.advanceTimersByTime(3000) })
+    expect(screen.getByLabelText('Score : 32 sur 40')).toBeInTheDocument()
+    expect(screen.getByText('Réussi')).toBeInTheDocument()
+    expect(screen.getByText('Seuil de réussite : 32/40')).toBeInTheDocument()
+  })
+
+  it('affiche « Pas encore réussi » à 31/40 avec le nombre de réponses manquantes', async () => {
+    renderResumed(makeResume(2, 31))
+    await act(async () => { vi.advanceTimersByTime(3000) })
+    expect(screen.getByLabelText('Score : 31 sur 40')).toBeInTheDocument()
+    expect(screen.getByText('Pas encore réussi')).toBeInTheDocument()
+    expect(screen.getByText('Encore 1 bonne réponse pour atteindre 32/40')).toBeInTheDocument()
+  })
+
+  it('accorde le nombre de réponses manquantes au pluriel', async () => {
+    renderResumed(makeResume(2, 27))
+    await act(async () => { vi.advanceTimersByTime(3000) })
+    expect(screen.getByText('Encore 5 bonnes réponses pour atteindre 32/40')).toBeInTheDocument()
   })
 })
