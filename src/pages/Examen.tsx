@@ -121,6 +121,8 @@ function ExamSession({ restart, onRestart }: ExamSessionProps) {
 
   // Timer global — démarre une fois au montage et tourne jusqu'à la fin
   useEffect(() => {
+    // A resumed exam already complete is finished on mount: no timer to start
+    if (finishedRef.current) return
     timerRef.current = setInterval(() => {
       setGlobalTimeLeft((t) => (t > 0 ? t - 1 : 0))
     }, 1000)
