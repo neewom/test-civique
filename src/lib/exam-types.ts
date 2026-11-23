@@ -56,3 +56,9 @@ export function loadProgress(): ExamInProgress | null {
     return null
   }
 }
+
+// Index of the question an exam resumes on: a save made during the correction
+// phase already holds the answer to `index`, so the exam resumes on the next one.
+export function resumeIndex(progress: ExamInProgress): number {
+  return progress.answers.length > progress.index ? progress.index + 1 : progress.index
+}

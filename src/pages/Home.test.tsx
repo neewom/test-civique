@@ -72,6 +72,37 @@ describe('Home', () => {
     const btn = screen.getByRole('button', { name: /voir le détail/i })
     expect(btn).toBeInTheDocument()
   })
+
+  it('s\'affiche avec un historique qui n\'est pas du JSON', () => {
+    localStorageMock.setItem('quiz-history', 'pas du json{')
+    renderHome()
+    expect(screen.getByRole('heading', { level: 1, name: /test civique/i })).toBeInTheDocument()
+    expect(screen.getByText('Aucun examen passé')).toBeInTheDocument()
+  })
+
+  it('s\'affiche avec un historique qui est un objet et non un tableau', () => {
+    localStorageMock.setItem('quiz-history', JSON.stringify({ score: 30, total: 40 }))
+    renderHome()
+    expect(screen.getByText('Aucun examen passé')).toBeInTheDocument()
+  })
+
+  it('ignore les entrées incomplètes et garde les autres', () => {
+    localStorageMock.setItem('quiz-history', JSON.stringify([
+      { id: '1', date: new Date().toISOString(), score: 30, total: 40, answers: [] },
+      { id: '2', date: new Date().toISOString(), total: 40 },
+    ]))
+    renderHome()
+    expect(screen.getAllByRole('button', { name: /voir le détail/i })).toHaveLength(1)
+  })
+
+  it('affiche sans lien les anciens examens enregistrés sans id', () => {
+    localStorageMock.setItem('quiz-history', JSON.stringify([
+      { date: new Date().toISOString(), score: 30, total: 40 },
+    ]))
+    renderHome()
+    expect(screen.queryByText('Aucun examen passé')).toBeNull()
+    expect(screen.queryByRole('button', { name: /voir le détail/i })).toBeNull()
+  })
 })
 
 describe('Examen blanc — expansion', () => {
@@ -235,3 +266,59 @@ describe('Accueil — couleur de l\'historique alignée sur le verdict', () => {
   })
 })
 
+
+describe('Accueil — carte « Examen en cours »', () => {
+  function storeProgress(index: number, answered: number) {
+    const questions = Array.from({ length: 40 }, (_, i) => ({
+      id: i + 1,
+      theme: 'Test',
+      question: `Question ${i + 1}`,
+      answer: 'A',
+      choices: ['A', 'B', 'C', 'D'],
+      explanation: '',
+    }))
+    localStorage.setItem('exam-in-progress', JSON.stringify({
+      questions,
+      index,
+      answers: questions.slice(0, answered).map((q) => ({ questionId: q.id, chosen: 'A', correct: true })),
+      timeLeft: 1500,
+      startedAt: '2026-11-23T10:00:00.000Z',
+    }))
+  }
+
+  it('affiche la question qui sera reprise', () => {
+    storeProgress(2, 2)
+    renderHome()
+    expect(screen.getByText('Question 3 / 40')).toBeInTheDocument()
+  })
+
+  it('affiche la question suivante quand la sauvegarde date de la correction', () => {
+    storeProgress(2, 3)
+    renderHome()
+    expect(screen.getByText('Question 4 / 40')).toBeInTheDocument()
+    expect(screen.getByText('3 réponses données')).toBeInTheDocument()
+  })
+
+  it('ne dépasse pas la dernière question quand toutes les réponses sont données', () => {
+    storeProgress(39, 40)
+    renderHome()
+    expect(screen.getByText('Question 40 / 40')).toBeInTheDocument()
+  })
+
+  function progressBarWidth(): string {
+    const section = screen.getByRole('region', { name: 'Examen en cours' })
+    return (section.querySelector('[aria-hidden="true"]') as HTMLElement).style.width
+  }
+
+  it('remplit la barre selon les réponses données', () => {
+    storeProgress(2, 3)
+    renderHome()
+    expect(progressBarWidth()).toBe(`${(3 / 40) * 100}%`)
+  })
+
+  it('remplit entièrement la barre quand toutes les réponses sont données', () => {
+    storeProgress(39, 40)
+    renderHome()
+    expect(progressBarWidth()).toBe('100%')
+  })
+})
