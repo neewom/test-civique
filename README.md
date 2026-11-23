@@ -1,8 +1,8 @@
-# Test Civique 🇫🇷
+# Futur Citoyen
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/placeholder/deploy-status)](https://test-civique.netlify.app)
 
-Application de préparation à l'examen civique requis pour l'obtention d'un titre de séjour pluriannuel, d'une carte de résident ou de la nationalité française.
+**Futur Citoyen** (anciennement « Test Civique ») est une application de préparation à l'examen civique requis pour l'obtention d'un titre de séjour pluriannuel, d'une carte de résident ou de la nationalité française.
 
 ---
 
