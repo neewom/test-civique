@@ -80,7 +80,7 @@ Règles officielles (arrêté du 10 octobre 2025, art. 1 à 4) : 40 questions, 4
 
 - `src/data/` — questions
 - `src/lib/` — logique métier et types (`exam.ts` : tirage et sauvegarde de l'examen, `exam-types.ts`, `theme-context.ts`, `utils.ts`)
-- `src/pages/` — `Home`, `Examen` (examen et écran de résultat), `ExamenDetail`, `Revision` ; `Quiz`, `Result`, `History` sont des pages vides encore routées
+- `src/pages/` — `Home`, `Examen` (examen et écran de résultat), `ExamenDetail`, `Revision`
 - `src/components/` — `ThemeProvider`, `ThemeSwitch` et composants shadcn (`ui/`, règle `react-refresh/only-export-components` coupée pour eux)
 
 ---
