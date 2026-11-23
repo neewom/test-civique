@@ -1,5 +1,5 @@
 import { render, screen, fireEvent, act } from '@testing-library/react'
-import { describe, it, expect, beforeEach } from 'vitest'
+import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest'
 import { ThemeProvider } from '@/components/ThemeProvider'
 import { ThemeSwitch } from '@/components/ThemeSwitch'
 
@@ -65,5 +65,23 @@ describe('ThemeSwitch', () => {
       fireEvent.click(screen.getByRole('switch'))
     })
     expect(localStorage.getItem('theme')).toBe('light')
+  })
+
+  describe('localStorage inaccessible', () => {
+    afterEach(() => {
+      vi.unstubAllGlobals()
+    })
+
+    it('bascule le thème sans planter quand l\'écriture échoue', async () => {
+      vi.stubGlobal('localStorage', {
+        getItem: () => null,
+        setItem: () => { throw new Error('QuotaExceededError') },
+      })
+      renderSwitch()
+      await act(async () => {
+        fireEvent.click(screen.getByRole('switch'))
+      })
+      expect(document.documentElement.classList.contains('dark')).toBe(true)
+    })
   })
 })

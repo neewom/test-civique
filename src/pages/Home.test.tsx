@@ -316,6 +316,12 @@ describe('Accueil — carte « Examen en cours »', () => {
     expect(progressBarWidth()).toBe(`${(3 / 40) * 100}%`)
   })
 
+  it('ignore une sauvegarde corrompue sans planter', () => {
+    localStorage.setItem('exam-in-progress', JSON.stringify({ index: 2 }))
+    renderHome()
+    expect(screen.queryByRole('region', { name: 'Examen en cours' })).not.toBeInTheDocument()
+  })
+
   it('remplit entièrement la barre quand toutes les réponses sont données', () => {
     storeProgress(39, 40)
     renderHome()
