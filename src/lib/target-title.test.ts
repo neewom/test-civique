@@ -46,4 +46,23 @@ describe('titre visé', () => {
     expect(loadTargetTitle()).toBeNull()
     expect(() => saveTargetTitle('pluriannuelle')).not.toThrow()
   })
+
+  it('garde le choix en mémoire quand setItem lève (stockage plein ou bloqué)', () => {
+    vi.stubGlobal('localStorage', {
+      getItem: () => null,
+      setItem: () => { throw new Error('QuotaExceededError') },
+    })
+    saveTargetTitle('pluriannuelle')
+    expect(loadTargetTitle()).toBe('pluriannuelle')
+  })
+
+  it('garde le choix en mémoire quand getItem lève', () => {
+    vi.stubGlobal('localStorage', {
+      getItem: () => { throw new Error('SecurityError') },
+      setItem: () => { throw new Error('SecurityError') },
+    })
+    expect(loadTargetTitle()).toBeNull()
+    saveTargetTitle('pluriannuelle')
+    expect(loadTargetTitle()).toBe('pluriannuelle')
+  })
 })

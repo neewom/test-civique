@@ -15,20 +15,33 @@ function isTargetTitle(value: unknown): value is TargetTitle {
   return typeof value === 'string' && (TARGET_TITLES as readonly string[]).includes(value)
 }
 
-// Stored choice; an unknown or unreadable value counts as no choice.
+// Choice made during this visit, kept in memory: when localStorage is blocked or
+// full, the home page must still see it, or it would send the user back to the
+// title screen in a loop.
+let sessionChoice: TargetTitle | null = null
+
+// Stored choice, else the one made during this visit; an unknown or unreadable
+// stored value counts as no choice.
 export function loadTargetTitle(): TargetTitle | null {
   try {
     const value = localStorage.getItem(TARGET_TITLE_KEY)
-    return isTargetTitle(value) ? value : null
+    if (isTargetTitle(value)) return value
   } catch {
-    return null
+    // localStorage unavailable: fall back to the choice kept in memory
   }
+  return sessionChoice
 }
 
 export function saveTargetTitle(title: TargetTitle): void {
+  sessionChoice = title
   try {
     localStorage.setItem(TARGET_TITLE_KEY, title)
   } catch {
-    // localStorage unavailable: the choice lasts until the page is reloaded
+    // localStorage unavailable or full: the choice kept in memory lasts until the page is reloaded
   }
+}
+
+// Tests only: forget the choice kept in memory.
+export function resetTargetTitleForTests(): void {
+  sessionChoice = null
 }

@@ -334,7 +334,7 @@ describe('Accueil — premier lancement', () => {
   it('sans titre choisi ni examen, renvoie vers l\'écran du titre', () => {
     localStorageMock.removeItem('target-title')
     renderHome()
-    expect(screen.getByTestId('location')).toHaveTextContent('/titre')
+    expect(screen.getByTestId('location')).toHaveTextContent('/titre|{"firstLaunch":true}')
   })
 
   it('un titre illisible compte comme pas de choix', () => {

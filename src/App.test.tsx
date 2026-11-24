@@ -80,4 +80,18 @@ describe('App routing', () => {
     renderAt('/examen')
     expect(screen.queryByRole('switch')).not.toBeInTheDocument()
   })
+
+  it.each([
+    ['setItem lève (stockage plein)', { getItem: () => null, setItem: () => { throw new Error('QuotaExceededError') }, removeItem: () => {}, clear: () => {} }],
+    ['getItem lève (données de site bloquées)', { getItem: () => { throw new Error('SecurityError') }, setItem: () => { throw new Error('SecurityError') }, removeItem: () => {}, clear: () => {} }],
+  ])('sans stockage utilisable (%s), « Continuer » mène quand même à l\'accueil', async (_label, storage) => {
+    vi.stubGlobal('localStorage', storage)
+    renderAt('/')
+    expect(window.location.pathname).toBe('/titre')
+    await act(async () => {
+      fireEvent.click(screen.getByRole('button', { name: 'Continuer' }))
+    })
+    expect(window.location.pathname).toBe('/')
+    expect(screen.getByRole('heading', { level: 1, name: 'Votre chemin vers le jour J' })).toBeInTheDocument()
+  })
 })
