@@ -97,3 +97,21 @@ describe('OrganicBackground', () => {
     expect(pause).not.toHaveBeenCalled()
   })
 })
+
+describe('OrganicBackground — formes des pages titre et règles', () => {
+  afterEach(() => {
+    vi.unstubAllGlobals()
+  })
+
+  it.each([
+    ['goal', 'fill-goal'],
+    ['info', 'fill-info'],
+  ] as const)('la forme %s a sa couleur et respire entre 26 et 32 s', (shape, fill) => {
+    mockReducedMotion(false)
+    const { container } = render(<OrganicBackground shape={shape} />)
+    expect(container.querySelector('path')).toHaveClass(fill)
+    const seconds = parseFloat(container.querySelector('animate')!.getAttribute('dur')!)
+    expect(seconds).toBeGreaterThanOrEqual(26)
+    expect(seconds).toBeLessThanOrEqual(32)
+  })
+})
