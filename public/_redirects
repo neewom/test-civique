@@ -2,9 +2,5 @@
 https://test-civique.netlify.app/* https://futurcitoyen.fr/:splat 301!
 http://test-civique.netlify.app/* https://futurcitoyen.fr/:splat 301!
 
-# Visit stats (GoatCounter, see AGENTS.md): proxied so the CSP stays at 'self'.
-# Must stay before the SPA fallback. Site code: futurcitoyen (only here)
-/count https://futurcitoyen.goatcounter.com/count 200
-
 # SPA fallback
 /* /index.html 200
