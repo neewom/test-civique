@@ -1,4 +1,4 @@
-import { useEffect, useId, useState } from 'react'
+import { useId, useState } from 'react'
 import { useLocation } from 'react-router-dom'
 import { AnswerBox } from '@/components/AnswerBox'
 import { BackLink } from '@/components/BackLink'
@@ -58,15 +58,11 @@ export default function Revision() {
   useDocumentTitle('Révision')
   const location = useLocation()
   const [examIds] = useState(() => parseReviewIds(location.state, POOL_IDS))
-  const [reviewIds] = useState(loadQuestionsToReview)
+  // Only questions still in the data: an id removed since the exam would count without a card
+  const [reviewIds] = useState(() => loadQuestionsToReview().filter((id) => POOL_IDS.has(id)))
   const [filter, setFilter] = useState<Filter>(() => (examIds.length > 0 ? { kind: 'exam' } : { kind: 'all' }))
   const [excludeSituational, setExcludeSituational] = useState(false)
   const checkboxId = useId()
-
-  // Opened from the bottom of an exam detail: start at the top of the list, not at the old scroll position
-  useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [])
 
   const titleLabel = TARGET_TITLE_LABELS[loadTargetTitle() ?? 'pluriannuelle']
   const pool = excludeSituational ? POOL.filter((q) => q.id <= LAST_OFFICIAL_ID) : POOL

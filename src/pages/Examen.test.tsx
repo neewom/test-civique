@@ -598,6 +598,13 @@ describe('Examen — écrans de question et de correction', () => {
     expect(screen.getByRole('heading', { level: 1 }).className).toMatch(/\boutline-none\b/)
   })
 
+  it('n\'affiche pas d\'anneau de focus sur le verdict de la correction, qui n\'est pas interactif', async () => {
+    renderResumed(makeResume(1500, 0))
+    await answer(true)
+    expect(screen.getByRole('status')).toHaveFocus()
+    expect(screen.getByRole('status').className).toMatch(/\boutline-none\b/)
+  })
+
   it('ne déplace pas le focus à l\'arrivée sur la première question', () => {
     renderResumed(makeResume(1500, 0))
     expect(screen.getByRole('heading', { level: 1 })).not.toHaveFocus()

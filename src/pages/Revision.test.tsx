@@ -18,7 +18,6 @@ const localStorageMock = makeLocalStorageMock()
 
 beforeEach(() => {
   vi.stubGlobal('localStorage', localStorageMock)
-  vi.stubGlobal('scrollTo', vi.fn())
   localStorageMock.clear()
 })
 
@@ -144,6 +143,14 @@ describe('Revision — À revoir', () => {
     expect(screen.getByText('Aucune question à revoir pour l\'instant.')).toBeInTheDocument()
   })
 
+  it('ignore les questions retirées des données : compte à 0 et message explicatif', () => {
+    setHistory([{ questionId: 99999, correct: false }, { questionId: 88888, correct: false }])
+    renderRevision()
+    fireEvent.click(pill('À revoir (0)'))
+    expect(shownCards()).toHaveLength(0)
+    expect(screen.getByText('Aucune question à revoir pour l\'instant.')).toBeInTheDocument()
+  })
+
   it('n\'affiche que les questions dont la dernière réponse était fausse ou absente', () => {
     setHistory(
       [{ questionId: 1, correct: false }, { questionId: 2, correct: false }, { questionId: 3, correct: true }],
@@ -189,11 +196,6 @@ describe('Revision — arrivée depuis le détail d\'un examen', () => {
     renderRevision({ reviewIds: [5] })
     fireEvent.click(pill('Tous les thèmes'))
     expect(shownCards()).toHaveLength(questions.length)
-  })
-
-  it('s\'ouvre en haut de la page, pas à la position du détail', () => {
-    renderRevision({ reviewIds: [5] })
-    expect(window.scrollTo).toHaveBeenCalledWith(0, 0)
   })
 
   it('ignore les valeurs invalides', () => {

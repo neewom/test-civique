@@ -368,7 +368,7 @@ function ExamSession({ restart, onRestart }: ExamSessionProps) {
               ref={verdictRef}
               tabIndex={-1}
               tone={isCorrect ? 'success' : 'error'}
-              className="self-start"
+              className="self-start outline-none"
             >
               {isCorrect ? 'Bien joué' : 'Pas tout à fait'}
             </Verdict>
