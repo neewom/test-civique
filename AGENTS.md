@@ -49,6 +49,7 @@ Règles officielles (arrêté du 10 octobre 2025, art. 1 à 4) : 40 questions, 4
 - **Examen blanc** : 40 questions tirées au hasard, **chrono global de 45 minutes** (pas de chrono par question ; un examen en cours sauvegardé garde son temps restant). Deux jeux au choix depuis l'étape 2 du parcours de l'accueil : questions classiques seules (191) ou avec les mises en situation (291). Chaque question : choix → « Valider » → correction avec explication → « Question suivante ». À l'expiration du chrono, les questions restantes comptent comme « sans réponse ». Le résultat affiche « Réussi » ou « Pas encore réussi » (seuil `passThreshold` = 80 % du total, arrondi au supérieur, dans `src/lib/exam.ts`), à l'écran de fin comme dans le détail d'un examen, calculé à partir du score enregistré. Progression sauvegardée à chaque seconde et reprenable depuis l'accueil.
 - **Mode révision** : toutes les questions par thème, bonne réponse et explication ; filtres par thème et « sans les mises en situation » (filtres en pastilles, qui défilent horizontalement sur téléphone).
 - **Accueil en parcours** : titre visé (écran `/titre`, choix mémorisé), 4 étapes (réviser · réussir 3 examens blancs avec compteur « n sur 3 » = réussites d'affilée depuis l'examen le plus récent, un échec remet à 0, plafonné à 3, `src/lib/readiness.ts` · trouver un centre, « bientôt » · le jour J), reprise de l'examen en cours.
+- **Mentions légales et confidentialité** (`/mentions-legales`, lien en pied de l'accueil) : éditeur CHITHDA (EURL), hébergeur Netlify, données restées dans le navigateur, statistiques GoatCounter sans cookie. Page à tenir à jour (texte et date `LAST_UPDATED` de `src/pages/MentionsLegales.tsx`) dès que la collecte de données change : publicité, paiement, nouveaux événements de statistiques.
 - **Historique** : section « Derniers examens » (les 3 derniers) sur l'accueil, détail d'un examen sur `/examen/:id`.
 - **Thème clair / sombre** persistant.
 - **Marque** : logo « la pousse » (`src/components/BrandLogo.tsx` dans l'en-tête de l'accueil ; `public/logo.svg`, `favicon.svg` aux traits épaissis, PNG 16/32/48, `apple-touch-icon.png`, `icon-512.png`, `og-image.png`, `site.webmanifest`). Couleurs : feuilles #8ED462 / #F5E211, encre #2C2E2A, « Futur » #3A7A2C en clair et #8ED462 en sombre. Titre d'onglet par page « <page> · Futur Citoyen » (`src/lib/use-document-title.ts`).
@@ -83,7 +84,7 @@ Règles officielles (arrêté du 10 octobre 2025, art. 1 à 4) : 40 questions, 4
 
 - `src/data/` — questions
 - `src/lib/` — logique métier et types (`exam.ts` : tirage et sauvegarde de l'examen, `exam-types.ts`, `theme-context.ts`, `utils.ts`)
-- `src/pages/` — `Home`, `Examen` (examen et écran de résultat), `ExamenDetail`, `Revision`, `Regles` (« Comment se passe l'examen », `/regles`), `TitreVise` (« Quel titre préparez-vous ? », `/titre`)
+- `src/pages/` — `Home`, `Examen` (examen et écran de résultat), `ExamenDetail`, `Revision`, `Regles` (« Comment se passe l'examen », `/regles`), `TitreVise` (« Quel titre préparez-vous ? », `/titre`), `MentionsLegales` (« Mentions légales et confidentialité », `/mentions-legales`)
 - `src/components/` — `ThemeProvider`, `ThemeSwitch` et composants shadcn (`ui/`, règle `react-refresh/only-export-components` coupée pour eux)
 
 ---

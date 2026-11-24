@@ -123,6 +123,12 @@ describe('Accueil — en-tête et parcours', () => {
     expect(screen.getByText(/Site indépendant, non officiel/)).toBeInTheDocument()
     expect(screen.getByRole('link', { name: 'formation-civique.interieur.gouv.fr' })).toHaveAttribute('href', OFFICIAL_SITE_URL)
   })
+
+  it('mène à la page des mentions légales depuis le pied de page', () => {
+    renderHome()
+    fireEvent.click(screen.getByRole('link', { name: 'Mentions légales et confidentialité' }))
+    expect(screen.getByTestId('location')).toHaveTextContent('/mentions-legales|')
+  })
 })
 
 describe('Accueil — choix de l\'examen blanc (étape 2)', () => {
