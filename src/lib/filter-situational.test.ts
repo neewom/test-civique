@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { buildExam, EXAM_SIZE } from './exam'
+import { buildExam, EXAM_SIZE, type Notion } from './exam'
 import allQuestions from '@/data/questions.json'
 
 const SITUATIONAL_MIN_ID = 192
@@ -7,6 +7,7 @@ const SITUATIONAL_MIN_ID = 192
 interface Question {
   id: number
   theme: string
+  notion: Notion
   question: string
   answers: string[]
   distractors: string[]
@@ -21,6 +22,7 @@ const officialPool = (allQuestions as Question[]).filter((q) => q.id < SITUATION
 const mockSituationalQuestions: Question[] = Array.from({ length: 10 }, (_, i) => ({
   id: SITUATIONAL_MIN_ID + i,
   theme: 'Mise en situation',
+  notion: 'mise-en-situation',
   question: `Question de mise en situation ${i + 1}`,
   answers: [`Réponse ${i + 1}`],
   distractors: [`Distractor A ${i}`, `Distractor B ${i}`, `Distractor C ${i}`],

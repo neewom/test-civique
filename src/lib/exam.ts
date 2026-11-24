@@ -16,9 +16,64 @@ export function isPassed(score: number, total: number): boolean {
   return total > 0 && score >= passThreshold(total)
 }
 
+/**
+ * Official sub-theme of a question (arrêté du 10 octobre 2025, annexe).
+ * Situational questions (id 192+) are always `mise-en-situation`, whatever their theme.
+ */
+export const NOTIONS = [
+  'devise-symboles',
+  'laicite',
+  'democratie-vote',
+  'organisation-republique',
+  'institutions-europeennes',
+  'droits-fondamentaux',
+  'obligations-devoirs',
+  'periodes-personnages',
+  'territoires-geographie',
+  'patrimoine',
+  's-installer',
+  'soins',
+  'travail',
+  'autorite-parentale-ecole',
+  'mise-en-situation',
+] as const
+
+export type Notion = (typeof NOTIONS)[number]
+
+export interface BlueprintLine {
+  theme: string
+  notion: Notion
+  count: number
+}
+
+/**
+ * Official breakdown of the 40 questions of an exam (arrêté du 10 octobre 2025),
+ * with the theme labels of questions.json (« Vie en société » is shown as
+ * « Vivre dans la société française » on the rules page).
+ */
+export const EXAM_BLUEPRINT: readonly BlueprintLine[] = [
+  { theme: 'Principes et valeurs de la République', notion: 'devise-symboles', count: 3 },
+  { theme: 'Principes et valeurs de la République', notion: 'laicite', count: 2 },
+  { theme: 'Principes et valeurs de la République', notion: 'mise-en-situation', count: 6 },
+  { theme: 'Système institutionnel et politique', notion: 'democratie-vote', count: 3 },
+  { theme: 'Système institutionnel et politique', notion: 'organisation-republique', count: 2 },
+  { theme: 'Système institutionnel et politique', notion: 'institutions-europeennes', count: 1 },
+  { theme: 'Droits et devoirs', notion: 'droits-fondamentaux', count: 2 },
+  { theme: 'Droits et devoirs', notion: 'obligations-devoirs', count: 3 },
+  { theme: 'Droits et devoirs', notion: 'mise-en-situation', count: 6 },
+  { theme: 'Histoire, géographie et culture', notion: 'periodes-personnages', count: 3 },
+  { theme: 'Histoire, géographie et culture', notion: 'territoires-geographie', count: 3 },
+  { theme: 'Histoire, géographie et culture', notion: 'patrimoine', count: 2 },
+  { theme: 'Vie en société', notion: 's-installer', count: 1 },
+  { theme: 'Vie en société', notion: 'soins', count: 1 },
+  { theme: 'Vie en société', notion: 'travail', count: 1 },
+  { theme: 'Vie en société', notion: 'autorite-parentale-ecole', count: 1 },
+]
+
 export interface Question {
   id: number
   theme: string
+  notion: Notion
   question: string
   answers: string[]
   distractors: string[]

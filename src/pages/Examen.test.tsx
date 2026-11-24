@@ -83,7 +83,7 @@ describe('buildExam', () => {
 
   it('la réponse choisie est toujours une des valeurs du tableau answers', () => {
     const pool: Parameters<typeof buildExam>[0] = [
-      { id: 1, theme: 'T', question: 'Q', answers: ['A', 'B', 'C'], distractors: ['D', 'E', 'F'], explanation: 'E' },
+      { id: 1, theme: 'T', notion: 'patrimoine', question: 'Q', answers: ['A', 'B', 'C'], distractors: ['D', 'E', 'F'], explanation: 'E' },
     ]
     // On tire plusieurs fois pour couvrir les différentes valeurs possibles
     for (let i = 0; i < 20; i++) {
@@ -95,10 +95,10 @@ describe('buildExam', () => {
 
   it('un seul groupe est représenté dans la sélection — pas de doublons de groupe', () => {
     const pool: Parameters<typeof buildExam>[0] = [
-      { id: 1, theme: 'T', question: 'Q1', answers: ['A'], distractors: ['B', 'C', 'D'], explanation: 'E', group: 'g1' },
-      { id: 2, theme: 'T', question: 'Q2', answers: ['A'], distractors: ['B', 'C', 'D'], explanation: 'E', group: 'g1' },
-      { id: 3, theme: 'T', question: 'Q3', answers: ['A'], distractors: ['B', 'C', 'D'], explanation: 'E', group: 'g2' },
-      { id: 4, theme: 'T', question: 'Q4', answers: ['A'], distractors: ['B', 'C', 'D'], explanation: 'E' },
+      { id: 1, theme: 'T', notion: 'patrimoine', question: 'Q1', answers: ['A'], distractors: ['B', 'C', 'D'], explanation: 'E', group: 'g1' },
+      { id: 2, theme: 'T', notion: 'patrimoine', question: 'Q2', answers: ['A'], distractors: ['B', 'C', 'D'], explanation: 'E', group: 'g1' },
+      { id: 3, theme: 'T', notion: 'patrimoine', question: 'Q3', answers: ['A'], distractors: ['B', 'C', 'D'], explanation: 'E', group: 'g2' },
+      { id: 4, theme: 'T', notion: 'patrimoine', question: 'Q4', answers: ['A'], distractors: ['B', 'C', 'D'], explanation: 'E' },
     ]
     const result = buildExam(pool)
     const groups = result.map((q) => (pool.find((p) => p.id === q.id) as typeof pool[0]).group).filter(Boolean)
@@ -660,9 +660,9 @@ describe('Examen — écrans de question et de correction', () => {
 describe('buildExam — source', () => {
   it('reporte le champ source facultatif sur la question tirée', () => {
     const source = { url: 'https://www.legifrance.gouv.fr', label: 'Légifrance' }
-    const [withSource] = buildExam([{ id: 1, theme: 'T', question: 'Q', answers: ['A'], distractors: ['B', 'C', 'D'], explanation: 'E', source }])
+    const [withSource] = buildExam([{ id: 1, theme: 'T', notion: 'patrimoine', question: 'Q', answers: ['A'], distractors: ['B', 'C', 'D'], explanation: 'E', source }])
     expect(withSource.source).toEqual(source)
-    const [without] = buildExam([{ id: 2, theme: 'T', question: 'Q', answers: ['A'], distractors: ['B', 'C', 'D'], explanation: 'E' }])
+    const [without] = buildExam([{ id: 2, theme: 'T', notion: 'patrimoine', question: 'Q', answers: ['A'], distractors: ['B', 'C', 'D'], explanation: 'E' }])
     expect(without).not.toHaveProperty('source')
   })
 })
