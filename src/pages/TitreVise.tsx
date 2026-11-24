@@ -1,10 +1,10 @@
 import { useState } from 'react'
 import { Check } from 'lucide-react'
-import { useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import { BackLink } from '@/components/BackLink'
 import { OrganicBackground } from '@/components/OrganicBackground'
 import { PillButton } from '@/components/PillButton'
-import { loadTargetTitle, saveTargetTitle, type TargetTitle } from '@/lib/target-title'
+import { saveTargetTitle, type TargetTitle } from '@/lib/target-title'
 import { useDocumentTitle } from '@/lib/use-document-title'
 import { cn } from '@/lib/utils'
 
@@ -21,20 +21,22 @@ const optionClass =
 export default function TitreVise() {
   useDocumentTitle('Quel titre préparez-vous ?')
   const navigate = useNavigate()
-  // No stored choice = first launch: there is no home page to go back to yet
-  const [hasChoice] = useState(() => loadTargetTitle() !== null)
+  const location = useLocation()
+  // First launch = sent here by the home page (no title chosen, no exam yet):
+  // there is no home page to go back to. Opened from the home pill, « Retour » shows.
+  const firstLaunch = (location.state as { firstLaunch?: boolean } | null)?.firstLaunch === true
   const [selected, setSelected] = useState<TargetTitle>('pluriannuelle')
 
   function handleContinue() {
     saveTargetTitle(selected)
-    navigate('/', { replace: !hasChoice })
+    navigate('/', { replace: firstLaunch })
   }
 
   return (
     <main className="relative min-h-svh overflow-hidden bg-background text-foreground">
       <OrganicBackground shape="goal" />
       <div className="relative mx-auto flex min-h-svh w-full max-w-[30rem] flex-col gap-3.5 px-[22px] pt-5 pb-6">
-        {hasChoice ? <BackLink /> : <div className="min-h-11" aria-hidden="true" />}
+        {firstLaunch ? <div className="min-h-11" aria-hidden="true" /> : <BackLink />}
         <h1 className="mt-[3.75rem] max-w-[16.25rem] text-[2.25rem] leading-none font-bold tracking-[-0.04em] text-balance">
           Quel titre préparez-vous ?
         </h1>

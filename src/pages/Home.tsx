@@ -101,7 +101,7 @@ export default function Home() {
   const [storedTitle] = useState(() => loadTargetTitle())
   const [mustChooseTitle] = useState(() => storedTitle === null && history.length === 0 && inProgress === null)
 
-  if (mustChooseTitle) return <Navigate to="/titre" replace />
+  if (mustChooseTitle) return <Navigate to="/titre" replace state={{ firstLaunch: true }} />
 
   const targetTitle = storedTitle ?? 'pluriannuelle'
   const streak = passedInARow(history)

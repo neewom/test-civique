@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from '@testing-library/react'
-import { MemoryRouter, Route, Routes } from 'react-router-dom'
+import { MemoryRouter, Route, Routes, useNavigate } from 'react-router-dom'
 import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest'
 import TitreVise from './TitreVise'
 
@@ -23,9 +23,9 @@ afterEach(() => {
   vi.unstubAllGlobals()
 })
 
-function renderTitre() {
+function renderTitre(state?: unknown) {
   render(
-    <MemoryRouter initialEntries={['/titre']}>
+    <MemoryRouter initialEntries={[{ pathname: '/titre', state }]}>
       <Routes>
         <Route path="/titre" element={<TitreVise />} />
         <Route path="/" element={<p>Accueil</p>} />
@@ -65,14 +65,33 @@ describe('Écran « Quel titre préparez-vous ? »', () => {
     expect(screen.getByText('Accueil')).toBeInTheDocument()
   })
 
-  it('au premier lancement, pas de lien « Retour » (pas encore d\'accueil)', () => {
-    renderTitre()
+  it('au premier lancement (renvoyé par l\'accueil), pas de lien « Retour »', () => {
+    renderTitre({ firstLaunch: true })
     expect(screen.queryByRole('link', { name: 'Retour' })).toBeNull()
   })
 
-  it('une fois un titre choisi, propose « Retour » vers l\'accueil', () => {
-    localStorageMock.setItem('target-title', 'pluriannuelle')
+  it('ouvert depuis la pastille de l\'accueil, propose « Retour » même sans titre enregistré', () => {
+    // Utilisateur existant (historique, pas de target-title) : il arrive sans l'état de redirection
+    localStorageMock.setItem('quiz-history', JSON.stringify([{ date: '2026-11-20T10:00:00.000Z', score: 30, total: 40 }]))
     renderTitre()
     expect(screen.getByRole('link', { name: 'Retour' })).toHaveAttribute('href', '/')
+  })
+
+  it('ouvert depuis l\'accueil, « Continuer » ajoute une entrée d\'historique (le retour arrière ramène au titre)', () => {
+    function Accueil() {
+      const navigate = useNavigate()
+      return <button onClick={() => navigate(-1)}>Précédent</button>
+    }
+    render(
+      <MemoryRouter initialEntries={['/', '/titre']} initialIndex={1}>
+        <Routes>
+          <Route path="/titre" element={<TitreVise />} />
+          <Route path="/" element={<Accueil />} />
+        </Routes>
+      </MemoryRouter>,
+    )
+    fireEvent.click(screen.getByRole('button', { name: 'Continuer' }))
+    fireEvent.click(screen.getByRole('button', { name: 'Précédent' }))
+    expect(screen.getByRole('heading', { level: 1, name: 'Quel titre préparez-vous ?' })).toBeInTheDocument()
   })
 })
