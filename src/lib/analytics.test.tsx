@@ -37,11 +37,11 @@ afterEach(() => {
 })
 
 describe('analytics — production (futurcitoyen.fr)', () => {
-  it('envoie une page vue à /count avec les paramètres GoatCounter', () => {
+  it('envoie une page vue directement à GoatCounter avec ses paramètres', () => {
     trackPageView('/revision')
     expect(beacon).toHaveBeenCalledTimes(1)
     const [url] = sentUrls()
-    expect(url.origin).toBe('https://futurcitoyen.fr')
+    expect(url.origin).toBe('https://futurcitoyen.goatcounter.com')
     expect(url.pathname).toBe('/count')
     expect(url.searchParams.get('p')).toBe('/revision')
     expect(url.searchParams.get('s')).toBe(String(window.screen.width))
@@ -72,7 +72,7 @@ describe('analytics — production (futurcitoyen.fr)', () => {
     (name) => {
       trackEvent(name)
       const [url] = sentUrls()
-      expect(url.pathname).toBe('/count')
+      expect(`${url.origin}${url.pathname}`).toBe('https://futurcitoyen.goatcounter.com/count')
       expect(url.searchParams.get('p')).toBe(name)
       expect(url.searchParams.get('e')).toBe('true')
     },
@@ -88,15 +88,15 @@ describe('analytics — production (futurcitoyen.fr)', () => {
     }
   })
 
-  it('se replie sur fetch keepalive quand sendBeacon refuse', () => {
+  it('se replie sur fetch keepalive, sans cookie ni lecture de réponse, quand sendBeacon refuse', () => {
     stubBeacon(() => false)
     const fetchMock = vi.fn(() => Promise.resolve(new Response()))
     vi.stubGlobal('fetch', fetchMock)
     trackEvent(EXAM_STARTED)
     expect(fetchMock).toHaveBeenCalledTimes(1)
     const [url, init] = fetchMock.mock.calls[0] as unknown as [string, RequestInit]
-    expect(url.startsWith('/count?')).toBe(true)
-    expect(init).toMatchObject({ method: 'POST', keepalive: true })
+    expect(url.startsWith('https://futurcitoyen.goatcounter.com/count?')).toBe(true)
+    expect(init).toEqual({ method: 'POST', keepalive: true, credentials: 'omit', mode: 'no-cors' })
   })
 
   it('avale les erreurs : sendBeacon qui lève, fetch rejeté', async () => {

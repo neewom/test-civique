@@ -38,11 +38,18 @@ describe('public/_headers', () => {
     const csp = cspDirectives()
     expect(csp.get('default-src')).toBe("'self'")
     expect(csp.get('script-src')).toBe("'self'")
-    expect(csp.get('connect-src')).toBe("'self'")
+    // Visit stats go straight to GoatCounter (see AGENTS.md, Stack)
+    expect(csp.get('connect-src')).toBe("'self' https://futurcitoyen.goatcounter.com")
     expect(csp.get('object-src')).toBe("'none'")
     expect(csp.get('frame-ancestors')).toBe("'none'")
     expect(csp.get('base-uri')).toBe("'self'")
     expect(csp.get('form-action')).toBe("'self'")
+  })
+
+  it('ne nomme GoatCounter que dans connect-src', () => {
+    const others = [...cspDirectives()].filter(([name]) => name !== 'connect-src')
+    expect(others.length).toBeGreaterThan(5)
+    for (const [, values] of others) expect(values).not.toContain('goatcounter')
   })
 
   it('n\'autorise ni script en ligne ni eval', () => {
