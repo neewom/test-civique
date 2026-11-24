@@ -17,7 +17,7 @@ import { buildExam, saveResult, isPassed, type Question } from '@/lib/exam'
 import { AnswerCard } from '@/components/AnswerCard'
 import { ExamResult, type ExamOutcome } from '@/components/ExamResult'
 import { findExamRecord, loadHistory } from '@/lib/history'
-import { journeyMessage, passedInARow } from '@/lib/readiness'
+import { journeyMessage, passedInARow, UNSAVED_MESSAGE } from '@/lib/readiness'
 import { PillButton } from '@/components/PillButton'
 import { Verdict } from '@/components/Verdict'
 
@@ -199,12 +199,16 @@ function ExamSession({ restart, onRestart }: ExamSessionProps) {
     const result = { score: scoreRef.current, total: questions.length }
     const streak = passedInARow([...history, result])
     const id = saveResult(result.score, result.total, allAnswers)
+    // Storage unavailable: no detail page to link to, and the home counter will not
+    // count this exam, so the journey message must not announce a step forward
+    const saved = findExamRecord(id) !== null
     setOutcome({
       ...result,
       answers: allAnswers,
-      // Storage unavailable: no detail page to link to
-      recordId: findExamRecord(id) ? id : null,
-      journey: journeyMessage(isPassed(result.score, result.total), streak, previousStreak),
+      recordId: saved ? id : null,
+      journey: saved
+        ? journeyMessage(isPassed(result.score, result.total), streak, previousStreak)
+        : UNSAVED_MESSAGE,
       timedOutUnanswered,
     })
     setPhase('result')

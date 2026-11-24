@@ -90,9 +90,7 @@ export default function ExamenDetail() {
     return (
       <main className="flex min-h-svh flex-col bg-background text-foreground">
         <div className="mx-auto flex w-full max-w-[30rem] flex-col gap-4 px-5 pt-5 pb-7">
-          <div className="pr-16">
-            <BackLink />
-          </div>
+          <BackLink />
           <h1 className="mt-4 text-[1.875rem] leading-none font-bold tracking-[-0.03em]">Examen introuvable</h1>
           <p className="text-base">
             Cet examen n'est pas dans l'historique de ce navigateur, ou son détail n'a pas été enregistré.
@@ -121,10 +119,7 @@ export default function ExamenDetail() {
   return (
     <main className="flex min-h-svh flex-col bg-background text-foreground">
       <div className="mx-auto flex w-full max-w-[30rem] grow flex-col gap-3.5 px-5 pt-5 pb-7">
-        {/* Right padding: room for the fixed theme switch in the top right corner */}
-        <div className="pr-16">
-          <BackLink />
-        </div>
+        <BackLink />
 
         <div className="flex flex-col items-start gap-2">
           <div className="flex flex-col gap-0.5">
@@ -174,9 +169,10 @@ export default function ExamenDetail() {
                 return (
                   <li
                     key={s.theme}
-                    className={cn('flex items-start justify-between gap-3 text-[0.9375rem]', weak && 'font-bold')}
+                    // Wraps as a whole: the score goes under a long theme name instead of cutting a word
+                    className={cn('flex flex-wrap items-start justify-between gap-x-3 text-[0.9375rem]', weak && 'font-bold')}
                   >
-                    <span className="min-w-0">
+                    <span>
                       {s.theme}
                       {weak && <span className="sr-only"> (thème le plus faible)</span>}
                     </span>
