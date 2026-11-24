@@ -1,6 +1,7 @@
 import { describe, it, expect } from 'vitest'
 import html from '../index.html?raw'
 import manifestRaw from '../public/site.webmanifest?raw'
+import headers from '../public/_headers?raw'
 
 const manifest = JSON.parse(manifestRaw)
 
@@ -43,5 +44,9 @@ describe('index.html — marque Futur Citoyen', () => {
     expect(manifest.name).toBe('Futur Citoyen')
     expect(manifest.short_name).toBe('Futur Citoyen')
     manifest.icons.forEach((icon: { src: string }) => expect(localAsset(icon.src), icon.src).toBe(true))
+  })
+
+  it('sert le manifest avec son type MIME sur Netlify', () => {
+    expect(headers).toMatch(/\/site\.webmanifest\n\s+Content-Type: application\/manifest\+json/)
   })
 })
