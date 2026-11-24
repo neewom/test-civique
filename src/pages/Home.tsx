@@ -265,6 +265,12 @@ export default function Home() {
             formation-civique.interieur.gouv.fr
           </a>
         </p>
+        <Link
+          to="/mentions-legales"
+          className="inline-flex min-h-11 items-center self-start rounded-sm text-xs underline underline-offset-4"
+        >
+          Mentions légales et confidentialité
+        </Link>
       </div>
     </main>
   )
