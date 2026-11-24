@@ -31,15 +31,8 @@ describe('public/_redirects — domaine futurcitoyen.fr', () => {
 })
 
 describe('public/_redirects — statistiques GoatCounter', () => {
-  const COUNT_RULE = '/count https://futurcitoyen.goatcounter.com/count 200'
-
-  it('réécrit /count vers GoatCounter avant la règle SPA', () => {
-    expect(rules).toContain(COUNT_RULE)
-    expect(rules.indexOf(COUNT_RULE)).toBeLessThan(rules.indexOf(SPA_RULE))
-  })
-
-  it('ne nomme le site GoatCounter qu’une fois', () => {
-    expect(rules.filter((rule) => rule.includes('goatcounter'))).toEqual([COUNT_RULE])
+  it('ne passe plus par un proxy /count (envoi direct depuis le navigateur)', () => {
+    expect(rules.filter((rule) => rule.includes('/count') || rule.includes('goatcounter'))).toEqual([])
   })
 })
 

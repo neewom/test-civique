@@ -1,12 +1,13 @@
 // Privacy-friendly visit stats with GoatCounter (no cookie, no third-party script).
-// Hits go to `/count` on our own domain, which `public/_redirects` rewrites to
-// https://futurcitoyen.goatcounter.com/count: the CSP stays at connect-src 'self'.
+// Hits go straight from the browser to GoatCounter (site code: futurcitoyen, only
+// here), allowed by connect-src in public/_headers. No Netlify proxy: GoatCounter
+// flags requests from data-centre IP ranges as bots, so proxied hits were hidden.
 // Parameters follow GoatCounter's count.js (arp242/goatcounter, public/count.js).
 
 // Only the production domain counts: nothing locally, on worktrees, on Netlify
 // deploy previews or in tests
 export const PRODUCTION_HOSTNAME = 'futurcitoyen.fr'
-export const COUNT_ENDPOINT = '/count'
+export const COUNT_ENDPOINT = 'https://futurcitoyen.goatcounter.com/count'
 
 export const EXAM_STARTED = 'examen-commence'
 export const EXAM_FINISHED_PASSED = 'examen-termine-reussi'
@@ -43,7 +44,9 @@ function send(params: Record<string, string>): void {
     })
     const url = `${COUNT_ENDPOINT}?${query.toString()}`
     if (typeof navigator.sendBeacon === 'function' && navigator.sendBeacon(url)) return
-    fetch(url, { method: 'POST', keepalive: true, credentials: 'omit' }).catch(() => {})
+    // Simple request (no body, no header): no CORS preflight. no-cors because
+    // GoatCounter's reply is never read, so a missing CORS header cannot fail it
+    fetch(url, { method: 'POST', keepalive: true, credentials: 'omit', mode: 'no-cors' }).catch(() => {})
   } catch {
     // Stats must never break the app
   }
