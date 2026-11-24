@@ -18,3 +18,6 @@ if (typeof globalThis.PointerEvent === 'undefined') {
   }
   globalThis.PointerEvent = PointerEvent as unknown as typeof globalThis.PointerEvent
 }
+
+// JSDOM doesn't implement window.scrollTo (used by ScrollToTop): a no-op keeps the logs clean
+window.scrollTo = (() => {}) as typeof window.scrollTo

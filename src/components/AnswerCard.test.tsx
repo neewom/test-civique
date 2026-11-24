@@ -109,4 +109,17 @@ describe('AnswerCard', () => {
     await userEvent.click(screen.getByText('Rien'))
     expect(screen.getByRole('radio', { name: 'Rien' })).not.toBeChecked()
   })
+
+  it('garde une bordure de 3 px sur tous les états : la validation ne décale pas le contenu', () => {
+    const { rerender } = render(<Question initial="Il est révoqué" />)
+    for (const name of ['Il est jugé', 'Il est révoqué']) {
+      expect(card(name)).toHaveClass('border-3')
+      expect(card(name)).toHaveClass('border-transparent')
+    }
+    rerender(<Question disabled initial="Il est révoqué" results={{ [ANSWERS[0]]: 'correct', 'Il est révoqué': 'wrong' }} />)
+    expect(card('Il est jugé')).toHaveClass('border-3')
+    expect(card('Il est jugé')).toHaveClass('border-transparent')
+    expect(card('Il est révoqué')).toHaveClass('border-3')
+    expect(card('Il est révoqué')).not.toHaveClass('border-transparent')
+  })
 })

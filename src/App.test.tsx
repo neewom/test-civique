@@ -76,6 +76,11 @@ describe('App routing', () => {
     expect(screen.getByRole('banner')).toContainElement(switches[0])
   })
 
+  it('n\'affiche pas d\'interrupteur de thème pendant l\'examen (maquettes Pa4 à Pa6)', () => {
+    renderAt('/examen')
+    expect(screen.queryByRole('switch')).not.toBeInTheDocument()
+  })
+
   it.each([
     ['setItem lève (stockage plein)', { getItem: () => null, setItem: () => { throw new Error('QuotaExceededError') }, removeItem: () => {}, clear: () => {} }],
     ['getItem lève (données de site bloquées)', { getItem: () => { throw new Error('SecurityError') }, setItem: () => { throw new Error('SecurityError') }, removeItem: () => {}, clear: () => {} }],
