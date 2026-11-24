@@ -1,5 +1,5 @@
 import allQuestions from '@/data/questions.json'
-import type { AnswerRecord, ExamQuestion } from '@/lib/exam-types'
+import type { AnswerRecord, ExamQuestion, QuestionSource } from '@/lib/exam-types'
 import { addExamRecord } from '@/lib/history'
 
 export const EXAM_SIZE = 40
@@ -24,6 +24,8 @@ export interface Question {
   distractors: string[]
   explanation: string
   group?: string
+  /** Official page that justifies the answer (optional, added by the « Contenu » card) */
+  source?: QuestionSource
 }
 
 export function shuffle<T>(arr: T[]): T[] {
@@ -55,22 +57,26 @@ export function buildExam(pool: Question[] = allQuestions as Question[]): ExamQu
       answer,
       choices: shuffle([answer, ...shuffle(q.distractors).slice(0, 3)]),
       explanation: q.explanation,
+      ...(q.source ? { source: q.source } : {}),
     }
   })
 }
 
+/** Saves the finished exam in the history and returns its id (link to its detail page). */
 export function saveResult(
   score: number,
   total: number,
   answers: AnswerRecord[],
-): void {
+): string {
+  const id = String(Date.now())
   addExamRecord({
-    id: String(Date.now()),
+    id,
     date: new Date().toISOString(),
     score,
     total,
     answers,
   })
+  return id
 }
 
 export function formatTime(seconds: number): string {

@@ -1,5 +1,5 @@
-import { render, screen } from '@testing-library/react'
-import { MemoryRouter, Route, Routes } from 'react-router-dom'
+import { fireEvent, render, screen, within } from '@testing-library/react'
+import { MemoryRouter, Route, Routes, useLocation } from 'react-router-dom'
 import { describe, it, expect, beforeEach } from 'vitest'
 import ExamenDetail from './ExamenDetail'
 import type { ExamRecord } from '@/lib/exam-types'
@@ -66,18 +66,17 @@ describe('ExamenDetail', () => {
     expect(screen.getByLabelText(/Score : 1 sur 40/i)).toBeInTheDocument()
   })
 
-  it('affiche le pourcentage', () => {
+  it('affiche la date de l\'examen', () => {
     seedHistory(RECORD)
     renderDetail(RECORD_ID)
-    expect(screen.getByText(/3%/)).toBeInTheDocument()
+    expect(screen.getByText('15 janvier 2026')).toBeInTheDocument()
   })
 
-  it('affiche la bonne réponse en vert quand correcte', () => {
+  it('affiche la bonne réponse donnée, dans « Toutes »', () => {
     seedHistory(RECORD)
     renderDetail(RECORD_ID)
-    // La première réponse est correcte : "Réponse choisie" apparaît en vert
-    const labels = screen.getAllByText('Réponse choisie')
-    expect(labels.length).toBeGreaterThan(0)
+    fireEvent.click(screen.getByRole('button', { name: 'Toutes (2)' }))
+    expect(screen.getByText('Bonne réponse, la vôtre')).toBeInTheDocument()
   })
 
   it('affiche "Sans réponse" pour une question sans réponse', () => {
@@ -89,14 +88,14 @@ describe('ExamenDetail', () => {
   it('affiche les explications', () => {
     seedHistory(RECORD)
     renderDetail(RECORD_ID)
-    const explications = screen.getAllByText('Explication')
-    expect(explications.length).toBeGreaterThan(0)
+    const q1 = (allQuestions as { explanation: string }[])[1]
+    expect(screen.getByText(q1.explanation)).toBeInTheDocument()
   })
 
-  it('affiche un bouton retour à l\'accueil', () => {
+  it('affiche un lien retour vers le parcours', () => {
     seedHistory(RECORD)
     renderDetail(RECORD_ID)
-    expect(screen.getAllByRole('button', { name: /Retour à l'accueil/i }).length).toBeGreaterThan(0)
+    expect(screen.getByRole('link', { name: 'Retour à mon parcours' })).toHaveAttribute('href', '/')
   })
 })
 
@@ -124,5 +123,93 @@ describe('ExamenDetail — verdict', () => {
     seedHistory({ ...RECORD, score: 16, total: 20 })
     renderDetail(RECORD_ID)
     expect(verdict('Réussi · seuil 16/20')).toBeInTheDocument()
+  })
+})
+
+// ─── Refonte 4 : erreurs d'abord, score par thème ──────────────────────────────
+
+type Q = { id: number; theme: string; question: string; answers: string[]; explanation: string }
+const QS = allQuestions as Q[]
+
+function renderWithState(id: string) {
+  function StateProbe() {
+    const location = useLocation()
+    return <pre data-testid="state">{JSON.stringify(location.state)}</pre>
+  }
+  render(
+    <MemoryRouter initialEntries={[`/examen/${id}`]}>
+      <Routes>
+        <Route path="/examen/:id" element={<ExamenDetail />} />
+        <Route path="/revision" element={<StateProbe />} />
+      </Routes>
+    </MemoryRouter>
+  )
+}
+
+describe('ExamenDetail — revoir ses erreurs', () => {
+  beforeEach(() => localStorage.clear())
+
+  // Questions 1 à 4 de la liste : 2 bonnes, 1 fausse, 1 sans réponse
+  const answers = [
+    { questionId: QS[0].id, chosen: QS[0].answers[0], correct: true },
+    { questionId: QS[1].id, chosen: 'Mauvaise réponse', correct: false },
+    { questionId: QS[2].id, chosen: QS[2].answers[0], correct: true },
+    { questionId: QS[3].id, chosen: null, correct: false },
+  ]
+  const record: ExamRecord = { ...RECORD, score: 2, total: 4, answers }
+
+  it('affiche d\'abord les erreurs, puis toutes les questions sur demande', () => {
+    seedHistory(record)
+    renderDetail(RECORD_ID)
+    const mine = screen.getByRole('button', { name: 'Mes erreurs (2)' })
+    expect(mine).toHaveAttribute('aria-pressed', 'true')
+    expect(screen.getAllByRole('heading', { level: 3 }).map((h) => h.textContent)).toEqual([QS[1].question, QS[3].question])
+    expect(screen.getByText('Question 2 · ' + QS[1].theme)).toBeInTheDocument()
+
+    fireEvent.click(screen.getByRole('button', { name: 'Toutes (4)' }))
+    expect(screen.getByRole('button', { name: 'Toutes (4)' })).toHaveAttribute('aria-pressed', 'true')
+    expect(screen.getAllByRole('heading', { level: 3 })).toHaveLength(4)
+  })
+
+  it('« Votre réponse » fausse et « Bonne réponse »', () => {
+    seedHistory(record)
+    renderDetail(RECORD_ID)
+    expect(screen.getByText('Mauvaise réponse')).toBeInTheDocument()
+    expect(screen.getByText(QS[1].answers[0])).toBeInTheDocument()
+    expect(screen.getAllByText('Votre réponse')).toHaveLength(2)
+    expect(screen.getAllByText('Bonne réponse')).toHaveLength(2)
+  })
+
+  it('score par thème, thème le plus faible signalé', () => {
+    seedHistory(record)
+    renderDetail(RECORD_ID)
+    const section = screen.getByRole('region', { name: 'Par thème' })
+    const rows = within(section).getAllByRole('listitem')
+    const total = rows.reduce((n, r) => n + Number(r.textContent!.match(/(\d+)\/(\d+)$/)![2]), 0)
+    expect(total).toBe(4)
+    expect(within(section).getAllByText('(thème le plus faible)').length).toBeGreaterThan(0)
+  })
+
+  it('« Réviser ces n questions » transmet les identifiants des erreurs à la révision', () => {
+    seedHistory(record)
+    renderWithState(RECORD_ID)
+    fireEvent.click(screen.getByRole('link', { name: 'Réviser ces 2 questions' }))
+    expect(JSON.parse(screen.getByTestId('state').textContent!)).toEqual({ reviewIds: [QS[1].id, QS[3].id] })
+  })
+
+  it('sans erreur : pas de filtre ni de lien de révision, toutes les questions affichées', () => {
+    seedHistory({ ...record, score: 2, total: 2, answers: [answers[0], answers[2]] })
+    renderDetail(RECORD_ID)
+    expect(screen.getByText('Aucune erreur sur cet examen, bravo.')).toBeInTheDocument()
+    expect(screen.queryByRole('button', { name: /Mes erreurs/ })).not.toBeInTheDocument()
+    expect(screen.queryByRole('link', { name: /Réviser/ })).not.toBeInTheDocument()
+    expect(screen.getAllByRole('heading', { level: 3 })).toHaveLength(2)
+    expect(screen.getByRole('region', { name: 'Par thème' }).querySelector('.bg-coral')).toBeNull()
+  })
+
+  it('un examen introuvable propose le retour au parcours', () => {
+    renderDetail('inconnu')
+    expect(screen.getByRole('heading', { level: 1, name: 'Examen introuvable' })).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: 'Retour à mon parcours' })).toHaveAttribute('href', '/')
   })
 })
