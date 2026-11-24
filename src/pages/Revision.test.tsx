@@ -1,10 +1,10 @@
-import { render, screen, fireEvent, act } from '@testing-library/react'
+import { render, screen, fireEvent, within } from '@testing-library/react'
 import { MemoryRouter } from 'react-router-dom'
 import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest'
 import Revision from './Revision'
+import type { ReviewState } from './ExamenDetail'
 import questions from '@/data/questions.json'
 
-// localStorage mock — jsdom dans ce projet ne fournit pas une implémentation complète
 function makeLocalStorageMock() {
   let store: Record<string, string> = {}
   return {
@@ -18,6 +18,7 @@ const localStorageMock = makeLocalStorageMock()
 
 beforeEach(() => {
   vi.stubGlobal('localStorage', localStorageMock)
+  vi.stubGlobal('scrollTo', vi.fn())
   localStorageMock.clear()
 })
 
@@ -25,22 +26,35 @@ afterEach(() => {
   vi.unstubAllGlobals()
 })
 
-function renderRevision() {
+const themes = [...new Set(questions.map((q) => q.theme))]
+const official = questions.filter((q) => q.id <= 191)
+const situational = questions.filter((q) => q.id > 191)
+
+function renderRevision(state?: unknown) {
   render(
-    <MemoryRouter>
+    <MemoryRouter initialEntries={[{ pathname: '/revision', state }]}>
       <Revision />
-    </MemoryRouter>
+    </MemoryRouter>,
   )
 }
 
-/** Ouvre le panneau de filtres. */
-async function openFilters() {
-  await act(async () => {
-    fireEvent.click(screen.getByRole('button', { name: /filtres/i }))
-  })
+function setHistory(...exams: { questionId: number; correct: boolean }[][]) {
+  localStorage.setItem(
+    'quiz-history',
+    JSON.stringify(
+      exams.map((answers, i) => ({
+        id: `e${i}`,
+        date: '2026-11-01T10:00:00.000Z',
+        score: 0,
+        total: 40,
+        answers: answers.map((a) => ({ ...a, chosen: a.correct ? 'x' : null })),
+      })),
+    ),
+  )
 }
 
-// ── Structure de base ────────────────────────────────────────────────────────
+const pill = (name: string | RegExp) => screen.getByRole('button', { name })
+const shownCards = () => screen.queryAllByText('Bonne réponse')
 
 describe('Revision — structure', () => {
   it('donne le titre "Révision · Futur Citoyen" à l\'onglet', () => {
@@ -48,181 +62,149 @@ describe('Revision — structure', () => {
     expect(document.title).toBe('Révision · Futur Citoyen')
   })
 
-  it('affiche le titre "Mode révision"', () => {
+  it('affiche le titre « Réviser », le titre visé et le nombre de questions', () => {
     renderRevision()
-    expect(screen.getByRole('heading', { level: 1, name: /mode révision/i })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { level: 1, name: 'Réviser' })).toBeInTheDocument()
+    expect(screen.getByText(`Carte de séjour pluriannuelle · ${questions.length} questions`)).toBeInTheDocument()
   })
 
-  it('affiche le nombre total de questions', () => {
+  it('affiche toutes les questions avec leur bonne réponse', () => {
     renderRevision()
-    expect(screen.getByText(`${questions.length} questions par thème`)).toBeInTheDocument()
-  })
-
-  it('affiche toutes les questions', () => {
-    renderRevision()
+    expect(shownCards()).toHaveLength(questions.length)
     questions.forEach((q) => {
-      expect(screen.getByText(q.question)).toBeInTheDocument()
+      expect(screen.getByRole('heading', { level: 3, name: q.question })).toBeInTheDocument()
     })
   })
 
-  it('affiche les bonnes réponses mises en évidence', () => {
+  it('regroupe les questions par thème', () => {
     renderRevision()
-    expect(screen.getAllByText('Bonne réponse')).toHaveLength(questions.length)
-  })
-
-  it('affiche une section par thème', () => {
-    renderRevision()
-    const themes = [...new Set(questions.map((q) => q.theme))]
     themes.forEach((theme) => {
-      expect(screen.getByRole('region', { name: `Thème : ${theme}` })).toBeInTheDocument()
+      const section = screen.getByRole('region', { name: `Thème : ${theme}` })
+      expect(within(section).getAllByRole('listitem')).toHaveLength(questions.filter((q) => q.theme === theme).length)
     })
   })
 
-  it('affiche le lien retour vers l\'accueil', () => {
+  it('affiche le lien retour vers le parcours', () => {
     renderRevision()
-    expect(screen.getByText(/← Accueil/)).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: 'Mon parcours' })).toHaveAttribute('href', '/')
   })
 })
-
-// ── Bouton Filtres ───────────────────────────────────────────────────────────
-
-describe('Revision — bouton Filtres', () => {
-  it('affiche un bouton "Filtres" dans le header', () => {
-    renderRevision()
-    expect(screen.getByRole('button', { name: /filtres/i })).toBeInTheDocument()
-  })
-
-  it('le bouton Filtres a aria-expanded="false" par défaut', () => {
-    renderRevision()
-    expect(screen.getByRole('button', { name: /filtres/i })).toHaveAttribute('aria-expanded', 'false')
-  })
-
-  it('les filtres internes ne sont pas accessibles par défaut (aria-hidden)', () => {
-    renderRevision()
-    expect(screen.queryByRole('button', { name: 'Tous' })).toBeNull()
-  })
-
-  it('cliquer sur "Filtres" ouvre le panneau et expose les filtres', async () => {
-    renderRevision()
-    await openFilters()
-    expect(screen.getByRole('button', { name: /filtres/i })).toHaveAttribute('aria-expanded', 'true')
-    expect(screen.getByRole('button', { name: 'Tous' })).toBeInTheDocument()
-  })
-
-  it('recliquer sur "Filtres" referme le panneau', async () => {
-    renderRevision()
-    const btn = screen.getByRole('button', { name: /filtres/i })
-    await act(async () => { fireEvent.click(btn) })
-    await act(async () => { fireEvent.click(btn) })
-    expect(btn).toHaveAttribute('aria-expanded', 'false')
-    expect(screen.queryByRole('button', { name: 'Tous' })).toBeNull()
-  })
-
-  it('le badge de filtre n\'est pas affiché quand aucun filtre n\'est actif', () => {
-    renderRevision()
-    // aria-label du bouton ne contient pas de mention "actif" par défaut
-    expect(screen.getByRole('button', { name: 'Filtres' })).toBeInTheDocument()
-  })
-
-  it('le badge indique 1 filtre actif après sélection d\'un thème', async () => {
-    renderRevision()
-    await openFilters()
-    const firstTheme = [...new Set(questions.map((q) => q.theme))][0]
-    await act(async () => {
-      fireEvent.click(screen.getByRole('button', { name: firstTheme }))
-    })
-    expect(screen.getByRole('button', { name: /1 actif/i })).toBeInTheDocument()
-  })
-
-  it('le badge indique 2 filtres actifs après sans mise en situation + thème', async () => {
-    renderRevision()
-    await openFilters()
-    // 1. activer "sans mise en situation" (remet activeTheme à null)
-    await act(async () => {
-      fireEvent.click(screen.getByRole('button', { name: /sans les questions/i }))
-    })
-    // 2. sélectionner un thème (excludeSituational reste true)
-    const firstTheme = [...new Set(questions.map((q) => q.theme))][0]
-    await act(async () => {
-      fireEvent.click(screen.getByRole('button', { name: firstTheme }))
-    })
-    expect(screen.getByRole('button', { name: /2 actifs/i })).toBeInTheDocument()
-  })
-})
-
-// ── Filtres — comportement ───────────────────────────────────────────────────
 
 describe('Revision — filtres par thème', () => {
-  it('affiche un bouton "Tous" et un bouton par thème dans le panneau', async () => {
+  it('« Tous les thèmes » est actif par défaut, avec une pastille par thème', () => {
     renderRevision()
-    await openFilters()
-    const themes = [...new Set(questions.map((q) => q.theme))]
-    expect(screen.getByRole('button', { name: 'Tous' })).toBeInTheDocument()
-    themes.forEach((theme) => {
-      expect(screen.getByRole('button', { name: theme })).toBeInTheDocument()
-    })
+    expect(pill('Tous les thèmes')).toHaveAttribute('aria-pressed', 'true')
+    themes.forEach((theme) => expect(pill(theme)).toHaveAttribute('aria-pressed', 'false'))
   })
 
-  it('le bouton "Tous" est actif par défaut', async () => {
+  it('filtrer par thème n\'affiche que les questions de ce thème', () => {
     renderRevision()
-    await openFilters()
-    expect(screen.getByRole('button', { name: 'Tous' })).toHaveAttribute('aria-pressed', 'true')
+    fireEvent.click(pill(themes[0]))
+    expect(pill(themes[0])).toHaveAttribute('aria-pressed', 'true')
+    expect(pill('Tous les thèmes')).toHaveAttribute('aria-pressed', 'false')
+    expect(shownCards()).toHaveLength(questions.filter((q) => q.theme === themes[0]).length)
+    expect(screen.queryByText(questions.find((q) => q.theme !== themes[0])!.question)).not.toBeInTheDocument()
   })
 
-  it('filtrer par thème n\'affiche que les questions de ce thème', async () => {
+  it('« Tous les thèmes » réaffiche toutes les questions', () => {
     renderRevision()
-    await openFilters()
-    const firstTheme = [...new Set(questions.map((q) => q.theme))][0]
-    const themeQuestions = questions.filter((q) => q.theme === firstTheme)
-    const otherQuestions = questions.filter((q) => q.theme !== firstTheme)
-
-    await act(async () => {
-      fireEvent.click(screen.getByRole('button', { name: firstTheme }))
-    })
-
-    themeQuestions.forEach((q) => {
-      expect(screen.getByText(q.question)).toBeInTheDocument()
-    })
-    expect(screen.queryByText(otherQuestions[0].question)).not.toBeInTheDocument()
-  })
-
-  it('le bouton du thème actif est mis en évidence (aria-pressed)', async () => {
-    renderRevision()
-    await openFilters()
-    const firstTheme = [...new Set(questions.map((q) => q.theme))][0]
-    await act(async () => {
-      fireEvent.click(screen.getByRole('button', { name: firstTheme }))
-    })
-    expect(screen.getByRole('button', { name: firstTheme })).toHaveAttribute('aria-pressed', 'true')
-    expect(screen.getByRole('button', { name: 'Tous' })).toHaveAttribute('aria-pressed', 'false')
-  })
-
-  it('cliquer sur "Tous" réaffiche toutes les questions', async () => {
-    renderRevision()
-    await openFilters()
-    const firstTheme = [...new Set(questions.map((q) => q.theme))][0]
-    await act(async () => {
-      fireEvent.click(screen.getByRole('button', { name: firstTheme }))
-    })
-    await act(async () => {
-      fireEvent.click(screen.getByRole('button', { name: 'Tous' }))
-    })
-    expect(screen.getAllByText('Bonne réponse')).toHaveLength(questions.length)
+    fireEvent.click(pill(themes[0]))
+    fireEvent.click(pill('Tous les thèmes'))
+    expect(shownCards()).toHaveLength(questions.length)
   })
 })
 
-describe('Revision — badges de thème', () => {
-  // Les libellés officiels sont longs : avec un texte agrandi, le badge doit pouvoir passer à la ligne
-  // au lieu d'être coupé (h-5 + whitespace-nowrap + overflow-hidden du Badge partagé).
-  it('laisse les badges de thème passer à la ligne', () => {
+describe('Revision — sans les mises en situation', () => {
+  it('retire les mises en situation et met le compte à jour', () => {
     renderRevision()
-    const badges = document.querySelectorAll('[data-slot="badge"]')
-    expect(badges.length).toBeGreaterThan(0)
-    for (const badge of badges) {
-      expect(badge.className).toMatch(/\bwhitespace-normal\b/)
-      expect(badge.className).toMatch(/\bh-auto\b/)
-      expect(badge.className).toMatch(/\bmax-w-full\b/)
-      expect(badge.className).not.toMatch(/\bwhitespace-nowrap\b/)
-    }
+    fireEvent.click(screen.getByRole('checkbox', { name: 'Sans les mises en situation' }))
+    expect(shownCards()).toHaveLength(official.length)
+    expect(screen.queryByText(situational[0].question)).not.toBeInTheDocument()
+    expect(screen.getByText(`Carte de séjour pluriannuelle · ${official.length} questions`)).toBeInTheDocument()
+  })
+
+  it('garde le thème choisi quand on coche ou décoche la case', () => {
+    renderRevision()
+    const checkbox = screen.getByRole('checkbox', { name: 'Sans les mises en situation' })
+    fireEvent.click(pill(themes[0]))
+    fireEvent.click(checkbox)
+    expect(pill(themes[0])).toHaveAttribute('aria-pressed', 'true')
+    expect(shownCards()).toHaveLength(official.filter((q) => q.theme === themes[0]).length)
+    fireEvent.click(checkbox)
+    expect(pill(themes[0])).toHaveAttribute('aria-pressed', 'true')
+    expect(shownCards()).toHaveLength(questions.filter((q) => q.theme === themes[0]).length)
+  })
+})
+
+describe('Revision — À revoir', () => {
+  it('affiche « À revoir (0) » et un message quand rien n\'est à revoir', () => {
+    renderRevision()
+    fireEvent.click(pill('À revoir (0)'))
+    expect(shownCards()).toHaveLength(0)
+    expect(screen.getByText('Aucune question à revoir pour l\'instant.')).toBeInTheDocument()
+  })
+
+  it('n\'affiche que les questions dont la dernière réponse était fausse ou absente', () => {
+    setHistory(
+      [{ questionId: 1, correct: false }, { questionId: 2, correct: false }, { questionId: 3, correct: true }],
+      [{ questionId: 1, correct: true }, { questionId: 200, correct: false }],
+    )
+    renderRevision()
+    fireEvent.click(pill('À revoir (2)'))
+    expect(shownCards()).toHaveLength(2)
+    expect(screen.getByText(questions.find((q) => q.id === 2)!.question)).toBeInTheDocument()
+    expect(screen.getByText(questions.find((q) => q.id === 200)!.question)).toBeInTheDocument()
+    expect(screen.queryByText(questions.find((q) => q.id === 1)!.question)).not.toBeInTheDocument()
+  })
+
+  it('le compte suit la case « Sans les mises en situation »', () => {
+    setHistory([{ questionId: 2, correct: false }, { questionId: 200, correct: false }])
+    renderRevision()
+    fireEvent.click(pill('À revoir (2)'))
+    fireEvent.click(screen.getByRole('checkbox', { name: 'Sans les mises en situation' }))
+    expect(pill('À revoir (1)')).toHaveAttribute('aria-pressed', 'true')
+    expect(shownCards()).toHaveLength(1)
+  })
+
+  it('invite à décocher la case quand elle masque toutes les questions à revoir', () => {
+    setHistory([{ questionId: 200, correct: false }])
+    renderRevision()
+    fireEvent.click(pill('À revoir (1)'))
+    fireEvent.click(screen.getByRole('checkbox', { name: 'Sans les mises en situation' }))
+    expect(screen.getByText('Aucune question avec ces filtres.')).toBeInTheDocument()
+    expect(screen.getByText(/Décochez « Sans les mises en situation »/)).toBeInTheDocument()
+  })
+})
+
+describe('Revision — arrivée depuis le détail d\'un examen', () => {
+  it('s\'ouvre sur les questions de cet examen', () => {
+    const state: ReviewState = { reviewIds: [5, 250] }
+    renderRevision(state)
+    expect(pill('Cet examen (2)')).toHaveAttribute('aria-pressed', 'true')
+    expect(shownCards()).toHaveLength(2)
+    expect(screen.getByText(questions.find((q) => q.id === 5)!.question)).toBeInTheDocument()
+  })
+
+  it('permet de revenir à toutes les questions', () => {
+    renderRevision({ reviewIds: [5] })
+    fireEvent.click(pill('Tous les thèmes'))
+    expect(shownCards()).toHaveLength(questions.length)
+  })
+
+  it('s\'ouvre en haut de la page, pas à la position du détail', () => {
+    renderRevision({ reviewIds: [5] })
+    expect(window.scrollTo).toHaveBeenCalledWith(0, 0)
+  })
+
+  it('ignore les valeurs invalides', () => {
+    renderRevision({ reviewIds: [5, 'x', 99999, null] })
+    expect(pill('Cet examen (1)')).toBeInTheDocument()
+    expect(shownCards()).toHaveLength(1)
+  })
+
+  it('s\'ouvre normalement sans identifiant valide', () => {
+    renderRevision({ reviewIds: 'x' })
+    expect(screen.queryByRole('button', { name: /Cet examen/ })).not.toBeInTheDocument()
+    expect(pill('Tous les thèmes')).toHaveAttribute('aria-pressed', 'true')
   })
 })
