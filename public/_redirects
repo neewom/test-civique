@@ -1,1 +1,6 @@
+# Old Netlify address (exact host only, deploy previews untouched) -> main domain
+https://test-civique.netlify.app/* https://futurcitoyen.fr/:splat 301!
+http://test-civique.netlify.app/* https://futurcitoyen.fr/:splat 301!
+
+# SPA fallback
 /* /index.html 200
