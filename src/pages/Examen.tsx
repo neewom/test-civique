@@ -371,7 +371,7 @@ function ExamSession({ restart, onRestart }: ExamSessionProps) {
             <h1
               ref={questionHeadingRef}
               tabIndex={-1}
-              className="text-[1.3125rem] leading-[1.3] font-bold"
+              className="text-[1.3125rem] leading-[1.3] font-bold outline-none"
             >
               {current.question}
             </h1>
@@ -428,7 +428,7 @@ function ExamSession({ restart, onRestart }: ExamSessionProps) {
               id={questionId}
               ref={questionHeadingRef}
               tabIndex={-1}
-              className="mb-2 text-[1.4375rem] leading-[1.3] font-bold"
+              className="mb-2 text-[1.4375rem] leading-[1.3] font-bold outline-none"
             >
               {current.question}
             </h1>

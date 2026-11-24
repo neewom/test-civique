@@ -590,6 +590,13 @@ describe('Examen — écrans de question et de correction', () => {
     expect(heading).toHaveFocus()
   })
 
+  it('n\'affiche pas d\'anneau de focus sur le titre de question, qui n\'est pas interactif', async () => {
+    renderResumed(makeResume(1500, 0))
+    expect(screen.getByRole('heading', { level: 1 }).className).toMatch(/\boutline-none\b/)
+    await answer(false)
+    expect(screen.getByRole('heading', { level: 1 }).className).toMatch(/\boutline-none\b/)
+  })
+
   it('ne déplace pas le focus à l\'arrivée sur la première question', () => {
     renderResumed(makeResume(1500, 0))
     expect(screen.getByRole('heading', { level: 1 })).not.toHaveFocus()
@@ -682,6 +689,11 @@ describe('Examen — écran de résultat', () => {
   it('place le focus sur le titre du résultat à l\'arrivée', async () => {
     await finishWith(10)
     expect(screen.getByRole('heading', { level: 1, name: 'Examen blanc terminé' })).toHaveFocus()
+  })
+
+  it('n\'affiche pas d\'anneau de focus sur le titre du résultat, qui n\'est pas interactif', async () => {
+    await finishWith(10)
+    expect(screen.getByRole('heading', { level: 1, name: 'Examen blanc terminé' }).className).toMatch(/\boutline-none\b/)
   })
 
   it('26/40 : « Pas encore réussi » sans texte « Bon résultat »', async () => {
