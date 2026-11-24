@@ -41,14 +41,14 @@ describe('OrganicBackground', () => {
     expect(container.querySelector('path')).toHaveClass('fill-earth')
   })
 
-  it('respire lentement, en cycle de 26 à 32 s qui revient à sa forme de départ', () => {
+  it('respire lentement, en cycle de 20 à 24 s qui revient à sa forme de départ', () => {
     mockReducedMotion(false)
     const { container } = render(<OrganicBackground />)
     const animate = container.querySelector('animate')!
     expect(animate).not.toBeNull()
     const seconds = parseFloat(animate.getAttribute('dur')!)
-    expect(seconds).toBeGreaterThanOrEqual(26)
-    expect(seconds).toBeLessThanOrEqual(32)
+    expect(seconds).toBeGreaterThanOrEqual(20)
+    expect(seconds).toBeLessThanOrEqual(24)
     const values = animate.getAttribute('values')!.split(';')
     expect(values[0]).toBe(values[values.length - 1])
     expect(values[0]).toBe(container.querySelector('path')!.getAttribute('d'))
@@ -58,8 +58,8 @@ describe('OrganicBackground', () => {
     mockReducedMotion(false)
     const { container } = render(<OrganicBackground shape="crest" />)
     const seconds = parseFloat(container.querySelector('animate')!.getAttribute('dur')!)
-    expect(seconds).toBeGreaterThanOrEqual(26)
-    expect(seconds).toBeLessThanOrEqual(32)
+    expect(seconds).toBeGreaterThanOrEqual(20)
+    expect(seconds).toBeLessThanOrEqual(24)
   })
 
   it('reste immobile quand l\'appareil demande moins d\'animations', () => {
@@ -106,12 +106,12 @@ describe('OrganicBackground — formes des pages titre et règles', () => {
   it.each([
     ['goal', 'fill-goal'],
     ['info', 'fill-info'],
-  ] as const)('la forme %s a sa couleur et respire entre 26 et 32 s', (shape, fill) => {
+  ] as const)('la forme %s a sa couleur et respire entre 20 et 24 s', (shape, fill) => {
     mockReducedMotion(false)
     const { container } = render(<OrganicBackground shape={shape} />)
     expect(container.querySelector('path')).toHaveClass(fill)
     const seconds = parseFloat(container.querySelector('animate')!.getAttribute('dur')!)
-    expect(seconds).toBeGreaterThanOrEqual(26)
-    expect(seconds).toBeLessThanOrEqual(32)
+    expect(seconds).toBeGreaterThanOrEqual(20)
+    expect(seconds).toBeLessThanOrEqual(24)
   })
 })
