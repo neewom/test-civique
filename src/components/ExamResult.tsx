@@ -74,6 +74,8 @@ export function ExamResult({ outcome, themeOf, onRestart }: ExamResultProps) {
           {recordId !== null && (
             <PillLink
               to={`/examen/${recordId}`}
+              // Replaces the finished /examen entry: going back must not draw a new exam
+              replace
               tone="surface"
               size="lg"
               end={<ArrowRight strokeWidth={2.6} />}
@@ -96,6 +98,7 @@ export function ExamResult({ outcome, themeOf, onRestart }: ExamResultProps) {
           </PillButton>
           <Link
             to="/"
+            replace
             className="inline-flex min-h-12 items-center justify-center rounded-sm text-base font-bold underline-offset-4 hover:underline"
           >
             Retour à mon parcours

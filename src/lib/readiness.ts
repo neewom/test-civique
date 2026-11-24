@@ -34,3 +34,7 @@ export function journeyMessage(passed: boolean, streak: number, previousStreak: 
   }
   return 'Revoyez vos erreurs, puis retentez : chaque examen blanc vous rapproche du jour J.'
 }
+
+/** Result screen when the history could not be written (storage blocked or full). */
+export const UNSAVED_MESSAGE =
+  "Ce résultat n'a pas pu être enregistré dans ce navigateur : il ne compte pas dans votre parcours."

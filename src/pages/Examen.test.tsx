@@ -1,8 +1,9 @@
 import { render, screen, fireEvent, act } from '@testing-library/react'
-import { MemoryRouter, useLocation } from 'react-router-dom'
+import { MemoryRouter, Route, Routes, useLocation, useNavigate } from 'react-router-dom'
 import { within } from '@testing-library/react'
 import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest'
 import Examen, { GLOBAL_EXAM_TIME } from './Examen'
+import { UNSAVED_MESSAGE } from '@/lib/readiness'
 import type { ExamInProgress } from '@/lib/exam-types'
 import { saveProgress, loadProgress, EXAM_PROGRESS_KEY } from '@/lib/exam-types'
 import {
@@ -742,5 +743,58 @@ describe('Examen — écran de résultat', () => {
     expect(screen.queryByRole('link', { name: /Voir mes/ })).not.toBeInTheDocument()
     expect(screen.getByRole('button', { name: 'Nouvel examen blanc' })).toBeInTheDocument()
     expect(screen.getByRole('link', { name: 'Retour à mon parcours' })).toHaveAttribute('href', '/')
+  })
+
+  it('sans historique enregistrable, la phrase de parcours n\'annonce aucune réussite', async () => {
+    seedPassed(1)
+    const setItem = Storage.prototype.setItem
+    const spy = vi.spyOn(Storage.prototype, 'setItem').mockImplementation(function (this: Storage, key: string, value: string) {
+      if (key === 'quiz-history') throw new Error('quota')
+      setItem.call(this, key, value)
+    })
+    await finishWith(34)
+    spy.mockRestore()
+    expect(screen.getByText(UNSAVED_MESSAGE)).toBeInTheDocument()
+    expect(screen.queryByText(/réussite/)).not.toBeInTheDocument()
+  })
+
+  function BackButton() {
+    const navigate = useNavigate()
+    return <button type="button" onClick={() => navigate(-1)}>Retour arrière</button>
+  }
+
+  function renderJourney() {
+    return render(
+      <MemoryRouter initialEntries={['/', '/examen']} initialIndex={1}>
+        <Routes>
+          <Route path="/" element={<p>Page d'accueil</p>} />
+          <Route path="/examen" element={<Examen />} />
+          <Route path="/examen/:id" element={<BackButton />} />
+        </Routes>
+      </MemoryRouter>
+    )
+  }
+
+  async function finishInJourney(correct: number) {
+    const resume = makeResume(1200, EXAM_SIZE)
+    resume.answers = resume.answers.map((a, i) => (i < correct ? a : { ...a, chosen: 'x', correct: false }))
+    saveProgress({ ...resume, index: EXAM_SIZE - 1 })
+    await act(async () => { renderJourney() })
+  }
+
+  it('retour arrière après « Voir mes erreurs » : pas de nouvel examen tiré', async () => {
+    await finishInJourney(34)
+    await act(async () => { fireEvent.click(screen.getByRole('link', { name: /Voir mes 6 erreurs/ })) })
+    await act(async () => { fireEvent.click(screen.getByRole('button', { name: 'Retour arrière' })) })
+    expect(screen.getByText("Page d'accueil")).toBeInTheDocument()
+    expect(localStorage.getItem(EXAM_PROGRESS_KEY)).toBeNull()
+  })
+
+  it('retour arrière après « Revoir l\'examen » (40/40) : pas de nouvel examen tiré', async () => {
+    await finishInJourney(EXAM_SIZE)
+    await act(async () => { fireEvent.click(screen.getByRole('link', { name: /Revoir l'examen/ })) })
+    await act(async () => { fireEvent.click(screen.getByRole('button', { name: 'Retour arrière' })) })
+    expect(screen.getByText("Page d'accueil")).toBeInTheDocument()
+    expect(localStorage.getItem(EXAM_PROGRESS_KEY)).toBeNull()
   })
 })
