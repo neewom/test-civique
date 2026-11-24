@@ -134,6 +134,15 @@ Lecture d'une liste (jamais « Done » en scan de routine, `desc` seulement sur 
 set -a; . ./.env; set +a
 curl -s "https://api.trello.com/1/lists/${TRELLO_LIST_TODO}/cards?fields=name,shortUrl,labels&key=${TRELLO_API_KEY}&token=${TRELLO_TOKEN}"
 ```
+Lecture des 4 listes de routine d'un coup (début de session, `/start`). Le shell de la machine est **zsh** : pas de syntaxe propre à bash comme `${!var}` ; cette boucle marche sous zsh comme sous bash :
+```
+set -a; . ./.env; set +a
+for pair in "Backlog:$TRELLO_LIST_BACKLOG" "Todo:$TRELLO_LIST_TODO" "En cours:$TRELLO_LIST_DOING" "En review / test:$TRELLO_LIST_REVIEW"; do
+  echo "== ${pair%%:*}"
+  curl -s "https://api.trello.com/1/lists/${pair##*:}/cards?fields=name,dateLastActivity,labels&key=${TRELLO_API_KEY}&token=${TRELLO_TOKEN}" \
+    | python3 -c "import sys,json;[print('-',c['name'],'|',c['dateLastActivity'][:10],'|',','.join(l['name'] for l in c['labels'])) for c in json.load(sys.stdin)]"
+done
+```
 Déplacer une carte : `curl -s -X PUT "https://api.trello.com/1/cards/<CARD_ID>?idList=<LIST_ID>&pos=top&key=${TRELLO_API_KEY}&token=${TRELLO_TOKEN}"`
 
 ## État d'avancement
