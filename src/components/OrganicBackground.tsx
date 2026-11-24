@@ -4,7 +4,7 @@ import { cn } from '@/lib/utils'
 
 /*
  * The single organic « earth » shape of a screen (direction « la carte du parcours »).
- * It breathes very slowly (20 to 24 s cycles, sped up slightly at the user's request after testing), stays still when the device asks for
+ * It breathes slowly (12 to 14 s cycles, variant B chosen by the user after testing), stays still when the device asks for
  * less motion, and pauses while the tab is hidden.
  * Never mount it on the question screens: no motion while the user answers.
  */
@@ -23,7 +23,7 @@ interface ShapeDef {
 const SHAPES: Record<OrganicShape, ShapeDef> = {
   // Tall winding shape, home screen
   journey: {
-    duration: '24s',
+    duration: '14s',
     frames: [
       'M-40 230 C 90 170, 270 190, 370 290 C 460 380, 430 520, 340 590 C 250 650, 300 740, 210 820 C 130 890, -20 880, -60 790 Z',
       'M-40 245 C 100 180, 280 180, 380 305 C 450 400, 420 505, 330 580 C 260 640, 310 755, 215 830 C 125 880, -25 870, -60 780 Z',
@@ -32,7 +32,7 @@ const SHAPES: Record<OrganicShape, ShapeDef> = {
   },
   // Shape at the top of the screen, result screen
   crest: {
-    duration: '22s',
+    duration: '13s',
     frames: [
       'M-50 60 C 120 0, 330 20, 430 120 C 470 260, 400 380, 270 410 C 150 440, 40 470, -50 430 Z',
       'M-50 70 C 130 10, 340 15, 430 130 C 465 275, 390 390, 260 420 C 145 445, 35 460, -50 420 Z',
@@ -41,7 +41,7 @@ const SHAPES: Record<OrganicShape, ShapeDef> = {
   // Lilac blob at the top right, target title screen. Muted in dark mode
   // (light text stays above 4.5:1 on it)
   goal: {
-    duration: '22s',
+    duration: '13s',
     fill: 'fill-goal dark:fill-[#463858]',
     frames: [
       'M200 -40 C 330 -30, 440 60, 420 190 C 405 290, 320 320, 250 300 C 170 280, 120 210, 130 120 C 140 40, 150 -45, 200 -40 Z',
@@ -50,7 +50,7 @@ const SHAPES: Record<OrganicShape, ShapeDef> = {
   },
   // Blue band at the top, exam rules page. Muted in dark mode, as above
   info: {
-    duration: '20s',
+    duration: '12s',
     fill: 'fill-info dark:fill-[#24496b]',
     frames: [
       'M-60 -40 C 120 -50, 300 -20, 430 40 C 450 150, 360 230, 240 240 C 130 250, 40 300, -60 260 Z',
