@@ -67,7 +67,7 @@ export default function Revision() {
           </div>
 
           {/* Ligne 2 : titre + bouton Filtres */}
-          <div className="flex items-end justify-between pb-3">
+          <div className="flex flex-wrap items-end justify-between gap-x-3 gap-y-2 pb-3">
             <div className="space-y-0.5">
               <h1 className="text-2xl font-semibold tracking-tight text-foreground">Mode révision</h1>
               <p className="text-sm text-muted-foreground">{displayedQuestions.length} questions par thème</p>
