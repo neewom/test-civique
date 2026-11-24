@@ -30,7 +30,7 @@ describe('Page « Mentions légales et confidentialité »', () => {
     expect(screen.getByRole('heading', { level: 2, name: 'Éditeur du site' })).toBeInTheDocument()
     expect(screen.getByText('CHITHDA, EURL au capital de 1 000 €')).toBeInTheDocument()
     expect(screen.getByText('RCS Meaux 994 815 553 · SIRET 994 815 553 00015')).toBeInTheDocument()
-    expect(screen.getByText('Directeur de la publication : Vichith Boulom')).toBeInTheDocument()
+    expect(screen.getByText('Directeur de la publication : V. Boulom')).toBeInTheDocument()
     expect(screen.getByRole('heading', { level: 2, name: 'Hébergement' })).toBeInTheDocument()
     expect(screen.getByText('Netlify, Inc., 101 2nd Street, San Francisco, CA 94105, États-Unis')).toBeInTheDocument()
   })
@@ -49,6 +49,18 @@ describe('Page « Mentions légales et confidentialité »', () => {
     }
     expect(screen.getByText('Le site ne dépose aucun cookie. Il n\'y a donc rien à accepter.')).toBeInTheDocument()
     expect(screen.getByText(`Dernière mise à jour : ${LAST_UPDATED}`)).toBeInTheDocument()
+  })
+
+  it('donne la base légale des statistiques et des journaux de l\'hébergeur', () => {
+    renderPage()
+    expect(
+      screen.getByText('Base légale : notre intérêt légitime à connaître la fréquentation du site.'),
+    ).toBeInTheDocument()
+    expect(
+      screen.getByText('Base légale : notre intérêt légitime à faire fonctionner et protéger le site.'),
+    ).toBeInTheDocument()
+    expect(screen.getByText(/ce transfert est encadré par le Data Privacy Framework UE–États-Unis/)).toBeInTheDocument()
+    expect(screen.getByText(/elle n'est jamais enregistrée/)).toBeInTheDocument()
   })
 
   it('donne le téléphone et l\'adresse de contact en liens', () => {

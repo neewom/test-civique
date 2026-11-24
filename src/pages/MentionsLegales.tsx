@@ -53,7 +53,7 @@ export default function MentionsLegales() {
             <p>9 Grande Allée de la Faisanderie, 77185 Lognes</p>
             <p>RCS Meaux 994 815 553 · SIRET 994 815 553 00015</p>
             <p>TVA intracommunautaire : FR44994815553</p>
-            <p>Directeur de la publication : Vichith Boulom</p>
+            <p>Directeur de la publication : V. Boulom</p>
             <p>
               Téléphone :{' '}
               <a href="tel:+33164611183" className={`${linkClass} whitespace-nowrap`}>
@@ -88,8 +88,10 @@ export default function MentionsLegales() {
           </p>
           <p>
             Ce comptage passe par GoatCounter : sans cookie, sans identifiant, sans suivi d'une visite à l'autre.
-            Votre adresse IP n'est pas conservée. Les statistiques sont hébergées dans l'Union européenne.
+            Votre adresse IP sert seulement, pendant 8 heures au plus, à ne pas compter deux fois la même visite ;
+            elle n'est jamais enregistrée. Seuls des totaux sont conservés, hébergés dans l'Union européenne.
           </p>
+          <p>Base légale : notre intérêt légitime à connaître la fréquentation du site.</p>
         </InfoCard>
 
         <InfoCard title="Cookies" level={3}>
@@ -99,8 +101,10 @@ export default function MentionsLegales() {
         <InfoCard title="Journaux de l'hébergeur" level={3}>
           <p>
             Comme tout hébergeur, Netlify enregistre des journaux techniques, dont l'adresse IP, pour faire
-            fonctionner et protéger le site. Netlify est situé aux États-Unis.
+            fonctionner et protéger le site. Netlify est situé aux États-Unis : ce transfert est encadré par le Data
+            Privacy Framework UE–États-Unis, auquel Netlify adhère.
           </p>
+          <p>Base légale : notre intérêt légitime à faire fonctionner et protéger le site.</p>
         </InfoCard>
 
         <InfoCard title="Vos droits" level={3}>
