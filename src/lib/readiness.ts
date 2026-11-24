@@ -16,3 +16,21 @@ export function passedInARow(history: ReadonlyArray<{ score: number; total: numb
   }
   return streak
 }
+
+/**
+ * Line under the verdict of the result screen: where the exam leaves the user on
+ * the journey (« n sur 3 » counter of the home page). Always in line with the
+ * verdict: never a « good result » for an exam that is not passed yet.
+ * `streak` is the counter once this exam is counted, `previousStreak` before it.
+ */
+export function journeyMessage(passed: boolean, streak: number, previousStreak: number): string {
+  if (passed) {
+    if (streak >= READY_GOAL) return "Trois réussites d'affilée : vous êtes prêt(e) pour le jour J."
+    if (streak === 2) return "Deuxième réussite d'affilée. Encore une, et vous êtes prêt(e) pour le jour J."
+    return "Première réussite. Encore deux d'affilée, et vous êtes prêt(e) pour le jour J."
+  }
+  if (previousStreak > 0) {
+    return `Le compteur repart à 0 sur ${READY_GOAL}, c'est normal en s'entraînant. Revoyez vos erreurs, puis retentez.`
+  }
+  return 'Revoyez vos erreurs, puis retentez : chaque examen blanc vous rapproche du jour J.'
+}

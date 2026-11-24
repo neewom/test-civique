@@ -15,6 +15,8 @@ interface PillOptions {
   end?: ReactNode
   /** The end holds text (a counter): it is read by screen readers and grows to fit */
   endIsText?: boolean
+  /** Overrides the colour of the end pastille (e.g. coral on « Voir mes erreurs », maquette Pa6) */
+  endClassName?: string
   className?: string
   children?: ReactNode
 }
@@ -36,7 +38,7 @@ function pillClassName({ tone = 'action', size = 'default', end, className }: Pi
   )
 }
 
-function PillContent({ tone = 'action', size = 'default', end, endIsText = false, children }: PillOptions) {
+function PillContent({ tone = 'action', size = 'default', end, endIsText = false, endClassName, children }: PillOptions) {
   return (
     <>
       <span className="min-w-0">{children}</span>
@@ -50,6 +52,7 @@ function PillContent({ tone = 'action', size = 'default', end, endIsText = false
             size === 'lg' ? 'min-h-10 min-w-10' : 'min-h-8 min-w-8',
             endIsText && 'px-2.5 text-[0.9375rem] whitespace-nowrap',
             END_TONE[tone],
+            endClassName,
           )}
         >
           {end}
@@ -62,10 +65,10 @@ function PillContent({ tone = 'action', size = 'default', end, endIsText = false
 type PillButtonProps = PillOptions & Omit<ButtonPrimitive.Props, 'className' | 'children' | 'render'>
 
 /** Journey-map button: a pill 48 to 56px high, with an optional round pastille at the end. */
-export function PillButton({ tone, size, end, endIsText, className, children, ...props }: PillButtonProps) {
+export function PillButton({ tone, size, end, endIsText, endClassName, className, children, ...props }: PillButtonProps) {
   return (
     <Button className={pillClassName({ tone, size, end, className })} {...props}>
-      <PillContent tone={tone} size={size} end={end} endIsText={endIsText}>
+      <PillContent tone={tone} size={size} end={end} endIsText={endIsText} endClassName={endClassName}>
         {children}
       </PillContent>
     </Button>
@@ -75,10 +78,10 @@ export function PillButton({ tone, size, end, endIsText, className, children, ..
 type PillLinkProps = PillOptions & Omit<LinkProps, 'className' | 'children'>
 
 /** Same pill, as a navigation link (keeps the link role). */
-export function PillLink({ tone, size, end, endIsText, className, children, ...props }: PillLinkProps) {
+export function PillLink({ tone, size, end, endIsText, endClassName, className, children, ...props }: PillLinkProps) {
   return (
     <Link data-slot="button" className={pillClassName({ tone, size, end, className })} {...props}>
-      <PillContent tone={tone} size={size} end={end} endIsText={endIsText}>
+      <PillContent tone={tone} size={size} end={end} endIsText={endIsText} endClassName={endClassName}>
         {children}
       </PillContent>
     </Link>
