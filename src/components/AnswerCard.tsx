@@ -47,14 +47,16 @@ export function AnswerCard({
     <label
       data-state={result ?? (checked ? 'selected' : 'idle')}
       className={cn(
-        'flex min-h-15 items-center gap-3 rounded-xl py-2.5 pr-4 pl-2.5 text-left text-base leading-[1.4] transition-colors',
+        // 3px border on every state (transparent but on « wrong ») so that validating never
+        // moves the content; the padding is reduced by as much (box of the maquette: 10 / 16 / 10 / 10)
+        'flex min-h-15 items-center gap-3 rounded-xl border-3 border-transparent py-[7px] pr-[13px] pl-[7px] text-left text-base leading-[1.4]',
         'has-[:focus-visible]:outline-3 has-[:focus-visible]:outline-offset-2 has-[:focus-visible]:outline-ring has-[:focus-visible]:outline-solid',
         disabled ? 'cursor-default' : 'cursor-pointer',
         !result && !checked && 'bg-card text-card-foreground',
         !result && !checked && !disabled && 'hover:bg-muted',
         selected && 'bg-primary text-primary-foreground',
         result === 'correct' && 'bg-success text-success-foreground',
-        result === 'wrong' && 'border-3 border-coral bg-card text-card-foreground',
+        result === 'wrong' && 'border-coral bg-card text-card-foreground',
       )}
     >
       <input

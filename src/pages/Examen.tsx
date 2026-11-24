@@ -1,9 +1,8 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useId, useRef, useState } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
-import { Badge } from '@/components/ui/badge'
+import { ArrowLeft, ExternalLink } from 'lucide-react'
 import { Button } from '@/components/ui/button'
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { Progress } from '@/components/ui/progress'
+import { Card, CardContent } from '@/components/ui/card'
 import {
   Dialog,
   DialogContent,
@@ -16,8 +15,11 @@ import allQuestions from '@/data/questions.json'
 import { useDocumentTitle } from '@/lib/use-document-title'
 import type { AnswerRecord, ExamQuestion, ExamInProgress } from '@/lib/exam-types'
 import { saveProgress, clearProgress, loadProgress, resumeIndex } from '@/lib/exam-types'
-import { buildExam, saveResult, formatTime, isPassed, type Question } from '@/lib/exam'
+import { buildExam, saveResult, isPassed, type Question } from '@/lib/exam'
+import { AnswerCard } from '@/components/AnswerCard'
 import { ExamVerdict } from '@/components/ExamVerdict'
+import { PillButton } from '@/components/PillButton'
+import { Verdict } from '@/components/Verdict'
 
 // Arrêté du 10 octobre 2025, art. 4 : 45 minutes au maximum
 export const GLOBAL_EXAM_TIME = 45 * 60 // 2700 secondes
@@ -58,6 +60,25 @@ function setupExam(startNew: boolean, excludeSituational: boolean): ExamSetup {
 
 type Restart = { count: number; excludeSituational: boolean }
 
+const LETTERS = ['A', 'B', 'C', 'D']
+
+// Remaining time as a budget in minutes, rounded up: 44:59 still reads « 45 min »
+function minutesLeft(seconds: number): number {
+  return Math.ceil(seconds / 60)
+}
+
+function plural(n: number, word: string): string {
+  return `${n} ${word}${n > 1 ? 's' : ''}`
+}
+
+// Polite announcement once 5 minutes, then 1 minute, are left (screen readers)
+function timeAnnouncement(seconds: number): string {
+  if (seconds <= 0) return ''
+  if (seconds < 60) return "Il reste moins d'une minute."
+  if (seconds < 5 * 60) return 'Il reste moins de 5 minutes.'
+  return ''
+}
+
 export default function Examen() {
   // "Recommencer" remounts the session through its key instead of reloading the page
   const [restart, setRestart] = useState<Restart>({ count: 0, excludeSituational: false })
@@ -95,6 +116,8 @@ function ExamSession({ restart, onRestart }: ExamSessionProps) {
   const [selected, setSelected] = useState<string | null>(null)
   const [phase, setPhase] = useState<Phase>('question')
   const [showQuitDialog, setShowQuitDialog] = useState(false)
+  // Set when the 45 minutes ran out: number of questions left without an answer
+  const [timedOutUnanswered, setTimedOutUnanswered] = useState<number | null>(null)
   useDocumentTitle(phase === 'result' ? 'Résultat' : 'Examen blanc')
 
   const scoreRef = useRef(resume ? resume.answers.filter((a) => a.correct).length : 0)
@@ -103,6 +126,11 @@ function ExamSession({ restart, onRestart }: ExamSessionProps) {
   const startedAtRef = useRef(resume?.startedAt ?? new Date().toISOString())
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null)
   const finishedRef = useRef(false)
+  const questionHeadingRef = useRef<HTMLHeadingElement>(null)
+  const verdictRef = useRef<HTMLParagraphElement>(null)
+  // Focus goes to the new question only after « Question suivante », not on arrival
+  const focusQuestionRef = useRef(false)
+  const questionId = useId()
 
   // Consume the "new exam" marker: a reload must resume, not draw another exam
   useEffect(() => {
@@ -149,15 +177,16 @@ function ExamSession({ restart, onRestart }: ExamSessionProps) {
   // Expiration du timer global → terminer l'examen immédiatement
   useEffect(() => {
     if (globalTimeLeft === 0 && phase !== 'result') {
-      finishExam()
+      finishExam(true)
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [globalTimeLeft, phase])
 
   // Termine l'examen : complète les réponses manquantes et sauvegarde
-  function finishExam() {
+  function finishExam(timedOut = false) {
     if (finishedRef.current) return
     finishedRef.current = true
+    if (timedOut) setTimedOutUnanswered(questions.length - answersRef.current.length)
     if (timerRef.current) clearInterval(timerRef.current)
     clearProgress()
     const allAnswers = [...answersRef.current]
@@ -207,6 +236,7 @@ function ExamSession({ restart, onRestart }: ExamSessionProps) {
         timeLeft: globalTimeLeft,
         startedAt: startedAtRef.current,
       })
+      focusQuestionRef.current = true
       setIndex(newIndex)
       setSelected(null)
       setPhase('question')
@@ -214,6 +244,16 @@ function ExamSession({ restart, onRestart }: ExamSessionProps) {
       finishExam()
     }
   }
+
+  // Focus: on the verdict once the answer is validated, then on the next question
+  useEffect(() => {
+    if (phase === 'correction') {
+      verdictRef.current?.focus()
+    } else if (phase === 'question' && focusQuestionRef.current) {
+      focusQuestionRef.current = false
+      questionHeadingRef.current?.focus()
+    }
+  }, [phase, index])
 
   function handleRestart() {
     clearProgress()
@@ -224,10 +264,7 @@ function ExamSession({ restart, onRestart }: ExamSessionProps) {
   const isLastQuestion = index === questions.length - 1
   // Borné à [0, 100] : un examen repris peut porter un timeLeft d'une autre durée
   const timerPct = Math.min(100, Math.max(0, (globalTimeLeft / GLOBAL_EXAM_TIME) * 100))
-  const timerColor =
-    globalTimeLeft > 1200 ? 'bg-green-500'
-    : globalTimeLeft > 600 ? 'bg-amber-500'
-    : 'bg-red-500'
+  const minutes = minutesLeft(globalTimeLeft)
 
   // ── Écran résultat ──────────────────────────────────────────────────────────
   if (phase === 'result') {
@@ -240,6 +277,13 @@ function ExamSession({ restart, onRestart }: ExamSessionProps) {
       >
         <div className="w-full max-w-md space-y-8 text-center">
           <div className="space-y-2">
+            {timedOutUnanswered !== null && (
+              <p className="font-bold">
+                {timedOutUnanswered > 0
+                  ? `Temps écoulé : ${plural(timedOutUnanswered, 'question')} sans réponse`
+                  : 'Temps écoulé'}
+              </p>
+            )}
             <p className="text-sm text-muted-foreground uppercase tracking-wider">Résultat</p>
             <p
               className="text-6xl font-bold text-foreground"
@@ -282,140 +326,182 @@ function ExamSession({ restart, onRestart }: ExamSessionProps) {
   // Resumed exam already complete: the result screen follows on the next render
   if (!current) return null
 
-  // ── Écran question / correction ─────────────────────────────────────────────
+  // ── Écran question / correction (maquettes Pa4 / Pa5, Pd4 / Pd5) ─────────────
+  // No animation and no organic shape on these screens
   const inCorrection = phase === 'correction'
+  const isCorrect = inCorrection && selected === current.answer
+  const eyebrow = 'text-[0.8125rem] font-bold tracking-[0.06em] uppercase dark:text-muted-foreground'
 
   return (
     <>
     <Dialog open={showQuitDialog} onOpenChange={setShowQuitDialog}>
-      <DialogContent showCloseButton={false}>
+      <DialogContent
+        showCloseButton={false}
+        className="max-h-[calc(100svh-2rem)] gap-5 overflow-y-auto rounded-2xl p-5 data-closed:animate-none data-open:animate-none"
+      >
         <DialogHeader>
-          <DialogTitle>Quitter l'examen ?</DialogTitle>
-          <DialogDescription>
+          <DialogTitle className="text-lg leading-snug font-bold">Quitter l'examen ?</DialogTitle>
+          <DialogDescription className="text-base text-popover-foreground">
             Votre progression est sauvegardée. Vous pourrez reprendre depuis la page d'accueil.
           </DialogDescription>
         </DialogHeader>
-        <DialogFooter>
-          <Button variant="outline" onClick={() => setShowQuitDialog(false)}>
+        {/* « Annuler » first, also on mobile (the default footer reverses the order) */}
+        <DialogFooter className="-mx-5 -mb-5 flex-col p-5 sm:flex-row">
+          <PillButton tone="action" onClick={() => setShowQuitDialog(false)} className="justify-center text-center">
             Annuler
-          </Button>
-          <Button variant="destructive" onClick={() => navigate('/')}>
+          </PillButton>
+          <PillButton tone="ink" onClick={() => navigate('/')} className="justify-center text-center">
             Quitter
-          </Button>
+          </PillButton>
         </DialogFooter>
       </DialogContent>
     </Dialog>
 
-    <div role="main" className="min-h-screen bg-background flex flex-col items-center px-4 py-10">
-      <div className="w-full max-w-xl space-y-6">
-
-        {/* Header */}
-        <div className="space-y-3">
-          <div className="flex items-center justify-between text-sm text-muted-foreground">
+    <main className="flex min-h-svh flex-col bg-background text-foreground">
+      <header className="rounded-b-[2rem] bg-earth">
+        <div className="mx-auto flex w-full max-w-[30rem] flex-col gap-3 px-5 pt-4 pb-5">
+          <div className="flex flex-wrap items-center justify-between gap-x-4">
             <button
+              type="button"
               onClick={() => setShowQuitDialog(true)}
-              aria-label="Retour à l'accueil"
-              className="text-muted-foreground hover:text-foreground transition-colors"
+              aria-label="Quitter l'examen"
+              className="inline-flex min-h-11 items-center gap-1.5 rounded-sm text-[0.9375rem] font-bold hover:underline hover:underline-offset-4"
             >
-              ← Retour
+              <ArrowLeft aria-hidden="true" className="size-[1.1em] shrink-0" strokeWidth={2.4} />
+              Quitter
             </button>
-            <span>Question {index + 1} / {questions.length}</span>
-            <span
-              className={globalTimeLeft <= 300 ? 'text-red-600 font-semibold tabular-nums' : 'tabular-nums'}
-              aria-label={`Temps restant : ${formatTime(globalTimeLeft)}`}
-            >
-              {formatTime(globalTimeLeft)}
-            </span>
+            <p className="text-[0.9375rem] font-bold">
+              Question {index + 1} sur {questions.length}
+            </p>
           </div>
-
-          {/* Timer bar global */}
-          <div className="h-1.5 w-full rounded-full bg-muted overflow-hidden">
-            <div
-              className={`h-full rounded-full transition-all ${timerColor}`}
-              style={{ width: `${timerPct}%` }}
-              role="progressbar"
-              aria-valuenow={globalTimeLeft}
-              aria-valuemin={0}
-              aria-valuemax={GLOBAL_EXAM_TIME}
-            />
+          <div className="flex items-center gap-2.5">
+            <span aria-hidden="true" className="text-sm font-bold whitespace-nowrap">Temps</span>
+            <div className="h-3 grow overflow-hidden rounded-full bg-foreground/18">
+              <div
+                role="progressbar"
+                aria-label="Temps restant"
+                aria-valuenow={globalTimeLeft}
+                aria-valuemin={0}
+                aria-valuemax={GLOBAL_EXAM_TIME}
+                aria-valuetext={`${plural(minutes, 'minute')} sur 45`}
+                className="h-full bg-foreground"
+                style={{ width: `${timerPct}%` }}
+              />
+            </div>
+            <span aria-hidden="true" className="text-sm font-bold whitespace-nowrap">{minutes} min</span>
           </div>
-
-          {/* Progression globale */}
-          <Progress
-            value={(index / questions.length) * 100}
-            aria-label="Progression de l'examen"
-          />
         </div>
+      </header>
 
-        {/* Carte question */}
-        <Card>
-          <CardHeader>
-            <Badge variant="secondary" className="h-auto max-w-full whitespace-normal py-px">{current.theme}</Badge>
-            <CardTitle className="text-foreground mt-2 text-base leading-snug">
+      {/* Announced once at 5 minutes, then at 1 minute */}
+      <p aria-live="polite" className="sr-only">{timeAnnouncement(globalTimeLeft)}</p>
+
+      <div className="mx-auto flex w-full max-w-[30rem] grow flex-col px-5">
+        {inCorrection ? (
+          <div className="flex flex-col gap-3 pt-5">
+            <Verdict
+              ref={verdictRef}
+              tabIndex={-1}
+              tone={isCorrect ? 'success' : 'error'}
+              className="self-start"
+            >
+              {isCorrect ? 'Bien joué' : 'Pas tout à fait'}
+            </Verdict>
+            <h1
+              ref={questionHeadingRef}
+              tabIndex={-1}
+              className="text-[1.3125rem] leading-[1.3] font-bold"
+            >
               {current.question}
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-2">
-
-            {/* Choix */}
-            {current.choices.map((choice) => {
-              let style =
-                'w-full rounded-lg border px-4 py-3 text-left text-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring'
-
-              if (inCorrection) {
-                if (choice === current.answer) {
-                  style += ' border-green-400 bg-green-50 dark:bg-green-950/20 text-green-800 dark:text-green-200'
-                } else if (choice === selected) {
-                  style += ' border-red-400 bg-red-50 dark:bg-red-950/20 text-red-800 dark:text-red-200'
-                } else {
-                  style += ' border-border bg-card text-muted-foreground'
-                }
-              } else if (choice === selected) {
-                style += ' border-foreground bg-muted text-foreground ring-1 ring-foreground'
-              } else {
-                style += ' border-border bg-card text-foreground hover:bg-muted cursor-pointer'
-              }
-
-              return (
-                <button
+            </h1>
+            <AnswerCard
+              letter={LETTERS[current.choices.indexOf(current.answer)]}
+              name={`correction-${index}`}
+              value={current.answer}
+              checked={isCorrect}
+              onSelect={() => {}}
+              result="correct"
+              disabled
+            >
+              {current.answer}
+            </AnswerCard>
+            {!isCorrect && selected && (
+              <AnswerCard
+                letter={LETTERS[current.choices.indexOf(selected)]}
+                name={`correction-${index}`}
+                value={selected}
+                checked
+                onSelect={() => {}}
+                result="wrong"
+                disabled
+              >
+                {selected}
+              </AnswerCard>
+            )}
+            <section
+              aria-labelledby={`${questionId}-why`}
+              className="flex flex-col gap-2 rounded-xl bg-card p-3.5 text-card-foreground"
+            >
+              <h2 id={`${questionId}-why`} className={eyebrow}>Pourquoi</h2>
+              <p className="text-base leading-normal">{current.explanation}</p>
+              {current.source && (
+                <a
+                  href={current.source.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex min-h-11 items-center gap-1.5 self-start rounded-[1.375rem] bg-background px-3 py-1.5 text-sm font-bold no-underline hover:underline hover:underline-offset-4"
+                >
+                  <ExternalLink aria-hidden="true" className="size-3.5 shrink-0" strokeWidth={2.2} />
+                  <span>
+                    Source : {current.source.label}
+                    <span className="sr-only"> (nouvel onglet)</span>
+                  </span>
+                </a>
+              )}
+            </section>
+          </div>
+        ) : (
+          <div className="flex flex-col gap-3 pt-6">
+            <p className={eyebrow}>{current.theme}</p>
+            <h1
+              id={questionId}
+              ref={questionHeadingRef}
+              tabIndex={-1}
+              className="mb-2 text-[1.4375rem] leading-[1.3] font-bold"
+            >
+              {current.question}
+            </h1>
+            <div role="radiogroup" aria-labelledby={questionId} className="flex flex-col gap-3">
+              {current.choices.map((choice, i) => (
+                <AnswerCard
                   key={choice}
-                  className={style}
-                  onClick={() => handleSelect(choice)}
-                  disabled={inCorrection}
-                  aria-pressed={!inCorrection && choice === selected}
+                  letter={LETTERS[i]}
+                  name={`question-${index}`}
+                  value={choice}
+                  checked={choice === selected}
+                  onSelect={handleSelect}
                 >
                   {choice}
-                </button>
-              )
-            })}
+                </AnswerCard>
+              ))}
+            </div>
+          </div>
+        )}
 
-            {/* Bouton Valider */}
-            {phase === 'pending' && (
-              <Button onClick={handleValidate} className="w-full mt-2">
-                Valider
-              </Button>
-            )}
-
-            {/* Correction */}
-            {inCorrection && (
-              <div className="mt-4 space-y-4">
-                <div className="rounded-lg bg-muted border border-border px-4 py-3">
-                  <p className="text-xs font-medium text-muted-foreground mb-1">Explication</p>
-                  <p className="text-sm text-foreground leading-relaxed">
-                    {current.explanation}
-                  </p>
-                </div>
-                <Button onClick={handleNext} className="w-full">
-                  {isLastQuestion ? 'Voir les résultats' : 'Question suivante'}
-                </Button>
-              </div>
-            )}
-
-          </CardContent>
-        </Card>
-
+        <div className="mt-auto pt-4 pb-6">
+          {phase === 'pending' && (
+            <PillButton size="lg" onClick={handleValidate} className="mt-2 w-full justify-center text-center">
+              Valider ma réponse
+            </PillButton>
+          )}
+          {inCorrection && (
+            <PillButton size="lg" onClick={handleNext} className="mt-2 w-full justify-center text-center">
+              {isLastQuestion ? 'Voir les résultats' : 'Question suivante'}
+            </PillButton>
+          )}
+        </div>
       </div>
-    </div>
+    </main>
     </>
   )
 }

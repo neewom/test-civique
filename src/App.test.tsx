@@ -75,4 +75,9 @@ describe('App routing', () => {
     expect(switches).toHaveLength(1)
     expect(screen.getByRole('banner')).toContainElement(switches[0])
   })
+
+  it('n\'affiche pas d\'interrupteur de thème pendant l\'examen (maquettes Pa4 à Pa6)', () => {
+    renderAt('/examen')
+    expect(screen.queryByRole('switch')).not.toBeInTheDocument()
+  })
 })

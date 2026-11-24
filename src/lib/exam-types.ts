@@ -12,6 +12,12 @@ export interface ExamRecord {
   answers: AnswerRecord[]
 }
 
+/** Link to the official page that justifies an answer */
+export interface QuestionSource {
+  url: string
+  label: string
+}
+
 export interface ExamQuestion {
   id: number
   theme: string
@@ -19,6 +25,7 @@ export interface ExamQuestion {
   answer: string
   choices: string[]
   explanation: string
+  source?: QuestionSource
 }
 
 export interface ExamInProgress {

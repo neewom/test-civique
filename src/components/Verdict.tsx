@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react'
+import type { ReactNode, Ref } from 'react'
 import { ArrowRight, Check, X } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
@@ -10,6 +10,9 @@ interface VerdictProps {
   /** default: answer feedback (40px) · lg: exam result (44px) */
   size?: 'default' | 'lg'
   className?: string
+  /** Lets a screen move the focus to the verdict (with tabIndex -1) once an answer is validated */
+  ref?: Ref<HTMLParagraphElement>
+  tabIndex?: number
   children: ReactNode
 }
 
@@ -21,12 +24,14 @@ const TONE: Record<VerdictTone, { pill: string; icon: string; Icon: typeof Check
 }
 
 /** Verdict pill: always text + icon + colour, announced as a status. */
-export function Verdict({ tone, size = 'default', className, children }: VerdictProps) {
+export function Verdict({ tone, size = 'default', className, ref, tabIndex, children }: VerdictProps) {
   const { pill, icon, Icon } = TONE[tone]
   const large = size === 'lg'
 
   return (
     <p
+      ref={ref}
+      tabIndex={tabIndex}
       role="status"
       data-tone={tone}
       className={cn(
