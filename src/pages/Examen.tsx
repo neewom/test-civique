@@ -368,14 +368,14 @@ function ExamSession({ restart, onRestart }: ExamSessionProps) {
               ref={verdictRef}
               tabIndex={-1}
               tone={isCorrect ? 'success' : 'error'}
-              className="self-start"
+              className="self-start outline-none"
             >
               {isCorrect ? 'Bien joué' : 'Pas tout à fait'}
             </Verdict>
             <h1
               ref={questionHeadingRef}
               tabIndex={-1}
-              className="text-[1.3125rem] leading-[1.3] font-bold"
+              className="text-[1.3125rem] leading-[1.3] font-bold outline-none"
             >
               {current.question}
             </h1>
@@ -432,7 +432,7 @@ function ExamSession({ restart, onRestart }: ExamSessionProps) {
               id={questionId}
               ref={questionHeadingRef}
               tabIndex={-1}
-              className="mb-2 text-[1.4375rem] leading-[1.3] font-bold"
+              className="mb-2 text-[1.4375rem] leading-[1.3] font-bold outline-none"
             >
               {current.question}
             </h1>

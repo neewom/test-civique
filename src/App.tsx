@@ -5,6 +5,7 @@ import Examen from '@/pages/Examen'
 import ExamenDetail from '@/pages/ExamenDetail'
 import Regles from '@/pages/Regles'
 import TitreVise from '@/pages/TitreVise'
+import { ScrollToTop } from '@/components/ScrollToTop'
 import { ThemeProvider } from '@/components/ThemeProvider'
 import { ThemeSwitch } from '@/components/ThemeSwitch'
 
@@ -27,6 +28,7 @@ export default function App() {
     <ThemeProvider>
       <div className="relative">
         <BrowserRouter>
+          <ScrollToTop />
           <FixedThemeSwitch />
           <Routes>
             <Route path="/" element={<Home />} />

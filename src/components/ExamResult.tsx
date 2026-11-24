@@ -48,7 +48,7 @@ export function ExamResult({ outcome, themeOf, onRestart }: ExamResultProps) {
       <OrganicBackground shape="crest" />
 
       <div className="relative mx-auto flex min-h-svh w-full max-w-[30rem] flex-col gap-3 px-[22px] pt-5 pb-6">
-        <h1 ref={headingRef} tabIndex={-1} className="min-h-11 content-center self-start rounded-sm text-[0.9375rem] font-bold">
+        <h1 ref={headingRef} tabIndex={-1} className="min-h-11 content-center self-start rounded-sm text-[0.9375rem] font-bold outline-none">
           Examen blanc terminé
         </h1>
         {timedOutUnanswered !== null && (
