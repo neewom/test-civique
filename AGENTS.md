@@ -47,7 +47,7 @@ Version complète : **`docs/workflow.md`** (copie du workflow commun `~/.claude/
 Règles officielles (arrêté du 10 octobre 2025, art. 1 à 4) : 40 questions, 4 choix, une seule bonne réponse, 45 min au maximum, 1 point par bonne réponse et 0 sinon, réussite à 80 % (32/40). Rappelées sur la page « Comment se passe l'examen » (`/regles`, lien depuis l'accueil).
 
 - **Examen blanc** : 40 questions tirées au hasard, **chrono global de 45 minutes** (pas de chrono par question ; un examen en cours sauvegardé garde son temps restant). Deux jeux au choix depuis l'étape 2 du parcours de l'accueil : questions classiques seules (191) ou avec les mises en situation (291). Chaque question : choix → « Valider » → correction avec explication → « Question suivante ». À l'expiration du chrono, les questions restantes comptent comme « sans réponse ». Le résultat affiche « Réussi » ou « Pas encore réussi » (seuil `passThreshold` = 80 % du total, arrondi au supérieur, dans `src/lib/exam.ts`), à l'écran de fin comme dans le détail d'un examen, calculé à partir du score enregistré. Progression sauvegardée à chaque seconde et reprenable depuis l'accueil.
-- **Mode révision** : toutes les questions par thème, bonne réponse et explication ; filtres par thème et « sans les mises en situation » (en-tête fixe, filtres repliables).
+- **Mode révision** : toutes les questions par thème, bonne réponse et explication ; filtres par thème et « sans les mises en situation » (filtres en pastilles, qui défilent horizontalement sur téléphone).
 - **Accueil en parcours** : titre visé (écran `/titre`, choix mémorisé), 4 étapes (réviser · réussir 3 examens blancs avec compteur « n sur 3 » = réussites d'affilée depuis l'examen le plus récent, un échec remet à 0, plafonné à 3, `src/lib/readiness.ts` · trouver un centre, « bientôt » · le jour J), reprise de l'examen en cours.
 - **Historique** : section « Derniers examens » (les 3 derniers) sur l'accueil, détail d'un examen sur `/examen/:id`.
 - **Thème clair / sombre** persistant.
@@ -74,7 +74,7 @@ Règles officielles (arrêté du 10 octobre 2025, art. 1 à 4) : 40 questions, 4
 
 ## Stack
 
-- React 19 + TypeScript + Vite 5 ; React Router 7 ; shadcn/ui (base-ui) + Tailwind 4 ; police Geist
+- React 19 + TypeScript + Vite 5 ; React Router 7 ; shadcn/ui (base-ui) + Tailwind 4 ; police Atkinson Hyperlegible (auto-hébergée)
 - Vitest 2 + React Testing Library (jsdom) ; pas de tests e2e automatisés (contrôle visuel avec Playwright Python sur le serveur du worktree)
 - Déploiement Netlify depuis `main` ; redirection SPA dans `public/_redirects`
 
