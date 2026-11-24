@@ -34,7 +34,7 @@ Version complète : **`docs/workflow.md`** (copie du workflow commun `~/.claude/
 | Nom de la session | « Test civique - TL » |
 | Board Trello | « Test Civique » : Backlog · Todo · En cours · En review / test · Done (voir Board Trello) |
 | Migrations | aucune (pas de base : données dans `src/data/questions.json`, état dans `localStorage`) |
-| Tableau de bord des revues | API HTTP `http://100.123.59.74:8095` (Tailscale, sans jeton), projet `"Test civique"`, auteur `"Test civique - TL"` : le TL y écrit lui-même (`docs/workflow.md`, section 5). Chaque entrée porte un vrai lien de l'appli dans `lien_test` (serveur de revue HTTPS ou aperçu Netlify `https://deploy-preview-<n>--test-civique.netlify.app`, jamais Trello ni la doc) et le lien de prod dans `remarques` (demande de l'utilisateur, 2026-11-20) |
+| Tableau de bord des revues | API HTTP `http://100.123.59.74:8095` (Tailscale, sans jeton), projet `"Test civique"`, auteur `"Test civique - TL"` : le TL y écrit lui-même (`docs/workflow.md`, section 5). Chaque entrée porte un vrai lien de l'appli dans `lien_test` (serveur de revue HTTPS ou aperçu Netlify `https://deploy-preview-<n>--test-civique.netlify.app`, jamais Trello ni la doc) et le lien de prod (https://futurcitoyen.fr) dans `remarques` (demande de l'utilisateur, 2026-11-20) |
 | Numéro de version | `package.json` (`npm version <minor\|patch> --no-git-tag-version`), parti de **1.0.0** le 2026-11-20 |
 | Serveur accessible | **en HTTPS** : `https://mac-mini-de-vichith.tail5a5a34.ts.net:1<port>/` (revue **15212**, dev **15211**), publié par `tailscale serve` (réseau Tailscale seulement, **jamais `funnel`**), configuration persistante posée le 2026-11-20. On lance Vite comme d'habitude. Ne jamais lancer `tailscale serve reset` (Mothana et Panda y ont leurs entrées) ; retirer une entrée seulement par son port. Liens donnés à l'utilisateur et au tableau de bord : toujours ce lien HTTPS ; les contrôles des agents restent sur `http://localhost:<port>` |
 
@@ -42,7 +42,7 @@ Version complète : **`docs/workflow.md`** (copie du workflow commun `~/.claude/
 
 ## Produit
 
-**Futur Citoyen** (nom retenu le 2026-11-24, ex-« Test Civique » ; le dépôt, le board et l'adresse du site gardent « test-civique » tant que le domaine n'est pas réservé) : application d'entraînement à l'examen civique, aujourd'hui pour la carte de séjour pluriannuelle (carte de résident et naturalisation annoncées « bientôt » sur l'écran du titre visé, `/titre`). Site indépendant, non officiel : mention en pied de l'accueil avec lien vers formation-civique.interieur.gouv.fr. Production : https://test-civique.netlify.app
+**Futur Citoyen** (nom retenu le 2026-11-24, ex-« Test Civique » ; domaine https://futurcitoyen.fr depuis le 2026-11-24, l'ancienne adresse test-civique.netlify.app y redirige en 301 ; le dépôt, le board et les aperçus Netlify gardent « test-civique ») : application d'entraînement à l'examen civique, aujourd'hui pour la carte de séjour pluriannuelle (carte de résident et naturalisation annoncées « bientôt » sur l'écran du titre visé, `/titre`). Site indépendant, non officiel : mention en pied de l'accueil avec lien vers formation-civique.interieur.gouv.fr. Production : https://futurcitoyen.fr
 
 Règles officielles (arrêté du 10 octobre 2025, art. 1 à 4) : 40 questions, 4 choix, une seule bonne réponse, 45 min au maximum, 1 point par bonne réponse et 0 sinon, réussite à 80 % (32/40). Rappelées sur la page « Comment se passe l'examen » (`/regles`, lien depuis l'accueil).
 
