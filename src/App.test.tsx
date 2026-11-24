@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react'
+import { render, screen, fireEvent, act } from '@testing-library/react'
 import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest'
 import App from './App'
 
@@ -17,6 +17,8 @@ const localStorageMock = makeLocalStorageMock()
 beforeEach(() => {
   vi.stubGlobal('localStorage', localStorageMock)
   localStorageMock.clear()
+  // Titre déjà choisi : sans choix, l'accueil renvoie vers l'écran du titre (testé plus bas)
+  localStorageMock.setItem('target-title', 'pluriannuelle')
 })
 
 afterEach(() => {
@@ -34,13 +36,62 @@ describe('App routing', () => {
     'renvoie %s vers l\'accueil',
     (path) => {
       renderAt(path)
-      expect(screen.getByRole('heading', { level: 1, name: 'Futur Citoyen' })).toBeInTheDocument()
+      expect(screen.getByRole('heading', { level: 1, name: 'Votre chemin vers le jour J' })).toBeInTheDocument()
       expect(window.location.pathname).toBe('/')
     },
   )
 
   it('affiche toujours l\'accueil sur /', () => {
     renderAt('/')
-    expect(screen.getByRole('heading', { level: 1, name: 'Futur Citoyen' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { level: 1, name: 'Votre chemin vers le jour J' })).toBeInTheDocument()
+  })
+
+  it('ouvre l\'écran du titre au premier lancement, puis l\'accueil après « Continuer »', async () => {
+    localStorageMock.clear()
+    renderAt('/')
+    expect(window.location.pathname).toBe('/titre')
+    expect(screen.getByRole('heading', { level: 1, name: 'Quel titre préparez-vous ?' })).toBeInTheDocument()
+    await act(async () => {
+      fireEvent.click(screen.getByRole('button', { name: 'Continuer' }))
+    })
+    expect(window.location.pathname).toBe('/')
+    expect(localStorageMock.getItem('target-title')).toBe('pluriannuelle')
+    expect(screen.getByRole('heading', { level: 1, name: 'Votre chemin vers le jour J' })).toBeInTheDocument()
+  })
+
+  it('sert la page « Comment se passe l\'examen » sur /regles', () => {
+    renderAt('/regles')
+    expect(screen.getByRole('heading', { level: 1, name: "Comment se passe l'examen" })).toBeInTheDocument()
+  })
+
+  it('garde l\'interrupteur de thème sur les autres pages, une seule fois sur l\'accueil', () => {
+    renderAt('/regles')
+    expect(screen.getAllByRole('switch')).toHaveLength(1)
+  })
+
+  it('l\'accueil n\'affiche qu\'un interrupteur de thème, dans son en-tête', () => {
+    renderAt('/')
+    const switches = screen.getAllByRole('switch')
+    expect(switches).toHaveLength(1)
+    expect(screen.getByRole('banner')).toContainElement(switches[0])
+  })
+
+  it('n\'affiche pas d\'interrupteur de thème pendant l\'examen (maquettes Pa4 à Pa6)', () => {
+    renderAt('/examen')
+    expect(screen.queryByRole('switch')).not.toBeInTheDocument()
+  })
+
+  it.each([
+    ['setItem lève (stockage plein)', { getItem: () => null, setItem: () => { throw new Error('QuotaExceededError') }, removeItem: () => {}, clear: () => {} }],
+    ['getItem lève (données de site bloquées)', { getItem: () => { throw new Error('SecurityError') }, setItem: () => { throw new Error('SecurityError') }, removeItem: () => {}, clear: () => {} }],
+  ])('sans stockage utilisable (%s), « Continuer » mène quand même à l\'accueil', async (_label, storage) => {
+    vi.stubGlobal('localStorage', storage)
+    renderAt('/')
+    expect(window.location.pathname).toBe('/titre')
+    await act(async () => {
+      fireEvent.click(screen.getByRole('button', { name: 'Continuer' }))
+    })
+    expect(window.location.pathname).toBe('/')
+    expect(screen.getByRole('heading', { level: 1, name: 'Votre chemin vers le jour J' })).toBeInTheDocument()
   })
 })

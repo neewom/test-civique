@@ -1,11 +1,13 @@
-import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
-import { Badge } from '@/components/ui/badge'
-import { cn } from '@/lib/utils'
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { useId, useState } from 'react'
+import { useLocation } from 'react-router-dom'
+import { AnswerBox } from '@/components/AnswerBox'
+import { BackLink } from '@/components/BackLink'
 import questions from '@/data/questions.json'
-import { themeColor } from '@/lib/themes'
+import { OFFICIAL_THEMES } from '@/lib/exam-review'
+import { loadQuestionsToReview, parseReviewIds } from '@/lib/review-queue'
+import { loadTargetTitle, TARGET_TITLE_LABELS } from '@/lib/target-title'
 import { useDocumentTitle } from '@/lib/use-document-title'
+import { cn } from '@/lib/utils'
 
 interface Question {
   id: number
@@ -15,174 +17,188 @@ interface Question {
   explanation: string
 }
 
-const allQuestionsData = questions as Question[]
+// Questions of the chosen title. Every question belongs to the multi-year residence
+// permit list for now (target-title.ts): the pool is filtered here once other lists land.
+const POOL = questions as Question[]
+const POOL_IDS = new Set(POOL.map((q) => q.id))
+const LAST_OFFICIAL_ID = 191
 
-export default function Revision() {
-  useDocumentTitle('Révision')
-  const navigate = useNavigate()
-  const [activeTheme, setActiveTheme] = useState<string | null>(null)
-  const [excludeSituational, setExcludeSituational] = useState(false)
-  const [filtersExpanded, setFiltersExpanded] = useState(false)
+// Official themes in the order of the programme, then any other theme of the data
+const THEMES = [
+  ...OFFICIAL_THEMES.filter((t) => POOL.some((q) => q.theme === t)),
+  ...[...new Set(POOL.map((q) => q.theme))].filter((t) => !OFFICIAL_THEMES.includes(t)),
+]
 
-  const displayedQuestions = excludeSituational
-    ? allQuestionsData.filter((q) => q.id <= 191)
-    : allQuestionsData
+/** exam: the questions sent by an exam detail · review: « À revoir » · all · one theme */
+type Filter = { kind: 'exam' } | { kind: 'review' } | { kind: 'all' } | { kind: 'theme'; theme: string }
 
-  const themes = [...new Set(displayedQuestions.map((q) => q.theme))]
-
-  const byTheme = displayedQuestions.reduce<Record<string, Question[]>>(
-    (acc, q) => {
-      ;(acc[q.theme] ??= []).push(q)
-      return acc
-    },
-    {}
+const pillClass = (pressed: boolean, tone: 'surface' | 'coral' = 'surface') =>
+  cn(
+    'inline-flex min-h-11 shrink-0 items-center rounded-full px-4 py-1.5 text-[0.9375rem] font-bold whitespace-nowrap transition-colors',
+    'focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ring focus-visible:outline-solid',
+    pressed
+      ? 'bg-primary text-primary-foreground'
+      : tone === 'coral'
+        ? 'bg-coral text-coral-foreground hover:bg-coral/85'
+        : 'bg-card text-card-foreground hover:bg-muted',
   )
 
-  const visibleThemes = activeTheme && themes.includes(activeTheme) ? [activeTheme] : themes
+function QuestionCard({ question }: { question: Question }) {
+  return (
+    <li className="flex flex-col gap-2.5 rounded-2xl bg-card p-4 text-left text-card-foreground">
+      <h3 className="text-lg leading-[1.35] font-bold">{question.question}</h3>
+      <AnswerBox tone="right" label="Bonne réponse">{question.answers[0]}</AnswerBox>
+      <p className="text-[0.9375rem] leading-normal">{question.explanation}</p>
+    </li>
+  )
+}
 
-  const activeFiltersCount = (activeTheme !== null ? 1 : 0) + (excludeSituational ? 1 : 0)
+/** Revision: every question of the chosen title with its answer, filtered by theme or « À revoir » (maquette Pa8). */
+export default function Revision() {
+  useDocumentTitle('Révision')
+  const location = useLocation()
+  const [examIds] = useState(() => parseReviewIds(location.state, POOL_IDS))
+  // Only questions still in the data: an id removed since the exam would count without a card
+  const [reviewIds] = useState(() => loadQuestionsToReview().filter((id) => POOL_IDS.has(id)))
+  const [filter, setFilter] = useState<Filter>(() => (examIds.length > 0 ? { kind: 'exam' } : { kind: 'all' }))
+  const [excludeSituational, setExcludeSituational] = useState(false)
+  const checkboxId = useId()
 
-  const filterBtnClass = (active: boolean) =>
-    `rounded-full px-3 py-1 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring ${
-      active
-        ? 'bg-foreground text-background'
-        : 'bg-muted text-foreground hover:bg-muted/80'
-    }`
+  const titleLabel = TARGET_TITLE_LABELS[loadTargetTitle() ?? 'pluriannuelle']
+  const pool = excludeSituational ? POOL.filter((q) => q.id <= LAST_OFFICIAL_ID) : POOL
+  const examSet = new Set(examIds)
+  const reviewSet = new Set(reviewIds)
+  const examCount = pool.filter((q) => examSet.has(q.id)).length
+  const reviewCount = pool.filter((q) => reviewSet.has(q.id)).length
+
+  const shown = pool.filter((q) => {
+    switch (filter.kind) {
+      case 'exam':
+        return examSet.has(q.id)
+      case 'review':
+        return reviewSet.has(q.id)
+      case 'theme':
+        return q.theme === filter.theme
+      case 'all':
+        return true
+    }
+  })
+  const sections = THEMES.map((theme) => ({ theme, items: shown.filter((q) => q.theme === theme) })).filter(
+    (s) => s.items.length > 0,
+  )
+
+  const isPressed = (f: Filter) =>
+    filter.kind === f.kind && (f.kind !== 'theme' || (filter.kind === 'theme' && filter.theme === f.theme))
 
   return (
-    <div role="main" className="min-h-screen bg-background">
-
-      {/* ── Sticky header ───────────────────────────────────────────────── */}
-      <div className="sticky top-0 z-20 bg-background/95 backdrop-blur-sm border-b border-border">
-        <div className="mx-auto max-w-2xl px-4">
-
-          {/* Ligne 1 : retour + espace pour le ThemeSwitch global (fixed top-4 right-4) */}
-          <div className="flex items-center pt-3 pb-1 pr-20">
-            <button
-              onClick={() => navigate('/')}
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-            >
-              ← Accueil
-            </button>
+    <main className="flex min-h-svh flex-col bg-background text-foreground">
+      <div className="mx-auto flex w-full max-w-[30rem] flex-col gap-3.5 px-5 pt-5 pb-7">
+        <div className="flex flex-col gap-2.5">
+          {/* Right padding: room for the fixed theme switch in the top right corner */}
+          <div className="pr-16">
+            <BackLink>Mon parcours</BackLink>
           </div>
-
-          {/* Ligne 2 : titre + bouton Filtres */}
-          <div className="flex items-end justify-between pb-3">
-            <div className="space-y-0.5">
-              <h1 className="text-2xl font-semibold tracking-tight text-foreground">Mode révision</h1>
-              <p className="text-sm text-muted-foreground">{displayedQuestions.length} questions par thème</p>
-            </div>
-
-            <button
-              aria-expanded={filtersExpanded}
-              aria-label={
-                activeFiltersCount > 0
-                  ? `Filtres, ${activeFiltersCount} actif${activeFiltersCount > 1 ? 's' : ''}`
-                  : 'Filtres'
-              }
-              onClick={() => setFiltersExpanded((v) => !v)}
-              className="flex items-center gap-1.5 rounded-full border border-border bg-muted px-3 py-1.5 text-sm font-medium text-foreground transition-colors hover:bg-muted/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-            >
-              {/* Funnel icon */}
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 16 16"
-                fill="currentColor"
-                className="h-3.5 w-3.5"
-                aria-hidden="true"
-              >
-                <path d="M1.5 2a.5.5 0 000 1h13a.5.5 0 000-1h-13zM3 5.5a.5.5 0 01.5-.5h9a.5.5 0 010 1h-9a.5.5 0 01-.5-.5zM5 8.5a.5.5 0 01.5-.5h5a.5.5 0 010 1h-5A.5.5 0 015 8.5zm2 2.5a.5.5 0 000 1h2a.5.5 0 000-1H7z" />
-              </svg>
-              Filtres
-              {activeFiltersCount > 0 && (
-                <span className="flex h-4 min-w-4 items-center justify-center rounded-full bg-foreground px-1 text-[10px] font-bold text-background">
-                  {activeFiltersCount}
-                </span>
-              )}
-              <span
-                className={`text-xs transition-transform duration-200 ${filtersExpanded ? 'rotate-180' : ''}`}
-                aria-hidden="true"
-              >
-                ▾
-              </span>
-            </button>
-          </div>
-
-          {/* Panneau de filtres expansible */}
-          <div
-            aria-hidden={!filtersExpanded}
-            className={`overflow-hidden transition-all duration-200 ${filtersExpanded ? 'max-h-64' : 'max-h-0'}`}
-          >
-            <div
-              role="group"
-              aria-label="Filtres"
-              className="flex flex-wrap gap-2 pb-4"
-            >
-              <button
-                onClick={() => setActiveTheme(null)}
-                aria-pressed={activeTheme === null}
-                className={filterBtnClass(activeTheme === null)}
-              >
-                Tous
-              </button>
-              {themes.map((theme) => (
-                <button
-                  key={theme}
-                  onClick={() => setActiveTheme(theme)}
-                  aria-pressed={activeTheme === theme}
-                  className={filterBtnClass(activeTheme === theme)}
-                >
-                  {theme}
-                </button>
-              ))}
-              <button
-                onClick={() => {
-                  setExcludeSituational((v) => !v)
-                  setActiveTheme(null)
-                }}
-                aria-pressed={excludeSituational}
-                className={filterBtnClass(excludeSituational)}
-              >
-                Sans les questions de mise en situation
-              </button>
-            </div>
-          </div>
-
+          <h1 className="text-[2.125rem] leading-none font-bold tracking-[-0.04em]">Réviser</h1>
+          <p className="text-[0.9375rem] dark:text-muted-foreground">
+            {titleLabel} · {pool.length} questions
+          </p>
         </div>
+
+        {/* Pills scroll sideways on a phone and wrap on a wider screen; the vertical padding keeps the focus ring visible */}
+        <div className="-mx-5 overflow-x-auto px-5 py-1.5 [scrollbar-width:none] sm:overflow-visible">
+          <div role="group" aria-label="Questions à afficher" className="flex w-max gap-2 sm:w-auto sm:flex-wrap">
+            {examIds.length > 0 && (
+              <button
+                type="button"
+                aria-pressed={isPressed({ kind: 'exam' })}
+                onClick={() => setFilter({ kind: 'exam' })}
+                className={pillClass(isPressed({ kind: 'exam' }))}
+              >
+                Cet examen ({examCount})
+              </button>
+            )}
+            <button
+              type="button"
+              aria-pressed={isPressed({ kind: 'review' })}
+              onClick={() => setFilter({ kind: 'review' })}
+              className={pillClass(isPressed({ kind: 'review' }), 'coral')}
+            >
+              À revoir ({reviewCount})
+            </button>
+            <button
+              type="button"
+              aria-pressed={isPressed({ kind: 'all' })}
+              onClick={() => setFilter({ kind: 'all' })}
+              className={pillClass(isPressed({ kind: 'all' }))}
+            >
+              Tous les thèmes
+            </button>
+            {THEMES.map((theme) => (
+              <button
+                key={theme}
+                type="button"
+                aria-pressed={isPressed({ kind: 'theme', theme })}
+                onClick={() => setFilter({ kind: 'theme', theme })}
+                className={pillClass(isPressed({ kind: 'theme', theme }))}
+              >
+                {theme}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <div className="flex min-h-11 items-center gap-2.5 text-[0.9375rem]">
+          <input
+            id={checkboxId}
+            type="checkbox"
+            checked={excludeSituational}
+            onChange={(e) => setExcludeSituational(e.target.checked)}
+            className="size-[1.375rem] shrink-0 accent-primary dark:accent-action"
+          />
+          <label htmlFor={checkboxId} className="cursor-pointer py-2">
+            Sans les mises en situation
+          </label>
+        </div>
+
+        <p aria-live="polite" className="sr-only">
+          {shown.length} question{shown.length > 1 ? 's' : ''} affichée{shown.length > 1 ? 's' : ''}
+        </p>
+
+        {sections.length === 0 ? (
+          <div className="flex flex-col gap-1.5 rounded-2xl bg-card p-4 text-card-foreground">
+            {filter.kind === 'review' && reviewIds.length === 0 ? (
+              <>
+                <p className="text-base font-bold">Aucune question à revoir pour l'instant.</p>
+                <p className="text-[0.9375rem] leading-normal">
+                  Les questions ratées à vos examens blancs s'affichent ici, jusqu'à ce que vous les réussissiez.
+                </p>
+              </>
+            ) : (
+              <>
+                <p className="text-base font-bold">Aucune question avec ces filtres.</p>
+                {excludeSituational && (
+                  <p className="text-[0.9375rem] leading-normal">
+                    Décochez « Sans les mises en situation » pour les afficher.
+                  </p>
+                )}
+              </>
+            )}
+          </div>
+        ) : (
+          sections.map(({ theme, items }) => (
+            <section key={theme} aria-label={`Thème : ${theme}`} className="flex flex-col gap-3 pt-2">
+              <h2 className="text-base font-bold">
+                {theme} <span className="font-normal tabular-nums">({items.length})</span>
+              </h2>
+              <ul className="flex flex-col gap-3">
+                {items.map((q) => (
+                  <QuestionCard key={q.id} question={q} />
+                ))}
+              </ul>
+            </section>
+          ))
+        )}
       </div>
-
-      {/* ── Contenu scrollable ───────────────────────────────────────────── */}
-      <div className="mx-auto max-w-2xl px-4 py-8 space-y-8">
-        {visibleThemes.map((theme) => (
-          <section key={theme} aria-label={`Thème : ${theme}`} className="space-y-4">
-            <h2 className="text-base font-semibold text-foreground border-b pb-2">
-              {theme}
-              <span className="ml-2 text-sm font-normal text-muted-foreground">({byTheme[theme].length})</span>
-            </h2>
-
-            <div className="space-y-3">
-              {byTheme[theme].map((q) => (
-                <Card key={q.id} size="sm">
-                  <CardHeader>
-                    <div className="flex items-start gap-3">
-                      <Badge className={cn(themeColor(q.theme), 'h-auto max-w-full whitespace-normal py-px')}>{q.theme}</Badge>
-                    </div>
-                    <CardTitle className="text-foreground mt-2">{q.question}</CardTitle>
-                  </CardHeader>
-                  <CardContent className="space-y-3">
-                    <div className="rounded-lg bg-green-50 border border-green-200 dark:bg-green-950/20 dark:border-green-800/30 px-3 py-2">
-                      <p className="text-xs font-medium text-green-600 dark:text-green-400 mb-0.5">Bonne réponse</p>
-                      <p className="text-sm text-green-800 dark:text-green-200">{q.answers[0]}</p>
-                    </div>
-                    <p className="text-xs text-muted-foreground leading-relaxed">{q.explanation}</p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </section>
-        ))}
-      </div>
-
-    </div>
+    </main>
   )
 }

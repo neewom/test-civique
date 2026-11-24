@@ -18,6 +18,10 @@ const buttonVariants = cva(
         destructive:
           "bg-destructive/10 text-destructive hover:bg-destructive/20 focus-visible:border-destructive/40 focus-visible:ring-destructive/20 dark:bg-destructive/20 dark:hover:bg-destructive/30 dark:focus-visible:ring-destructive/40",
         link: "text-primary underline-offset-4 hover:underline",
+        // « Pastille » buttons of the journey map (use with a pill size)
+        pill: "bg-action text-action-foreground hover:bg-action/85",
+        "pill-ink": "bg-primary text-primary-foreground hover:bg-primary/90",
+        "pill-surface": "bg-card text-card-foreground hover:bg-muted",
       },
       size: {
         default:
@@ -31,6 +35,10 @@ const buttonVariants = cva(
         "icon-sm":
           "size-7 rounded-[min(var(--radius-md),12px)] in-data-[slot=button-group]:rounded-lg",
         "icon-lg": "size-9",
+        // 48px / 56px high at the default text size, wraps when the text is enlarged
+        // (radius = half the minimum height: a pill on one line, a rounded block when wrapped)
+        pill: "h-auto min-h-12 gap-2.5 rounded-[1.5rem] px-[1.125rem] py-1.5 text-left text-base font-bold whitespace-normal focus-visible:ring-0 focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ring focus-visible:outline-solid has-data-[slot=pill-end]:pr-2",
+        "pill-lg": "h-auto min-h-14 gap-2.5 rounded-[1.75rem] px-[1.125rem] py-1.5 text-left text-lg font-bold whitespace-normal focus-visible:ring-0 focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ring focus-visible:outline-solid has-data-[slot=pill-end]:pr-2",
       },
     },
     defaultVariants: {
