@@ -43,6 +43,11 @@ async function openFilters() {
 // ── Structure de base ────────────────────────────────────────────────────────
 
 describe('Revision — structure', () => {
+  it('donne le titre "Révision · Futur Citoyen" à l\'onglet', () => {
+    renderRevision()
+    expect(document.title).toBe('Révision · Futur Citoyen')
+  })
+
   it('affiche le titre "Mode révision"', () => {
     renderRevision()
     expect(screen.getByRole('heading', { level: 1, name: /mode révision/i })).toBeInTheDocument()

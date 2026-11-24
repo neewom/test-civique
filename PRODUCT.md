@@ -34,7 +34,7 @@ Pistes proposées par le TL, non décidées : révision des questions ratées (r
 - Appli web statique (React, Vite), déployée sur Netlify, sans compte ni serveur ; données des questions dans le dépôt, progression et historique dans le navigateur (`localStorage`).
 - Couverture actuelle : liste CSP (191 questions) et 100 mises en situation rédigées pour l'appli ; carte de résident et naturalisation à venir.
 - Décidé pour plus tard : modèle gratuit avec publicité (jamais sur l'écran de question) et accès complet payant à prix bas, après une phase de lancement mesurée.
-- Ouvert : le nom de l'appli (« Test Civique » est aussi le nom du site d'inscription officiel de France Éducation International, test-civique.fr) ; changement envisagé avant toute communication.
+- Nom : **Futur Citoyen** (décision de l'utilisateur, 2026-11-24), qui remplace « Test Civique », nom du site d'inscription officiel de France Éducation International (test-civique.fr). Logo « la pousse » : une jeune pousse, une feuille verte et une feuille jaune. L'adresse du site et le nom du dépôt restent inchangés tant que le domaine futurcitoyen.fr n'est pas réservé.
 
 ## Brand Commitments
 

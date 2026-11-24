@@ -220,6 +220,13 @@ describe('Examen', () => {
     expect(screen.getByText(`Question 2 / ${EXAM_SIZE}`)).toBeInTheDocument()
   })
 
+  it('titre de l\'onglet : "Examen blanc" puis "Résultat" à la fin', async () => {
+    renderExamen()
+    expect(document.title).toBe('Examen blanc · Futur Citoyen')
+    await act(async () => { vi.advanceTimersByTime(GLOBAL_EXAM_TIME * 1000) })
+    expect(document.title).toBe('Résultat · Futur Citoyen')
+  })
+
   it('quand le timer global expire, affiche le résultat directement', async () => {
     renderExamen()
     await act(async () => { vi.advanceTimersByTime(GLOBAL_EXAM_TIME * 1000) })

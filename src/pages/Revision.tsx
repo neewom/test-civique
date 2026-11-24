@@ -5,6 +5,7 @@ import { cn } from '@/lib/utils'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import questions from '@/data/questions.json'
 import { themeColor } from '@/lib/themes'
+import { useDocumentTitle } from '@/lib/use-document-title'
 
 interface Question {
   id: number
@@ -17,6 +18,7 @@ interface Question {
 const allQuestionsData = questions as Question[]
 
 export default function Revision() {
+  useDocumentTitle('Révision')
   const navigate = useNavigate()
   const [activeTheme, setActiveTheme] = useState<string | null>(null)
   const [excludeSituational, setExcludeSituational] = useState(false)

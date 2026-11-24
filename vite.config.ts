@@ -12,16 +12,15 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, './src'),
+      '@': path.resolve(import.meta.dirname, './src'),
     },
   },
   test: {
     globals: true,
     environment: 'jsdom',
     setupFiles: './src/test/setup.ts',
-    poolOptions: {
-      // Node 25 enables native Web Storage, whose localStorage shadows jsdom's
-      forks: { execArgv: ['--no-experimental-webstorage'] },
-    },
+    // Node 25 enables native Web Storage, whose localStorage shadows jsdom's
+    // (Vitest 4 replaced poolOptions.forks.execArgv with a top-level execArgv)
+    execArgv: ['--no-experimental-webstorage'],
   },
 })

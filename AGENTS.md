@@ -42,7 +42,7 @@ Version complète : **`docs/workflow.md`** (copie du workflow commun `~/.claude/
 
 ## Produit
 
-Application d'entraînement à l'examen civique, aujourd'hui pour la carte de séjour pluriannuelle (carte de résident et naturalisation annoncées « bientôt » sur l'accueil). Site indépendant, non officiel : mention en pied de l'accueil avec lien vers formation-civique.interieur.gouv.fr. Production : https://test-civique.netlify.app
+**Futur Citoyen** (nom retenu le 2026-11-24, ex-« Test Civique » ; le dépôt, le board et l'adresse du site gardent « test-civique » tant que le domaine n'est pas réservé) : application d'entraînement à l'examen civique, aujourd'hui pour la carte de séjour pluriannuelle (carte de résident et naturalisation annoncées « bientôt » sur l'accueil). Site indépendant, non officiel : mention en pied de l'accueil avec lien vers formation-civique.interieur.gouv.fr. Production : https://test-civique.netlify.app
 
 Règles officielles (arrêté du 10 octobre 2025, art. 1 à 4) : 40 questions, 4 choix, une seule bonne réponse, 45 min au maximum, 1 point par bonne réponse et 0 sinon, réussite à 80 % (32/40). Rappelées dans le bloc repliable « Comment se passe l'examen » et dans la carte « Examen blanc » de l'accueil.
 
@@ -50,6 +50,7 @@ Règles officielles (arrêté du 10 octobre 2025, art. 1 à 4) : 40 questions, 4
 - **Mode révision** : toutes les questions par thème, bonne réponse et explication ; filtres par thème et « sans les mises en situation » (en-tête fixe, filtres repliables).
 - **Historique** : les 3 derniers examens sur l'accueil, détail d'un examen sur `/examen/:id`.
 - **Thème clair / sombre** persistant.
+- **Marque** : logo « la pousse » (`src/components/BrandLogo.tsx` dans l'en-tête de l'accueil ; `public/logo.svg`, `favicon.svg` aux traits épaissis, PNG 16/32/48, `apple-touch-icon.png`, `icon-512.png`, `og-image.png`, `site.webmanifest`). Couleurs : feuilles #8ED462 / #F5E211, encre #2C2E2A, « Futur » #3A7A2C en clair et #8ED462 en sombre. Titre d'onglet par page « <page> · Futur Citoyen » (`src/lib/use-document-title.ts`).
 
 ## Données et stockage
 

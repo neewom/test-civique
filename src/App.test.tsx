@@ -34,13 +34,13 @@ describe('App routing', () => {
     'renvoie %s vers l\'accueil',
     (path) => {
       renderAt(path)
-      expect(screen.getByRole('heading', { level: 1, name: /test civique/i })).toBeInTheDocument()
+      expect(screen.getByRole('heading', { level: 1, name: 'Futur Citoyen' })).toBeInTheDocument()
       expect(window.location.pathname).toBe('/')
     },
   )
 
   it('affiche toujours l\'accueil sur /', () => {
     renderAt('/')
-    expect(screen.getByRole('heading', { level: 1, name: /test civique/i })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { level: 1, name: 'Futur Citoyen' })).toBeInTheDocument()
   })
 })
