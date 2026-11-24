@@ -1,8 +1,9 @@
 import { render, screen, fireEvent, act } from '@testing-library/react'
-import { MemoryRouter, useLocation } from 'react-router-dom'
+import { MemoryRouter, Route, Routes, useLocation, useNavigate } from 'react-router-dom'
 import { within } from '@testing-library/react'
 import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest'
 import Examen, { GLOBAL_EXAM_TIME } from './Examen'
+import { UNSAVED_MESSAGE } from '@/lib/readiness'
 import type { ExamInProgress } from '@/lib/exam-types'
 import { saveProgress, loadProgress, EXAM_PROGRESS_KEY } from '@/lib/exam-types'
 import {
@@ -30,6 +31,11 @@ function getChoices() {
 function timeLeft(): number {
   const bar = screen.getAllByRole('progressbar').find((el) => el.getAttribute('aria-valuemax') === String(GLOBAL_EXAM_TIME))!
   return Number(bar.getAttribute('aria-valuenow'))
+}
+
+// The verdict pill mixes several text nodes: its full text is compared
+function verdictPill(text: string) {
+  return screen.getByText((_, el) => el?.getAttribute('role') === 'status' && el.textContent?.replace(/\s+/g, ' ') === text)
 }
 
 // ─── Fonctions utilitaires ────────────────────────────────────────────────────
@@ -231,8 +237,8 @@ describe('Examen', () => {
   it('quand le timer global expire, affiche le résultat directement', async () => {
     renderExamen()
     await act(async () => { vi.advanceTimersByTime(GLOBAL_EXAM_TIME * 1000) })
-    expect(screen.getByText(/Résultat/i)).toBeInTheDocument()
-    expect(screen.getByRole('button', { name: 'Recommencer' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { level: 1, name: 'Examen blanc terminé' })).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: 'Nouvel examen blanc' })).toBeInTheDocument()
   })
 
   it('quand le timer expire en cours d\'examen, sauvegarde le score partiel', async () => {
@@ -264,8 +270,8 @@ describe('Examen', () => {
         screen.getByRole('button', { name: 'Voir les résultats' })
       await act(async () => { fireEvent.click(nextBtn) })
     }
-    expect(screen.getByText(/Résultat/i)).toBeInTheDocument()
-    expect(screen.getByRole('button', { name: 'Recommencer' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { level: 1, name: 'Examen blanc terminé' })).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: 'Nouvel examen blanc' })).toBeInTheDocument()
   })
 
   it('sauvegarde le résultat dans localStorage après la fin', async () => {
@@ -367,15 +373,14 @@ describe('Examen — règles officielles', () => {
     renderResumed(makeResume(2, 32))
     await act(async () => { vi.advanceTimersByTime(3000) })
     expect(screen.getByLabelText('Score : 32 sur 40')).toBeInTheDocument()
-    expect(screen.getByText('Réussi')).toBeInTheDocument()
-    expect(screen.getByText('Seuil de réussite : 32/40')).toBeInTheDocument()
+    expect(verdictPill('Réussi · seuil 32/40')).toBeInTheDocument()
   })
 
   it('affiche « Pas encore réussi » à 31/40 avec le nombre de réponses manquantes', async () => {
     renderResumed(makeResume(2, 31))
     await act(async () => { vi.advanceTimersByTime(3000) })
     expect(screen.getByLabelText('Score : 31 sur 40')).toBeInTheDocument()
-    expect(screen.getByText('Pas encore réussi')).toBeInTheDocument()
+    expect(verdictPill('Pas encore réussi · seuil 32/40')).toBeInTheDocument()
     expect(screen.getByText('Encore 1 bonne réponse pour atteindre 32/40')).toBeInTheDocument()
   })
 
@@ -468,14 +473,14 @@ describe('Examen — fiabilité', () => {
     expect(currentQuestionText()).toBe(stored.questions[2].question)
   })
 
-  it('« Recommencer » après une reprise lance un nouvel examen à 45:00 sans réponse', async () => {
+  it('« Nouvel examen blanc » après une reprise lance un nouvel examen à 45:00 sans réponse', async () => {
     renderResumed(makeResume(2, 10))
     await act(async () => { vi.advanceTimersByTime(3000) })
     expect(screen.getByLabelText('Score : 10 sur 40')).toBeInTheDocument()
     expect(historyLength()).toBe(1)
 
     await act(async () => {
-      fireEvent.click(screen.getByRole('button', { name: 'Recommencer' }))
+      fireEvent.click(screen.getByRole('button', { name: 'Nouvel examen blanc' }))
     })
     expect(screen.getByText(`Question 1 sur ${EXAM_SIZE}`)).toBeInTheDocument()
     expect(timeLeft()).toBe(2700)
@@ -488,11 +493,11 @@ describe('Examen — fiabilité', () => {
     expect(historyLength()).toBe(1)
   })
 
-  it('« Recommencer » garde le jeu sans mises en situation', async () => {
+  it('« Nouvel examen blanc » garde le jeu sans mises en situation', async () => {
     renderAt({ start: 'new', excludeSituational: true })
     await act(async () => { vi.advanceTimersByTime(GLOBAL_EXAM_TIME * 1000) })
     await act(async () => {
-      fireEvent.click(screen.getByRole('button', { name: 'Recommencer' }))
+      fireEvent.click(screen.getByRole('button', { name: 'Nouvel examen blanc' }))
     })
     expect(loadProgress()!.questions.every((q) => q.id <= 191)).toBe(true)
   })
@@ -586,6 +591,20 @@ describe('Examen — écrans de question et de correction', () => {
     expect(heading).toHaveFocus()
   })
 
+  it('n\'affiche pas d\'anneau de focus sur le titre de question, qui n\'est pas interactif', async () => {
+    renderResumed(makeResume(1500, 0))
+    expect(screen.getByRole('heading', { level: 1 }).className).toMatch(/\boutline-none\b/)
+    await answer(false)
+    expect(screen.getByRole('heading', { level: 1 }).className).toMatch(/\boutline-none\b/)
+  })
+
+  it('n\'affiche pas d\'anneau de focus sur le verdict de la correction, qui n\'est pas interactif', async () => {
+    renderResumed(makeResume(1500, 0))
+    await answer(true)
+    expect(screen.getByRole('status')).toHaveFocus()
+    expect(screen.getByRole('status').className).toMatch(/\boutline-none\b/)
+  })
+
   it('ne déplace pas le focus à l\'arrivée sur la première question', () => {
     renderResumed(makeResume(1500, 0))
     expect(screen.getByRole('heading', { level: 1 })).not.toHaveFocus()
@@ -645,5 +664,156 @@ describe('buildExam — source', () => {
     expect(withSource.source).toEqual(source)
     const [without] = buildExam([{ id: 2, theme: 'T', question: 'Q', answers: ['A'], distractors: ['B', 'C', 'D'], explanation: 'E' }])
     expect(without).not.toHaveProperty('source')
+  })
+})
+
+// ─── Refonte 4 : écran de résultat ─────────────────────────────────────────────
+
+describe('Examen — écran de résultat', () => {
+  beforeEach(() => {
+    localStorage.clear()
+    vi.useFakeTimers()
+  })
+  afterEach(() => {
+    vi.useRealTimers()
+  })
+
+  function seedPassed(count: number) {
+    const entries = Array.from({ length: count }, (_, i) => ({
+      id: String(i + 1),
+      date: '2026-11-01T10:00:00.000Z',
+      score: 35,
+      total: 40,
+      answers: [],
+    }))
+    localStorage.setItem('quiz-history', JSON.stringify(entries))
+  }
+
+  async function finishWith(correct: number) {
+    renderResumed(makeResume(2, correct))
+    await act(async () => { vi.advanceTimersByTime(3000) })
+  }
+
+  it('place le focus sur le titre du résultat à l\'arrivée', async () => {
+    await finishWith(10)
+    expect(screen.getByRole('heading', { level: 1, name: 'Examen blanc terminé' })).toHaveFocus()
+  })
+
+  it('n\'affiche pas d\'anneau de focus sur le titre du résultat, qui n\'est pas interactif', async () => {
+    await finishWith(10)
+    expect(screen.getByRole('heading', { level: 1, name: 'Examen blanc terminé' }).className).toMatch(/\boutline-none\b/)
+  })
+
+  it('26/40 : « Pas encore réussi » sans texte « Bon résultat »', async () => {
+    await finishWith(26)
+    expect(verdictPill('Pas encore réussi · seuil 32/40')).toBeInTheDocument()
+    expect(screen.queryByText(/Bon résultat/)).not.toBeInTheDocument()
+    expect(screen.getByText(/^Revoyez vos erreurs, puis retentez/)).toBeInTheDocument()
+  })
+
+  it('une réussite après une autre : « Deuxième réussite d\'affilée »', async () => {
+    seedPassed(1)
+    await finishWith(33)
+    expect(screen.getByText(/^Deuxième réussite d'affilée/)).toBeInTheDocument()
+  })
+
+  it('première réussite sans historique', async () => {
+    await finishWith(32)
+    expect(screen.getByText(/^Première réussite/)).toBeInTheDocument()
+  })
+
+  it('un échec après deux réussites remet le compteur à 0, avec un message rassurant', async () => {
+    seedPassed(2)
+    await finishWith(20)
+    expect(screen.getByText(/^Le compteur repart à 0 sur 3/)).toBeInTheDocument()
+  })
+
+  it('« Voir mes n erreurs » mène au détail de l\'examen enregistré', async () => {
+    await finishWith(34)
+    const history = JSON.parse(localStorage.getItem('quiz-history')!)
+    const link = screen.getByRole('link', { name: /Voir mes 6 erreurs/ })
+    expect(link).toHaveAttribute('href', `/examen/${history[0].id}`)
+  })
+
+  it('« Voir mes erreurs » nomme le thème le plus faible', async () => {
+    const resume = makeResume(2, 39)
+    renderResumed(resume)
+    await act(async () => { vi.advanceTimersByTime(3000) })
+    const theme = resume.questions[39].theme
+    expect(screen.getByRole('link', { name: new RegExp(`Voir mon erreur.*Surtout ${theme}`) })).toBeInTheDocument()
+  })
+
+  it('40/40 : « Revoir l\'examen », sans erreur', async () => {
+    const resume = makeResume(1200, EXAM_SIZE)
+    saveProgress({ ...resume, index: EXAM_SIZE - 1 })
+    await act(async () => { renderAt(null) })
+    expect(screen.getByRole('link', { name: /Revoir l'examen/ })).toBeInTheDocument()
+    expect(screen.getByText('Aucune erreur, bravo')).toBeInTheDocument()
+  })
+
+  it('sans historique enregistrable, pas de lien vers un détail introuvable', async () => {
+    const setItem = Storage.prototype.setItem
+    const spy = vi.spyOn(Storage.prototype, 'setItem').mockImplementation(function (this: Storage, key: string, value: string) {
+      if (key === 'quiz-history') throw new Error('quota')
+      setItem.call(this, key, value)
+    })
+    await finishWith(10)
+    spy.mockRestore()
+    expect(screen.queryByRole('link', { name: /Voir mes/ })).not.toBeInTheDocument()
+    expect(screen.getByRole('button', { name: 'Nouvel examen blanc' })).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: 'Retour à mon parcours' })).toHaveAttribute('href', '/')
+  })
+
+  it('sans historique enregistrable, la phrase de parcours n\'annonce aucune réussite', async () => {
+    seedPassed(1)
+    const setItem = Storage.prototype.setItem
+    const spy = vi.spyOn(Storage.prototype, 'setItem').mockImplementation(function (this: Storage, key: string, value: string) {
+      if (key === 'quiz-history') throw new Error('quota')
+      setItem.call(this, key, value)
+    })
+    await finishWith(34)
+    spy.mockRestore()
+    expect(screen.getByText(UNSAVED_MESSAGE)).toBeInTheDocument()
+    expect(screen.queryByText(/réussite/)).not.toBeInTheDocument()
+  })
+
+  function BackButton() {
+    const navigate = useNavigate()
+    return <button type="button" onClick={() => navigate(-1)}>Retour arrière</button>
+  }
+
+  function renderJourney() {
+    return render(
+      <MemoryRouter initialEntries={['/', '/examen']} initialIndex={1}>
+        <Routes>
+          <Route path="/" element={<p>Page d'accueil</p>} />
+          <Route path="/examen" element={<Examen />} />
+          <Route path="/examen/:id" element={<BackButton />} />
+        </Routes>
+      </MemoryRouter>
+    )
+  }
+
+  async function finishInJourney(correct: number) {
+    const resume = makeResume(1200, EXAM_SIZE)
+    resume.answers = resume.answers.map((a, i) => (i < correct ? a : { ...a, chosen: 'x', correct: false }))
+    saveProgress({ ...resume, index: EXAM_SIZE - 1 })
+    await act(async () => { renderJourney() })
+  }
+
+  it('retour arrière après « Voir mes erreurs » : pas de nouvel examen tiré', async () => {
+    await finishInJourney(34)
+    await act(async () => { fireEvent.click(screen.getByRole('link', { name: /Voir mes 6 erreurs/ })) })
+    await act(async () => { fireEvent.click(screen.getByRole('button', { name: 'Retour arrière' })) })
+    expect(screen.getByText("Page d'accueil")).toBeInTheDocument()
+    expect(localStorage.getItem(EXAM_PROGRESS_KEY)).toBeNull()
+  })
+
+  it('retour arrière après « Revoir l\'examen » (40/40) : pas de nouvel examen tiré', async () => {
+    await finishInJourney(EXAM_SIZE)
+    await act(async () => { fireEvent.click(screen.getByRole('link', { name: /Revoir l'examen/ })) })
+    await act(async () => { fireEvent.click(screen.getByRole('button', { name: 'Retour arrière' })) })
+    expect(screen.getByText("Page d'accueil")).toBeInTheDocument()
+    expect(localStorage.getItem(EXAM_PROGRESS_KEY)).toBeNull()
   })
 })

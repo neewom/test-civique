@@ -62,18 +62,21 @@ export function buildExam(pool: Question[] = allQuestions as Question[]): ExamQu
   })
 }
 
+/** Saves the finished exam in the history and returns its id (link to its detail page). */
 export function saveResult(
   score: number,
   total: number,
   answers: AnswerRecord[],
-): void {
+): string {
+  const id = String(Date.now())
   addExamRecord({
-    id: String(Date.now()),
+    id,
     date: new Date().toISOString(),
     score,
     total,
     answers,
   })
+  return id
 }
 
 export function formatTime(seconds: number): string {

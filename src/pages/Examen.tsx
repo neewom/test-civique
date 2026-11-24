@@ -1,8 +1,6 @@
 import { useEffect, useId, useRef, useState } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
 import { ArrowLeft, ExternalLink } from 'lucide-react'
-import { Button } from '@/components/ui/button'
-import { Card, CardContent } from '@/components/ui/card'
 import {
   Dialog,
   DialogContent,
@@ -17,7 +15,9 @@ import type { AnswerRecord, ExamQuestion, ExamInProgress } from '@/lib/exam-type
 import { saveProgress, clearProgress, loadProgress, resumeIndex } from '@/lib/exam-types'
 import { buildExam, saveResult, isPassed, type Question } from '@/lib/exam'
 import { AnswerCard } from '@/components/AnswerCard'
-import { ExamVerdict } from '@/components/ExamVerdict'
+import { ExamResult, type ExamOutcome } from '@/components/ExamResult'
+import { findExamRecord, loadHistory } from '@/lib/history'
+import { journeyMessage, passedInARow, UNSAVED_MESSAGE } from '@/lib/readiness'
 import { PillButton } from '@/components/PillButton'
 import { Verdict } from '@/components/Verdict'
 
@@ -116,12 +116,11 @@ function ExamSession({ restart, onRestart }: ExamSessionProps) {
   const [selected, setSelected] = useState<string | null>(null)
   const [phase, setPhase] = useState<Phase>('question')
   const [showQuitDialog, setShowQuitDialog] = useState(false)
-  // Set when the 45 minutes ran out: number of questions left without an answer
-  const [timedOutUnanswered, setTimedOutUnanswered] = useState<number | null>(null)
+  // Finished exam shown on the result screen
+  const [outcome, setOutcome] = useState<ExamOutcome | null>(null)
   useDocumentTitle(phase === 'result' ? 'Résultat' : 'Examen blanc')
 
   const scoreRef = useRef(resume ? resume.answers.filter((a) => a.correct).length : 0)
-  const [score, setScore] = useState(scoreRef.current)
   const answersRef = useRef<AnswerRecord[]>(resume?.answers ?? [])
   const startedAtRef = useRef(resume?.startedAt ?? new Date().toISOString())
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null)
@@ -186,7 +185,7 @@ function ExamSession({ restart, onRestart }: ExamSessionProps) {
   function finishExam(timedOut = false) {
     if (finishedRef.current) return
     finishedRef.current = true
-    if (timedOut) setTimedOutUnanswered(questions.length - answersRef.current.length)
+    const timedOutUnanswered = timedOut ? questions.length - answersRef.current.length : null
     if (timerRef.current) clearInterval(timerRef.current)
     clearProgress()
     const allAnswers = [...answersRef.current]
@@ -194,7 +193,24 @@ function ExamSession({ restart, onRestart }: ExamSessionProps) {
     for (let i = allAnswers.length; i < questions.length; i++) {
       allAnswers.push({ questionId: questions[i].id, chosen: null, correct: false })
     }
-    saveResult(scoreRef.current, questions.length, allAnswers)
+    // Journey counter before and after this exam (no new stored data)
+    const history = loadHistory()
+    const previousStreak = passedInARow(history)
+    const result = { score: scoreRef.current, total: questions.length }
+    const streak = passedInARow([...history, result])
+    const id = saveResult(result.score, result.total, allAnswers)
+    // Storage unavailable: no detail page to link to, and the home counter will not
+    // count this exam, so the journey message must not announce a step forward
+    const saved = findExamRecord(id) !== null
+    setOutcome({
+      ...result,
+      answers: allAnswers,
+      recordId: saved ? id : null,
+      journey: saved
+        ? journeyMessage(isPassed(result.score, result.total), streak, previousStreak)
+        : UNSAVED_MESSAGE,
+      timedOutUnanswered,
+    })
     setPhase('result')
   }
 
@@ -207,10 +223,7 @@ function ExamSession({ restart, onRestart }: ExamSessionProps) {
   function handleValidate() {
     if (!selected || phase !== 'pending') return
     const isCorrect = selected === questions[index].answer
-    if (isCorrect) {
-      scoreRef.current += 1
-      setScore(scoreRef.current)
-    }
+    if (isCorrect) scoreRef.current += 1
     answersRef.current.push({
       questionId: questions[index].id,
       chosen: selected,
@@ -255,6 +268,10 @@ function ExamSession({ restart, onRestart }: ExamSessionProps) {
     }
   }, [phase, index])
 
+  function themeOf(questionId: number): string | undefined {
+    return questions.find((q) => q.id === questionId)?.theme
+  }
+
   function handleRestart() {
     clearProgress()
     onRestart(questions.every((q) => q.id <= 191))
@@ -266,61 +283,9 @@ function ExamSession({ restart, onRestart }: ExamSessionProps) {
   const timerPct = Math.min(100, Math.max(0, (globalTimeLeft / GLOBAL_EXAM_TIME) * 100))
   const minutes = minutesLeft(globalTimeLeft)
 
-  // ── Écran résultat ──────────────────────────────────────────────────────────
-  if (phase === 'result') {
-    const pct = Math.round((score / questions.length) * 100)
-    const passed = isPassed(score, questions.length)
-    return (
-      <div
-        role="main"
-        className="min-h-screen bg-background flex flex-col items-center justify-center px-4 py-12"
-      >
-        <div className="w-full max-w-md space-y-8 text-center">
-          <div className="space-y-2">
-            {timedOutUnanswered !== null && (
-              <p className="font-bold">
-                {timedOutUnanswered > 0
-                  ? `Temps écoulé : ${plural(timedOutUnanswered, 'question')} sans réponse`
-                  : 'Temps écoulé'}
-              </p>
-            )}
-            <p className="text-sm text-muted-foreground uppercase tracking-wider">Résultat</p>
-            <p
-              className="text-6xl font-bold text-foreground"
-              aria-label={`Score : ${score} sur ${questions.length}`}
-            >
-              {score}
-              <span className="text-3xl text-muted-foreground">/{questions.length}</span>
-            </p>
-            <p className="text-lg text-muted-foreground">{pct}%</p>
-            <div className="pt-2">
-              <ExamVerdict score={score} total={questions.length} />
-            </div>
-          </div>
-
-          <Card>
-            <CardContent className="pt-4">
-              <p className="text-sm text-muted-foreground">
-                {passed
-                  ? 'Excellent résultat ! Vous êtes prêt(e).'
-                  : pct >= 60
-                  ? 'Bon résultat, continuez à réviser.'
-                  : 'Continuez à vous entraîner, vous progresserez !'}
-              </p>
-            </CardContent>
-          </Card>
-
-          <div className="flex flex-col gap-3">
-            <Button onClick={handleRestart} className="w-full">
-              Recommencer
-            </Button>
-            <Button variant="outline" onClick={() => navigate('/')} className="w-full">
-              Retour à l'accueil
-            </Button>
-          </div>
-        </div>
-      </div>
-    )
+  // ── Écran résultat (maquettes Pa6 / Pd6) ─────────────────────────────────────
+  if (phase === 'result' && outcome) {
+    return <ExamResult outcome={outcome} themeOf={themeOf} onRestart={handleRestart} />
   }
 
   // Resumed exam already complete: the result screen follows on the next render
@@ -403,14 +368,14 @@ function ExamSession({ restart, onRestart }: ExamSessionProps) {
               ref={verdictRef}
               tabIndex={-1}
               tone={isCorrect ? 'success' : 'error'}
-              className="self-start"
+              className="self-start outline-none"
             >
               {isCorrect ? 'Bien joué' : 'Pas tout à fait'}
             </Verdict>
             <h1
               ref={questionHeadingRef}
               tabIndex={-1}
-              className="text-[1.3125rem] leading-[1.3] font-bold"
+              className="text-[1.3125rem] leading-[1.3] font-bold outline-none"
             >
               {current.question}
             </h1>
@@ -467,7 +432,7 @@ function ExamSession({ restart, onRestart }: ExamSessionProps) {
               id={questionId}
               ref={questionHeadingRef}
               tabIndex={-1}
-              className="mb-2 text-[1.4375rem] leading-[1.3] font-bold"
+              className="mb-2 text-[1.4375rem] leading-[1.3] font-bold outline-none"
             >
               {current.question}
             </h1>

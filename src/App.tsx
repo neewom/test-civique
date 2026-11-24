@@ -5,15 +5,17 @@ import Examen from '@/pages/Examen'
 import ExamenDetail from '@/pages/ExamenDetail'
 import Regles from '@/pages/Regles'
 import TitreVise from '@/pages/TitreVise'
+import { ScrollToTop } from '@/components/ScrollToTop'
 import { ThemeProvider } from '@/components/ThemeProvider'
 import { ThemeSwitch } from '@/components/ThemeSwitch'
 
 // Theme switch fixed in the top right corner, except on the home page whose
-// header holds it and on the exam (question, correction, result), where it
-// would cover the verdict with enlarged text; the maquettes Pa4 to Pa6 have none
+// header holds it, on the exam (question, correction, result), where it would
+// cover the verdict with enlarged text, and on the exam detail, where it covered
+// the score per theme while scrolling; the maquettes Pa4 to Pa7 have none
 function FixedThemeSwitch() {
   const { pathname } = useLocation()
-  if (pathname === '/' || pathname === '/examen') return null
+  if (pathname === '/' || pathname === '/examen' || pathname.startsWith('/examen/')) return null
   return (
     <div className="fixed top-4 right-4 z-50">
       <ThemeSwitch />
@@ -26,6 +28,7 @@ export default function App() {
     <ThemeProvider>
       <div className="relative">
         <BrowserRouter>
+          <ScrollToTop />
           <FixedThemeSwitch />
           <Routes>
             <Route path="/" element={<Home />} />
