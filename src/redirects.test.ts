@@ -30,10 +30,14 @@ describe('public/_redirects — domaine futurcitoyen.fr', () => {
   })
 })
 
-describe('index.html — adresse canonique', () => {
-  it('déclare https://futurcitoyen.fr/ comme adresse canonique', () => {
-    expect(html).toContain('<link rel="canonical" href="https://futurcitoyen.fr/" />')
+describe('index.html — domaine futurcitoyen.fr', () => {
+  it('annonce https://futurcitoyen.fr/ dans les balises de partage', () => {
     expect(html).toContain('<meta property="og:url" content="https://futurcitoyen.fr/" />')
+    expect(html).toContain('<meta property="og:image" content="https://futurcitoyen.fr/og-image.png" />')
+  })
+
+  it("n'a pas de canonique fixe (un seul index.html sert toutes les routes)", () => {
+    expect(html).not.toContain('rel="canonical"')
   })
 
   it('ne référence plus l’ancienne adresse Netlify', () => {
