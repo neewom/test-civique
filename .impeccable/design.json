@@ -1,0 +1,778 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-24T00:00:00Z",
+  "title": "Design System: Futur Citoyen",
+  "extensions": {
+    "colorMeta": {
+      "paper-cream": {
+        "role": "neutral",
+        "displayName": "Papier Crème",
+        "source": "--background (clair)",
+        "canonical": "#f5f1e4",
+        "oklch": "oklch(95.8% 0.018 92.7)",
+        "tonalRamp": [
+          "#0e0b04",
+          "#28251b",
+          "#454237",
+          "#656156",
+          "#868277",
+          "#a9a599",
+          "#cdc9bc",
+          "#f2eee1"
+        ]
+      },
+      "ink": {
+        "role": "primary",
+        "displayName": "Encre",
+        "source": "--foreground, --primary, --ring (clair)",
+        "canonical": "#2c2e2a",
+        "oklch": "oklch(29.8% 0.008 128.7)",
+        "tonalRamp": [
+          "#0a0c08",
+          "#242622",
+          "#41433f",
+          "#60625e",
+          "#81837e",
+          "#a3a6a1",
+          "#c7cac5",
+          "#edefea"
+        ]
+      },
+      "card-white": {
+        "role": "neutral",
+        "displayName": "Carte Blanche",
+        "source": "--card, --popover, --primary-foreground (clair)",
+        "canonical": "#ffffff",
+        "oklch": "oklch(100.0% 0.000 89.9)",
+        "tonalRamp": [
+          "#0b0b0b",
+          "#252525",
+          "#424242",
+          "#616161",
+          "#828282",
+          "#a5a5a5",
+          "#c9c9c9",
+          "#eeeeee"
+        ]
+      },
+      "sand": {
+        "role": "neutral",
+        "displayName": "Sable",
+        "source": "--secondary, --muted, --accent (clair)",
+        "canonical": "#eae4d2",
+        "oklch": "oklch(91.9% 0.025 91.6)",
+        "tonalRamp": [
+          "#0f0b02",
+          "#292517",
+          "#474233",
+          "#666151",
+          "#888272",
+          "#aba594",
+          "#cfc9b7",
+          "#f4eedc"
+        ]
+      },
+      "ink-soft": {
+        "role": "neutral",
+        "displayName": "Encre Douce",
+        "source": "--muted-foreground (clair)",
+        "canonical": "#4b4d47",
+        "oklch": "oklch(41.6% 0.010 121.9)",
+        "tonalRamp": [
+          "#0a0c07",
+          "#242620",
+          "#41433d",
+          "#60625c",
+          "#81837d",
+          "#a4a69f",
+          "#c8cac3",
+          "#edf0e8"
+        ]
+      },
+      "sand-line": {
+        "role": "neutral",
+        "displayName": "Ligne de Sable",
+        "source": "--border (clair)",
+        "canonical": "#dcd5c1",
+        "oklch": "oklch(87.3% 0.028 90.9)",
+        "tonalRamp": [
+          "#100b01",
+          "#2a2515",
+          "#474231",
+          "#67614f",
+          "#888270",
+          "#aba592",
+          "#d0c9b5",
+          "#f5eeda"
+        ]
+      },
+      "stone": {
+        "role": "neutral",
+        "displayName": "Pierre",
+        "source": "--input (clair)",
+        "canonical": "#8a8578",
+        "oklch": "oklch(61.7% 0.020 89.4)",
+        "tonalRamp": [
+          "#0e0b03",
+          "#29251a",
+          "#464236",
+          "#666155",
+          "#878275",
+          "#aaa597",
+          "#cec9bb",
+          "#f4eee0"
+        ]
+      },
+      "alert-red": {
+        "role": "neutral",
+        "displayName": "Rouge Alerte",
+        "source": "--destructive (clair)",
+        "canonical": "#b3261e",
+        "oklch": "oklch(50.1% 0.178 28.7)",
+        "tonalRamp": [
+          "#210000",
+          "#4c0202",
+          "#7d0e0a",
+          "#b0221b",
+          "#d84c3f",
+          "#f97969",
+          "#fcb5aa",
+          "#fee9e5"
+        ]
+      },
+      "action-yellow": {
+        "role": "primary",
+        "displayName": "Jaune Action",
+        "source": "--action (clair)",
+        "canonical": "#f5e211",
+        "oklch": "oklch(90.0% 0.187 103.2)",
+        "tonalRamp": [
+          "#0f0b00",
+          "#2a2600",
+          "#4a4300",
+          "#6c630b",
+          "#908512",
+          "#b7a800",
+          "#ddcd24",
+          "#fff380"
+        ]
+      },
+      "meadow-green": {
+        "role": "secondary",
+        "displayName": "Vert Prairie",
+        "source": "--earth, --success (clair)",
+        "canonical": "#8ed462",
+        "oklch": "oklch(79.9% 0.164 134.8)",
+        "tonalRamp": [
+          "#011000",
+          "#122d00",
+          "#264e03",
+          "#3d7114",
+          "#54961d",
+          "#76bb48",
+          "#9ae06e",
+          "#d3febc"
+        ]
+      },
+      "coral": {
+        "role": "tertiary",
+        "displayName": "Corail",
+        "source": "--coral (clair)",
+        "canonical": "#ff705d",
+        "oklch": "oklch(71.6% 0.178 29.8)",
+        "tonalRamp": [
+          "#210000",
+          "#4c0201",
+          "#7d0f07",
+          "#b02317",
+          "#d84c3c",
+          "#f97967",
+          "#fcb5a9",
+          "#fee9e5"
+        ]
+      },
+      "sky-blue": {
+        "role": "tertiary",
+        "displayName": "Bleu Ciel",
+        "source": "--info (clair)",
+        "canonical": "#2ba0ff",
+        "oklch": "oklch(68.9% 0.171 248.6)",
+        "tonalRamp": [
+          "#000b20",
+          "#002647",
+          "#034475",
+          "#1464a4",
+          "#1e86d9",
+          "#57abf8",
+          "#9fcefd",
+          "#e3f0fe"
+        ]
+      },
+      "lilac": {
+        "role": "tertiary",
+        "displayName": "Lilas",
+        "source": "--goal (clair)",
+        "canonical": "#ebc1ff",
+        "oklch": "oklch(86.7% 0.095 314.7)",
+        "tonalRamp": [
+          "#180023",
+          "#361244",
+          "#543064",
+          "#755086",
+          "#9871aa",
+          "#bb93ce",
+          "#e1b7f4",
+          "#f7e8fe"
+        ]
+      },
+      "forest-green": {
+        "role": "secondary",
+        "displayName": "Vert Forêt",
+        "source": "BrandLogo, « Futur » en clair",
+        "canonical": "#3a7a2c",
+        "oklch": "oklch(51.9% 0.130 140.2)",
+        "tonalRamp": [
+          "#001100",
+          "#072e00",
+          "#165006",
+          "#327224",
+          "#549547",
+          "#77b969",
+          "#9ade8c",
+          "#cdffc3"
+        ]
+      },
+      "night-moss": {
+        "role": "neutral",
+        "displayName": "Mousse de Nuit",
+        "source": "--background, --primary-foreground (sombre)",
+        "canonical": "#121814",
+        "oklch": "oklch(20.1% 0.012 156.0)",
+        "tonalRamp": [
+          "#070d09",
+          "#212723",
+          "#3d443f",
+          "#5c635e",
+          "#7d857f",
+          "#9fa7a2",
+          "#c3ccc6",
+          "#e8f1eb"
+        ]
+      },
+      "cream-text": {
+        "role": "primary",
+        "displayName": "Crème",
+        "source": "--foreground, --primary, --ring (sombre)",
+        "canonical": "#f1eee4",
+        "oklch": "oklch(94.9% 0.014 93.0)",
+        "tonalRamp": [
+          "#0d0b05",
+          "#27251e",
+          "#44423a",
+          "#646159",
+          "#858279",
+          "#a8a59c",
+          "#ccc9bf",
+          "#f1eee4"
+        ]
+      },
+      "card-moss": {
+        "role": "neutral",
+        "displayName": "Carte Mousse",
+        "source": "--card, --popover (sombre)",
+        "canonical": "#1e2621",
+        "oklch": "oklch(25.9% 0.015 157.8)",
+        "tonalRamp": [
+          "#060d09",
+          "#1f2722",
+          "#3c443f",
+          "#5b645e",
+          "#7b857f",
+          "#9ea8a1",
+          "#c2ccc5",
+          "#e7f2eb"
+        ]
+      },
+      "moss-raised": {
+        "role": "neutral",
+        "displayName": "Mousse Relevée",
+        "source": "--secondary, --muted, --accent (sombre)",
+        "canonical": "#2a332d",
+        "oklch": "oklch(31.0% 0.016 156.2)",
+        "tonalRamp": [
+          "#060d08",
+          "#1f2822",
+          "#3b453e",
+          "#5a645d",
+          "#7b857e",
+          "#9da8a1",
+          "#c1ccc5",
+          "#e6f2ea"
+        ]
+      },
+      "cream-soft": {
+        "role": "neutral",
+        "displayName": "Crème Douce",
+        "source": "--muted-foreground (sombre)",
+        "canonical": "#b9b5a9",
+        "oklch": "oklch(77.3% 0.017 91.6)",
+        "tonalRamp": [
+          "#0e0b04",
+          "#28251b",
+          "#454238",
+          "#656156",
+          "#868277",
+          "#a9a599",
+          "#cdc9bd",
+          "#f3eee2"
+        ]
+      },
+      "moss-line": {
+        "role": "neutral",
+        "displayName": "Ligne de Mousse",
+        "source": "--border (sombre)",
+        "canonical": "#334039",
+        "oklch": "oklch(35.7% 0.021 161.6)",
+        "tonalRamp": [
+          "#040e08",
+          "#1c2822",
+          "#38463e",
+          "#57655d",
+          "#78867e",
+          "#9aa9a1",
+          "#becec5",
+          "#e3f3ea"
+        ]
+      },
+      "stone-night": {
+        "role": "neutral",
+        "displayName": "Pierre de Nuit",
+        "source": "--input (sombre)",
+        "canonical": "#8b897f",
+        "oklch": "oklch(62.9% 0.015 97.6)",
+        "tonalRamp": [
+          "#0d0b05",
+          "#27251d",
+          "#444239",
+          "#636158",
+          "#858379",
+          "#a7a59b",
+          "#cbc9bf",
+          "#f1efe4"
+        ]
+      },
+      "action-yellow-night": {
+        "role": "primary",
+        "displayName": "Jaune Action de nuit",
+        "source": "--action (sombre)",
+        "canonical": "#f2de2e",
+        "oklch": "oklch(89.0% 0.177 102.3)",
+        "tonalRamp": [
+          "#0f0b00",
+          "#2a2600",
+          "#4a4305",
+          "#6d6300",
+          "#908420",
+          "#b7a820",
+          "#decc38",
+          "#fdf294"
+        ]
+      },
+      "earth-night": {
+        "role": "secondary",
+        "displayName": "Terre de nuit",
+        "source": "--earth (sombre)",
+        "canonical": "#2e5a2c",
+        "oklch": "oklch(42.3% 0.088 143.0)",
+        "tonalRamp": [
+          "#001100",
+          "#002f01",
+          "#224d20",
+          "#416e3f",
+          "#62905f",
+          "#84b481",
+          "#a8d8a4",
+          "#ccfec8"
+        ]
+      },
+      "success-night": {
+        "role": "secondary",
+        "displayName": "Succès de nuit",
+        "source": "--success (sombre)",
+        "canonical": "#2f6b2c",
+        "oklch": "oklch(47.2% 0.114 142.7)",
+        "tonalRamp": [
+          "#001100",
+          "#002f00",
+          "#11500f",
+          "#357132",
+          "#579453",
+          "#79b775",
+          "#9ddc98",
+          "#cffeca"
+        ]
+      },
+      "coral-night": {
+        "role": "tertiary",
+        "displayName": "Corail de nuit",
+        "source": "--coral, --destructive (sombre)",
+        "canonical": "#ff8a78",
+        "oklch": "oklch(75.8% 0.145 30.0)",
+        "tonalRamp": [
+          "#210000",
+          "#4c0200",
+          "#7d0e05",
+          "#a4372a",
+          "#ca5b4b",
+          "#f27f6d",
+          "#fcb5a8",
+          "#fee9e5"
+        ]
+      },
+      "sky-blue-night": {
+        "role": "tertiary",
+        "displayName": "Bleu Ciel de nuit",
+        "source": "--info (sombre)",
+        "canonical": "#5db8ff",
+        "oklch": "oklch(75.6% 0.135 244.5)",
+        "tonalRamp": [
+          "#000c1d",
+          "#012742",
+          "#0a466d",
+          "#0566a0",
+          "#2889cd",
+          "#51adf3",
+          "#9dcffa",
+          "#e1f1ff"
+        ]
+      },
+      "lilac-night": {
+        "role": "tertiary",
+        "displayName": "Lilas de nuit",
+        "source": "--goal (sombre)",
+        "canonical": "#cba6e8",
+        "oklch": "oklch(78.1% 0.100 309.7)",
+        "tonalRamp": [
+          "#160026",
+          "#331148",
+          "#523069",
+          "#72508c",
+          "#9471af",
+          "#b894d4",
+          "#ddb7fa",
+          "#f5e9ff"
+        ]
+      },
+      "lilac-shape-night": {
+        "role": "tertiary",
+        "displayName": "Forme lilas de nuit",
+        "source": "OrganicBackground goal, sombre",
+        "canonical": "#463858",
+        "oklch": "oklch(37.0% 0.056 303.8)",
+        "tonalRamp": [
+          "#10041e",
+          "#2b1d3b",
+          "#483a5b",
+          "#68597c",
+          "#897a9e",
+          "#ac9dc2",
+          "#d1c1e8",
+          "#f2eafe"
+        ]
+      },
+      "sky-shape-night": {
+        "role": "tertiary",
+        "displayName": "Forme bleue de nuit",
+        "source": "OrganicBackground info, sombre",
+        "canonical": "#24496b",
+        "oklch": "oklch(39.5% 0.072 248.3)",
+        "tonalRamp": [
+          "#000b20",
+          "#002646",
+          "#204566",
+          "#3f6588",
+          "#6086ac",
+          "#81a9d1",
+          "#a5cef6",
+          "#e2f0ff"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Titre de l'accueil ; variante 2.25rem / interligne 1 sur le titre visé."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Titres des pages secondaires ; 1.875rem / -0.03em sur le détail d'un examen."
+      },
+      "score": {
+        "displayName": "Score",
+        "purpose": "Score de l'écran de résultat, chiffres tabulaires ; « /40 » à 2rem."
+      },
+      "question": {
+        "displayName": "Question",
+        "purpose": "Énoncé d'une question d'examen avant validation ; 1.3125rem après."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Énoncé en révision et détail ; texte des grandes pastilles."
+      },
+      "title-sm": {
+        "displayName": "Title small",
+        "purpose": "Titres de section et des options du titre visé (interligne 1.375 ou 1.45 selon l'écran)."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Texte courant, réponses, pastilles standard."
+      },
+      "body-sm": {
+        "displayName": "Body small",
+        "purpose": "Explications (interligne 1.5), liens Retour, filtres, méta (interligne racine 1.45)."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Intitulés de réponse, étiquette « bientôt », sous-titres de pastilles (en 400)."
+      },
+      "eyebrow": {
+        "displayName": "Eyebrow",
+        "purpose": "Thème de la question, « Pourquoi » ; en capitales."
+      },
+      "caption": {
+        "displayName": "Caption",
+        "purpose": "Mention « site indépendant, non officiel »."
+      }
+    },
+    "shadows": [
+      {
+        "name": "none",
+        "value": "none",
+        "purpose": "Aucune ombre dans l'appli : profondeur par aplats (La règle du plat)."
+      },
+      {
+        "name": "dialog-overlay",
+        "value": "background: rgb(0 0 0 / 0.1); backdrop-filter: blur(4px)",
+        "purpose": "Voile de la boîte de dialogue « Quitter l'examen ? » (shadcn)."
+      },
+      {
+        "name": "focus-ring",
+        "value": "outline: 3px solid var(--ring); outline-offset: 2px",
+        "purpose": "Focus clavier de tous les éléments interactifs (encre en clair, crème en sombre)."
+      }
+    ],
+    "motion": [
+      {
+        "name": "organic-breath-journey",
+        "value": "14s infinite, calcMode spline, keySplines 0.45 0 0.55 1, 3 formes",
+        "purpose": "Respiration de la forme organique de l'accueil (variante B)."
+      },
+      {
+        "name": "organic-breath-crest",
+        "value": "13s infinite, keySplines 0.45 0 0.55 1, 2 formes",
+        "purpose": "Forme organique de l’écran de résultat."
+      },
+      {
+        "name": "organic-breath-goal",
+        "value": "13s infinite, keySplines 0.45 0 0.55 1, 2 formes",
+        "purpose": "Forme lilas de l’écran du titre visé."
+      },
+      {
+        "name": "organic-breath-info",
+        "value": "12s infinite, keySplines 0.45 0 0.55 1, 2 formes",
+        "purpose": "Forme bleue de la page des règles."
+      },
+      {
+        "name": "organic-reduced-motion",
+        "value": "prefers-reduced-motion: reduce → forme immobile ; onglet caché → animation en pause",
+        "purpose": "Respect du réglage de mouvement réduit."
+      },
+      {
+        "name": "reveal-exam-choice",
+        "value": "grid-template-rows 0fr → 1fr, 200ms, ease Tailwind par défaut ; aucun avec motion-reduce",
+        "purpose": "Ouverture du choix du jeu de questions sous l'étape 2."
+      },
+      {
+        "name": "state-colors",
+        "value": "transition-colors 150ms cubic-bezier(0.4, 0, 0.2, 1)",
+        "purpose": "Survol des pastilles, cartes et filtres (défaut Tailwind)."
+      },
+      {
+        "name": "press",
+        "value": "translateY(1px) au clic",
+        "purpose": "Enfoncement des boutons shadcn et des pastilles."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "sm",
+        "value": "640px",
+        "purpose": "Les filtres de la révision passent à la ligne au lieu de défiler."
+      },
+      {
+        "name": "md",
+        "value": "768px",
+        "purpose": "La forme organique prend la hauteur de l'écran et s'étire vers la colonne."
+      },
+      {
+        "name": "root-lg",
+        "value": "1025px",
+        "purpose": "Taille de texte racine à 112,5 % (18 px par défaut)."
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Pastille action (grande)",
+      "kind": "button",
+      "refersTo": "button-action-lg",
+      "description": "L'action principale de l'écran (PillButton tone action, size lg) : une seule par écran, souvent pleine largeur en bas.",
+      "html": "<button class=\"ds-pill-action\">Nouvel examen blanc</button>",
+      "css": ".ds-pill-action { display: inline-flex; align-items: center; justify-content: center; width: 100%; min-height: 56px; padding: 6px 18px; border: 0; border-radius: 1.75rem; background: var(--action, #f5e211); color: var(--action-foreground, #2c2e2a); font: 700 1.125rem/1.75rem 'Atkinson Hyperlegible', system-ui, sans-serif; cursor: pointer; transition: background-color .15s; } .ds-pill-action:hover { background: color-mix(in oklab, var(--action, #f5e211) 85%, transparent); } .ds-pill-action:active { transform: translateY(1px); } .ds-pill-action:focus-visible { outline: 3px solid var(--ring, #2c2e2a); outline-offset: 2px; }"
+    },
+    {
+      "name": "Pastille surface avec extrémité",
+      "kind": "button",
+      "refersTo": "button-surface",
+      "description": "Étape de navigation du parcours (PillLink tone surface) terminée par une pastille ronde encre portant une flèche.",
+      "html": "<a class=\"ds-pill-surface\" href=\"#\">1 · Réviser les thèmes<span class=\"ds-pill-end\"><svg viewBox=\"0 0 24 24\" width=\"18\" height=\"18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></span></a>",
+      "css": ".ds-pill-surface { display: inline-flex; align-items: center; justify-content: space-between; gap: 10px; min-height: 48px; padding: 6px 8px 6px 18px; border-radius: 1.5rem; background: var(--card, #ffffff); color: var(--card-foreground, #2c2e2a); font: 700 1rem/1.5rem 'Atkinson Hyperlegible', system-ui, sans-serif; text-decoration: none; transition: background-color .15s; } .ds-pill-surface:hover { background: var(--muted, #eae4d2); } .ds-pill-surface:focus-visible { outline: 3px solid var(--ring, #2c2e2a); outline-offset: 2px; } .ds-pill-end { display: flex; align-items: center; justify-content: center; min-width: 32px; min-height: 32px; border-radius: 9999px; background: var(--primary, #2c2e2a); color: var(--primary-foreground, #ffffff); }"
+    },
+    {
+      "name": "Pastille avec compteur",
+      "kind": "button",
+      "refersTo": "button-action-lg",
+      "description": "Étape 2 du parcours : grande pastille jaune dont l'extrémité porte le compteur « n sur 3 », lu par les lecteurs d'écran.",
+      "html": "<button class=\"ds-pill-counter\"><span>2 · Réussir 3 examens blancs</span><span class=\"ds-pill-count\">0 sur 3</span></button>",
+      "css": ".ds-pill-counter { display: inline-flex; align-items: center; justify-content: space-between; gap: 10px; width: 100%; min-height: 56px; padding: 6px 8px 6px 18px; border: 0; border-radius: 1.75rem; background: var(--action, #f5e211); color: var(--action-foreground, #2c2e2a); font: 700 1.125rem/1.75rem 'Atkinson Hyperlegible', system-ui, sans-serif; text-align: left; cursor: pointer; } .ds-pill-counter:hover { background: color-mix(in oklab, var(--action, #f5e211) 85%, transparent); } .ds-pill-counter:focus-visible { outline: 3px solid var(--ring, #2c2e2a); outline-offset: 2px; } .ds-pill-count { display: flex; align-items: center; min-height: 40px; padding: 0 10px; border-radius: 9999px; background: var(--action-foreground, #2c2e2a); color: var(--action, #f5e211); font-size: .9375rem; white-space: nowrap; }"
+    },
+    {
+      "name": "Carte de réponse",
+      "kind": "input",
+      "refersTo": "answer-card",
+      "description": "Réponse d'examen (AnswerCard) : radio natif dessiné en carte ; états repos, sélectionnée, juste, fausse (bordure transparente de 3 px dans tous les états).",
+      "html": "<div class=\"ds-answers\"><label class=\"ds-answer\"><input type=\"radio\" name=\"ds-q\"><span class=\"ds-answer-badge\">A</span><span>La mer du Nord</span></label><label class=\"ds-answer ds-answer-selected\"><input type=\"radio\" name=\"ds-q\" checked><span class=\"ds-answer-badge\">B</span><span>La mer Méditerranée</span></label><div class=\"ds-answer ds-answer-correct\"><span class=\"ds-answer-badge\"><svg viewBox=\"0 0 24 24\" width=\"16\" height=\"16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M20 6 9 17l-5-5\"/></svg></span><span class=\"ds-answer-text\"><b>Bonne réponse</b><span>La mer Méditerranée</span></span></div><div class=\"ds-answer ds-answer-wrong\"><span class=\"ds-answer-badge\"><svg viewBox=\"0 0 24 24\" width=\"16\" height=\"16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M18 6 6 18\"/><path d=\"m6 6 12 12\"/></svg></span><span class=\"ds-answer-text\"><b>Votre réponse</b><span>La mer du Nord</span></span></div></div>",
+      "css": ".ds-answers { display: flex; flex-direction: column; gap: 12px; } .ds-answer { display: flex; align-items: center; gap: 12px; min-height: 60px; padding: 7px 13px 7px 7px; border: 3px solid transparent; border-radius: 1rem; background: var(--card, #ffffff); color: var(--card-foreground, #2c2e2a); font: 400 1rem/1.4 'Atkinson Hyperlegible', system-ui, sans-serif; cursor: pointer; } .ds-answer input { position: absolute; opacity: 0; width: 1px; height: 1px; } .ds-answer:hover { background: var(--muted, #eae4d2); } .ds-answer:has(input:focus-visible) { outline: 3px solid var(--ring, #2c2e2a); outline-offset: 2px; } .ds-answer-badge { display: flex; flex-shrink: 0; align-items: center; justify-content: center; width: 36px; height: 36px; border: 2px solid currentColor; border-radius: 9999px; font-weight: 700; } .ds-answer-selected, .ds-answer-selected:hover { background: var(--primary, #2c2e2a); color: var(--primary-foreground, #ffffff); } .ds-answer-selected .ds-answer-badge { border: 0; background: var(--action, #f5e211); color: var(--action-foreground, #2c2e2a); } .ds-answer-correct, .ds-answer-correct:hover { background: var(--success, #8ed462); color: var(--success-foreground, #2c2e2a); cursor: default; } .ds-answer-wrong, .ds-answer-wrong:hover { border-color: var(--coral, #ff705d); background: var(--card, #ffffff); cursor: default; } .ds-answer-correct .ds-answer-badge, .ds-answer-wrong .ds-answer-badge { border: 0; background: var(--foreground, #2c2e2a); color: var(--background, #f5f1e4); } .ds-answer-text { display: flex; flex-direction: column; gap: 2px; } .ds-answer-text b { font-size: .8125rem; }"
+    },
+    {
+      "name": "Verdict",
+      "kind": "custom",
+      "refersTo": "verdict-success",
+      "description": "Pastille de statut (Verdict, role status) : texte, icône et couleur. Réussi en encre, erreur en corail, « Pas encore réussi » en surface blanche.",
+      "html": "<div class=\"ds-verdicts\"><p class=\"ds-verdict ds-verdict-success\"><span class=\"ds-verdict-icon\"><svg viewBox=\"0 0 24 24\" width=\"16\" height=\"16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M20 6 9 17l-5-5\"/></svg></span>Bonne réponse</p><p class=\"ds-verdict ds-verdict-error\"><span class=\"ds-verdict-icon\"><svg viewBox=\"0 0 24 24\" width=\"16\" height=\"16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M18 6 6 18\"/><path d=\"m6 6 12 12\"/></svg></span>Pas tout à fait</p><p class=\"ds-verdict ds-verdict-pending ds-verdict-lg\"><span class=\"ds-verdict-icon\"><svg viewBox=\"0 0 24 24\" width=\"18\" height=\"18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></span>Pas encore réussi · seuil 32/40</p></div>",
+      "css": ".ds-verdicts { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; } .ds-verdict { display: inline-flex; align-items: center; gap: 8px; margin: 0; min-height: 40px; padding: 6px 16px 6px 8px; border-radius: 1.25rem; font: 700 1rem/1.5rem 'Atkinson Hyperlegible', system-ui, sans-serif; } .ds-verdict-icon { display: flex; flex-shrink: 0; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 9999px; } .ds-verdict-lg { min-height: 44px; padding-right: 18px; border-radius: 1.375rem; font-size: 1.125rem; } .ds-verdict-lg .ds-verdict-icon { width: 30px; height: 30px; } .ds-verdict-success { background: var(--primary, #2c2e2a); color: var(--primary-foreground, #ffffff); } .ds-verdict-success .ds-verdict-icon { background: var(--action, #f5e211); color: var(--action-foreground, #2c2e2a); } .ds-verdict-error { background: var(--coral, #ff705d); color: var(--coral-foreground, #2c2e2a); } .ds-verdict-error .ds-verdict-icon { background: var(--coral-foreground, #2c2e2a); color: var(--coral, #ff705d); } .ds-verdict-pending { background: var(--card, #ffffff); color: var(--card-foreground, #2c2e2a); } .ds-verdict-pending .ds-verdict-icon { background: var(--primary, #2c2e2a); color: var(--primary-foreground, #ffffff); }"
+    },
+    {
+      "name": "Étapes du parcours",
+      "kind": "nav",
+      "refersTo": "step-goal",
+      "description": "Liste ordonnée des quatre étapes de l'accueil : pastilles surface, action, étape inactive avec étiquette « bientôt », but lilas.",
+      "html": "<ol class=\"ds-steps\"><li><a class=\"ds-step ds-step-surface\" href=\"#\">1 · Réviser les thèmes<span class=\"ds-step-end\"><svg viewBox=\"0 0 24 24\" width=\"18\" height=\"18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></span></a></li><li><span class=\"ds-step ds-step-action\">2 · Réussir 3 examens blancs</span></li><li><span class=\"ds-step ds-step-surface\">3 · Trouver un centre d'examen<span class=\"ds-tag-soon\">bientôt</span></span></li><li><span class=\"ds-step ds-step-goal\">4 · Le jour J</span></li></ol>",
+      "css": ".ds-steps { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; margin: 0; padding: 0; list-style: none; } .ds-step { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 10px; min-height: 48px; padding: 6px 18px; border-radius: 1.5rem; font: 700 1rem/1.5rem 'Atkinson Hyperlegible', system-ui, sans-serif; text-decoration: none; } .ds-step-surface { background: var(--card, #ffffff); color: var(--card-foreground, #2c2e2a); } a.ds-step-surface { padding-right: 8px; } a.ds-step-surface:hover { background: var(--muted, #eae4d2); } a.ds-step:focus-visible { outline: 3px solid var(--ring, #2c2e2a); outline-offset: 2px; } .ds-step-action { background: var(--action, #f5e211); color: var(--action-foreground, #2c2e2a); } .ds-step-goal { background: var(--goal, #ebc1ff); color: var(--goal-foreground, #2c2e2a); } .ds-step-end { display: flex; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: 9999px; background: var(--primary, #2c2e2a); color: var(--primary-foreground, #ffffff); } .ds-tag-soon { padding: 0 10px; border-radius: 9999px; background: var(--muted, #eae4d2); font-size: .8125rem; line-height: 1.5rem; }"
+    },
+    {
+      "name": "Filtres de la révision",
+      "kind": "chip",
+      "refersTo": "filter-chip",
+      "description": "Boutons bascule (aria-pressed) de la révision : blancs, encre une fois pressés, « À revoir » corail au repos.",
+      "html": "<div class=\"ds-chips\" role=\"group\" aria-label=\"Questions à afficher\"><button class=\"ds-chip ds-chip-review\" aria-pressed=\"false\">À revoir (4)</button><button class=\"ds-chip\" aria-pressed=\"true\">Tous les thèmes</button><button class=\"ds-chip\" aria-pressed=\"false\">Vie en société</button></div>",
+      "css": ".ds-chips { display: flex; flex-wrap: wrap; gap: 8px; } .ds-chip { display: inline-flex; align-items: center; min-height: 44px; padding: 6px 16px; border: 0; border-radius: 9999px; background: var(--card, #ffffff); color: var(--card-foreground, #2c2e2a); font: 700 .9375rem/1.45 'Atkinson Hyperlegible', system-ui, sans-serif; white-space: nowrap; cursor: pointer; transition: background-color .15s; } .ds-chip:hover { background: var(--muted, #eae4d2); } .ds-chip-review { background: var(--coral, #ff705d); color: var(--coral-foreground, #2c2e2a); } .ds-chip-review:hover { background: color-mix(in oklab, var(--coral, #ff705d) 85%, transparent); } .ds-chip[aria-pressed=true] { background: var(--primary, #2c2e2a); color: var(--primary-foreground, #ffffff); } .ds-chip:focus-visible { outline: 3px solid var(--ring, #2c2e2a); outline-offset: 2px; }"
+    },
+    {
+      "name": "Carte de question (révision)",
+      "kind": "card",
+      "refersTo": "question-card",
+      "description": "Carte de la révision et du détail d'un examen : énoncé en title, bonne réponse dans un encadré vert (AnswerBox), explication en body-sm.",
+      "html": "<article class=\"ds-qcard\"><h3>À quoi correspond la date du 14 juillet ?</h3><div class=\"ds-answerbox\"><span class=\"ds-answerbox-label\"><svg viewBox=\"0 0 24 24\" width=\"16\" height=\"16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M20 6 9 17l-5-5\"/></svg>Bonne réponse</span><span>C'est la fête nationale.</span></div><p>Explication courte de la réponse, en phrases simples.</p></article>",
+      "css": ".ds-qcard { display: flex; flex-direction: column; gap: 10px; padding: 16px; border-radius: 1.5rem; background: var(--card, #ffffff); color: var(--card-foreground, #2c2e2a); font-family: 'Atkinson Hyperlegible', system-ui, sans-serif; } .ds-qcard h3 { margin: 0; font-size: 1.125rem; line-height: 1.35; font-weight: 700; } .ds-qcard p { margin: 0; font-size: .9375rem; line-height: 1.5; } .ds-answerbox { display: flex; flex-direction: column; gap: 2px; padding: 10px 12px; border-radius: 1rem; background: var(--success, #8ed462); color: var(--success-foreground, #2c2e2a); font-size: 1rem; } .ds-answerbox-label { display: inline-flex; align-items: center; gap: 4px; font-size: .8125rem; font-weight: 700; }"
+    },
+    {
+      "name": "Logo « la pousse »",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "BrandLogo : symbole de la pousse (traits épaissis) et nom, « Futur » en vert forêt (vert prairie en sombre).",
+      "html": "<span class=\"ds-logo\"><svg viewBox=\"0 0 64 64\" fill=\"none\" aria-hidden=\"true\"><path d=\"M32 60 V30\" stroke=\"#2c2e2a\" stroke-width=\"7\" stroke-linecap=\"round\"/><path d=\"M32 35 C 31 21, 20 13, 6 14 C 6 29, 18 37, 32 35 Z\" fill=\"#8ed462\" stroke=\"#2c2e2a\" stroke-width=\"4.5\" stroke-linejoin=\"round\"/><path d=\"M32 28 C 33 14, 44 6, 58 7 C 58 22, 46 30, 32 28 Z\" fill=\"#f5e211\" stroke=\"#2c2e2a\" stroke-width=\"4.5\" stroke-linejoin=\"round\"/></svg><span><span class=\"ds-logo-futur\">Futur</span> Citoyen</span></span>",
+      "css": ".ds-logo { display: inline-flex; align-items: center; gap: .4em; font: 700 1.25rem/1.45 'Atkinson Hyperlegible', system-ui, sans-serif; color: #2c2e2a; } .ds-logo svg { width: 1.25em; height: 1.25em; flex-shrink: 0; } .ds-logo-futur { color: #3a7a2c; }"
+    },
+    {
+      "name": "Forme organique",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "OrganicBackground, forme « journey » de l'accueil : tracé plein couleur terre, respiration de 14 s, immobile si l'appareil demande moins de mouvement.",
+      "html": "<div class=\"ds-organic\"><svg viewBox=\"0 0 390 844\" preserveAspectRatio=\"none\" aria-hidden=\"true\"><path fill=\"currentColor\" d=\"M-40 230 C 90 170, 270 190, 370 290 C 460 380, 430 520, 340 590 C 250 650, 300 740, 210 820 C 130 890, -20 880, -60 790 Z\"><animate attributeName=\"d\" dur=\"14s\" repeatCount=\"indefinite\" calcMode=\"spline\" keyTimes=\"0;0.333;0.667;1\" keySplines=\"0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1\" values=\"M-40 230 C 90 170, 270 190, 370 290 C 460 380, 430 520, 340 590 C 250 650, 300 740, 210 820 C 130 890, -20 880, -60 790 Z;M-40 245 C 100 180, 280 180, 380 305 C 450 400, 420 505, 330 580 C 260 640, 310 755, 215 830 C 125 880, -25 870, -60 780 Z;M-40 220 C 80 180, 260 205, 360 280 C 465 365, 440 530, 350 600 C 240 660, 290 730, 200 810 C 135 895, -15 885, -60 800 Z;M-40 230 C 90 170, 270 190, 370 290 C 460 380, 430 520, 340 590 C 250 650, 300 740, 210 820 C 130 890, -20 880, -60 790 Z\"/></path></svg></div>",
+      "css": ".ds-organic { position: relative; width: 195px; height: 422px; overflow: hidden; border-radius: 1rem; background: var(--background, #f5f1e4); color: var(--earth, #8ed462); } .ds-organic svg { position: absolute; inset: 0; width: 100%; height: 100%; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "La carte du parcours",
+    "overview": "**Creative North Star: \"La carte du parcours\"**\n\nL'appli se lit comme une carte : un fond crème uni, une seule grande forme organique de terre verte qui serpente sous le contenu, et par-dessus des étapes en pastilles, comme des repères posés sur un chemin qui mène au jour J. Chaque écran dit où l'on est et ce qui vient ensuite ; la couleur sert à marquer l'étape, l'action ou le verdict, jamais à décorer. Le système vise une personne stressée, sur téléphone, parfois peu à l'aise en français : il préfère des formes généreuses, des aplats francs et un texte large à toute finesse graphique.\n\nLa densité est faible et la colonne étroite. Une seule famille de caractères, très lisible, en deux graisses ; des titres serrés et massifs qui donnent le ton, un corps de texte calme. Tout est plat : aucune ombre, la profondeur vient des aplats de couleur posés sur le crème et de la forme organique en arrière-plan. Le mouvement se limite à la respiration lente de cette forme, absente des écrans de question, où rien ne bouge pendant que l'on répond.\n\nLe thème sombre est le même parcours, le soir, écran baissé : mêmes formes, mêmes règles, couleurs assourdies pour ne pas éblouir, et sélection inversée (fond clair, texte sombre).",
+    "keyCharacteristics": [
+      "Fond crème uni et une seule forme organique de terre par écran.",
+      "Pastilles de 48 à 56 px de haut, rayon égal à la moitié de la hauteur, souvent terminées par une pastille ronde (icône ou compteur).",
+      "Jaune réservé à l'action principale de l'écran.",
+      "Texte toujours encre sur les aplats colorés en clair.",
+      "Aucune ombre ; profondeur par aplats.",
+      "Une seule police (Atkinson Hyperlegible), 400 et 700, tailles en rem pour respecter le texte agrandi.",
+      "Un résultat est toujours dit par un texte, une icône et une couleur."
+    ],
+    "rules": [
+      {
+        "name": "La règle de l'encre",
+        "body": "En clair, le texte posé sur un aplat coloré (jaune, vert, corail, bleu, lilas) est toujours l'encre, jamais le blanc. En sombre, il est `night-moss`, sauf sur les verts sombres où il redevient crème.",
+        "section": "colors"
+      },
+      {
+        "name": "La règle du jaune unique",
+        "body": "Un seul élément jaune par écran : l'action principale. Une deuxième action prend l'encre ou la surface blanche.",
+        "section": "colors"
+      },
+      {
+        "name": "La règle du triple signal",
+        "body": "Un résultat (bonne réponse, erreur, réussi, pas encore réussi) se dit toujours par un texte, une icône et une couleur, jamais par la couleur seule.",
+        "section": "colors"
+      },
+      {
+        "name": "La règle de la taille relative",
+        "body": "Toutes les tailles sont en rem à partir de 100 % de la taille choisie dans le navigateur (16 px par défaut, 112,5 % au-delà de 1024 px de large) : aucune taille de texte en px.",
+        "section": "typography"
+      },
+      {
+        "name": "La règle des deux graisses",
+        "body": "700 pour les titres, boutons, pastilles et intitulés ; 400 pour le reste. Pas de graisse intermédiaire, pas de police d'appoint.",
+        "section": "typography"
+      },
+      {
+        "name": "La règle du plat",
+        "body": "Pas d'ombre, ni au repos ni au survol. Un élément se détache par sa couleur de fond, pas par une élévation.",
+        "section": "elevation"
+      },
+      {
+        "name": "La règle de la demi-hauteur",
+        "body": "Le rayon d'une pastille est la moitié de sa hauteur minimale, jamais un rayon infini : agrandi, le texte garde un bloc arrondi lisible au lieu d'une capsule déformée.",
+        "section": "shapes"
+      },
+      {
+        "name": "La règle du calme pendant la question",
+        "body": "Aucune animation ni forme mouvante sur l'écran où l'on répond ; le mouvement est réservé aux écrans de repère (accueil, titre visé, règles, résultat).",
+        "section": "components"
+      }
+    ],
+    "dos": [
+      "**Do** poser chaque nouvel écran sur le fond de page uni, dans la colonne de 30rem, avec la gouttière de l'écran du même type (22 px carte, 20 px travail).",
+      "**Do** construire les actions avec `PillButton` / `PillLink` (tons `action`, `ink`, `surface`) plutôt qu'avec le bouton shadcn par défaut.",
+      "**Do** garder une seule action jaune par écran, de préférence en bas, en grande pastille.",
+      "**Do** dire chaque résultat par texte, icône et couleur (`Verdict`, `AnswerCard`, `AnswerBox`).",
+      "**Do** utiliser les jetons de `src/index.css` (`bg-action`, `bg-coral`, `text-muted-foreground`…) pour que le thème sombre suive sans code en plus.",
+      "**Do** donner au moins 44 px de haut à toute cible tactile et des tailles en rem.",
+      "**Do** vérifier chaque écran en clair et en sombre, et avec le texte agrandi."
+    ],
+    "donts": [
+      "**Don't** ajouter d'ombre portée, de dégradé ou de bordure décorative.",
+      "**Don't** mettre du texte blanc sur un aplat jaune, vert clair, corail, bleu ou lilas.",
+      "**Don't** placer plus d'une forme organique par écran, ni la monter sur un écran de question.",
+      "**Don't** fixer la hauteur d'une pastille ou d'une carte : seulement une hauteur minimale.",
+      "**Don't** introduire une seconde police, une graisse intermédiaire ou une taille de texte en px.",
+      "**Don't** utiliser le corail ou le rouge pour « Pas encore réussi » : ce verdict reste neutre et encourageant."
+    ]
+  }
+}
