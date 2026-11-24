@@ -20,6 +20,7 @@ import { findExamRecord, loadHistory } from '@/lib/history'
 import { journeyMessage, passedInARow, UNSAVED_MESSAGE } from '@/lib/readiness'
 import { PillButton } from '@/components/PillButton'
 import { Verdict } from '@/components/Verdict'
+import { trackEvent, EXAM_STARTED, EXAM_FINISHED_PASSED, EXAM_FINISHED_NOT_YET } from '@/lib/analytics'
 
 // Arrêté du 10 octobre 2025, art. 4 : 45 minutes au maximum
 export const GLOBAL_EXAM_TIME = 45 * 60 // 2700 secondes
@@ -131,6 +132,17 @@ function ExamSession({ restart, onRestart }: ExamSessionProps) {
   const focusQuestionRef = useRef(false)
   const questionId = useId()
 
+  // A newly drawn exam (from the home page, « Nouvel examen blanc », or no stored
+  // progress) is counted once; a resumed exam is not. The ref keeps StrictMode's
+  // double effect from sending it twice
+  const startTrackedRef = useRef(false)
+  useEffect(() => {
+    if (resume || startTrackedRef.current) return
+    startTrackedRef.current = true
+    trackEvent(EXAM_STARTED)
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
   // Consume the "new exam" marker: a reload must resume, not draw another exam
   useEffect(() => {
     if (locationState?.start) {
@@ -199,6 +211,8 @@ function ExamSession({ restart, onRestart }: ExamSessionProps) {
     const result = { score: scoreRef.current, total: questions.length }
     const streak = passedInARow([...history, result])
     const id = saveResult(result.score, result.total, allAnswers)
+    // Once per exam (finishedRef), timed out included: only the verdict is sent
+    trackEvent(isPassed(result.score, result.total) ? EXAM_FINISHED_PASSED : EXAM_FINISHED_NOT_YET)
     // Storage unavailable: no detail page to link to, and the home counter will not
     // count this exam, so the journey message must not announce a step forward
     const saved = findExamRecord(id) !== null
