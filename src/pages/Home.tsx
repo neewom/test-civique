@@ -1,5 +1,5 @@
-import { useId, useState } from 'react'
-import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom'
+import { useState } from 'react'
+import { Link, Navigate, useNavigate } from 'react-router-dom'
 import { ArrowRight, Check, ChevronDown, ChevronRight } from 'lucide-react'
 import { isPassed } from '@/lib/exam'
 import { loadProgress, clearProgress, resumeIndex } from '@/lib/exam-types'
@@ -15,11 +15,6 @@ import { useDocumentTitle } from '@/lib/use-document-title'
 import { cn } from '@/lib/utils'
 
 export const OFFICIAL_SITE_URL = 'https://formation-civique.interieur.gouv.fr'
-
-interface HomeLocationState {
-  // Set by the exam rules page (« M'entraîner maintenant »): opens the exam choice
-  openExam?: boolean
-}
 
 // Journey steps that are not links (yet): same pill shape, no interaction
 const staticStepClass =
@@ -87,14 +82,9 @@ function RecentExam({ entry }: { entry: HistoryEntry }) {
 export default function Home() {
   useDocumentTitle('Accueil')
   const navigate = useNavigate()
-  const location = useLocation()
-  const examChoiceId = useId()
 
   const [history] = useState(() => loadHistory())
   const [inProgress, setInProgress] = useState<ExamInProgress | null>(() => loadProgress())
-  const [examExpanded, setExamExpanded] = useState(
-    () => (location.state as HomeLocationState | null)?.openExam === true,
-  )
   // First launch: no title chosen yet. Someone who already has exams (history or an
   // exam in progress, from before the title screen existed) keeps the multi-year
   // permit, the only title available, so the resume stays one tap away.
@@ -117,8 +107,9 @@ export default function Home() {
     setInProgress(null)
   }
 
-  function startExam(excludeSituational: boolean) {
-    navigate('/examen', { state: { start: 'new', excludeSituational } })
+  // Always a new exam, even with one in progress (its resume stays at the bottom)
+  function startExam() {
+    navigate('/examen', { state: { start: 'new' } })
   }
 
   return (
@@ -159,9 +150,7 @@ export default function Home() {
             <li className="flex w-full flex-col items-start">
               <PillButton
                 size="lg"
-                aria-expanded={examExpanded}
-                aria-controls={examChoiceId}
-                onClick={() => setExamExpanded((v) => !v)}
+                onClick={startExam}
                 end={`${streak} sur ${READY_GOAL}`}
                 endIsText
                 // The label wraps first (9rem basis); only with enlarged text, when even
@@ -170,32 +159,6 @@ export default function Home() {
               >
                 2 · Réussir {READY_GOAL} examens blancs
               </PillButton>
-              <div
-                id={examChoiceId}
-                aria-hidden={!examExpanded}
-                inert={!examExpanded}
-                className={cn(
-                  'grid w-full transition-[grid-template-rows] duration-200 motion-reduce:transition-none',
-                  examExpanded ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]',
-                )}
-              >
-                <div className="overflow-hidden">
-                  <div className="flex flex-col items-start gap-2 pt-2 pl-5">
-                    <PillButton tone="surface" onClick={() => startExam(true)} end={<ArrowRight strokeWidth={2.6} />}>
-                      <span className="flex flex-col">
-                        <span>Questions classiques</span>
-                        <span className="text-[0.8125rem] font-normal">191 questions officielles</span>
-                      </span>
-                    </PillButton>
-                    <PillButton tone="surface" onClick={() => startExam(false)} end={<ArrowRight strokeWidth={2.6} />}>
-                      <span className="flex flex-col">
-                        <span>Avec mises en situation</span>
-                        <span className="text-[0.8125rem] font-normal">191 questions + 100 mises en situation</span>
-                      </span>
-                    </PillButton>
-                  </div>
-                </div>
-              </div>
             </li>
 
             <li className="max-w-full">

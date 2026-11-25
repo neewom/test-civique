@@ -1,6 +1,6 @@
 import { fireEvent, render, screen, within } from '@testing-library/react'
 import { MemoryRouter, Route, Routes, useLocation } from 'react-router-dom'
-import { describe, it, expect, beforeEach } from 'vitest'
+import { describe, it, expect, beforeEach, afterEach } from 'vitest'
 import ExamenDetail from './ExamenDetail'
 import type { ExamRecord } from '@/lib/exam-types'
 import allQuestions from '@/data/questions.json'
@@ -211,5 +211,35 @@ describe('ExamenDetail — revoir ses erreurs', () => {
     renderDetail('inconnu')
     expect(screen.getByRole('heading', { level: 1, name: 'Examen introuvable' })).toBeInTheDocument()
     expect(screen.getByRole('link', { name: 'Retour à mon parcours' })).toHaveAttribute('href', '/')
+  })
+})
+
+describe('ExamenDetail — lien source', () => {
+  const first = (allQuestions as { id: number; explanation: string; source?: { url: string; label: string } }[])[0]
+
+  beforeEach(() => localStorage.clear())
+  afterEach(() => {
+    delete first.source
+  })
+
+  it('affiche le lien source sous l\'explication d\'une question qui en a un', () => {
+    first.source = { url: 'https://www.elysee.fr/x', label: 'elysee.fr' }
+    seedHistory(RECORD)
+    renderDetail(RECORD_ID)
+    fireEvent.click(screen.getByRole('button', { name: /Toutes/ }))
+    const links = screen.getAllByRole('link', { name: /^Source :/ })
+    expect(links).toHaveLength(1)
+    expect(links[0]).toHaveAccessibleName('Source : elysee.fr (nouvel onglet)')
+    expect(links[0]).toHaveAttribute('href', 'https://www.elysee.fr/x')
+    expect(links[0]).toHaveAttribute('target', '_blank')
+    const card = links[0].closest('li')!
+    expect(within(card).getByText(first.explanation).compareDocumentPosition(links[0]) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy()
+  })
+
+  it('n\'affiche aucun lien source quand la question n\'en a pas', () => {
+    seedHistory(RECORD)
+    renderDetail(RECORD_ID)
+    fireEvent.click(screen.getByRole('button', { name: /Toutes/ }))
+    expect(screen.queryByRole('link', { name: /^Source :/ })).not.toBeInTheDocument()
   })
 })

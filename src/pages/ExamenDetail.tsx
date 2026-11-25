@@ -2,11 +2,12 @@ import { useId, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { AnswerBox } from '@/components/AnswerBox'
 import { BackLink } from '@/components/BackLink'
+import { SourceLink } from '@/components/SourceLink'
 import { ExamVerdict } from '@/components/ExamVerdict'
 import { PillLink } from '@/components/PillButton'
 import { findExamRecord } from '@/lib/history'
 import { themeScores, weakestThemes } from '@/lib/exam-review'
-import type { AnswerRecord } from '@/lib/exam-types'
+import type { AnswerRecord, QuestionSource } from '@/lib/exam-types'
 import allQuestions from '@/data/questions.json'
 import { useDocumentTitle } from '@/lib/use-document-title'
 import { cn } from '@/lib/utils'
@@ -17,6 +18,7 @@ interface Question {
   question: string
   answers: string[]
   explanation: string
+  source?: QuestionSource
 }
 
 const QUESTIONS = new Map((allQuestions as Question[]).map((q) => [q.id, q]))
@@ -64,6 +66,7 @@ function QuestionReview({ answer, number, question }: Reviewed) {
         </>
       )}
       <p className="text-[0.9375rem] leading-normal">{question.explanation}</p>
+      <SourceLink source={question.source} />
     </li>
   )
 }

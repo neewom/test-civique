@@ -16,9 +16,64 @@ export function isPassed(score: number, total: number): boolean {
   return total > 0 && score >= passThreshold(total)
 }
 
+/**
+ * Official sub-theme of a question (arrêté du 10 octobre 2025, annexe).
+ * Situational questions (id 192+) are always `mise-en-situation`, whatever their theme.
+ */
+export const NOTIONS = [
+  'devise-symboles',
+  'laicite',
+  'democratie-vote',
+  'organisation-republique',
+  'institutions-europeennes',
+  'droits-fondamentaux',
+  'obligations-devoirs',
+  'periodes-personnages',
+  'territoires-geographie',
+  'patrimoine',
+  's-installer',
+  'soins',
+  'travail',
+  'autorite-parentale-ecole',
+  'mise-en-situation',
+] as const
+
+export type Notion = (typeof NOTIONS)[number]
+
+export interface BlueprintLine {
+  theme: string
+  notion: Notion
+  count: number
+}
+
+/**
+ * Official breakdown of the 40 questions of an exam (arrêté du 10 octobre 2025),
+ * with the theme labels of questions.json (« Vie en société » is shown as
+ * « Vivre dans la société française » on the rules page).
+ */
+export const EXAM_BLUEPRINT: readonly BlueprintLine[] = [
+  { theme: 'Principes et valeurs de la République', notion: 'devise-symboles', count: 3 },
+  { theme: 'Principes et valeurs de la République', notion: 'laicite', count: 2 },
+  { theme: 'Principes et valeurs de la République', notion: 'mise-en-situation', count: 6 },
+  { theme: 'Système institutionnel et politique', notion: 'democratie-vote', count: 3 },
+  { theme: 'Système institutionnel et politique', notion: 'organisation-republique', count: 2 },
+  { theme: 'Système institutionnel et politique', notion: 'institutions-europeennes', count: 1 },
+  { theme: 'Droits et devoirs', notion: 'droits-fondamentaux', count: 2 },
+  { theme: 'Droits et devoirs', notion: 'obligations-devoirs', count: 3 },
+  { theme: 'Droits et devoirs', notion: 'mise-en-situation', count: 6 },
+  { theme: 'Histoire, géographie et culture', notion: 'periodes-personnages', count: 3 },
+  { theme: 'Histoire, géographie et culture', notion: 'territoires-geographie', count: 3 },
+  { theme: 'Histoire, géographie et culture', notion: 'patrimoine', count: 2 },
+  { theme: 'Vie en société', notion: 's-installer', count: 1 },
+  { theme: 'Vie en société', notion: 'soins', count: 1 },
+  { theme: 'Vie en société', notion: 'travail', count: 1 },
+  { theme: 'Vie en société', notion: 'autorite-parentale-ecole', count: 1 },
+]
+
 export interface Question {
   id: number
   theme: string
+  notion: Notion
   question: string
   answers: string[]
   distractors: string[]
@@ -37,18 +92,61 @@ export function shuffle<T>(arr: T[]): T[] {
   return a
 }
 
+/**
+ * Draws an exam that follows `EXAM_BLUEPRINT`: the exact count of each (theme, notion)
+ * line, the lines with the smallest stock drawn first. Two questions of the same `group`
+ * never meet in an exam, across lines too. A line short of questions (not expected with
+ * questions.json) is completed within its theme, then from the rest of the pool, so the
+ * exam keeps 40 questions whenever the pool allows it. Final order is shuffled.
+ */
 export function buildExam(pool: Question[] = allQuestions as Question[]): ExamQuestion[] {
   const seenGroups = new Set<string>()
+  const selectedIds = new Set<number>()
   const selected: Question[] = []
-  for (const q of shuffle(pool)) {
-    if (selected.length === EXAM_SIZE) break
-    if (q.group) {
-      if (seenGroups.has(q.group)) continue
-      seenGroups.add(q.group)
+
+  function take(candidates: Question[], count: number): number {
+    let missing = count
+    for (const q of shuffle(candidates)) {
+      if (missing === 0 || selected.length === EXAM_SIZE) break
+      if (selectedIds.has(q.id)) continue
+      if (q.group) {
+        if (seenGroups.has(q.group)) continue
+        seenGroups.add(q.group)
+      }
+      selectedIds.add(q.id)
+      selected.push(q)
+      missing--
     }
-    selected.push(q)
+    return missing
   }
-  return selected.map((q) => {
+
+  const lines = EXAM_BLUEPRINT.map((line) => ({
+    line,
+    candidates: pool.filter((q) => q.theme === line.theme && q.notion === line.notion),
+  })).sort((a, b) => a.candidates.length - b.candidates.length)
+
+  const shortByTheme = new Map<string, number>()
+  for (const { line, candidates } of lines) {
+    const missing = take(candidates, line.count)
+    if (missing > 0) shortByTheme.set(line.theme, (shortByTheme.get(line.theme) ?? 0) + missing)
+  }
+
+  // Fallbacks: same theme first (no situational question of a theme the blueprint
+  // gives none), then anything left in the pool
+  const situationalThemes = new Set(
+    EXAM_BLUEPRINT.filter((l) => l.notion === 'mise-en-situation').map((l) => l.theme),
+  )
+  for (const [theme, missing] of shortByTheme) {
+    take(
+      pool.filter(
+        (q) => q.theme === theme && (q.notion !== 'mise-en-situation' || situationalThemes.has(theme)),
+      ),
+      missing,
+    )
+  }
+  take(pool, EXAM_SIZE - selected.length)
+
+  return shuffle(selected).map((q) => {
     const answer = shuffle(q.answers)[0]
     return {
       id: q.id,
