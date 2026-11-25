@@ -3937,17 +3937,20 @@
     "distractors": [
       "Le 17",
       "Le 18",
-      "Le 112",
-      "Le 114",
       "Le 115",
+      "Le 119",
       "Le 3919",
       "Le 13",
       "Le 10"
     ],
-    "explanation": "Le 15 est le numéro du SAMU (Service d'aide médicale urgente), à appeler en cas d'urgence médicale. Les autres numéros : 17 (police/gendarmerie), 18 (pompiers), 112 (numéro d'urgence européen universel). Tous sont gratuits et disponibles 24h/24.",
+    "explanation": "Le 15 est le numéro du SAMU (Service d'aide médicale urgente), à appeler en cas d'urgence médicale. Le 112, numéro d'urgence européen, et le 114, pour les personnes sourdes ou malentendantes, permettent aussi de joindre les secours. Ces appels sont gratuits, 24 h/24 et 7 j/7.",
     "answers": [
       "Le 15"
-    ]
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/demarches-administratives/annexe-les-numeros-durgence/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 162,
@@ -3957,8 +3960,6 @@
     "distractors": [
       "Le 15",
       "Le 17",
-      "Le 112",
-      "Le 114",
       "Le 115",
       "Le 119",
       "Le 10",
@@ -3967,7 +3968,11 @@
     "explanation": "Le 18 est le numéro des pompiers (Service départemental d'incendie et de secours), à appeler en cas d'incendie, d'accident ou de catastrophe. Il est gratuit, disponible 24h/24 depuis tout téléphone, y compris sans crédit.",
     "answers": [
       "Le 18"
-    ]
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/demarches-administratives/annexe-les-numeros-durgence/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 163,
@@ -3976,7 +3981,6 @@
     "question": "Après avoir obtenu le permis de conduire, que faut-il faire pour pouvoir conduire sa voiture ?",
     "distractors": [
       "Payer une taxe annuelle spéciale à la préfecture",
-      "Obtenir une vignette de contrôle technique valide",
       "Déclarer son permis à la mairie de sa commune",
       "Passer un contrôle médical annuel obligatoire",
       "Faire enregistrer son permis au ministère des Transports",
@@ -3987,7 +3991,11 @@
     "explanation": "Pour conduire légalement un véhicule en France, il faut au minimum souscrire une assurance de responsabilité civile (garantie obligatoire, couvrant les dommages causés aux tiers). Sans assurance, conduire est illégal et passible de lourdes sanctions. D'autres assurances complémentaires sont facultatives.",
     "answers": [
       "Assurer son véhicule"
-    ]
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/demarches-administratives/les-demarches-du-quotidien-comme-le-permis-de-conduire-1/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 164,
@@ -4006,8 +4014,12 @@
     ],
     "explanation": "En France, seul le mariage civil célébré devant l'officier d'état civil (le maire ou un adjoint) a une valeur juridique. Le mariage religieux n'a aucune valeur légale. Le mariage civil peut précéder ou suivre une cérémonie religieuse, mais il est indispensable.",
     "answers": [
-      "Il doit être célébré à la mairie (mariage civil) ; le mariage religieux seul n'a aucune valeur légale"
-    ]
+      "Il doit être célébré à la mairie : le mariage religieux seul n'a pas de valeur légale"
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/demarches-administratives/la-declaration-de-mariage/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 165,
@@ -4027,7 +4039,11 @@
     "explanation": "Tout enfant né en France doit être déclaré à la mairie (service d'état civil) du lieu de naissance dans un délai de 5 jours suivant la naissance. Cette déclaration est obligatoire pour établir l'acte de naissance, qui est la base de tous les autres documents d'identité.",
     "answers": [
       "Dans les 5 jours suivant la naissance"
-    ]
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/demarches-administratives/la-declaration-de-naissance/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 166,
@@ -4046,8 +4062,12 @@
     ],
     "explanation": "Le travail non déclaré est illégal quelle que soit la situation. Pour le salarié : aucun droit ouvert (pas d'assurance maladie, pas de retraite, pas d'indemnités chômage). Pour l'employeur : redressements URSSAF, amendes et poursuites pénales pouvant aller jusqu'à 3 ans d'emprisonnement et 45 000€ d'amende.",
     "answers": [
-      "Illégal : il prive le travailleur de droits sociaux et expose l'employeur à de lourdes sanctions"
-    ]
+      "Illégal : il prive le salarié de ses droits et expose l'employeur à des sanctions"
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/emploi/le-droit-au-travail-5/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 167,
@@ -4059,7 +4079,6 @@
       "Il doit obtenir l'accord du préfet avant de recruter",
       "Il doit proposer un salaire identique à tous les salariés, sans distinction",
       "Il doit soumettre le salaire à l'accord des syndicats avant signature",
-      "Il peut proposer un salaire inférieur au SMIC uniquement pour les apprentis",
       "Il doit obligatoirement proposer un 13e mois en plus du salaire",
       "Il doit calculer le salaire en fonction de l'âge du salarié uniquement",
       "Il peut proposer un salaire en nature (logement) plutôt qu'en argent"
@@ -4067,7 +4086,12 @@
     "explanation": "En France, tout employeur est tenu de respecter le SMIC (Salaire Minimum Interprofessionnel de Croissance). Il ne peut pas proposer une rémunération inférieure à ce seuil légal. Des conventions collectives peuvent prévoir des salaires minimaux plus élevés selon les secteurs d'activité.",
     "answers": [
       "Il ne peut pas proposer un salaire inférieur au SMIC (salaire minimum légal)"
-    ]
+    ],
+    "group": "smic",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/emploi/le-droit-au-travail-2/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 168,
@@ -4084,10 +4108,15 @@
       "Une taxe prélevée sur les salaires des cadres dirigeants",
       "Un dispositif de retraite complémentaire obligatoire"
     ],
-    "explanation": "Le SMIC est le Salaire Minimum Interprofessionnel de Croissance, le salaire horaire minimum légal en France. Aucun employeur ne peut rémunérer un salarié en dessous de ce seuil. Il est réévalué chaque année au 1er janvier en fonction de l'inflation et de l'évolution du pouvoir d'achat.",
+    "explanation": "Le SMIC est le Salaire Minimum Interprofessionnel de Croissance, le salaire horaire minimum légal en France. Aucun employeur ne peut rémunérer un salarié en dessous de ce seuil. Il est revalorisé chaque année au 1er janvier, et aussi en cours d'année si les prix augmentent d'au moins 2 %.",
     "answers": [
       "Le Salaire Minimum Interprofessionnel de Croissance : le salaire minimum légal en France"
-    ]
+    ],
+    "group": "smic",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/emploi/le-droit-au-travail-2/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 169,
@@ -4107,7 +4136,12 @@
     "explanation": "Pour chercher un emploi en France, la première démarche est de s'inscrire à France Travail (nouveau nom de Pôle Emploi depuis 2024). Cet organisme public propose un accompagnement personnalisé, l'accès aux offres d'emploi, des formations, et peut verser des allocations chômage (ARE) aux personnes éligibles.",
     "answers": [
       "S'inscrire à France Travail (anciennement Pôle Emploi) pour bénéficier d'un accompagnement"
-    ]
+    ],
+    "group": "france-travail",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/emploi/orientation-1/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 170,
@@ -4127,7 +4161,11 @@
     "explanation": "La durée légale du travail est de 35 heures par semaine en France depuis la loi Aubry de 2000. Les heures travaillées au-delà sont des heures supplémentaires, majorées de 25% pour les 8 premières heures, puis de 50% au-delà. Des dérogations sectorielles peuvent s'appliquer.",
     "answers": [
       "35 heures par semaine"
-    ]
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/emploi/le-droit-au-travail-1/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 171,
@@ -4147,7 +4185,12 @@
     "explanation": "France Travail accompagne toute personne à la recherche d'un emploi : aide à la rédaction de CV et lettres de motivation, accès aux offres d'emploi, formations, et versement des allocations chômage (ARE) aux personnes ayant cotisé suffisamment et ayant perdu involontairement leur emploi.",
     "answers": [
       "Les personnes à la recherche d'un emploi, pour l'accompagnement et les allocations chômage"
-    ]
+    ],
+    "group": "france-travail",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/emploi/orientation-5/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 172,
@@ -4167,7 +4210,11 @@
     "explanation": "Toute personne étrangère résidant légalement en France peut créer son entreprise dans les mêmes conditions qu'un Français. La liberté d'entreprendre est garantie par la loi indépendamment de la nationalité, à condition d'être en situation régulière sur le territoire.",
     "answers": [
       "Dans les mêmes conditions qu'un citoyen français"
-    ]
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/emploi/types-emploi-3/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 173,
@@ -4187,7 +4234,11 @@
     "explanation": "En France, l'égalité entre hommes et femmes est un principe constitutionnel (article 1er de la Constitution). Une femme a exactement les mêmes droits qu'un homme pour créer, gérer et diriger une entreprise, quelle que soit sa forme juridique. Toute discrimination est illégale et passible de sanctions.",
     "answers": [
       "Oui, elle a exactement les mêmes droits qu'un homme pour entreprendre"
-    ]
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/emploi/types-emploi-3/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 174,
@@ -4204,10 +4255,15 @@
       "16 ans uniquement en apprentissage",
       "14 ans pour les emplois agricoles uniquement"
     ],
-    "explanation": "En France, l'âge minimum pour travailler est généralement 16 ans, qui correspond à la fin de la scolarité obligatoire. Des exceptions existent dès 14 ans pour des jobs d'été avec autorisation parentale. Des règles spéciales protègent les mineurs : interdiction du travail de nuit, des travaux dangereux, durée maximale du travail réduite.",
+    "explanation": "En France, on peut travailler dès 16 ans, avec l'autorisation de son représentant légal (sauf pour un mineur émancipé). À 14 et 15 ans, un travail léger est possible seulement pendant les vacances scolaires, avec l'accord de l'inspection du travail. Des règles protègent les mineurs : pas de travail de nuit ni de travaux dangereux, durée du travail limitée.",
     "answers": [
       "16 ans en règle générale"
-    ]
+    ],
+    "group": "ecole-obligatoire",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/emploi/le-droit-au-travail-1/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 175,
@@ -4224,10 +4280,15 @@
       "L'Agence régionale de santé (ARS)",
       "La Caisse d'allocations familiales (CAF)"
     ],
-    "explanation": "La CPAM (Caisse Primaire d'Assurance Maladie), qui fait partie de la Sécurité sociale, rembourse les frais de santé. La carte Vitale permet le remboursement automatique. Une mutuelle (complémentaire santé) peut prendre en charge le reste à payer non remboursé par la CPAM.",
+    "explanation": "C'est auprès de la Caisse primaire d'assurance maladie (CPAM), qui fait partie de la Sécurité sociale, qu'il faut demander le remboursement des frais de santé. Lors d'une consultation, le professionnel de santé lui transmet une feuille de soins électronique, ce qui enclenche le remboursement.",
     "answers": [
-      "La Sécurité sociale (CPAM — Caisse Primaire d'Assurance Maladie)"
-    ]
+      "La Caisse primaire d'assurance maladie (CPAM)"
+    ],
+    "group": "assurance-maladie",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/sante/sante-la-prise-en-charge-les-demarches-pour-etre-rembourse/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 176,
@@ -4244,10 +4305,14 @@
       "Un numéro pour signaler des pannes d'électricité ou de gaz",
       "Un numéro permettant de contacter les autorités à l'étranger"
     ],
-    "explanation": "Un numéro d'urgence est un numéro de téléphone court, gratuit et disponible 24h/24 depuis tout téléphone (y compris sans crédit ou sans carte SIM) permettant d'appeler rapidement les secours. En France : 15 (SAMU), 17 (police/gendarmerie), 18 (pompiers), 112 (numéro européen universel).",
+    "explanation": "Un numéro d'urgence est un numéro court, gratuit et joignable 24 h/24 et 7 j/7, qui permet d'appeler rapidement les secours (SAMU, police, pompiers) en cas de danger. Le 112 est le numéro d'urgence européen ; le 114 est réservé aux personnes sourdes ou malentendantes.",
     "answers": [
       "Un numéro de téléphone gratuit permettant d'appeler rapidement les secours en cas de danger"
-    ]
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/demarches-administratives/annexe-les-numeros-durgence/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 177,
@@ -4264,10 +4329,15 @@
       "Les remboursements sont réservés aux personnes ayant une mutuelle",
       "Seuls les résidents en zones urbaines ont accès aux soins remboursés"
     ],
-    "explanation": "En France, toute personne résidant sur le territoire a droit à une couverture maladie : la Sécurité sociale (CPAM) pour les personnes en situation régulière, et l'Aide Médicale d'État (AME) pour les étrangers en situation irrégulière. La complémentaire santé solidaire (CSS) aide les personnes aux faibles revenus.",
+    "explanation": "La protection universelle maladie (PUMa) prend en charge les frais de santé de toute personne qui travaille ou réside en France de manière stable et régulière. Les étrangers en situation irrégulière qui vivent en France depuis plus de 3 mois peuvent, sous conditions de ressources, bénéficier de l'aide médicale de l'État (AME). La Complémentaire santé solidaire (C2S) aide les personnes aux revenus modestes.",
     "answers": [
-      "Toute personne résidant en France a droit à une couverture maladie (Sécurité sociale ou AME pour les étrangers)"
-    ]
+      "Toute personne résidant en France peut être couverte (PUMa, ou AME en situation irrégulière)"
+    ],
+    "group": "assurance-maladie",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/sante/la-prise-en-charge-les-differentes-couvertures-maladie/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 178,
@@ -4284,10 +4354,15 @@
       "À un cabinet de télémédecine sans médecin traitant",
       "Au service hospitalier d'un CHU directement"
     ],
-    "explanation": "Le médecin traitant est le premier interlocuteur médical à consulter. Il faut le choisir et le déclarer à la CPAM. Il coordonne le parcours de soins et oriente vers des spécialistes si nécessaire. Sans passer par lui (sauf urgences ou spécialistes autorisés en accès direct), les remboursements de la Sécurité sociale sont réduits.",
+    "explanation": "Le médecin traitant est le premier interlocuteur à consulter pour un problème de santé courant. On le choisit et on le déclare. Il coordonne le parcours de soins et oriente vers des spécialistes si nécessaire. Sans passer par lui (sauf urgence ou spécialistes en accès direct), les consultations sont moins bien remboursées.",
     "answers": [
-      "Au médecin traitant, préalablement déclaré à la CPAM"
-    ]
+      "À son médecin traitant"
+    ],
+    "group": "parcours-de-soins",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/sante/acces-aux-soins-le-parcours-de-sante/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 179,
@@ -4306,8 +4381,13 @@
     ],
     "explanation": "Le médecin traitant joue un rôle central dans le système de santé français. Il assure le suivi médical global de ses patients, prescrit les traitements, effectue les actes médicaux courants, oriente vers les spécialistes appropriés et coordonne le parcours de soins pour garantir une prise en charge cohérente.",
     "answers": [
-      "Assurer le suivi médical de ses patients, les orienter vers les spécialistes et coordonner leur parcours de soins"
-    ]
+      "Suivre ses patients, les orienter vers des spécialistes et coordonner leurs soins"
+    ],
+    "group": "parcours-de-soins",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/sante/acces-aux-soins-le-medecin-generaliste/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 180,
@@ -4324,10 +4404,15 @@
       "Uniquement si le médecin traitant l'a recommandé",
       "Pour tout symptôme de moins de 24 heures"
     ],
-    "explanation": "Les urgences hospitalières sont réservées aux situations médicales graves (infarctus, AVC, traumatismes importants, détresse respiratoire…) ou aux situations où des soins immédiats sont nécessaires. Pour des problèmes moins graves, il faut consulter son médecin traitant ou appeler le 15 (SAMU) pour un avis médical.",
+    "explanation": "Les services d'urgence des hôpitaux sont réservés aux détresses et urgences les plus graves : danger vital, blessure grave qui nécessite une prise en charge immédiate. Sans danger vital (forte fièvre, douleurs), on peut appeler SOS Médecins (3624) ; en cas de danger vital, on appelle le SAMU.",
     "answers": [
-      "En cas de danger vital immédiat ou de blessure grave nécessitant une prise en charge immédiate"
-    ]
+      "En cas de danger vital ou de blessure grave à soigner sans attendre"
+    ],
+    "group": "parcours-de-soins",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/sante/acces-aux-soins-services-et-numeros-d-urgence/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 181,
@@ -4335,19 +4420,22 @@
     "notion": "soins",
     "question": "Quel est l’objectif des vaccinations obligatoires ?",
     "distractors": [
-      "Générer des profits pour les laboratoires pharmaceutiques",
-      "Contrôler la population par des substances chimiques",
       "Remplacer les traitements médicaux classiques",
       "Permettre à l'État de recenser les déplacements de la population",
-      "Limiter les dépenses de la Sécurité sociale",
       "Tester de nouveaux médicaments sur la population",
-      "Réduire la surpopulation mondiale",
-      "Éliminer toutes les allergies dès l'enfance"
+      "Éliminer toutes les allergies dès l'enfance",
+      "Dispenser les enfants des visites médicales obligatoires",
+      "Permettre de voyager dans tous les pays sans formalités",
+      "Remplacer le suivi régulier par le médecin traitant"
     ],
     "explanation": "Les vaccinations obligatoires visent à protéger chaque individu contre des maladies graves (diphtérie, tétanos, polio…) et à atteindre l'immunité collective. En vaccinant suffisamment de personnes, on protège aussi ceux qui ne peuvent pas être vaccinés (nourrissons, immunodéprimés).",
     "answers": [
-      "Protéger chaque individu et atteindre l'immunité collective pour éradiquer des maladies graves"
-    ]
+      "Protéger chacun et toute la population contre des maladies graves"
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/sante/prevention-et-promotion-de-la-sante-2/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 182,
@@ -4364,10 +4452,15 @@
       "À prouver son identité auprès des administrations",
       "À bénéficier de réductions dans les transports en commun"
     ],
-    "explanation": "La carte Vitale est la carte d'assuré social. Elle atteste de vos droits à l'Assurance maladie et permet la transmission électronique automatique des feuilles de soins pour un remboursement rapide, sans papier à envoyer. Elle est délivrée à partir de 16 ans.",
+    "explanation": "La carte Vitale prouve que vous avez des droits à l'Assurance maladie. Le professionnel de santé l'insère dans son lecteur et transmet une feuille de soins électronique, ce qui permet un remboursement rapide, sans papier à envoyer. Ce n'est pas une carte de paiement, mais elle permet de bénéficier du tiers payant.",
     "answers": [
-      "À attester de ses droits à l'Assurance maladie et permettre le remboursement automatique des soins"
-    ]
+      "À prouver ses droits à l'Assurance maladie pour être remboursé plus vite"
+    ],
+    "group": "assurance-maladie",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/sante/sante-la-prise-en-charge-les-demarches-pour-etre-rembourse/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 183,
@@ -4384,10 +4477,15 @@
       "À financer uniquement les cures thermales",
       "À accéder aux soins sans passer par un médecin traitant"
     ],
-    "explanation": "La mutuelle (ou complémentaire santé) complète les remboursements de la Sécurité sociale. Elle prend en charge tout ou partie du reste à charge : ticket modérateur, dépassements d'honoraires, soins dentaires, optique, audiologie, selon la formule souscrite. Depuis 2016, les employeurs doivent proposer une mutuelle collective à leurs salariés.",
+    "explanation": "La mutuelle (ou complémentaire santé) complète la prise en charge de base de l'Assurance maladie : elle rembourse tout ou partie de ce qui reste à payer (soins, médicaments, dentaire, optique…), selon la formule choisie. Elle n'est pas obligatoire mais recommandée. Tout employeur du secteur privé doit en proposer une à ses salariés.",
     "answers": [
-      "À compléter les remboursements de la Sécurité sociale en prenant en charge le reste à payer"
-    ]
+      "À compléter les remboursements de l'Assurance maladie"
+    ],
+    "group": "assurance-maladie",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/sante/la-prise-en-charge-les-differentes-couvertures-maladie/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 184,
@@ -4404,11 +4502,15 @@
       "18 ans pour les non-francophones",
       "14 ans si l'enfant travaille en apprentissage"
     ],
-    "explanation": "L'école est obligatoire de 3 à 16 ans pour tous les enfants résidant en France, quelle que soit leur nationalité. Au-delà de 16 ans, les jeunes peuvent continuer leurs études, entrer en apprentissage, ou chercher un emploi avec un contrat de travail.",
+    "explanation": "L'école est obligatoire de 3 à 16 ans pour tous les enfants qui vivent en France, quelle que soit leur nationalité. Après 16 ans, l'école n'est plus obligatoire, mais tous les jeunes peuvent poursuivre leurs études ou entrer en apprentissage.",
     "answers": [
       "16 ans"
     ],
-    "group": "ecole-obligatoire"
+    "group": "ecole-obligatoire",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/parentalite/le-systeme-educatif/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 185,
@@ -4427,8 +4529,12 @@
     ],
     "explanation": "L'autorité parentale est l'ensemble des droits et devoirs des parents envers leur enfant mineur. Elle prévoit l'obligation de subvenir à ses besoins (nourriture, logement, santé), de le scolariser, de l'éduquer dans le respect des lois et des autres, et de protéger sa sécurité physique et morale.",
     "answers": [
-      "De scolariser son enfant, de veiller à sa santé et à sa sécurité, et de l'éduquer dans le respect des lois"
-    ]
+      "De le scolariser, de veiller à sa santé et à sa sécurité, et de l'éduquer"
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/parentalite/exercice-de-l-autorite-parentale-1/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 186,
@@ -4445,11 +4551,15 @@
       "Uniquement dans l'enseignement public",
       "Seulement à partir de 6 ans pour les enfants étrangers"
     ],
-    "explanation": "L'école est obligatoire pour TOUS les enfants résidant sur le territoire français de 3 à 16 ans, sans distinction de nationalité ni de situation administrative des parents. C'est à la fois un droit fondamental et une obligation légale. Les enfants peuvent être scolarisés dans le public, le privé ou instruits à domicile.",
+    "explanation": "L'école est obligatoire pour TOUS les enfants qui vivent en France, de 3 à 16 ans, sans distinction de nationalité ni de situation administrative des parents. C'est à la fois un droit et une obligation. Les enfants vont dans une école publique ou privée ; l'instruction en famille n'est possible qu'à titre exceptionnel, avec une autorisation.",
     "answers": [
-      "Pour tous les enfants résidant en France de 3 à 16 ans, quelle que soit leur nationalité"
+      "Pour tous les enfants de 3 à 16 ans vivant en France, Français ou étrangers"
     ],
-    "group": "ecole-obligatoire"
+    "group": "ecole-obligatoire",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/parentalite/le-systeme-educatif/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 187,
@@ -4469,7 +4579,12 @@
     "explanation": "Le baccalauréat (le 'bac') sanctionne la fin des études secondaires en classe de Terminale (lycée). Créé par Napoléon en 1808, il permet d'accéder à l'enseignement supérieur : université, BTS, IUT, classes préparatoires aux grandes écoles, et écoles spécialisées.",
     "answers": [
       "Le baccalauréat"
-    ]
+    ],
+    "group": "cursus-scolaire",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/parentalite/le-systeme-educatif/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 188,
@@ -4489,7 +4604,12 @@
     "explanation": "Après l'école élémentaire (CP à CM2, 6-11 ans), les élèves vont au collège (6e à 3e, 11-15 ans, sanctionné par le brevet des collèges), puis au lycée (2nde à Terminale, 15-18 ans, sanctionné par le baccalauréat). Il existe des lycées généraux, technologiques et professionnels.",
     "answers": [
       "Au collège (6e à 3e, 11-15 ans), puis au lycée (2nde à Terminale, 15-18 ans)"
-    ]
+    ],
+    "group": "cursus-scolaire",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/parentalite/le-systeme-educatif/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 189,
@@ -4508,9 +4628,13 @@
     ],
     "explanation": "L'obligation scolaire s'applique à TOUS les enfants résidant en France, y compris ceux de familles étrangères quelle que soit leur situation administrative. C'est un droit fondamental. Les enfants sans papiers ont le même droit à l'éducation que les enfants français.",
     "answers": [
-      "Pour tous les enfants résidant légalement sur le territoire, y compris les enfants étrangers"
+      "Pour tous les enfants vivant en France, y compris les enfants étrangers"
     ],
-    "group": "ecole-obligatoire"
+    "group": "ecole-obligatoire",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/parentalite/le-systeme-educatif/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 190,
@@ -4530,7 +4654,11 @@
     "explanation": "Une fois inscrit à l'école, l'enfant est obligé d'y assister régulièrement. Les absences doivent être justifiées par les parents (maladie, etc.). Des absences injustifiées répétées exposent les parents à un signalement aux autorités et, en cas de persistance, à des sanctions pénales (obligation scolaire).",
     "answers": [
       "Doit y assister régulièrement ; les absences injustifiées exposent les parents à des sanctions"
-    ]
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/parentalite/exercice-de-l-autorite-parentale-1/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 191,
@@ -4544,13 +4672,16 @@
       "Doivent attendre une année complète avant d'entrer à l'école",
       "Suivent les cours normaux sans aucune aide particulière",
       "Sont placés en internat spécialisé obligatoirement",
-      "Doivent passer un test de niveau national avant l'inscription",
       "Sont regroupés dans des écoles réservées aux étrangers"
     ],
-    "explanation": "Les enfants allophones (qui ne parlent pas ou peu français) sont accueillis dans des classes UPE2A (Unité Pédagogique pour Élèves Allophones Arrivants). Ils y apprennent le français de façon intensive tout en suivant une scolarité adaptée, avant d'intégrer progressivement une classe ordinaire selon leur niveau.",
+    "explanation": "Les enfants allophones (qui parlent peu ou pas le français) vont à l'école comme les autres. À leur arrivée, un test de positionnement évalue leur niveau et peut les orienter vers une UPE2A (Unité pédagogique pour élèves allophones arrivants), où ils suivent des cours adaptés. Une fois le français maîtrisé, ils suivent les mêmes cours que les autres élèves.",
     "answers": [
-      "Sont accueillis dans des classes spécialisées UPE2A pour apprendre le français avant d'intégrer une classe ordinaire"
-    ]
+      "Peuvent suivre des cours adaptés (UPE2A) pour apprendre le français"
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/parentalite/l-ecole-pour-les-enfants-allophones/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 192,
@@ -4559,28 +4690,36 @@
     "question": "Votre voisin s'effondre dans le couloir de l'immeuble et ne répond plus. Quel numéro appelez-vous en priorité ?",
     "distractors": [
       "Le 17 (police nationale)",
-      "Le 18 (pompiers)",
+      "Le 115 (hébergement d'urgence)",
       "Le 3114 (numéro national de prévention du suicide)"
     ],
     "explanation": "Le 15 est le numéro du SAMU, à appeler pour toute urgence médicale grave. Les opérateurs guident les gestes à effectuer en attendant les secours. Le 112 est également valable, c'est le numéro d'urgence européen.",
     "answers": [
       "Le 15 (SAMU)"
-    ]
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/sante/acces-aux-soins-services-et-numeros-d-urgence/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 193,
     "theme": "Vie en société",
     "notion": "mise-en-situation",
-    "question": "Un incendie se déclare dans votre immeuble. Quelle est la bonne réaction ?",
+    "question": "Un incendie se déclare dans votre appartement. Quelle est la bonne réaction ?",
     "distractors": [
       "Prendre l'ascenseur pour descendre le plus vite possible",
       "Rester dans son appartement et attendre les secours",
       "Ouvrir toutes les portes pour faciliter l'évacuation des autres"
     ],
-    "explanation": "En cas d'incendie, on appelle le 18 (pompiers). L'ascenseur est dangereux car il peut tomber en panne. Fermer les portes ralentit la propagation des flammes et des fumées.",
+    "explanation": "Si le feu est chez vous, sortez en fermant la porte derrière vous (sans la verrouiller) pour ralentir les flammes et les fumées, ne prenez pas l'ascenseur, puis appelez le 18 (ou le 112) une fois en sécurité. Si le feu est ailleurs dans l'immeuble et que la fumée envahit le couloir, il vaut mieux rester chez soi, porte fermée.",
     "answers": [
-      "Appeler le 18, évacuer en fermant les portes derrière soi et ne pas utiliser l'ascenseur"
-    ]
+      "Sortir en fermant la porte derrière soi, sans prendre l'ascenseur, puis appeler le 18"
+    ],
+    "source": {
+      "url": "https://www.securite-civile.interieur.gouv.fr/reagir/risques-de-vie-courante/incendie-domestique",
+      "label": "securite-civile.interieur.gouv.fr"
+    }
   },
   {
     "id": 194,
@@ -4610,7 +4749,11 @@
     "explanation": "La laïcité s'impose aux agents du service public et dans les établissements scolaires publics. Dans un commerce privé, refuser de servir un client en raison de sa religion est une discrimination illégale.",
     "answers": [
       "Le servir normalement, car la laïcité ne s'impose pas aux clients dans les commerces privés"
-    ]
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/laicite/la-laicite-dans-espace-public/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 196,
@@ -4622,10 +4765,14 @@
       "Le laisser seul à la maison si vous devez travailler",
       "L'absenter toute la semaine sans justificatif si c'est ponctuel"
     ],
-    "explanation": "L'instruction est obligatoire. En cas d'absence, les parents doivent prévenir l'école et fournir un justificatif. Un enfant de 7 ans ne peut pas être laissé seul à domicile.",
+    "explanation": "L'instruction est obligatoire. En cas d'absence, les parents préviennent l'école au plus vite en donnant le motif, puis justifient l'absence ; un certificat médical n'est demandé qu'en cas de maladie contagieuse. Un enfant de 7 ans ne peut pas être laissé seul à domicile.",
     "answers": [
-      "Prévenir l'école dès le matin et fournir un justificatif médical"
-    ]
+      "Prévenir l'école au plus tôt et justifier l'absence"
+    ],
+    "source": {
+      "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F1899",
+      "label": "service-public.gouv.fr"
+    }
   },
   {
     "id": 197,
@@ -4639,8 +4786,12 @@
     ],
     "explanation": "France Travail est l'organisme public qui accompagne les demandeurs d'emploi et gère les allocations chômage. L'inscription doit être faite rapidement après la perte d'emploi pour ouvrir les droits.",
     "answers": [
-      "S'inscrire à France Travail (anciennement Pôle emploi) dans les meilleurs délais"
-    ]
+      "S'inscrire à France Travail dès que possible"
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/emploi/orientation-1/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 198,
@@ -4655,7 +4806,11 @@
     "explanation": "Le médecin traitant est le premier recours pour les problèmes de santé non urgents. Les urgences sont réservées aux situations graves. Passer d'abord par le médecin traitant permet aussi de mieux orienter vers un spécialiste si besoin.",
     "answers": [
       "Votre médecin traitant"
-    ]
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/sante/acces-aux-soins-le-parcours-de-sante/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 199,
@@ -4670,7 +4825,11 @@
     "explanation": "La déclaration de naissance est obligatoire dans les 5 jours suivant l'accouchement, à la mairie du lieu de naissance. Elle permet d'établir l'acte de naissance, premier document de l'état civil.",
     "answers": [
       "Dans les 5 jours suivant la naissance"
-    ]
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/demarches-administratives/la-declaration-de-naissance/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 200,
@@ -4682,10 +4841,14 @@
       "Uniquement une amende mineure et remboursable",
       "Rien si le montant est inférieur à 1 000 € par mois"
     ],
-    "explanation": "Le travail non déclaré est illégal. En l'acceptant, le salarié ne cotise pas et perd ses droits à la retraite, au chômage et à l'Assurance maladie. Les deux parties (employeur et salarié) peuvent être poursuivies pénalement.",
+    "explanation": "Le travail non déclaré est interdit. Le salarié non déclaré ne cotise ni pour le chômage ni pour sa retraite, n'est pas couvert par la Sécurité sociale en cas de maladie ou d'accident du travail et n'a pas de congés payés. S'il touche des aides sociales, il risque de devoir les rembourser ou de payer une amende. L'employeur encourt jusqu'à 3 ans de prison et 45 000 € d'amende.",
     "answers": [
-      "Des sanctions pénales et la perte de droits sociaux (retraite, chômage, maladie)"
-    ]
+      "La perte de vos droits sociaux : retraite, chômage, assurance maladie"
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/emploi/le-droit-au-travail-5/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 201,
@@ -4700,7 +4863,11 @@
     "explanation": "Le Conseil de prud'hommes est la juridiction compétente pour les litiges entre salariés et employeurs. Le non-paiement du salaire est une faute grave. Des associations et syndicats peuvent également aider dans ces démarches.",
     "answers": [
       "Saisir le Conseil de prud'hommes"
-    ]
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/emploi/le-droit-au-travail-2/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 202,
@@ -4715,7 +4882,11 @@
     "explanation": "Seul le mariage civil célébré à la mairie a une valeur juridique en France. Le mariage religieux peut ensuite avoir lieu mais n'est pas reconnu par l'État. Le PACS est un autre contrat civil, distinct du mariage.",
     "answers": [
       "Se marier civilement à la mairie"
-    ]
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/demarches-administratives/la-declaration-de-mariage/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 203,
@@ -4730,7 +4901,11 @@
     "explanation": "Le dépôt sauvage de déchets est une infraction. Chacun est responsable de ses déchets et doit les déposer dans les conteneurs prévus à cet effet. Des amendes peuvent être appliquées par les agents municipaux.",
     "answers": [
       "C'est un dépôt sauvage, une infraction passible d'amende"
-    ]
+    ],
+    "source": {
+      "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F31963",
+      "label": "service-public.gouv.fr"
+    }
   },
   {
     "id": 204,
@@ -4742,10 +4917,14 @@
       "Attendre d'avoir la nationalité française pour accéder aux soins",
       "Acheter des médicaments en pharmacie sans ordonnance à chaque fois"
     ],
-    "explanation": "Tout assuré social doit déclarer un médecin traitant. Sans cette déclaration, les remboursements sont réduits. La déclaration se fait en ligne sur ameli.fr ou directement au cabinet du médecin.",
+    "explanation": "Déclarer un médecin traitant n'est pas obligatoire, mais c'est vivement conseillé : sans médecin traitant déclaré, les consultations sont moins bien remboursées (sauf pour les enfants de moins de 16 ans). On choisit un médecin, souvent un généraliste, et la déclaration se fait au cabinet ou en ligne.",
     "answers": [
       "Choisir un médecin et le déclarer comme médecin traitant via l'Assurance maladie"
-    ]
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/sante/sante-la-prise-en-charge-les-demarches-pour-etre-rembourse/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 205,
@@ -4757,10 +4936,14 @@
       "Oui, mais seulement à partir de 4 ans",
       "Non, vous pouvez attendre l'entrée au CP à 6 ans"
     ],
-    "explanation": "Depuis la rentrée 2019, l'instruction est obligatoire dès 3 ans. L'enfant peut être scolarisé ou instruit à domicile, mais l'instruction est obligatoire et non facultative.",
+    "explanation": "Depuis la rentrée 2019, l'instruction est obligatoire dès 3 ans. L'enfant va à l'école, publique ou privée ; l'instruction en famille n'est possible qu'à titre exceptionnel, avec une autorisation.",
     "answers": [
       "Oui, l'instruction est obligatoire dès 3 ans depuis 2019"
-    ]
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/parentalite/le-systeme-educatif/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 206,
@@ -4774,8 +4957,12 @@
     ],
     "explanation": "La création d'entreprise en France est ouverte aux étrangers en situation régulière. Certains titres de séjour permettent d'exercer une activité commerciale. Il convient de vérifier les mentions de son titre de séjour.",
     "answers": [
-      "Oui, une personne étrangère en situation régulière peut créer son entreprise en France"
-    ]
+      "Oui, la nationalité française n'est pas exigée"
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/emploi/types-emploi-3/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 207,
@@ -4790,7 +4977,11 @@
     "explanation": "En cas d'accident sans blessé, les conducteurs doivent remplir un constat amiable et l'envoyer à leurs assurances respectives. Quitter les lieux sans constater est un délit de fuite, même sans blessé.",
     "answers": [
       "Remplir un constat amiable et l'envoyer à votre assurance dans les 5 jours ouvrés"
-    ]
+    ],
+    "source": {
+      "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F2149",
+      "label": "service-public.gouv.fr"
+    }
   },
   {
     "id": 208,
@@ -4804,8 +4995,12 @@
     ],
     "explanation": "Pour voter en France, il faut être inscrit sur les listes électorales et être de nationalité française. Les citoyens de l'Union européenne peuvent voter aux élections municipales et européennes, mais pas aux présidentielles ni aux législatives.",
     "answers": [
-      "Être inscrit sur les listes électorales et être de nationalité française (ou européenne pour les municipales)"
-    ]
+      "Être Français et inscrit sur les listes électorales (ou Européen, aux municipales)"
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/democratie-et-droit-de-vote/democratie-et-droit-de-vote-les-conditions-pour-voter-en-france-1/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 209,
@@ -4817,10 +5012,14 @@
       "Effectuer les réparations vous-même et déduire le montant du loyer sans accord préalable",
       "Quitter le logement sans préavis"
     ],
-    "explanation": "Le propriétaire est légalement tenu d'entretenir le logement. En cas de manquement, le locataire peut envoyer une lettre recommandée, saisir la commission départementale de conciliation, ou le tribunal judiciaire. Arrêter de payer le loyer unilatéralement expose à une expulsion.",
+    "explanation": "Le propriétaire doit assurer les grosses réparations et l'entretien du logement. Le locataire le met d'abord en demeure par lettre recommandée avec avis de réception ; sans accord 2 mois après, il peut saisir la commission départementale de conciliation ou un conciliateur de justice, puis le juge. Le loyer reste dû pendant ce temps : arrêter de le payer expose à une expulsion.",
     "answers": [
-      "Envoyer une mise en demeure par lettre recommandée, puis saisir la commission de conciliation ou le tribunal"
-    ]
+      "Le mettre en demeure par lettre recommandée, puis saisir la conciliation ou le juge"
+    ],
+    "source": {
+      "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F31699",
+      "label": "service-public.gouv.fr"
+    }
   },
   {
     "id": 210,
@@ -4835,7 +5034,11 @@
     "explanation": "Ne pas porter secours à une personne en danger est un délit (non-assistance à personne en danger). Appeler le 17 ou le 15 est le geste approprié. Intervenir soi-même physiquement peut s'avérer dangereux.",
     "answers": [
       "Appeler le 17 (police) ou le 15 (SAMU) selon la situation"
-    ]
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/droits-et-devoirs/obligations-et-devoirs-des-personnes-residant-en-france/le-role-des-temoins-en-cas-de-violences/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 211,
@@ -5902,16 +6105,20 @@
     "id": 267,
     "theme": "Vie en société",
     "notion": "mise-en-situation",
-    "question": "Vous êtes salarié et votre employeur souhaite modifier votre contrat de travail (horaires, lieu, salaire). Peut-il le faire sans votre accord ?",
+    "question": "Vous êtes salarié et votre employeur souhaite baisser votre salaire ou changer votre durée de travail. Peut-il le faire sans votre accord ?",
     "distractors": [
       "Oui, l'employeur peut modifier le contrat librement",
-      "Oui, si le changement est justifié par des raisons économiques",
-      "Oui, avec un préavis d'un mois, sans avoir besoin de votre accord"
+      "Oui, s'il vous prévient simplement par oral la veille",
+      "Oui, s'il en informe d'abord l'inspection du travail"
     ],
-    "explanation": "Toute modification d'un élément essentiel du contrat de travail (rémunération, durée du travail, lieu) nécessite l'accord du salarié. En cas de refus, l'employeur peut soit maintenir le contrat, soit engager une procédure de licenciement.",
+    "explanation": "Le salaire et la durée du travail sont des éléments essentiels du contrat : l'employeur peut seulement proposer de les modifier, et le salarié doit donner son accord. S'il refuse, l'employeur renonce ou engage un licenciement. Pour un motif économique, le salarié a un mois pour refuser ; passé ce délai, son silence vaut acceptation. Un simple changement des conditions de travail (tâches, certains horaires) peut en revanche être imposé.",
     "answers": [
-      "Non, toute modification substantielle du contrat de travail nécessite votre accord écrit"
-    ]
+      "Non, ces éléments essentiels du contrat ne changent qu'avec votre accord"
+    ],
+    "source": {
+      "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F2339",
+      "label": "service-public.gouv.fr"
+    }
   },
   {
     "id": 268,
@@ -5923,10 +6130,14 @@
       "Contacter la préfecture pour arbitrer le litige",
       "Porter plainte au commissariat"
     ],
-    "explanation": "Avant de saisir la justice pour un litige civil, la loi encourage et parfois oblige à tenter une résolution amiable (médiation, conciliation). C'est plus rapide, moins coûteux, et souvent obligatoire pour les petits litiges depuis 2020.",
+    "explanation": "Avant de saisir le juge, la loi encourage et parfois impose une tentative de règlement amiable (conciliateur de justice, gratuit, ou médiateur). Elle est obligatoire pour les litiges jusqu'à 5 000 € et pour certains conflits de voisinage (bornage, plantations, distances pour installer une clôture, troubles anormaux) : sans elle, la demande au juge est irrecevable.",
     "answers": [
       "Tenter une conciliation amiable ou faire appel à un médiateur"
-    ]
+    ],
+    "source": {
+      "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F1732",
+      "label": "service-public.gouv.fr"
+    }
   },
   {
     "id": 269,
@@ -5938,10 +6149,14 @@
       "La prescription administrative de 5 ans",
       "Votre droit au silence administratif"
     ],
-    "explanation": "Le principe « Dites-le nous une fois » (instauré par la loi ESSOC de 2018) interdit aux administrations de demander plusieurs fois les mêmes documents à un usager. Si le document est déjà en possession d'une administration, vous pouvez le signaler et refuser de le renvoyer.",
+    "explanation": "Selon le principe « Dites-le-nous une fois » (article L113-12 du code des relations entre le public et l'administration), l'administration ne peut pas vous obliger à fournir des informations qu'elle détient déjà ou qu'elle peut obtenir directement auprès d'une autre administration. Vous pouvez le lui signaler plutôt que de renvoyer le document.",
     "answers": [
-      "Le principe « Dites-le nous une fois » : l'administration ne peut pas vous redemander un document qu'elle détient déjà"
-    ]
+      "Le principe « Dites-le-nous une fois »"
+    ],
+    "source": {
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000037313155",
+      "label": "legifrance.gouv.fr"
+    }
   },
   {
     "id": 270,
@@ -5953,10 +6168,14 @@
       "Contacter la préfecture pour déclarer la perte",
       "Aller aux urgences pour signaler la situation"
     ],
-    "explanation": "La carte Vitale est délivrée par l'Assurance maladie (CPAM). En cas de perte ou de vol, il faut contacter votre caisse et faire une demande de renouvellement via ameli.fr ou en agence. Elle permet le remboursement des frais de santé.",
+    "explanation": "La carte Vitale est délivrée par l'Assurance maladie. En cas de perte ou de vol, on le déclare sur son compte ameli ou par téléphone, puis on commande une nouvelle carte. La démarche est gratuite ; en attendant, l'attestation de droits sert de justificatif.",
     "answers": [
-      "Signaler la perte à votre caisse d'Assurance maladie et en demander une nouvelle"
-    ]
+      "Le signaler à l'Assurance maladie et demander une nouvelle carte"
+    ],
+    "source": {
+      "url": "https://www.ameli.fr/assure/remboursements/etre-bien-rembourse/carte-vitale/carte-vitale-application/carte-vitale-perdue-abimee-ou-volee-comment-en-obtenir-une-nouvelle",
+      "label": "ameli.fr"
+    }
   },
   {
     "id": 271,
@@ -5965,13 +6184,17 @@
     "question": "Vous souhaitez faire garder votre enfant de 2 ans. Quels modes de garde sont possibles en France ?",
     "distractors": [
       "Uniquement les crèches municipales gérées par la mairie",
-      "Seules les nounou non agréées sont autorisées avant 3 ans",
+      "Seules les nounous non agréées sont autorisées avant 3 ans",
       "L'école maternelle publique à partir de 2 ans dans tous les cas"
     ],
     "explanation": "Plusieurs modes de garde existent pour les enfants de moins de 3 ans : crèche collective ou familiale, assistante maternelle agréée, garde à domicile, microcrèche. Des aides financières (CMG, PAJE) de la CAF peuvent compléter le financement.",
     "answers": [
       "Crèche collective, assistante maternelle agréée, garde à domicile ou microcrèche"
-    ]
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/parentalite/les-modes-de-garde-des-enfants-de-moins-de-3-ans/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 272,
@@ -5979,14 +6202,18 @@
     "notion": "mise-en-situation",
     "question": "Vous devez déclarer vos revenus aux impôts mais vous ne savez pas comment faire. Quel service peut vous aider gratuitement ?",
     "distractors": [
-      "Uniquement un comptable agréé payant",
-      "La Banque de France",
-      "France Travail (Pôle emploi)"
+      "Uniquement un comptable agréé, payant",
+      "La Banque de France, sur rendez-vous",
+      "France Travail, l'ancien Pôle emploi"
     ],
-    "explanation": "La Direction générale des Finances publiques (DGFiP) propose une aide gratuite à la déclaration de revenus, notamment dans les centres des finances publiques ou via le site impots.gouv.fr. Des espaces numériques en mairie et des associations d'aide à la déclaration existent aussi.",
+    "explanation": "L'administration fiscale (DGFiP) aide gratuitement à déclarer ses revenus : sur impots.gouv.fr, par téléphone, dans les centres des finances publiques et dans les espaces France Services, où des agents accompagnent les démarches en ligne.",
     "answers": [
-      "Les services fiscaux (centre des impôts) ou les points d'accueil numérique en mairie"
-    ]
+      "Un centre des finances publiques ou France Services"
+    ],
+    "source": {
+      "url": "https://www.impots.gouv.fr/comment-nous-contacter-si-vous-avez-des-difficultes-avec-internet-0",
+      "label": "impots.gouv.fr"
+    }
   },
   {
     "id": 273,
@@ -6151,7 +6378,7 @@
       "Demander l'avis de tous les clients de la file avant de décider",
       "Refuser, car cela pourrait créer un précédent injuste"
     ],
-    "explanation": "Laisser passer quelqu'un qui n'a qu'un article est une pratique courante et courtoises en France. Ce type de geste solidaire fait partie du « vivre ensemble » et des comportements civiques du quotidien.",
+    "explanation": "Laisser passer quelqu'un qui n'a qu'un article est une pratique courante et courtoise en France. Ce type de geste solidaire fait partie du « vivre ensemble » et des comportements civiques du quotidien.",
     "answers": [
       "La laisser passer devant vous, c'est un geste de courtoisie répandu"
     ]
@@ -6166,25 +6393,33 @@
       "Contacter directement le harceleur et sa famille sans impliquer l'école",
       "Porter plainte immédiatement à la police sans en informer l'école"
     ],
-    "explanation": "Face au harcèlement scolaire, il faut alerter l'établissement scolaire en premier lieu. Le 3020 est le numéro national de lutte contre le harcèlement à l'école. En cas de faits graves, une plainte peut également être déposée.",
+    "explanation": "Face au harcèlement scolaire, il faut d'abord alerter l'établissement. Le 3018 est le numéro national, gratuit et anonyme, contre le harcèlement à l'école et le cyberharcèlement. En cas de faits graves, une plainte peut aussi être déposée.",
     "answers": [
-      "Contacter l'établissement scolaire, et si nécessaire appeler le numéro national 3020"
-    ]
+      "Prévenir l'établissement scolaire et, si besoin, appeler le 3018"
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/droits-et-devoirs/obligations-et-devoirs-des-personnes-residant-en-france/le-role-des-temoins-en-cas-de-violences/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 283,
     "theme": "Vie en société",
     "notion": "mise-en-situation",
-    "question": "Votre enfant doit passer un examen médical obligatoire. À quel âge la visite médicale scolaire obligatoire a-t-elle lieu ?",
+    "question": "À l'école, votre enfant passe une visite médicale obligatoire avec un médecin de l'Éducation nationale. Au cours de quelle année de sa vie a-t-elle lieu ?",
     "distractors": [
-      "À 3 ans, à l'entrée en maternelle",
-      "À 10 ans, au passage en CM2",
-      "À 12 ans, à l'entrée au collège"
+      "Au cours de sa 9e année (CE2 ou CM1)",
+      "Au cours de sa 15e année (entrée au lycée)",
+      "Au cours de sa 17e année (avant le baccalauréat)"
     ],
-    "explanation": "Un bilan de santé scolaire obligatoire est réalisé en grande section de maternelle ou au cours préparatoire (6 ans). D'autres bilans sont organisés à différents âges, mais celui à 6 ans est le seul légalement obligatoire dans le cadre scolaire.",
+    "explanation": "La visite médicale de la 6e année, au début de la scolarité obligatoire, est faite par un médecin de l'Éducation nationale. D'autres examens existent : un bilan à 3-4 ans par la PMI à l'école maternelle et un dépistage par l'infirmier scolaire dans la 12e année.",
     "answers": [
-      "À 6 ans (en grande section ou au CP) lors du bilan de santé scolaire obligatoire"
-    ]
+      "Au cours de sa 6e année (grande section ou CP)"
+    ],
+    "source": {
+      "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000031425153/",
+      "label": "legifrance.gouv.fr"
+    }
   },
   {
     "id": 284,
@@ -6196,10 +6431,14 @@
       "Le propriétaire peut entrer en prévenant 24h à l'avance",
       "Vous ne pouvez rien faire car il est chez lui"
     ],
-    "explanation": "La violation de domicile est un délit pénal. Le propriétaire ne peut pas entrer dans le logement loué sans l'accord du locataire, sauf en cas d'urgence grave (incendie, dégât des eaux…). Le locataire jouit d'un droit à la jouissance paisible du logement.",
+    "explanation": "Le logement loué est le domicile du locataire, qui doit pouvoir en profiter paisiblement. Le propriétaire ne peut pas y entrer sans son accord, même en cas d'urgence comme un dégât des eaux. Sinon, le locataire peut porter plainte pour violation de domicile (jusqu'à 3 ans de prison et 45 000 € d'amende).",
     "answers": [
-      "Le propriétaire n'a pas le droit d'entrer sans votre accord, sauf urgence grave. Vous pouvez porter plainte pour violation de domicile"
-    ]
+      "Il ne peut pas entrer sans votre accord, même s'il a un double des clés"
+    ],
+    "source": {
+      "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F12244",
+      "label": "service-public.gouv.fr"
+    }
   },
   {
     "id": 285,
@@ -6286,12 +6525,16 @@
     "distractors": [
       "Non, la cantine est réservée aux enfants de nationalité française",
       "Oui, mais uniquement après 3 ans de résidence légale en France",
-      "Cela dépend de la municipalité et de sa politique locale"
+      "Oui, mais seulement si les deux parents travaillent"
     ],
-    "explanation": "L'accès aux services scolaires, dont la cantine, est ouvert à tous les enfants scolarisés en France, quelle que soit leur nationalité ou leur situation familiale. La scolarisation et ses services associés relèvent du principe d'égalité d'accès à l'éducation.",
+    "explanation": "La cantine n'est pas obligatoire, mais lorsqu'elle existe, son accès est un droit pour tous les enfants scolarisés, sans discrimination liée à leur situation ou à celle de leur famille (article L131-13 du code de l'éducation). Il est par exemple illégal de la réserver aux enfants dont les parents travaillent.",
     "answers": [
-      "Oui, tous les enfants scolarisés ont accès à la cantine scolaire sans condition de nationalité"
-    ]
+      "Oui, quand la cantine existe, son accès est un droit pour tous les élèves"
+    ],
+    "source": {
+      "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F24570",
+      "label": "service-public.gouv.fr"
+    }
   },
   {
     "id": 290,
@@ -6316,15 +6559,19 @@
     "id": 291,
     "theme": "Vie en société",
     "notion": "mise-en-situation",
-    "question": "Vous êtes nouvellement arrivé en France et vous souhaitez comprendre vos droits et obligations. Quel document officiel vous y aide ?",
+    "question": "Vous souhaitez mieux connaître l'histoire, la culture et les valeurs de la République. Quel document officiel du ministère de l'Intérieur les présente ?",
     "distractors": [
-      "Le Code civil, disponible en bibliothèque",
+      "Le livret de famille",
       "Le Journal officiel de la République française",
       "La charte de votre association de quartier"
     ],
-    "explanation": "Le Livret du citoyen est remis aux étrangers qui suivent la formation civique obligatoire dans le cadre du Contrat d'intégration républicaine (CIR). Il présente les valeurs, droits et devoirs en France, et constitue la base de l'examen civique.",
+    "explanation": "Le Livret du citoyen, document officiel du ministère de l'Intérieur (nouvelle version de juillet 2026), présente l'histoire, la culture et la société françaises ainsi que les principes et valeurs de la République. Il est destiné aux candidats à la naturalisation et consultable en ligne.",
     "answers": [
-      "Le Livret du citoyen, remis lors des formations civiques obligatoires dans le cadre du parcours d'intégration républicaine"
-    ]
+      "Le Livret du citoyen"
+    ],
+    "source": {
+      "url": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054426889",
+      "label": "legifrance.gouv.fr"
+    }
   }
 ]

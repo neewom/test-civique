@@ -16,6 +16,8 @@ const ACCEPTED_DOMAINS = [
   'europa.eu',
   // Commission d'accès aux documents administratifs (autorité administrative indépendante)
   'cada.fr',
+  // Assurance maladie, site officiel de la CNAM
+  'ameli.fr',
 ]
 
 function isAcceptedSourceUrl(url: string): boolean {
