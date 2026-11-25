@@ -12,16 +12,6 @@ const OFFICIAL_MAX_ID = 191
 // La fixture reste la copie fidèle de la page du ministère.
 const EXCEPTIONS = new Map<number, { reason: string; expected: string }>([
   [
-    9,
-    {
-      // Officiel : « Lequel de ces symboles représente officiellement la République
-      // française ? », qui ne correspond pas à nos réponses (allégorie, Marianne) ;
-      // à traiter avec le contenu des questions.
-      reason: 'sens différent',
-      expected: "Lequel de ces personnages est l'allégorie de la République française ?",
-    },
-  ],
-  [
     27,
     {
       // Officiel : « Qu'est ce qui … sur les Champs Élysées … » (traits d'union manquants).
