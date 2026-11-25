@@ -2039,14 +2039,17 @@
       "Le Code civil napoléonien de 1804",
       "La Constitution de la IVe République de 1946",
       "Le traité de Maastricht de 1992",
-      "La loi fondamentale de la République française",
       "Le préambule républicain de 1946",
       "La Charte constitutionnelle de 1830"
     ],
-    "explanation": "La Constitution en vigueur est celle de la Ve République, adoptée par référendum le 28 septembre 1958 et promulguée le 4 octobre 1958. Elle a été modifiée à plusieurs reprises (24 révisions) et organise les pouvoirs de l'État français.",
+    "explanation": "La Constitution en vigueur est celle de la Ve République, approuvée par référendum le 28 septembre 1958 et adoptée le 4 octobre 1958. Elle a été modifiée à plusieurs reprises (par exemple en 1962 pour l'élection du président au suffrage universel direct, ou en 2024 pour y inscrire la liberté de recourir à l'IVG) et organise les pouvoirs de l'État français.",
     "answers": [
       "La Constitution de la Ve République"
-    ]
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/droits-et-devoirs/droits-fondamentaux/les-principaux-textes-la-constitution-de-la-5-republique/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 85,
@@ -2054,19 +2057,21 @@
     "notion": "droits-fondamentaux",
     "question": "Comment s'appelle le texte qui énonce les droits et devoirs des personnes résidant en France ?",
     "distractors": [
-      "La Constitution de la Ve République de 1958",
-      "Le Code civil napoléonien de 1804",
-      "La Charte des droits fondamentaux de l'UE",
-      "Le Préambule de la Constitution de 1946",
-      "La Déclaration universelle des droits de l'homme de 1948",
-      "La Convention européenne des droits de l'homme",
       "Le traité de Rome fondateur de l'Europe",
-      "La Charte constitutionnelle de la IIIe République"
+      "La Déclaration d'indépendance des États-Unis de 1776",
+      "La Grande Charte (Magna Carta) anglaise de 1215",
+      "La Charte des Nations unies de 1945",
+      "La Charte constitutionnelle de 1814",
+      "Le Code de la route"
     ],
     "explanation": "La Déclaration des droits de l'homme et du citoyen de 1789 est le texte fondateur qui énonce les droits naturels et imprescriptibles (liberté, propriété, sûreté, résistance à l'oppression). Elle a valeur constitutionnelle en France car elle est intégrée au préambule de la Constitution.",
     "answers": [
       "La Déclaration des droits de l'homme et du citoyen de 1789"
-    ]
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/droits-et-devoirs/droits-fondamentaux/un-droit-fondamental-la-citoyennete/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 86,
@@ -2086,7 +2091,11 @@
     "explanation": "Les droits individuels (liberté d'expression, liberté de circuler, droit de propriété…) sont garantis par la Constitution et la DDHC. Ils ne sont pas absolus : la loi peut les limiter pour protéger l'ordre public, la santé, la sécurité ou les droits d'autrui.",
     "answers": [
       "Les droits individuels sont garantis mais peuvent être limités par la loi pour protéger l'ordre public et les droits d'autrui"
-    ]
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/droits-et-devoirs/obligations-et-devoirs-des-personnes-residant-en-france/la-limite-des-libertes-individuelles/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 87,
@@ -2101,12 +2110,16 @@
       "1905",
       "1945",
       "1958",
-      "1793"
+      "1815"
     ],
     "explanation": "La Déclaration des droits de l'homme et du citoyen a été adoptée le 26 août 1789 par l'Assemblée nationale constituante pendant la Révolution française. Elle proclame les droits naturels et imprescriptibles de tout être humain.",
     "answers": [
       "1789"
-    ]
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/droits-et-devoirs/droits-fondamentaux/les-principaux-textes-la-declaraion-des-droits-de-lhomme-et-du-citoyen/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 88,
@@ -2126,7 +2139,11 @@
     "explanation": "La liberté de conscience (le droit de croire ou de ne pas croire, d'avoir ou non une religion) est un droit fondamental garanti par la Constitution et par la loi de 1905 sur la laïcité. Parmi les droits fondamentaux, on trouve aussi la liberté d'expression, le droit à la vie, la liberté de circuler, etc.",
     "answers": [
       "La liberté de conscience (croire ou ne pas croire)"
-    ]
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/laicite/la-definition-de-la-laicite-1/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 89,
@@ -2134,19 +2151,22 @@
     "notion": "droits-fondamentaux",
     "question": "Parmi ces textes, lequel garantit les droits et libertés en France ?",
     "distractors": [
-      "Le Code du travail uniquement",
-      "Le Code civil de Napoléon uniquement",
-      "La Charte des Nations Unies de 1945",
+      "La Charte des Nations unies de 1945",
       "Le traité de Maastricht de 1992",
       "Le règlement intérieur de l'Assemblée nationale",
-      "La loi sur la presse de 1881 uniquement",
-      "Le traité de Lisbonne de 2007",
-      "Le Code pénal de 1810"
+      "Le Code pénal de 1810",
+      "Le Concordat de 1801",
+      "La Charte constitutionnelle de 1814",
+      "Le Code de la route"
     ],
     "explanation": "En France, les droits et libertés fondamentaux sont garantis par un bloc de constitutionnalité comprenant : la Constitution de 1958, la Déclaration des droits de l'homme et du citoyen de 1789, le Préambule de la Constitution de 1946 et la Charte de l'environnement de 2004.",
     "answers": [
       "La Constitution de 1958 et la Déclaration des droits de l'homme de 1789"
-    ]
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/droits-et-devoirs/droits-fondamentaux/les-principaux-textes-la-constitution-de-la-5-republique/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 90,
@@ -2167,7 +2187,11 @@
     "answers": [
       "Le droit d'exprimer ses opinions librement, dans le respect des limites fixées par la loi"
     ],
-    "group": "liberte-expression"
+    "group": "liberte-expression",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/droits-et-devoirs/droits-fondamentaux/les-principaux-textes-la-declaraion-des-droits-de-lhomme-et-du-citoyen/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 91,
@@ -2176,18 +2200,21 @@
     "question": "Quel droit permet à une personne de se défendre devant la justice ?",
     "distractors": [
       "Le droit de grâce présidentielle",
-      "Le droit de récusation du juge",
       "Le droit d'amnistie parlementaire",
       "Le droit de propriété intellectuelle",
       "Le droit d'asile politique",
-      "Le droit au recours administratif uniquement",
-      "Le droit de plaider coupable sans procès",
-      "Le droit à la présomption d'innocence uniquement"
+      "Le droit de pétition",
+      "Le droit de grève",
+      "Le droit de plaider coupable sans procès"
     ],
-    "explanation": "Le droit à la défense est un droit fondamental garantissant que toute personne poursuivie peut se défendre, être assistée d'un avocat (y compris commis d'office si elle n'a pas les moyens), et bénéficier d'un procès équitable. Il est lié à la présomption d'innocence.",
+    "explanation": "Le droit à la défense est un droit fondamental : toute personne poursuivie peut se défendre, être assistée d'un avocat et bénéficier d'un procès équitable. Pour les personnes aux faibles ressources, l'aide juridictionnelle peut prendre en charge les frais d'avocat. Il va de pair avec la présomption d'innocence et le droit au silence.",
     "answers": [
       "Le droit à la défense (se faire représenter par un avocat)"
-    ]
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/droits-et-devoirs/droits-fondamentaux/les-droits-inherents-a-la-personne-humaine/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 92,
@@ -2195,19 +2222,22 @@
     "notion": "droits-fondamentaux",
     "question": "Quel est le texte fondateur établissant en France les droits et les devoirs de chaque citoyen ?",
     "distractors": [
-      "Le Code civil de Napoléon Bonaparte (1804)",
-      "La Constitution de la Ve République (1958)",
-      "La Charte des droits fondamentaux de l'UE (2000)",
-      "Le Préambule de la Constitution de la IVe République (1946)",
-      "La Déclaration universelle des droits de l'homme de l'ONU (1948)",
+      "La Déclaration d'indépendance des États-Unis (1776)",
       "Le traité de Westphalie (1648)",
-      "La Convention européenne des droits de l'homme (1950)",
-      "La Grande Charte (Magna Carta) britannique (1215)"
+      "La Grande Charte (Magna Carta) anglaise (1215)",
+      "La Charte constitutionnelle de la Restauration (1814)",
+      "La Charte des Nations unies (1945)",
+      "Le Concordat entre la France et le pape (1801)",
+      "La Déclaration universelle des droits de l'homme de l'ONU (1948)"
     ],
     "explanation": "La Déclaration des droits de l'homme et du citoyen du 26 août 1789 est le texte fondateur des droits et devoirs en France. Elle proclame les droits naturels (liberté, propriété, sûreté) et les devoirs civiques. Elle a valeur constitutionnelle depuis 1971.",
     "answers": [
       "La Déclaration des droits de l'homme et du citoyen de 1789"
-    ]
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/droits-et-devoirs/droits-fondamentaux/les-principaux-textes-la-declaraion-des-droits-de-lhomme-et-du-citoyen/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 93,
@@ -2227,7 +2257,11 @@
     "explanation": "La Déclaration des droits de l'homme et du citoyen a été adoptée le 26 août 1789 par l'Assemblée nationale constituante, au début de la Révolution française. Elle est considérée comme l'un des textes fondateurs de la démocratie moderne.",
     "answers": [
       "La Déclaration des droits de l'homme et du citoyen"
-    ]
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/droits-et-devoirs/droits-fondamentaux/les-principaux-textes-la-declaraion-des-droits-de-lhomme-et-du-citoyen/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 94,
@@ -2247,7 +2281,11 @@
     "explanation": "La liberté de conscience, garantie par la laïcité et par l'article 10 de la DDHC de 1789, protège le droit de chaque personne de ne pas avoir de religion, d'être athée ou agnostique, sans subir aucune discrimination ou contrainte de l'État.",
     "answers": [
       "La liberté de conscience, garantie par la laïcité"
-    ]
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/laicite/la-definition-de-la-laicite-1/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 95,
@@ -2267,7 +2305,11 @@
     "explanation": "L'IVG est légale en France depuis la loi Veil de 1975. Depuis mars 2024, le droit à l'IVG est inscrit dans la Constitution française comme une 'liberté garantie'. Le délai légal est de 14 semaines de grossesse.",
     "answers": [
       "Oui, c'est un droit légal inscrit dans la Constitution depuis mars 2024"
-    ]
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/la-cinquieme-republique/focus-sur-la-cinquieme-republique-le-droit-a-l-avortement/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 96,
@@ -2284,10 +2326,14 @@
       "Oui, mais uniquement pour les mariages civils de moins de 10 ans",
       "Non, la loi française préfère la séparation de corps au divorce"
     ],
-    "explanation": "En France, le divorce est un droit légal. Il en existe plusieurs formes : le divorce par consentement mutuel, le divorce pour faute, et le divorce pour altération du lien conjugal. Depuis 2017, le divorce par consentement mutuel peut se faire sans juge.",
+    "explanation": "En France, le divorce est un droit : chaque époux peut mettre fin au mariage, même sans faute. Il existe quatre cas de divorce : par consentement mutuel, accepté (acceptation du principe de la rupture), pour altération définitive du lien conjugal (plus de vie commune) et pour faute. Depuis le 1er janvier 2017, le divorce par consentement mutuel se fait en principe sans juge, par une convention rédigée par les avocats et déposée chez un notaire.",
     "answers": [
       "Oui, le divorce est un droit légal accessible à tous les époux"
-    ]
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/droits-et-devoirs/droits-fondamentaux/les-libertes-au-sein-du-couple/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 97,
@@ -2300,14 +2346,18 @@
       "Réservée aux crimes de guerre devant un tribunal militaire",
       "Abolie depuis 1945 par ordonnance du général de Gaulle",
       "Applicable uniquement pour les meurtres d'enfants de moins de 12 ans",
-      "Suspendue depuis 1968 mais jamais abolie officiellement",
+      "Abolie pour tous les crimes depuis 1848",
       "Abolie depuis 1789 par la Révolution française",
       "Applicable sur décision unanime d'un jury populaire"
     ],
     "explanation": "La peine de mort a été abolie en France par la loi du 9 octobre 1981, portée par le garde des Sceaux Robert Badinter, sous la présidence de François Mitterrand. Son abolition a été gravée dans la Constitution lors de la révision constitutionnelle du 23 février 2007.",
     "answers": [
       "Abolie depuis 1981 et inscrite dans la Constitution depuis 2007"
-    ]
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/la-cinquieme-republique/focus-sur-la-cinquieme-republique-5/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 98,
@@ -2327,7 +2377,11 @@
     "explanation": "Les libertés individuelles ne sont pas absolues. La loi peut les encadrer pour protéger l'ordre public, la sécurité, la santé publique et les libertés d'autrui. Par exemple, la liberté d'expression est limitée par l'interdiction de la diffamation et de l'incitation à la haine.",
     "answers": [
       "Les libertés individuelles peuvent être limitées par la loi pour protéger l'ordre public et les droits d'autrui"
-    ]
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/droits-et-devoirs/obligations-et-devoirs-des-personnes-residant-en-france/la-limite-des-libertes-individuelles/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 99,
@@ -2347,7 +2401,11 @@
     "explanation": "La polygamie est strictement interdite en France. Contracter un second mariage en étant encore marié constitue le délit de bigamie, passible d'un an d'emprisonnement et de 45 000€ d'amende. Le mariage civil ne peut unir que deux personnes.",
     "answers": [
       "Non, la polygamie est interdite et constitue le délit de bigamie"
-    ]
+    ],
+    "source": {
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006418588",
+      "label": "legifrance.gouv.fr"
+    }
   },
   {
     "id": 100,
@@ -2367,7 +2425,11 @@
     "explanation": "Réduire ses déchets est un devoir civique et écologique. La loi française (notamment la loi anti-gaspillage de 2020) encourage le tri, le recyclage, le compostage et la réduction à la source. Jeter ses déchets sauvagement dans la nature est une infraction passible d'amende.",
     "answers": [
       "Oui, c'est un devoir civique et écologique encouragé et encadré par la loi"
-    ]
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/droits-et-devoirs/obligations-et-devoirs-des-personnes-residant-en-france/obligations-et-devoirs-des-personnes-residants-en-france-adopter-une-attitude-respectueuse-vis-a-vis-de-environnement/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 101,
@@ -2384,10 +2446,14 @@
       "Interdit mais jamais sanctionné dans les grandes villes",
       "Autorisé si une poubelle publique n'est pas à moins de 100 mètres"
     ],
-    "explanation": "Jeter des déchets sur la voie publique est interdit par la loi et constitue une contravention de 4e classe, passible d'une amende forfaitaire de 135€ (pouvant aller jusqu'à 750€ en cas de majoration). Chacun est responsable de la propreté de l'espace public.",
+    "explanation": "Jeter ou abandonner un déchet sur la voie publique est interdit et puni d'une amende forfaitaire de 135 € (375 € si elle est payée après 45 jours). En cas de contestation ou de non-paiement, le juge peut fixer l'amende jusqu'à 750 €. Chacun est responsable de la propreté de l'espace public.",
     "answers": [
       "Interdit, c'est une contravention passible d'une amende pouvant aller jusqu'à 750€"
-    ]
+    ],
+    "source": {
+      "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F31963",
+      "label": "service-public.gouv.fr"
+    }
   },
   {
     "id": 102,
@@ -2404,10 +2470,14 @@
       "Pour empêcher les étrangers d'accéder aux mêmes droits",
       "Pour maintenir la séparation stricte entre les classes sociales"
     ],
-    "explanation": "Selon l'article 4 de la DDHC de 1789, les limites à la liberté ne peuvent être déterminées que par la loi, et uniquement pour protéger l'ordre public, la sécurité, la santé publique et les droits des autres. Nul ne peut être restreint dans sa liberté sans base légale.",
+    "explanation": "Selon l'article 4 de la DDHC de 1789, « la liberté consiste à pouvoir faire tout ce qui ne nuit pas à autrui » et ses bornes ne peuvent être déterminées que par la loi. La loi peut ainsi limiter les libertés individuelles pour protéger les droits des autres, l'intérêt général, l'ordre public (sécurité, tranquillité, salubrité) et la dignité humaine. Exemple : l'état d'urgence sanitaire de 2020 a limité la liberté d'aller et venir.",
     "answers": [
       "Pour protéger l'ordre public, la sécurité collective et les droits d'autrui"
-    ]
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/droits-et-devoirs/obligations-et-devoirs-des-personnes-residant-en-france/la-limite-des-libertes-individuelles/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 103,
@@ -2427,7 +2497,11 @@
     "explanation": "En cas d'accident, toute personne est légalement obligée de s'arrêter et de porter assistance aux victimes (obligation de porter secours, Code pénal). Il faut appeler le 15 (SAMU), le 18 (pompiers) ou le 112 (urgences européennes), sécuriser les lieux et rester jusqu'à l'arrivée des secours.",
     "answers": [
       "S'arrêter, porter secours si possible, appeler les secours (15, 18 ou 112) et rester sur les lieux"
-    ]
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/droits-et-devoirs/obligations-et-devoirs-des-personnes-residant-en-france/les-obligations-en-tant-que-resident-francais/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 104,
@@ -2436,7 +2510,7 @@
     "question": "Que permet la citoyenneté française ?",
     "distractors": [
       "Uniquement de voyager librement sans passeport en Europe",
-      "De ne jamais être expulsé du territoire français",
+      "De ne jamais être jugé par un tribunal français",
       "D'accéder gratuitement à tous les services publics sans cotisation",
       "De ne pas payer d'impôts si on est né en France",
       "D'obtenir automatiquement la nationalité de tous les pays de l'UE",
@@ -2447,7 +2521,11 @@
     "explanation": "La citoyenneté française donne le droit de voter et d'être élu à toutes les élections nationales et locales, d'exercer des fonctions publiques, et de bénéficier de la pleine protection diplomatique de la France à l'étranger. Elle s'accompagne aussi de devoirs civiques.",
     "answers": [
       "De voter, d'être élu, de bénéficier de tous les droits civiques et de participer à la vie de la nation"
-    ]
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/droits-et-devoirs/droits-fondamentaux/un-droit-fondamental-la-citoyennete/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 105,
@@ -2467,7 +2545,11 @@
     "explanation": "Toute personne qui ne respecte pas la loi s'expose à des sanctions pénales proportionnelles à la gravité de l'infraction : une amende pour les contraventions, des peines d'emprisonnement et/ou d'amendes pour les délits, et des peines d'emprisonnement pouvant aller jusqu'à la réclusion à perpétuité pour les crimes.",
     "answers": [
       "Des sanctions pénales : amende, travaux d'intérêt général, emprisonnement selon la gravité"
-    ]
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/droits-et-devoirs/obligations-et-devoirs-des-personnes-residant-en-france/se-conformer-aux-lois-les-infractions/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 106,
@@ -2488,7 +2570,11 @@
     "answers": [
       "Maintenir l'ordre, protéger les personnes et les biens, et constater les infractions (en zone rurale et périurbaine)"
     ],
-    "group": "police-gendarmerie"
+    "group": "police-gendarmerie",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/droits-et-devoirs/obligations-et-devoirs-des-personnes-residant-en-france/se-conformer-aux-lois-les-acteurs/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 107,
@@ -2509,7 +2595,11 @@
     "answers": [
       "Maintenir l'ordre public, protéger les personnes et les biens, et prévenir et réprimer les infractions"
     ],
-    "group": "police-gendarmerie"
+    "group": "police-gendarmerie",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/droits-et-devoirs/obligations-et-devoirs-des-personnes-residant-en-france/se-conformer-aux-lois-les-acteurs/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 108,
@@ -2529,7 +2619,11 @@
     "explanation": "Une infraction est un acte contraire à la loi pénale. Il en existe trois catégories par ordre de gravité : la contravention (ex : excès de vitesse), le délit (ex : vol, agression), et le crime (ex : meurtre, viol). Chaque catégorie est sanctionnée par des peines différentes.",
     "answers": [
       "Un acte contraire à la loi pénale, classé en contravention, délit ou crime selon sa gravité"
-    ]
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/droits-et-devoirs/obligations-et-devoirs-des-personnes-residant-en-france/se-conformer-aux-lois-les-infractions/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 109,
@@ -2549,7 +2643,11 @@
     "explanation": "Pour réduire ses déchets, on peut trier pour recycler (verre, plastique, carton, métal), composter les déchets organiques, éviter les suremballages, réparer plutôt que jeter, acheter d'occasion, et utiliser des produits réutilisables (sacs, bouteilles, etc.).",
     "answers": [
       "En triant, en compostant, en achetant moins d'emballages et en réutilisant les objets"
-    ]
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/droits-et-devoirs/obligations-et-devoirs-des-personnes-residant-en-france/obligations-et-devoirs-des-personnes-residants-en-france-adopter-une-attitude-respectueuse-vis-a-vis-de-environnement/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 110,
@@ -2558,18 +2656,21 @@
     "question": "Déposer une machine à laver cassée sur le trottoir est :",
     "distractors": [
       "Toléré si c'est pour permettre à d'autres de la récupérer",
-      "Autorisé si c'est devant chez soi et qu'on prévient la mairie",
+      "Autorisé si c'est devant chez soi, sans autre démarche",
       "Légal si on le fait la nuit pour ne pas gêner la circulation",
-      "Permis car la commune est obligée de ramasser les encombrants",
-      "Autorisé une fois par an lors de la collecte des encombrants",
-      "Légal si on le signale sur une application de la mairie",
+      "Permis car la commune est obligée de ramasser tout ce qui est sur le trottoir",
+      "Autorisé si l'appareil pèse moins de 50 kilos",
       "Toléré dans les zones industrielles et commerciales",
       "Autorisé tant que l'objet est encore fonctionnel"
     ],
-    "explanation": "Déposer des encombrants (électroménager, meubles…) sur le trottoir en dehors des collectes prévues est un dépôt sauvage illégal, passible d'une amende. Il faut contacter sa mairie pour connaître les jours de collecte des encombrants ou déposer l'objet en déchetterie.",
+    "explanation": "Déposer un encombrant (électroménager, meuble…) sur le trottoir en dehors de la collecte prévue par la commune est un dépôt sauvage : amende forfaitaire de 135 € (375 € après 45 jours), jusqu'à 750 € devant le juge, voire 1 500 € si un véhicule a servi à le transporter. Il faut se renseigner auprès de la mairie (collecte des encombrants, souvent sur rendez-vous) ou déposer l'objet en déchetterie ; un appareil électrique peut aussi être repris par le vendeur lors d'un achat neuf.",
     "answers": [
-      "Interdit, c'est un dépôt sauvage passible d'une amende pouvant aller jusqu'à 1 500€"
-    ]
+      "Interdit en dehors de la collecte prévue : c'est un dépôt sauvage, puni d'une amende"
+    ],
+    "source": {
+      "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F31954",
+      "label": "service-public.gouv.fr"
+    }
   },
   {
     "id": 111,
@@ -2586,10 +2687,14 @@
       "Le travail au noir entre particuliers sans exploitation",
       "Le commerce de médicaments non autorisés entre particuliers"
     ],
-    "explanation": "La traite des êtres humains est le recrutement, le transport ou l'hébergement de personnes par la tromperie, la contrainte ou la violence, à des fins d'exploitation (prostitution, travail forcé, esclavage, mendicité…). C'est un crime sévèrement puni par la loi française et internationale.",
+    "explanation": "La traite des êtres humains consiste à recruter, transporter, transférer, héberger ou accueillir une personne pour l'exploiter : proxénétisme, travail ou services forcés, esclavage, mendicité forcée… Elle est interdite en France et punie de 7 ans d'emprisonnement et 150 000 € d'amende, davantage si la victime est mineure ; commise en bande organisée, elle devient un crime.",
     "answers": [
-      "L'exploitation de personnes par la contrainte à des fins sexuelles, de travail forcé ou de mendicité, c'est un crime grave"
-    ]
+      "Recruter, transporter ou héberger des personnes pour les exploiter (prostitution, travail forcé, mendicité…)"
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/droits-et-devoirs/obligations-et-devoirs-des-personnes-residant-en-france/la-traite-des-etres-humains-et-la-prostitution/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 112,
@@ -2598,18 +2703,21 @@
     "question": "Que doit faire une victime de violences ?",
     "distractors": [
       "Attendre que la situation s'améliore d'elle-même",
-      "En parler uniquement à ses proches sans impliquer la justice",
-      "Contacter directement le juge aux affaires familiales sans la police",
-      "Demander conseil à son employeur ou à son voisinage",
+      "Garder le silence pour ne pas créer de problèmes",
+      "Attendre d'avoir des preuves écrites avant de demander de l'aide",
       "Fuir à l'étranger pour échapper à l'agresseur",
       "Appeler uniquement son assurance habitation",
       "Saisir le préfet par courrier recommandé",
       "Écrire une pétition en ligne pour témoigner"
     ],
-    "explanation": "Une victime de violences doit : appeler le 3919 (violences femmes, gratuit 24h/24), porter plainte à la police ou la gendarmerie, faire constater les blessures par un médecin (certificat médical indispensable), et contacter une association d'aide aux victimes. Elle peut aussi demander une ordonnance de protection au juge.",
+    "explanation": "Une victime de violences ne doit pas rester seule. Elle peut porter plainte dans n'importe quel commissariat ou gendarmerie (ou écrire au procureur de la République), appeler le 17 en cas de danger immédiat, le 3919 (violences conjugales, gratuit 24h/24), faire constater ses blessures par un médecin et se faire accompagner gratuitement par une association. En cas de violences conjugales, elle peut aussi demander une ordonnance de protection au juge.",
     "answers": [
       "Porter plainte auprès de la police ou de la gendarmerie, appeler le 3919 (violences conjugales) et consulter un médecin"
-    ]
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/droits-et-devoirs/obligations-et-devoirs-des-personnes-residant-en-france/la-protection-des-victimes-de-violences/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 113,
@@ -2626,10 +2734,14 @@
       "La fraude électorale",
       "L'outrage à magistrat en audience"
     ],
-    "explanation": "En droit français, il y a trois niveaux d'infractions par ordre de gravité croissante : la contravention (la moins grave), le délit (intermédiaire), et le crime (la plus grave : meurtre, viol, terrorisme, trafic de drogue…). Les crimes sont jugés par la cour d'assises et peuvent mener à la réclusion criminelle à perpétuité.",
+    "explanation": "En droit français, il y a trois catégories d'infractions par ordre de gravité croissante : la contravention (la moins grave, amende), le délit (vol, harcèlement…) et le crime (la plus grave : meurtre, viol, terrorisme…). Les crimes sont jugés par la cour d'assises ou la cour criminelle départementale et peuvent être punis de la réclusion criminelle à perpétuité.",
     "answers": [
-      "Le crime (meurtre, viol, terrorisme…), jugé par la cour d'assises"
-    ]
+      "Le crime (meurtre, viol, terrorisme…)"
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/droits-et-devoirs/obligations-et-devoirs-des-personnes-residant-en-france/se-conformer-aux-lois-les-infractions/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 114,
@@ -4519,10 +4631,14 @@
       "Le travail supplémentaire est obligatoire sans compensation si le contrat le prévoit",
       "Il n'existe pas de durée légale du travail en France"
     ],
-    "explanation": "La durée légale du travail est de 35 heures par semaine. Les heures supplémentaires doivent être compensées par une majoration de salaire ou des repos compensateurs, selon les accords en vigueur.",
+    "explanation": "La durée légale du travail est de 35 heures par semaine. Au-delà, les heures supplémentaires doivent être payées (avec une majoration) ou compensées par du repos. Il existe aussi une durée maximale : 48 heures sur une même semaine et 44 heures en moyenne sur 12 semaines. Travailler 50 heures dans la semaine dépasse donc la limite légale.",
     "answers": [
       "La durée légale est de 35 heures ; les heures supplémentaires doivent être compensées"
-    ]
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/emploi/le-droit-au-travail-1/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 212,
@@ -4531,13 +4647,17 @@
     "question": "Vous êtes victime de violences conjugales. Que devez-vous faire ?",
     "distractors": [
       "Garder cela privé, c'est une affaire de famille",
-      "Quitter le domicile sans prévenir les autorités",
+      "Demander à votre conjoint de promettre par écrit de ne plus recommencer",
       "Attendre que la situation s'améliore d'elle-même"
     ],
-    "explanation": "Les violences conjugales sont un délit grave. La victime peut porter plainte au commissariat ou à la gendarmerie. Le 3919 (Violences Femmes Info) est un numéro d'écoute gratuit et disponible 24h/24.",
+    "explanation": "Les violences conjugales sont interdites et punies par la loi (délit, voire crime). La victime peut porter plainte dans un commissariat ou une gendarmerie, appeler le 17 en cas de danger immédiat et le 3919 (Violences Femmes Info), numéro d'écoute gratuit et anonyme disponible 24h/24. Des associations l'accompagnent gratuitement.",
     "answers": [
       "Porter plainte auprès de la police ou de la gendarmerie et appeler le 3919"
-    ]
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/droits-et-devoirs/obligations-et-devoirs-des-personnes-residant-en-france/la-protection-des-victimes-de-violences/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 213,
@@ -4552,7 +4672,11 @@
     "explanation": "L'injure à caractère raciste est un délit pénal en France. La liberté d'expression ne protège pas les propos discriminatoires ou haineux visant une personne en raison de son origine, sa religion, son sexe ou son orientation sexuelle.",
     "answers": [
       "D'une injure à caractère raciste, un délit pénal punissable par la loi"
-    ]
+    ],
+    "source": {
+      "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F32077",
+      "label": "service-public.gouv.fr"
+    }
   },
   {
     "id": 214,
@@ -4564,10 +4688,14 @@
       "Envoyer un ami à votre place",
       "Contacter la mairie pour annuler la convocation"
     ],
-    "explanation": "Une convocation judiciaire est une obligation légale. Ne pas se présenter entraîne des sanctions supplémentaires. Toute personne peut bénéficier d'un avocat. L'aide juridictionnelle existe pour ceux qui ne peuvent pas en payer un.",
+    "explanation": "Une convocation devant un tribunal doit être respectée. Si la personne poursuivie ne vient pas, elle peut être amenée de force par la police ou jugée en son absence, sans pouvoir se défendre ; un témoin absent sans excuse valable peut aussi être contraint de venir. Toute personne peut être assistée d'un avocat, et l'aide juridictionnelle existe pour ceux qui ne peuvent pas en payer un.",
     "answers": [
       "Vous y rendre, éventuellement assisté d'un avocat"
-    ]
+    ],
+    "source": {
+      "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F1485",
+      "label": "service-public.gouv.fr"
+    }
   },
   {
     "id": 215,
@@ -4579,10 +4707,14 @@
       "Une amende administrative mineure",
       "Rien si votre ami vous a donné son accord verbal"
     ],
-    "explanation": "Signer à la place d'une autre personne sans procuration légale constitue un faux en écriture, sévèrement puni par le Code pénal. Seule une procuration officielle (notariée ou légalisée) permet de représenter légalement quelqu'un.",
+    "explanation": "Imiter la signature de quelqu'un sur un document est un faux, puni par le Code pénal de 3 ans d'emprisonnement et 45 000 € d'amende (davantage pour un document administratif), même si la personne est d'accord ; utiliser ce document est un usage de faux. Pour agir au nom d'une autre personne, il faut une procuration : on signe alors de son propre nom, pour le compte de l'autre.",
     "answers": [
       "Des poursuites pour faux et usage de faux, des délits pénaux"
-    ]
+    ],
+    "source": {
+      "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F31612",
+      "label": "service-public.gouv.fr"
+    }
   },
   {
     "id": 216,
@@ -4597,7 +4729,11 @@
     "explanation": "L'instruction est obligatoire jusqu'à 16 ans en France. Un jeune de 15 ans peut entrer en apprentissage sous certaines conditions strictes, mais ne peut pas simplement quitter l'école pour travailler.",
     "answers": [
       "Non, l'instruction est obligatoire jusqu'à 16 ans"
-    ]
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/parentalite/le-systeme-educatif/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 217,
@@ -4609,10 +4745,14 @@
       "Ignorer la décision si vous n'êtes pas d'accord",
       "Écrire directement à l'Élysée pour obtenir une annulation"
     ],
-    "explanation": "Tout administré peut contester une décision administrative. Il commence par un recours gracieux auprès de l'autorité concernée, puis saisit le tribunal administratif si la réponse est insatisfaisante. Un délai de 2 mois est généralement imparti.",
+    "explanation": "Toute décision administrative peut être contestée. On peut d'abord demander à son auteur de la revoir (recours gracieux) ou s'adresser à son supérieur (recours hiérarchique), puis, ou directement, saisir le tribunal administratif. Le délai est en général de 2 mois, mais il peut être plus court (par exemple pour une obligation de quitter le territoire) : il est indiqué sur la décision.",
     "answers": [
       "Exercer un recours administratif, puis saisir le tribunal administratif si nécessaire"
-    ]
+    ],
+    "source": {
+      "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F2474",
+      "label": "service-public.gouv.fr"
+    }
   },
   {
     "id": 218,
@@ -4627,13 +4767,17 @@
     "explanation": "Le Défenseur des droits est une autorité constitutionnelle indépendante. Il peut être saisi gratuitement par toute personne s'estimant victime d'une discrimination ou d'une violation de ses droits.",
     "answers": [
       "Le Défenseur des droits"
-    ]
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/droits-et-devoirs/droits-fondamentaux/les-acteurs-institutionnels/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 219,
     "theme": "Droits et devoirs",
     "notion": "mise-en-situation",
-    "question": "Votre propriétaire refuse de louer son appartement à une personne en raison de son origine étrangère. Qu'est-ce que cela constitue ?",
+    "question": "Un propriétaire refuse de vous louer son appartement en raison de votre origine étrangère. Qu'est-ce que cela constitue ?",
     "distractors": [
       "Un droit du propriétaire de choisir librement son locataire",
       "Une pratique tolérée si elle n'est pas publiquement affichée",
@@ -4642,22 +4786,30 @@
     "explanation": "La discrimination dans l'accès au logement est un délit pénal. Refuser de louer en raison de l'origine, de la religion, du sexe ou d'autres critères discriminatoires est punissable d'une amende et d'une peine d'emprisonnement.",
     "answers": [
       "Une discrimination illégale passible de poursuites pénales"
-    ]
+    ],
+    "source": {
+      "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F19448",
+      "label": "service-public.gouv.fr"
+    }
   },
   {
     "id": 220,
     "theme": "Droits et devoirs",
     "notion": "mise-en-situation",
-    "question": "Vous êtes arrêté par la police pour un contrôle d'identité. Quels sont vos droits ?",
+    "question": "La police vous contrôle dans la rue et vous demande de justifier de votre identité. Que devez-vous faire ?",
     "distractors": [
       "Refuser le contrôle car il est illégal sans motif précis",
       "Ne rien dire et partir immédiatement",
       "Exiger d'être assisté d'un avocat dès le contrôle d'identité"
     ],
-    "explanation": "Lors d'un contrôle d'identité, on est tenu de présenter un document d'identité. On peut demander le motif du contrôle. En cas d'arrestation, on a le droit d'être informé de ses droits, de prévenir un proche et d'être assisté d'un avocat.",
+    "explanation": "Lors d'un contrôle d'identité, vous devez justifier de votre identité. Un document avec photo (carte d'identité, passeport, titre de séjour) est le plus simple, mais tout moyen est admis : autre document, témoignage d'une personne qui vous accompagne. Si vous ne pouvez pas, la police peut vous retenir le temps de vérifier, 4 heures au maximum. Une personne étrangère peut aussi être invitée à présenter son titre de séjour. Le contrôle doit être justifié ; s'il vous semble illégal, vous pouvez le signaler ensuite. L'avocat n'intervient qu'en cas de garde à vue.",
     "answers": [
-      "Présenter un document d'identité et être informé du motif du contrôle si vous le demandez"
-    ]
+      "Justifier de votre identité, par exemple avec une pièce d'identité"
+    ],
+    "source": {
+      "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F1036",
+      "label": "service-public.gouv.fr"
+    }
   },
   {
     "id": 221,
@@ -4672,7 +4824,11 @@
     "explanation": "La participation au jury d'assises est un devoir civique obligatoire pour les citoyens français tirés au sort. Des dispenses sont possibles pour motif légitime. Le refus injustifié est passible d'amende, pas d'emprisonnement.",
     "answers": [
       "Non, sauf motif légitime reconnu par la loi (maladie, obligations familiales impérieuses…)"
-    ]
+    ],
+    "source": {
+      "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F1044",
+      "label": "service-public.gouv.fr"
+    }
   },
   {
     "id": 222,
@@ -4682,27 +4838,35 @@
     "distractors": [
       "Rien, le vendeur n'est pas obligé de rembourser",
       "Reprendre l'article de force car il est défectueux",
-      "Contacter la préfecture pour signaler le commerçant"
+      "Demander au maire d'obliger le commerçant à vous rembourser"
     ],
-    "explanation": "La garantie légale de conformité (2 ans) oblige le vendeur à réparer, remplacer ou rembourser un article défectueux. En cas de litige, le consommateur peut saisir une association de consommateurs ou la justice.",
+    "explanation": "La garantie légale de conformité (2 ans pour un produit neuf) s'applique gratuitement. Vous choisissez d'abord entre la réparation et le remplacement, qui doivent intervenir dans les 30 jours ; si c'est impossible ou trop tardif, vous pouvez obtenir le remboursement ou une réduction du prix. En cas de litige, vous pouvez vous faire aider par une association de consommateurs, recourir à un médiateur ou saisir la justice.",
     "answers": [
       "Invoquer la garantie légale de conformité et, si nécessaire, saisir une association de consommateurs ou le tribunal"
-    ]
+    ],
+    "source": {
+      "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F11094",
+      "label": "service-public.gouv.fr"
+    }
   },
   {
     "id": 223,
     "theme": "Droits et devoirs",
     "notion": "mise-en-situation",
-    "question": "Vous souhaitez manifester dans la rue pour défendre une cause. Que devez-vous faire ?",
+    "question": "Vous souhaitez organiser une manifestation dans la rue pour défendre une cause. Que devez-vous faire ?",
     "distractors": [
       "Rien, la liberté de manifester est absolue et sans formalité",
       "Obtenir l'accord du ministre de l'Intérieur",
       "Manifester uniquement sur les trottoirs, sans déposer de déclaration"
     ],
-    "explanation": "En France, la liberté de manifestation est un droit fondamental, mais les manifestations sur la voie publique doivent être déclarées auprès des autorités (préfecture ou mairie) au moins 3 jours à l'avance. Les manifestations non déclarées peuvent être dispersées.",
+    "explanation": "En France, la liberté de manifester est un droit fondamental, mais une manifestation sur la voie publique doit être déclarée à l'avance par ses organisateurs, en mairie ou en préfecture, au moins 3 jours francs et au plus 15 jours francs avant. Le maire ou le préfet peut l'interdire s'il y a un risque de trouble à l'ordre public. Organiser une manifestation sans déclaration est puni de 6 mois d'emprisonnement et 7 500 € d'amende.",
     "answers": [
       "Déclarer la manifestation en préfecture ou en mairie au préalable"
-    ]
+    ],
+    "source": {
+      "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F21899",
+      "label": "service-public.gouv.fr"
+    }
   },
   {
     "id": 224,
@@ -4712,12 +4876,16 @@
     "distractors": [
       "Accepter pour gagner du temps",
       "Ne rien faire pour éviter des représailles",
-      "Contacter les médias pour dénoncer publiquement"
+      "Payer, car seul l'agent qui réclame l'argent commet une infraction"
     ],
-    "explanation": "La corruption est un délit grave en France. Tout citoyen peut signaler une tentative de corruption au procureur de la République ou via des plateformes officielles. Accepter constitue également un délit (corruption active).",
+    "explanation": "La corruption est un délit grave en France, puni de 10 ans d'emprisonnement et 1 000 000 € d'amende. L'agent qui réclame de l'argent commet une corruption passive ; celui qui paie, même à la demande de l'agent, commet une corruption active et peut lui aussi être poursuivi. Il faut refuser et signaler les faits à la police, à la gendarmerie ou au procureur de la République.",
     "answers": [
-      "Refuser et signaler les faits au procureur de la République ou via la plateforme SignalConso"
-    ]
+      "Refuser et signaler les faits à la police, à la gendarmerie ou au procureur de la République"
+    ],
+    "source": {
+      "url": "https://www.agence-francaise-anticorruption.gouv.fr/lexique",
+      "label": "agence-francaise-anticorruption.gouv.fr"
+    }
   },
   {
     "id": 225,
@@ -4729,10 +4897,14 @@
       "Non, vous êtes toujours entièrement responsable sans aucune couverture",
       "Oui, mais uniquement si vous êtes en France métropolitaine"
     ],
-    "explanation": "Le contrat de location inclut généralement une assurance de base, mais une franchise reste souvent à la charge du conducteur. Des garanties complémentaires peuvent être souscrites pour supprimer cette franchise.",
+    "explanation": "Le loueur doit assurer le véhicule avec la responsabilité civile obligatoire, incluse dans le prix : elle couvre les dommages causés aux autres (conducteurs, piétons, biens). Elle ne couvre pas les dégâts au véhicule loué, le vol ni vos propres blessures : pour ceux-ci, une franchise prévue au contrat peut rester à votre charge, sauf si vous avez souscrit une assurance complémentaire (rachat de franchise).",
     "answers": [
       "Partiellement, selon le contrat. Une franchise peut rester à votre charge sauf si vous avez souscrit une couverture complémentaire"
-    ]
+    ],
+    "source": {
+      "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F23420",
+      "label": "service-public.gouv.fr"
+    }
   },
   {
     "id": 226,
@@ -4747,7 +4919,11 @@
     "explanation": "La pollution de l'environnement est un délit. Tout citoyen peut signaler des faits à la gendarmerie, à la mairie ou à l'Office français de la biodiversité. Des associations de protection de l'environnement peuvent également intervenir.",
     "answers": [
       "Signaler les faits à la gendarmerie, à la mairie ou à l'Office français de la biodiversité (OFB)"
-    ]
+    ],
+    "source": {
+      "url": "https://www.ecologie.gouv.fr/politiques-publiques/police-leau-nature",
+      "label": "ecologie.gouv.fr"
+    }
   },
   {
     "id": 227,
@@ -5539,7 +5715,7 @@
     "id": 273,
     "theme": "Droits et devoirs",
     "notion": "mise-en-situation",
-    "question": "Vous avez été licencié. Votre employeur vous remet un document de fin de contrat. Lequel est obligatoire pour vous inscrire à France Travail ?",
+    "question": "Vous avez été licencié. Votre employeur doit vous remettre des documents de fin de contrat. Lequel vous permet de faire valoir vos droits aux allocations chômage ?",
     "distractors": [
       "Le bulletin de salaire du dernier mois uniquement",
       "Une attestation sur l'honneur de votre employeur",
@@ -5548,7 +5724,11 @@
     "explanation": "À la fin d'un contrat de travail, l'employeur doit remettre au salarié une attestation France Travail (anciennement attestation Pôle emploi), un certificat de travail et le solde de tout compte. L'attestation France Travail est indispensable pour ouvrir des droits au chômage.",
     "answers": [
       "L'attestation France Travail (anciennement attestation Pôle emploi)"
-    ]
+    ],
+    "source": {
+      "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F2867",
+      "label": "service-public.gouv.fr"
+    }
   },
   {
     "id": 274,
@@ -5560,10 +5740,14 @@
       "Non, seuls les parents sont responsables et poursuivis",
       "Oui, il peut être jugé comme un adulte dès 13 ans"
     ],
-    "explanation": "En France, la responsabilité pénale des mineurs existe dès 13 ans. Entre 10 et 13 ans, des mesures éducatives peuvent être prononcées. Le Code de la justice pénale des mineurs (2021) prévoit des procédures adaptées à l'âge du mineur.",
+    "explanation": "Depuis le Code de la justice pénale des mineurs (2021), un mineur de moins de 13 ans est présumé ne pas avoir de discernement : en principe, il ne peut pas être poursuivi. S'il est établi qu'il comprenait ses actes, il peut l'être devant la justice des mineurs, mais il n'encourt aucune peine : seules des mesures éducatives sont possibles. À partir de 13 ans, une peine adaptée à son âge peut être prononcée. Les parents restent responsables des dommages causés par leur enfant.",
     "answers": [
-      "Oui, mais il sera jugé par un tribunal pour enfants avec des mesures adaptées à son âge"
-    ]
+      "Seulement s'il était capable de discernement, et sans peine possible avant 13 ans"
+    ],
+    "source": {
+      "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F1837",
+      "label": "service-public.gouv.fr"
+    }
   },
   {
     "id": 275,
@@ -5578,7 +5762,11 @@
     "explanation": "Chaque personne dispose d'un droit à l'image. Publier la photo d'une personne identifiable sans son consentement est une atteinte à la vie privée, même si la photo a été prise en public. Des poursuites civiles et pénales sont possibles.",
     "answers": [
       "Des poursuites pour atteinte à la vie privée et au droit à l'image"
-    ]
+    ],
+    "source": {
+      "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F32103",
+      "label": "service-public.gouv.fr"
+    }
   },
   {
     "id": 276,
@@ -5590,25 +5778,33 @@
       "Oui, s'il affiche un panneau l'indiquant à l'entrée",
       "Oui, pour les pièces de moins de 1 euro uniquement"
     ],
-    "explanation": "Les billets et pièces en euros ont cours légal dans la zone euro. Un commerçant ne peut pas systématiquement refuser les espèces. Cependant, il peut refuser les coupures très importantes ou les pièces en très grande quantité pour des motifs pratiques légitimes.",
+    "explanation": "Les billets et pièces en euros ont cours légal : un commerçant ne peut pas refuser d'être payé en espèces, sous peine d'amende. Il existe des exceptions : il peut refuser plus de 50 pièces pour un même paiement, des espèces fausses ou en mauvais état, et il peut exiger que vous fassiez l'appoint.",
     "answers": [
-      "Non, les billets et pièces en euros ont cours légal et doivent être acceptés, sauf cas particuliers"
-    ]
+      "Non, les pièces en euros ont cours légal, dans la limite de 50 pièces par paiement"
+    ],
+    "source": {
+      "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F10999",
+      "label": "service-public.gouv.fr"
+    }
   },
   {
     "id": 277,
     "theme": "Droits et devoirs",
     "notion": "mise-en-situation",
-    "question": "Vous apprenez par hasard un secret professionnel de votre employeur. Pouvez-vous le divulguer à la presse ?",
+    "question": "Vous découvrez par hasard une information confidentielle de votre employeur. Pouvez-vous la divulguer à la presse ?",
     "distractors": [
       "Oui, la liberté d'expression prime toujours sur le secret professionnel",
       "Oui, si votre employeur ne vous a pas demandé explicitement de le taire",
       "Non, dans tous les cas et sans aucune exception"
     ],
-    "explanation": "Le secret professionnel est une obligation légale. Cependant, la loi Sapin II (2016) protège les « lanceurs d'alerte » qui révèlent de bonne foi des crimes, délits ou menaces graves pour l'intérêt général. Des conditions strictes s'appliquent pour bénéficier de cette protection.",
+    "explanation": "Un salarié doit respecter la confidentialité des informations de son entreprise. La loi protège toutefois les lanceurs d'alerte, qui signalent de bonne foi et sans contrepartie financière directe un crime, un délit ou une menace pour l'intérêt général. Le signalement se fait d'abord à l'employeur ou à une autorité (par exemple le Défenseur des droits). La divulgation publique, à la presse, n'est protégée que dans certains cas : signalement resté sans suite, danger grave et imminent, risque de représailles…",
     "answers": [
-      "Non, sauf si vous êtes lanceur d'alerte et que les informations révèlent une illégalité ou un danger public"
-    ]
+      "En principe non, sauf dans les cas protégés des lanceurs d'alerte"
+    ],
+    "source": {
+      "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F32031",
+      "label": "service-public.gouv.fr"
+    }
   },
   {
     "id": 278,
@@ -5618,12 +5814,16 @@
     "distractors": [
       "Rien, les travaux sont autorisés à toute heure chez un particulier",
       "Couper l'électricité de son logement pour le forcer à s'arrêter",
-      "Attendre le lendemain matin pour en parler avec lui"
+      "Appeler les pompiers (18) pour faire cesser le bruit"
     ],
-    "explanation": "Le bruit entre particuliers est réglementé. Les nuisances sonores nocturnes (entre 22h et 7h environ selon les communes) peuvent être signalées à la police municipale. Un trouble anormal de voisinage peut aussi donner lieu à une action en justice.",
+    "explanation": "Le bruit qui trouble le voisinage la nuit, entre 22 h et 7 h, est du tapage nocturne : une contravention punie d'une amende forfaitaire de 68 € (jusqu'à 450 €). Le mieux est d'abord d'en parler à son voisin. Si le bruit continue, vous pouvez appeler la police ou la gendarmerie, qui peut constater et verbaliser, et déposer une main courante ou porter plainte. En cas de nuisances répétées, un conciliateur de justice peut aider à trouver une solution.",
     "answers": [
-      "Lui demander de s'arrêter, appeler la police municipale, ou déposer une main courante"
-    ]
+      "Lui demander d'arrêter, puis appeler la police ou la gendarmerie si le bruit continue"
+    ],
+    "source": {
+      "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F612",
+      "label": "service-public.gouv.fr"
+    }
   },
   {
     "id": 279,
@@ -5635,10 +5835,14 @@
       "Seulement un avertissement si le taux est légèrement dépassé",
       "Aucune conséquence si vous n'avez pas causé d'accident"
     ],
-    "explanation": "Conduire sous l'emprise d'alcool est un délit dès 0,5 g/L de sang (0,2 g/L pour les jeunes conducteurs). Les sanctions incluent retrait de points, amende, suspension de permis et emprisonnement possible, même sans accident.",
+    "explanation": "Il est interdit de conduire avec 0,5 g d'alcool par litre de sang ou plus (0,2 g/L en permis probatoire). Jusqu'à 0,8 g/L, c'est une contravention : amende (135 € en général), retrait de 6 points, suspension possible du permis. À partir de 0,8 g/L, c'est un délit : jusqu'à 3 ans de prison et 9 000 € d'amende, 6 points retirés, suspension ou annulation du permis. Ces sanctions s'appliquent même sans accident.",
     "answers": [
       "Retrait de points, suspension ou annulation du permis, amende et éventuellement emprisonnement"
-    ]
+    ],
+    "source": {
+      "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F2881",
+      "label": "service-public.gouv.fr"
+    }
   },
   {
     "id": 280,
@@ -5650,10 +5854,14 @@
       "Appeler le numéro indiqué dans l'email pour vérifier",
       "Cliquer sur le lien pour vérifier que le site est sécurisé"
     ],
-    "explanation": "Il s'agit d'un hameçonnage (phishing). Aucun organisme officiel ne demande de coordonnées bancaires par email. Il faut signaler l'arnaque sur cybermalveillance.gouv.fr et ne jamais cliquer sur les liens suspects ni répondre à ces messages.",
+    "explanation": "Il s'agit d'un hameçonnage (phishing), un délit : des escrocs se font passer pour une banque ou une administration pour voler vos données. Un organisme officiel ne vous demande pas vos coordonnées bancaires par courriel. Ne répondez pas, ne cliquez sur aucun lien et signalez le message, par exemple sur Signal Spam. Si vous avez déjà donné vos coordonnées, prévenez votre banque pour faire opposition ; vous pouvez aussi porter plainte et vous faire aider par 17Cyber.",
     "answers": [
-      "Ne pas répondre et signaler l'arnaque sur cybermalveillance.gouv.fr"
-    ]
+      "Ne pas répondre, ne pas cliquer et signaler le message (par exemple sur Signal Spam)"
+    ],
+    "source": {
+      "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F34800",
+      "label": "service-public.gouv.fr"
+    }
   },
   {
     "id": 281,
@@ -5725,10 +5933,14 @@
       "En parler à vos collègues uniquement, sans impliquer les autorités",
       "Démissionner immédiatement sans signaler les faits"
     ],
-    "explanation": "La loi Sapin II (2016) et la loi Waserman (2022) protègent les lanceurs d'alerte qui signalent de bonne foi des crimes, délits, violations graves de la loi ou des dangers. Ces personnes bénéficient d'une protection contre les représailles professionnelles.",
+    "explanation": "La loi Sapin II (2016), renforcée par la loi Waserman (2022), protège les lanceurs d'alerte : un salarié qui signale de bonne foi et sans contrepartie financière directe un crime, un délit ou une menace pour l'intérêt général ne peut pas être sanctionné, licencié ou discriminé pour ce signalement. Il peut alerter son employeur ou directement une autorité extérieure, comme le Défenseur des droits.",
     "answers": [
       "Utiliser la procédure de lanceur d'alerte, protégée par la loi"
-    ]
+    ],
+    "source": {
+      "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F32031",
+      "label": "service-public.gouv.fr"
+    }
   },
   {
     "id": 286,
@@ -5810,12 +6022,16 @@
     "distractors": [
       "Ne pas intervenir pour ne pas aggraver la situation",
       "Filmer uniquement pour servir de preuve plus tard",
-      "Attendre l'arrêt de bus pour en parler à un agent de sécurité"
+      "Changer de place et faire comme si vous n'aviez rien vu"
     ],
-    "explanation": "En France, chacun peut agir face à des actes racistes : alerter le conducteur ou un agent, appeler le 17, soutenir la victime. La non-assistance à personne en danger est un délit. Des associations comme SOS Racisme accompagnent les victimes dans leurs démarches.",
+    "explanation": "Témoin d'un acte raciste, vous devez agir sans vous mettre en danger : alerter le conducteur ou un agent, appeler le 17 si la situation l'exige, écouter et soutenir la victime, et l'orienter vers de l'aide. Vous pourrez ensuite témoigner auprès de la police si elle porte plainte. Ne pas porter secours à une personne en danger est un délit.",
     "answers": [
       "Interpeller le conducteur, appeler le 17 si nécessaire, et soutenir la victime"
-    ]
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/droits-et-devoirs/obligations-et-devoirs-des-personnes-residant-en-france/le-role-des-temoins-en-cas-de-violences/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 291,
