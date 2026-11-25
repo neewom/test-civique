@@ -425,3 +425,40 @@ describe('Accueil — téléphone et tablette (moins de 1024 px)', () => {
     expect(screen.queryByRole('region', { name: 'Ce qui vous attend le jour J' })).toBeNull()
   })
 })
+
+describe('Accueil — progression sur cet appareil', () => {
+  const sentence = 'Votre progression reste sur cet appareil, dans ce navigateur.'
+
+  function expectNotice() {
+    const paragraph = screen.getByText((_, el) => el?.tagName === 'P' && !!el.textContent?.startsWith(sentence))
+    const link = within(paragraph).getByRole('link', { name: 'En savoir plus' })
+    expect(link).toHaveAttribute('href', '/mentions-legales#vos-donnees')
+    return paragraph
+  }
+
+  it('prévient, sans historique, que la progression reste sur cet appareil', () => {
+    renderHome()
+    expectNotice()
+  })
+
+  it('prévient aussi avec un historique, une seule fois', () => {
+    seedHistory([exam(34, 'e1')])
+    renderHome()
+    expectNotice()
+    expect(screen.getAllByRole('link', { name: 'En savoir plus' })).toHaveLength(1)
+  })
+
+  it('en grand écran, la phrase ouvre le pied de page', () => {
+    stubWideScreen()
+    renderHome()
+    const footer = screen.getByRole('contentinfo')
+    expect(footer.firstElementChild).toBe(expectNotice())
+    expect(screen.getAllByRole('link', { name: 'En savoir plus' })).toHaveLength(1)
+  })
+
+  it('« En savoir plus » mène aux mentions légales', () => {
+    renderHome()
+    fireEvent.click(screen.getByRole('link', { name: 'En savoir plus' }))
+    expect(screen.getByTestId('location')).toHaveTextContent('/mentions-legales|')
+  })
+})

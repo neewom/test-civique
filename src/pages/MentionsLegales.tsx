@@ -5,7 +5,7 @@ import { OrganicBackground } from '@/components/OrganicBackground'
 import { useDocumentTitle } from '@/lib/use-document-title'
 
 // To keep up to date whenever the data collected by the site changes (ads, payment, new events)
-export const LAST_UPDATED = '24 novembre 2026'
+export const LAST_UPDATED = '25 novembre 2026'
 export const CONTACT_EMAIL = 'contact@futurcitoyen.fr'
 export const CNIL_URL = 'https://www.cnil.fr'
 
@@ -70,13 +70,19 @@ export default function MentionsLegales() {
           <p>Netlify, Inc., 101 2nd Street, San Francisco, CA 94105, États-Unis</p>
         </InfoCard>
 
-        <h2 className="mt-[1.125rem] text-2xl leading-[1.1] font-bold tracking-[-0.02em]">Vos données</h2>
+        <h2 id="vos-donnees" className="mt-[1.125rem] scroll-mt-6 text-2xl leading-[1.1] font-bold tracking-[-0.02em]">
+          Vos données
+        </h2>
 
         <InfoCard title="Ce qui reste sur votre appareil" level={3}>
           <p>Le site ne demande ni compte, ni nom, ni adresse e-mail.</p>
           <p>
             Vos examens, votre progression, le titre que vous préparez et le thème clair ou sombre sont enregistrés
             seulement dans votre navigateur. Ils ne nous sont jamais envoyés.
+          </p>
+          <p>
+            Ils restent donc sur cet appareil, dans ce navigateur : vous les retrouvez à chaque visite, mais pas sur un
+            autre téléphone ou un autre navigateur, ni en navigation privée.
           </p>
           <p>Pour les effacer, supprimez les données du site dans les réglages de votre navigateur.</p>
         </InfoCard>
