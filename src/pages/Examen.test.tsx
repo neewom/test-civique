@@ -427,8 +427,8 @@ describe('Examen — fiabilité', () => {
   it('un rechargement en cours d\'examen reprend les mêmes questions au même index', async () => {
     const resume = makeResume(1500, 2)
     saveProgress(resume)
-    // L'état d'historique survit au rechargement : il ne doit pas faire tirer un nouvel examen
-    renderAt({ excludeSituational: false })
+    // Rechargement sans marqueur de nouvel examen : il ne doit pas faire tirer un nouvel examen
+    renderAt(null)
     expect(screen.getByText(`Question 3 sur ${EXAM_SIZE}`)).toBeInTheDocument()
     expect(currentQuestionText()).toBe(resume.questions[2].question)
     expect(timeLeft()).toBe(1500)
@@ -448,13 +448,13 @@ describe('Examen — fiabilité', () => {
 
   it('le marqueur de nouvel examen est consommé : un rechargement reprend l\'examen tiré', async () => {
     saveProgress(makeResume(1500, 2))
-    const first = renderAt({ start: 'new', excludeSituational: false })
+    const first = renderAt({ start: 'new' })
     // Nouvel examen demandé : la progression précédente est remplacée
     expect(screen.getByText(`Question 1 sur ${EXAM_SIZE}`)).toBeInTheDocument()
     expect(timeLeft()).toBe(2700)
     const drawn = currentQuestionText()
     const leftState = JSON.parse(screen.getByTestId('location-state').textContent!)
-    expect(leftState).toEqual({ excludeSituational: false })
+    expect(leftState).toBeNull()
     await act(async () => { vi.advanceTimersByTime(1000) })
     first.unmount()
 
@@ -493,13 +493,15 @@ describe('Examen — fiabilité', () => {
     expect(historyLength()).toBe(1)
   })
 
-  it('« Nouvel examen blanc » garde le jeu sans mises en situation', async () => {
-    renderAt({ start: 'new', excludeSituational: true })
+  it('« Nouvel examen blanc » relance un examen conforme (12 mises en situation)', async () => {
+    renderAt({ start: 'new' })
     await act(async () => { vi.advanceTimersByTime(GLOBAL_EXAM_TIME * 1000) })
     await act(async () => {
       fireEvent.click(screen.getByRole('button', { name: 'Nouvel examen blanc' }))
     })
-    expect(loadProgress()!.questions.every((q) => q.id <= 191)).toBe(true)
+    const questions = loadProgress()!.questions
+    expect(questions).toHaveLength(EXAM_SIZE)
+    expect(questions.filter((q) => q.id > 191)).toHaveLength(12)
   })
 
   it('une reprise dont toutes les réponses sont données affiche le résultat une seule fois', async () => {

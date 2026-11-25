@@ -92,18 +92,61 @@ export function shuffle<T>(arr: T[]): T[] {
   return a
 }
 
+/**
+ * Draws an exam that follows `EXAM_BLUEPRINT`: the exact count of each (theme, notion)
+ * line, the lines with the smallest stock drawn first. Two questions of the same `group`
+ * never meet in an exam, across lines too. A line short of questions (not expected with
+ * questions.json) is completed within its theme, then from the rest of the pool, so the
+ * exam keeps 40 questions whenever the pool allows it. Final order is shuffled.
+ */
 export function buildExam(pool: Question[] = allQuestions as Question[]): ExamQuestion[] {
   const seenGroups = new Set<string>()
+  const selectedIds = new Set<number>()
   const selected: Question[] = []
-  for (const q of shuffle(pool)) {
-    if (selected.length === EXAM_SIZE) break
-    if (q.group) {
-      if (seenGroups.has(q.group)) continue
-      seenGroups.add(q.group)
+
+  function take(candidates: Question[], count: number): number {
+    let missing = count
+    for (const q of shuffle(candidates)) {
+      if (missing === 0 || selected.length === EXAM_SIZE) break
+      if (selectedIds.has(q.id)) continue
+      if (q.group) {
+        if (seenGroups.has(q.group)) continue
+        seenGroups.add(q.group)
+      }
+      selectedIds.add(q.id)
+      selected.push(q)
+      missing--
     }
-    selected.push(q)
+    return missing
   }
-  return selected.map((q) => {
+
+  const lines = EXAM_BLUEPRINT.map((line) => ({
+    line,
+    candidates: pool.filter((q) => q.theme === line.theme && q.notion === line.notion),
+  })).sort((a, b) => a.candidates.length - b.candidates.length)
+
+  const shortByTheme = new Map<string, number>()
+  for (const { line, candidates } of lines) {
+    const missing = take(candidates, line.count)
+    if (missing > 0) shortByTheme.set(line.theme, (shortByTheme.get(line.theme) ?? 0) + missing)
+  }
+
+  // Fallbacks: same theme first (no situational question of a theme the blueprint
+  // gives none), then anything left in the pool
+  const situationalThemes = new Set(
+    EXAM_BLUEPRINT.filter((l) => l.notion === 'mise-en-situation').map((l) => l.theme),
+  )
+  for (const [theme, missing] of shortByTheme) {
+    take(
+      pool.filter(
+        (q) => q.theme === theme && (q.notion !== 'mise-en-situation' || situationalThemes.has(theme)),
+      ),
+      missing,
+    )
+  }
+  take(pool, EXAM_SIZE - selected.length)
+
+  return shuffle(selected).map((q) => {
     const answer = shuffle(q.answers)[0]
     return {
       id: q.id,

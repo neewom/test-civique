@@ -9,11 +9,10 @@ import {
   DialogHeader,
   DialogTitle,
 } from '@/components/ui/dialog'
-import allQuestions from '@/data/questions.json'
 import { useDocumentTitle } from '@/lib/use-document-title'
 import type { AnswerRecord, ExamQuestion, ExamInProgress } from '@/lib/exam-types'
 import { saveProgress, clearProgress, loadProgress, resumeIndex } from '@/lib/exam-types'
-import { buildExam, saveResult, isPassed, type Question } from '@/lib/exam'
+import { buildExam, saveResult, isPassed } from '@/lib/exam'
 import { AnswerCard } from '@/components/AnswerCard'
 import { ExamResult, type ExamOutcome } from '@/components/ExamResult'
 import { findExamRecord, loadHistory } from '@/lib/history'
@@ -38,7 +37,6 @@ type Phase = 'question' | 'pending' | 'correction' | 'result'
 // arrival so that a reload resumes the stored progress instead of restarting.
 type LocationState = {
   start?: 'new'
-  excludeSituational?: boolean
 } | null
 
 type ExamSetup = {
@@ -47,19 +45,14 @@ type ExamSetup = {
 }
 
 // The stored progress always wins, except when a new exam is explicitly requested.
-function setupExam(startNew: boolean, excludeSituational: boolean): ExamSetup {
+function setupExam(startNew: boolean): ExamSetup {
   if (!startNew) {
     const saved = loadProgress()
     if (saved) return { questions: saved.questions, resume: saved }
   }
   clearProgress()
-  const pool = excludeSituational
-    ? (allQuestions as Question[]).filter((q) => q.id <= 191)
-    : (allQuestions as Question[])
-  return { questions: buildExam(pool), resume: null }
+  return { questions: buildExam(), resume: null }
 }
-
-type Restart = { count: number; excludeSituational: boolean }
 
 const LETTERS = ['A', 'B', 'C', 'D']
 
@@ -82,33 +75,27 @@ function timeAnnouncement(seconds: number): string {
 
 export default function Examen() {
   // "Recommencer" remounts the session through its key instead of reloading the page
-  const [restart, setRestart] = useState<Restart>({ count: 0, excludeSituational: false })
+  const [restartCount, setRestartCount] = useState(0)
   return (
     <ExamSession
-      key={restart.count}
-      restart={restart.count > 0 ? restart : null}
-      onRestart={(excludeSituational) =>
-        setRestart((r) => ({ count: r.count + 1, excludeSituational }))
-      }
+      key={restartCount}
+      restarted={restartCount > 0}
+      onRestart={() => setRestartCount((n) => n + 1)}
     />
   )
 }
 
 type ExamSessionProps = {
-  restart: Restart | null
-  onRestart: (excludeSituational: boolean) => void
+  restarted: boolean
+  onRestart: () => void
 }
 
-function ExamSession({ restart, onRestart }: ExamSessionProps) {
+function ExamSession({ restarted, onRestart }: ExamSessionProps) {
   const navigate = useNavigate()
   const location = useLocation()
   const locationState = location.state as LocationState
 
-  const [setup] = useState<ExamSetup>(() =>
-    restart
-      ? setupExam(true, restart.excludeSituational)
-      : setupExam(locationState?.start === 'new', locationState?.excludeSituational ?? false),
-  )
+  const [setup] = useState<ExamSetup>(() => setupExam(restarted || locationState?.start === 'new'))
   const { questions, resume } = setup
   const startIndex = resume ? resumeIndex(resume) : 0
 
@@ -146,10 +133,7 @@ function ExamSession({ restart, onRestart }: ExamSessionProps) {
   // Consume the "new exam" marker: a reload must resume, not draw another exam
   useEffect(() => {
     if (locationState?.start) {
-      navigate(location.pathname, {
-        replace: true,
-        state: { excludeSituational: locationState.excludeSituational },
-      })
+      navigate(location.pathname, { replace: true, state: null })
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
@@ -288,7 +272,7 @@ function ExamSession({ restart, onRestart }: ExamSessionProps) {
 
   function handleRestart() {
     clearProgress()
-    onRestart(questions.every((q) => q.id <= 191))
+    onRestart()
   }
 
   const current = questions[index]
