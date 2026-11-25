@@ -131,44 +131,32 @@ describe('Accueil — en-tête et parcours', () => {
   })
 })
 
-describe('Accueil — choix de l\'examen blanc (étape 2)', () => {
+describe('Accueil — examen blanc (étape 2)', () => {
   function step2() {
     return screen.getByRole('button', { name: /2 · Réussir 3 examens blancs/ })
   }
 
-  it('est fermé par défaut, les deux jeux de questions inaccessibles', () => {
+  it('un clic lance directement un nouvel examen conforme', () => {
     renderHome()
-    expect(step2()).toHaveAttribute('aria-expanded', 'false')
+    fireEvent.click(step2())
+    expect(screen.getByTestId('location')).toHaveTextContent('/examen|{"start":"new"}')
+  })
+
+  it('n\'est plus un dépliant : ni aria-expanded ni choix du jeu de questions', () => {
+    renderHome()
+    expect(step2()).not.toHaveAttribute('aria-expanded')
     expect(screen.queryByRole('button', { name: /Questions classiques/ })).toBeNull()
+    expect(screen.queryByRole('button', { name: /Avec mises en situation/ })).toBeNull()
   })
 
-  it('s\'ouvre et se referme au clic', () => {
+  it('lance un nouvel examen même avec un examen en cours', () => {
+    const questions = Array.from({ length: 40 }, (_, i) => ({
+      id: i + 1, theme: 'Test', question: `Q${i + 1}`, answer: 'A', choices: ['A', 'B', 'C', 'D'], explanation: '',
+    }))
+    localStorageMock.setItem('exam-in-progress', JSON.stringify({ questions, index: 3, answers: [], timeLeft: 900, startedAt: '2026-11-23T10:00:00.000Z' }))
     renderHome()
     fireEvent.click(step2())
-    expect(step2()).toHaveAttribute('aria-expanded', 'true')
-    expect(screen.getByRole('button', { name: /Questions classiques/ })).toBeInTheDocument()
-    expect(screen.getByRole('button', { name: /Avec mises en situation/ })).toBeInTheDocument()
-    fireEvent.click(step2())
-    expect(step2()).toHaveAttribute('aria-expanded', 'false')
-  })
-
-  it('s\'ouvre directement en venant de la page des règles', () => {
-    renderHome({ openExam: true })
-    expect(step2()).toHaveAttribute('aria-expanded', 'true')
-  })
-
-  it('« Questions classiques » lance un examen sans mises en situation', () => {
-    renderHome()
-    fireEvent.click(step2())
-    fireEvent.click(screen.getByRole('button', { name: /Questions classiques/ }))
-    expect(screen.getByTestId('location')).toHaveTextContent('/examen|{"start":"new","excludeSituational":true}')
-  })
-
-  it('« Avec mises en situation » lance un examen avec toutes les questions', () => {
-    renderHome()
-    fireEvent.click(step2())
-    fireEvent.click(screen.getByRole('button', { name: /Avec mises en situation/ }))
-    expect(screen.getByTestId('location')).toHaveTextContent('/examen|{"start":"new","excludeSituational":false}')
+    expect(screen.getByTestId('location')).toHaveTextContent('/examen|{"start":"new"}')
   })
 })
 

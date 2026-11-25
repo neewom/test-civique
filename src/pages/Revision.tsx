@@ -2,11 +2,13 @@ import { useId, useState } from 'react'
 import { useLocation } from 'react-router-dom'
 import { AnswerBox } from '@/components/AnswerBox'
 import { BackLink } from '@/components/BackLink'
+import { SourceLink } from '@/components/SourceLink'
 import questions from '@/data/questions.json'
 import { OFFICIAL_THEMES } from '@/lib/exam-review'
 import { loadQuestionsToReview, parseReviewIds } from '@/lib/review-queue'
 import { loadTargetTitle, TARGET_TITLE_LABELS } from '@/lib/target-title'
 import { useDocumentTitle } from '@/lib/use-document-title'
+import type { QuestionSource } from '@/lib/exam-types'
 import { cn } from '@/lib/utils'
 
 interface Question {
@@ -15,6 +17,7 @@ interface Question {
   question: string
   answers: string[]
   explanation: string
+  source?: QuestionSource
 }
 
 // Questions of the chosen title. Every question belongs to the multi-year residence
@@ -49,6 +52,7 @@ function QuestionCard({ question }: { question: Question }) {
       <h3 className="text-lg leading-[1.35] font-bold">{question.question}</h3>
       <AnswerBox tone="right" label="Bonne réponse">{question.answers[0]}</AnswerBox>
       <p className="text-[0.9375rem] leading-normal">{question.explanation}</p>
+      <SourceLink source={question.source} />
     </li>
   )
 }

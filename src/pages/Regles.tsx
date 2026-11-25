@@ -19,7 +19,8 @@ export default function Regles() {
         <div className="mt-[3.75rem]">
           <ExamRules />
         </div>
-        <PillLink to="/" state={{ openExam: true }} size="lg" className="mt-1 justify-center text-center">
+        {/* Same as step 2 of the home page: always a new exam */}
+        <PillLink to="/examen" state={{ start: 'new' }} size="lg" className="mt-1 justify-center text-center">
           M'entraîner maintenant
         </PillLink>
       </div>

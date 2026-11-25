@@ -339,7 +339,7 @@ Tactiles et francs : des pastilles pleines, en gras, qu'on vise sans y penser.
 - **Shape :** pastille (`pill`, 48 px) ou grande pastille (`pill-lg`, 56 px), alignée à gauche, qui passe à la ligne.
 - **Action (jaune) :** l'action principale, souvent en grande pastille pleine largeur centrée en bas d'écran.
 - **Encre :** action forte secondaire (« Reprendre l'examen en cours », « Quitter » dans la boîte de dialogue).
-- **Surface (blanche) :** navigation et choix (étape « Réviser », choix du jeu de questions, sélecteur du titre visé).
+- **Surface (blanche) :** navigation et choix (étape « Réviser », sélecteur du titre visé).
 - **Pastille d'extrémité :** cercle à droite, 32 px (40 px en grande pastille) : une flèche ou un chevron décoratif, ou un compteur lu par les lecteurs d'écran (« 0 sur 3 »). Encre sur une pastille jaune ou blanche, jaune sur une pastille encre ; corail sur « Voir mes erreurs ».
 - **Hover / Focus :** survol en assombrissant légèrement le fond (jaune à 85 %, encre à 90 %, surface vers le sable) ; focus par un anneau plein de 3 px à 2 px de distance, couleur `--ring` ; enfoncement d'un pixel au clic.
 
@@ -361,7 +361,7 @@ Tactiles et francs : des pastilles pleines, en gras, qu'on vise sans y penser.
 
 ### Navigation
 - **Lien Retour :** flèche et texte en `body-sm` gras, 44 px de haut, souligné au survol.
-- **Parcours de l'accueil :** liste ordonnée de quatre étapes en pastilles, numérotées « 1 · », « 2 · »… ; l'étape 2 s'ouvre sur le choix du jeu de questions avec une transition de hauteur.
+- **Parcours de l'accueil :** liste ordonnée de quatre étapes en pastilles, numérotées « 1 · », « 2 · »… ; l'étape 2, grande pastille jaune avec le compteur « n sur 3 », lance directement un nouvel examen blanc.
 - **Bandeau d'examen :** bloc vert terre arrondi en bas, avec « Quitter », « Question n sur 40 » et une barre de temps encre sur une piste translucide.
 - **Interrupteur de thème :** fixe en haut à droite sur le titre visé, les règles et la révision ; dans l'en-tête, à côté du logo, sur l'accueil ; absent de l'examen (question, correction, résultat) et du détail d'un examen.
 

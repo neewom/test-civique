@@ -66,7 +66,7 @@ describe('Examen — statistiques de visite', () => {
 
   it('compte « examen commencé » une fois pour un nouvel examen demandé depuis l’accueil', async () => {
     saveProgress(makeResume(1500, 2, true))
-    renderAt({ start: 'new', excludeSituational: false })
+    renderAt({ start: 'new' })
     await act(async () => { vi.advanceTimersByTime(3000) })
     expect(events()).toEqual([EXAM_STARTED])
   })
@@ -78,7 +78,7 @@ describe('Examen — statistiques de visite', () => {
 
   it('ne compte rien à la reprise d’un examen en cours, ni au rechargement après le marqueur consommé', async () => {
     saveProgress(makeResume(1500, 2, true))
-    renderAt({ excludeSituational: false })
+    renderAt(null)
     await act(async () => { vi.advanceTimersByTime(3000) })
     expect(events()).toEqual([])
   })
@@ -106,7 +106,7 @@ describe('Examen — statistiques de visite', () => {
   })
 
   it('chrono expiré : un nouvel examen compte « commencé » puis « pas encore », une fois chacun', async () => {
-    renderAt({ start: 'new', excludeSituational: false })
+    renderAt({ start: 'new' })
     await act(async () => { vi.advanceTimersByTime(GLOBAL_EXAM_TIME * 1000) })
     await act(async () => { vi.advanceTimersByTime(5000) })
     expect(events()).toEqual([EXAM_STARTED, EXAM_FINISHED_NOT_YET])
