@@ -503,6 +503,14 @@
         "displayName": "Display",
         "purpose": "Titre de l'accueil ; variante 2.25rem / interligne 1 sur le titre visé."
       },
+      "display-md": {
+        "displayName": "Display (tablette)",
+        "purpose": "Titre de l'accueil à partir de 768 px."
+      },
+      "display-lg": {
+        "displayName": "Display (grand écran)",
+        "purpose": "Titre de l'accueil à partir de 1024 px ; chiffre « n sur 3 » du panneau « Où vous en êtes »."
+      },
       "headline": {
         "displayName": "Headline",
         "purpose": "Titres des pages secondaires ; 1.875rem / -0.03em sur le détail d'un examen."
@@ -511,9 +519,17 @@
         "displayName": "Score",
         "purpose": "Score de l'écran de résultat, chiffres tabulaires ; « /40 » à 2rem."
       },
+      "score-lg": {
+        "displayName": "Score (grand écran)",
+        "purpose": "Score du résultat à partir de 768 px ; « /40 » à 2,75rem."
+      },
       "question": {
         "displayName": "Question",
         "purpose": "Énoncé d'une question d'examen avant validation ; 1.3125rem après."
+      },
+      "question-lg": {
+        "displayName": "Question (grand écran)",
+        "purpose": "Énoncé d'une question d'examen à partir de 768 px, avant et après validation."
       },
       "title": {
         "displayName": "Title",
@@ -607,7 +623,12 @@
       {
         "name": "md",
         "value": "768px",
-        "purpose": "La forme organique prend la hauteur de l'écran et s'étire vers la colonne."
+        "purpose": "Tablette en portrait : colonne de 36rem (accueil, révision, détail) ou largeur « lecture » de 44rem (examen, résultat), même ordre que sur téléphone ; la forme organique prend la hauteur de l'écran."
+      },
+      {
+        "name": "lg",
+        "value": "1024px",
+        "purpose": "Deux colonnes dans la largeur « carte » de 62rem : accueil (parcours / « Où vous en êtes »), révision (colonne fixe de 17rem), détail d'un examen (colonne fixe de 22rem)."
       },
       {
         "name": "root-lg",
@@ -753,7 +774,7 @@
       }
     ],
     "dos": [
-      "**Do** poser chaque nouvel écran sur le fond de page uni, dans la colonne de 30rem, avec la gouttière de l'écran du même type (22 px carte, 20 px travail).",
+      "**Do** poser chaque nouvel écran sur le fond de page uni, dans la colonne de 30rem sur téléphone, avec la gouttière de l'écran du même type (22 px carte, 20 px travail), et choisir sa largeur grand écran (« carte » 62rem ou « lecture » 44rem).",
       "**Do** construire les actions avec `PillButton` / `PillLink` (tons `action`, `ink`, `surface`) plutôt qu'avec le bouton shadcn par défaut.",
       "**Do** garder une seule action jaune par écran, de préférence en bas, en grande pastille.",
       "**Do** dire chaque résultat par texte, icône et couleur (`Verdict`, `AnswerCard`, `AnswerBox`).",
