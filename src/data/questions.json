@@ -2779,7 +2779,11 @@
     "explanation": "La Révolution française a débuté en 1789, avec la convocation des États généraux (mai), la création de l'Assemblée nationale (juin) et la prise de la Bastille (14 juillet 1789). Elle a profondément transformé la France et influencé le monde entier.",
     "answers": [
       "1789"
-    ]
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-regimes-politiques-depuis-1789/la-fin-de-la-monarchie-absolue-et-le-debut-de-la-iere-republique-1789-1792/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 115,
@@ -2799,7 +2803,11 @@
     "explanation": "Napoléon Bonaparte (1769-1821) fut général de la Révolution, Premier Consul (1799-1804) puis Empereur des Français (1804-1815). Il a réformé l'administration française (Code civil, Légion d'honneur, lycées), mais fut vaincu à Waterloo en 1815.",
     "answers": [
       "Un général de la Révolution devenu Empereur des Français"
-    ]
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-regimes-politiques-depuis-1789/le-1er-empire-1804-1815/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 116,
@@ -2816,14 +2824,19 @@
       "Ludwig van Beethoven",
       "Rembrandt"
     ],
-    "explanation": "Victor Hugo (1802-1885) est un grand écrivain français, auteur de nombreux chefs-d'œuvre : Les Misérables, Notre-Dame de Paris, Les Contemplations… Engagé politiquement, il fut aussi sénateur et défenseur des droits de l'homme. Ses funérailles nationales au Panthéon rassemblèrent des millions de personnes.",
+    "explanation": "Ces cinq personnages sont français : Charles de Gaulle (fondateur de la Ve République), Molière (auteur de théâtre du XVIIe siècle), Napoléon Bonaparte (empereur des Français), Marie Curie (scientifique née en Pologne et devenue française, deux fois prix Nobel) et Victor Hugo (écrivain du XIXe siècle, auteur des Misérables). Shakespeare, Cervantès, Dante, Goethe, Léonard de Vinci, Newton, Beethoven et Rembrandt sont nés dans d'autres pays d'Europe.",
     "answers": [
       "Charles de Gaulle",
       "Molière",
       "Napoléon Bonaparte",
       "Marie Curie",
       "Victor Hugo"
-    ]
+    ],
+    "group": "ecrivains-francais",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/culture/patrimoine-francais-artistes-emblematiques-parmi-les-auteurs-2/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 117,
@@ -2835,15 +2848,17 @@
       "La IIIe République",
       "La IIe République",
       "La VIe République",
-      "La Ire République",
-      "La IVe République bis",
-      "La République impériale",
-      "La République de Weimar française"
+      "La Ire République"
     ],
-    "explanation": "La France est en Ve République depuis la Constitution du 4 octobre 1958. Avant, il y a eu : la Ire République (1792), l'Empire napoléonien, la Restauration royale, la IIe République (1848), le Second Empire, la IIIe République (1870), la IVe République (1946). La Ve est la plus longue de l'histoire républicaine française.",
+    "explanation": "La France vit sous la Ve République depuis la Constitution du 4 octobre 1958. Avant elle, il y a eu la Ire République (1792), la IIe (1848), la IIIe (1870-1940) et la IVe (1946-1958), entre lesquelles se sont succédé des empires et des monarchies.",
     "answers": [
       "La Ve République"
-    ]
+    ],
+    "group": "ve-republique",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-regimes-politiques-depuis-1789/la-cinquieme-republique/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 118,
@@ -2860,10 +2875,14 @@
       "Les crimes commis au Rwanda en 1994",
       "La déportation des opposants soviétiques dans les goulags"
     ],
-    "explanation": "La Shoah (mot hébreu signifiant 'catastrophe') désigne le génocide des Juifs d'Europe organisé par l'Allemagne nazie entre 1941 et 1945. Environ 6 millions de Juifs ont été assassinés dans des camps d'extermination (Auschwitz, Treblinka…). La France commémore ce génocide le 27 janvier (jour de la libération d'Auschwitz).",
+    "explanation": "La Shoah (mot hébreu signifiant « catastrophe ») désigne le génocide des Juifs organisé par l'Allemagne nazie pendant la Seconde Guerre mondiale : environ 6 millions de Juifs ont été assassinés, notamment dans les camps d'extermination comme Auschwitz-Birkenau ou Treblinka. En France, le régime de Vichy a collaboré aux persécutions (rafle du Vel d'Hiv, 16 et 17 juillet 1942) ; l'État a reconnu officiellement sa responsabilité en 1995.",
     "answers": [
-      "L'extermination systématique de 6 millions de Juifs d'Europe par les nazis pendant la Seconde Guerre mondiale"
-    ]
+      "Le génocide des Juifs d'Europe par l'Allemagne nazie"
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/zoom-sur/focus-sur-la-seconde-guerre-mondiale-la-shoah/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 119,
@@ -2871,23 +2890,27 @@
     "notion": "periodes-personnages",
     "question": "Quel pays ou région du monde a été colonisé par la France ?",
     "distractors": [
-      "L'Australie et la Nouvelle-Zélande",
-      "Le Brésil et l'Argentine",
-      "L'Inde et le Pakistan",
-      "La Chine et le Japon",
-      "Le Canada anglophone uniquement",
-      "La Russie et l'Ukraine",
-      "Les États-Unis d'Amérique uniquement",
-      "L'Espagne et le Portugal"
+      "L'Australie",
+      "Le Brésil",
+      "Le Japon",
+      "L'Argentine",
+      "La Russie",
+      "La Corée",
+      "La Nouvelle-Zélande",
+      "Les Philippines"
     ],
-    "explanation": "La France a constitué un vaste empire colonial aux XIXe et XXe siècles : en Afrique (Algérie, Maroc, Tunisie, Sénégal, Côte d'Ivoire…), en Asie (Vietnam, Cambodge, Laos), en Océanie (Polynésie, Nouvelle-Calédonie) et en Amérique (Québec, Antilles, Guyane). La plupart de ces territoires ont accédé à l'indépendance dans les années 1950-1960.",
+    "explanation": "La France a constitué un empire colonial en deux temps : aux XVIIe et XVIIIe siècles (Nouvelle-France au Canada, Antilles, Guyane, comptoirs des Indes), puis aux XIXe et XXe siècles en Afrique (Algérie conquise en 1830, Sénégal, protectorats de Tunisie et du Maroc), à Madagascar et en Asie (Indochine, dont le Vietnam). La plupart de ces territoires sont devenus indépendants dans les années 1950 et 1960.",
     "answers": [
       "L'Algérie",
       "Le Maroc",
       "Le Vietnam",
       "Le Sénégal",
       "La Tunisie"
-    ]
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/zoom-sur/le-territoire-francais-dans-le-temps-1/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 120,
@@ -2907,7 +2930,12 @@
     "explanation": "Jules Ferry, ministre de l'Instruction publique puis président du Conseil, a rendu l'école primaire gratuite (1881), puis laïque et obligatoire de 6 à 13 ans (1882). Ces lois ont transformé la France en instruisant l'ensemble des enfants dans des valeurs républicaines, loin de toute influence religieuse.",
     "answers": [
       "Jules Ferry, par les lois scolaires de 1881-1882"
-    ]
+    ],
+    "group": "ecole-jules-ferry",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-regimes-politiques-depuis-1789/la-troisieme-republique-1870-1940/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 121,
@@ -2924,10 +2952,14 @@
       "De 1935 à 1945",
       "De 1943 à 1947"
     ],
-    "explanation": "La Seconde Guerre mondiale a duré de 1939 (invasion de la Pologne par l'Allemagne nazie le 1er septembre 1939) à 1945 (capitulation de l'Allemagne le 8 mai et du Japon le 2 septembre 1945). Elle a causé entre 50 et 80 millions de morts dans le monde.",
+    "explanation": "La Seconde Guerre mondiale commence le 1er septembre 1939 avec l'invasion de la Pologne par l'armée allemande. Elle s'achève en Europe le 8 mai 1945 avec la capitulation de l'Allemagne, puis en Asie le 2 septembre 1945 avec celle du Japon. Elle a fait plus de 60 millions de morts, soldats et civils.",
     "answers": [
       "De 1939 à 1945"
-    ]
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-conflits-mondiaux-et-le-nouvel-ordre-mondial/la-seconde-guerre-mondiale-1/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 122,
@@ -2944,10 +2976,15 @@
       "De 1916 à 1920",
       "De 1908 à 1914"
     ],
-    "explanation": "La Première Guerre mondiale s'est déroulée de 1914 à 1918. Elle a causé environ 10 millions de morts militaires et autant de civils. Elle s'est terminée par l'armistice du 11 novembre 1918, signé dans la forêt de Compiègne.",
+    "explanation": "La Première Guerre mondiale s'est déroulée de 1914 à 1918. Elle a fait plus de 10 millions de morts, dont 9 millions de soldats. Les combats ont pris fin avec l'armistice du 11 novembre 1918, signé dans la forêt de Compiègne.",
     "answers": [
       "De 1914 à 1918"
-    ]
+    ],
+    "group": "premiere-guerre-mondiale",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-conflits-mondiaux-et-le-nouvel-ordre-mondial/la-premiere-guerre-mondiale-1/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 123,
@@ -2967,7 +3004,11 @@
     "explanation": "La CEE a été créée par le Traité de Rome signé le 25 mars 1957 par les 6 pays fondateurs : France, Allemagne de l'Ouest, Italie, Belgique, Pays-Bas et Luxembourg. Elle est devenue l'Union européenne par le Traité de Maastricht en 1992.",
     "answers": [
       "1957"
-    ]
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-conflits-mondiaux-et-le-nouvel-ordre-mondial/la-construction-europeenne/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 124,
@@ -2979,15 +3020,19 @@
       "La fin de la Seconde Guerre mondiale",
       "La naissance de la Ve République en 1958",
       "L'anniversaire de la mort du général de Gaulle",
-      "La fête de tous les anciens combattants",
       "Le jour du souvenir de la déportation",
       "L'anniversaire de la signature du traité de Versailles",
       "La commémoration générale de la Révolution française"
     ],
-    "explanation": "Le 11 novembre 1918, à 11h, l'armistice mettant fin aux combats de la Première Guerre mondiale fut signé à Rethondes. Ce jour férié national est marqué par des cérémonies d'hommage aux soldats morts pour la France, notamment à l'Arc de Triomphe devant la flamme du Soldat inconnu.",
+    "explanation": "Le 11 novembre commémore l'armistice du 11 novembre 1918, signé à Rethondes, dans la forêt de Compiègne, qui met fin aux combats de la Première Guerre mondiale. Ce jour férié est marqué par des cérémonies d'hommage aux soldats morts pour la France, notamment à l'Arc de Triomphe, devant la tombe du Soldat inconnu.",
     "answers": [
       "L'armistice de la Première Guerre mondiale"
-    ]
+    ],
+    "group": "premiere-guerre-mondiale",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/zoom-sur/patrimoine-francais-les-jours-feries/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 125,
@@ -3007,7 +3052,12 @@
     "explanation": "Charles de Gaulle a été le premier Président de la Ve République, élu le 21 décembre 1958 par un collège de grands électeurs, puis réélu au suffrage universel direct en 1965. Il a démissionné en 1969 après l'échec d'un référendum.",
     "answers": [
       "Charles de Gaulle"
-    ]
+    ],
+    "group": "ve-republique",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/la-cinquieme-republique/les-presidents-de-la-cinquieme-republique/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 126,
@@ -3027,7 +3077,11 @@
     "explanation": "L'esclavage a été aboli définitivement en 1848 sous la IIe République, grâce à Victor Schoelcher. Une première abolition avait eu lieu en 1794 pendant la Révolution, mais Napoléon l'avait rétabli en 1802 dans les colonies françaises.",
     "answers": [
       "1848"
-    ]
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-regimes-politiques-depuis-1789/la-deuxieme-republique-1848-1851/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 127,
@@ -3047,7 +3101,12 @@
     "explanation": "La gratuité de l'enseignement primaire public a été instaurée par la loi Jules Ferry du 16 juin 1881. L'année suivante, la loi du 28 mars 1882 rendait l'école obligatoire et laïque. Ces réformes ont permis à tous les enfants français d'accéder à l'éducation.",
     "answers": [
       "1881"
-    ]
+    ],
+    "group": "ecole-jules-ferry",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-regimes-politiques-depuis-1789/la-troisieme-republique-1870-1940/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 128,
@@ -3059,15 +3118,17 @@
       "Trois Républiques",
       "Quatre Républiques",
       "Six Républiques",
-      "Sept Républiques",
-      "Une seule République continue depuis 1789",
-      "Trois Républiques et deux Empires uniquement",
-      "Quatre Républiques et une Confédération"
+      "Sept Républiques"
     ],
-    "explanation": "Il y a eu cinq Républiques en France : la Ire (1792-1804), la IIe (1848-1852), la IIIe (1870-1940), la IVe (1946-1958) et la Ve (depuis 1958). Entre ces Républiques, il y eut des Empires (1er et 2e) et des restaurations monarchiques.",
+    "explanation": "Il y a eu cinq Républiques en France : la Ire (1792-1804), la IIe (1848-1851), la IIIe (1870-1940), la IVe (1946-1958) et la Ve (depuis 1958). Entre elles se sont succédé des empires (Premier et Second Empire), des monarchies (Restauration, Monarchie de Juillet) et le régime de Vichy.",
     "answers": [
       "Cinq Républiques"
-    ]
+    ],
+    "group": "ve-republique",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-regimes-politiques-depuis-1789/les-regimes-politiques/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 129,
@@ -3084,10 +3145,14 @@
       "Charles X",
       "Louis-Philippe Ier"
     ],
-    "explanation": "Louis XVI était roi de France lors de la Révolution française. Arrêté avec sa famille en 1792, il fut jugé par la Convention nationale pour trahison et guillotiné le 21 janvier 1793 place de la Révolution (actuelle place de la Concorde) à Paris.",
+    "explanation": "Louis XVI était roi de France au début de la Révolution française, en 1789. Après sa fuite manquée de 1791, il est renversé le 10 août 1792, jugé par la Convention, puis guillotiné le 21 janvier 1793 à Paris, place de la Révolution (actuelle place de la Concorde).",
     "answers": [
       "Louis XVI"
-    ]
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-regimes-politiques-depuis-1789/la-fin-de-la-monarchie-absolue-et-le-debut-de-la-iere-republique-1789-1792/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 130,
@@ -3106,8 +3171,13 @@
     ],
     "explanation": "La Ve République a été fondée par le général Charles de Gaulle en 1958. Rappelé au pouvoir lors de la crise algérienne, il fit adopter par référendum la Constitution du 4 octobre 1958, qui renforce le pouvoir exécutif et donne au Président un rôle central.",
     "answers": [
-      "Le général Charles de Gaulle"
-    ]
+      "Charles de Gaulle"
+    ],
+    "group": "ve-republique",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-regimes-politiques-depuis-1789/la-cinquieme-republique/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 131,
@@ -3124,11 +3194,15 @@
       "L'entrée de la France dans l'Union européenne",
       "La naissance de Napoléon Bonaparte"
     ],
-    "explanation": "Le 14 juillet est la fête nationale française. Elle commémore la prise de la Bastille le 14 juillet 1789, événement emblématique du début de la Révolution française. Elle est célébrée par un défilé militaire sur les Champs-Élysées et des feux d'artifice dans toute la France.",
+    "explanation": "Le 14 juillet est la fête nationale depuis 1880. Elle commémore la prise de la Bastille du 14 juillet 1789, qui marque le début de la Révolution française, et la fête de la Fédération du 14 juillet 1790. Elle est célébrée par un défilé militaire sur les Champs-Élysées, des feux d'artifice et des bals populaires.",
     "answers": [
-      "La fête nationale française, en mémoire de la prise de la Bastille le 14 juillet 1789"
+      "La fête nationale, en souvenir de la prise de la Bastille"
     ],
-    "group": "fete-nationale"
+    "group": "fete-nationale",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/les-symboles-de-la-republique/la-fete-nationale/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 132,
@@ -3145,10 +3219,15 @@
       "La guerre des Boers",
       "La guerre de Cent Ans"
     ],
-    "explanation": "La Première Guerre mondiale (1914-1918), appelée aussi la Grande Guerre, a opposé les Alliés (France, Royaume-Uni, Russie, puis États-Unis) aux Empires centraux (Allemagne, Autriche-Hongrie, Empire ottoman). Elle a causé environ 10 millions de morts militaires.",
+    "explanation": "La Première Guerre mondiale (1914-1918), appelée aussi la Grande Guerre, a opposé la Triple Entente (France, Royaume-Uni, Russie), rejointe en 1917 par les États-Unis, aux empires allemand et austro-hongrois. Elle a fait plus de 10 millions de morts, dont 9 millions de soldats.",
     "answers": [
       "La Première Guerre mondiale"
-    ]
+    ],
+    "group": "premiere-guerre-mondiale",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-conflits-mondiaux-et-le-nouvel-ordre-mondial/la-premiere-guerre-mondiale-1/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 133,
@@ -3158,7 +3237,6 @@
     "distractors": [
       "C'est l'année de la libération de Paris pendant la Seconde Guerre mondiale",
       "C'est l'année de l'abolition de la peine de mort",
-      "C'est l'année de l'entrée de la France dans la CEE",
       "C'est l'année de la loi sur la séparation des Églises et de l'État",
       "C'est l'année de la première élection présidentielle au suffrage universel",
       "C'est l'année de la fin de la guerre d'Algérie",
@@ -3168,7 +3246,12 @@
     "explanation": "En 1958, la crise politique liée à la guerre d'Algérie entraîne le retour au pouvoir du général de Gaulle. Il fait adopter par référendum (le 28 septembre 1958) une nouvelle Constitution, fondant la Ve République, promulguée le 4 octobre 1958.",
     "answers": [
       "C'est l'année de l'adoption de la Constitution de la Ve République par référendum"
-    ]
+    ],
+    "group": "ve-republique",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-regimes-politiques-depuis-1789/la-cinquieme-republique/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 134,
@@ -3185,10 +3268,17 @@
       "Le Nil",
       "L'Amazone"
     ],
-    "explanation": "La Loire est le plus long fleuve de France (1 013 km), qui prend sa source en Ardèche et se jette dans l'Atlantique à Saint-Nazaire. D'autres fleuves français sont la Seine (traversant Paris), le Rhône, la Garonne et le Rhin (frontière avec l'Allemagne).",
+    "explanation": "La France métropolitaine compte cinq fleuves : la Loire, le plus long (1 020 km), qui se jette dans l'océan Atlantique ; la Seine, qui traverse Paris ; la Garonne, qui traverse Toulouse et Bordeaux ; le Rhône, qui se jette dans la Méditerranée ; et le Rhin, qui longe une partie de la frontière avec l'Allemagne.",
     "answers": [
-      "La Loire"
-    ]
+      "La Loire",
+      "La Seine",
+      "La Garonne",
+      "Le Rhône"
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/atlas-de-la-france/les-fleuves-fran%C3%A7ais/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 135,
@@ -3205,7 +3295,7 @@
       "Liège",
       "Barcelone"
     ],
-    "explanation": "Lyon est la deuxième agglomération de France (après Paris) avec environ 1,7 million d'habitants dans son aire urbaine. Située au confluent du Rhône et de la Saône, elle est réputée pour sa gastronomie, ses traboules et ses bouchons lyonnais. Son centre historique est classé au patrimoine mondial de l'UNESCO.",
+    "explanation": "Paris, Lyon, Marseille, Bordeaux, Toulouse, Nantes, Strasbourg et Lille sont parmi les plus grandes villes de France, à la tête de ses principales métropoles. Madrid et Barcelone sont en Espagne, Genève et Berne en Suisse, Turin en Italie, Bruxelles et Liège en Belgique, Luxembourg au Luxembourg.",
     "answers": [
       "Paris",
       "Lyon",
@@ -3215,7 +3305,11 @@
       "Nantes",
       "Strasbourg",
       "Lille"
-    ]
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/atlas-de-la-france/la-france-aire-urbaine-et-metropolisation/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 136,
@@ -3235,7 +3329,12 @@
     "explanation": "L'océan Atlantique borde la côte ouest de la France, des côtes bretonnes jusqu'aux Pyrénées. Les côtes bretonnes, vendéennes, charentaises et basques donnent sur cet océan. Au nord, la Manche borde également la France, et au sud, la mer Méditerranée.",
     "answers": [
       "L'océan Atlantique"
-    ]
+    ],
+    "group": "mers-et-oceans",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/atlas-de-la-france/les-frontieres-de-la-france/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 137,
@@ -3252,11 +3351,15 @@
       "Le chef-lieu de la région Normandie",
       "Une ville-État autonome comme Monaco"
     ],
-    "explanation": "Paris est la capitale de la France et sa plus grande ville (plus de 2 millions d'habitants, 12 millions en Île-de-France). C'est le siège des grandes institutions républicaines : Élysée (Présidence), Matignon (Premier ministre), Assemblée nationale, Sénat, et des grands ministères.",
+    "explanation": "Paris est la capitale de la France. C'est le siège des grandes institutions de la République : présidence (Élysée), Premier ministre (Matignon), Assemblée nationale, Sénat… La région Île-de-France, autour de Paris, compte environ 12,4 millions d'habitants : c'est la région la plus peuplée du pays.",
     "answers": [
       "La capitale de la France"
     ],
-    "group": "paris-capitale"
+    "group": "paris-capitale",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-regions-fran%C3%A7aises/ile-de-france/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 138,
@@ -3273,11 +3376,15 @@
       "Lille",
       "Nice"
     ],
-    "explanation": "Paris est la capitale de la France depuis le Moyen Âge. Elle est le cœur politique, économique et culturel du pays. La région Île-de-France, dont Paris est le centre, concentre environ 20% de la population française.",
+    "explanation": "Paris est la capitale de la France : c'est le cœur politique, économique et administratif du pays. La région Île-de-France, autour de Paris, compte environ 12,4 millions d'habitants, soit environ 18 % de la population française.",
     "answers": [
       "Paris"
     ],
-    "group": "paris-capitale"
+    "group": "paris-capitale",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-regions-fran%C3%A7aises/ile-de-france/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 139,
@@ -3297,7 +3404,12 @@
     "explanation": "La France métropolitaine se situe en Europe occidentale. Elle est bordée par la mer du Nord et la Manche au nord, l'Atlantique à l'ouest, la Méditerranée au sud, et partage des frontières terrestres avec la Belgique, le Luxembourg, l'Allemagne, la Suisse, l'Italie, Monaco, l'Espagne et Andorre.",
     "answers": [
       "En Europe occidentale"
-    ]
+    ],
+    "group": "mers-et-oceans",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/atlas-de-la-france/les-frontieres-de-la-france/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 140,
@@ -3314,13 +3426,17 @@
       "Les îles Canaries",
       "Malte"
     ],
-    "explanation": "La Martinique est l'un des 5 départements et régions d'outre-mer (DROM) français, avec la Guadeloupe, la Guyane, La Réunion et Mayotte. Ces territoires font partie intégrante de la République française et de l'Union européenne.",
+    "explanation": "La Martinique, la Guadeloupe, La Réunion et Mayotte sont des îles qui forment, avec la Guyane, les 5 départements et régions d'outre-mer (DROM) de la France. Les lois françaises s'y appliquent comme en France hexagonale, avec parfois des adaptations.",
     "answers": [
       "La Martinique",
       "La Guadeloupe",
       "La Réunion",
       "Mayotte"
-    ]
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/atlas-de-la-france/le-territoire-de-la-france/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 141,
@@ -3340,7 +3456,11 @@
     "explanation": "Depuis la réforme territoriale de 2016, la France métropolitaine compte 13 régions (contre 22 auparavant). En ajoutant les 5 régions d'outre-mer (Guadeloupe, Martinique, Guyane, La Réunion, Mayotte), la France compte 18 régions au total.",
     "answers": [
       "13 régions"
-    ]
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/atlas-de-la-france/le-territoire-de-la-france/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 142,
@@ -3357,10 +3477,16 @@
       "Limoges",
       "Grenoble"
     ],
-    "explanation": "Marseille est le premier port de commerce de France (et de Méditerranée) et le troisième port européen. Fondée par les Grecs vers 600 av. J.-C. (Massalia), c'est la deuxième ville de France. Le port de Le Havre, sur la Manche, est le premier port de conteneurs français.",
+    "explanation": "Marseille est l'un des 7 grands ports maritimes de France métropolitaine, avec Dunkerque, Le Havre, Rouen, Nantes-Saint-Nazaire, La Rochelle et Bordeaux. Ces grands ports, gérés par l'État, traitent plus de 80 % du trafic maritime français de marchandises.",
     "answers": [
-      "Marseille"
-    ]
+      "Marseille",
+      "Le Havre",
+      "Dunkerque"
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/la-france-dans-leurope-et-dans-le-monde/les-ports-francais/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 143,
@@ -3377,10 +3503,15 @@
       "La mer Égée",
       "La mer des Caraïbes"
     ],
-    "explanation": "La mer Méditerranée borde le sud de la France, de la frontière espagnole (Pyrénées-Orientales) à la frontière italienne (Alpes-Maritimes). Les grandes villes de cette côte sont Marseille, Nice, Montpellier, Toulon et Perpignan.",
+    "explanation": "La mer Méditerranée borde le sud de la France, de la frontière espagnole (Pyrénées-Orientales) à la frontière italienne (Alpes-Maritimes). Marseille, Nice, Toulon et Sète sont des villes de cette côte.",
     "answers": [
       "La mer Méditerranée"
-    ]
+    ],
+    "group": "mers-et-oceans",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/atlas-de-la-france/les-frontieres-de-la-france/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 144,
@@ -3397,14 +3528,18 @@
       "Strasbourg",
       "Nantes"
     ],
-    "explanation": "Nice est une grande ville de la Côte d'Azur, sur la mer Méditerranée. Cinquième ville de France par sa population, elle est réputée pour sa Promenade des Anglais, son carnaval et son musée Matisse. Nice était rattachée au Royaume de Piémont-Sardaigne jusqu'en 1860, quand elle est devenue française.",
+    "explanation": "Marseille, Nice, Toulon et Sète sont des villes portuaires du littoral méditerranéen. Bordeaux, Brest, Nantes et Biarritz sont tournées vers l'océan Atlantique, Dunkerque et Calais vers la mer du Nord et la Manche, tandis que Rennes et Strasbourg sont à l'intérieur des terres.",
     "answers": [
       "Marseille",
       "Nice",
-      "Montpellier",
       "Toulon",
       "Sète"
-    ]
+    ],
+    "group": "mers-et-oceans",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/la-france-dans-leurope-et-dans-le-monde/les-ports-francais/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 145,
@@ -3421,10 +3556,15 @@
       "Dans la mer Baltique, au nord de l'Europe",
       "Dans la mer Adriatique, à côté de l'Italie"
     ],
-    "explanation": "La Corse est une île française située dans la mer Méditerranée, à environ 170 km des côtes provençales et à 90 km de la Sardaigne italienne. Elle constitue une collectivité territoriale unique depuis 2018, avec ses deux départements (Haute-Corse et Corse-du-Sud).",
+    "explanation": "La Corse est une île française de la mer Méditerranée, située au sud-est de la France continentale. Elle compte deux départements, la Corse-du-Sud et la Haute-Corse ; ses principales villes sont Ajaccio et Bastia.",
     "answers": [
       "Dans la mer Méditerranée, au sud-est de la France continentale"
-    ]
+    ],
+    "group": "mers-et-oceans",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-regions-fran%C3%A7aises/corse/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 146,
@@ -3441,10 +3581,14 @@
       "Les Apennins",
       "Les Carpates"
     ],
-    "explanation": "Les Alpes séparent la France de l'Italie à l'est-sud-est. Elles abritent le Mont-Blanc (4 808 m), le plus haut sommet d'Europe occidentale, situé sur la frontière franco-italienne. Les Pyrénées séparent la France de l'Espagne au sud.",
+    "explanation": "Les Alpes marquent la limite entre la France et l'Italie, et en partie la Suisse. Elles abritent le mont Blanc, point culminant de la France (environ 4 800 mètres). Les Pyrénées séparent la France de l'Espagne au sud.",
     "answers": [
       "Les Alpes"
-    ]
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/atlas-de-la-france/les-frontieres-de-la-france/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 147,
@@ -3464,7 +3608,12 @@
     "explanation": "Molière (Jean-Baptiste Poquelin, 1622-1673) est l'un des plus grands auteurs de la littérature française. Dramaturge et comédien, il a écrit des comédies qui mettent en scène les travers humains : Tartuffe, Le Misanthrope, L'Avare, Le Bourgeois Gentilhomme, Les Femmes savantes…",
     "answers": [
       "Un dramaturge et comédien français du XVIIe siècle"
-    ]
+    ],
+    "group": "ecrivains-francais",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/culture/patrimoine-francais-artistes-emblematiques-parmi-les-auteurs-1/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 148,
@@ -3476,7 +3625,6 @@
       "Un philosophe et écrivain des Lumières du XVIIIe siècle",
       "Un maréchal d'Empire chef militaire de Napoléon Ier",
       "Un romancier français auteur de La Comédie humaine",
-      "Un dramaturge et comédien français du XVIIe siècle",
       "Un compositeur polonais installé en France au XIXe siècle",
       "Un sculpteur français auteur du Penseur",
       "Un ingénieur français concepteur de la tour éponyme"
@@ -3484,7 +3632,11 @@
     "explanation": "Charles Baudelaire (1821-1867) est l'un des plus grands poètes français. Son recueil Les Fleurs du Mal (1857), d'abord censuré pour immoralité, est aujourd'hui considéré comme un chef-d'œuvre de la poésie moderne. Il a également traduit Edgar Allan Poe en français.",
     "answers": [
       "Un poète français du XIXe siècle"
-    ]
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/culture/patrimoine-francais-artistes-emblematiques-parmi-les-auteurs-2/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 149,
@@ -3504,7 +3656,11 @@
     "explanation": "George Sand (pseudonyme d'Aurore Dupin, 1804-1876) est une grande romancière française romantique, auteure de La Mare au Diable, Indiana, La Petite Fadette… Figure pionnière du féminisme, elle fut la compagne du compositeur Chopin et s'engagea politiquement pour les droits des femmes et des travailleurs.",
     "answers": [
       "Une romancière française du XIXe siècle"
-    ]
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/culture/patrimoine-francais-artistes-emblematiques-parmi-les-auteurs-2/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 150,
@@ -3524,7 +3680,11 @@
     "explanation": "Simone de Beauvoir (1908-1986) était une philosophe existentialiste, romancière et féministe française. Son œuvre maîtresse, Le Deuxième Sexe (1949), analyse la condition des femmes dans la société et a profondément influencé le féminisme mondial. Elle était la compagne de Jean-Paul Sartre.",
     "answers": [
       "Une philosophe et écrivaine française, figure majeure du féminisme"
-    ]
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/culture/patrimoine-francais-artistes-emblematiques-parmi-les-auteurs-3/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 151,
@@ -3544,7 +3704,12 @@
     "explanation": "Albert Camus (1913-1960), né en Algérie française, est l'un des plus grands écrivains du XXe siècle. Auteur de L'Étranger et La Peste, il a reçu le prix Nobel de littérature en 1957. Sa philosophie de l'absurde est un pilier de la pensée française.",
     "answers": [
       "Un écrivain et philosophe français né en Algérie, prix Nobel de littérature"
-    ]
+    ],
+    "group": "ecrivains-francais",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/culture/patrimoine-francais-artistes-emblematiques-parmi-les-auteurs-3/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 152,
@@ -3564,7 +3729,11 @@
     "explanation": "Paul Cézanne (1839-1906) est un peintre post-impressionniste dont les œuvres ont jeté les bases du cubisme et de l'art moderne. Ses représentations de la montagne Sainte-Victoire sont parmi les plus célèbres de la peinture française.",
     "answers": [
       "Un peintre français post-impressionniste du XIXe siècle"
-    ]
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/culture/patrimoine-francais-artistes-emblematiques-parmi-les-peintres/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 153,
@@ -3573,7 +3742,6 @@
     "question": "Qui était Marc Chagall ?",
     "distractors": [
       "Un compositeur français romantique du XIXe siècle",
-      "Un écrivain et philosophe français prix Nobel de littérature",
       "Un maréchal de France commandant des armées alliées en 1918",
       "Un philosophe existentialiste français du XXe siècle",
       "Un cinéaste franco-suisse fondateur de la Nouvelle Vague",
@@ -3581,10 +3749,14 @@
       "Un architecte italien concepteur du Centre Pompidou",
       "Un poète symboliste français du XIXe siècle"
     ],
-    "explanation": "Marc Chagall (1887-1985), né en Russie, a adopté la nationalité française. Ses tableaux aux couleurs vives mêlant rêve et tradition sont exposés dans les plus grands musées du monde. Il a notamment réalisé les vitraux de la cathédrale de Reims.",
+    "explanation": "Marc Chagall (1887-1985), né en Russie, s'installe à Paris en 1923 et obtient la nationalité française en 1937. Ses œuvres, très colorées, mêlent traditions juives et russes. Il a notamment peint le plafond de l'Opéra Garnier, à Paris.",
     "answers": [
-      "Un peintre franco-russe naturalisé français du XXe siècle"
-    ]
+      "Un peintre d'origine russe naturalisé français"
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/culture/patrimoine-francais-artistes-emblematiques-devenus-francais/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 154,
@@ -3594,17 +3766,20 @@
     "distractors": [
       "Une reine de France exécutée pendant la Révolution",
       "Une aviatrice française pionnière du début du XXe siècle",
-      "Une philosophe et écrivaine française figure du féminisme",
       "Une peintre française modèle puis artiste du mouvement impressionniste",
       "Une infirmière américaine fondatrice de la Croix-Rouge",
       "Une romancière française du XXe siècle élue à l'Académie française",
       "Une scientifique française double lauréate du prix Nobel",
       "Une danseuse italienne fondatrice du ballet romantique"
     ],
-    "explanation": "Joséphine Baker (1906-1975), artiste américaine naturalisée française, est devenue résistante pendant la Seconde Guerre mondiale. Militante pour les droits civiques, elle a été la première femme de couleur à entrer au Panthéon, en 2021.",
+    "explanation": "Joséphine Baker (1906-1975), née aux États-Unis, s'installe à Paris en 1925, où elle devient une vedette du music-hall, puis se lance dans la chanson et le cinéma. Naturalisée française en 1937, elle rejoint la Résistance pendant la Seconde Guerre mondiale et lutte contre le racisme. Elle est entrée au Panthéon le 30 novembre 2021.",
     "answers": [
       "Une artiste américaine naturalisée française, résistante et entrée au Panthéon"
-    ]
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/culture/patrimoine-francais-artistes-emblematiques-devenus-francais/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 155,
@@ -3616,7 +3791,6 @@
       "Simone de Beauvoir",
       "Marie Curie",
       "George Sand",
-      "Joséphine Baker",
       "Coco Chanel",
       "Simone Veil",
       "Marie-Antoinette"
@@ -3624,7 +3798,11 @@
     "explanation": "Édith Piaf (1915-1963), surnommée 'La Môme Piaf', est l'une des chanteuses françaises les plus célèbres dans le monde. Elle est connue pour des chansons comme La Vie en rose, Non, je ne regrette rien, L'Hymne à l'amour et Milord. Sa voix puissante et ses chansons sur l'amour et la vie sont devenues emblématiques de la chanson française.",
     "answers": [
       "Édith Piaf"
-    ]
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/culture/patrimoine-francais-artistes-emblematiques-dans-univers-musique/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 156,
@@ -3641,10 +3819,14 @@
       "L'académie nationale des beaux-arts française",
       "Le principal palais de justice historique de Paris"
     ],
-    "explanation": "Le Louvre est le plus grand musée du monde par sa superficie. Ancien palais royal construit au XIIe siècle, il abrite environ 35 000 œuvres d'art exposées, dont la Joconde de Léonard de Vinci, la Vénus de Milo et la Victoire de Samothrace. Il accueille plus de 7 millions de visiteurs par an.",
+    "explanation": "Le Louvre, à Paris, est un ancien palais royal devenu musée pendant la Révolution française. C'est l'un des musées les plus prestigieux et les plus visités au monde ; il abrite notamment la Joconde de Léonard de Vinci.",
     "answers": [
-      "Le plus grand musée du monde"
-    ]
+      "Un musée national, l'un des plus prestigieux au monde"
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/culture/une-puissance-culturelle/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 157,
@@ -3656,7 +3838,6 @@
       "Un philosophe et écrivain des Lumières du XVIIIe siècle",
       "Un mathématicien et homme politique de la Révolution française",
       "Un romancier français auteur de La Comédie humaine",
-      "Un dramaturge et comédien français du XVIIe siècle",
       "Un compositeur et musicien à la cour de Louis XIV",
       "Un sculpteur français de la cour de Louis XIV",
       "Un architecte français du XVIIe siècle concepteur de grands châteaux"
@@ -3664,7 +3845,11 @@
     "explanation": "Jean de la Fontaine (1621-1695) est un poète français du siècle de Louis XIV, célèbre pour ses Fables (12 livres), courtes histoires mettant en scène des animaux pour illustrer des maximes morales. La Cigale et la Fourmi, Le Corbeau et le Renard sont parmi les plus connues.",
     "answers": [
       "Un poète et fabuliste français du XVIIe siècle"
-    ]
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/culture/patrimoine-francais-artistes-emblematiques-parmi-les-auteurs-1/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 158,
@@ -3681,14 +3866,19 @@
       "Jorge Luis Borges",
       "Thomas Mann"
     ],
-    "explanation": "Marcel Proust (1871-1922) est l'un des plus grands romanciers français. Son œuvre monumentale, À la recherche du temps perdu (7 volumes, 3 000 pages), explore la mémoire, le temps et la société de la Belle Époque. Cette œuvre est considérée comme l'un des plus grands romans de la littérature mondiale.",
+    "explanation": "Victor Hugo, Molière, Albert Camus, Gustave Flaubert et Émile Zola sont des écrivains français. Kafka (Prague), Dostoïevski et Tolstoï (Russie), Joyce (Irlande), Hemingway (États-Unis), García Márquez (Colombie), Borges (Argentine) et Thomas Mann (Allemagne) sont des écrivains étrangers.",
     "answers": [
       "Victor Hugo",
       "Molière",
       "Albert Camus",
       "Gustave Flaubert",
       "Émile Zola"
-    ]
+    ],
+    "group": "ecrivains-francais",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/culture/patrimoine-francais-artistes-emblematiques-parmi-les-auteurs-2/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 159,
@@ -3705,11 +3895,15 @@
       "À Rouen",
       "À Nantes"
     ],
-    "explanation": "La tour Eiffel est située à Paris, sur le Champ-de-Mars dans le 7e arrondissement. Construite par Gustave Eiffel pour l'Exposition universelle de 1889, elle mesure 330 mètres de hauteur. C'est le monument payant le plus visité au monde (plus de 7 millions de visiteurs par an).",
+    "explanation": "La tour Eiffel se trouve à Paris, sur le Champ-de-Mars (7e arrondissement). Construite par l'ingénieur Gustave Eiffel pour l'Exposition universelle de 1889, qui fêtait les 100 ans de la Révolution française, elle mesure 330 mètres avec ses antennes. C'est un symbole de Paris et de la France.",
     "answers": [
-      "À Paris (7e arrondissement, sur le Champ-de-Mars)"
+      "À Paris"
     ],
-    "group": "paris-capitale"
+    "group": "paris-capitale",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/culture/patrimoine-francais-sites-emblematiques-et-gastronomie-d-ile-de-france/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 160,
@@ -3729,7 +3923,11 @@
     "explanation": "Noël est célébré le 25 décembre en France et dans la plupart des pays chrétiens. C'est un jour férié en France, même si la laïcité sépare religion et État. Le réveillon se tient traditionnellement le soir du 24 décembre, et les familles se réunissent pour le repas de Noël le 25 décembre.",
     "answers": [
       "Le 25 décembre"
-    ]
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/zoom-sur/patrimoine-francais-les-jours-feries/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 161,
@@ -5404,16 +5602,20 @@
     "id": 251,
     "theme": "Histoire, géographie et culture",
     "notion": "mise-en-situation",
-    "question": "Vous visitez un monument en France avec une inscription en latin « Liberté, Égalité, Fraternité ». Depuis quelle époque cette devise est-elle associée à la République française ?",
+    "question": "Vous visitez une mairie dont la façade porte l'inscription « Liberté, Égalité, Fraternité ». Depuis quand cette devise est-elle officiellement celle de la République française ?",
     "distractors": [
-      "Depuis la création de la Ve République en 1958",
-      "Depuis le Premier Empire sous Napoléon Ier",
-      "Depuis la Première Guerre mondiale, comme symbole d'union nationale"
+      "Depuis 1945, à la Libération",
+      "Depuis 1804, sous le Premier Empire",
+      "Depuis 1918, à la fin de la Première Guerre mondiale"
     ],
-    "explanation": "La devise « Liberté, Égalité, Fraternité » est issue de la Révolution française (1789). Elle a été officiellement adoptée comme devise de la République sous la IIIe République, à la fin du XIXe siècle, et est inscrite dans la Constitution de 1958.",
+    "explanation": "La devise « Liberté, Égalité, Fraternité » apparaît pendant la Révolution française, en 1789. Elle est adoptée officiellement en 1848, sous la IIe République, puis affichée sur les mairies et les écoles sous la IIIe République. Elle est toujours inscrite dans la Constitution de 1958.",
     "answers": [
-      "Depuis la Révolution française (fin du XVIIIe siècle), elle a été officialisée sous la IIIe République"
-    ]
+      "Depuis 1848, sous la IIe République"
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/devise-et-symboles-de-la-republique/la-devise-francaise/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 252,
@@ -5428,7 +5630,11 @@
     "explanation": "La Déclaration des droits de l'homme et du citoyen a été adoptée le 26 août 1789 par l'Assemblée nationale constituante, pendant la Révolution française. Elle proclame les droits fondamentaux et fait toujours partie du bloc de constitutionnalité français.",
     "answers": [
       "En 1789"
-    ]
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-regimes-politiques-depuis-1789/la-fin-de-la-monarchie-absolue-et-le-debut-de-la-iere-republique-1789-1792/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 253,
@@ -5440,10 +5646,14 @@
       "L'Exposition coloniale de 1931",
       "L'Exposition universelle de 1867, sous Napoléon III"
     ],
-    "explanation": "La Tour Eiffel a été construite par Gustave Eiffel pour l'Exposition universelle de Paris de 1889, qui célébrait le centenaire de la Révolution française. Elle est aujourd'hui le monument payant le plus visité du monde.",
+    "explanation": "La tour Eiffel a été construite en deux ans par l'ingénieur Gustave Eiffel pour l'Exposition universelle de 1889, à Paris, qui fêtait les 100 ans de la Révolution française. Elle y représentait le génie industriel de la France.",
     "answers": [
-      "L'Exposition universelle de 1889, pour commémorer le centenaire de la Révolution française"
-    ]
+      "L'Exposition universelle de 1889, centenaire de la Révolution"
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/culture/patrimoine-francais-sites-emblematiques-et-gastronomie-d-ile-de-france/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 254,
@@ -5455,10 +5665,14 @@
       "Le Rhône",
       "La Garonne"
     ],
-    "explanation": "La Seine traverse Paris d'est en ouest. C'est le deuxième fleuve de France par sa longueur. La Loire est le plus long fleuve français, le Rhône coule vers la Méditerranée et la Garonne traverse Bordeaux.",
+    "explanation": "La Seine traverse Paris. Elle prend sa source en Bourgogne, près de Dijon, et se jette dans la Manche après 776 km. La Loire est le plus long fleuve de France, le Rhône se jette dans la Méditerranée et la Garonne traverse Toulouse et Bordeaux.",
     "answers": [
       "La Seine"
-    ]
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/atlas-de-la-france/les-fleuves-fran%C3%A7ais/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 255,
@@ -5470,16 +5684,20 @@
       "François Mitterrand",
       "Léon Blum"
     ],
-    "explanation": "Charles de Gaulle a fondé la Ve République en 1958, à la suite de la crise politique liée à la guerre d'Algérie. Il en a été le premier président, élu au suffrage universel direct en 1965.",
+    "explanation": "Charles de Gaulle a fondé la Ve République en 1958, pendant la crise liée à la guerre d'Algérie : il a proposé une nouvelle Constitution, adoptée par référendum en septembre 1958. Il en a été le premier président, de 1959 à 1969.",
     "answers": [
       "Charles de Gaulle"
-    ]
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-regimes-politiques-depuis-1789/la-cinquieme-republique/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 256,
     "theme": "Histoire, géographie et culture",
     "notion": "mise-en-situation",
-    "question": "Vous voyagez dans le sud de la France. Quelle mer borde les côtes du littoral méditerranéen français ?",
+    "question": "Vous passez vos vacances à Nice, sur la Côte d'Azur. Quelle mer borde cette côte ?",
     "distractors": [
       "L'océan Atlantique",
       "La mer du Nord",
@@ -5488,7 +5706,11 @@
     "explanation": "Le littoral méditerranéen français s'étend de la frontière espagnole (Pyrénées-Orientales) à la frontière italienne (Alpes-Maritimes), en passant par la Camargue et la Côte d'Azur. L'océan Atlantique borde la façade ouest.",
     "answers": [
       "La mer Méditerranée"
-    ]
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/atlas-de-la-france/les-frontieres-de-la-france/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 257,
@@ -5503,7 +5725,11 @@
     "explanation": "Le 8 mai 1945 marque la capitulation de l'Allemagne nazie et la fin de la Seconde Guerre mondiale en Europe. C'est la fête de la Victoire. Le 11 novembre commémore quant à lui l'armistice de 1918 qui a mis fin à la Première Guerre mondiale.",
     "answers": [
       "Il commémore la capitulation de l'Allemagne nazie et la victoire des Alliés en Europe en 1945"
-    ]
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/zoom-sur/patrimoine-francais-les-jours-feries/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 258,
@@ -5515,9 +5741,9 @@
       "Le Pic du Midi de Bigorre, dans les Pyrénées",
       "Le Puy de Dôme, dans le Massif central"
     ],
-    "explanation": "Le Mont-Blanc, situé dans les Alpes, à la frontière franco-italienne, culmine à 4 808 mètres. C'est le point culminant de France et d'Europe occidentale.",
+    "explanation": "Le mont Blanc, dans le massif des Alpes, à la frontière avec l'Italie, culmine à environ 4 800 mètres ; son altitude varie de quelques mètres selon l'épaisseur de la neige au sommet. C'est le point culminant de la France et de l'Europe occidentale.",
     "answers": [
-      "Le Mont-Blanc, dans les Alpes (4 808 mètres)"
+      "Le Mont-Blanc, dans les Alpes"
     ]
   },
   {
@@ -5533,7 +5759,11 @@
     "explanation": "Molière (Jean-Baptiste Poquelin, 1622-1673) était un dramaturge, comédien et directeur de troupe du XVIIe siècle. Il est l'auteur de grandes comédies comme Le Misanthrope, Tartuffe ou L'Avare. Son nom est associé à la langue française (« la langue de Molière »).",
     "answers": [
       "Non, Molière était un dramaturge du XVIIe siècle, auteur de comédies"
-    ]
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/culture/patrimoine-francais-artistes-emblematiques-parmi-les-auteurs-1/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 260,
@@ -5543,12 +5773,16 @@
     "distractors": [
       "La Bretagne",
       "La Normandie",
-      "La Réunion"
+      "La Provence-Alpes-Côte d'Azur"
     ],
-    "explanation": "La Corse est une île de la mer Méditerranée et constitue une collectivité territoriale unique depuis 2018. La Réunion est bien une île, mais c'est un département d'outre-mer, pas une région métropolitaine.",
+    "explanation": "La Corse est une île de la mer Méditerranée et l'une des 13 régions de France métropolitaine. La Bretagne, la Normandie et la Provence-Alpes-Côte d'Azur ont des côtes, mais ne sont pas des îles. Outre-mer, la Guadeloupe, la Martinique, La Réunion et Mayotte sont aussi des régions insulaires.",
     "answers": [
       "La Corse"
-    ]
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-regions-fran%C3%A7aises/corse/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 261,
@@ -5563,7 +5797,11 @@
     "explanation": "L'esclavage a d'abord été aboli en 1794 pendant la Révolution française, puis rétabli par Napoléon en 1802. Victor Schoelcher a obtenu son abolition définitive en 1848, sous la IIe République.",
     "answers": [
       "Non, l'esclavage a été aboli deux fois : en 1794 puis définitivement en 1848"
-    ]
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/zoom-sur/le-territoire-francais-dans-le-temps-2/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 262,
@@ -5578,7 +5816,11 @@
     "explanation": "La devise « Liberté, Égalité, Fraternité » est inscrite sur les bâtiments publics de la République française : mairies, écoles, palais de justice, préfectures… Elle est un symbole de la République et figure dans la Constitution.",
     "answers": [
       "Un bâtiment public (mairie, école, tribunal, préfecture…)"
-    ]
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/devise-et-symboles-de-la-republique/la-devise-francaise/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 263,
@@ -5592,8 +5834,12 @@
     ],
     "explanation": "Joséphine Baker (1906-1975) était une artiste américaine naturalisée française, chanteuse et danseuse. Résistante engagée durant la Seconde Guerre mondiale et militante des droits civiques, elle est entrée au Panthéon en novembre 2021, devenant la première femme noire à recevoir cet honneur.",
     "answers": [
-      "Une artiste franco-américaine, résistante pendant la Seconde Guerre mondiale, entrée au Panthéon en 2021"
-    ]
+      "Une artiste franco-américaine, résistante, entrée au Panthéon"
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/culture/patrimoine-francais-artistes-emblematiques-devenus-francais/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 264,
@@ -5605,10 +5851,14 @@
       "Le siège du Parlement français",
       "Un palais royal toujours en activité pour les cérémonies d'État"
     ],
-    "explanation": "Le Louvre est un musée national situé à Paris. Ancienne résidence royale, il est devenu musée en 1793 pendant la Révolution française. C'est aujourd'hui le musée le plus visité au monde, abritant notamment la Joconde de Léonard de Vinci.",
+    "explanation": "Le Louvre, à Paris, est un ancien palais royal devenu musée en 1793, pendant la Révolution française. C'est l'un des musées les plus prestigieux au monde ; il abrite notamment la Joconde de Léonard de Vinci.",
     "answers": [
-      "Le plus grand musée d'art et d'antiquités au monde"
-    ]
+      "Un musée national, ancien palais royal"
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/culture/une-puissance-culturelle/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 265,
@@ -5623,7 +5873,11 @@
     "explanation": "Jules Ferry, ministre de l'Instruction publique puis président du Conseil sous la IIIe République, a fait voter les lois rendant l'école primaire publique gratuite (1881) puis laïque et obligatoire (1882). Ces lois ont posé les bases du système éducatif français.",
     "answers": [
       "La IIIe République, dans les années 1880"
-    ]
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-regimes-politiques-depuis-1789/la-troisieme-republique-1870-1940/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 266,
@@ -5638,7 +5892,11 @@
     "explanation": "La Shoah désigne le génocide systématique des Juifs d'Europe organisé par les nazis entre 1941 et 1945, faisant environ 6 millions de victimes. Ce terme, d'origine hébraïque, signifie « catastrophe ». C'est l'un des épisodes les plus sombres de l'histoire humaine.",
     "answers": [
       "Au génocide des Juifs d'Europe par les nazis durant la Seconde Guerre mondiale"
-    ]
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/zoom-sur/focus-sur-la-seconde-guerre-mondiale-la-shoah/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 267,
