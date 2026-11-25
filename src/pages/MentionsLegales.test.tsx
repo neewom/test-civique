@@ -51,6 +51,20 @@ describe('Page « Mentions légales et confidentialité »', () => {
     expect(screen.getByText(`Dernière mise à jour : ${LAST_UPDATED}`)).toBeInTheDocument()
   })
 
+  it('précise que les données restent sur cet appareil et ce navigateur', () => {
+    renderPage()
+    expect(
+      screen.getByText(
+        'Ils restent donc sur cet appareil, dans ce navigateur : vous les retrouvez à chaque visite, mais pas sur un autre téléphone ou un autre navigateur, ni en navigation privée.',
+      ),
+    ).toBeInTheDocument()
+  })
+
+  it('le titre « Vos données » porte l\'ancre #vos-donnees', () => {
+    renderPage()
+    expect(screen.getByRole('heading', { level: 2, name: 'Vos données' })).toHaveAttribute('id', 'vos-donnees')
+  })
+
   it('donne la base légale des statistiques et des journaux de l\'hébergeur', () => {
     renderPage()
     expect(

@@ -1,6 +1,6 @@
 import { useState, type ReactNode } from 'react'
 import { Link, Navigate, useNavigate } from 'react-router-dom'
-import { ArrowRight, Check, ChevronDown, ChevronRight } from 'lucide-react'
+import { ArrowRight, Check, ChevronDown, ChevronRight, MonitorSmartphone } from 'lucide-react'
 import { EXAM_SIZE, isPassed, passThreshold } from '@/lib/exam'
 import { loadProgress, clearProgress, resumeIndex } from '@/lib/exam-types'
 import type { ExamInProgress } from '@/lib/exam-types'
@@ -279,6 +279,22 @@ export default function Home() {
     </section>
   )
 
+  // Progress lives in localStorage only: say so on every visit, history or not
+  const deviceNotice = (
+    <p className="flex items-start gap-2 text-[0.875rem] leading-normal">
+      <MonitorSmartphone aria-hidden="true" className="mt-0.5 size-4 shrink-0" strokeWidth={2.2} />
+      <span>
+        Votre progression reste sur cet appareil, dans ce navigateur.{' '}
+        <Link
+          to="/mentions-legales#vos-donnees"
+          className="rounded-sm font-bold whitespace-nowrap underline underline-offset-4"
+        >
+          En savoir plus
+        </Link>
+      </span>
+    </p>
+  )
+
   const legal = (
     <>
       <p className="mt-2 text-xs leading-relaxed">
@@ -326,7 +342,10 @@ export default function Home() {
               </div>
               <ProgressPanel streak={streak} recentExams={recentExams} rulesLink={rulesLink} />
             </div>
-            <footer className="mt-auto flex flex-col gap-3 pt-10">{legal}</footer>
+            <footer className="mt-auto flex flex-col gap-3 pt-10">
+              {deviceNotice}
+              {legal}
+            </footer>
           </>
         ) : (
           <>
@@ -340,6 +359,7 @@ export default function Home() {
             </div>
 
             {recentExams}
+            <div className="mt-4">{deviceNotice}</div>
             {legal}
           </>
         )}

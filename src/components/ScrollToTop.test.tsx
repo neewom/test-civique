@@ -1,6 +1,6 @@
 import { render, fireEvent, screen } from '@testing-library/react'
 import { MemoryRouter, useNavigate } from 'react-router-dom'
-import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest'
+import { describe, it, expect, beforeEach, afterEach, onTestFinished, vi } from 'vitest'
 import { ScrollToTop } from './ScrollToTop'
 
 function Navigator() {
@@ -42,5 +42,28 @@ describe('ScrollToTop', () => {
     renderAt('/revision')
     fireEvent.click(screen.getByRole('button', { name: 'Même page' }))
     expect(scrollTo).toHaveBeenCalledTimes(1)
+  })
+
+  it('fait défiler jusqu\'à l\'élément de l\'ancre quand l\'adresse en porte une', () => {
+    const scrollIntoView = vi.fn()
+    const original = Element.prototype.scrollIntoView
+    Element.prototype.scrollIntoView = scrollIntoView
+    onTestFinished(() => {
+      Element.prototype.scrollIntoView = original
+    })
+    render(
+      <MemoryRouter initialEntries={['/mentions-legales#vos-donnees']}>
+        <ScrollToTop />
+        <h2 id="vos-donnees">Vos données</h2>
+      </MemoryRouter>,
+    )
+    expect(scrollIntoView).toHaveBeenCalledTimes(1)
+    expect(scrollIntoView.mock.contexts[0]).toBe(screen.getByRole('heading', { name: 'Vos données' }))
+    expect(scrollTo).not.toHaveBeenCalled()
+  })
+
+  it('remonte en haut quand l\'ancre ne correspond à aucun élément', () => {
+    renderAt('/mentions-legales#inconnue')
+    expect(scrollTo).toHaveBeenCalledWith(0, 0)
   })
 })
