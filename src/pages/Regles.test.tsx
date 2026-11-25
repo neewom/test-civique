@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react'
-import { MemoryRouter } from 'react-router-dom'
+import { MemoryRouter, Route, Routes, useLocation } from 'react-router-dom'
+import userEvent from '@testing-library/user-event'
 import { describe, it, expect } from 'vitest'
 import Regles from './Regles'
 import { LEGIFRANCE_URL } from '@/components/ExamRules'
@@ -43,9 +44,25 @@ describe('Page « Comment se passe l\'examen »', () => {
     expect(link).toHaveAttribute('target', '_blank')
   })
 
-  it('« Retour » mène à l\'accueil, « M\'entraîner maintenant » aussi (choix de l\'examen ouvert)', () => {
+  it('« Retour » mène à l\'accueil, « M\'entraîner maintenant » lance un examen', () => {
     renderRegles()
     expect(screen.getByRole('link', { name: 'Retour' })).toHaveAttribute('href', '/')
-    expect(screen.getByRole('link', { name: "M'entraîner maintenant" })).toHaveAttribute('href', '/')
+    expect(screen.getByRole('link', { name: "M'entraîner maintenant" })).toHaveAttribute('href', '/examen')
+  })
+
+  it('« M\'entraîner maintenant » demande un nouvel examen, même avec un examen en cours', async () => {
+    function ExamProbe() {
+      return <p>état : {JSON.stringify(useLocation().state)}</p>
+    }
+    render(
+      <MemoryRouter initialEntries={['/regles']}>
+        <Routes>
+          <Route path="/regles" element={<Regles />} />
+          <Route path="/examen" element={<ExamProbe />} />
+        </Routes>
+      </MemoryRouter>,
+    )
+    await userEvent.click(screen.getByRole('link', { name: "M'entraîner maintenant" }))
+    expect(screen.getByText('état : {"start":"new"}')).toBeInTheDocument()
   })
 })
