@@ -132,7 +132,7 @@ function ProgressPanel({ streak, recentExams, rulesLink }: ProgressPanelProps) {
           Où vous en êtes
         </h2>
         <p className="text-[0.9375rem] leading-normal">
-          <span className="block text-[3.5rem] leading-none font-bold tracking-[-0.04em] tabular-nums">
+          <span className="mb-1 block text-[3.5rem] leading-none font-bold tracking-[-0.04em] tabular-nums">
             {streak} sur {READY_GOAL}
           </span>{' '}
           {left > 0
