@@ -950,6 +950,7 @@
     "answers": [
       "De l'Assemblée nationale (577 députés) et du Sénat (348 sénateurs)"
     ],
+    "group": "composition-assemblee",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/etat-de-droit-et-separation-des-pouvoirs/etat-de-droit-et-separation-des-pouvoirs-presentation-des-3-pouvoirs-1/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -1136,7 +1137,7 @@
       "Il est seulement soumis à une sanction administrative interne",
       "Il bénéficie d'une immunité à vie pour ses actes ministériels"
     ],
-    "explanation": "Nul n'est au-dessus des lois en France, y compris les membres du gouvernement. Un ministre qui commet une infraction peut être poursuivi pénalement. La Cour de Justice de la République (CJR) juge les membres du gouvernement pour les crimes et délits commis dans l'exercice de leurs fonctions.",
+    "explanation": "Nul n'est au-dessus des lois en France, y compris les membres du gouvernement : un ministre qui commet une infraction peut être poursuivi et jugé. Pour les crimes et délits commis dans l'exercice de ses fonctions, il est jugé par la Cour de justice de la République ; pour les autres, par les tribunaux ordinaires, comme tout citoyen.",
     "answers": [
       "Il est jugé comme tout citoyen, personne n'est au-dessus des lois"
     ],
@@ -1164,6 +1165,7 @@
     "answers": [
       "Les députés de l'Assemblée nationale"
     ],
+    "group": "legislatives",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/democratie-et-droit-de-vote/democratie-et-droit-de-vote-les-conditions-pour-voter-en-france-2/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -1188,6 +1190,7 @@
     "answers": [
       "577 députés"
     ],
+    "group": "composition-assemblee",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/etat-de-droit-et-separation-des-pouvoirs/etat-de-droit-et-separation-des-pouvoirs-presentation-des-3-pouvoirs-1/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -1212,6 +1215,7 @@
     "answers": [
       "Tous les 3 ans (par moitié), au suffrage indirect"
     ],
+    "group": "senateurs",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/democratie-et-droit-de-vote/democratie-et-droit-de-vote-les-conditions-pour-voter-en-france-2/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -1354,6 +1358,7 @@
     "answers": [
       "6 ans (renouvelés par moitié tous les 3 ans)"
     ],
+    "group": "senateurs",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/democratie-et-droit-de-vote/democratie-et-droit-de-vote-la-democratie-et-la-republique-2/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -1597,6 +1602,7 @@
     "answers": [
       "Les citoyens français, au suffrage universel direct"
     ],
+    "group": "legislatives",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/democratie-et-droit-de-vote/democratie-et-droit-de-vote-les-conditions-pour-voter-en-france-2/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -1694,6 +1700,7 @@
     "answers": [
       "Le préfet, nommé par le Président de la République"
     ],
+    "group": "prefet",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/organisation-de-la-republique-fran%C3%A7aise/le-decoupage-administratif-de-la-france-2/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -1714,7 +1721,7 @@
       "Le directeur général des services communaux",
       "Le président de la communauté de communes"
     ],
-    "explanation": "Le maire est élu par les conseillers municipaux, eux-mêmes élus pour 6 ans par les habitants. Il dirige la commune, qui gère notamment les écoles maternelles et primaires, l'urbanisme et les services de proximité.",
+    "explanation": "Le maire est élu par les conseillers municipaux, eux-mêmes élus pour 6 ans par les électeurs de la commune. Il dirige la commune, qui gère notamment les écoles maternelles et primaires, l'urbanisme et les services de proximité.",
     "answers": [
       "Le maire, élu par le conseil municipal"
     ],
@@ -1765,6 +1772,7 @@
     "answers": [
       "Le représentant de l'État dans le département, nommé en conseil des ministres"
     ],
+    "group": "prefet",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/organisation-de-la-republique-fran%C3%A7aise/le-decoupage-administratif-de-la-france-2/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -1888,7 +1896,7 @@
     ],
     "explanation": "Pour voter aux élections européennes en France, il faut avoir 18 ans et être soit citoyen français, soit citoyen d'un autre État membre de l'UE résidant en France, et être inscrit sur les listes électorales. Les ressortissants non-UE ne peuvent pas voter à ces élections.",
     "answers": [
-      "Être citoyen de l'UE, majeur et inscrit sur les listes électorales en France"
+      "Être citoyen de l'UE, majeur, habiter en France et être inscrit sur les listes électorales"
     ],
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/institutions-europeennes/les-elections-europeennes/",
@@ -5074,7 +5082,7 @@
       "Non, sauf si l'Assemblée nationale lève elle-même l'immunité",
       "Oui, mais seulement après la fin de leur mandat"
     ],
-    "explanation": "L'immunité parlementaire protège les opinions et votes exprimés dans l'exercice du mandat (irresponsabilité). Pour les autres actes, un député peut être poursuivi comme tout citoyen ; seules son arrestation ou une mesure privative de liberté nécessitent l'autorisation du bureau de l'Assemblée, sauf en cas de crime ou délit flagrant ou de condamnation définitive (article 26 de la Constitution).",
+    "explanation": "L'immunité parlementaire protège les opinions et votes exprimés dans l'exercice du mandat (irresponsabilité). Pour les autres actes, un député peut être poursuivi comme tout citoyen ; son arrestation ou une mesure privative ou restrictive de liberté demande l'autorisation du bureau de l'Assemblée, sauf en cas de crime ou délit flagrant ou de condamnation définitive (article 26 de la Constitution).",
     "answers": [
       "Oui, il peut être poursuivi comme tout citoyen"
     ],
