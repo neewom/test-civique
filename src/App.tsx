@@ -10,14 +10,18 @@ import { ScrollToTop } from '@/components/ScrollToTop'
 import { PageViewTracker } from '@/components/PageViewTracker'
 import { ThemeProvider } from '@/components/ThemeProvider'
 import { ThemeSwitch } from '@/components/ThemeSwitch'
+import { useWideScreen } from '@/lib/use-wide-screen'
 
 // Theme switch fixed in the top right corner, except on the home page whose
 // header holds it, on the exam (question, correction, result), where it would
 // cover the verdict with enlarged text, and on the exam detail, where it covered
-// the score per theme while scrolling; the maquettes Pa4 to Pa7 have none
+// the score per theme while scrolling; the maquettes Pa4 to Pa7 have none.
+// From 1024 px the revision holds it in its side column header
 function FixedThemeSwitch() {
   const { pathname } = useLocation()
+  const wide = useWideScreen()
   if (pathname === '/' || pathname === '/examen' || pathname.startsWith('/examen/')) return null
+  if (wide && pathname === '/revision') return null
   return (
     <div className="fixed top-4 right-4 z-50">
       <ThemeSwitch />

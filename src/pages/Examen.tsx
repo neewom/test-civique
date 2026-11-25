@@ -323,7 +323,7 @@ function ExamSession({ restarted, onRestart }: ExamSessionProps) {
 
     <main className="flex min-h-svh flex-col bg-background text-foreground">
       <header className="rounded-b-[2rem] bg-earth">
-        <div className="mx-auto flex w-full max-w-[30rem] flex-col gap-3 px-5 pt-4 pb-5">
+        <div className="mx-auto flex w-full max-w-[30rem] flex-col gap-3 px-5 pt-4 pb-5 md:max-w-[44rem] md:px-8 md:pt-6 md:pb-7">
           <div className="flex flex-wrap items-center justify-between gap-x-4">
             <button
               type="button"
@@ -360,9 +360,9 @@ function ExamSession({ restarted, onRestart }: ExamSessionProps) {
       {/* Announced once at 5 minutes, then at 1 minute */}
       <p aria-live="polite" className="sr-only">{timeAnnouncement(globalTimeLeft)}</p>
 
-      <div className="mx-auto flex w-full max-w-[30rem] grow flex-col px-5">
+      <div className="mx-auto flex w-full max-w-[30rem] grow flex-col px-5 md:max-w-[44rem] md:px-8">
         {inCorrection ? (
-          <div className="flex flex-col gap-3 pt-5">
+          <div className="flex flex-col gap-3 pt-5 md:pt-10">
             <Verdict
               ref={verdictRef}
               tabIndex={-1}
@@ -374,7 +374,7 @@ function ExamSession({ restarted, onRestart }: ExamSessionProps) {
             <h1
               ref={questionHeadingRef}
               tabIndex={-1}
-              className="text-[1.3125rem] leading-[1.3] font-bold outline-none"
+              className="text-[1.3125rem] leading-[1.3] font-bold outline-none md:text-[1.75rem] md:leading-[1.25]"
             >
               {current.question}
             </h1>
@@ -412,13 +412,13 @@ function ExamSession({ restarted, onRestart }: ExamSessionProps) {
             </section>
           </div>
         ) : (
-          <div className="flex flex-col gap-3 pt-6">
+          <div className="flex flex-col gap-3 pt-6 md:pt-10">
             <p className={eyebrow}>{current.theme}</p>
             <h1
               id={questionId}
               ref={questionHeadingRef}
               tabIndex={-1}
-              className="mb-2 text-[1.4375rem] leading-[1.3] font-bold outline-none"
+              className="mb-2 text-[1.4375rem] leading-[1.3] font-bold outline-none md:text-[1.75rem] md:leading-[1.25]"
             >
               {current.question}
             </h1>
@@ -439,14 +439,16 @@ function ExamSession({ restarted, onRestart }: ExamSessionProps) {
           </div>
         )}
 
-        <div className="mt-auto pt-4 pb-6">
+        {/* From 768 px the button sits right under the answers, in a slot reserved for it
+            (padding + margin + large pill + padding = 8rem): nothing moves when it appears */}
+        <div className="mt-auto pt-4 pb-6 md:mt-0 md:min-h-[8rem] md:pt-6 md:pb-10">
           {phase === 'pending' && (
-            <PillButton size="lg" onClick={handleValidate} className="mt-2 w-full justify-center text-center">
+            <PillButton size="lg" onClick={handleValidate} className="mt-2 w-full justify-center text-center md:w-auto md:min-w-[17rem]">
               Valider ma réponse
             </PillButton>
           )}
           {inCorrection && (
-            <PillButton size="lg" onClick={handleNext} className="mt-2 w-full justify-center text-center">
+            <PillButton size="lg" onClick={handleNext} className="mt-2 w-full justify-center text-center md:w-auto md:min-w-[17rem]">
               {isLastQuestion ? 'Voir les résultats' : 'Question suivante'}
             </PillButton>
           )}

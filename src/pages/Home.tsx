@@ -1,7 +1,7 @@
-import { useState } from 'react'
+import { useState, type ReactNode } from 'react'
 import { Link, Navigate, useNavigate } from 'react-router-dom'
 import { ArrowRight, Check, ChevronDown, ChevronRight } from 'lucide-react'
-import { isPassed } from '@/lib/exam'
+import { EXAM_SIZE, isPassed, passThreshold } from '@/lib/exam'
 import { loadProgress, clearProgress, resumeIndex } from '@/lib/exam-types'
 import type { ExamInProgress } from '@/lib/exam-types'
 import { loadHistory, type HistoryEntry } from '@/lib/history'
@@ -11,7 +11,9 @@ import { BrandLogo } from '@/components/BrandLogo'
 import { ThemeSwitch } from '@/components/ThemeSwitch'
 import { OrganicBackground } from '@/components/OrganicBackground'
 import { PillButton, PillLink } from '@/components/PillButton'
+import { GLOBAL_EXAM_TIME } from '@/pages/Examen'
 import { useDocumentTitle } from '@/lib/use-document-title'
+import { useWideScreen } from '@/lib/use-wide-screen'
 import { cn } from '@/lib/utils'
 
 export const OFFICIAL_SITE_URL = 'https://formation-civique.interieur.gouv.fr'
@@ -79,6 +81,71 @@ function RecentExam({ entry }: { entry: HistoryEntry }) {
   )
 }
 
+interface ProgressPanelProps {
+  streak: number
+  recentExams: ReactNode
+  rulesLink: ReactNode
+}
+
+/**
+ * Right column of the home page from 1024 px. With exams: the « n sur 3 » counter in large,
+ * the last exams and the rules. Without any: what the exam day holds, in a card.
+ */
+function ProgressPanel({ streak, recentExams, rulesLink }: ProgressPanelProps) {
+  if (!recentExams) {
+    const facts = [
+      { value: String(EXAM_SIZE), label: 'questions à choix multiples' },
+      { value: `${GLOBAL_EXAM_TIME / 60} min`, label: 'pour tout le questionnaire' },
+      { value: String(passThreshold(EXAM_SIZE)), label: 'bonnes réponses pour réussir' },
+    ]
+    return (
+      <section
+        aria-labelledby="exam-day"
+        className="mt-[4.25rem] flex flex-col gap-4 rounded-2xl bg-card p-6 text-card-foreground"
+      >
+        <h2 id="exam-day" className="text-[1.375rem] leading-tight font-bold">
+          Ce qui vous attend le jour J
+        </h2>
+        <dl className="flex flex-col gap-3">
+          {facts.map(({ value, label }) => (
+            <div key={label} className="flex flex-wrap items-baseline gap-x-3">
+              <dt className="min-w-[5.5rem] text-[1.75rem] leading-none font-bold tracking-[-0.03em] tabular-nums">
+                {value}
+              </dt>
+              <dd className="text-[0.9375rem]">{label}</dd>
+            </div>
+          ))}
+        </dl>
+        <p className="text-[0.9375rem] leading-normal">
+          Vos examens blancs s'afficheront ici, avec votre progression vers les {READY_GOAL} réussites d'affilée.
+        </p>
+        {rulesLink}
+      </section>
+    )
+  }
+
+  const left = READY_GOAL - streak
+  return (
+    <section aria-labelledby="progress" className="mt-[4.25rem] flex flex-col gap-5">
+      <div className="flex flex-col gap-1">
+        <h2 id="progress" className="text-[1.0625rem] font-bold">
+          Où vous en êtes
+        </h2>
+        <p className="text-[0.9375rem] leading-normal">
+          <span className="block text-[3.5rem] leading-none font-bold tracking-[-0.04em] tabular-nums">
+            {streak} sur {READY_GOAL}
+          </span>{' '}
+          {left > 0
+            ? `examens blancs réussis d'affilée. Encore ${left} pour atteindre l'objectif.`
+            : "examens blancs réussis d'affilée : objectif atteint."}
+        </p>
+      </div>
+      {recentExams}
+      {rulesLink}
+    </section>
+  )
+}
+
 export default function Home() {
   useDocumentTitle('Accueil')
   const navigate = useNavigate()
@@ -89,6 +156,7 @@ export default function Home() {
   // exam in progress, from before the title screen existed) keeps the multi-year
   // permit, the only title available, so the resume stays one tap away.
   const [storedTitle] = useState(() => loadTargetTitle())
+  const wide = useWideScreen()
   const [mustChooseTitle] = useState(() => storedTitle === null && history.length === 0 && inProgress === null)
 
   if (mustChooseTitle) return <Navigate to="/titre" replace state={{ firstLaunch: true }} />
@@ -112,11 +180,132 @@ export default function Home() {
     navigate('/examen', { state: { start: 'new' } })
   }
 
+  const titlePill = (
+    <PillLink
+      to="/titre"
+      tone="surface"
+      end={<ChevronDown strokeWidth={2.6} />}
+      className="min-h-11 self-start text-[0.9375rem]"
+    >
+      <span className="sr-only">Titre visé : </span>
+      {TARGET_TITLE_LABELS[targetTitle]}
+      <span className="sr-only"> (changer)</span>
+    </PillLink>
+  )
+
+  const heading = (
+    <h1 className="mt-[1.125rem] max-w-[18.75rem] text-[2.375rem] leading-[0.98] font-bold tracking-[-0.04em] text-balance md:max-w-[24rem] md:text-[3rem] lg:max-w-[26rem] lg:text-[3.5rem]">
+      Votre chemin vers le jour J
+    </h1>
+  )
+
+  const journey = (
+    <nav aria-label="Votre parcours" className="mt-[clamp(1.5rem,6svh,3.25rem)] lg:mt-10">
+      <ol className="flex flex-col items-start gap-3 md:gap-3.5">
+        <li className="max-w-full">
+          <PillLink to="/revision" tone="surface" end={<ArrowRight strokeWidth={2.6} />}>
+            1 · Réviser les thèmes
+          </PillLink>
+        </li>
+
+        <li className="flex w-full flex-col items-start">
+          <PillButton
+            size="lg"
+            onClick={startExam}
+            end={`${streak} sur ${READY_GOAL}`}
+            endIsText
+            // The label wraps first (9rem basis); only with enlarged text, when even
+            // that basis no longer fits, does the counter go below instead of overflowing
+            className="max-w-full flex-wrap [&>span:first-child]:grow [&>span:first-child]:basis-36"
+          >
+            2 · Réussir {READY_GOAL} examens blancs
+          </PillButton>
+        </li>
+
+        <li className="max-w-full">
+          <span className={cn(staticStepClass, 'flex-wrap bg-card text-card-foreground')}>
+            3 · Trouver un centre d'examen
+            <span className="rounded-full bg-muted px-2.5 text-[0.8125rem] leading-6 font-bold">bientôt</span>
+          </span>
+        </li>
+
+        <li className="max-w-full">
+          <span className={cn(staticStepClass, 'bg-goal text-goal-foreground')}>4 · Le jour J</span>
+        </li>
+      </ol>
+    </nav>
+  )
+
+  const resume = inProgress && (
+    <section aria-label="Examen en cours" className="flex flex-col items-start gap-1 lg:mt-6 lg:max-w-[26rem]">
+      <PillLink to="/examen" tone="ink" size="lg" end={<ArrowRight strokeWidth={2.6} />} className="w-full">
+        <span className="flex flex-col">
+          <span className="text-base">Reprendre l'examen en cours</span>
+          <span className="text-[0.8125rem] font-normal opacity-85">
+            Question {resumeQuestion} sur {inProgress.questions.length} ·{' '}
+            {minutesLeftLabel(inProgress.timeLeft)}
+          </span>
+        </span>
+      </PillLink>
+      <button
+        type="button"
+        onClick={handleDeleteProgress}
+        className="min-h-11 rounded-sm px-1 text-left text-[0.875rem] underline underline-offset-4"
+      >
+        Supprimer l'examen en cours
+      </button>
+    </section>
+  )
+
+  const rulesLink = (
+    <Link
+      to="/regles"
+      className="inline-flex min-h-11 items-center self-start rounded-sm text-[0.9375rem] font-bold underline underline-offset-4"
+    >
+      Comment se passe l'examen ?
+    </Link>
+  )
+
+  const recentExams = recent.length > 0 && (
+    <section aria-labelledby="recent-exams" className="mt-4 flex flex-col gap-2.5 lg:mt-0">
+      <h2 id="recent-exams" className="text-[1.0625rem] font-bold">
+        Derniers examens
+      </h2>
+      <ul className="flex flex-col gap-2">
+        {recent.map((entry, i) => (
+          <RecentExam key={entry.id ?? `${entry.date}-${i}`} entry={entry} />
+        ))}
+      </ul>
+    </section>
+  )
+
+  const legal = (
+    <>
+      <p className="mt-2 text-xs leading-relaxed">
+        Site indépendant, non officiel. Informations officielles sur{' '}
+        <a
+          href={OFFICIAL_SITE_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="rounded-sm break-words underline underline-offset-4"
+        >
+          formation-civique.interieur.gouv.fr
+        </a>
+      </p>
+      <Link
+        to="/mentions-legales"
+        className="inline-flex min-h-11 items-center self-start rounded-sm text-xs underline underline-offset-4"
+      >
+        Mentions légales et confidentialité
+      </Link>
+    </>
+  )
+
   return (
     <main className="relative min-h-svh overflow-hidden bg-background text-foreground">
-      <OrganicBackground shape="journey" />
+      <OrganicBackground shape="journey" className="lg:w-[calc(50%+1.5rem)]" />
 
-      <div className="relative mx-auto flex min-h-svh w-full max-w-[30rem] flex-col gap-3 px-[22px] pt-5 pb-6">
+      <div className="relative mx-auto flex min-h-svh w-full max-w-[30rem] flex-col gap-3 px-[22px] pt-5 pb-6 md:max-w-[36rem] md:px-8 md:pt-8 md:pb-10 lg:max-w-[62rem] lg:px-10">
         <header className="flex min-h-11 items-center justify-between gap-3">
           <span className="min-w-0 text-xl font-bold">
             <BrandLogo />
@@ -124,116 +313,36 @@ export default function Home() {
           <ThemeSwitch />
         </header>
 
-        <PillLink
-          to="/titre"
-          tone="surface"
-          end={<ChevronDown strokeWidth={2.6} />}
-          className="min-h-11 self-start text-[0.9375rem]"
-        >
-          <span className="sr-only">Titre visé : </span>
-          {TARGET_TITLE_LABELS[targetTitle]}
-          <span className="sr-only"> (changer)</span>
-        </PillLink>
+        {wide ? (
+          // From 1024 px: the journey on the left (resume under the title, never face to
+          // face with step 2), « Où vous en êtes » on the right, the mentions at the bottom
+          <>
+            <div className="grid grid-cols-[minmax(0,1fr)_minmax(0,23rem)] items-start gap-x-16">
+              <div className="flex flex-col gap-3">
+                {titlePill}
+                {heading}
+                {resume}
+                {journey}
+              </div>
+              <ProgressPanel streak={streak} recentExams={recentExams} rulesLink={rulesLink} />
+            </div>
+            <footer className="mt-auto flex flex-col gap-3 pt-10">{legal}</footer>
+          </>
+        ) : (
+          <>
+            {titlePill}
+            {heading}
+            {journey}
 
-        <h1 className="mt-[1.125rem] max-w-[18.75rem] text-[2.375rem] leading-[0.98] font-bold tracking-[-0.04em] text-balance">
-          Votre chemin vers le jour J
-        </h1>
+            <div className="mt-auto flex flex-col gap-2.5 pt-8">
+              {resume}
+              {rulesLink}
+            </div>
 
-        <nav aria-label="Votre parcours" className="mt-[clamp(1.5rem,6svh,3.25rem)]">
-          <ol className="flex flex-col items-start gap-3">
-            <li className="max-w-full">
-              <PillLink to="/revision" tone="surface" end={<ArrowRight strokeWidth={2.6} />}>
-                1 · Réviser les thèmes
-              </PillLink>
-            </li>
-
-            <li className="flex w-full flex-col items-start">
-              <PillButton
-                size="lg"
-                onClick={startExam}
-                end={`${streak} sur ${READY_GOAL}`}
-                endIsText
-                // The label wraps first (9rem basis); only with enlarged text, when even
-                // that basis no longer fits, does the counter go below instead of overflowing
-                className="max-w-full flex-wrap [&>span:first-child]:grow [&>span:first-child]:basis-36"
-              >
-                2 · Réussir {READY_GOAL} examens blancs
-              </PillButton>
-            </li>
-
-            <li className="max-w-full">
-              <span className={cn(staticStepClass, 'flex-wrap bg-card text-card-foreground')}>
-                3 · Trouver un centre d'examen
-                <span className="rounded-full bg-muted px-2.5 text-[0.8125rem] leading-6 font-bold">bientôt</span>
-              </span>
-            </li>
-
-            <li className="max-w-full">
-              <span className={cn(staticStepClass, 'bg-goal text-goal-foreground')}>4 · Le jour J</span>
-            </li>
-          </ol>
-        </nav>
-
-        <div className="mt-auto flex flex-col gap-2.5 pt-8">
-          {inProgress && (
-            <section aria-label="Examen en cours" className="flex flex-col items-start gap-1">
-              <PillLink to="/examen" tone="ink" size="lg" end={<ArrowRight strokeWidth={2.6} />} className="w-full">
-                <span className="flex flex-col">
-                  <span className="text-base">Reprendre l'examen en cours</span>
-                  <span className="text-[0.8125rem] font-normal opacity-85">
-                    Question {resumeQuestion} sur {inProgress.questions.length} ·{' '}
-                    {minutesLeftLabel(inProgress.timeLeft)}
-                  </span>
-                </span>
-              </PillLink>
-              <button
-                type="button"
-                onClick={handleDeleteProgress}
-                className="min-h-11 rounded-sm px-1 text-left text-[0.875rem] underline underline-offset-4"
-              >
-                Supprimer l'examen en cours
-              </button>
-            </section>
-          )}
-
-          <Link
-            to="/regles"
-            className="inline-flex min-h-11 items-center self-start rounded-sm text-[0.9375rem] font-bold underline underline-offset-4"
-          >
-            Comment se passe l'examen ?
-          </Link>
-        </div>
-
-        {recent.length > 0 && (
-          <section aria-labelledby="recent-exams" className="mt-4 flex flex-col gap-2.5">
-            <h2 id="recent-exams" className="text-[1.0625rem] font-bold">
-              Derniers examens
-            </h2>
-            <ul className="flex flex-col gap-2">
-              {recent.map((entry, i) => (
-                <RecentExam key={entry.id ?? `${entry.date}-${i}`} entry={entry} />
-              ))}
-            </ul>
-          </section>
+            {recentExams}
+            {legal}
+          </>
         )}
-
-        <p className="mt-2 text-xs leading-relaxed">
-          Site indépendant, non officiel. Informations officielles sur{' '}
-          <a
-            href={OFFICIAL_SITE_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="rounded-sm break-words underline underline-offset-4"
-          >
-            formation-civique.interieur.gouv.fr
-          </a>
-        </p>
-        <Link
-          to="/mentions-legales"
-          className="inline-flex min-h-11 items-center self-start rounded-sm text-xs underline underline-offset-4"
-        >
-          Mentions légales et confidentialité
-        </Link>
       </div>
     </main>
   )
