@@ -1,6 +1,6 @@
 import { useEffect, useId, useRef, useState } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
-import { ArrowLeft, ExternalLink } from 'lucide-react'
+import { ArrowLeft } from 'lucide-react'
 import {
   Dialog,
   DialogContent,
@@ -18,6 +18,7 @@ import { ExamResult, type ExamOutcome } from '@/components/ExamResult'
 import { findExamRecord, loadHistory } from '@/lib/history'
 import { journeyMessage, passedInARow, UNSAVED_MESSAGE } from '@/lib/readiness'
 import { PillButton } from '@/components/PillButton'
+import { SourceLink } from '@/components/SourceLink'
 import { Verdict } from '@/components/Verdict'
 import { trackEvent, EXAM_STARTED, EXAM_FINISHED_PASSED, EXAM_FINISHED_NOT_YET } from '@/lib/analytics'
 
@@ -407,20 +408,7 @@ function ExamSession({ restarted, onRestart }: ExamSessionProps) {
             >
               <h2 id={`${questionId}-why`} className={eyebrow}>Pourquoi</h2>
               <p className="text-base leading-normal">{current.explanation}</p>
-              {current.source && (
-                <a
-                  href={current.source.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex min-h-11 items-center gap-1.5 self-start rounded-[1.375rem] bg-background px-3 py-1.5 text-sm font-bold no-underline hover:underline hover:underline-offset-4"
-                >
-                  <ExternalLink aria-hidden="true" className="size-3.5 shrink-0" strokeWidth={2.2} />
-                  <span>
-                    Source : {current.source.label}
-                    <span className="sr-only"> (nouvel onglet)</span>
-                  </span>
-                </a>
-              )}
+              <SourceLink source={current.source} />
             </section>
           </div>
         ) : (

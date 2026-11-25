@@ -210,3 +210,29 @@ describe('Revision — arrivée depuis le détail d\'un examen', () => {
     expect(pill('Tous les thèmes')).toHaveAttribute('aria-pressed', 'true')
   })
 })
+
+describe('Revision — lien source', () => {
+  const first = questions[0] as (typeof questions)[number] & { source?: { url: string; label: string } }
+
+  afterEach(() => {
+    delete first.source
+  })
+
+  it('affiche le lien source sous l\'explication d\'une question qui en a un', () => {
+    first.source = { url: 'https://www.elysee.fr/x', label: 'elysee.fr' }
+    renderRevision()
+    const links = screen.getAllByRole('link', { name: /^Source :/ })
+    expect(links).toHaveLength(1)
+    expect(links[0]).toHaveAccessibleName('Source : elysee.fr (nouvel onglet)')
+    expect(links[0]).toHaveAttribute('href', 'https://www.elysee.fr/x')
+    const card = links[0].closest('li')!
+    expect(within(card).getByRole('heading', { level: 3 })).toHaveTextContent(first.question)
+    // Under the explanation
+    expect(within(card).getByText(first.explanation).compareDocumentPosition(links[0]) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy()
+  })
+
+  it('n\'affiche aucun lien source quand aucune question n\'en a', () => {
+    renderRevision()
+    expect(screen.queryByRole('link', { name: /^Source :/ })).not.toBeInTheDocument()
+  })
+})
