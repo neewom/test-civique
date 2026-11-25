@@ -5,11 +5,15 @@ import { useLocation } from 'react-router-dom'
  * A new page starts at the top: without this, the router keeps the scroll position
  * of the previous page (e.g. the revision opened from the bottom of an exam detail).
  * Simple rule: every new pathname scrolls to the top, back navigation included.
+ * An address with an anchor (`#vos-donnees`) scrolls to that element instead, when it exists.
  */
 export function ScrollToTop() {
-  const { pathname } = useLocation()
+  const { pathname, hash } = useLocation()
   useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [pathname])
+    const id = hash ? decodeURIComponent(hash.slice(1)) : ''
+    const target = id ? document.getElementById(id) : null
+    if (target) target.scrollIntoView()
+    else window.scrollTo(0, 0)
+  }, [pathname, hash])
   return null
 }
