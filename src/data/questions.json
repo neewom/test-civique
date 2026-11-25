@@ -14,11 +14,15 @@
       "C'est le jour du couronnement de Napoléon Ier",
       "C'est la date de l'abolition de l'esclavage en 1848"
     ],
-    "explanation": "Le 14 juillet 1789, la prise de la Bastille marqua le début de la Révolution française. La loi du 6 juillet 1880 en fit la fête nationale officielle. Chaque année, un défilé militaire a lieu sur les Champs-Élysées.",
+    "explanation": "Le 14 juillet est la fête nationale depuis 1880. Elle commémore la prise de la Bastille le 14 juillet 1789, début de la Révolution française, et la fête de la Fédération du 14 juillet 1790. Un défilé militaire a lieu sur les Champs-Élysées, en présence du président de la République.",
     "answers": [
       "C'est la fête nationale, qui commémore la prise de la Bastille en 1789"
     ],
-    "group": "fete-nationale"
+    "group": "fete-nationale",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/les-symboles-de-la-republique/la-fete-nationale/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 2,
@@ -29,21 +33,25 @@
       "La fleur de lys royale",
       "L'aigle impérial napoléonien",
       "La croix de Lorraine seule",
-      "Le bonnet phrygien seul",
       "La couronne royale de France",
       "L'épée de la Justice",
       "Le soleil du Roi-Soleil",
       "Le trèfle à quatre feuilles"
     ],
-    "explanation": "Les symboles officiels de la République française sont : le drapeau tricolore bleu-blanc-rouge, la Marseillaise (hymne national), Marianne (allégorie féminine), la devise 'Liberté, Égalité, Fraternité' et le coq gaulois.",
+    "explanation": "Les symboles officiels de la République française sont le drapeau tricolore bleu, blanc, rouge, la Marseillaise (hymne national), Marianne, la fête nationale du 14 juillet et la devise « Liberté, Égalité, Fraternité ». Le coq est aussi un symbole de la République, mais il n'est pas officiel : très utilisé, il est devenu un symbole national fort.",
     "answers": [
       "Le drapeau tricolore bleu, blanc, rouge",
       "La Marseillaise",
       "Marianne",
-      "Le coq gaulois",
-      "La devise Liberté, Égalité, Fraternité"
+      "La devise Liberté, Égalité, Fraternité",
+      "La fête nationale du 14 juillet",
+      "Le coq"
     ],
-    "group": "symboles-republique"
+    "group": "symboles-republique",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/les-symboles-de-la-republique/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 3,
@@ -52,19 +60,22 @@
     "question": "Le principe d’égalité signifie que :",
     "distractors": [
       "Tous les citoyens doivent avoir le même revenu",
-      "Seuls les citoyens français ont des droits égaux",
+      "La loi s'applique différemment selon l'origine des personnes",
       "Les hommes et les femmes ont des droits différents selon leur rôle",
       "L'égalité ne s'applique qu'aux citoyens majeurs",
-      "Les étrangers n'ont pas les mêmes droits que les Français",
       "Tout le monde doit gagner le même salaire",
       "L'égalité s'applique seulement devant les tribunaux pénaux",
       "L'État garantit un logement et un revenu identiques à tous"
     ],
-    "explanation": "L'égalité signifie que tous les individus ont les mêmes droits et sont traités sans discrimination devant la loi, quelles que soient leur origine, leur sexe, leur religion ou leur situation sociale.",
+    "explanation": "L'égalité devant la loi signifie que la loi est la même pour toutes les personnes, sans distinction d'origine, de sexe, de religion ou de situation sociale. Ce principe est inscrit dans la Constitution de 1958 et dans la Déclaration des droits de l'homme et du citoyen. Il n'empêche pas de traiter différemment des personnes dans des situations différentes (par exemple, des tarifs réduits pour les étudiants).",
     "answers": [
       "Tous les individus ont les mêmes droits et sont traités de la même façon devant la loi"
     ],
-    "group": "egalite"
+    "group": "egalite",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/devise-et-symboles-de-la-republique/egalite-1/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 4,
@@ -81,11 +92,15 @@
       "Le nom du traité fondateur de l'Union européenne",
       "Le titre d'un texte de Victor Hugo sur la France"
     ],
-    "explanation": "La devise 'Liberté, Égalité, Fraternité' est la devise officielle de la République française, inscrite dans la Constitution de 1958. Elle figure sur tous les bâtiments publics, les pièces de monnaie et les timbres.",
+    "explanation": "« Liberté, Égalité, Fraternité » est la devise de la République française. Apparue pendant la Révolution, elle est officielle depuis 1848 et inscrite dans la Constitution de 1958. On la lit sur les bâtiments publics, sur certaines pièces de monnaie et certains timbres, et sur des documents officiels comme la carte d'identité.",
     "answers": [
       "La devise de la République française"
     ],
-    "group": "devise"
+    "group": "devise",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/devise-et-symboles-de-la-republique/la-devise-francaise/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 5,
@@ -102,10 +117,14 @@
       "Oui, tant que ce n'est pas répété plusieurs fois",
       "Non, sauf si c'est anonyme sur Internet"
     ],
-    "explanation": "Les insultes et propos discriminatoires fondés sur le handicap, l'apparence physique, le sexe, l'origine ou la religion sont interdits et punissables par la loi française (jusqu'à 1 an d'emprisonnement et 45 000€ d'amende).",
+    "explanation": "Injurier publiquement une personne en raison de son sexe, de son handicap, de son origine ou de sa religion est une injure discriminatoire, punie d'un an d'emprisonnement et de 45 000 € d'amende. Toute autre injure publique, par exemple sur l'apparence physique, est aussi punie par la loi (12 000 € d'amende).",
     "answers": [
       "Non, c'est une discrimination punissable par la loi"
-    ]
+    ],
+    "source": {
+      "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F32077",
+      "label": "service-public.gouv.fr"
+    }
   },
   {
     "id": 6,
@@ -122,10 +141,14 @@
       "Oui, dans certains secteurs industriels dangereux",
       "Oui, les postes de direction des grandes entreprises"
     ],
-    "explanation": "En France, l'égalité professionnelle entre hommes et femmes est garantie par la loi. Aucun métier ne peut être légalement réservé à un seul sexe. La discrimination à l'embauche est illégale et passible de sanctions pénales et civiles.",
+    "explanation": "En France, l'égalité professionnelle entre les femmes et les hommes est garantie par la loi : un employeur ne peut ni indiquer le sexe recherché dans une offre d'emploi, ni refuser une embauche en raison du sexe. Les seules exceptions concernent des emplois où le sexe est déterminant par nature (acteur jouant un rôle féminin ou masculin, mannequin, modèle). Toute discrimination à l'embauche est sanctionnée.",
     "answers": [
       "Non, l'égalité professionnelle entre hommes et femmes est garantie par la loi"
-    ]
+    ],
+    "source": {
+      "url": "https://code.travail.gouv.fr/code-du-travail/r1142-1",
+      "label": "code.travail.gouv.fr"
+    }
   },
   {
     "id": 7,
@@ -139,13 +162,16 @@
       "Du 27 octobre 1946",
       "Du 1er juin 1958",
       "Du 8 janvier 1959",
-      "Du 21 décembre 1958",
-      "Du 28 septembre 1958"
+      "Du 21 décembre 1958"
     ],
     "explanation": "La Constitution de la Ve République a été adoptée par référendum le 28 septembre 1958 et promulguée le 4 octobre 1958, sous l'impulsion du général de Gaulle. Elle est encore en vigueur aujourd'hui.",
     "answers": [
       "Du 4 octobre 1958"
-    ]
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/droits-et-devoirs/droits-fondamentaux/les-principaux-textes-la-constitution-de-la-5-republique/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 8,
@@ -162,32 +188,39 @@
       "Une monarchie absolue modernisée",
       "Un régime présidentiel pur comme aux États-Unis"
     ],
-    "explanation": "La France est une République démocratique, actuellement en Ve République depuis 1958. C'est un régime semi-présidentiel : le Président de la République a des pouvoirs importants, mais partage l'exécutif avec le Premier ministre.",
+    "explanation": "La France est une République démocratique : le pouvoir vient du peuple, qui élit ses représentants au suffrage universel. Le régime actuel est la Ve République, instaurée le 4 octobre 1958, avec un pouvoir exécutif fort.",
     "answers": [
       "Une République démocratique (la Ve République)"
     ],
-    "group": "regime-politique"
+    "group": "regime-politique",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/democratie-et-droit-de-vote/democratie-et-droit-de-vote-la-democratie-et-la-republique-1/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 9,
     "theme": "Principes et valeurs de la République",
     "notion": "devise-symboles",
-    "question": "Lequel de ces personnages est l'allégorie de la République française ?",
+    "question": "Lequel de ces symboles représente officiellement la République française ?",
     "distractors": [
+      "Le coq",
+      "La fleur de lys",
+      "L'aigle impérial",
+      "La tour Eiffel",
       "Jeanne d'Arc",
-      "Marie-Antoinette",
-      "Joséphine de Beauharnais",
-      "Liberté guidant le peuple",
-      "La Vénus de Milo",
-      "Athéna",
-      "La Semeuse",
-      "Louise Michel"
+      "La croix de Lorraine",
+      "Le lion"
     ],
-    "explanation": "Marianne est le symbole féminin et allégorique de la République française, incarnant les valeurs de Liberté, Égalité, Fraternité. Son buste figure dans toutes les mairies françaises et ses traits apparaissent sur les timbres et pièces de monnaie.",
+    "explanation": "Marianne est un symbole officiel de la République française. Apparue pendant la Révolution, elle porte le bonnet phrygien, symbole de liberté. Son buste est présent dans toutes les mairies et elle figure sur la carte d'identité, les timbres et les pièces de monnaie. Le coq, lui, est un symbole national mais non officiel.",
     "answers": [
       "Marianne"
     ],
-    "group": "marianne"
+    "group": "marianne",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/les-symboles-de-la-republique/marianne/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 10,
@@ -201,14 +234,17 @@
       "Dans les églises et les lieux de culte reconnus",
       "Seulement dans les écoles primaires publiques",
       "Uniquement sur les passeports et cartes d'identité",
-      "Sur les uniformes des forces de l'ordre uniquement",
-      "Dans les ambassades et consulats français à l'étranger"
+      "Sur les uniformes des forces de l'ordre uniquement"
     ],
-    "explanation": "La devise 'Liberté, Égalité, Fraternité' est gravée ou affichée sur les façades de tous les bâtiments publics (mairies, écoles, tribunaux…), sur les pièces de monnaie françaises en euros et sur les timbres postaux.",
+    "explanation": "La devise « Liberté, Égalité, Fraternité » est inscrite sur la façade des bâtiments publics (mairies, écoles, tribunaux…). On la trouve aussi sur les pièces françaises de 1 et 2 euros, sur certains timbres et sur des documents officiels comme la carte d'identité.",
     "answers": [
       "Sur les bâtiments publics, les pièces de monnaie et les timbres"
     ],
-    "group": "devise"
+    "group": "devise",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/devise-et-symboles-de-la-republique/la-devise-francaise/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 11,
@@ -225,11 +261,15 @@
       "L'arc de triomphe, la Tour Eiffel et la Seine",
       "Le sceau de l'État, le drapeau blanc et le coq gaulois"
     ],
-    "explanation": "Les symboles officiels de la République française inscrits dans la Constitution sont : le drapeau tricolore bleu-blanc-rouge, la Marseillaise (hymne national), Marianne (allégorie), la devise 'Liberté, Égalité, Fraternité' et le coq gaulois (symbole non constitutionnel mais traditionnel).",
+    "explanation": "L'article 2 de la Constitution cite le drapeau tricolore bleu, blanc, rouge, la Marseillaise (hymne national) et la devise « Liberté, Égalité, Fraternité ». Marianne et la fête nationale du 14 juillet sont aussi des symboles officiels. Le coq est un symbole national, mais non officiel.",
     "answers": [
       "Le drapeau tricolore, la Marseillaise, Marianne et la devise 'Liberté, Égalité, Fraternité'"
     ],
-    "group": "symboles-republique"
+    "group": "symboles-republique",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/les-symboles-de-la-republique/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 12,
@@ -241,7 +281,6 @@
       "Le partage égal des richesses nationales entre tous les citoyens",
       "L'obligation pour l'État de donner le même logement à chacun",
       "La suppression de toute différence entre les individus",
-      "Le fait que les hommes et les femmes aient des droits strictement identiques dans la famille",
       "L'obligation de traiter tout étranger comme un citoyen français",
       "La garantie que chaque enfant ira dans la même école",
       "Le fait que les élections soient organisées régulièrement"
@@ -250,7 +289,11 @@
     "answers": [
       "Le fait que tous les individus aient les mêmes droits et soient traités de façon identique par la loi"
     ],
-    "group": "egalite"
+    "group": "egalite",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/devise-et-symboles-de-la-republique/egalite-1/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 13,
@@ -267,11 +310,15 @@
       "Le droit de circuler librement hors des frontières sans passeport",
       "La possibilité de vivre en dehors des lois de la République"
     ],
-    "explanation": "La liberté, premier terme de la devise républicaine, est le droit de faire tout ce qui ne nuit pas à autrui. Comme le stipule la Déclaration des droits de l'homme de 1789, les limites de la liberté ne peuvent être déterminées que par la loi.",
+    "explanation": "En France, chaque personne peut penser, s'exprimer et vivre comme elle le souhaite, à condition de ne pas empêcher les autres d'en faire autant. Selon la Déclaration des droits de l'homme et du citoyen de 1789, la liberté consiste à faire tout ce qui ne nuit pas à autrui, et ses limites sont fixées par la loi.",
     "answers": [
       "Le droit de faire tout ce qui ne nuit pas à autrui et ne contrevient pas à la loi"
     ],
-    "group": "liberte-expression"
+    "group": "liberte-expression",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/devise-et-symboles-de-la-republique/la-liberte/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 14,
@@ -291,7 +338,11 @@
     "explanation": "La fraternité est le troisième terme de la devise républicaine. Elle désigne la solidarité et le lien entre tous les membres de la société, l'idée que nous formons une même communauté et devons nous entraider, sans distinction d'origine, de religion ou de statut social.",
     "answers": [
       "La solidarité et le lien entre tous les membres de la société"
-    ]
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/devise-et-symboles-de-la-republique/fraternite-1/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 15,
@@ -308,11 +359,15 @@
       "Le dauphin",
       "Le renard roux"
     ],
-    "explanation": "Le coq gaulois est un symbole traditionnel de la France depuis l'Antiquité, en raison du jeu de mots latin entre 'gallus' (coq) et 'Gallus' (Gaulois). Il figure sur des monnaies, des sceaux officiels et le maillot des équipes de France.",
+    "explanation": "Le coq est un symbole de la France depuis l'Antiquité : en latin, « gallus » voulait dire à la fois « coq » et « Gaulois ». Il n'est pas reconnu officiellement comme symbole de la République, mais il est devenu un symbole national fort : maillots des équipes nationales, frontons de certaines mairies, logo de la French Tech.",
     "answers": [
       "Le coq gaulois"
     ],
-    "group": "coq-gaulois"
+    "group": "coq-gaulois",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/les-symboles-de-la-republique/le-coq/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 16,
@@ -332,7 +387,11 @@
     "explanation": "Les associations (loi de 1901) permettent aux citoyens de se regrouper librement pour défendre une cause, pratiquer une activité sportive ou culturelle, ou mener des actions humanitaires. Elles jouent un rôle essentiel dans la démocratie et la vie sociale française.",
     "answers": [
       "Permettre aux citoyens de s'organiser librement pour défendre une cause ou aider autrui"
-    ]
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/devise-et-symboles-de-la-republique/fraternite-2/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 17,
@@ -353,7 +412,11 @@
     "answers": [
       "La Marseillaise"
     ],
-    "group": "marseillaise"
+    "group": "marseillaise",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/les-symboles-de-la-republique/hymne-francais/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 18,
@@ -361,20 +424,22 @@
     "notion": "devise-symboles",
     "question": "Quel symbole de la République française est tricolore ?",
     "distractors": [
-      "La cocarde présidentielle uniquement",
       "Le sceau officiel de la République",
       "Le buste de Marianne dans les mairies",
       "La tenue des gendarmes en service",
       "Le bonnet phrygien de la liberté",
       "La rosette de la Légion d'honneur",
-      "L'uniforme des hussards de la République",
-      "L'emblème du Sénat français"
+      "L'uniforme des hussards de la République"
     ],
     "explanation": "Le drapeau tricolore bleu, blanc, rouge est le symbole tricolore officiel de la République française. Né de la Révolution française, il associe les couleurs de Paris (bleu et rouge) à la couleur royale (blanc). Il est inscrit dans la Constitution.",
     "answers": [
       "Le drapeau"
     ],
-    "group": "symboles-republique"
+    "group": "symboles-republique",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/les-symboles-de-la-republique/le-drapeau-fran%C3%A7ais/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 19,
@@ -391,11 +456,15 @@
       "Le 26 août",
       "Le 1er janvier"
     ],
-    "explanation": "La fête nationale française est célébrée le 14 juillet, en commémoration de la prise de la Bastille le 14 juillet 1789, symbole du début de la Révolution française. Un défilé militaire est organisé chaque année sur les Champs-Élysées.",
+    "explanation": "La fête nationale est célébrée le 14 juillet depuis 1880. Elle commémore la prise de la Bastille (14 juillet 1789) et la fête de la Fédération (14 juillet 1790). Un défilé militaire a lieu sur les Champs-Élysées, et des bals et feux d'artifice sont organisés dans tout le pays.",
     "answers": [
       "Le 14 juillet"
     ],
-    "group": "fete-nationale"
+    "group": "fete-nationale",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/les-symboles-de-la-republique/la-fete-nationale/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 20,
@@ -412,11 +481,15 @@
       "Union, Force, Vertu",
       "Nation, Honneur, Liberté"
     ],
-    "explanation": "La devise 'Liberté, Égalité, Fraternité' est inscrite dans l'article 2 de la Constitution de 1958. Elle est affichée sur tous les bâtiments publics, les pièces de monnaie et les timbres. Elle est née de la Révolution française.",
+    "explanation": "La devise « Liberté, Égalité, Fraternité » est née pendant la Révolution française, en 1789. Elle est officielle depuis 1848 et inscrite dans la Constitution de 1958. On la lit sur les bâtiments publics (mairies, écoles, tribunaux), sur certaines pièces et certains timbres.",
     "answers": [
       "Liberté, Égalité, Fraternité"
     ],
-    "group": "devise"
+    "group": "devise",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/devise-et-symboles-de-la-republique/la-devise-francaise/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 21,
@@ -433,11 +506,15 @@
       "L'anglais",
       "Le corse"
     ],
-    "explanation": "L'article 2 de la Constitution dispose : 'La langue de la République est le français.' Il est obligatoire dans tous les actes officiels, contrats de travail et l'enseignement public.",
+    "explanation": "Le français est la seule langue officielle de la France. Depuis 1992, la Constitution dispose : « La langue de la République est le français ». Il est utilisé à l'école, dans l'administration, la justice et la vie publique. Les langues régionales (breton, corse, basque, créole…) font partie du patrimoine, mais ne sont pas officielles.",
     "answers": [
       "Le français"
     ],
-    "group": "langue-francaise"
+    "group": "langue-francaise",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/la-langue-de-la-republique/la-langue-fran%C3%A7aise/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 22,
@@ -458,7 +535,11 @@
     "answers": [
       "C'est la langue officielle de la République, obligatoire dans la vie publique"
     ],
-    "group": "langue-francaise"
+    "group": "langue-francaise",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/la-langue-de-la-republique/la-langue-fran%C3%A7aise/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 23,
@@ -479,7 +560,11 @@
     "answers": [
       "La liberté d'expression"
     ],
-    "group": "liberte-expression"
+    "group": "liberte-expression",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/laicite/le-blaspheme/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 24,
@@ -498,9 +583,13 @@
     ],
     "explanation": "La liberté d'expression est garantie en France mais elle n'est pas absolue. Elle s'arrête là où commence le délit : diffamation, injure publique, incitation à la haine raciale ou religieuse, négationnisme, menaces. Ces limitations visent à protéger la dignité et l'ordre public.",
     "answers": [
-      "La liberté d'expression est garantie mais elle a des limites : elle interdit la diffamation, l'injure et l'incitation à la haine"
+      "La liberté d'expression est garantie mais elle a des limites : la loi punit la diffamation, l'injure et l'incitation à la haine"
     ],
-    "group": "liberte-expression"
+    "group": "liberte-expression",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/laicite/le-blaspheme/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 25,
@@ -521,7 +610,11 @@
     "answers": [
       "Bleu, blanc, rouge"
     ],
-    "group": "symboles-republique"
+    "group": "symboles-republique",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/les-symboles-de-la-republique/le-drapeau-fran%C3%A7ais/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 26,
@@ -538,11 +631,15 @@
       "Un chant composé par Napoléon Bonaparte",
       "L'hymne de la Résistance française pendant la guerre"
     ],
-    "explanation": "La Marseillaise a été composée en avril 1792 par Rouget de Lisle à Strasbourg, puis adoptée comme hymne national. Elle est jouée lors des cérémonies officielles, des matchs de l'équipe de France et des commémorations nationales.",
+    "explanation": "La Marseillaise a été composée en avril 1792 par Rouget de Lisle, sous le titre « Chant de guerre pour l'armée du Rhin ». Elle est déclarée chant national le 14 juillet 1795 et devient l'hymne national en 1879. On l'entend lors des cérémonies officielles et des compétitions sportives internationales.",
     "answers": [
       "L'hymne national de la République française, composé en 1792"
     ],
-    "group": "marseillaise"
+    "group": "marseillaise",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/les-symboles-de-la-republique/hymne-francais/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 27,
@@ -559,11 +656,15 @@
       "Une parade de chars allégoriques historiques",
       "Une course de chevaux ouverte au public"
     ],
-    "explanation": "Le défilé militaire du 14 juillet sur les Champs-Élysées est une tradition républicaine depuis 1880. Il présente les différents corps de l'armée française (infanterie, cavalerie, aviation…) et se termine par le traditionnel feu d'artifice au Trocadéro le soir.",
+    "explanation": "Le défilé militaire du 14 juillet existe depuis 1880 (cette année-là, il eut lieu à Longchamp). Il descend aujourd'hui les Champs-Élysées, en présence du président de la République : l'avenue en est de nouveau le cadre depuis 1980. Le soir, des bals et des feux d'artifice ont lieu dans tout le pays.",
     "answers": [
       "Un défilé militaire"
     ],
-    "group": "fete-nationale"
+    "group": "fete-nationale",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/les-symboles-de-la-republique/la-fete-nationale/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 28,
@@ -575,7 +676,7 @@
       "La déesse romaine de la Justice",
       "La reine de France sous la Révolution française",
       "La première femme élue à l'Assemblée nationale",
-      "La muse du peintre Eugène Delacroix",
+      "La sainte patronne de la France",
       "La fondatrice de la Croix-Rouge française",
       "La femme de Napoléon Bonaparte, impératrice",
       "La première présidente du Sénat français"
@@ -584,7 +685,11 @@
     "answers": [
       "Le symbole féminin et allégorique de la République française"
     ],
-    "group": "marianne"
+    "group": "marianne",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/les-symboles-de-la-republique/marianne/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 29,
@@ -598,13 +703,16 @@
       "Oui, mais uniquement pour les religions reconnues par l'État",
       "Non, si cela contrevient aux valeurs républicaines",
       "Oui, mais il faut en informer la mairie de sa commune",
-      "Non, les mineurs ne peuvent pas changer de religion sans leurs parents",
       "Oui, mais cela doit être validé par un acte notarié"
     ],
     "explanation": "La liberté de conscience et de religion est un droit fondamental en France. Chacun est libre de croire ou de ne pas croire, de pratiquer la religion de son choix ou d'en changer à tout moment, sans contrainte ni autorisation administrative. Ce droit est garanti par la loi de 1905 et par la Constitution.",
     "answers": [
       "Oui, la liberté de conscience et de religion est garantie par la loi"
-    ]
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/laicite/la-definition-de-la-laicite-1/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 30,
@@ -624,7 +732,11 @@
     "explanation": "L'article 1er de la Constitution de 1958 dispose : 'La France est une République indivisible, laïque, démocratique et sociale.' Ces quatre adjectifs définissent le caractère fondamental de la République française.",
     "answers": [
       "Laïque"
-    ]
+    ],
+    "source": {
+      "url": "https://www.conseil-constitutionnel.fr/le-bloc-de-constitutionnalite/texte-integral-de-la-constitution-du-4-octobre-1958-en-vigueur",
+      "label": "conseil-constitutionnel.fr"
+    }
   },
   {
     "id": 31,
@@ -644,7 +756,11 @@
     "explanation": "La loi de séparation des Églises et de l'État a été votée le 9 décembre 1905. Elle est le fondement juridique de la laïcité à la française. Elle met fin au Concordat napoléonien de 1801 et garantit la liberté de conscience pour tous.",
     "answers": [
       "1905"
-    ]
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/laicite/histoire-de-la-laicite/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 32,
@@ -665,7 +781,11 @@
     "answers": [
       "De garantir la liberté de croire ou de ne pas croire, tout en maintenant la neutralité de l'État vis-à-vis de toutes les religions"
     ],
-    "group": "laicite"
+    "group": "laicite",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/laicite/la-definition-de-la-laicite-1/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 33,
@@ -673,7 +793,7 @@
     "notion": "laicite",
     "question": "Quel droit est garanti par la laïcité ?",
     "distractors": [
-      "Le droit de pratiquer sa religion dans tous les espaces publics",
+      "Le droit d'imposer sa religion aux autres",
       "Le droit d'imposer ses croyances à ses enfants à l'école",
       "Le droit de refuser de travailler les jours de fête religieuse",
       "Le droit de ne pas être jugé par un tribunal civil",
@@ -686,7 +806,11 @@
     "answers": [
       "La liberté de conscience : le droit de croire ou de ne pas croire"
     ],
-    "group": "laicite"
+    "group": "laicite",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/laicite/la-definition-de-la-laicite-1/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 34,
@@ -706,7 +830,11 @@
     "explanation": "La laïcité à l'école garantit un espace neutre, égal et bienveillant pour tous les élèves, quelles que soient leurs convictions religieuses ou philosophiques. Elle permet à chacun d'apprendre dans un environnement commun, respectueux des différences.",
     "answers": [
       "Pour garantir un espace neutre et égal pour tous les élèves, quelles que soient leurs croyances"
-    ]
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/laicite/la-laicite-a-ecole-1/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 35,
@@ -727,7 +855,11 @@
     "answers": [
       "La séparation des Églises et de l'État, garantissant la liberté de conscience pour tous"
     ],
-    "group": "laicite"
+    "group": "laicite",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/laicite/la-definition-de-la-laicite-1/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 36,
@@ -736,18 +868,20 @@
     "question": "Un enfant peut-il refuser d’aller à l’école pour une raison religieuse ?",
     "distractors": [
       "Oui, si ses parents le justifient par écrit auprès de la direction",
-      "Oui, pour toutes les fêtes religieuses de sa confession",
       "Oui, à condition d'être suivi par un précepteur privé agréé",
       "Oui, pendant les grandes périodes religieuses (ramadan, Pâques…)",
       "Oui, si l'école ne propose pas de menu alimentaire adapté",
       "Oui, si le chef de la communauté religieuse l'autorise",
-      "Oui, si la famille pratique une religion officiellement reconnue",
-      "Non, sauf autorisation exceptionnelle de l'inspecteur d'académie"
+      "Oui, si la famille pratique une religion officiellement reconnue"
     ],
-    "explanation": "La scolarisation est obligatoire de 3 à 16 ans pour tous les enfants résidant en France, sans exception religieuse. La laïcité garantit une école neutre et ouverte à tous. Les convictions religieuses ne peuvent pas justifier une absence scolaire prolongée.",
+    "explanation": "L'instruction est obligatoire de 3 à 16 ans pour tous les enfants qui vivent en France, sans exception religieuse. Les convictions religieuses ne permettent ni de refuser l'école ni de refuser une matière : seules des autorisations d'absence ponctuelles peuvent être accordées pour les grandes fêtes religieuses.",
     "answers": [
-      "Non, la scolarisation est obligatoire de 3 à 16 ans quelles que soient les convictions religieuses"
-    ]
+      "Non, l'instruction est obligatoire de 3 à 16 ans, quelles que soient les convictions religieuses"
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/laicite/la-laicite-a-ecole-1/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 37,
@@ -767,7 +901,11 @@
     "explanation": "La liberté de conscience garantie par la laïcité inclut le droit d'être athée ou agnostique. L'État ne peut ni obliger quelqu'un à croire, ni le discriminer en raison de son absence de croyance religieuse. L'article 10 de la Déclaration de 1789 protège ce droit.",
     "answers": [
       "Oui, la liberté de conscience inclut le droit d'être athée ou agnostique"
-    ]
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/laicite/definition-laicite-2/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 38,
@@ -4441,7 +4579,11 @@
     "explanation": "Le principe d'égalité entre les femmes et les hommes est garanti par la Constitution. Toute discrimination fondée sur le sexe en matière de conditions de travail est illégale et peut être sanctionnée.",
     "answers": [
       "Une discrimination fondée sur le sexe, interdite par la loi"
-    ]
+    ],
+    "source": {
+      "url": "https://code.travail.gouv.fr/code-du-travail/l1132-1",
+      "label": "code.travail.gouv.fr"
+    }
   },
   {
     "id": 228,
@@ -4453,10 +4595,14 @@
       "Vrai, mais uniquement dans le secteur privé",
       "Cela dépend du secteur d'activité et des accords de branche"
     ],
-    "explanation": "Le principe d'égalité professionnelle entre femmes et hommes interdit toute réservation d'un métier à un seul sexe. Quelques rares postes liés à des contraintes physiologiques très spécifiques ont des règles particulières, mais le principe général est l'égalité d'accès.",
+    "explanation": "Le Code du travail interdit de réserver un emploi à un sexe, dans l'offre d'emploi comme à l'embauche. Les seules exceptions sont des emplois où le sexe est déterminant par nature : acteur qui joue un rôle féminin ou masculin, mannequin, modèle.",
     "answers": [
-      "Faux, aucun métier ne peut légalement être réservé aux hommes"
-    ]
+      "Faux, les métiers sont ouverts aux femmes comme aux hommes"
+    ],
+    "source": {
+      "url": "https://code.travail.gouv.fr/code-du-travail/r1142-1",
+      "label": "code.travail.gouv.fr"
+    }
   },
   {
     "id": 229,
@@ -4468,10 +4614,14 @@
       "Oui, si les parents d'élèves ne s'y opposent pas",
       "Cela dépend de la religion concernée"
     ],
-    "explanation": "La laïcité impose aux agents du service public une stricte neutralité religieuse. Un enseignant de l'école publique ne peut pas porter de signe religieux ostensible dans l'exercice de ses fonctions. Cette règle ne s'applique pas aux élèves (avec certaines limites).",
+    "explanation": "La laïcité impose aux agents du service public une stricte neutralité : un enseignant de l'école publique ne peut porter aucun signe religieux dans l'exercice de ses fonctions, même discret. Les élèves ne sont pas tenus à cette neutralité, mais la loi du 15 mars 2004 leur interdit les signes religieux ostensibles dans les écoles, collèges et lycées publics.",
     "answers": [
       "Non, les agents du service public sont soumis au principe de neutralité religieuse"
-    ]
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/laicite/la-laicite-au-travail/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 230,
@@ -4483,10 +4633,14 @@
       "Oui, si la religion de l'élève est reconnue par l'État",
       "Cela dépend du directeur de l'établissement"
     ],
-    "explanation": "L'école publique est laïque et ses programmes s'appliquent à tous. Les parents ne peuvent pas exclure leur enfant de certains cours au motif de convictions religieuses. L'instruction à domicile reste une alternative légale.",
+    "explanation": "L'école publique est laïque et ses programmes s'imposent à tous : les convictions religieuses ne permettent pas de refuser une matière inscrite à l'emploi du temps. L'instruction en famille n'est possible que sur autorisation, pour des motifs limités fixés par la loi (santé, handicap, activité sportive ou artistique intensive, itinérance, éloignement, situation propre à l'enfant).",
     "answers": [
       "Non, les programmes scolaires s'imposent à tous les élèves quelles que soient leurs convictions"
-    ]
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/laicite/la-laicite-a-ecole-1/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 231,
@@ -4501,7 +4655,11 @@
     "explanation": "La liberté d'expression a des limites fixées par la loi. Les propos incitant à la haine, à la discrimination ou à la violence envers une personne ou un groupe en raison de sa religion, son origine, son sexe ou son orientation sexuelle constituent un délit.",
     "answers": [
       "Non, les propos incitant à la haine religieuse sont un délit pénal"
-    ]
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/laicite/le-blaspheme/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 232,
@@ -4510,13 +4668,17 @@
     "question": "Votre enfant souhaite changer de religion. Quel est son droit en France ?",
     "distractors": [
       "Il doit attendre sa majorité (18 ans) pour en avoir le droit",
-      "Il a besoin de l'accord de ses parents jusqu'à 16 ans",
+      "Un seul de ses parents peut décider de sa religion, sans l'autre",
       "Ce droit n'existe pas, la religion est déterminée par la famille"
     ],
-    "explanation": "La liberté de conscience et de religion est un droit fondamental garanti par la Constitution française et par la Convention européenne des droits de l'homme. Toute personne est libre de croire ou de ne pas croire, et de changer de religion.",
+    "explanation": "La liberté de conscience et de religion est garantie à toute personne, enfants compris. Tant que l'enfant est mineur, son éducation religieuse est un acte important de l'autorité parentale : elle demande l'accord de ses deux parents, qui doivent l'associer aux décisions selon son âge et sa maturité.",
     "answers": [
-      "Toute personne est libre de choisir ou de changer de religion, c'est garanti par la liberté de conscience"
-    ]
+      "Il est libre de sa religion, mais ses deux parents décident de son éducation en tenant compte de son avis"
+    ],
+    "source": {
+      "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F3132",
+      "label": "service-public.gouv.fr"
+    }
   },
   {
     "id": 233,
@@ -4531,7 +4693,11 @@
     "explanation": "Le principe d'égalité interdit toute discrimination fondée sur l'origine ethnique, y compris dans la sélection de candidats politiques. En France, les partis politiques doivent respecter le cadre légal anti-discrimination.",
     "answers": [
       "Non, cela violerait le principe d'égalité et les lois contre la discrimination"
-    ]
+    ],
+    "source": {
+      "url": "https://www.conseil-constitutionnel.fr/le-bloc-de-constitutionnalite/texte-integral-de-la-constitution-du-4-octobre-1958-en-vigueur",
+      "label": "conseil-constitutionnel.fr"
+    }
   },
   {
     "id": 234,
@@ -4546,22 +4712,30 @@
     "explanation": "Selon l'article 1er de la Constitution, « La France est une République indivisible ». Contrairement aux États fédéraux (comme l'Allemagne ou les États-Unis), les régions françaises n'ont pas de pouvoir législatif propre.",
     "answers": [
       "Non, la France est une République indivisible et unitaire, non fédérale"
-    ]
+    ],
+    "source": {
+      "url": "https://www.conseil-constitutionnel.fr/le-bloc-de-constitutionnalite/texte-integral-de-la-constitution-du-4-octobre-1958-en-vigueur",
+      "label": "conseil-constitutionnel.fr"
+    }
   },
   {
     "id": 235,
     "theme": "Principes et valeurs de la République",
     "notion": "mise-en-situation",
-    "question": "Votre employeur vous impose de parler une autre langue que le français au travail avec vos collègues français. Est-ce légal ?",
+    "question": "Votre employeur vous remet un contrat de travail et un règlement intérieur rédigés uniquement en anglais. Est-ce légal ?",
     "distractors": [
-      "Oui, l'employeur est libre de fixer les règles linguistiques",
-      "Oui, si l'entreprise est multinationale",
-      "Cela dépend du contrat de travail signé"
+      "Oui, l'employeur est libre de choisir la langue de ses documents",
+      "Oui, si l'entreprise est une multinationale",
+      "Cela dépend de ce que prévoit le contrat de travail"
     ],
-    "explanation": "La loi Toubon impose l'usage du français dans les entreprises françaises pour les documents et communications destinés aux salariés. Le français est la langue officielle de la République selon l'article 2 de la Constitution.",
+    "explanation": "La loi Toubon de 1994 et le Code du travail imposent le français pour le contrat de travail, le règlement intérieur et tout document qui comporte des obligations pour le salarié ; une traduction peut y être jointe. En revanche, la loi ne règle pas la langue parlée entre collègues.",
     "answers": [
-      "Non, le français est la langue de travail obligatoire en France pour les communications internes"
-    ]
+      "Non, ces documents doivent être rédigés en français"
+    ],
+    "source": {
+      "url": "https://www.culture.gouv.fr/thematiques/langue-francaise-et-langues-de-france/agir-pour-les-langues/garantir-l-emploi-du-francais",
+      "label": "culture.gouv.fr"
+    }
   },
   {
     "id": 236,
@@ -4573,10 +4747,14 @@
       "Il faut au minimum 5 membres fondateurs",
       "Une seule personne peut créer une association"
     ],
-    "explanation": "La loi du 1er juillet 1901 permet à toute personne de s'associer librement. Il suffit de deux personnes pour créer une association, qui doit ensuite être déclarée en préfecture pour avoir la personnalité morale.",
+    "explanation": "La loi de 1901 sur la liberté d'association permet à chacun, français ou étranger, de s'associer librement. Il suffit de réunir au moins deux personnes, de choisir un objectif non lucratif, de rédiger les statuts et de déclarer l'association à la préfecture ou sur internet.",
     "answers": [
       "Deux personnes suffisent pour créer une association loi 1901"
-    ]
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/devise-et-symboles-de-la-republique/fraternite-2/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 237,
@@ -4591,7 +4769,11 @@
     "explanation": "Les associations et les conseils de quartier sont des outils de démocratie participative locale. Ils permettent aux citoyens de s'impliquer dans la vie de leur commune et de dialoguer avec les élus.",
     "answers": [
       "Créer une association de quartier ou participer au conseil de quartier de la mairie"
-    ]
+    ],
+    "source": {
+      "url": "https://www.collectivites-locales.gouv.fr/institutions/les-conseils-de-quartier",
+      "label": "collectivites-locales.gouv.fr"
+    }
   },
   {
     "id": 238,
@@ -4606,7 +4788,11 @@
     "explanation": "L'achat de votes est un délit électoral grave. L'accepter est également punissable. Les citoyens peuvent signaler ces faits au procureur de la République. Le vote doit rester libre et indépendant de toute pression ou avantage matériel.",
     "answers": [
       "Refuser et signaler les faits aux autorités, c'est un achat de vote illégal"
-    ]
+    ],
+    "source": {
+      "url": "https://presidentielle2017.conseil-constitutionnel.fr/tout-savoir/en-resume/textes-de-reference/dispositions-code-electoral-rendues-applicables/dispositions-penales-partie-legislative-vigueur/index.html",
+      "label": "conseil-constitutionnel.fr (Code électoral)"
+    }
   },
   {
     "id": 239,
@@ -4616,12 +4802,16 @@
     "distractors": [
       "Non, seuls les bâtiments officiels ont le droit d'afficher le drapeau national",
       "Oui, mais uniquement les jours fériés officiels et avec autorisation municipale",
-      "Cela dépend du règlement de copropriété uniquement"
+      "Non, il faut une autorisation de la mairie"
     ],
-    "explanation": "Tout citoyen est libre d'afficher le drapeau français, symbole de la République. Le règlement de copropriété peut imposer certaines restrictions esthétiques, mais il n'existe aucune interdiction légale d'arborer le drapeau tricolore.",
+    "explanation": "Tout citoyen est libre d'afficher le drapeau français, symbole de la République, à son balcon ou à sa fenêtre : aucune règle nationale ne l'interdit. Il est en revanche interdit de faire outrage au drapeau.",
     "answers": [
       "Oui, tout citoyen peut librement arborer le drapeau français"
-    ]
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/les-symboles-de-la-republique/le-drapeau-fran%C3%A7ais/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 240,
@@ -4636,7 +4826,11 @@
     "explanation": "Les séances du conseil municipal sont publiques par principe. Tout habitant peut y assister en tant qu'observateur. Certaines séances peuvent être tenues à huis clos pour des raisons exceptionnelles définies par la loi.",
     "answers": [
       "Oui, les séances du conseil municipal sont publiques et ouvertes à tous les habitants"
-    ]
+    ],
+    "source": {
+      "url": "https://www.collectivites-locales.gouv.fr/institutions/le-conseil-municipal",
+      "label": "collectivites-locales.gouv.fr"
+    }
   },
   {
     "id": 241,
@@ -5326,7 +5520,11 @@
     "explanation": "Toute personne a le droit d'accéder aux documents administratifs la concernant. En cas de refus, la CADA peut être saisie gratuitement. Elle émet un avis sur la communicabilité du document, et en cas de maintien du refus, le tribunal administratif peut être saisi.",
     "answers": [
       "Oui, vous pouvez saisir la CADA (Commission d'accès aux documents administratifs)"
-    ]
+    ],
+    "source": {
+      "url": "https://www.cada.fr/particulier/quand-et-comment-saisir-la-cada",
+      "label": "cada.fr"
+    }
   },
   {
     "id": 287,
@@ -5341,7 +5539,11 @@
     "explanation": "Les questions relatives aux opinions politiques, religieuses ou syndicales sont interdites lors d'un entretien d'embauche car elles relèvent de la vie privée et pourraient conduire à des discriminations. L'employeur ne peut poser que des questions en lien direct avec le poste.",
     "answers": [
       "Non, les opinions politiques font partie de la vie privée et ne peuvent pas être demandées à l'embauche"
-    ]
+    ],
+    "source": {
+      "url": "https://code.travail.gouv.fr/code-du-travail/l1221-6",
+      "label": "code.travail.gouv.fr"
+    }
   },
   {
     "id": 288,

@@ -216,11 +216,18 @@ describe('ExamenDetail — revoir ses erreurs', () => {
 })
 
 describe('ExamenDetail — lien source', () => {
-  const first = (allQuestions as { id: number; explanation: string; source?: { url: string; label: string } }[])[0]
+  const all = allQuestions as { id: number; explanation: string; source?: { url: string; label: string } }[]
+  const first = all[0]
+  // Real sources are set aside so each test controls which question has one.
+  const realSources = new Map(all.filter((q) => q.source).map((q) => [q, q.source]))
 
-  beforeEach(() => localStorage.clear())
+  beforeEach(() => {
+    localStorage.clear()
+    realSources.forEach((_, q) => delete q.source)
+  })
   afterEach(() => {
     delete first.source
+    realSources.forEach((source, q) => { q.source = source })
   })
 
   it('affiche le lien source sous l\'explication d\'une question qui en a un', () => {
