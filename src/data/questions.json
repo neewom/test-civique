@@ -925,7 +925,11 @@
     "explanation": "C'est le Président de la République qui nomme le Premier ministre (article 8 de la Constitution de 1958). Le Premier ministre est généralement issu de la majorité à l'Assemblée nationale et dirige ensuite l'action du gouvernement.",
     "answers": [
       "Le Président de la République"
-    ]
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/etat-de-droit-et-separation-des-pouvoirs/etat-de-droit-et-separation-des-pouvoirs-presentation-des-3-pouvoirs-1/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 39,
@@ -945,7 +949,12 @@
     "explanation": "Le Parlement français est composé de deux chambres : l'Assemblée nationale (577 députés, élus pour 5 ans au suffrage universel direct) et le Sénat (348 sénateurs, élus pour 6 ans au suffrage indirect). Ensemble, ils votent les lois et contrôlent le gouvernement.",
     "answers": [
       "De l'Assemblée nationale (577 députés) et du Sénat (348 sénateurs)"
-    ]
+    ],
+    "group": "composition-assemblee",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/etat-de-droit-et-separation-des-pouvoirs/etat-de-droit-et-separation-des-pouvoirs-presentation-des-3-pouvoirs-1/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 40,
@@ -966,7 +975,11 @@
     "answers": [
       "Le pouvoir de gouverner et d'appliquer les lois, exercé par le Président et le gouvernement"
     ],
-    "group": "pouvoir-executif"
+    "group": "pouvoir-executif",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/etat-de-droit-et-separation-des-pouvoirs/etat-de-droit-et-separation-des-pouvoirs-presentation-des-3-pouvoirs-1/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 41,
@@ -974,19 +987,22 @@
     "notion": "democratie-vote",
     "question": "Les dirigeants sont élus par les citoyens dans :",
     "distractors": [
-      "Une monarchie constitutionnelle",
       "Une théocratie",
       "Une oligarchie",
       "Une technocratie",
       "Une dictature éclairée",
       "Un régime autoritaire pluraliste",
       "Une ploutocratie",
-      "Une aristocratie élective"
+      "Une monarchie absolue"
     ],
     "explanation": "Dans une démocratie représentative comme la France, les citoyens élisent des représentants (Président, députés, sénateurs, maires…) qui gouvernent en leur nom. C'est le principe du suffrage universel : chaque citoyen a le droit de vote.",
     "answers": [
       "Une démocratie représentative"
-    ]
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/democratie-et-droit-de-vote/democratie-et-droit-de-vote-la-democratie-et-la-republique-1/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 42,
@@ -1006,7 +1022,11 @@
     "explanation": "Non, la loi s'applique à tous sans exception, qu'on soit citoyen français ou étranger, riche ou pauvre, croyant ou athée. Nul n'est censé ignorer la loi. Ne pas respecter la loi expose à des sanctions pénales ou civiles.",
     "answers": [
       "Non, la loi s'applique à tous et doit être respectée par chacun"
-    ]
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/etat-de-droit-et-separation-des-pouvoirs/etat-de-droit-et-separation-des-pouvoirs--presentation-de-letat-de-droit-et-principe-de-la-separation-des-pouvoirs/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 43,
@@ -1023,10 +1043,14 @@
       "Les personnes qui ont prêté serment devant un tribunal",
       "Uniquement ceux qui ont signé le contrat d'intégration républicaine"
     ],
-    "explanation": "La loi s'applique à tous sans exception : citoyens français, étrangers résidant en France, élus locaux, ministres, et même le Président de la République (sauf immunité provisoire pour les actes liés à sa fonction). Personne n'est au-dessus des lois.",
+    "explanation": "La loi s'applique à tous sans exception : citoyens français, étrangers résidant en France, élus locaux, ministres, et même le Président de la République. Personne n'est au-dessus des lois : c'est le principe de l'État de droit.",
     "answers": [
       "Tout le monde, sans exception : citoyens, étrangers, élus et gouvernants"
-    ]
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/etat-de-droit-et-separation-des-pouvoirs/etat-de-droit-et-separation-des-pouvoirs--presentation-de-letat-de-droit-et-principe-de-la-separation-des-pouvoirs/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 44,
@@ -1045,8 +1069,12 @@
     ],
     "explanation": "L'autorité judiciaire est le troisième pouvoir de l'État (après l'exécutif et le législatif). Elle a pour rôle de rendre la justice, de juger les affaires civiles et pénales, et de protéger les droits et libertés individuelles des citoyens.",
     "answers": [
-      "Rendre la justice, juger les affaires civiles et pénales, et protéger les libertés individuelles"
-    ]
+      "Rendre la justice : juger les litiges et sanctionner les infractions"
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/etat-de-droit-et-separation-des-pouvoirs/etat-de-droit-et-separation-des-pouvoirs-presentation-des-3-pouvoirs-1/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 45,
@@ -1066,7 +1094,11 @@
     "explanation": "Un juge détient le pouvoir judiciaire : il a le pouvoir de juger les affaires qui lui sont soumises, de condamner ceux qui ont commis des infractions ou d'acquitter les personnes innocentes. Il est indépendant du pouvoir politique, ce qui garantit l'impartialité de la justice.",
     "answers": [
       "Le pouvoir judiciaire : juger, condamner ou acquitter"
-    ]
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/etat-de-droit-et-separation-des-pouvoirs/etat-de-droit-et-separation-des-pouvoirs-presentation-des-3-pouvoirs-1/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 46,
@@ -1079,14 +1111,17 @@
       "La police et la gendarmerie nationale",
       "Le Premier ministre en conseil des ministres",
       "Le Parlement en session extraordinaire",
-      "Le Conseil constitutionnel et le Conseil d'État",
       "Les préfets dans chaque département",
       "Les maires dans chaque commune"
     ],
     "explanation": "L'autorité judiciaire est exercée par les juges et les tribunaux, qui sont indépendants du pouvoir exécutif et législatif. Cette indépendance est garantie par la Constitution et par le Conseil supérieur de la magistrature (CSM) qui veille à l'impartialité de la justice.",
     "answers": [
       "Les tribunaux et les juges, indépendants du pouvoir politique"
-    ]
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/etat-de-droit-et-separation-des-pouvoirs/etat-de-droit-et-separation-des-pouvoirs-presentation-des-3-pouvoirs-1/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 47,
@@ -1099,14 +1134,17 @@
       "Il est jugé uniquement par ses collègues parlementaires",
       "Il est automatiquement amnistié à la fin de son mandat",
       "Il ne peut pas être poursuivi pendant 5 ans après ses fonctions",
-      "Il est jugé par un tribunal spécial réservé aux élus",
       "Il est seulement soumis à une sanction administrative interne",
       "Il bénéficie d'une immunité à vie pour ses actes ministériels"
     ],
-    "explanation": "Nul n'est au-dessus des lois en France, y compris les membres du gouvernement. Un ministre qui commet une infraction peut être poursuivi pénalement. La Cour de Justice de la République (CJR) juge les membres du gouvernement pour les crimes et délits commis dans l'exercice de leurs fonctions.",
+    "explanation": "Nul n'est au-dessus des lois en France, y compris les membres du gouvernement : un ministre qui commet une infraction peut être poursuivi et jugé. Pour les crimes et délits commis dans l'exercice de ses fonctions, il est jugé par la Cour de justice de la République ; pour les autres, par les tribunaux ordinaires, comme tout citoyen.",
     "answers": [
       "Il est jugé comme tout citoyen, personne n'est au-dessus des lois"
-    ]
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/etat-de-droit-et-separation-des-pouvoirs/etat-de-droit-et-separation-des-pouvoirs--presentation-de-letat-de-droit-et-principe-de-la-separation-des-pouvoirs/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 48,
@@ -1121,12 +1159,17 @@
       "Les conseillers départementaux",
       "Les députés européens",
       "Les préfets de département",
-      "Les membres du Conseil économique et social"
+      "Les membres du Conseil économique, social et environnemental"
     ],
-    "explanation": "Lors des élections législatives, les citoyens élisent les 577 députés de l'Assemblée nationale, au suffrage universel direct pour 5 ans. Ces élections ont lieu tous les 5 ans, généralement peu après l'élection présidentielle.",
+    "explanation": "Lors des élections législatives, les citoyens élisent les 577 députés de l'Assemblée nationale, au suffrage universel direct, pour 5 ans. Ces élections ont lieu tous les 5 ans, sauf si le Président de la République dissout l'Assemblée nationale avant la fin du mandat.",
     "answers": [
       "Les députés de l'Assemblée nationale"
-    ]
+    ],
+    "group": "legislatives",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/democratie-et-droit-de-vote/democratie-et-droit-de-vote-les-conditions-pour-voter-en-france-2/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 49,
@@ -1137,16 +1180,21 @@
       "500 députés",
       "555 députés",
       "600 députés",
-      "348 sénateurs",
-      "450 représentants",
-      "630 élus",
-      "289 membres",
-      "700 parlementaires"
+      "348 députés",
+      "450 députés",
+      "630 députés",
+      "289 députés",
+      "700 députés"
     ],
     "explanation": "L'Assemblée nationale est composée de 577 députés, élus pour 5 ans au suffrage universel direct dans 577 circonscriptions. Ils votent les lois, contrôlent le gouvernement et votent le budget de l'État.",
     "answers": [
       "577 députés"
-    ]
+    ],
+    "group": "composition-assemblee",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/etat-de-droit-et-separation-des-pouvoirs/etat-de-droit-et-separation-des-pouvoirs-presentation-des-3-pouvoirs-1/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 50,
@@ -1166,7 +1214,12 @@
     "explanation": "Le Sénat est renouvelé par moitié tous les 3 ans, ce qui signifie qu'une élection sénatoriale a lieu tous les 3 ans. Les sénateurs sont élus pour 6 ans au total, au suffrage indirect par des grands électeurs (maires, conseillers, députés).",
     "answers": [
       "Tous les 3 ans (par moitié), au suffrage indirect"
-    ]
+    ],
+    "group": "senateurs",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/democratie-et-droit-de-vote/democratie-et-droit-de-vote-les-conditions-pour-voter-en-france-2/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 51,
@@ -1186,7 +1239,11 @@
     "explanation": "Lors des élections municipales, les citoyens élisent les conseillers municipaux au suffrage universel direct. Le conseil municipal élit ensuite parmi ses membres le maire et ses adjoints. Ces élections ont lieu tous les 6 ans.",
     "answers": [
       "Les conseillers municipaux, qui élisent ensuite le maire"
-    ]
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/democratie-et-droit-de-vote/democratie-et-droit-de-vote-les-conditions-pour-voter-en-france-2/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 52,
@@ -1207,7 +1264,11 @@
     "answers": [
       "Le Président de la République, pour un mandat de 5 ans"
     ],
-    "group": "president"
+    "group": "president",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/democratie-et-droit-de-vote/democratie-et-droit-de-vote-la-democratie-et-la-republique-2/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 53,
@@ -1220,13 +1281,17 @@
       "20 ans",
       "21 ans",
       "19 ans",
-      "12 ans"
+      "25 ans"
     ],
-    "explanation": "En France, le droit de vote est accordé à tout citoyen français à partir de 18 ans, à condition d'être inscrit sur les listes électorales. Depuis 2016, l'inscription est automatique pour les jeunes atteignant 18 ans.",
+    "explanation": "En France, le droit de vote est accordé à tout citoyen français à partir de 18 ans, à condition d'être inscrit sur les listes électorales. Un jeune qui a fait son recensement citoyen à 16 ans est inscrit automatiquement sur la liste électorale à 18 ans.",
     "answers": [
       "18 ans"
     ],
-    "group": "vote-conditions"
+    "group": "vote-conditions",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/democratie-et-droit-de-vote/democratie-et-droit-de-vote-les-conditions-pour-voter-en-france-1/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 54,
@@ -1237,17 +1302,19 @@
       "4 ans",
       "6 ans",
       "7 ans (septennat)",
-      "3 ans renouvelable deux fois",
-      "8 ans non renouvelable",
-      "5 ans non renouvelable",
-      "6 ans renouvelable une fois",
-      "10 ans non renouvelable"
+      "3 ans",
+      "8 ans",
+      "10 ans"
     ],
     "explanation": "Depuis la réforme constitutionnelle de 2000, le Président est élu pour 5 ans (quinquennat). Avant cette réforme, le mandat était de 7 ans (septennat). Un même président ne peut pas effectuer plus de deux mandats consécutifs.",
     "answers": [
-      "5 ans (quinquennat), renouvelable une fois"
+      "5 ans (quinquennat)"
     ],
-    "group": "president"
+    "group": "president",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/democratie-et-droit-de-vote/democratie-et-droit-de-vote-la-democratie-et-la-republique-2/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 55,
@@ -1260,14 +1327,17 @@
       "6 ans",
       "7 ans",
       "2 ans renouvelables",
-      "5 ans non renouvelables",
       "4 ans renouvelables deux fois",
       "6 ans renouvelables une fois"
     ],
     "explanation": "Les 577 députés de l'Assemblée nationale sont élus pour 5 ans au suffrage universel direct. L'Assemblée nationale peut être dissoute par le Président de la République avant la fin du mandat, ce qui entraîne de nouvelles élections législatives.",
     "answers": [
       "5 ans"
-    ]
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/democratie-et-droit-de-vote/democratie-et-droit-de-vote-la-democratie-et-la-republique-2/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 56,
@@ -1287,7 +1357,12 @@
     "explanation": "Les sénateurs sont élus pour 6 ans, et le Sénat est renouvelé par moitié tous les 3 ans. Contrairement aux députés, ils sont élus au suffrage indirect par des grands électeurs (maires, conseillers, députés).",
     "answers": [
       "6 ans (renouvelés par moitié tous les 3 ans)"
-    ]
+    ],
+    "group": "senateurs",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/democratie-et-droit-de-vote/democratie-et-droit-de-vote-la-democratie-et-la-republique-2/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 57,
@@ -1302,13 +1377,17 @@
       "Les préfets dans chaque département",
       "Le Conseil économique, social et environnemental",
       "La Cour de cassation et le Conseil d'État",
-      "Le Haut Conseil de la magistrature"
+      "Le Conseil supérieur de la magistrature"
     ],
     "explanation": "En France, le pouvoir exécutif est partagé entre le Président de la République (qui définit les grandes orientations politiques) et le gouvernement dirigé par le Premier ministre (qui conduit au quotidien la politique de la nation).",
     "answers": [
       "Le Président de la République et le gouvernement (Premier ministre et ministres)"
     ],
-    "group": "pouvoir-executif"
+    "group": "pouvoir-executif",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/etat-de-droit-et-separation-des-pouvoirs/etat-de-droit-et-separation-des-pouvoirs-presentation-des-3-pouvoirs-1/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 58,
@@ -1325,11 +1404,15 @@
       "Avoir effectué son service national ou une journée citoyenne",
       "Être résident depuis plus de 2 ans en France"
     ],
-    "explanation": "Pour voter en France, il faut : être de nationalité française, avoir au moins 18 ans, et être inscrit sur les listes électorales. Depuis 2016, les jeunes sont automatiquement inscrits à leurs 18 ans. Certaines condamnations pénales peuvent entraîner la privation du droit de vote.",
+    "explanation": "Pour voter en France, il faut : être de nationalité française, avoir au moins 18 ans, et être inscrit sur les listes électorales. Un jeune qui a fait son recensement citoyen à 16 ans est inscrit automatiquement à 18 ans. Certaines condamnations pénales peuvent entraîner la privation du droit de vote.",
     "answers": [
       "Être citoyen français majeur (18 ans) et être inscrit sur les listes électorales"
     ],
-    "group": "vote-conditions"
+    "group": "vote-conditions",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/democratie-et-droit-de-vote/democratie-et-droit-de-vote-les-conditions-pour-voter-en-france-1/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 59,
@@ -1350,7 +1433,11 @@
     "answers": [
       "Tout citoyen français de 18 ans et plus, inscrit sur les listes électorales"
     ],
-    "group": "vote-conditions"
+    "group": "vote-conditions",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/democratie-et-droit-de-vote/democratie-et-droit-de-vote-les-conditions-pour-voter-en-france-1/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 60,
@@ -1370,7 +1457,11 @@
     "explanation": "Le suffrage universel signifie que tous les citoyens majeurs ont le droit de vote, sans condition de fortune, de sexe, de naissance ou de diplôme. En France, le suffrage universel masculin date de 1848, et les femmes ont obtenu le droit de vote en 1944.",
     "answers": [
       "Que tous les citoyens majeurs ont le droit de vote, sans condition de fortune ou de naissance"
-    ]
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/democratie-et-droit-de-vote/democratie-et-droit-de-vote-les-conditions-pour-voter-en-france-1/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 61,
@@ -1380,7 +1471,6 @@
     "distractors": [
       "Il n'existe qu'un seul parti politique autorisé en France",
       "Les partis politiques sont financés uniquement par des dons privés",
-      "L'État interdit les partis politiques extrémistes",
       "Les partis politiques doivent être approuvés par le gouvernement",
       "Il faut être membre d'un parti pour se présenter aux élections",
       "Les partis politiques sont contrôlés par le Conseil constitutionnel",
@@ -1390,7 +1480,11 @@
     "explanation": "En France, les partis politiques se constituent et s'organisent librement (article 4 de la Constitution). Ils concourent à l'expression du suffrage. Ils sont partiellement financés par l'État selon leurs résultats électoraux et dans le respect des principes démocratiques.",
     "answers": [
       "Les partis politiques se forment librement et contribuent à l'expression du suffrage"
-    ]
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/democratie-et-droit-de-vote/democratie-et-droit-de-vote-le-principe-de-pluralite-des-partis/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 62,
@@ -1410,7 +1504,11 @@
     "explanation": "Les 577 députés de l'Assemblée nationale ont trois rôles principaux : voter les lois (pouvoir législatif), voter le budget de l'État, et contrôler l'action du gouvernement (questions au gouvernement, commissions d'enquête, motion de censure).",
     "answers": [
       "Voter les lois, voter le budget et contrôler l'action du gouvernement"
-    ]
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/etat-de-droit-et-separation-des-pouvoirs/etat-de-droit-et-separation-des-pouvoirs-presentation-des-3-pouvoirs-1/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 63,
@@ -1430,7 +1528,11 @@
     "explanation": "La séparation des pouvoirs (principe de Montesquieu, XVIIIe siècle) distingue : le pouvoir exécutif (gouverner, appliquer les lois), le pouvoir législatif (voter les lois) et le pouvoir judiciaire (rendre la justice). Aucun pouvoir ne doit dominer les autres.",
     "answers": [
       "Le pouvoir exécutif, le pouvoir législatif et le pouvoir judiciaire"
-    ]
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/etat-de-droit-et-separation-des-pouvoirs/etat-de-droit-et-separation-des-pouvoirs--presentation-de-letat-de-droit-et-principe-de-la-separation-des-pouvoirs/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 64,
@@ -1451,7 +1553,11 @@
     "answers": [
       "Le Parlement (Assemblée nationale et Sénat)"
     ],
-    "group": "pouvoir-legislatif"
+    "group": "pouvoir-legislatif",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/etat-de-droit-et-separation-des-pouvoirs/etat-de-droit-et-separation-des-pouvoirs-presentation-des-3-pouvoirs-1/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 65,
@@ -1471,7 +1577,11 @@
     "explanation": "Seule la justice (les tribunaux) peut sanctionner légalement l'auteur d'un vol ou de toute infraction. Nul ne peut se faire justice soi-même. Un vol est jugé par le tribunal correctionnel, qui peut prononcer des peines d'emprisonnement et/ou d'amende selon la gravité des faits.",
     "answers": [
       "Le tribunal (la justice), qui est seule habilitée à condamner"
-    ]
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/droits-et-devoirs/obligations-et-devoirs-des-personnes-residant-en-france/se-conformer-aux-lois-les-infractions/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 66,
@@ -1486,12 +1596,17 @@
       "Les préfets après consultation des élus locaux",
       "Les électeurs uniquement dans les grandes villes",
       "Les grands électeurs comme pour les sénateurs",
-      "Les membres du Conseil économique et social"
+      "Les membres du Conseil économique, social et environnemental"
     ],
-    "explanation": "Les 577 députés sont élus directement par les citoyens français, au scrutin uninominal à deux tours dans 577 circonscriptions. Les élections législatives ont lieu tous les 5 ans, généralement peu après l'élection présidentielle.",
+    "explanation": "Les 577 députés sont élus directement par les citoyens français, au scrutin uninominal à deux tours dans 577 circonscriptions. Les élections législatives ont lieu tous les 5 ans, sauf si le Président de la République dissout l'Assemblée nationale avant la fin du mandat.",
     "answers": [
-      "Les citoyens français, au suffrage universel direct, tous les 5 ans"
-    ]
+      "Les citoyens français, au suffrage universel direct"
+    ],
+    "group": "legislatives",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/democratie-et-droit-de-vote/democratie-et-droit-de-vote-les-conditions-pour-voter-en-france-2/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 67,
@@ -1506,13 +1621,17 @@
       "Les citoyens par référendum pour toutes les lois",
       "Le Premier ministre avec l'accord du Président",
       "Les préfets pour les lois locales",
-      "Le Haut Conseil de la magistrature"
+      "Le Conseil supérieur de la magistrature"
     ],
     "explanation": "Les lois sont votées par le Parlement, composé de l'Assemblée nationale et du Sénat. En cas de désaccord entre les deux chambres, l'Assemblée nationale a le dernier mot. Le Président peut aussi soumettre certains textes directement aux citoyens par référendum.",
     "answers": [
       "Le Parlement (Assemblée nationale et Sénat)"
     ],
-    "group": "pouvoir-legislatif"
+    "group": "pouvoir-legislatif",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/etat-de-droit-et-separation-des-pouvoirs/etat-de-droit-et-separation-des-pouvoirs-presentation-des-3-pouvoirs-1/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 68,
@@ -1526,14 +1645,17 @@
       "Le Premier ministre et le Président ensemble",
       "Les membres du gouvernement",
       "Le Conseil constitutionnel",
-      "Le chef des armées en temps de guerre",
       "Le chef du parti majoritaire"
     ],
     "explanation": "Le palais de l'Élysée, situé à Paris dans le 8e arrondissement, est la résidence officielle et le lieu de travail du Président de la République française depuis 1848. Le Premier ministre, lui, réside à l'hôtel Matignon.",
     "answers": [
       "Le Président de la République"
     ],
-    "group": "president"
+    "group": "president",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/etat-de-droit-et-separation-des-pouvoirs/etat-de-droit-et-separation-des-pouvoirs-presentation-des-3-pouvoirs-1/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 69,
@@ -1553,7 +1675,11 @@
     "explanation": "La France compte 101 départements : 96 en France métropolitaine (dont la Corse-du-Sud et la Haute-Corse) et 5 départements d'outre-mer : Guadeloupe, Martinique, Guyane, La Réunion et Mayotte.",
     "answers": [
       "101 départements"
-    ]
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/organisation-de-la-republique-fran%C3%A7aise/le-decoupage-administratif-de-la-france-1/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 70,
@@ -1564,7 +1690,7 @@
       "Le maire du chef-lieu",
       "Le président du conseil départemental",
       "Le député de la principale circonscription",
-      "Le président du tribunal de grande instance",
+      "Le président du tribunal judiciaire",
       "Le directeur de l'Agence régionale de santé",
       "Le recteur d'académie",
       "Le procureur de la République",
@@ -1573,7 +1699,12 @@
     "explanation": "Le préfet est le représentant de l'État dans le département. Nommé par le Président de la République en conseil des ministres, il est chargé de faire appliquer les lois et les décisions du gouvernement sur le territoire départemental.",
     "answers": [
       "Le préfet, nommé par le Président de la République"
-    ]
+    ],
+    "group": "prefet",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/organisation-de-la-republique-fran%C3%A7aise/le-decoupage-administratif-de-la-france-2/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 71,
@@ -1590,10 +1721,14 @@
       "Le directeur général des services communaux",
       "Le président de la communauté de communes"
     ],
-    "explanation": "Le maire est élu par les conseillers municipaux pour diriger la commune. Il est à la fois représentant de l'État dans la commune (état civil, police administrative) et chef de l'exécutif local. Il est élu pour 6 ans.",
+    "explanation": "Le maire est élu par les conseillers municipaux, eux-mêmes élus pour 6 ans par les électeurs de la commune. Il dirige la commune, qui gère notamment les écoles maternelles et primaires, l'urbanisme et les services de proximité.",
     "answers": [
       "Le maire, élu par le conseil municipal"
-    ]
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/organisation-de-la-republique-fran%C3%A7aise/le-decoupage-administratif-de-la-france-1/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 72,
@@ -1613,7 +1748,11 @@
     "explanation": "Non, le Président de la République n'a pas tous les pouvoirs. La Constitution organise une séparation des pouvoirs : le Président exerce le pouvoir exécutif avec le gouvernement, le Parlement vote les lois, et les juges exercent le pouvoir judiciaire en toute indépendance.",
     "answers": [
       "Non, les pouvoirs sont séparés et partagés entre plusieurs institutions"
-    ]
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/etat-de-droit-et-separation-des-pouvoirs/etat-de-droit-et-separation-des-pouvoirs--presentation-de-letat-de-droit-et-principe-de-la-separation-des-pouvoirs/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 73,
@@ -1623,17 +1762,21 @@
     "distractors": [
       "L'élu local qui dirige le conseil départemental",
       "Le directeur de la police nationale dans le département",
-      "Le magistrat qui préside le tribunal de grande instance",
+      "Le magistrat qui préside le tribunal judiciaire",
       "Le responsable de l'éducation nationale dans la région",
-      "Le délégué du ministre de l'Intérieur aux communes",
       "Le chef des services fiscaux dans le département",
       "L'ambassadeur de la région auprès du gouvernement",
       "Le coordinateur des services hospitaliers publics"
     ],
     "explanation": "Le préfet est le haut fonctionnaire représentant l'État dans le département. Nommé en conseil des ministres, il veille à l'application des lois, coordonne les services de l'État et peut prendre des mesures de police administrative pour maintenir l'ordre public.",
     "answers": [
-      "Le représentant de l'État dans le département, nommé par le gouvernement"
-    ]
+      "Le représentant de l'État dans le département, nommé en conseil des ministres"
+    ],
+    "group": "prefet",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/organisation-de-la-republique-fran%C3%A7aise/le-decoupage-administratif-de-la-france-2/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 74,
@@ -1654,7 +1797,11 @@
     "answers": [
       "Voter les lois, voter le budget de l'État et contrôler le gouvernement"
     ],
-    "group": "pouvoir-legislatif"
+    "group": "pouvoir-legislatif",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/etat-de-droit-et-separation-des-pouvoirs/etat-de-droit-et-separation-des-pouvoirs-presentation-des-3-pouvoirs-1/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 75,
@@ -1671,11 +1818,15 @@
       "Un régime présidentiel pur comme aux États-Unis",
       "Une oligarchie parlementaire multipartite"
     ],
-    "explanation": "La France est en Ve République depuis la Constitution du 4 octobre 1958, instaurée par le général de Gaulle. C'est un régime semi-présidentiel : le Président a des pouvoirs importants mais partage l'exécutif avec un Premier ministre responsable devant le Parlement.",
+    "explanation": "La France est en Ve République depuis la Constitution du 4 octobre 1958, proposée par le général de Gaulle et adoptée par référendum. Ce régime donne un pouvoir exécutif fort au Président de la République, qui partage l'exécutif avec un Premier ministre ; le Gouvernement est responsable devant l'Assemblée nationale.",
     "answers": [
-      "La Ve République, un régime semi-présidentiel depuis 1958"
+      "La Ve République, instaurée en 1958"
     ],
-    "group": "regime-politique"
+    "group": "regime-politique",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-regimes-politiques-depuis-1789/la-cinquieme-republique/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 76,
@@ -1695,7 +1846,11 @@
     "explanation": "L'UE compte 27 États membres depuis le Brexit (sortie du Royaume-Uni le 31 janvier 2020). Le Royaume-Uni était le 28e membre avant de quitter l'Union européenne à la suite du référendum de juin 2016.",
     "answers": [
       "27 États membres"
-    ]
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/institutions-europeennes/les-etapes-cles-de-la-construction-europeenne/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 77,
@@ -1712,13 +1867,17 @@
       "La Hongrie",
       "La Grèce"
     ],
-    "explanation": "La Suisse n'est pas membre de l'UE. Elle a refusé d'adhérer par référendum en 1992. La Norvège, l'Islande et le Liechtenstein ne sont pas non plus membres, bien qu'ils participent à l'Espace économique européen (EEE).",
+    "explanation": "L'Union européenne compte 27 États membres. La Suisse, la Norvège et la Turquie n'en font pas partie, et le Royaume-Uni l'a quittée le 31 janvier 2020 (Brexit). L'Autriche, le Portugal, la Finlande, la Grèce, la Hongrie, la Slovénie, la Bulgarie et la Croatie sont, eux, membres de l'UE.",
     "answers": [
       "La Suisse",
       "La Norvège",
       "Le Royaume-Uni",
       "La Turquie"
-    ]
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/institutions-europeennes/les-etapes-cles-de-la-construction-europeenne/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 78,
@@ -1737,8 +1896,12 @@
     ],
     "explanation": "Pour voter aux élections européennes en France, il faut avoir 18 ans et être soit citoyen français, soit citoyen d'un autre État membre de l'UE résidant en France, et être inscrit sur les listes électorales. Les ressortissants non-UE ne peuvent pas voter à ces élections.",
     "answers": [
-      "Être citoyen français ou citoyen d'un pays de l'UE résidant en France, et avoir 18 ans"
-    ]
+      "Être citoyen de l'UE, majeur, habiter en France et être inscrit sur les listes électorales"
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/institutions-europeennes/les-elections-europeennes/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 79,
@@ -1758,7 +1921,11 @@
     "explanation": "Les élections européennes ont lieu tous les 5 ans dans tous les pays membres de l'UE. Les citoyens européens élisent leurs représentants au Parlement européen au suffrage universel direct. Les dernières élections ont eu lieu en juin 2024.",
     "answers": [
       "Tous les 5 ans"
-    ]
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/institutions-europeennes/les-elections-europeennes/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 80,
@@ -1783,7 +1950,11 @@
       "La Belgique",
       "Les Pays-Bas",
       "Le Luxembourg"
-    ]
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/institutions-europeennes/les-etapes-cles-de-la-construction-europeenne/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 81,
@@ -1800,10 +1971,14 @@
       "L'écu",
       "Le franc suisse"
     ],
-    "explanation": "La France utilise l'euro (€) depuis le 1er janvier 2002 pour les pièces et les billets. L'euro est la monnaie commune de 20 des 27 pays membres de l'UE (zone euro). Il a remplacé le franc français.",
+    "explanation": "La France utilise l'euro (€) depuis le 1er janvier 2002 pour les pièces et les billets. Il a remplacé le franc français. L'euro est la monnaie commune de 21 des 27 pays membres de l'UE (zone euro) depuis l'arrivée de la Bulgarie le 1er janvier 2026.",
     "answers": [
       "L'euro"
-    ]
+    ],
+    "source": {
+      "url": "https://www.ecb.europa.eu/press/pr/date/2026/html/ecb.pr260101~c830245e42.fr.html",
+      "label": "ecb.europa.eu"
+    }
   },
   {
     "id": 82,
@@ -1823,7 +1998,11 @@
     "explanation": "Les députés européens (ou eurodéputés) sont élus directement par les citoyens de chaque État membre de l'Union européenne, au suffrage universel direct, tous les 5 ans. Le Parlement européen compte 720 membres depuis les élections de juin 2024.",
     "answers": [
       "Les citoyens des États membres de l'UE, au suffrage universel direct"
-    ]
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/institutions-europeennes/les-elections-europeennes/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 83,
@@ -1843,7 +2022,11 @@
     "explanation": "La journée de l'Europe est célébrée le 9 mai, en mémoire de la Déclaration Schuman du 9 mai 1950. Robert Schuman proposait une coopération franco-allemande autour du charbon et de l'acier, acte fondateur de la construction européenne.",
     "answers": [
       "Le 9 mai"
-    ]
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/institutions-europeennes/les-symboles-europeens-2/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 84,
@@ -4842,10 +5025,14 @@
       "Saisir la Cour européenne des droits de l'homme directement",
       "Organiser un référendum d'initiative citoyenne"
     ],
-    "explanation": "La QPC (Question Prioritaire de Constitutionnalité) permet à tout justiciable de contester la constitutionnalité d'une loi appliquée à son affaire. Elle est transmise au Conseil constitutionnel via le Conseil d'État ou la Cour de cassation.",
+    "explanation": "La QPC (question prioritaire de constitutionnalité) permet, au cours d'un procès, de soutenir qu'une loi appliquée à son affaire porte atteinte aux droits et libertés garantis par la Constitution. Le juge la transmet au Conseil d'État ou à la Cour de cassation, qui peut saisir le Conseil constitutionnel ; on ne peut pas saisir directement le Conseil constitutionnel.",
     "answers": [
       "Soulever une Question Prioritaire de Constitutionnalité (QPC) devant un tribunal"
-    ]
+    ],
+    "source": {
+      "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F21088",
+      "label": "service-public.gouv.fr"
+    }
   },
   {
     "id": 242,
@@ -4860,7 +5047,11 @@
     "explanation": "La motion de censure est un outil du Parlement pour mettre en jeu la responsabilité du gouvernement. Si elle est adoptée à la majorité absolue des membres de l'Assemblée nationale, le Premier ministre doit remettre la démission de son gouvernement.",
     "answers": [
       "C'est une procédure par laquelle les députés peuvent renverser le gouvernement"
-    ]
+    ],
+    "source": {
+      "url": "https://www.conseil-constitutionnel.fr/le-bloc-de-constitutionnalite/texte-integral-de-la-constitution-du-4-octobre-1958-en-vigueur",
+      "label": "conseil-constitutionnel.fr"
+    }
   },
   {
     "id": 243,
@@ -4872,10 +5063,14 @@
       "Oui, mais uniquement par correspondance postale",
       "Non, sauf si vous êtes inscrit sur les listes électorales françaises depuis moins de 3 ans"
     ],
-    "explanation": "Les Français établis à l'étranger peuvent voter aux élections françaises en s'inscrivant au registre consulaire. Ils peuvent voter dans leur consulat ou ambassade, ou donner procuration à un électeur en France.",
+    "explanation": "Les Français établis à l'étranger peuvent voter à l'élection présidentielle s'ils sont inscrits sur une liste électorale consulaire (inscription en ligne ou au consulat). Ils votent alors au bureau de vote ouvert au consulat ou à l'ambassade, ou par procuration. Ils peuvent aussi rester inscrits dans une commune en France et y voter.",
     "answers": [
-      "Oui, en vous inscrivant au registre des Français établis hors de France et en votant dans un consulat ou par procuration"
-    ]
+      "Oui, en vous inscrivant sur une liste électorale consulaire et en votant au consulat ou par procuration"
+    ],
+    "source": {
+      "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F16904",
+      "label": "service-public.gouv.fr"
+    }
   },
   {
     "id": 244,
@@ -4887,10 +5082,14 @@
       "Non, sauf si l'Assemblée nationale lève elle-même l'immunité",
       "Oui, mais seulement après la fin de leur mandat"
     ],
-    "explanation": "L'immunité parlementaire protège les votes et opinions exprimés dans l'exercice du mandat (irresponsabilité). Pour les actes commis hors du mandat, le parlementaire peut être poursuivi, mais sa mise en détention ou arrestation peut nécessiter l'accord de son assemblée (inviolabilité partielle).",
+    "explanation": "L'immunité parlementaire protège les opinions et votes exprimés dans l'exercice du mandat (irresponsabilité). Pour les autres actes, un député peut être poursuivi comme tout citoyen ; son arrestation ou une mesure privative ou restrictive de liberté demande l'autorisation du bureau de l'Assemblée, sauf en cas de crime ou délit flagrant ou de condamnation définitive (article 26 de la Constitution).",
     "answers": [
-      "Oui, l'immunité parlementaire ne protège pas les parlementaires pour les actes commis en dehors de leurs fonctions"
-    ]
+      "Oui, il peut être poursuivi comme tout citoyen"
+    ],
+    "source": {
+      "url": "https://www.conseil-constitutionnel.fr/le-bloc-de-constitutionnalite/texte-integral-de-la-constitution-du-4-octobre-1958-en-vigueur",
+      "label": "conseil-constitutionnel.fr"
+    }
   },
   {
     "id": 245,
@@ -4904,8 +5103,12 @@
     ],
     "explanation": "Selon l'article 12 de la Constitution, le président de la République peut dissoudre l'Assemblée nationale. Il doit au préalable consulter le Premier ministre et les présidents des deux assemblées. Cette mesure entraîne l'organisation de nouvelles élections législatives.",
     "answers": [
-      "Le président de la République, après consultation du Premier ministre et des présidents des assemblées"
-    ]
+      "Le président de la République"
+    ],
+    "source": {
+      "url": "https://www.conseil-constitutionnel.fr/le-bloc-de-constitutionnalite/texte-integral-de-la-constitution-du-4-octobre-1958-en-vigueur",
+      "label": "conseil-constitutionnel.fr"
+    }
   },
   {
     "id": 246,
@@ -4920,7 +5123,11 @@
     "explanation": "Le processus législatif ordinaire prévoit une navette entre l'Assemblée nationale et le Sénat. Après le vote en première lecture par une chambre, le texte est transmis à l'autre chambre. En cas de désaccord persistant, l'Assemblée nationale a le dernier mot.",
     "answers": [
       "Le texte est transmis au Sénat qui l'examine à son tour"
-    ]
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/democratie-et-droit-de-vote/comment-voter-une-loi-2/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 247,
@@ -4935,7 +5142,11 @@
     "explanation": "Le maire est le représentant de la commune et gère les services de proximité. C'est l'interlocuteur naturel pour les questions liées à la vie quotidienne locale. Le conseil municipal vote le budget et les grandes décisions communales.",
     "answers": [
       "Le maire et le conseil municipal, élus de la commune"
-    ]
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/organisation-de-la-republique-fran%C3%A7aise/le-decoupage-administratif-de-la-france-1/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 248,
@@ -4945,12 +5156,16 @@
     "distractors": [
       "Oui, les régions ont une large autonomie législative depuis 2003",
       "Oui, dans certains domaines comme le tourisme et la culture",
-      "Cela dépend si la région est classée à statut particulier"
+      "Oui, si le conseil régional la vote à l'unanimité"
     ],
     "explanation": "La France est un État unitaire. Les régions ont des compétences administratives (formation, transports, développement économique) mais ne peuvent pas créer leurs propres lois. Seul le Parlement national vote les lois applicables sur tout le territoire.",
     "answers": [
       "Non, en France métropolitaine les régions n'ont pas de pouvoir législatif propre"
-    ]
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/organisation-de-la-republique-fran%C3%A7aise/le-decoupage-administratif-de-la-france-1/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 249,
@@ -4962,16 +5177,20 @@
       "Une procédure d'urgence pour convoquer des élections anticipées",
       "Un article permettant au Sénat de bloquer définitivement une loi"
     ],
-    "explanation": "L'article 49-3 de la Constitution permet au gouvernement d'engager sa responsabilité sur un texte budgétaire ou un projet prioritaire. Le texte est adopté sans vote, sauf si une motion de censure est déposée et adoptée dans les 24 heures.",
+    "explanation": "L'article 49, alinéa 3, de la Constitution permet au Premier ministre d'engager la responsabilité du Gouvernement sur un texte : le budget de l'État, celui de la Sécurité sociale, ou un autre texte par session. Le texte est alors considéré comme adopté sans vote, sauf si une motion de censure, déposée dans les 24 heures, est votée par la majorité des députés : le Gouvernement est alors renversé.",
     "answers": [
       "Une procédure permettant au gouvernement de faire passer un texte sans vote de l'Assemblée nationale"
-    ]
+    ],
+    "source": {
+      "url": "https://www.conseil-constitutionnel.fr/le-bloc-de-constitutionnalite/texte-integral-de-la-constitution-du-4-octobre-1958-en-vigueur",
+      "label": "conseil-constitutionnel.fr"
+    }
   },
   {
     "id": 250,
     "theme": "Système institutionnel et politique",
     "notion": "mise-en-situation",
-    "question": "Un sénateur et un député s'opposent sur un texte de loi. Qui a le dernier mot ?",
+    "question": "L'Assemblée nationale et le Sénat n'arrivent pas à se mettre d'accord sur un texte de loi. Qui a le dernier mot ?",
     "distractors": [
       "Le Sénat, car il représente les collectivités territoriales",
       "Le président de la République, qui tranche en cas de désaccord",
@@ -4980,7 +5199,11 @@
     "explanation": "En cas de désaccord persistant entre les deux chambres après plusieurs navettes, le gouvernement peut donner le dernier mot à l'Assemblée nationale (article 45 de la Constitution). Le Sénat n'a pas de droit de veto absolu sur la majorité des textes.",
     "answers": [
       "L'Assemblée nationale, qui peut adopter le texte en dernière lecture"
-    ]
+    ],
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/democratie-et-droit-de-vote/comment-voter-une-loi-2/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   },
   {
     "id": 251,
@@ -5558,7 +5781,11 @@
     "explanation": "Le Conseil économique, social et environnemental (CESE) est la troisième assemblée constitutionnelle française. Il a un rôle consultatif : il rend des avis sur les politiques économiques, sociales et environnementales à la demande du gouvernement ou du Parlement, et peut être saisi par voie de pétition citoyenne.",
     "answers": [
       "C'est une assemblée consultative qui représente la société civile et conseille le gouvernement et le Parlement"
-    ]
+    ],
+    "source": {
+      "url": "https://www.conseil-constitutionnel.fr/le-bloc-de-constitutionnalite/texte-integral-de-la-constitution-du-4-octobre-1958-en-vigueur",
+      "label": "conseil-constitutionnel.fr"
+    }
   },
   {
     "id": 289,
