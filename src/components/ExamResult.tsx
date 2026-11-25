@@ -47,7 +47,7 @@ export function ExamResult({ outcome, themeOf, onRestart }: ExamResultProps) {
     <main className="relative min-h-svh overflow-hidden bg-background text-foreground">
       <OrganicBackground shape="crest" />
 
-      <div className="relative mx-auto flex min-h-svh w-full max-w-[30rem] flex-col gap-3 px-[22px] pt-5 pb-6">
+      <div className="relative mx-auto flex min-h-svh w-full max-w-[30rem] flex-col gap-3 px-[22px] pt-5 pb-6 md:max-w-[44rem] md:px-8 md:pt-8 md:pb-10">
         <h1 ref={headingRef} tabIndex={-1} className="min-h-11 content-center self-start rounded-sm text-[0.9375rem] font-bold outline-none">
           Examen blanc terminé
         </h1>
@@ -60,17 +60,17 @@ export function ExamResult({ outcome, themeOf, onRestart }: ExamResultProps) {
         )}
 
         <p
-          className="mt-[clamp(1rem,4svh,2.5rem)] flex flex-wrap items-baseline gap-x-1.5 font-bold"
+          className="mt-[clamp(1rem,4svh,2.5rem)] flex md:mt-12 flex-wrap items-baseline gap-x-1.5 font-bold"
           aria-label={`Score : ${score} sur ${total}`}
         >
-          <span className="text-[6rem] leading-[0.9] tracking-[-0.04em] tabular-nums">{score}</span>
-          <span className="text-[2rem]">/{total}</span>
+          <span className="text-[6rem] leading-[0.9] tracking-[-0.04em] tabular-nums md:text-[8rem]">{score}</span>
+          <span className="text-[2rem] md:text-[2.75rem]">/{total}</span>
         </p>
 
         <ExamVerdict score={score} total={total} />
-        <p className="max-w-[19rem] text-base leading-[1.45]">{journey}</p>
+        <p className="max-w-[19rem] text-base leading-[1.45] md:max-w-[26rem] md:text-[1.0625rem]">{journey}</p>
 
-        <div className="mt-[clamp(1.5rem,7svh,4.5rem)] flex flex-col gap-3">
+        <div className="mt-[clamp(1.5rem,7svh,4.5rem)] flex flex-col gap-3 md:max-w-[26rem]">
           {recordId !== null && (
             <PillLink
               to={`/examen/${recordId}`}

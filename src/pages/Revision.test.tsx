@@ -4,6 +4,8 @@ import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest'
 import Revision from './Revision'
 import type { ReviewState } from './ExamenDetail'
 import questions from '@/data/questions.json'
+import { stubWideScreen } from '@/test/wide-screen'
+import { ThemeProvider } from '@/components/ThemeProvider'
 
 function makeLocalStorageMock() {
   let store: Record<string, string> = {}
@@ -67,14 +69,14 @@ describe('Revision — structure', () => {
     expect(screen.getByText(`Carte de séjour pluriannuelle · ${questions.length} questions`)).toBeInTheDocument()
   })
 
-  // 291 role queries over the full list: slower than the default 5 s under a loaded full run.
-  it('affiche toutes les questions avec leur bonne réponse', { timeout: 15000 }, () => {
+  it('affiche toutes les questions avec leur bonne réponse', () => {
     renderRevision()
     expect(shownCards()).toHaveLength(questions.length)
     questions.forEach((q) => {
       expect(screen.getByRole('heading', { level: 3, name: q.question })).toBeInTheDocument()
     })
-  })
+    // 291 role queries take about 4 s alone and pass the 5 s default when the suite runs in parallel
+  }, 15_000)
 
   it('regroupe les questions par thème', () => {
     renderRevision()
@@ -242,5 +244,25 @@ describe('Revision — lien source', () => {
   it('n\'affiche aucun lien source quand aucune question n\'en a', () => {
     renderRevision()
     expect(screen.queryByRole('link', { name: /^Source :/ })).not.toBeInTheDocument()
+  })
+})
+
+describe('Revision — interrupteur de thème', () => {
+  it('grand écran : dans l\'en-tête de la révision', () => {
+    stubWideScreen()
+    render(
+      <ThemeProvider>
+        <MemoryRouter initialEntries={['/revision']}>
+          <Revision />
+        </MemoryRouter>
+      </ThemeProvider>,
+    )
+    expect(screen.getAllByRole('switch')).toHaveLength(1)
+  })
+
+  it('téléphone et tablette : absent de la page (le fixe d\'App.tsx le porte)', () => {
+    stubWideScreen(false)
+    renderRevision()
+    expect(screen.queryByRole('switch')).toBeNull()
   })
 })

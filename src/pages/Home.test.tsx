@@ -1,8 +1,9 @@
-import { render, screen, fireEvent, act } from '@testing-library/react'
+import { render, screen, fireEvent, act, within } from '@testing-library/react'
 import { MemoryRouter, Route, Routes, useLocation } from 'react-router-dom'
 import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest'
 import Home, { OFFICIAL_SITE_URL } from './Home'
 import { ThemeProvider } from '@/components/ThemeProvider'
+import { stubWideScreen } from '@/test/wide-screen'
 
 // localStorage mock (jsdom dans ce projet ne fournit pas une implémentation complète)
 function makeLocalStorageMock() {
@@ -351,5 +352,76 @@ describe('Accueil — premier lancement', () => {
     localStorageMock.setItem('exam-in-progress', JSON.stringify({ questions, index: 0, answers: [], timeLeft: 600, startedAt: '2026-11-23T10:00:00.000Z' }))
     renderHome()
     expect(screen.getByRole('link', { name: /Reprendre l'examen en cours/ })).toBeInTheDocument()
+  })
+})
+
+describe('Accueil — grand écran (1024 px et plus)', () => {
+  beforeEach(() => stubWideScreen())
+
+  it('sans historique : « Ce qui vous attend le jour J » avec les chiffres de l\'examen', () => {
+    renderHome()
+    const card = screen.getByRole('region', { name: 'Ce qui vous attend le jour J' })
+    const facts = [...card.querySelectorAll('dl > div')].map((d) => d.textContent)
+    expect(facts).toEqual([
+      '40questions à choix multiples',
+      '45 minpour tout le questionnaire',
+      '32bonnes réponses pour réussir',
+    ])
+    expect(card).toHaveTextContent(
+      "Vos examens blancs s'afficheront ici, avec votre progression vers les 3 réussites d'affilée.",
+    )
+    expect(within(card).getByRole('link', { name: "Comment se passe l'examen ?" })).toHaveAttribute('href', '/regles')
+    expect(screen.queryByRole('region', { name: 'Où vous en êtes' })).toBeNull()
+  })
+
+  it('avec historique : « Où vous en êtes », le compteur, les derniers examens et les règles', () => {
+    seedHistory([exam(20, 'a'), exam(33, 'b'), exam(35, 'c')])
+    renderHome()
+    const panel = screen.getByRole('region', { name: 'Où vous en êtes' })
+    expect(panel).toHaveTextContent("2 sur 3 examens blancs réussis d'affilée. Encore 1 pour atteindre l'objectif.")
+    expect(within(panel).getByRole('region', { name: 'Derniers examens' })).toBeInTheDocument()
+    expect(within(panel).getByRole('link', { name: "Comment se passe l'examen ?" })).toBeInTheDocument()
+    expect(screen.queryByRole('region', { name: 'Ce qui vous attend le jour J' })).toBeNull()
+  })
+
+  it('après un échec : « Encore 3 »', () => {
+    seedHistory([exam(36, 'a'), exam(10, 'b')])
+    renderHome()
+    expect(screen.getByRole('region', { name: 'Où vous en êtes' })).toHaveTextContent(
+      "0 sur 3 examens blancs réussis d'affilée. Encore 3 pour atteindre l'objectif.",
+    )
+  })
+
+  it('à 3 sur 3 : objectif atteint', () => {
+    seedHistory([exam(36, 'a'), exam(36, 'b'), exam(36, 'c')])
+    renderHome()
+    const panel = screen.getByRole('region', { name: 'Où vous en êtes' })
+    expect(panel).toHaveTextContent("3 sur 3 examens blancs réussis d'affilée : objectif atteint.")
+    expect(panel).not.toHaveTextContent('Encore')
+  })
+
+  it('la reprise de l\'examen en cours vient avant le parcours, chaque bloc une seule fois', () => {
+    seedHistory([exam(36, 'a')])
+    const questions = Array.from({ length: 40 }, (_, i) => ({
+      id: i + 1, theme: 'Test', question: `Q${i + 1}`, answer: 'A', choices: ['A', 'B', 'C', 'D'], explanation: '',
+    }))
+    localStorageMock.setItem('exam-in-progress', JSON.stringify({ questions, index: 1, answers: [], timeLeft: 2700, startedAt: '2026-11-23T10:00:00.000Z' }))
+    renderHome()
+    const resume = screen.getByRole('region', { name: 'Examen en cours' })
+    const nav = screen.getByRole('navigation', { name: 'Votre parcours' })
+    expect(resume.compareDocumentPosition(nav) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy()
+    expect(screen.getAllByRole('link', { name: "Comment se passe l'examen ?" })).toHaveLength(1)
+    expect(screen.getAllByRole('region', { name: 'Derniers examens' })).toHaveLength(1)
+    expect(screen.getAllByRole('navigation', { name: 'Votre parcours' })).toHaveLength(1)
+  })
+})
+
+describe('Accueil — téléphone et tablette (moins de 1024 px)', () => {
+  it('n\'affiche ni « Où vous en êtes » ni « Ce qui vous attend le jour J »', () => {
+    stubWideScreen(false)
+    seedHistory([exam(36, 'a')])
+    renderHome()
+    expect(screen.queryByRole('region', { name: 'Où vous en êtes' })).toBeNull()
+    expect(screen.queryByRole('region', { name: 'Ce qui vous attend le jour J' })).toBeNull()
   })
 })

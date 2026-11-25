@@ -40,6 +40,18 @@ typography:
     fontWeight: 700
     lineHeight: 0.98
     letterSpacing: "-0.04em"
+  display-md:
+    fontFamily: "'Atkinson Hyperlegible', system-ui, sans-serif"
+    fontSize: "3rem"
+    fontWeight: 700
+    lineHeight: 0.98
+    letterSpacing: "-0.04em"
+  display-lg:
+    fontFamily: "'Atkinson Hyperlegible', system-ui, sans-serif"
+    fontSize: "3.5rem"
+    fontWeight: 700
+    lineHeight: 0.98
+    letterSpacing: "-0.04em"
   headline:
     fontFamily: "'Atkinson Hyperlegible', system-ui, sans-serif"
     fontSize: "2.125rem"
@@ -53,11 +65,23 @@ typography:
     lineHeight: 0.9
     letterSpacing: "-0.04em"
     fontFeature: "'tnum'"
+  score-lg:
+    fontFamily: "'Atkinson Hyperlegible', system-ui, sans-serif"
+    fontSize: "8rem"
+    fontWeight: 700
+    lineHeight: 0.9
+    letterSpacing: "-0.04em"
+    fontFeature: "'tnum'"
   question:
     fontFamily: "'Atkinson Hyperlegible', system-ui, sans-serif"
     fontSize: "1.4375rem"
     fontWeight: 700
     lineHeight: 1.3
+  question-lg:
+    fontFamily: "'Atkinson Hyperlegible', system-ui, sans-serif"
+    fontSize: "1.75rem"
+    fontWeight: 700
+    lineHeight: 1.25
   title:
     fontFamily: "'Atkinson Hyperlegible', system-ui, sans-serif"
     fontSize: "1.125rem"
@@ -116,6 +140,8 @@ spacing:
   gutter-compact: "20px"
   gutter: "22px"
   xl: "24px"
+  gutter-wide: "32px"
+  gutter-desk: "40px"
 components:
   button-action:
     backgroundColor: "{colors.action-yellow}"
@@ -293,10 +319,10 @@ Une palette de carte illustrée : un papier crème, une encre presque noire, et 
 **Character:** Une police conçue pour la lisibilité des lecteurs malvoyants, auto-hébergée en 400, 400 italique et 700. Les titres en 700 très serrés lui donnent une voix d'affiche ; le corps en 400 reste ouvert et posé.
 
 ### Hierarchy
-- **Display** (`display`) : le titre de l'accueil, « Votre chemin vers le jour J ». L'écran du titre visé utilise une variante un cran plus petite (2.25rem, interligne 1).
-- **Headline** (`headline`) : titres des pages secondaires (« Réviser », « Comment se passe l'examen »). Le détail d'un examen descend à 1.875rem avec un interlettrage de -0.03em.
-- **Score** (`score`) : le score de l'écran de résultat, suivi de « /40 » à 2rem.
-- **Question** (`question`) : l'énoncé d'une question d'examen avant validation ; il passe à 1.3125rem une fois la réponse validée, pour laisser la place à la correction.
+- **Display** (`display`) : le titre de l'accueil, « Votre chemin vers le jour J ». L'écran du titre visé utilise une variante un cran plus petite (2.25rem, interligne 1). Il passe à 3rem à partir de 768 px (`display-md`) et à 3,5rem à partir de 1024 px (`display-lg`) ; le chiffre « n sur 3 » du panneau « Où vous en êtes » reprend `display-lg`.
+- **Headline** (`headline`) : titres des pages secondaires (« Réviser », « Comment se passe l'examen »). Le détail d'un examen descend à 1.875rem avec un interlettrage de -0.03em. À partir de 768 px, « Réviser » et le score du détail passent à 3rem.
+- **Score** (`score`) : le score de l'écran de résultat, suivi de « /40 » à 2rem ; à partir de 768 px, 8rem (`score-lg`) suivi de « /40 » à 2,75rem.
+- **Question** (`question`) : l'énoncé d'une question d'examen avant validation ; il passe à 1.3125rem une fois la réponse validée, pour laisser la place à la correction. À partir de 768 px, l'énoncé reste à 1,75rem (`question-lg`, interligne 1.25) avant et après validation.
 - **Title** (`title`) : énoncé d'une question dans la révision et le détail d'un examen ; taille du texte des pastilles « lg ».
 - **Title small** (`title-sm`) : titres de section (« Derniers examens », « Répartition des 40 questions ») et titres des options du titre visé.
 - **Body** (`body`) : texte courant, réponses, pastilles standard. Interligne racine de 145 %.
@@ -312,9 +338,22 @@ Une palette de carte illustrée : un papier crème, une encre presque noire, et 
 
 ## Layout
 
-Une colonne unique de 30rem au plus, centrée, sur tout l'écran : pas de grille, pas de mise en page desktop distincte. La gouttière est de 22 px sur les écrans « carte » (accueil, titre visé, règles, résultat) et de 20 px sur les écrans de travail (révision, examen, détail d'un examen). Le rythme vertical s'appuie sur des écarts de 8, 10, 12 et 14 px entre éléments frères, avec des respirations plus larges en `clamp()` sur la hauteur d'écran (par exemple entre le titre de l'accueil et le parcours). L'action principale est poussée en bas de l'écran (`margin-top: auto`) pour rester sous le pouce.
+Sur téléphone (moins de 768 px), une colonne unique de 30rem au plus, centrée. La gouttière est de 22 px sur les écrans « carte » (accueil, titre visé, règles, résultat) et de 20 px sur les écrans de travail (révision, examen, détail d'un examen). Le rythme vertical s'appuie sur des écarts de 8, 10, 12 et 14 px entre éléments frères, avec des respirations plus larges en `clamp()` sur la hauteur d'écran (par exemple entre le titre de l'accueil et le parcours). L'action principale est poussée en bas de l'écran (`margin-top: auto`) pour rester sous le pouce.
 
 Toutes les cibles tactiles font au moins 44 px de haut, liens texte compris. Les pastilles passent à la ligne quand le texte est agrandi : leur hauteur est un minimum, jamais une hauteur fixe. Sur téléphone, les filtres de la révision défilent horizontalement ; à partir de 640 px ils passent à la ligne. À partir de 768 px, la forme organique prend la hauteur de l'écran et s'étire vers la colonne au lieu de garder ses proportions de téléphone.
+
+### Grand écran
+
+Trois points de rupture (texte à la taille par défaut ; agrandi, l'écran retombe sur la mise en page plus étroite) :
+- **Moins de 768 px (téléphone)** : la colonne de 30rem ci-dessus, inchangée.
+- **md, 768 à 1023 px (tablette en portrait)** : même ordre que sur téléphone, dans une colonne de 36rem (gouttière 32 px) pour l'accueil, la révision et le détail d'un examen ; l'examen et le résultat prennent déjà la largeur « lecture ».
+- **lg, 1024 px et plus (tablette en paysage, ordinateur)** : deux colonnes sur l'accueil, la révision et le détail (gouttière 40 px).
+
+Deux largeurs nommées :
+- **Carte, 62rem** : accueil, révision, détail d'un examen à partir de 1024 px. Accueil : le parcours à gauche, sur la forme verte limitée à la moitié gauche de l'écran, la reprise de l'examen sous le titre, au-dessus du parcours ; à droite une colonne de 23rem « Où vous en êtes » (compteur « n sur 3 » en `display-lg`, derniers examens, lien vers les règles) ou, sans historique, la carte « Ce qui vous attend le jour J » ; mentions en bas de page. Révision : colonne latérale fixe (sticky) de 17rem (en-tête avec l'interrupteur de thème, filtres en pastilles pleine largeur, case « Sans les mises en situation »), cartes sur une colonne de 40rem au plus. Détail : colonne latérale fixe de 22rem (retour, score, date, verdict, filtres, « Par thème », boutons), questions sur 40rem au plus.
+- **Lecture, 44rem** : examen (question, correction) et résultat à partir de 768 px. Réponses sur une colonne ; la place du bouton est réservée sous les réponses, alignée à gauche (8rem), pour que rien ne bouge quand il apparaît ; actions du résultat limitées à 26rem.
+
+Un bloc qui change de colonne (reprise de l'examen, actions du détail, interrupteur de thème de la révision) n'est rendu qu'une fois, à la place qui suit l'ordre visuel (`useWideScreen`, `src/lib/use-wide-screen.ts`) : l'ordre de lecture et de tabulation suit l'écran.
 
 ## Elevation & Depth
 
@@ -363,7 +402,7 @@ Tactiles et francs : des pastilles pleines, en gras, qu'on vise sans y penser.
 - **Lien Retour :** flèche et texte en `body-sm` gras, 44 px de haut, souligné au survol.
 - **Parcours de l'accueil :** liste ordonnée de quatre étapes en pastilles, numérotées « 1 · », « 2 · »… ; l'étape 2, grande pastille jaune avec le compteur « n sur 3 », lance directement un nouvel examen blanc.
 - **Bandeau d'examen :** bloc vert terre arrondi en bas, avec « Quitter », « Question n sur 40 » et une barre de temps encre sur une piste translucide.
-- **Interrupteur de thème :** fixe en haut à droite sur le titre visé, les règles et la révision ; dans l'en-tête, à côté du logo, sur l'accueil ; absent de l'examen (question, correction, résultat) et du détail d'un examen.
+- **Interrupteur de thème :** fixe en haut à droite sur le titre visé, les règles et la révision (dans l'en-tête de sa colonne latérale à partir de 1024 px) ; dans l'en-tête, à côté du logo, sur l'accueil ; absent de l'examen (question, correction, résultat) et du détail d'un examen.
 
 ### Verdict (signature)
 Une pastille de statut, annoncée aux lecteurs d'écran : un cercle d'icône à gauche, le texte en gras à droite. Réussi ou bonne réponse : encre avec une coche jaune. Erreur : corail avec une croix. « Pas encore réussi » : surface blanche avec une flèche, rassurant plutôt qu'alarmant. Deux tailles : 40 px pour la correction d'une question, 44 px pour le résultat d'un examen.
@@ -380,7 +419,7 @@ Une tige et deux feuilles (verte, jaune) cerclées d'encre, suivies de « Futur 
 ## Do's and Don'ts
 
 ### Do:
-- **Do** poser chaque nouvel écran sur le fond de page uni, dans la colonne de 30rem, avec la gouttière de l'écran du même type (22 px carte, 20 px travail).
+- **Do** poser chaque nouvel écran sur le fond de page uni, dans la colonne de 30rem sur téléphone, avec la gouttière de l'écran du même type (22 px carte, 20 px travail), et choisir sa largeur grand écran (« carte » 62rem ou « lecture » 44rem).
 - **Do** construire les actions avec `PillButton` / `PillLink` (tons `action`, `ink`, `surface`) plutôt qu'avec le bouton shadcn par défaut.
 - **Do** garder une seule action jaune par écran, de préférence en bas, en grande pastille.
 - **Do** dire chaque résultat par texte, icône et couleur (`Verdict`, `AnswerCard`, `AnswerBox`).

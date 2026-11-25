@@ -10,6 +10,7 @@ import { themeScores, weakestThemes } from '@/lib/exam-review'
 import type { AnswerRecord, QuestionSource } from '@/lib/exam-types'
 import allQuestions from '@/data/questions.json'
 import { useDocumentTitle } from '@/lib/use-document-title'
+import { useWideScreen } from '@/lib/use-wide-screen'
 import { cn } from '@/lib/utils'
 
 interface Question {
@@ -88,6 +89,7 @@ export default function ExamenDetail() {
   const [filter, setFilter] = useState<Filter>(errors.length > 0 ? 'mistakes' : 'all')
   const themesId = useId()
   const questionsId = useId()
+  const wide = useWideScreen()
 
   if (!record) {
     return (
@@ -119,79 +121,98 @@ export default function ExamenDetail() {
   })
   const reviewState: ReviewState = { reviewIds: errors.map((r) => r.answer.questionId) }
 
+  // Under the questions on a phone or tablet, at the bottom of the side column from 1024 px
+  const actions = (
+    <div className="mt-auto flex flex-col gap-2 pt-2 lg:mt-0">
+      {errors.length > 0 && (
+        <PillLink to="/revision" state={reviewState} size="lg" className="justify-center text-center">
+          {errors.length === 1 ? 'Réviser cette question' : `Réviser ces ${errors.length} questions`}
+        </PillLink>
+      )}
+      <PillLink to="/" tone="surface" className="justify-center text-center">
+        Retour à mon parcours
+      </PillLink>
+    </div>
+  )
+
   return (
     <main className="flex min-h-svh flex-col bg-background text-foreground">
-      <div className="mx-auto flex w-full max-w-[30rem] grow flex-col gap-3.5 px-5 pt-5 pb-7">
-        <BackLink />
+      <div className="mx-auto flex w-full max-w-[30rem] grow flex-col gap-3.5 px-5 pt-5 pb-7 md:max-w-[36rem] md:px-8 md:pt-8 lg:grid lg:max-w-[62rem] lg:grid-cols-[22rem_minmax(0,1fr)] lg:items-start lg:gap-x-14 lg:px-10 lg:pt-0">
+        {/* From 1024 px: score, filters, scores per theme and actions in a sticky side column (side padding: room for the focus rings) */}
+        <div className="flex flex-col gap-3.5 lg:sticky lg:top-0 lg:-mx-2 lg:max-h-svh lg:overflow-y-auto lg:px-2 lg:py-8">
+          <BackLink />
 
-        <div className="flex flex-col items-start gap-2">
-          <div className="flex flex-col gap-0.5">
-            <h1
-              className="text-[1.875rem] leading-none font-bold tracking-[-0.03em] tabular-nums"
-              aria-label={`Score : ${record.score} sur ${record.total}`}
-            >
-              {record.score}/{record.total}
-            </h1>
-            <p className="text-[0.9375rem]">{dateStr}</p>
+          <div className="flex flex-col items-start gap-2 lg:mt-4">
+            <div className="flex flex-col gap-0.5">
+              <h1
+                className="text-[1.875rem] leading-none font-bold tracking-[-0.03em] tabular-nums md:text-[3rem]"
+                aria-label={`Score : ${record.score} sur ${record.total}`}
+              >
+                {record.score}/{record.total}
+              </h1>
+              <p className="text-[0.9375rem]">{dateStr}</p>
+            </div>
+            <ExamVerdict score={record.score} total={record.total} variant="compact" />
           </div>
-          <ExamVerdict score={record.score} total={record.total} variant="compact" />
+
+          {errors.length > 0 ? (
+            <div role="group" aria-label="Questions affichées" className="flex flex-wrap gap-2">
+              <button
+                type="button"
+                aria-pressed={filter === 'mistakes'}
+                onClick={() => setFilter('mistakes')}
+                className={toggleClass(filter === 'mistakes')}
+              >
+                Mes erreurs ({errors.length})
+              </button>
+              <button
+                type="button"
+                aria-pressed={filter === 'all'}
+                onClick={() => setFilter('all')}
+                className={toggleClass(filter === 'all')}
+              >
+                Toutes ({reviewed.length})
+              </button>
+            </div>
+          ) : (
+            <p className="text-base font-bold">Aucune erreur sur cet examen, bravo.</p>
+          )}
+
+          {scores.length > 0 && (
+            <section
+              aria-labelledby={themesId}
+              className="flex flex-col gap-2 rounded-2xl bg-card px-4 py-3.5 text-card-foreground"
+            >
+              <h2 id={themesId} className="text-base font-bold">Par thème</h2>
+              <ul className="flex flex-col gap-2">
+                {scores.map((s) => {
+                  const weak = weakest.has(s.theme)
+                  return (
+                    <li
+                      key={s.theme}
+                      // Wraps as a whole: the score goes under a long theme name instead of cutting a word
+                      className={cn('flex flex-wrap items-start justify-between gap-x-3 text-[0.9375rem]', weak && 'font-bold')}
+                    >
+                      <span>
+                        {s.theme}
+                        {weak && <span className="sr-only"> (thème le plus faible)</span>}
+                      </span>
+                      <span
+                        className={cn('shrink-0 rounded-full px-2 tabular-nums', weak && 'bg-coral text-coral-foreground')}
+                      >
+                        {s.correct}/{s.total}
+                      </span>
+                    </li>
+                  )
+                })}
+              </ul>
+            </section>
+          )}
+
+          {wide && actions}
         </div>
 
-        {errors.length > 0 ? (
-          <div role="group" aria-label="Questions affichées" className="flex flex-wrap gap-2">
-            <button
-              type="button"
-              aria-pressed={filter === 'mistakes'}
-              onClick={() => setFilter('mistakes')}
-              className={toggleClass(filter === 'mistakes')}
-            >
-              Mes erreurs ({errors.length})
-            </button>
-            <button
-              type="button"
-              aria-pressed={filter === 'all'}
-              onClick={() => setFilter('all')}
-              className={toggleClass(filter === 'all')}
-            >
-              Toutes ({reviewed.length})
-            </button>
-          </div>
-        ) : (
-          <p className="text-base font-bold">Aucune erreur sur cet examen, bravo.</p>
-        )}
-
-        {scores.length > 0 && (
-          <section
-            aria-labelledby={themesId}
-            className="flex flex-col gap-2 rounded-2xl bg-card px-4 py-3.5 text-card-foreground"
-          >
-            <h2 id={themesId} className="text-base font-bold">Par thème</h2>
-            <ul className="flex flex-col gap-2">
-              {scores.map((s) => {
-                const weak = weakest.has(s.theme)
-                return (
-                  <li
-                    key={s.theme}
-                    // Wraps as a whole: the score goes under a long theme name instead of cutting a word
-                    className={cn('flex flex-wrap items-start justify-between gap-x-3 text-[0.9375rem]', weak && 'font-bold')}
-                  >
-                    <span>
-                      {s.theme}
-                      {weak && <span className="sr-only"> (thème le plus faible)</span>}
-                    </span>
-                    <span
-                      className={cn('shrink-0 rounded-full px-2 tabular-nums', weak && 'bg-coral text-coral-foreground')}
-                    >
-                      {s.correct}/{s.total}
-                    </span>
-                  </li>
-                )
-              })}
-            </ul>
-          </section>
-        )}
-
-        <section aria-labelledby={questionsId}>
+        <section aria-labelledby={questionsId} className="lg:max-w-[40rem] lg:pt-[5.5rem]">
           <h2 id={questionsId} className="sr-only">
             {filter === 'mistakes' ? 'Mes erreurs' : 'Toutes les questions'}
           </h2>
@@ -202,16 +223,7 @@ export default function ExamenDetail() {
           </ol>
         </section>
 
-        <div className="mt-auto flex flex-col gap-2 pt-2">
-          {errors.length > 0 && (
-            <PillLink to="/revision" state={reviewState} size="lg" className="justify-center text-center">
-              {errors.length === 1 ? 'Réviser cette question' : `Réviser ces ${errors.length} questions`}
-            </PillLink>
-          )}
-          <PillLink to="/" tone="surface" className="justify-center text-center">
-            Retour à mon parcours
-          </PillLink>
-        </div>
+        {!wide && actions}
       </div>
     </main>
   )

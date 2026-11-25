@@ -1,9 +1,10 @@
 import { fireEvent, render, screen, within } from '@testing-library/react'
 import { MemoryRouter, Route, Routes, useLocation } from 'react-router-dom'
-import { describe, it, expect, beforeEach, afterEach } from 'vitest'
+import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest'
 import ExamenDetail from './ExamenDetail'
 import type { ExamRecord } from '@/lib/exam-types'
 import allQuestions from '@/data/questions.json'
+import { stubWideScreen } from '@/test/wide-screen'
 
 const RECORD_ID = '1700000000000'
 
@@ -248,5 +249,36 @@ describe('ExamenDetail — lien source', () => {
     renderDetail(RECORD_ID)
     fireEvent.click(screen.getByRole('button', { name: /Toutes/ }))
     expect(screen.queryByRole('link', { name: /^Source :/ })).not.toBeInTheDocument()
+  })
+})
+
+describe('ExamenDetail — placement des actions', () => {
+  beforeEach(() => localStorage.clear())
+  afterEach(() => vi.unstubAllGlobals())
+
+  function order() {
+    const review = screen.getByRole('link', { name: 'Réviser cette question' })
+    const back = screen.getAllByRole('link', { name: 'Retour à mon parcours' })
+    // The questions are the only ordered list of the page
+    const list = document.querySelector('ol')!
+    return { review, back, list }
+  }
+
+  it('téléphone et tablette : les actions suivent les questions', () => {
+    stubWideScreen(false)
+    seedHistory(RECORD)
+    renderDetail(RECORD_ID)
+    const { review, back, list } = order()
+    expect(back).toHaveLength(1)
+    expect(list.compareDocumentPosition(review) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy()
+  })
+
+  it('grand écran : les actions sont dans la colonne latérale, avant les questions, une seule fois', () => {
+    stubWideScreen()
+    seedHistory(RECORD)
+    renderDetail(RECORD_ID)
+    const { review, back, list } = order()
+    expect(back).toHaveLength(1)
+    expect(review.compareDocumentPosition(list) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy()
   })
 })
