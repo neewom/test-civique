@@ -4135,7 +4135,7 @@
     ],
     "explanation": "Pour chercher un emploi en France, la première démarche est de s'inscrire à France Travail (nouveau nom de Pôle Emploi depuis 2024). Cet organisme public propose un accompagnement personnalisé, l'accès aux offres d'emploi, des formations, et peut verser des allocations chômage (ARE) aux personnes éligibles.",
     "answers": [
-      "S'inscrire à France Travail (anciennement Pôle Emploi) pour bénéficier d'un accompagnement"
+      "S'inscrire à France Travail pour bénéficier d'un accompagnement"
     ],
     "group": "france-travail",
     "source": {
@@ -4273,7 +4273,7 @@
     "distractors": [
       "La mairie de sa commune de résidence",
       "L'hôpital qui a effectué les soins",
-      "France Travail (anciennement Pôle Emploi)",
+      "France Travail",
       "Le ministère de la Santé directement",
       "La préfecture du département",
       "Son employeur par le biais du bulletin de paie",
@@ -6204,7 +6204,7 @@
     "distractors": [
       "Uniquement un comptable agréé, payant",
       "La Banque de France, sur rendez-vous",
-      "France Travail, l'ancien Pôle emploi"
+      "France Travail"
     ],
     "explanation": "L'administration fiscale (DGFiP) aide gratuitement à déclarer ses revenus : sur impots.gouv.fr, par téléphone, dans les centres des finances publiques et dans les espaces France Services, où des agents accompagnent les démarches en ligne.",
     "answers": [
@@ -6227,7 +6227,7 @@
     ],
     "explanation": "À la fin d'un contrat de travail, l'employeur doit remettre au salarié une attestation France Travail (anciennement attestation Pôle emploi), un certificat de travail et le solde de tout compte. L'attestation France Travail est indispensable pour ouvrir des droits au chômage.",
     "answers": [
-      "L'attestation France Travail (anciennement attestation Pôle emploi)"
+      "L'attestation France Travail"
     ],
     "source": {
       "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F2867",
