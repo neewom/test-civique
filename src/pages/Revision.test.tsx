@@ -67,7 +67,8 @@ describe('Revision — structure', () => {
     expect(screen.getByText(`Carte de séjour pluriannuelle · ${questions.length} questions`)).toBeInTheDocument()
   })
 
-  it('affiche toutes les questions avec leur bonne réponse', () => {
+  // 291 role queries over the full list: slower than the default 5 s under a loaded full run.
+  it('affiche toutes les questions avec leur bonne réponse', { timeout: 15000 }, () => {
     renderRevision()
     expect(shownCards()).toHaveLength(questions.length)
     questions.forEach((q) => {
@@ -212,10 +213,17 @@ describe('Revision — arrivée depuis le détail d\'un examen', () => {
 })
 
 describe('Revision — lien source', () => {
-  const first = questions[0] as (typeof questions)[number] & { source?: { url: string; label: string } }
+  type WithSource = (typeof questions)[number] & { source?: { url: string; label: string } }
+  const first = questions[0] as WithSource
+  // Real sources are set aside so each test controls which question has one.
+  const realSources = new Map((questions as WithSource[]).filter((q) => q.source).map((q) => [q, q.source]))
 
+  beforeEach(() => {
+    realSources.forEach((_, q) => delete q.source)
+  })
   afterEach(() => {
     delete first.source
+    realSources.forEach((source, q) => { q.source = source })
   })
 
   it('affiche le lien source sous l\'explication d\'une question qui en a un', () => {
