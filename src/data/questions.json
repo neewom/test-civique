@@ -43,7 +43,6 @@
       "Le drapeau tricolore bleu, blanc, rouge",
       "La Marseillaise",
       "Marianne",
-      "Le coq gaulois",
       "La devise Liberté, Égalité, Fraternité"
     ],
     "group": "symboles-republique",
@@ -427,8 +426,7 @@
       "La tenue des gendarmes en service",
       "Le bonnet phrygien de la liberté",
       "La rosette de la Légion d'honneur",
-      "L'uniforme des hussards de la République",
-      "L'emblème du Sénat français"
+      "L'uniforme des hussards de la République"
     ],
     "explanation": "Le drapeau tricolore bleu, blanc, rouge est le symbole tricolore officiel de la République française. Né de la Révolution française, il associe les couleurs de Paris (bleu et rouge) à la couleur royale (blanc). Il est inscrit dans la Constitution.",
     "answers": [
@@ -867,7 +865,6 @@
     "question": "Un enfant peut-il refuser d’aller à l’école pour une raison religieuse ?",
     "distractors": [
       "Oui, si ses parents le justifient par écrit auprès de la direction",
-      "Oui, pour toutes les fêtes religieuses de sa confession",
       "Oui, à condition d'être suivi par un précepteur privé agréé",
       "Oui, pendant les grandes périodes religieuses (ramadan, Pâques…)",
       "Oui, si l'école ne propose pas de menu alimentaire adapté",
