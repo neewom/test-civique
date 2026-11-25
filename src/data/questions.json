@@ -2046,6 +2046,7 @@
     "answers": [
       "La Constitution de la Ve République"
     ],
+    "group": "textes-fondateurs",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/droits-et-devoirs/droits-fondamentaux/les-principaux-textes-la-constitution-de-la-5-republique/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -2068,6 +2069,7 @@
     "answers": [
       "La Déclaration des droits de l'homme et du citoyen de 1789"
     ],
+    "group": "textes-fondateurs",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/droits-et-devoirs/droits-fondamentaux/un-droit-fondamental-la-citoyennete/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -2092,6 +2094,7 @@
     "answers": [
       "Les droits individuels sont garantis mais peuvent être limités par la loi pour protéger l'ordre public et les droits d'autrui"
     ],
+    "group": "limites-libertes",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/droits-et-devoirs/obligations-et-devoirs-des-personnes-residant-en-france/la-limite-des-libertes-individuelles/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -2116,6 +2119,7 @@
     "answers": [
       "1789"
     ],
+    "group": "textes-fondateurs",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/droits-et-devoirs/droits-fondamentaux/les-principaux-textes-la-declaraion-des-droits-de-lhomme-et-du-citoyen/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -2140,6 +2144,7 @@
     "answers": [
       "La liberté de conscience (croire ou ne pas croire)"
     ],
+    "group": "liberte-conscience",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/laicite/la-definition-de-la-laicite-1/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -2161,8 +2166,9 @@
     ],
     "explanation": "En France, les droits et libertés fondamentaux sont garantis par un bloc de constitutionnalité comprenant : la Constitution de 1958, la Déclaration des droits de l'homme et du citoyen de 1789, le Préambule de la Constitution de 1946 et la Charte de l'environnement de 2004.",
     "answers": [
-      "La Constitution de 1958 et la Déclaration des droits de l'homme de 1789"
+      "La Constitution et la Déclaration de 1789"
     ],
+    "group": "textes-fondateurs",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/droits-et-devoirs/droits-fondamentaux/les-principaux-textes-la-constitution-de-la-5-republique/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -2209,7 +2215,7 @@
     ],
     "explanation": "Le droit à la défense est un droit fondamental : toute personne poursuivie peut se défendre, être assistée d'un avocat et bénéficier d'un procès équitable. Pour les personnes aux faibles ressources, l'aide juridictionnelle peut prendre en charge les frais d'avocat. Il va de pair avec la présomption d'innocence et le droit au silence.",
     "answers": [
-      "Le droit à la défense (se faire représenter par un avocat)"
+      "Le droit à la défense"
     ],
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/droits-et-devoirs/droits-fondamentaux/les-droits-inherents-a-la-personne-humaine/",
@@ -2234,6 +2240,7 @@
     "answers": [
       "La Déclaration des droits de l'homme et du citoyen de 1789"
     ],
+    "group": "textes-fondateurs",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/droits-et-devoirs/droits-fondamentaux/les-principaux-textes-la-declaraion-des-droits-de-lhomme-et-du-citoyen/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -2258,6 +2265,7 @@
     "answers": [
       "La Déclaration des droits de l'homme et du citoyen"
     ],
+    "group": "textes-fondateurs",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/droits-et-devoirs/droits-fondamentaux/les-principaux-textes-la-declaraion-des-droits-de-lhomme-et-du-citoyen/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -2280,8 +2288,9 @@
     ],
     "explanation": "La liberté de conscience, garantie par la laïcité et par l'article 10 de la DDHC de 1789, protège le droit de chaque personne de ne pas avoir de religion, d'être athée ou agnostique, sans subir aucune discrimination ou contrainte de l'État.",
     "answers": [
-      "La liberté de conscience, garantie par la laïcité"
+      "La liberté de conscience"
     ],
+    "group": "liberte-conscience",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/laicite/la-definition-de-la-laicite-1/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -2352,7 +2361,7 @@
     ],
     "explanation": "La peine de mort a été abolie en France par la loi du 9 octobre 1981, portée par le garde des Sceaux Robert Badinter, sous la présidence de François Mitterrand. Son abolition a été gravée dans la Constitution lors de la révision constitutionnelle du 23 février 2007.",
     "answers": [
-      "Abolie depuis 1981 et inscrite dans la Constitution depuis 2007"
+      "Abolie depuis 1981"
     ],
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/la-cinquieme-republique/focus-sur-la-cinquieme-republique-5/",
@@ -2378,6 +2387,7 @@
     "answers": [
       "Les libertés individuelles peuvent être limitées par la loi pour protéger l'ordre public et les droits d'autrui"
     ],
+    "group": "limites-libertes",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/droits-et-devoirs/obligations-et-devoirs-des-personnes-residant-en-france/la-limite-des-libertes-individuelles/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -2426,6 +2436,7 @@
     "answers": [
       "Oui, c'est un devoir civique et écologique encouragé et encadré par la loi"
     ],
+    "group": "dechets",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/droits-et-devoirs/obligations-et-devoirs-des-personnes-residant-en-france/obligations-et-devoirs-des-personnes-residants-en-france-adopter-une-attitude-respectueuse-vis-a-vis-de-environnement/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -2450,6 +2461,7 @@
     "answers": [
       "Interdit, c'est une contravention passible d'une amende pouvant aller jusqu'à 750€"
     ],
+    "group": "abandon-dechets",
     "source": {
       "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F31963",
       "label": "service-public.gouv.fr"
@@ -2474,6 +2486,7 @@
     "answers": [
       "Pour protéger l'ordre public, la sécurité collective et les droits d'autrui"
     ],
+    "group": "limites-libertes",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/droits-et-devoirs/obligations-et-devoirs-des-personnes-residant-en-france/la-limite-des-libertes-individuelles/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -2568,7 +2581,7 @@
     ],
     "explanation": "La gendarmerie nationale est une force armée chargée des missions de sécurité publique principalement en zone rurale et périurbaine (tandis que la police nationale intervient en zone urbaine). Elle maintient l'ordre, protège les personnes et les biens, constate les infractions et mène des enquêtes judiciaires.",
     "answers": [
-      "Maintenir l'ordre, protéger les personnes et les biens, et constater les infractions (en zone rurale et périurbaine)"
+      "Assurer la sécurité et constater les infractions, surtout en zone rurale"
     ],
     "group": "police-gendarmerie",
     "source": {
@@ -2593,7 +2606,7 @@
     ],
     "explanation": "La police nationale est chargée de maintenir l'ordre public, protéger les personnes et les biens, prévenir les infractions, mener des enquêtes judiciaires et lutter contre la délinquance, principalement dans les zones urbaines. Elle travaille en collaboration avec la gendarmerie.",
     "answers": [
-      "Maintenir l'ordre public, protéger les personnes et les biens, et prévenir et réprimer les infractions"
+      "Maintenir l'ordre public et lutter contre les infractions"
     ],
     "group": "police-gendarmerie",
     "source": {
@@ -2620,6 +2633,7 @@
     "answers": [
       "Un acte contraire à la loi pénale, classé en contravention, délit ou crime selon sa gravité"
     ],
+    "group": "infractions",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/droits-et-devoirs/obligations-et-devoirs-des-personnes-residant-en-france/se-conformer-aux-lois-les-infractions/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -2644,6 +2658,7 @@
     "answers": [
       "En triant, en compostant, en achetant moins d'emballages et en réutilisant les objets"
     ],
+    "group": "dechets",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/droits-et-devoirs/obligations-et-devoirs-des-personnes-residant-en-france/obligations-et-devoirs-des-personnes-residants-en-france-adopter-une-attitude-respectueuse-vis-a-vis-de-environnement/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -2667,6 +2682,7 @@
     "answers": [
       "Interdit en dehors de la collecte prévue : c'est un dépôt sauvage, puni d'une amende"
     ],
+    "group": "abandon-dechets",
     "source": {
       "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F31954",
       "label": "service-public.gouv.fr"
@@ -2689,7 +2705,7 @@
     ],
     "explanation": "La traite des êtres humains consiste à recruter, transporter, transférer, héberger ou accueillir une personne pour l'exploiter : proxénétisme, travail ou services forcés, esclavage, mendicité forcée… Elle est interdite en France et punie de 7 ans d'emprisonnement et 150 000 € d'amende, davantage si la victime est mineure ; commise en bande organisée, elle devient un crime.",
     "answers": [
-      "Recruter, transporter ou héberger des personnes pour les exploiter (prostitution, travail forcé, mendicité…)"
+      "Recruter ou héberger des personnes pour les exploiter"
     ],
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/droits-et-devoirs/obligations-et-devoirs-des-personnes-residant-en-france/la-traite-des-etres-humains-et-la-prostitution/",
@@ -2712,8 +2728,9 @@
     ],
     "explanation": "Une victime de violences ne doit pas rester seule. Elle peut porter plainte dans n'importe quel commissariat ou gendarmerie (ou écrire au procureur de la République), appeler le 17 en cas de danger immédiat, le 3919 (violences conjugales, gratuit 24h/24), faire constater ses blessures par un médecin et se faire accompagner gratuitement par une association. En cas de violences conjugales, elle peut aussi demander une ordonnance de protection au juge.",
     "answers": [
-      "Porter plainte auprès de la police ou de la gendarmerie, appeler le 3919 (violences conjugales) et consulter un médecin"
+      "Porter plainte, appeler le 3919 et consulter un médecin"
     ],
+    "group": "victime-violences",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/droits-et-devoirs/obligations-et-devoirs-des-personnes-residant-en-france/la-protection-des-victimes-de-violences/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -2738,6 +2755,7 @@
     "answers": [
       "Le crime (meurtre, viol, terrorisme…)"
     ],
+    "group": "infractions",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/droits-et-devoirs/obligations-et-devoirs-des-personnes-residant-en-france/se-conformer-aux-lois-les-infractions/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -4654,6 +4672,7 @@
     "answers": [
       "Porter plainte auprès de la police ou de la gendarmerie et appeler le 3919"
     ],
+    "group": "victime-violences",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/droits-et-devoirs/obligations-et-devoirs-des-personnes-residant-en-france/la-protection-des-victimes-de-violences/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -4823,7 +4842,7 @@
     ],
     "explanation": "La participation au jury d'assises est un devoir civique obligatoire pour les citoyens français tirés au sort. Des dispenses sont possibles pour motif légitime. Le refus injustifié est passible d'amende, pas d'emprisonnement.",
     "answers": [
-      "Non, sauf motif légitime reconnu par la loi (maladie, obligations familiales impérieuses…)"
+      "Non, sauf dispense pour motif reconnu par la loi"
     ],
     "source": {
       "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F1044",
@@ -4836,13 +4855,13 @@
     "notion": "mise-en-situation",
     "question": "Un commerçant refuse de vous rembourser un article défectueux acheté il y a une semaine. Que pouvez-vous faire ?",
     "distractors": [
-      "Rien, le vendeur n'est pas obligé de rembourser",
+      "Rien, un article défectueux n'est jamais repris",
       "Reprendre l'article de force car il est défectueux",
       "Demander au maire d'obliger le commerçant à vous rembourser"
     ],
     "explanation": "La garantie légale de conformité (2 ans pour un produit neuf) s'applique gratuitement. Vous choisissez d'abord entre la réparation et le remplacement, qui doivent intervenir dans les 30 jours ; si c'est impossible ou trop tardif, vous pouvez obtenir le remboursement ou une réduction du prix. En cas de litige, vous pouvez vous faire aider par une association de consommateurs, recourir à un médiateur ou saisir la justice.",
     "answers": [
-      "Invoquer la garantie légale de conformité et, si nécessaire, saisir une association de consommateurs ou le tribunal"
+      "Invoquer la garantie légale de conformité"
     ],
     "source": {
       "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F11094",
@@ -4880,7 +4899,7 @@
     ],
     "explanation": "La corruption est un délit grave en France, puni de 10 ans d'emprisonnement et 1 000 000 € d'amende. L'agent qui réclame de l'argent commet une corruption passive ; celui qui paie, même à la demande de l'agent, commet une corruption active et peut lui aussi être poursuivi. Il faut refuser et signaler les faits à la police, à la gendarmerie ou au procureur de la République.",
     "answers": [
-      "Refuser et signaler les faits à la police, à la gendarmerie ou au procureur de la République"
+      "Refuser et signaler les faits à la police ou au procureur"
     ],
     "source": {
       "url": "https://www.agence-francaise-anticorruption.gouv.fr/lexique",
@@ -4899,7 +4918,7 @@
     ],
     "explanation": "Le loueur doit assurer le véhicule avec la responsabilité civile obligatoire, incluse dans le prix : elle couvre les dommages causés aux autres (conducteurs, piétons, biens). Elle ne couvre pas les dégâts au véhicule loué, le vol ni vos propres blessures : pour ceux-ci, une franchise prévue au contrat peut rester à votre charge, sauf si vous avez souscrit une assurance complémentaire (rachat de franchise).",
     "answers": [
-      "Partiellement, selon le contrat. Une franchise peut rester à votre charge sauf si vous avez souscrit une couverture complémentaire"
+      "En partie : une franchise peut rester à votre charge"
     ],
     "source": {
       "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F23420",
@@ -5801,6 +5820,7 @@
     "answers": [
       "En principe non, sauf dans les cas protégés des lanceurs d'alerte"
     ],
+    "group": "lanceur-alerte",
     "source": {
       "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F32031",
       "label": "service-public.gouv.fr"
@@ -5937,6 +5957,7 @@
     "answers": [
       "Utiliser la procédure de lanceur d'alerte, protégée par la loi"
     ],
+    "group": "lanceur-alerte",
     "source": {
       "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F32031",
       "label": "service-public.gouv.fr"
