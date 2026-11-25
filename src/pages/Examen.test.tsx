@@ -577,7 +577,9 @@ describe('Examen — écrans de question et de correction', () => {
     renderResumed(resume)
     await answer(false)
     expect(screen.getByRole('status')).toHaveTextContent('Pas tout à fait')
-    expect(screen.getByRole('radio', { name: new RegExp(`Bonne réponse.*${resume.questions[0].answer.slice(0, 10)}`) })).toBeDisabled()
+    // The answer is drawn at random: escape it, a parenthesis (question 56) broke the pattern
+    const answerStart = resume.questions[0].answer.slice(0, 10).replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+    expect(screen.getByRole('radio', { name: new RegExp(`Bonne réponse.*${answerStart}`) })).toBeDisabled()
     expect(screen.getByRole('radio', { name: /Votre réponse/ })).toBeChecked()
     expect(screen.getByRole('heading', { level: 2, name: 'Pourquoi' })).toBeInTheDocument()
     expect(screen.getByText(resume.questions[0].explanation)).toBeInTheDocument()
