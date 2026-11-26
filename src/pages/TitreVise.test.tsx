@@ -31,9 +31,9 @@ function renderChangeOfTitle() {
   renderTitre()
 }
 
-function renderTitre(state?: unknown) {
+function renderTitre() {
   render(
-    <MemoryRouter initialEntries={[{ pathname: '/titre', state }]}>
+    <MemoryRouter initialEntries={['/titre']}>
       <Routes>
         <Route path="/titre" element={<TitreVise />} />
         <Route path="/" element={<p>Accueil</p>} />
@@ -137,11 +137,8 @@ describe('Changer de titre (« Quel titre préparez-vous ? »)', () => {
 })
 
 describe('Page de première visite', () => {
-  it.each([
-    ['renvoyé par l\'accueil', { firstLaunch: true }],
-    ['arrivée directe sur /titre', undefined],
-  ])('%s : accueil, choix du titre, sans « Retour »', (_, state) => {
-    renderTitre(state)
+  it('accueil, choix du titre, sans « Retour »', () => {
+    renderTitre()
     expect(screen.getByRole('heading', { level: 1, name: "Préparez l'examen civique" })).toBeInTheDocument()
     expect(document.title).toBe("Préparez l'examen civique · Futur Citoyen")
     expect(screen.getByText('Entraînez-vous gratuitement, avec les questions officielles. Sans inscription.')).toBeInTheDocument()

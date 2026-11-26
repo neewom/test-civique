@@ -332,7 +332,7 @@ describe('Accueil — premier lancement', () => {
   it('sans titre choisi ni examen, renvoie vers l\'écran du titre', () => {
     localStorageMock.removeItem('target-title')
     renderHome()
-    expect(screen.getByTestId('location')).toHaveTextContent('/titre|{"firstLaunch":true}')
+    expect(screen.getByTestId('location')).toHaveTextContent('/titre|null')
   })
 
   it('un titre illisible compte comme pas de choix', () => {
@@ -584,6 +584,6 @@ describe('Accueil — carte de résident', () => {
   it('premier passage : aucun titre, aucun historique, aucun examen en cours dans aucune clé renvoie vers le titre', () => {
     localStorageMock.removeItem('target-title')
     renderHome()
-    expect(screen.getByTestId('location')).toHaveTextContent('/titre|{"firstLaunch":true}')
+    expect(screen.getByTestId('location')).toHaveTextContent('/titre|null')
   })
 })

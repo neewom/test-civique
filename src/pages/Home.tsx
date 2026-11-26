@@ -143,7 +143,7 @@ export default function Home() {
     () => storedTitle === null && loadHistory().length === 0 && !hasProgress(),
   )
 
-  if (mustChooseTitle) return <Navigate to="/titre" replace state={{ firstLaunch: true }} />
+  if (mustChooseTitle) return <Navigate to="/titre" replace />
 
   const streak = passedInARow(history)
   const recent = history.slice(-3).reverse()

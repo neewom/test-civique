@@ -58,7 +58,7 @@ function TitleChoices({
                 : 'bg-card text-card-foreground',
             )}
           >
-            <span className="flex min-w-0 flex-col">
+            <span className="flex min-w-0 flex-col hyphens-auto">
               <span className="text-[1.0625rem] leading-snug font-bold">{TARGET_TITLE_LABELS[key]}</span>
               <span className={cn('text-[0.8125rem]', on ? (firstVisit ? '' : 'opacity-90') : 'text-muted-foreground')}>
                 {officialCount(key)} questions officielles
@@ -96,14 +96,14 @@ function TitleChoices({
           type="button"
           disabled
           aria-pressed={false}
-          className={cn(optionClass, 'cursor-not-allowed bg-card text-card-foreground', firstVisit && 'bg-card/70')}
+          className={cn(optionClass, 'cursor-not-allowed flex-wrap gap-y-1 bg-card text-card-foreground', firstVisit && 'bg-card/70')}
         >
-          <span className="flex min-w-0 flex-col">
+          <span className="flex min-w-0 flex-col hyphens-auto">
             <span className="text-[1.0625rem] leading-snug font-bold">{t.label}</span>
             {!firstVisit && <span className="text-[0.8125rem] text-muted-foreground">{t.detail}</span>}
           </span>
           {firstVisit && (
-            <span className="rounded-full bg-muted px-2.5 text-[0.8125rem] leading-6 font-bold text-muted-foreground">
+            <span className="ml-auto rounded-full bg-muted px-2.5 text-[0.8125rem] leading-6 font-bold text-muted-foreground">
               {t.detail}
             </span>
           )}
