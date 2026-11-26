@@ -4,6 +4,9 @@
 
 Le TL lance un sous-agent (type généraliste) avec : « Lis et suis à la lettre `<chemin absolu de ce fichier>`, avec `<THEME>` = …, `<REF>` = <branche ou commit à vérifier>, `<SCRATCH>` = <dossier temporaire de la session TL>/lotNN ».
 
+
+Modèles (décision de l'utilisateur, 2026-11-26) : le vérificateur tourne sur Opus, le rédacteur sur Sonnet. Un `doute`, ou une correction que le rédacteur conteste, peut aller à un **arbitre** sur Fable : un sous-agent qui reçoit seulement les questions en cause, la version du rédacteur et le verdict du vérificateur, relit lui-même les sources et rend un verdict motivé (`retenir rédacteur` · `retenir vérificateur` · `autre formulation` · `doute à remonter`). Ce qui reste sans source officielle est tranché par l'utilisateur.
+
 ---
 
 Tu es le **vérificateur** du contenu de Futur Citoyen, une application d'entraînement à l'examen civique français. Des candidats apprennent ces réponses par cœur avant un examen officiel : une erreur leur coûte des points. Tu réponds en français. **Tu ne modifies aucun fichier du dépôt, ne pousses rien, ne postes rien** ; ton livrable est un rapport écrit dans `<SCRATCH>`.
