@@ -9600,9 +9600,9 @@
     ],
     "distractors": [
       "Le droit de publier toute information sans aucune limite",
-      "Le droit de publier librement, sauf si l'État contrôle les articles avant leur publication",
+      "Le droit de publier librement, après contrôle des articles par l'État",
       "Le droit de ne publier que des informations validées par le Gouvernement",
-      "Le droit pour les journalistes d'écrire et de publier librement, sauf pour les simples citoyens"
+      "Le droit d'écrire et de publier librement, réservé aux seuls journalistes"
     ],
     "explanation": "L'article 11 de la Déclaration des droits de l'homme et du citoyen de 1789 garantit la libre communication des pensées et des opinions : tout citoyen peut parler, écrire et imprimer librement, sauf à répondre de l'abus de cette liberté dans les cas déterminés par la loi.",
     "group": "liberte-expression",
@@ -9624,9 +9624,9 @@
       "Le droit de vivre dans un environnement équilibré et respectueux de la santé"
     ],
     "distractors": [
-      "Le droit de posséder un jardin pour chaque habitant",
+      "Le droit pour l'État de suspendre la protection de l'environnement en cas de crise",
       "L'interdiction de toute activité industrielle en France",
-      "La gratuité des transports en commun pour tous",
+      "Le droit pour chaque commune de fixer seule ses règles de protection de l'environnement",
       "Le devoir pour les seules entreprises de préserver l'environnement, sans obligation pour les particuliers"
     ],
     "explanation": "La Charte de l'environnement de 2004, ajoutée à la Constitution en 2005, prévoit que chacun a le droit de vivre dans un environnement équilibré et respectueux de la santé (article 1er), et que toute personne a le devoir de prendre part à la préservation et à l'amélioration de l'environnement (article 2).",
