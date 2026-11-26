@@ -19,7 +19,7 @@ export function isPassed(score: number, total: number): boolean {
 
 /**
  * Official sub-theme of a question (arrêté du 10 octobre 2025, annexe).
- * Situational questions (id 192+) are always `mise-en-situation`, whatever their theme.
+ * Situational questions (ids 192-291) are always `mise-en-situation`, whatever their theme.
  */
 export const NOTIONS = [
   'devise-symboles',

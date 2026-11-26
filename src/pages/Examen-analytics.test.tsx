@@ -6,7 +6,7 @@ import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest'
 import Examen, { GLOBAL_EXAM_TIME } from './Examen'
 import type { ExamInProgress } from '@/lib/exam-types'
 import { saveProgress } from '@/lib/exam-types'
-import { buildExam, EXAM_SIZE } from '@/lib/exam'
+import { buildExam, questionsForTitle, EXAM_SIZE } from '@/lib/exam'
 import {
   resetAnalyticsForTests,
   EXAM_STARTED,
@@ -25,7 +25,7 @@ function events(): string[] {
 }
 
 function makeResume(timeLeft: number, answered: number, correct: boolean): ExamInProgress {
-  const questions = buildExam()
+  const questions = buildExam(questionsForTitle('pluriannuelle'))
   return {
     questions,
     index: answered,

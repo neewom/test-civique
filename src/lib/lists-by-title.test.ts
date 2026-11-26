@@ -63,8 +63,9 @@ describe('questionsForTitle', () => {
     expect(questionsForTitle('naturalisation', pool).map((q) => q.id)).toEqual([3])
   })
 
-  it('the multi-year permit pool is the whole data today', () => {
-    expect(questionsForTitle('pluriannuelle')).toHaveLength(listed.length)
+  it('the multi-year permit pool is its official list (1-191) plus the situational questions', () => {
+    const expected = listed.filter((q) => q.id <= 191 || q.notion === 'mise-en-situation').map((q) => q.id)
+    expect(questionsForTitle('pluriannuelle').map((q) => q.id)).toEqual(expected)
   })
 
   it('every situational question is in the pool of each title', () => {

@@ -3,7 +3,7 @@ import { MemoryRouter } from 'react-router-dom'
 import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest'
 import Revision from './Revision'
 import type { ReviewState } from './ExamenDetail'
-import questions from '@/data/questions.json'
+import allQuestions from '@/data/questions.json'
 import { stubWideScreen } from '@/test/wide-screen'
 import { ThemeProvider } from '@/components/ThemeProvider'
 
@@ -27,9 +27,11 @@ afterEach(() => {
   vi.unstubAllGlobals()
 })
 
+// Revision shows the pool of the chosen title, the multi-year permit by default
+const questions = allQuestions.filter((q) => q.lists.includes('pluriannuelle'))
+const official = questions.filter((q) => q.notion !== 'mise-en-situation')
+const situational = questions.filter((q) => q.notion === 'mise-en-situation')
 const themes = [...new Set(questions.map((q) => q.theme))]
-const official = questions.filter((q) => q.id <= 191)
-const situational = questions.filter((q) => q.id > 191)
 
 function renderRevision(state?: unknown) {
   render(

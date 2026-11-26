@@ -7,21 +7,24 @@ export { expect }
 export const APP_NAME = 'Futur Citoyen'
 export const EXAM_SIZE = 40
 export const PASS_THRESHOLD = 32
-const LAST_OFFICIAL_ID = 191
 
 export interface Question {
   id: number
   theme: string
   question: string
   answers: string[]
+  notion: string
+  lists: string[]
   source?: { url: string; label: string }
 }
 
-// The questions are drawn at random: tests read the data instead of naming a question
-export const QUESTIONS: Question[] = JSON.parse(
-  readFileSync(path.resolve(import.meta.dirname, '../src/data/questions.json'), 'utf8'),
-)
-export const SITUATION_COUNT = QUESTIONS.filter((q) => q.id > LAST_OFFICIAL_ID).length
+// The questions are drawn at random: tests read the data instead of naming a question.
+// Only the questions of the multi-year permit, the title chosen by the tests (withTitleChosen):
+// the questions of the other titles (ids 292+) are never shown for it.
+export const QUESTIONS: Question[] = (
+  JSON.parse(readFileSync(path.resolve(import.meta.dirname, '../src/data/questions.json'), 'utf8')) as Question[]
+).filter((q) => q.lists.includes('pluriannuelle'))
+export const SITUATION_COUNT = QUESTIONS.filter((q) => q.notion === 'mise-en-situation').length
 export const THEMES = [...new Set(QUESTIONS.map((q) => q.theme))]
 
 const GOATCOUNTER = /(^|\.)goatcounter\.com$/

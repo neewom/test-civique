@@ -27,9 +27,10 @@ describe('question themes', () => {
     expect(new Set(questions.map((q) => q.theme))).toEqual(new Set(OFFICIAL_THEMES))
   })
 
-  it('keeps 191 official questions and 100 situational ones', () => {
+  // Ids 1-191: multi-year permit list; 192-291: situational questions; 292+: other official lists
+  it('keeps 191 multi-year permit questions and 100 situational ones', () => {
     expect(questions.filter((q) => q.id <= 191)).toHaveLength(191)
-    expect(questions.filter((q) => q.id >= 192)).toHaveLength(100)
+    expect(questions.filter((q) => q.id >= 192 && q.id <= 291)).toHaveLength(100)
   })
 })
 

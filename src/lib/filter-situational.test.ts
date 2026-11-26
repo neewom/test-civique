@@ -15,7 +15,10 @@ interface Question {
   group?: string
 }
 
-// Pool filtré : uniquement les questions officielles (id < 192)
+// Pool filtré : uniquement les questions officielles de la pluriannuelle (id < 192).
+// Ici, « officielle » = id < 192 : la vraie règle de l'appli porte sur la notion
+// (`mise-en-situation` ou non), et les ids 292+ (carte de résident) ne sont pas
+// concernés par ce fichier, qui ne teste que le pool filtré ci-dessous.
 const officialPool = (allQuestions as Question[]).filter((q) => q.id < SITUATIONAL_MIN_ID)
 
 // Pool fictif incluant des questions de mise en situation pour tester l'isolation

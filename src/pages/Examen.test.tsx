@@ -6,8 +6,10 @@ import Examen, { GLOBAL_EXAM_TIME } from './Examen'
 import { UNSAVED_MESSAGE } from '@/lib/readiness'
 import type { ExamInProgress } from '@/lib/exam-types'
 import { saveProgress, loadProgress, EXAM_PROGRESS_KEY } from '@/lib/exam-types'
+import allQuestions from '@/data/questions.json'
 import {
   buildExam,
+  questionsForTitle,
   saveResult,
   shuffle,
   formatTime,
@@ -66,19 +68,19 @@ describe('formatTime', () => {
 
 describe('buildExam', () => {
   it(`retourne exactement ${EXAM_SIZE} questions`, () => {
-    expect(buildExam()).toHaveLength(EXAM_SIZE)
+    expect(buildExam(questionsForTitle('pluriannuelle'))).toHaveLength(EXAM_SIZE)
   })
 
   it('chaque question a exactement 4 choix', () => {
-    buildExam().forEach((q) => expect(q.choices).toHaveLength(4))
+    buildExam(questionsForTitle('pluriannuelle')).forEach((q) => expect(q.choices).toHaveLength(4))
   })
 
   it('la bonne réponse est toujours dans les choix', () => {
-    buildExam().forEach((q) => expect(q.choices).toContain(q.answer))
+    buildExam(questionsForTitle('pluriannuelle')).forEach((q) => expect(q.choices).toContain(q.answer))
   })
 
   it('chaque question a une explication', () => {
-    buildExam().forEach((q) => expect(q.explanation).toBeTruthy())
+    buildExam(questionsForTitle('pluriannuelle')).forEach((q) => expect(q.explanation).toBeTruthy())
   })
 
   it('la réponse choisie est toujours une des valeurs du tableau answers', () => {
@@ -320,7 +322,7 @@ describe('Examen', () => {
 // ─── Règles officielles : reprise et verdict ──────────────────────────────────
 
 function makeResume(timeLeft: number, correctCount: number): ExamInProgress {
-  const questions = buildExam()
+  const questions = buildExam(questionsForTitle('pluriannuelle'))
   return {
     questions,
     index: correctCount,
@@ -501,7 +503,11 @@ describe('Examen — fiabilité', () => {
     })
     const questions = loadProgress()!.questions
     expect(questions).toHaveLength(EXAM_SIZE)
-    expect(questions.filter((q) => q.id > 191)).toHaveLength(12)
+    // An exam question keeps no notion: look it up in the data
+    const situationalIds = new Set(
+      (allQuestions as { id: number; notion: string }[]).filter((q) => q.notion === 'mise-en-situation').map((q) => q.id),
+    )
+    expect(questions.filter((q) => situationalIds.has(q.id))).toHaveLength(12)
   })
 
   it('une reprise dont toutes les réponses sont données affiche le résultat une seule fois', async () => {

@@ -6,6 +6,7 @@ import { OFFICIAL_LISTS, isListComplete, rankedQuestions } from '@/test/official
 // Sous-thème officiel (« notion ») de chaque question, arrêté du 10 octobre 2025.
 
 const OFFICIAL_MAX_ID = 191
+const SITUATIONAL_MAX_ID = 291
 const SITUATIONAL = 'mise-en-situation'
 
 const questions = allQuestions as Question[]
@@ -16,9 +17,15 @@ describe('question notions', () => {
     expect(outliers.map((q) => q.id)).toEqual([])
   })
 
-  it('official questions (1-191) are never situational, 192+ always are', () => {
-    const wrongOfficial = questions.filter((q) => q.id <= OFFICIAL_MAX_ID && q.notion === SITUATIONAL)
-    const wrongSituational = questions.filter((q) => q.id > OFFICIAL_MAX_ID && q.notion !== SITUATIONAL)
+  // Id ranges: 1-191 multi-year permit list, 192-291 situational questions,
+  // 292+ questions of another official list (resident card, naturalisation).
+  it('situational questions are exactly ids 192-291, never an official list question', () => {
+    const wrongOfficial = questions.filter(
+      (q) => (q.id <= OFFICIAL_MAX_ID || q.id > SITUATIONAL_MAX_ID) && q.notion === SITUATIONAL,
+    )
+    const wrongSituational = questions.filter(
+      (q) => q.id > OFFICIAL_MAX_ID && q.id <= SITUATIONAL_MAX_ID && q.notion !== SITUATIONAL,
+    )
     expect(wrongOfficial.map((q) => q.id)).toEqual([])
     expect(wrongSituational.map((q) => q.id)).toEqual([])
   })
