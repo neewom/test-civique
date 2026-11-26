@@ -11665,9 +11665,11 @@
     "theme": "Vie en société",
     "notion": "autorite-parentale-ecole",
     "lists": [
-      "resident"
+      "resident",
+      "naturalisation"
     ],
     "crNumber": 180,
+    "natNumber": 226,
     "question": "En cas de divorce, qui exerce l'autorité parentale ?",
     "answers": [
       "Les deux parents, à égalité"
@@ -11690,9 +11692,11 @@
     "theme": "Vie en société",
     "notion": "s-installer",
     "lists": [
-      "resident"
+      "resident",
+      "naturalisation"
     ],
     "crNumber": 181,
+    "natNumber": 227,
     "question": "Quelle aide permet aux personnes qui ont des difficultés financières d'avoir un avocat ?",
     "answers": [
       "L'aide juridictionnelle"
@@ -11715,9 +11719,11 @@
     "theme": "Vie en société",
     "notion": "s-installer",
     "lists": [
-      "resident"
+      "resident",
+      "naturalisation"
     ],
     "crNumber": 182,
+    "natNumber": 216,
     "question": "Où faut-il déclarer la naissance d'un enfant ?",
     "answers": [
       "À la mairie du lieu de naissance"
@@ -11813,9 +11819,11 @@
     "theme": "Vie en société",
     "notion": "s-installer",
     "lists": [
-      "resident"
+      "resident",
+      "naturalisation"
     ],
     "crNumber": 186,
+    "natNumber": 223,
     "question": "Quel numéro d'urgence permet d'appeler la police ?",
     "answers": [
       "Le 17"
@@ -11862,9 +11870,11 @@
     "theme": "Vie en société",
     "notion": "soins",
     "lists": [
-      "resident"
+      "resident",
+      "naturalisation"
     ],
     "crNumber": 189,
+    "natNumber": 231,
     "question": "Qu’est-ce que le principe de confidentialité dans le domaine de la santé ?",
     "answers": [
       "Le médecin doit garder secrètes les informations de son patient"
@@ -11886,9 +11896,11 @@
     "theme": "Vie en société",
     "notion": "soins",
     "lists": [
-      "resident"
+      "resident",
+      "naturalisation"
     ],
     "crNumber": 190,
+    "natNumber": 235,
     "question": "L'inscription à l'Assurance maladie est :",
     "answers": [
       "Obligatoire, pour toute personne qui réside en France"
@@ -11911,9 +11923,11 @@
     "theme": "Vie en société",
     "notion": "travail",
     "lists": [
-      "resident"
+      "resident",
+      "naturalisation"
     ],
     "crNumber": 191,
+    "natNumber": 241,
     "question": "Qui peut demander un congé parental d'éducation ?",
     "answers": [
       "Tout salarié qui a au moins un an d'ancienneté"
@@ -11935,9 +11949,11 @@
     "theme": "Vie en société",
     "notion": "travail",
     "lists": [
-      "resident"
+      "resident",
+      "naturalisation"
     ],
     "crNumber": 192,
+    "natNumber": 245,
     "question": "Quelles sont les affaires traitées par le conseil de prud'hommes ?",
     "answers": [
       "Les conflits entre un salarié et son employeur sur le contrat"
@@ -11960,9 +11976,11 @@
     "theme": "Vie en société",
     "notion": "travail",
     "lists": [
-      "resident"
+      "resident",
+      "naturalisation"
     ],
     "crNumber": 193,
+    "natNumber": 237,
     "question": "Travailler sans être déclaré est :",
     "answers": [
       "Illégal, car il prive le salarié de ses droits sociaux"
@@ -12207,9 +12225,11 @@
     "theme": "Vie en société",
     "notion": "autorite-parentale-ecole",
     "lists": [
-      "resident"
+      "resident",
+      "naturalisation"
     ],
     "crNumber": 203,
+    "natNumber": 253,
     "question": "À quel âge commence l'instruction obligatoire des enfants ?",
     "answers": [
       "À 3 ans"
@@ -12282,9 +12302,11 @@
     "theme": "Vie en société",
     "notion": "autorite-parentale-ecole",
     "lists": [
-      "resident"
+      "resident",
+      "naturalisation"
     ],
     "crNumber": 206,
+    "natNumber": 251,
     "question": "Quel motif d'absence est accepté par l'école ?",
     "answers": [
       "La maladie de l'enfant"
@@ -12307,9 +12329,11 @@
     "theme": "Vie en société",
     "notion": "autorite-parentale-ecole",
     "lists": [
-      "resident"
+      "resident",
+      "naturalisation"
     ],
     "crNumber": 207,
+    "natNumber": 249,
     "question": "Des parents ne respectent pas l'obligation d'instruction pour leurs enfants. Quelle sanction maximale risquent-ils ?",
     "answers": [
       "6 mois de prison et 7 500 euros d'amende"
@@ -15790,6 +15814,563 @@
     "group": "regions",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-regions-fran%C3%A7aises/auvergne-rhone-alpes/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 604,
+    "theme": "Vie en société",
+    "notion": "s-installer",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 217,
+    "question": "Quelle action peut réaliser le locataire d'un logement sans l'autorisation du propriétaire ?",
+    "answers": [
+      "Héberger gratuitement les personnes de son choix",
+      "Rafraîchir les peintures murales du logement"
+    ],
+    "distractors": [
+      "Sous-louer le logement à une autre personne",
+      "Casser une cloison pour agrandir une pièce",
+      "Céder son bail à une autre personne de sa famille",
+      "Faire de gros travaux de transformation du logement",
+      "Agrandir le logement en construisant une extension"
+    ],
+    "explanation": "Le locataire a le droit d'aménager librement le logement qu'il occupe, par exemple en rafraîchissant les peintures murales, et d'inviter ou d'héberger gratuitement les personnes de son choix. Il doit en revanche obtenir l'accord du propriétaire pour sous-louer, et l'accord écrit du propriétaire pour de gros travaux de transformation.",
+    "source": {
+      "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F1874",
+      "label": "service-public.gouv.fr"
+    }
+  },
+  {
+    "id": 605,
+    "theme": "Vie en société",
+    "notion": "s-installer",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 218,
+    "question": "Quel mariage est reconnu légalement ?",
+    "answers": [
+      "Le mariage civil, célébré à la mairie"
+    ],
+    "distractors": [
+      "Le mariage religieux, célébré par un prêtre ou un imam",
+      "Le mariage coutumier, décidé par les deux familles",
+      "L'union libre, après trois ans de vie commune",
+      "Le mariage signé devant un notaire"
+    ],
+    "explanation": "Le mariage civil est le seul mariage reconnu en France. Il est célébré à la mairie, devant un officier d'état civil. Une cérémonie religieuse peut avoir lieu, mais elle n'a pas de valeur légale.",
+    "group": "mariage-civil",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/demarches-administratives/la-declaration-de-mariage/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 606,
+    "theme": "Vie en société",
+    "notion": "s-installer",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 219,
+    "question": "Le stationnement sur une place réservée aux personnes handicapées :",
+    "answers": [
+      "Est interdit sans carte mobilité inclusion « stationnement »"
+    ],
+    "distractors": [
+      "Est autorisé pour une courte durée avec les feux de détresse",
+      "Est autorisé à tous les véhicules entre 20 heures et 8 heures",
+      "Est autorisé avec une carte de réduction « famille nombreuse »",
+      "Est autorisé avec le macaron « résident » de la commune"
+    ],
+    "explanation": "Les places réservées sont destinées aux véhicules portant la carte mobilité inclusion « stationnement ». S'y garer sans cette carte est un stationnement très gênant, sanctionné par une amende forfaitaire de 135 €, et le véhicule peut être mis en fourrière.",
+    "source": {
+      "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F34212",
+      "label": "service-public.gouv.fr"
+    }
+  },
+  {
+    "id": 607,
+    "theme": "Vie en société",
+    "notion": "s-installer",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 220,
+    "question": "Si une machine à laver est cassée, il est possible de :",
+    "answers": [
+      "La déposer à la déchetterie de la commune",
+      "La faire enlever lors d'une collecte des encombrants"
+    ],
+    "distractors": [
+      "La jeter avec les ordures ménagères de la semaine",
+      "La mettre dans le bac de tri des emballages",
+      "La mettre dans le conteneur à verre du quartier",
+      "L'abandonner dans un bois ou au bord d'une route"
+    ],
+    "explanation": "Une machine à laver cassée fait partie des encombrants. On peut la déposer en déchetterie, où les encombrants sont triés et recyclés, ou la faire enlever lors d'une collecte organisée par la commune, sur rendez-vous ou à date fixe. L'abandonner sur la voie publique est interdit et puni d'une amende forfaitaire de 135 €.",
+    "group": "abandon-dechets",
+    "source": {
+      "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F31954",
+      "label": "service-public.gouv.fr"
+    }
+  },
+  {
+    "id": 608,
+    "theme": "Vie en société",
+    "notion": "s-installer",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 221,
+    "question": "Dans quel cas faut-il déclarer son enfant au service d'état civil ?",
+    "answers": [
+      "Pour toute naissance, que les parents soient mariés ou non"
+    ],
+    "distractors": [
+      "Seulement si les parents sont mariés",
+      "Uniquement si l'un des parents est de nationalité française",
+      "Pour toute naissance, sauf si elle a lieu à l'hôpital",
+      "Pour toute naissance, sauf si les parents ne souhaitent pas la déclarer",
+      "Pour toute naissance, sauf si les parents sont étrangers"
+    ],
+    "explanation": "La déclaration de naissance est obligatoire. Elle se fait à la mairie du lieu de naissance, dans les 5 jours qui suivent la naissance, par le père, la mère ou une personne qui a assisté à l'accouchement.",
+    "group": "declaration-naissance",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/demarches-administratives/la-declaration-de-naissance/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 609,
+    "theme": "Vie en société",
+    "notion": "s-installer",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 222,
+    "question": "Quand faut-il déclarer son enfant au service d'état civil ?",
+    "answers": [
+      "Dans les 5 jours qui suivent la naissance"
+    ],
+    "distractors": [
+      "Dans les 15 jours qui suivent la naissance",
+      "Dans les 30 jours qui suivent la naissance",
+      "Dans les 3 mois qui suivent la naissance",
+      "Dans l'année qui suit la naissance",
+      "Dès que l'enfant est inscrit à l'école"
+    ],
+    "explanation": "La déclaration de naissance doit être faite dans les 5 jours qui suivent la naissance, à la mairie du lieu de naissance. Elle est obligatoire : l'acte de naissance qui en résulte est nécessaire pour obtenir les prestations sociales, les papiers d'identité et inscrire l'enfant à l'école.",
+    "group": "declaration-naissance",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/demarches-administratives/la-declaration-de-naissance/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 610,
+    "theme": "Vie en société",
+    "notion": "autorite-parentale-ecole",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 225,
+    "question": "Auprès de quelle institution les parents peuvent-ils inscrire leurs enfants à l'école publique ?",
+    "answers": [
+      "La mairie de la commune"
+    ],
+    "distractors": [
+      "La préfecture du département",
+      "La caisse d'allocations familiales (CAF)",
+      "La caisse primaire d'assurance maladie",
+      "Le tribunal judiciaire",
+      "France Travail"
+    ],
+    "explanation": "Pour inscrire son enfant à l'école publique, il suffit de contacter la mairie, ou l'école située près de son domicile. Les parents sont libres de choisir une école publique ou une école privée.",
+    "group": "inscription-ecole",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/parentalite/la-liberte-de-choisir-l-ecole-de-son-enfant/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 611,
+    "theme": "Vie en société",
+    "notion": "s-installer",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 228,
+    "question": "Qui peut demander le divorce de personnes mariées ?",
+    "answers": [
+      "Les deux époux ensemble, ou l'un d'eux seul"
+    ],
+    "distractors": [
+      "Uniquement les deux époux, d'un commun accord",
+      "Seulement l'époux qui n'a commis aucune faute",
+      "Le maire qui a célébré le mariage",
+      "Un juge, de sa propre initiative"
+    ],
+    "explanation": "Le divorce peut être demandé par les deux époux ensemble, quand ils sont d'accord pour divorcer, ou par un seul des époux, qui assigne l'autre devant le tribunal. Le divorce met fin au mariage, sans avoir besoin d'une faute.",
+    "source": {
+      "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F35837",
+      "label": "service-public.gouv.fr"
+    }
+  },
+  {
+    "id": 612,
+    "theme": "Vie en société",
+    "notion": "soins",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 230,
+    "question": "La contraception :",
+    "answers": [
+      "Peut être anonyme et gratuite pour les mineurs"
+    ],
+    "distractors": [
+      "Nécessite l'accord du partenaire ou du conjoint",
+      "Est interdite aux mineurs sans l'accord de leurs parents",
+      "Est réservée aux personnes mariées depuis un an",
+      "Peut être demandée seulement à partir de 30 ans",
+      "Est interdite en France, sauf motif médical"
+    ],
+    "explanation": "La contraception regroupe les moyens d'éviter une grossesse. Pour les mineurs, les consultations et les prescriptions peuvent être anonymes et gratuites, sur demande du « secret ». La contraception d'urgence est délivrée sans ordonnance en pharmacie.",
+    "group": "contraception",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/droits-et-devoirs/droits-fondamentaux/un-droit-fondamental-le-droit-de-disposer-de-son-corps/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 613,
+    "theme": "Vie en société",
+    "notion": "soins",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 234,
+    "question": "Qu'est-ce que le tiers payant ?",
+    "answers": [
+      "Le fait de ne pas avancer la somme que l'Assurance maladie rembourse"
+    ],
+    "distractors": [
+      "La part des frais de santé qui reste à la charge du patient",
+      "Le médecin qui suit le patient et coordonne ses soins",
+      "Une carte qui prouve les droits d'un assuré à l'Assurance maladie",
+      "Une aide de l'État pour payer le loyer des personnes à faibles revenus"
+    ],
+    "explanation": "Le tiers payant permet de ne pas avancer la somme d'argent que l'Assurance maladie rembourse. Il n'est pas automatique : il faut présenter sa carte Vitale chez le médecin ou à la pharmacie pour le demander.",
+    "group": "assurance-maladie",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/sante/sante-la-prise-en-charge-les-demarches-pour-etre-rembourse/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 614,
+    "theme": "Vie en société",
+    "notion": "soins",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 236,
+    "question": "L'avortement est-il possible en France ?",
+    "answers": [
+      "Oui, pour toutes les femmes, sans condition d'âge"
+    ],
+    "distractors": [
+      "Non, il est interdit par la loi",
+      "Oui, mais seulement pour les femmes mariées",
+      "Oui, mais seulement avec l'autorisation du partenaire",
+      "Non, sauf en cas de danger de mort de la mère",
+      "Oui, mais seulement pour les femmes de nationalité française"
+    ],
+    "explanation": "L'interruption volontaire de grossesse (IVG) est possible pour toutes les femmes, sans condition d'âge. Les mineures n'ont pas besoin de l'autorisation de leurs parents, mais doivent être accompagnées d'un adulte de leur choix. Pour une femme assurée, elle est prise en charge à 100 % par l'Assurance maladie.",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/droits-et-devoirs/droits-fondamentaux/un-droit-fondamental-le-droit-de-disposer-de-son-corps/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 615,
+    "theme": "Vie en société",
+    "notion": "travail",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 244,
+    "question": "Quels sont les textes qui définissent les règles au travail ?",
+    "answers": [
+      "Le Code du travail, les conventions collectives et le règlement intérieur"
+    ],
+    "distractors": [
+      "Le Code civil, le Code pénal, le Code de la route et le Code rural",
+      "La Constitution, le Code civil, le Code de la consommation et le Code rural",
+      "Le Code pénal, le Code de la route, le Code de l'urbanisme et le Code rural",
+      "Les statuts des associations, les usages locaux et les coutumes"
+    ],
+    "explanation": "Le Code du travail fixe les droits et les obligations de tous : contrat de travail, conditions de travail, salaire… Les conventions collectives précisent les règles générales d'un secteur d'activité, et le règlement intérieur présente les droits et obligations des salariés de l'entreprise en matière de santé, de sécurité et de discipline.",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/emploi/le-droit-au-travail-1/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 616,
+    "theme": "Vie en société",
+    "notion": "travail",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 246,
+    "question": "Qui a le droit de se syndiquer ?",
+    "answers": [
+      "Chaque salarié"
+    ],
+    "distractors": [
+      "Chaque salarié de nationalité française",
+      "Chaque salarié qui a plus de dix ans d'ancienneté",
+      "Les salariés autorisés par leur employeur",
+      "Seulement les salariés en contrat à durée indéterminée"
+    ],
+    "explanation": "Chaque salarié a le droit de se syndiquer : il peut créer un syndicat, y adhérer ou y participer. Un syndicat défend les droits des travailleurs (salaire, conditions de travail, sécurité…). Personne ne peut obliger un salarié à rejoindre un syndicat, ni le punir s'il en fait partie.",
+    "group": "droit-syndical",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/emploi/le-droit-au-travail-2/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 617,
+    "theme": "Vie en société",
+    "notion": "travail",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 247,
+    "question": "Est-il possible de licencier une femme enceinte ou en congé maternité, en raison de sa grossesse ?",
+    "answers": [
+      "Non, elle est protégée contre le licenciement"
+    ],
+    "distractors": [
+      "Oui, si elle travaille à temps partiel",
+      "Oui, si son employeur respecte un préavis de trois mois",
+      "Non, sauf si elle a moins d'un an d'ancienneté",
+      "Non, mais seulement pendant les trois premiers mois de grossesse"
+    ],
+    "explanation": "Une salariée enceinte ou en congé de maternité est protégée contre le licenciement. Pendant le congé de maternité, l'employeur n'a pas le droit de la licencier, quel qu'en soit le motif. Pour bénéficier de cette protection, la salariée doit informer son employeur par un certificat médical.",
+    "source": {
+      "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F2873",
+      "label": "service-public.gouv.fr"
+    }
+  },
+  {
+    "id": 618,
+    "theme": "Vie en société",
+    "notion": "autorite-parentale-ecole",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 248,
+    "question": "L'instruction des enfants est obligatoire de :",
+    "answers": [
+      "3 à 16 ans"
+    ],
+    "distractors": [
+      "6 à 16 ans",
+      "3 à 18 ans",
+      "6 à 18 ans",
+      "5 à 16 ans",
+      "3 à 14 ans"
+    ],
+    "explanation": "Tous les enfants âgés de 3 à 16 ans qui habitent en France doivent aller à l'école, quelle que soit leur nationalité. C'est une obligation. Après 16 ans, l'école n'est plus obligatoire, mais tous les jeunes peuvent poursuivre leurs études ou entrer en apprentissage.",
+    "group": "ecole-obligatoire",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/parentalite/le-systeme-educatif/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 619,
+    "theme": "Vie en société",
+    "notion": "autorite-parentale-ecole",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 250,
+    "question": "Quelle est la définition de l'autorité parentale ?",
+    "answers": [
+      "L'ensemble des droits et des devoirs des parents envers leur enfant mineur"
+    ],
+    "distractors": [
+      "Le pouvoir des parents de décider seuls de tout ce que fait leur enfant",
+      "Le droit des parents d'imposer leurs valeurs culturelles à leur enfant",
+      "L'ensemble des règles que l'école impose aux enfants et à leurs parents",
+      "Le droit des parents d'utiliser la force pour éduquer leur enfant"
+    ],
+    "explanation": "L'autorité parentale est l'ensemble des droits et des devoirs que les parents ont envers leur enfant de moins de 18 ans. Les parents l'exercent dans l'intérêt de l'enfant et dans le respect de sa personne : ils n'utilisent ni la violence physique, ni la violence psychologique.",
+    "group": "autorite-parentale",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/parentalite/exercice-de-l-autorite-parentale-1/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 620,
+    "theme": "Vie en société",
+    "notion": "autorite-parentale-ecole",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 254,
+    "question": "Comment s'appellent les établissements scolaires que les élèves intègrent après l'école élémentaire ?",
+    "answers": [
+      "Le collège, puis le lycée"
+    ],
+    "distractors": [
+      "La maternelle, puis le collège",
+      "Le lycée, puis l'université",
+      "Le collège, puis l'université",
+      "L'école primaire, puis le lycée",
+      "Le lycée professionnel, puis le collège"
+    ],
+    "explanation": "Après l'école élémentaire, les élèves vont au collège (de 11 à 15 ans), puis au lycée (de 15 à 18 ans).",
+    "group": "cursus-scolaire",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/parentalite/le-systeme-educatif/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 621,
+    "theme": "Vie en société",
+    "notion": "autorite-parentale-ecole",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 255,
+    "question": "En tant que parent d'élève, il est possible de :",
+    "answers": [
+      "Rejoindre l'association de parents d'élèves",
+      "Se présenter aux élections des représentants de parents d'élèves"
+    ],
+    "distractors": [
+      "Choisir lui-même les professeurs de son enfant dans l'école",
+      "Décider seul des programmes enseignés dans toute l'école",
+      "Fixer lui-même le calendrier des vacances scolaires de l'école",
+      "Assister aux cours à tout moment sans prévenir l'école",
+      "Punir lui-même un élève qui s'est mal comporté en classe"
+    ],
+    "explanation": "Les parents peuvent participer à la vie de l'école en rejoignant l'association de parents d'élèves, qui défend les intérêts des enfants, ou en se présentant aux élections de représentants des parents d'élèves, qui participent aux décisions importantes. Ils peuvent aussi participer aux réunions parents-professeurs.",
+    "group": "parents-ecole",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/parentalite/droits-et-devoirs-des-parents-a-l-ecole/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 622,
+    "theme": "Vie en société",
+    "notion": "autorite-parentale-ecole",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 256,
+    "question": "Quelle instruction est prévue pour les enfants qui ne parlent pas français ?",
+    "answers": [
+      "Des cours adaptés dans une unité pour élèves allophones"
+    ],
+    "distractors": [
+      "Un maintien à la maison jusqu'à ce qu'ils parlent français",
+      "Une école réservée aux enfants de nationalité étrangère",
+      "Un retour dans leur pays d'origine jusqu'à la maîtrise du français",
+      "Aucune : ils suivent les cours normaux sans aucune aide",
+      "Un internat spécialisé, obligatoire pour tous"
+    ],
+    "explanation": "À son arrivée à l'école, un enfant qui ne parle pas français passe un test de positionnement pour évaluer son niveau. Il peut être orienté vers une UPE2A (unité pédagogique pour élèves allophones arrivants) où il suit des cours adaptés. Une fois qu'il maîtrise le français, il peut suivre les mêmes cours que les autres enfants.",
+    "group": "allophones",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/parentalite/l-ecole-pour-les-enfants-allophones/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 623,
+    "theme": "Vie en société",
+    "notion": "autorite-parentale-ecole",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 257,
+    "question": "S'agissant de l'accueil des enfants en situation de handicap à l'école, laquelle des propositions est vraie ?",
+    "answers": [
+      "Ils peuvent avoir un emploi du temps aménagé"
+    ],
+    "distractors": [
+      "Ils doivent être scolarisés dans une école à part",
+      "Ils sont toujours accueillis dans une classe séparée des autres élèves",
+      "Ils n'ont pas droit à un emploi du temps aménagé",
+      "L'école peut refuser de les inscrire à cause de leur handicap"
+    ],
+    "explanation": "Les enfants en situation de handicap ont le droit de vivre avec les autres enfants et comme eux. À l'école, ils peuvent bénéficier d'un emploi du temps aménagé.",
+    "group": "handicap-ecole",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/parentalite/les-droits-de-l-enfant/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 624,
+    "theme": "Vie en société",
+    "notion": "travail",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 258,
+    "question": "Depuis le 1er juillet 2021, quelle est la durée du congé paternité ?",
+    "answers": [
+      "25 jours calendaires"
+    ],
+    "distractors": [
+      "11 jours calendaires",
+      "14 jours calendaires",
+      "7 jours calendaires",
+      "15 jours calendaires",
+      "2 mois"
+    ],
+    "explanation": "La durée du congé de paternité et d'accueil de l'enfant est de 25 jours calendaires, ou de 32 jours en cas de naissances multiples, dont une période obligatoire de 4 jours. Il est précédé du congé de naissance, d'une durée de 3 jours ouvrables.",
+    "source": {
+      "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F3156",
+      "label": "service-public.gouv.fr"
+    }
+  },
+  {
+    "id": 625,
+    "theme": "Vie en société",
+    "notion": "autorite-parentale-ecole",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 259,
+    "question": "Est-ce possible de punir physiquement ses enfants ?",
+    "answers": [
+      "Non, c'est interdit par la loi"
+    ],
+    "distractors": [
+      "Oui, c'est un droit des parents",
+      "Oui, si les valeurs de la famille l'autorisent",
+      "Non, sauf si l'enfant a gravement désobéi",
+      "Non, sauf pour une simple tape sur la main"
+    ],
+    "explanation": "Les parents exercent l'autorité parentale dans l'intérêt de l'enfant et dans le respect de sa personne : ils n'utilisent ni la violence physique, ni la violence psychologique. Il est donc interdit de punir physiquement ses enfants.",
+    "group": "autorite-parentale",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/parentalite/exercice-de-l-autorite-parentale-1/",
       "label": "formation-civique.interieur.gouv.fr"
     }
   }
