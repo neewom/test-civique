@@ -1,7 +1,7 @@
 import path from 'path'
 import tailwindcss from '@tailwindcss/vite'
 import react from '@vitejs/plugin-react'
-import { defineConfig } from 'vitest/config'
+import { configDefaults, defineConfig } from 'vitest/config'
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -19,6 +19,8 @@ export default defineConfig({
     globals: true,
     environment: 'jsdom',
     setupFiles: './src/test/setup.ts',
+    // e2e/ holds the Playwright regression suite (npm run tnr), not Vitest tests
+    exclude: [...configDefaults.exclude, 'e2e/**'],
     // Node 25 enables native Web Storage, whose localStorage shadows jsdom's
     // (Vitest 4 replaced poolOptions.forks.execArgv with a top-level execArgv)
     execArgv: ['--no-experimental-webstorage'],
