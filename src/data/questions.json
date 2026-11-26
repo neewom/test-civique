@@ -3406,8 +3406,10 @@
     "theme": "Histoire, géographie et culture",
     "notion": "periodes-personnages",
     "lists": [
-      "pluriannuelle"
+      "pluriannuelle",
+      "naturalisation"
     ],
+    "natNumber": 152,
     "question": "Quand a eu lieu la Seconde Guerre mondiale ?",
     "distractors": [
       "De 1914 à 1918",
@@ -3433,8 +3435,10 @@
     "theme": "Histoire, géographie et culture",
     "notion": "periodes-personnages",
     "lists": [
-      "pluriannuelle"
+      "pluriannuelle",
+      "naturalisation"
     ],
+    "natNumber": 153,
     "question": "Quand a eu lieu la Première Guerre mondiale ?",
     "distractors": [
       "De 1905 à 1910",
@@ -4846,8 +4850,10 @@
     "theme": "Vie en société",
     "notion": "travail",
     "lists": [
-      "pluriannuelle"
+      "pluriannuelle",
+      "naturalisation"
     ],
+    "natNumber": 242,
     "question": "Une personne étrangère en situation régulière peut créer son entreprise :",
     "distractors": [
       "Seulement si elle a la nationalité française",

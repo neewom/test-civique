@@ -115,6 +115,33 @@ const LIST_EXCEPTIONS: Record<string, Map<number, { reason: string; expected: st
         expected: 'Pourquoi l’année 1958 est-elle importante pour la France ?',
       },
     ],
+    [
+      152,
+      {
+        // Officiel : « … la Seconde guerre mondiale ? » (casse de la liste NAT) ; notre question 121
+        // garde le libellé de la liste CSP, verrouillé par le contrôle CSP.
+        reason: 'casse de la liste NAT',
+        expected: "Quand a eu lieu la Seconde Guerre mondiale ?",
+      },
+    ],
+    [
+      153,
+      {
+        // Officiel : « … la Première guerre mondiale ? » (casse de la liste NAT) ; notre question 122
+        // garde le libellé de la liste CSP, verrouillé par le contrôle CSP.
+        reason: 'casse de la liste NAT',
+        expected: "Quand a eu lieu la Première Guerre mondiale ?",
+      },
+    ],
+    [
+      242,
+      {
+        // Officiel : « Une personne étrangère, en situation régulière, peut … » (virgules de la liste
+        // NAT) ; notre question 172 garde le libellé de la liste CSP, verrouillé par le contrôle CSP.
+        reason: 'virgules de la liste NAT',
+        expected: "Une personne étrangère en situation régulière peut créer son entreprise :",
+      },
+    ],
   ]),
 }
 
