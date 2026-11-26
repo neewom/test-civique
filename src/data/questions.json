@@ -7917,11 +7917,11 @@
       "Sur les sites internet officiels de l'État"
     ],
     "distractors": [
-      "Sur les sites de vente en ligne",
-      "Sur les sites des agences de voyage",
-      "Sur les sites des clubs de football",
-      "Sur les sites des banques privées",
-      "Sur les sites des compagnies aériennes"
+      "Sur tous les sites en .fr",
+      "Sur les sites des partis politiques",
+      "Sur les sites des associations reconnues d'utilité publique",
+      "Sur les sites des grandes entreprises françaises",
+      "Sur les sites des médias nationaux"
     ],
     "explanation": "Marianne est un symbole officiel de la République française. Elle figure dans le logo de l'État (le « bloc Marianne »), que l'on retrouve sur les sites internet officiels de l'État, dont l'adresse se termine en général par .gouv.fr, et sur les documents officiels. Attention : une Marianne sur une page ne suffit pas à prouver qu'un site est officiel, il faut aussi vérifier son adresse.",
     "group": "marianne",
@@ -8098,7 +8098,7 @@
     "crNumber": 12,
     "question": "La répudiation de sa femme est :",
     "answers": [
-      "Interdite en France"
+      "Interdite en France, quelle que soit la religion"
     ],
     "distractors": [
       "Autorisée si la religion du couple le permet",

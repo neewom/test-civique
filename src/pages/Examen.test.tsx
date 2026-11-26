@@ -9,6 +9,7 @@ import { saveProgress, loadProgress, EXAM_PROGRESS_KEY } from '@/lib/exam-types'
 import allQuestions from '@/data/questions.json'
 import {
   buildExam,
+  questionsForTitle,
   saveResult,
   shuffle,
   formatTime,
@@ -67,19 +68,19 @@ describe('formatTime', () => {
 
 describe('buildExam', () => {
   it(`retourne exactement ${EXAM_SIZE} questions`, () => {
-    expect(buildExam()).toHaveLength(EXAM_SIZE)
+    expect(buildExam(questionsForTitle('pluriannuelle'))).toHaveLength(EXAM_SIZE)
   })
 
   it('chaque question a exactement 4 choix', () => {
-    buildExam().forEach((q) => expect(q.choices).toHaveLength(4))
+    buildExam(questionsForTitle('pluriannuelle')).forEach((q) => expect(q.choices).toHaveLength(4))
   })
 
   it('la bonne réponse est toujours dans les choix', () => {
-    buildExam().forEach((q) => expect(q.choices).toContain(q.answer))
+    buildExam(questionsForTitle('pluriannuelle')).forEach((q) => expect(q.choices).toContain(q.answer))
   })
 
   it('chaque question a une explication', () => {
-    buildExam().forEach((q) => expect(q.explanation).toBeTruthy())
+    buildExam(questionsForTitle('pluriannuelle')).forEach((q) => expect(q.explanation).toBeTruthy())
   })
 
   it('la réponse choisie est toujours une des valeurs du tableau answers', () => {
@@ -321,7 +322,7 @@ describe('Examen', () => {
 // ─── Règles officielles : reprise et verdict ──────────────────────────────────
 
 function makeResume(timeLeft: number, correctCount: number): ExamInProgress {
-  const questions = buildExam()
+  const questions = buildExam(questionsForTitle('pluriannuelle'))
   return {
     questions,
     index: correctCount,

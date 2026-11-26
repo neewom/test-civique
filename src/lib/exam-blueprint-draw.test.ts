@@ -1,7 +1,8 @@
 import { describe, it, expect } from 'vitest'
 import allQuestions from '@/data/questions.json'
-import { buildExam, EXAM_BLUEPRINT, EXAM_SIZE, type Question } from './exam'
+import { buildExam, questionsForTitle, EXAM_BLUEPRINT, EXAM_SIZE, type Question } from './exam'
 
+// Draws go through the pluriannuelle pool, as the app does (ids 292+ belong to the resident card)
 const POOL = allQuestions as Question[]
 const byId = new Map(POOL.map((q) => [q.id, q]))
 const SITUATIONAL_THEMES = ['Principes et valeurs de la République', 'Droits et devoirs']
@@ -29,7 +30,7 @@ describe('buildExam — répartition officielle', () => {
   it(`${DRAWS} tirages : 40 questions, quota exact, groupes uniques, mises en situation de Principes / Droits seulement`, () => {
     const expected = new Map(EXAM_BLUEPRINT.map((l) => [lineKey(l.theme, l.notion), l.count]))
     for (let i = 0; i < DRAWS; i++) {
-      const exam = buildExam()
+      const exam = buildExam(questionsForTitle('pluriannuelle'))
       expect(exam).toHaveLength(EXAM_SIZE)
       expect(new Set(exam.map((e) => e.id)).size).toBe(EXAM_SIZE)
 
@@ -48,14 +49,14 @@ describe('buildExam — répartition officielle', () => {
   })
 
   it('12 mises en situation par examen (6 Principes, 6 Droits)', () => {
-    const exam = buildExam()
+    const exam = buildExam(questionsForTitle('pluriannuelle'))
     const situational = exam.filter((e) => byId.get(e.id)!.notion === 'mise-en-situation')
     expect(situational).toHaveLength(12)
   })
 
   it('mélange l\'ordre final (les thèmes ne se suivent pas toujours dans l\'ordre du plan)', () => {
     const orders = new Set<string>()
-    for (let i = 0; i < 20; i++) orders.add(buildExam().map((e) => e.theme).join(','))
+    for (let i = 0; i < 20; i++) orders.add(buildExam(questionsForTitle('pluriannuelle')).map((e) => e.theme).join(','))
     expect(orders.size).toBeGreaterThan(1)
   })
 
