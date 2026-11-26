@@ -14625,7 +14625,7 @@
       "Les lois scolaires de Jules Ferry",
       "La Convention européenne des droits de l'homme"
     ],
-    "explanation": "Le Code civil est adopté sous le 1er Empire de Napoléon Ier. Il fixe des règles communes à tous, notamment sur la famille, la propriété et les contrats, et garantit encore aujourd'hui l'égalité devant la loi.",
+    "explanation": "Le Code civil est le grand héritage du 1er Empire de Napoléon Ier. Il fixe des règles communes à tous, notamment sur la famille, la propriété et les contrats, et garantit encore aujourd'hui l'égalité devant la loi.",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-regimes-politiques-depuis-1789/le-1er-empire-1804-1815/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -14734,20 +14734,19 @@
       "Le Luxembourg"
     ],
     "distractors": [
-      "L'Espagne",
-      "Le Royaume-Uni",
-      "La Pologne",
-      "Le Portugal",
-      "La Suède",
-      "La Grèce",
-      "L'Autriche",
+      "La Roumanie",
+      "Le Danemark",
+      "La Slovaquie",
+      "La Lituanie",
+      "La Slovénie",
       "La Finlande"
     ],
     "explanation": "Les 6 pays fondateurs sont la France, l'Allemagne, l'Italie, la Belgique, les Pays-Bas et le Luxembourg : ils créent la CECA en 1951, puis la Communauté économique européenne (CEE) en 1957. Les autres pays ont rejoint l'Union plus tard.",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-conflits-mondiaux-et-le-nouvel-ordre-mondial/la-construction-europeenne/",
       "label": "formation-civique.interieur.gouv.fr"
-    }
+    },
+    "group": "ceca"
   },
   {
     "id": 562,
@@ -14759,7 +14758,7 @@
     "natNumber": 139,
     "question": "Simone Veil est une figure importante de l’histoire française. Elle a notamment :",
     "answers": [
-      "présenté la loi qui dépénalise l'avortement"
+      "présenté la loi sur l'avortement"
     ],
     "distractors": [
       "aboli la peine de mort en France",
@@ -14794,7 +14793,7 @@
       "Les Pays de la Loire",
       "Le Grand Est"
     ],
-    "explanation": "La libération de la France s'accélère en 1944 avec le débarquement allié en juin, auquel participent aussi les résistants. La Normandie, bordée par la Manche, est aujourd'hui un lieu de tourisme de mémoire de la Seconde Guerre mondiale.",
+    "explanation": "La libération de la France s'accélère en 1944 avec le débarquement allié en Normandie, en juin, auquel participent aussi les résistants. Le reste du territoire est ensuite peu à peu libéré.",
     "group": "normandie",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/zoom-sur/focus-sur-la-seconde-guerre-mondiale-la-resistance-et-la-lib%C3%A9ration/",
@@ -14820,7 +14819,11 @@
       "Tours",
       "Rouen"
     ],
-    "explanation": "La tradition remonte au IXe siècle : 32 rois de France ont été couronnés à Reims, dont 25 dans la cathédrale actuelle. Louis VI (à Orléans) et Henri IV (à Chartres) font exception."
+    "explanation": "Reims est la ville du sacre des rois de France : à partir d'Henri Ier, en 1027, 33 rois de France sur 37 y sont sacrés, dans la cathédrale Notre-Dame.",
+    "source": {
+      "url": "https://histoiredesarts.culture.gouv.fr/Toutes-les-ressources/Panorama-de-l-art/Cathedrale-Notre-Dame-de-Reims",
+      "label": "culture.gouv.fr"
+    }
   },
   {
     "id": 565,
@@ -14887,8 +14890,8 @@
       "En 1992"
     ],
     "distractors": [
-      "En 1951",
-      "En 1957",
+      "En 1968",
+      "En 1975",
       "En 1945",
       "En 2002",
       "En 1985"
@@ -14936,7 +14939,7 @@
     "natNumber": 155,
     "question": "Que célèbre-t-on le 8 mai ?",
     "answers": [
-      "La fin de la Seconde Guerre mondiale en Europe"
+      "La fin de la Seconde Guerre mondiale"
     ],
     "distractors": [
       "L'armistice de la Première Guerre mondiale",
@@ -15096,11 +15099,11 @@
       "Calais",
       "Toulon"
     ],
-    "explanation": "Au XVIIIe siècle, des ports français comme Nantes, Bordeaux et La Rochelle s'enrichissent grâce au commerce « triangulaire », qui permet la traite négrière et l'esclavage.",
+    "explanation": "Au XVIIIe siècle, Nantes est le premier port négrier français, devant Bordeaux. Des ports comme Nantes, Bordeaux et La Rochelle s'enrichissent grâce au commerce « triangulaire » entre l'Europe, l'Afrique et les Amériques, qui permet la traite négrière et l'esclavage.",
     "group": "esclavage",
     "source": {
-      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/zoom-sur/le-territoire-francais-dans-le-temps-2/",
-      "label": "formation-civique.interieur.gouv.fr"
+      "url": "https://www.senat.fr/rap/r11-609/r11-609_mono.html",
+      "label": "senat.fr"
     }
   },
   {
@@ -15114,7 +15117,7 @@
     "question": "Quel célèbre philosophe des Lumières a dénoncé l'esclavage ?",
     "answers": [
       "Montesquieu",
-      "Condorcet"
+      "Voltaire"
     ],
     "distractors": [
       "Blaise Pascal",
@@ -15123,8 +15126,12 @@
       "Auguste Comte",
       "Jacques-Bénigne Bossuet"
     ],
-    "explanation": "Dans l'Europe des Lumières, des penseurs dénoncent et combattent l'esclavage. Montesquieu le fait dans les Lettres persanes (1721), puis dans De l'esprit des lois (1748). Condorcet publie en 1781 ses Réflexions sur l'esclavage des Nègres.",
-    "group": "esclavage"
+    "explanation": "Au XVIIIe siècle, des philosophes des Lumières dénoncent l'esclavage : dès 1748, Montesquieu choisit l'ironie dans De l'esprit des lois pour en montrer l'horreur, puis Voltaire le dénonce dans Candide.",
+    "group": "separation-pouvoirs",
+    "source": {
+      "url": "https://www.senat.fr/rap/l99-262/l99-2621.html",
+      "label": "senat.fr"
+    }
   },
   {
     "id": 577,
@@ -15167,11 +15174,12 @@
       "La bouillabaisse"
     ],
     "distractors": [
-      "La paella valencienne",
+      "La paella",
+      "Les sushis",
       "Le goulasch hongrois",
       "Les lasagnes bolognaises",
-      "Les sushis au saumon",
-      "Le gaspacho andalou"
+      "Le gaspacho andalou",
+      "La moussaka grecque"
     ],
     "explanation": "Le cassoulet (Languedoc), la choucroute alsacienne et la bouillabaisse, plat méditerranéen, sont des plats traditionnels de la gastronomie française, qui est inscrite au patrimoine mondial de l'UNESCO.",
     "source": {
@@ -15193,12 +15201,16 @@
     ],
     "distractors": [
       "Une chanteuse, icône de la chanson française",
-      "Une écrivaine, première femme à l'Académie française",
+      "Une actrice, vedette du cinéma français",
       "Une femme politique, ministre de la Santé",
       "Une peintre impressionniste du XIXe siècle"
     ],
-    "explanation": "Née à Varsovie, Marie Curie (née Skłodowska) s'installe à Paris, où elle étudie et mène ses recherches sur la radioactivité avec Pierre Curie. Elle reçoit le prix Nobel de physique en 1903 et celui de chimie en 1911 : elle est la première personne à recevoir deux prix Nobel.",
-    "group": "ecrivains-francais"
+    "explanation": "Marie Curie est une grande scientifique : avec Pierre Curie, elle découvre en 1898 le polonium et le radium. Elle reçoit le prix Nobel de physique en 1903, puis celui de chimie en 1911.",
+    "group": "ecrivains-francais",
+    "source": {
+      "url": "https://www.culture.gouv.fr/regions/drac-ile-de-france/actualites/actualite-a-la-une/Exposition-Marie-Curie-une-femme-au-Pantheon",
+      "label": "culture.gouv.fr"
+    }
   },
   {
     "id": 580,
@@ -15243,8 +15255,12 @@
       "Le centre Pompidou",
       "Le musée de l'Orangerie"
     ],
-    "explanation": "La Joconde, ou Portrait de Lisa Gherardini, peinte par Léonard de Vinci, est conservée au musée du Louvre, à Paris.",
-    "group": "louvre"
+    "explanation": "La Joconde, peinte par Léonard de Vinci, est conservée au musée du Louvre, à Paris.",
+    "group": "louvre",
+    "source": {
+      "url": "https://histoiredesarts.culture.gouv.fr/Toutes-les-ressources/Musee-du-Louvre/La-Joconde",
+      "label": "culture.gouv.fr"
+    }
   },
   {
     "id": 582,
@@ -15264,7 +15280,11 @@
       "Le château d'Amboise",
       "Le château d'Azay-le-Rideau"
     ],
-    "explanation": "Le château de Versailles est la résidence principale de Louis XIV à partir de 1682. Le roi y installe la cour et le gouvernement, et il y reçoit les ambassadeurs : le château est étroitement identifié à son règne."
+    "explanation": "Transformé et agrandi sous Louis XIV, le château de Versailles remplace Paris en 1682 comme résidence de la monarchie française. Il reste étroitement associé au règne de Louis XIV.",
+    "source": {
+      "url": "https://pop.culture.gouv.fr/notice/museo/M5077",
+      "label": "culture.gouv.fr"
+    }
   },
   {
     "id": 583,
@@ -15276,16 +15296,20 @@
     "natNumber": 175,
     "question": "Où peut-on voir des peintures préhistoriques en France ?",
     "answers": [
-      "Dans la grotte de Lascaux"
+      "À Lascaux, en Dordogne"
     ],
     "distractors": [
-      "Au château de Versailles",
-      "Au Mont Saint-Michel",
-      "À la cathédrale de Reims",
+      "Au château de Versailles, en Île-de-France",
+      "Au Mont Saint-Michel, en Normandie",
+      "À la cathédrale de Reims, dans la Marne",
       "Au musée d'Orsay",
       "À la tour Eiffel"
     ],
-    "explanation": "La grotte de Lascaux, en Dordogne, est célèbre pour ses peintures préhistoriques. Une réplique complète et exacte, Lascaux IV, permet de les découvrir au Centre international d'art pariétal."
+    "explanation": "La grotte de Lascaux, en Dordogne, découverte en 1940, abrite des peintures et des gravures préhistoriques vieilles de 18 000 à 20 000 ans. Fermée au public depuis 1963 pour la protéger, elle se découvre grâce à ses fac-similés, dont Lascaux IV, le Centre international d'art pariétal.",
+    "source": {
+      "url": "https://www.culture.gouv.fr/actualites/Lascaux-Chauvet-Cosquer-comment-ces-decouvertes-ont-change-notre-regard-sur-la-prehistoire",
+      "label": "culture.gouv.fr"
+    }
   },
   {
     "id": 584,
@@ -15475,8 +15499,8 @@
     "distractors": [
       "La Réunion",
       "Mayotte",
-      "Tahiti",
-      "La Corse",
+      "La Polynésie française",
+      "Saint-Pierre-et-Miquelon",
       "La Nouvelle-Calédonie"
     ],
     "explanation": "La Guadeloupe et la Martinique sont des îles des Petites Antilles, dans les Caraïbes. Ce sont des départements et régions d'outre-mer (DROM).",
@@ -15504,12 +15528,12 @@
     "distractors": [
       "La Sicile",
       "La Sardaigne",
-      "Majorque",
-      "Madère",
-      "Malte",
-      "Cuba"
+      "La Crète",
+      "L'île de Madère",
+      "L'île de Malte",
+      "L'île de Cuba"
     ],
-    "explanation": "La Martinique, la Guadeloupe, La Réunion et Mayotte sont des îles qui forment, avec la Guyane, les départements et régions d'outre-mer (DROM) de la France. La Sicile, la Sardaigne, Majorque, Madère, Malte et Cuba appartiennent à d'autres pays.",
+    "explanation": "La Martinique, la Guadeloupe, La Réunion et Mayotte sont des îles qui forment, avec la Guyane, les départements et régions d'outre-mer (DROM) de la France. La Sicile, la Sardaigne, la Crète, Madère, Malte et Cuba appartiennent à d'autres pays.",
     "group": "iles-francaises",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/atlas-de-la-france/le-territoire-de-la-france/",
@@ -15562,7 +15586,11 @@
       "Le Ballon d'Alsace"
     ],
     "explanation": "Le Mont Blanc, dans le massif des Alpes, en Haute-Savoie, à la frontière avec l'Italie, est la plus haute montagne de France.",
-    "group": "mont-blanc"
+    "group": "frontieres-terrestres",
+    "source": {
+      "url": "https://cnig.gouv.fr/IMG/pdf/cnt-culminants-du-monde_maj2021ok.pdf",
+      "label": "cnig.gouv.fr"
+    }
   },
   {
     "id": 595,
@@ -15630,15 +15658,15 @@
     "distractors": [
       "Calais",
       "Brest",
-      "Toulon",
+      "Boulogne-sur-Mer",
       "Saint-Malo",
       "Cherbourg"
     ],
-    "explanation": "Marseille est l'un des 7 grands ports maritimes de la France métropolitaine, directement gérés par l'État. Il est aussi le premier port de croisière de France.",
+    "explanation": "Marseille est le premier port français pour le trafic de marchandises (80,4 millions de tonnes en 2017), devant Le Havre. C'est l'un des grands ports maritimes de France, gérés par l'État.",
     "group": "marseille",
     "source": {
-      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/la-france-dans-leurope-et-dans-le-monde/les-ports-francais/",
-      "label": "formation-civique.interieur.gouv.fr"
+      "url": "https://www.statistiques.developpement-durable.gouv.fr/transport-maritime-de-marchandises",
+      "label": "statistiques.developpement-durable.gouv.fr"
     }
   },
   {
@@ -15659,7 +15687,7 @@
       "La Guadeloupe",
       "Tahiti"
     ],
-    "explanation": "La Réunion est une île volcanique de l'océan Indien, au sud-ouest de l'île Maurice. C'est un département et une région d'outre-mer (DROM).",
+    "explanation": "La Réunion est une île volcanique de l'océan Indien, à l'est de Madagascar et au sud-ouest de l'île Maurice. C'est un département et une région d'outre-mer (DROM).",
     "group": "iles-francaises",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-regions-fran%C3%A7aises/la-reunion/",
@@ -15780,12 +15808,11 @@
       "Auvergne-Rhône-Alpes"
     ],
     "distractors": [
-      "Bretagne",
-      "Normandie",
       "Hauts-de-France",
       "Île-de-France",
-      "Pays de la Loire",
-      "Centre-Val de Loire"
+      "Centre-Val de Loire",
+      "Nouvelle-Aquitaine",
+      "Bourgogne-Franche-Comté"
     ],
     "explanation": "L'Auvergne-Rhône-Alpes s'étend des Alpes au Massif central. Le tourisme, notamment les stations de ski, fait partie de ses secteurs économiques clés.",
     "group": "regions",
