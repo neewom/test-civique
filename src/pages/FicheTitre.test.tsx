@@ -197,11 +197,17 @@ describe('Fiche d\'un titre', () => {
       expect(screen.getByText('Fiche')).toBeInTheDocument()
     })
 
-    it('naturalisation : « Entraînement bientôt disponible », inactif, rien d\'enregistré', () => {
+    it('naturalisation : bouton actif, enregistre le titre', () => {
       renderFiche('/titres/naturalisation')
-      expect(screen.getByText('Entraînement bientôt disponible')).toBeInTheDocument()
-      expect(screen.queryByRole('button', { name: /entra/i })).not.toBeInTheDocument()
-      expect(ls.getItem('target-title')).toBeNull()
+      expect(screen.queryByText(/bientôt/i)).not.toBeInTheDocument()
+      fireEvent.click(screen.getByRole('button', { name: "M'entraîner pour ce titre" }))
+      expect(ls.getItem('target-title')).toBe('naturalisation')
+    })
+
+    it('naturalisation déjà choisie : « Continuer mon entraînement »', () => {
+      ls.setItem('target-title', 'naturalisation')
+      renderFiche('/titres/naturalisation')
+      expect(screen.getByRole('button', { name: 'Continuer mon entraînement' })).toBeEnabled()
     })
   })
 

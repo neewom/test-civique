@@ -17,6 +17,9 @@ import {
   EXAM_STARTED_RESIDENT,
   EXAM_FINISHED_PASSED_RESIDENT,
   EXAM_FINISHED_NOT_YET_RESIDENT,
+  EXAM_STARTED_NATURALISATION,
+  EXAM_FINISHED_PASSED_NATURALISATION,
+  EXAM_FINISHED_NOT_YET_NATURALISATION,
 } from '@/lib/analytics'
 
 let beacon: ReturnType<typeof vi.fn>
@@ -32,7 +35,7 @@ function events(): string[] {
 function makeResume(timeLeft: number, answered: number, correct: boolean, title: TitleKey = 'pluriannuelle'): ExamInProgress {
   const questions = buildExam(questionsForTitle(title))
   return {
-    ...(title === 'resident' ? { title } : {}),
+    ...(title !== 'pluriannuelle' ? { title } : {}),
     questions,
     index: answered,
     answers: questions.slice(0, answered).map((q) => ({ questionId: q.id, chosen: q.answer, correct })),
@@ -191,6 +194,60 @@ describe('Examen — statistiques de visite', () => {
       renderAt({ start: 'new' })
       expect(localStorage.getItem('exam-in-progress')).toBe(before)
       expect(loadProgressForTitle('resident')).not.toBeNull()
+    })
+  })
+
+  describe('naturalisation', () => {
+    beforeEach(() => saveTargetTitle('naturalisation'))
+    afterEach(() => {
+      localStorage.clear()
+      saveTargetTitle('pluriannuelle')
+    })
+
+    it('un nouvel examen compte « examen-commence-naturalisation »', () => {
+      renderAt(null)
+      expect(events()).toEqual([EXAM_STARTED_NATURALISATION])
+    })
+
+    it('la reprise de l’examen en cours du titre ne compte rien', async () => {
+      saveProgress(makeResume(1500, 2, true, 'naturalisation'))
+      renderAt(null)
+      await act(async () => { vi.advanceTimersByTime(3000) })
+      expect(events()).toEqual([])
+    })
+
+    it('fin réussie : « examen-termine-reussi-naturalisation » une seule fois', async () => {
+      saveProgress(makeResume(2, 32, true, 'naturalisation'))
+      renderAt(null)
+      await act(async () => { vi.advanceTimersByTime(5000) })
+      expect(events()).toEqual([EXAM_FINISHED_PASSED_NATURALISATION])
+    })
+
+    it('fin pas encore réussie : « examen-termine-pas-encore-naturalisation »', async () => {
+      saveProgress(makeResume(2, 10, true, 'naturalisation'))
+      renderAt(null)
+      await act(async () => { vi.advanceTimersByTime(5000) })
+      expect(events()).toEqual([EXAM_FINISHED_NOT_YET_NATURALISATION])
+    })
+
+    it('terminer, démarrer ou reprendre l’examen de la naturalisation ne touche pas ceux des deux cartes', async () => {
+      saveProgress(makeResume(1500, 3, true))
+      saveProgress(makeResume(1500, 4, true, 'resident'))
+      saveProgress(makeResume(2, 10, true, 'naturalisation'))
+      renderAt(null)
+      await act(async () => { vi.advanceTimersByTime(5000) })
+      expect(loadProgressForTitle('naturalisation')).toBeNull()
+      expect(loadProgressForTitle('pluriannuelle')?.index).toBe(3)
+      expect(loadProgressForTitle('resident')?.index).toBe(4)
+    })
+
+    it('un nouvel examen naturalisation ne touche pas la progression des deux cartes', () => {
+      saveProgress(makeResume(1500, 3, true))
+      saveProgress(makeResume(1500, 4, true, 'resident'))
+      const before = [localStorage.getItem('exam-in-progress'), localStorage.getItem('exam-in-progress-resident')]
+      renderAt({ start: 'new' })
+      expect([localStorage.getItem('exam-in-progress'), localStorage.getItem('exam-in-progress-resident')]).toEqual(before)
+      expect(loadProgressForTitle('naturalisation')).not.toBeNull()
     })
   })
 })

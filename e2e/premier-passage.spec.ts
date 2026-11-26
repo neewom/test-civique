@@ -1,4 +1,4 @@
-import { test, expect, expectPage, RESIDENT_QUESTIONS } from './fixtures'
+import { test, expect, expectPage, RESIDENT_QUESTIONS, NATURALISATION_QUESTIONS, EXAM_SIZE } from './fixtures'
 
 test('premier passage : choix du titre, accueil, choix gardé au rechargement', async ({ page }) => {
   await page.goto('/')
@@ -33,7 +33,8 @@ test('premier passage : choix de la carte de résident, accueil et révision sur
   await expect(page).toHaveURL(/\/titre$/)
   const resident = page.getByRole('button', { name: /Carte de résident/ })
   await expect(resident).toBeEnabled()
-  await expect(page.getByRole('button', { name: /Naturalisation/ })).toBeDisabled()
+  await expect(page.getByRole('button', { name: /Naturalisation/ })).toBeEnabled()
+  await expect(page.getByText(/bientôt/i)).toHaveCount(0)
   await resident.click()
   await expect(resident).toHaveAttribute('aria-pressed', 'true')
   await page.getByRole('button', { name: 'Continuer' }).click()
@@ -47,6 +48,61 @@ test('premier passage : choix de la carte de résident, accueil et révision sur
   // The title screen reopens on the chosen title
   await page.goto('/titre')
   await expect(page.getByRole('button', { name: /Carte de résident/ })).toHaveAttribute('aria-pressed', 'true')
+})
+
+test('premier passage : choix de la naturalisation, accueil, révision et examen sur ce titre', async ({ page }, testInfo) => {
+  await page.goto('/')
+  await expect(page).toHaveURL(/\/titre$/)
+  const nat = page.getByRole('button', { name: /Naturalisation/ })
+  await expect(nat).toBeEnabled()
+  await expect(nat).toContainText('258 questions officielles')
+  await nat.click()
+  await expect(nat).toHaveAttribute('aria-pressed', 'true')
+  await page.getByRole('button', { name: 'Continuer' }).click()
+
+  await expect(page).toHaveURL(/\/$/)
+  await expect(page.getByRole('link', { name: /Naturalisation/ })).toBeVisible()
+  expect(await page.evaluate(() => localStorage.getItem('target-title'))).toBe('naturalisation')
+
+  await page.goto('/revision')
+  await expect(page.getByText(`Naturalisation · ${NATURALISATION_QUESTIONS.length} questions`)).toBeVisible()
+  // The title screen reopens on the chosen title
+  await page.goto('/titre')
+  await expect(page.getByRole('button', { name: /Naturalisation/ })).toHaveAttribute('aria-pressed', 'true')
+
+  // A naturalisation exam keeps its own progress: the two other titles' keys stay empty
+  if (testInfo.project.name !== 'telephone') return
+  await page.goto('/examen-blanc')
+  await page.getByRole('link', { name: "Commencer l'examen blanc" }).click()
+  await expect(page).toHaveURL(/\/examen$/)
+  await expect(page.getByText(`Question 1 sur ${EXAM_SIZE}`, { exact: true })).toBeVisible()
+  await expect
+    .poll(() =>
+      page.evaluate(() => [
+        localStorage.getItem('exam-in-progress-naturalisation') !== null,
+        localStorage.getItem('exam-in-progress'),
+        localStorage.getItem('exam-in-progress-resident'),
+      ]),
+    )
+    .toEqual([true, null, null])
+  await page.reload()
+  await expect(page.getByText(`Question 1 sur ${EXAM_SIZE}`, { exact: true })).toBeVisible()
+})
+
+test('premier passage : « En savoir plus » sur la naturalisation, puis « M\'entraîner pour ce titre »', async ({ page }) => {
+  await page.goto('/')
+  await page.getByRole('link', { name: /En savoir plus sur : Naturalisation/ }).click()
+  await expect(page).toHaveURL(/\/titres\/naturalisation$/)
+  await expect(page.getByRole('heading', { level: 1, name: 'Naturalisation' })).toBeVisible()
+  await expectPage(page, 'Naturalisation')
+  await expect(page.getByText(/Entraînement bientôt disponible/)).toHaveCount(0)
+  expect(await page.evaluate(() => localStorage.getItem('target-title'))).toBeNull()
+  await page.getByRole('button', { name: "M'entraîner pour ce titre" }).click()
+  await expect(page).toHaveURL(/\/$/)
+  expect(await page.evaluate(() => localStorage.getItem('target-title'))).toBe('naturalisation')
+  await page.getByRole('link', { name: /Tout savoir sur ce titre/ }).click()
+  await expect(page).toHaveURL(/\/titres\/naturalisation$/)
+  await expect(page.getByRole('button', { name: 'Continuer mon entraînement' })).toBeVisible()
 })
 
 test('premier passage : « En savoir plus » sur la carte de résident, puis « M\'entraîner pour ce titre »', async ({ page }) => {

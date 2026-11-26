@@ -33,9 +33,15 @@ describe('titre visé', () => {
     expect(loadTargetTitle()).toBe('pluriannuelle')
   })
 
-  it.each(['inconnu', '"pluriannuelle"', '', 'naturalisation'])('ignore une valeur inconnue (%j)', (value) => {
+  it.each(['inconnu', '"pluriannuelle"', '', 'Naturalisation'])('ignore une valeur inconnue (%j)', (value) => {
     localStorageMock.setItem('target-title', value)
     expect(loadTargetTitle()).toBeNull()
+  })
+
+  it('enregistre et relit la naturalisation', () => {
+    saveTargetTitle('naturalisation')
+    expect(localStorageMock.getItem('target-title')).toBe('naturalisation')
+    expect(loadTargetTitle()).toBe('naturalisation')
   })
 
   it('vaut null quand le stockage est illisible', () => {

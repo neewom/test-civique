@@ -17,9 +17,6 @@ import { cn } from '@/lib/utils'
 // Official (non situational) questions of each title's list
 const officialCount = (t: TargetTitle) => questionsForTitle(t).filter((q) => q.notion !== 'mise-en-situation').length
 
-// Titles not available yet: shown, but they cannot be chosen
-const COMING_SOON = [{ label: 'Naturalisation', detail: 'Bientôt' }]
-
 // Own link under each option (a separate target: it never changes the selection)
 function MoreLink({ title }: { title: TitleKey }) {
   return (
@@ -37,8 +34,8 @@ const optionClass =
   'flex min-h-16 w-full items-center justify-between gap-3 rounded-[2rem] py-2 pr-2.5 pl-5 text-left'
 
 /**
- * The titles to pick from (first visit and change of title share them): the open ones
- * with their question count, and the ones that are not available yet.
+ * The titles to pick from (first visit and change of title share them), each with its
+ * question count.
  */
 function TitleChoices({
   selected,
@@ -106,27 +103,6 @@ function TitleChoices({
           </div>
         )
       })}
-      {COMING_SOON.map((t) => (
-        <div key={t.label} className="flex flex-col">
-          <button
-            type="button"
-            disabled
-            aria-pressed={false}
-            className={cn(optionClass, 'cursor-not-allowed flex-wrap gap-y-1 bg-card text-card-foreground', firstVisit && 'bg-card/70')}
-          >
-            <span className="flex min-w-0 flex-col hyphens-auto">
-              <span className="text-[1.0625rem] leading-snug font-bold">{t.label}</span>
-              {!firstVisit && <span className="text-[0.8125rem] text-muted-foreground">{t.detail}</span>}
-            </span>
-            {firstVisit && (
-              <span className="ml-auto rounded-full bg-muted px-2.5 text-[0.8125rem] leading-6 font-bold text-muted-foreground">
-                {t.detail}
-              </span>
-            )}
-          </button>
-          <MoreLink title="naturalisation" />
-        </div>
-      ))}
     </div>
   )
 }
