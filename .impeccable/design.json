@@ -567,6 +567,11 @@
         "purpose": "Aucune ombre dans l'appli : profondeur par aplats (La règle du plat)."
       },
       {
+        "name": "display-panel",
+        "value": "0 6px 28px rgba(44,46,42,0.18) (sombre : rgba(0,0,0,0.5)), avec un filet ring",
+        "purpose": "Panneau « Affichage », seule exception à la règle du plat : il flotte sur le contenu."
+      },
+      {
         "name": "dialog-overlay",
         "value": "background: rgb(0 0 0 / 0.1); backdrop-filter: blur(4px)",
         "purpose": "Voile de la boîte de dialogue « Quitter l'examen ? » (shadcn)."
@@ -721,13 +726,13 @@
   ],
   "narrative": {
     "northStar": "La carte du parcours",
-    "overview": "**Creative North Star: \"La carte du parcours\"**\n\nL'appli se lit comme une carte : un fond crème uni, une seule grande forme organique de terre verte qui serpente sous le contenu, et par-dessus des étapes en pastilles, comme des repères posés sur un chemin qui mène au jour J. Chaque écran dit où l'on est et ce qui vient ensuite ; la couleur sert à marquer l'étape, l'action ou le verdict, jamais à décorer. Le système vise une personne stressée, sur téléphone, parfois peu à l'aise en français : il préfère des formes généreuses, des aplats francs et un texte large à toute finesse graphique.\n\nLa densité est faible et la colonne étroite. Une seule famille de caractères, très lisible, en deux graisses ; des titres serrés et massifs qui donnent le ton, un corps de texte calme. Tout est plat : aucune ombre, la profondeur vient des aplats de couleur posés sur le crème et de la forme organique en arrière-plan. Le mouvement se limite à la respiration lente de cette forme, absente des écrans de question, où rien ne bouge pendant que l'on répond.\n\nLe thème sombre est le même parcours, le soir, écran baissé : mêmes formes, mêmes règles, couleurs assourdies pour ne pas éblouir, et sélection inversée (fond clair, texte sombre).",
+    "overview": "**Creative North Star: \"La carte du parcours\"**\n\nL'appli se lit comme une carte : un fond crème uni, une seule grande forme organique de terre verte qui serpente sous le contenu, et par-dessus des étapes en pastilles, comme des repères posés sur un chemin qui mène au jour J. Chaque écran dit où l'on est et ce qui vient ensuite ; la couleur sert à marquer l'étape, l'action ou le verdict, jamais à décorer. Le système vise une personne stressée, sur téléphone, parfois peu à l'aise en français : il préfère des formes généreuses, des aplats francs et un texte large à toute finesse graphique.\n\nLa densité est faible et la colonne étroite. Une seule famille de caractères, très lisible, en deux graisses ; des titres serrés et massifs qui donnent le ton, un corps de texte calme. Tout est plat : aucune ombre (sauf le panneau « Affichage »), la profondeur vient des aplats de couleur posés sur le crème et de la forme organique en arrière-plan. Le mouvement se limite à la respiration lente de cette forme, absente des écrans de question, où rien ne bouge pendant que l'on répond.\n\nLe thème sombre est le même parcours, le soir, écran baissé : mêmes formes, mêmes règles, couleurs assourdies pour ne pas éblouir, et sélection inversée (fond clair, texte sombre).",
     "keyCharacteristics": [
       "Fond crème uni et une seule forme organique de terre par écran.",
       "Pastilles de 48 à 56 px de haut, rayon égal à la moitié de la hauteur, souvent terminées par une pastille ronde (icône ou compteur).",
       "Jaune réservé à l'action principale de l'écran.",
       "Texte toujours encre sur les aplats colorés en clair.",
-      "Aucune ombre ; profondeur par aplats.",
+      "Aucune ombre, sauf le panneau « Affichage » ; profondeur par aplats.",
       "Une seule police (Atkinson Hyperlegible), 400 et 700, tailles en rem pour respecter le texte agrandi.",
       "Un résultat est toujours dit par un texte, une icône et une couleur."
     ],
@@ -759,7 +764,7 @@
       },
       {
         "name": "La règle du plat",
-        "body": "Pas d'ombre, ni au repos ni au survol. Un élément se détache par sa couleur de fond, pas par une élévation.",
+        "body": "Pas d'ombre, ni au repos ni au survol, sauf le panneau « Affichage », qui flotte sur le contenu. Un élément se détache par sa couleur de fond, pas par une élévation.",
         "section": "elevation"
       },
       {
@@ -783,7 +788,7 @@
       "**Do** vérifier chaque écran en clair et en sombre, et avec le texte agrandi."
     ],
     "donts": [
-      "**Don't** ajouter d'ombre portée, de dégradé ou de bordure décorative.",
+      "**Don't** ajouter d'ombre portée (hors panneau « Affichage »), de dégradé ou de bordure décorative.",
       "**Don't** mettre du texte blanc sur un aplat jaune, vert clair, corail, bleu ou lilas.",
       "**Don't** placer plus d'une forme organique par écran, ni la monter sur un écran de question.",
       "**Don't** fixer la hauteur d'une pastille ou d'une carte : seulement une hauteur minimale.",

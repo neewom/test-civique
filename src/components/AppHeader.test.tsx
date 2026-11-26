@@ -84,6 +84,41 @@ describe('AppHeader', () => {
     expect(document.documentElement).not.toHaveClass('dark')
   })
 
+  it('le thème bascule même quand localStorage.setItem lève', () => {
+    const real = Storage.prototype.setItem
+    vi.spyOn(Storage.prototype, 'setItem').mockImplementation(() => {
+      throw new Error('QuotaExceededError')
+    })
+    renderHeader()
+    fireEvent.click(screen.getByRole('button', { name: 'Affichage' }))
+    fireEvent.click(screen.getByRole('button', { name: 'Sombre' }))
+    expect(document.documentElement).toHaveClass('dark')
+    expect(screen.getByRole('button', { name: 'Sombre' })).toHaveAttribute('aria-pressed', 'true')
+    vi.restoreAllMocks()
+    Storage.prototype.setItem = real
+  })
+
+  it('ferme le panneau quand le focus sort du bouton et du panneau', () => {
+    renderHeader()
+    const button = screen.getByRole('button', { name: 'Affichage' })
+    fireEvent.click(button)
+    const clair = screen.getByRole('button', { name: 'Clair' })
+    // Focus qui reste dans le panneau, ou qui passe du panneau au bouton : ouvert
+    fireEvent.blur(clair, { relatedTarget: screen.getByRole('button', { name: 'Sombre' }) })
+    fireEvent.blur(clair, { relatedTarget: button })
+    expect(screen.getByRole('button', { name: 'Sombre' })).toBeInTheDocument()
+    // Focus qui part vers le lien du logo : fermé
+    fireEvent.blur(clair, { relatedTarget: screen.getByRole('link', { name: /Futur Citoyen/ }) })
+    expect(screen.queryByRole('button', { name: 'Sombre' })).toBeNull()
+  })
+
+  it('l\'en-tête est un repère « banner » qui contient le logo et « Affichage »', () => {
+    renderHeader()
+    const banner = screen.getByRole('banner')
+    expect(within(banner).getByRole('link', { name: /Futur Citoyen/ })).toBeInTheDocument()
+    expect(within(banner).getByRole('button', { name: 'Affichage' })).toBeInTheDocument()
+  })
+
   it('le réglage des animations enregistre le choix, pose data-motion et coupe la forme animée', () => {
     const { container } = renderHeader()
     expect(container.querySelector('animate')).not.toBeNull()
