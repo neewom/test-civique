@@ -392,6 +392,7 @@
     "answers": [
       "La solidarité et le lien entre tous les membres de la société"
     ],
+    "group": "fraternite-solidarite",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/devise-et-symboles-de-la-republique/fraternite-1/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -813,6 +814,7 @@
     "answers": [
       "Oui, la liberté de conscience et de religion est garantie par la loi"
     ],
+    "group": "laicite",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/laicite/la-definition-de-la-laicite-1/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -871,6 +873,7 @@
     "answers": [
       "1905"
     ],
+    "group": "laicite",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/laicite/histoire-de-la-laicite/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -1440,6 +1443,7 @@
     "answers": [
       "Les conseillers municipaux, qui élisent ensuite le maire"
     ],
+    "group": "maire",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/democratie-et-droit-de-vote/democratie-et-droit-de-vote-les-conditions-pour-voter-en-france-2/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -1949,6 +1953,7 @@
     "answers": [
       "101 départements"
     ],
+    "group": "iles-francaises",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/organisation-de-la-republique-fran%C3%A7aise/le-decoupage-administratif-de-la-france-1/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -2154,6 +2159,7 @@
     "answers": [
       "27 États membres"
     ],
+    "group": "brexit",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/institutions-europeennes/les-etapes-cles-de-la-construction-europeenne/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -2335,6 +2341,7 @@
     "answers": [
       "Les citoyens des États membres de l'UE, au suffrage universel direct"
     ],
+    "group": "parlement-europeen",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/institutions-europeennes/les-elections-europeennes/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -3232,6 +3239,7 @@
     "answers": [
       "1789"
     ],
+    "group": "fete-nationale",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-regimes-politiques-depuis-1789/la-fin-de-la-monarchie-absolue-et-le-debut-de-la-iere-republique-1789-1792/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -3345,6 +3353,7 @@
     "answers": [
       "Le génocide des Juifs d'Europe par l'Allemagne nazie"
     ],
+    "group": "shoah",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/zoom-sur/focus-sur-la-seconde-guerre-mondiale-la-shoah/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -3435,6 +3444,7 @@
     "answers": [
       "De 1939 à 1945"
     ],
+    "group": "8-mai",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-conflits-mondiaux-et-le-nouvel-ordre-mondial/la-seconde-guerre-mondiale-1/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -3464,7 +3474,7 @@
     "answers": [
       "De 1914 à 1918"
     ],
-    "group": "premiere-guerre-mondiale",
+    "group": "8-mai",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-conflits-mondiaux-et-le-nouvel-ordre-mondial/la-premiere-guerre-mondiale-1/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -3520,7 +3530,7 @@
     "answers": [
       "L'armistice de la Première Guerre mondiale"
     ],
-    "group": "premiere-guerre-mondiale",
+    "group": "8-mai",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/zoom-sur/patrimoine-francais-les-jours-feries/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -3741,7 +3751,7 @@
     "answers": [
       "La Première Guerre mondiale"
     ],
-    "group": "premiere-guerre-mondiale",
+    "group": "8-mai",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-conflits-mondiaux-et-le-nouvel-ordre-mondial/la-premiere-guerre-mondiale-1/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -3979,6 +3989,7 @@
       "La Réunion",
       "Mayotte"
     ],
+    "group": "iles-francaises",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/atlas-de-la-france/le-territoire-de-la-france/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -4008,6 +4019,7 @@
     "answers": [
       "13 régions"
     ],
+    "group": "iles-francaises",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/atlas-de-la-france/le-territoire-de-la-france/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -4153,6 +4165,7 @@
     "answers": [
       "Les Alpes"
     ],
+    "group": "frontieres-terrestres",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/atlas-de-la-france/les-frontieres-de-la-france/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -4328,6 +4341,7 @@
     "answers": [
       "Un peintre français post-impressionniste du XIXe siècle"
     ],
+    "group": "peintres-francais",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/culture/patrimoine-francais-artistes-emblematiques-parmi-les-peintres/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -4822,6 +4836,7 @@
     "answers": [
       "35 heures par semaine"
     ],
+    "group": "heures-supplementaires",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/emploi/le-droit-au-travail-1/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -5556,6 +5571,7 @@
     "answers": [
       "S'inscrire à France Travail dès que possible"
     ],
+    "group": "france-travail",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/emploi/orientation-1/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -5704,6 +5720,7 @@
     "answers": [
       "C'est un dépôt sauvage, une infraction passible d'amende"
     ],
+    "group": "abandon-dechets",
     "source": {
       "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F31963",
       "label": "service-public.gouv.fr"
@@ -5752,6 +5769,7 @@
     "answers": [
       "Oui, l'instruction est obligatoire dès 3 ans depuis 2019"
     ],
+    "group": "ecole-obligatoire",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/parentalite/le-systeme-educatif/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -5824,6 +5842,7 @@
     "answers": [
       "Être Français et inscrit sur les listes électorales (ou Européen, aux municipales)"
     ],
+    "group": "vote-conditions",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/democratie-et-droit-de-vote/democratie-et-droit-de-vote-les-conditions-pour-voter-en-france-1/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -6020,6 +6039,7 @@
     "answers": [
       "Non, l'instruction est obligatoire jusqu'à 16 ans"
     ],
+    "group": "ecole-obligatoire",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/parentalite/le-systeme-educatif/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -6068,6 +6088,7 @@
     "answers": [
       "Le Défenseur des droits"
     ],
+    "group": "defenseur-droits",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/droits-et-devoirs/droits-fondamentaux/les-acteurs-institutionnels/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -6140,6 +6161,7 @@
     "answers": [
       "Non, sauf dispense pour motif reconnu par la loi"
     ],
+    "group": "jury-assises",
     "source": {
       "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F1044",
       "label": "service-public.gouv.fr"
@@ -6333,6 +6355,7 @@
     "answers": [
       "Non, les agents du service public sont soumis au principe de neutralité religieuse"
     ],
+    "group": "laicite-ecole",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/laicite/la-laicite-au-travail/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -6478,6 +6501,7 @@
     "answers": [
       "Non, ces documents doivent être rédigés en français"
     ],
+    "group": "textes-travail",
     "source": {
       "url": "https://www.culture.gouv.fr/thematiques/langue-francaise-et-langues-de-france/agir-pour-les-langues/garantir-l-emploi-du-francais",
       "label": "culture.gouv.fr"
@@ -6670,6 +6694,7 @@
     "answers": [
       "Oui, en vous inscrivant sur une liste électorale consulaire et en votant au consulat ou par procuration"
     ],
+    "group": "vote-conditions",
     "source": {
       "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F16904",
       "label": "service-public.gouv.fr"
@@ -6742,6 +6767,7 @@
     "answers": [
       "Le texte est transmis au Sénat qui l'examine à son tour"
     ],
+    "group": "pouvoir-legislatif",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/democratie-et-droit-de-vote/comment-voter-une-loi-2/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -6862,6 +6888,7 @@
     "answers": [
       "Depuis 1848, sous la IIe République"
     ],
+    "group": "devise",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/devise-et-symboles-de-la-republique/la-devise-francaise/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -6910,6 +6937,7 @@
     "answers": [
       "L'Exposition universelle de 1889, centenaire de la Révolution"
     ],
+    "group": "tour-eiffel",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/culture/patrimoine-francais-sites-emblematiques-et-gastronomie-d-ile-de-france/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -6959,6 +6987,7 @@
     "answers": [
       "Charles de Gaulle"
     ],
+    "group": "ve-republique",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-regimes-politiques-depuis-1789/la-cinquieme-republique/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -6983,6 +7012,7 @@
     "answers": [
       "La mer Méditerranée"
     ],
+    "group": "mers-et-oceans",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/atlas-de-la-france/les-frontieres-de-la-france/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -7031,7 +7061,8 @@
     "explanation": "Le mont Blanc, dans le massif des Alpes, à la frontière avec l'Italie, culmine à environ 4 800 mètres ; son altitude varie de quelques mètres selon l'épaisseur de la neige au sommet. C'est le point culminant de la France et de l'Europe occidentale.",
     "answers": [
       "Le Mont-Blanc, dans les Alpes"
-    ]
+    ],
+    "group": "frontieres-terrestres"
   },
   {
     "id": 259,
@@ -7052,6 +7083,7 @@
     "answers": [
       "Non, Molière était un dramaturge du XVIIe siècle, auteur de comédies"
     ],
+    "group": "ecrivains-francais",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/culture/patrimoine-francais-artistes-emblematiques-parmi-les-auteurs-1/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -7076,6 +7108,7 @@
     "answers": [
       "La Corse"
     ],
+    "group": "iles-francaises",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-regions-fran%C3%A7aises/corse/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -7100,6 +7133,7 @@
     "answers": [
       "Non, l'esclavage a été aboli deux fois : en 1794 puis définitivement en 1848"
     ],
+    "group": "esclavage",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/zoom-sur/le-territoire-francais-dans-le-temps-2/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -7124,6 +7158,7 @@
     "answers": [
       "Un bâtiment public (mairie, école, tribunal, préfecture…)"
     ],
+    "group": "devise",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/devise-et-symboles-de-la-republique/la-devise-francaise/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -7172,6 +7207,7 @@
     "answers": [
       "Un musée national, ancien palais royal"
     ],
+    "group": "louvre",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/culture/une-puissance-culturelle/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -7196,6 +7232,7 @@
     "answers": [
       "La IIIe République, dans les années 1880"
     ],
+    "group": "ecole-jules-ferry",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-regimes-politiques-depuis-1789/la-troisieme-republique-1870-1940/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -7723,6 +7760,7 @@
     "answers": [
       "Non, les opinions politiques font partie de la vie privée et ne peuvent pas être demandées à l'embauche"
     ],
+    "group": "discriminations",
     "source": {
       "url": "https://code.travail.gouv.fr/code-du-travail/l1221-6",
       "label": "code.travail.gouv.fr"
@@ -8263,6 +8301,7 @@
       "L'obligation de demander l'accord du maire pour aider ses voisins"
     ],
     "explanation": "En France, chaque personne, française ou étrangère, peut s'engager librement dans une association : c'est la liberté d'association, inscrite dans une loi de 1901. Créer une association est simple : il faut au moins deux personnes, un objectif non lucratif (qui ne cherche pas à gagner de l'argent), des statuts qui fixent les règles de fonctionnement, et une déclaration à la préfecture ou sur internet.",
+    "group": "liberte-association",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/devise-et-symboles-de-la-republique/fraternite-2/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -9139,6 +9178,7 @@
       "Commander la police et la gendarmerie"
     ],
     "explanation": "Le Défenseur des droits est une autorité administrative indépendante chargée de veiller au respect des droits. Il défend les personnes dont les droits ne sont pas respectés, lutte contre les discriminations et intervient pour régler les conflits entre un service public et un usager.",
+    "group": "defenseur-droits",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/droits-et-devoirs/droits-fondamentaux/les-acteurs-institutionnels/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -9351,6 +9391,7 @@
       "La Symphonie du Nouveau Monde, de Dvořák"
     ],
     "explanation": "L'hymne européen est l'« Ode à la joie », une mélodie du compositeur allemand Ludwig van Beethoven. Il symbolise la liberté, la paix et la solidarité, et on l'entend lors des événements officiels, notamment la Journée de l'Europe.",
+    "group": "hymne-europeen",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/institutions-europeennes/les-symboles-europeens-1/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -9459,6 +9500,7 @@
       "Francfort"
     ],
     "explanation": "Le Parlement européen est situé à Strasbourg. Il réunit 720 députés européens, vote le budget et les lois avec le Conseil de l'Union européenne, et contrôle la Commission.",
+    "group": "parlement-europeen",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/institutions-europeennes/le-fonctionnement-europeen-2/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -9591,6 +9633,7 @@
       "« Le peuple français proclame solennellement son attachement aux Droits de l'homme »"
     ],
     "explanation": "La phrase « Les hommes naissent et demeurent libres et égaux en droits » est l'article 1er de la Déclaration des droits de l'homme et du citoyen, adoptée le 26 août 1789. Les autres phrases viennent de textes différents : le Préambule de la Constitution de 1946, la Constitution de 1958.",
+    "group": "textes-fondateurs",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/droits-et-devoirs/droits-fondamentaux/les-principaux-textes-la-declaraion-des-droits-de-lhomme-et-du-citoyen/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -11372,6 +11415,7 @@
       "Une peintre impressionniste, célèbre pour ses scènes de fêtes"
     ],
     "explanation": "Marguerite Yourcenar (1903-1987) est une écrivaine, connue pour ses romans historiques comme Mémoires d'Hadrien. Elle devient en 1980 la première femme élue à l'Académie française.",
+    "group": "ecrivains-francais",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/culture/patrimoine-francais-artistes-emblematiques-parmi-les-auteurs-3/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -11676,7 +11720,7 @@
     ],
     "distractors": [
       "La mère de l'enfant, en priorité",
-      "Le parent qui a les revenus les plus élevés",
+      "Le père, en tant que chef de famille",
       "Seulement le parent qui garde l'enfant",
       "Le juge qui prononce le divorce"
     ],
@@ -11986,10 +12030,10 @@
       "Illégal, car il prive le salarié de ses droits sociaux"
     ],
     "distractors": [
-      "Autorisé si le montant est inférieur à 500 euros par mois",
-      "Légal si les deux parties signent un accord écrit",
-      "Autorisé pour les récoltes agricoles saisonnières",
-      "Toléré pour les travaux ménagers à domicile"
+      "Autorisé, si le montant reste inférieur à 500 euros par mois",
+      "Légal, si les deux parties signent un accord écrit",
+      "Autorisé, pour les récoltes agricoles saisonnières",
+      "Toléré, pour les travaux ménagers à domicile"
     ],
     "explanation": "Le travail non déclaré (ou travail dissimulé) est interdit par la loi. L'employeur risque jusqu'à 3 ans de prison et 45 000 euros d'amende. Le salarié ne cotise ni pour le chômage ni pour la retraite, n'a pas de congé payé et n'a pas droit à la sécurité sociale en cas de maladie ou d'accident du travail.",
     "group": "travail-non-declare",
@@ -12796,7 +12840,7 @@
       "Oui, mais seulement pour une religion reconnue par l'État"
     ],
     "explanation": "La laïcité garantit la liberté de conscience : chaque personne est libre d'avoir ou de ne pas avoir de religion, d'en changer ou de ne plus en avoir. Aucune autorisation n'est nécessaire.",
-    "group": "liberte-conscience",
+    "group": "laicite",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/laicite/la-definition-de-la-laicite-1/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -12821,7 +12865,7 @@
       "La religion choisie par le maire de chaque commune"
     ],
     "explanation": "En France, l'État ne reconnaît aucune religion, ne salarie ni ne subventionne aucun culte : c'est la conséquence de la séparation entre l'État et les organisations religieuses, établie en 1905. L'État reste neutre vis-à-vis de toutes les religions.",
-    "group": "separation-1905",
+    "group": "laicite",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/laicite/la-definition-de-la-laicite-1/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -12846,7 +12890,7 @@
       "Elle oblige l'État à salarier les ministres des cultes"
     ],
     "explanation": "En 1905, une loi sépare l'Église et l'État : l'État est indépendant des religions, ne finance aucune religion, et les religions s'organisent de manière indépendante en respectant les règles fixées par l'État.",
-    "group": "separation-1905",
+    "group": "laicite",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/laicite/histoire-de-la-laicite/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -12871,6 +12915,7 @@
       "Le 8 mai"
     ],
     "explanation": "La Journée nationale de la laïcité a lieu le 9 décembre, jour anniversaire de la loi de 1905 qui a séparé les Églises et l'État.",
+    "group": "laicite",
     "source": {
       "url": "https://www.fonction-publique.gouv.fr/toutes-les-actualites/journee-nationale-de-la-laicite",
       "label": "fonction-publique.gouv.fr"
@@ -12950,7 +12995,7 @@
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/laicite/histoire-de-la-laicite/",
       "label": "formation-civique.interieur.gouv.fr"
     },
-    "group": "separation-1905"
+    "group": "laicite"
   },
   {
     "id": 490,
@@ -13432,7 +13477,7 @@
       "10 ans"
     ],
     "explanation": "Les députés sont élus pour 5 ans, sauf si l'Assemblée nationale est dissoute avant la fin de leur mandat.",
-    "group": "mandat-deputes",
+    "group": "legislatives",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/democratie-et-droit-de-vote/democratie-et-droit-de-vote-les-conditions-pour-voter-en-france-2/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -13864,6 +13909,7 @@
       "Les juges de la Cour de justice de l'Union européenne"
     ],
     "explanation": "Le Parlement européen réunit les députés européens (eurodéputés), répartis en groupes politiques. Il vote le budget et les lois avec le Conseil de l'Union européenne et contrôle la Commission européenne.",
+    "group": "parlement-europeen",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/institutions-europeennes/le-fonctionnement-europeen-2/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -14157,7 +14203,7 @@
       "Non, mais il faut en choisir une avant 18 ans"
     ],
     "explanation": "La laïcité garantit à chaque personne la liberté d'avoir ou de ne pas avoir de religion, d'en changer ou de ne plus en avoir. Personne ne peut être obligé de respecter les principes ou les prescriptions d'une religion.",
-    "group": "liberte-conscience",
+    "group": "laicite",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/laicite/la-definition-de-la-laicite-1/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -14182,6 +14228,7 @@
       "21 ans"
     ],
     "explanation": "La loi du 7 juillet 2023 a fixé la « majorité numérique » à 15 ans : en dessous de cet âge, l'inscription sur un réseau social doit être autorisée par un parent. Cette règle n'est pas encore appliquée, faute du décret qui doit fixer son entrée en vigueur.",
+    "group": "vote-conditions",
     "source": {
       "url": "https://www.legifrance.gouv.fr/jorf/article_jo/JORFARTI000047799537",
       "label": "legifrance.gouv.fr"
@@ -14254,6 +14301,7 @@
       "Ne participer qu'aux actions décidées par le Gouvernement"
     ],
     "explanation": "La fraternité, c'est la solidarité entre les citoyens. Elle prend plusieurs formes : l'aide organisée par les institutions publiques, comme la Sécurité sociale, l'entraide entre les générations et l'aide directe aux personnes en difficulté.",
+    "group": "fraternite-solidarite",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/devise-et-symboles-de-la-republique/fraternite-1/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -14278,6 +14326,7 @@
       "Non, sauf avec l'autorisation exceptionnelle du préfet"
     ],
     "explanation": "Contracter un nouveau mariage avant la dissolution du précédent est interdit en France : c'est le délit de bigamie, puni d'un an d'emprisonnement et de 45 000 € d'amende. Le mariage civil ne peut unir que deux personnes.",
+    "group": "mariage-civil",
     "source": {
       "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006418588",
       "label": "legifrance.gouv.fr"
@@ -14377,6 +14426,7 @@
       "21 ans"
     ],
     "explanation": "L'article L3342-1 du code de la santé publique interdit la vente d'alcool aux mineurs, que ce soit à emporter ou à consommer sur place. Le vendeur peut demander un document prouvant l'âge de l'acheteur.",
+    "group": "vote-conditions",
     "source": {
       "url": "https://www.drogues.gouv.fr/sites/default/files/2025-03/lessentiel_interdictions_vente_aux_mineurs.pdf",
       "label": "drogues.gouv.fr"
@@ -16141,6 +16191,7 @@
       "Le Code du travail seul, sans aucun autre texte"
     ],
     "explanation": "Le Code du travail fixe les droits et les obligations de tous : contrat de travail, conditions de travail, salaire… Les conventions collectives précisent les règles générales d'un secteur d'activité, et le règlement intérieur présente les droits et obligations des salariés de l'entreprise en matière de santé, de sécurité et de discipline.",
+    "group": "textes-travail",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/emploi/le-droit-au-travail-1/",
       "label": "formation-civique.interieur.gouv.fr"
