@@ -91,7 +91,7 @@ function normalizeTypography(s: string): string {
 
 // Exceptions par liste : rang officiel → libellé attendu dans nos données. Seules
 // celles des questions présentes figurent ici (coquille officielle présente et gardée
-// telle quelle, sans exception décidée : CR 39 « Qu'est ce » ; coquilles connues, non
+// telle quelle, sans exception décidée : aucune ; coquilles connues, non
 // encore présentes : CR 153 « Qu'est ce », 73 et 144 « l'euro est-elle »,
 // 122 « lorsque qu'on » ; NAT 151 « fondée? », 198 « océan indien »,
 // 213 « 101ème », 225 « les parents peuvent inscrire »).
@@ -103,6 +103,15 @@ const LIST_EXCEPTIONS: Record<string, Map<number, { reason: string; expected: st
         // Officiel : « … des Églises et de l'Etat … » (accent manquant) ; notre question 31.
         reason: 'coquille officielle',
         expected: "En quelle année la loi de séparation des Églises et de l'État a-t-elle été votée ?",
+      },
+    ],
+    [
+      39,
+      {
+        // Officiel : « Qu'est ce qui est interdit par la Charte de la laïcité à l'école ? »
+        // (trait d'union manquant, comme CSP 27) ; notre question 321.
+        reason: 'faute corrigée',
+        expected: "Qu'est-ce qui est interdit par la Charte de la laïcité à l'école ?",
       },
     ],
   ]),
