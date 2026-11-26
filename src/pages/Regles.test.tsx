@@ -44,25 +44,25 @@ describe('Page « Comment se passe l\'examen »', () => {
     expect(link).toHaveAttribute('target', '_blank')
   })
 
-  it('« Retour » mène à l\'accueil, « M\'entraîner maintenant » lance un examen', () => {
+  it('« Retour » mène à l\'accueil, « M\'entraîner maintenant » mène à la page avant l\'examen blanc', () => {
     renderRegles()
     expect(screen.getByRole('link', { name: 'Retour' })).toHaveAttribute('href', '/')
-    expect(screen.getByRole('link', { name: "M'entraîner maintenant" })).toHaveAttribute('href', '/examen')
+    expect(screen.getByRole('link', { name: "M'entraîner maintenant" })).toHaveAttribute('href', '/examen-blanc')
   })
 
-  it('« M\'entraîner maintenant » demande un nouvel examen quand aucun n\'est en cours (la reprise est testée avec l\'accueil)', async () => {
-    function ExamProbe() {
-      return <p>état : {JSON.stringify(useLocation().state)}</p>
+  it('« M\'entraîner maintenant » ouvre /examen-blanc quand aucun examen n\'est en cours (la reprise est testée avec l\'accueil)', async () => {
+    function Probe() {
+      return <p>chemin : {useLocation().pathname}</p>
     }
     render(
       <MemoryRouter initialEntries={['/regles']}>
         <Routes>
           <Route path="/regles" element={<Regles />} />
-          <Route path="/examen" element={<ExamProbe />} />
+          <Route path="/examen-blanc" element={<Probe />} />
         </Routes>
       </MemoryRouter>,
     )
     await userEvent.click(screen.getByRole('link', { name: "M'entraîner maintenant" }))
-    expect(screen.getByText('état : {"start":"new"}')).toBeInTheDocument()
+    expect(screen.getByText('chemin : /examen-blanc')).toBeInTheDocument()
   })
 })

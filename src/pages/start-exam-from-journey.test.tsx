@@ -3,6 +3,7 @@ import { MemoryRouter, Route, Routes } from 'react-router-dom'
 import { describe, it, expect, beforeEach } from 'vitest'
 import Home from './Home'
 import Regles from './Regles'
+import ExamenBlanc from './ExamenBlanc'
 import Examen, { GLOBAL_EXAM_TIME } from './Examen'
 import { ThemeProvider } from '@/components/ThemeProvider'
 import { saveProgress, loadProgress } from '@/lib/exam-types'
@@ -32,6 +33,7 @@ function renderAt(path: string) {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/regles" element={<Regles />} />
+          <Route path="/examen-blanc" element={<ExamenBlanc />} />
           <Route path="/examen" element={<Examen />} />
         </Routes>
       </MemoryRouter>
@@ -68,9 +70,11 @@ describe.each(entries)('$name', ({ path, click }) => {
     expect(loadProgress('pluriannuelle')?.answers).toHaveLength(3)
   })
 
-  it('lance un nouvel examen sans examen en cours', () => {
+  it('lance un nouvel examen sans examen en cours, après la page avant l\'examen blanc', () => {
     renderAt(path)
     click()
+    expect(screen.getByRole('heading', { level: 1, name: 'Examen blanc' })).toBeInTheDocument()
+    fireEvent.click(screen.getByRole('link', { name: "Commencer l'examen blanc" }))
     expect(screen.getByText(`Question 1 sur ${EXAM_SIZE}`)).toBeInTheDocument()
     expect(screen.getAllByRole('progressbar').some((el) => el.getAttribute('aria-valuenow') === String(GLOBAL_EXAM_TIME))).toBe(true)
   })
@@ -80,6 +84,7 @@ describe.each(entries)('$name', ({ path, click }) => {
     saveProgress(other)
     renderAt(path)
     click()
+    fireEvent.click(screen.getByRole('link', { name: "Commencer l'examen blanc" }))
     expect(screen.getByText(`Question 1 sur ${EXAM_SIZE}`)).toBeInTheDocument()
     expect(loadProgress('resident')).toEqual(other)
   })

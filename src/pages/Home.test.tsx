@@ -140,10 +140,10 @@ describe('Accueil — examen blanc (étape 2)', () => {
     return screen.getByRole('button', { name: /2 · Réussir 3 examens blancs/ })
   }
 
-  it('un clic lance directement un nouvel examen conforme', () => {
+  it('sans examen en cours, un clic mène à la page avant l\'examen blanc', () => {
     renderHome()
     fireEvent.click(step2())
-    expect(screen.getByTestId('location')).toHaveTextContent('/examen|{"start":"new"}')
+    expect(screen.getByTestId('location')).toHaveTextContent('/examen-blanc|')
   })
 
   it('n\'est plus un dépliant : ni aria-expanded ni choix du jeu de questions', () => {

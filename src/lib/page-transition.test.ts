@@ -1,7 +1,7 @@
 import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest'
 import { pageDepth, shouldAnimateNavigation, transitionDirection } from '@/lib/page-transition'
 
-const PAGES = ['/titre', '/', '/revision', '/regles', '/mentions-legales', '/examen', '/examen/abc']
+const PAGES = ['/titre', '/', '/revision', '/regles', '/mentions-legales', '/examen-blanc', '/examen', '/examen/abc']
 
 describe('pageDepth', () => {
   it('classe chaque page : titre 0, accueil 1, pages annexes 2, examen et détail 3', () => {
@@ -10,6 +10,7 @@ describe('pageDepth', () => {
     expect(pageDepth('/revision')).toBe(2)
     expect(pageDepth('/regles')).toBe(2)
     expect(pageDepth('/mentions-legales')).toBe(2)
+    expect(pageDepth('/examen-blanc')).toBe(2)
     expect(pageDepth('/examen')).toBe(3)
     expect(pageDepth('/examen/abc')).toBe(3)
   })
