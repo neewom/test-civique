@@ -9127,7 +9127,7 @@
       "resident"
     ],
     "crNumber": 73,
-    "question": "Depuis quand l'euro est-elle la monnaie unique ?",
+    "question": "Depuis quand l'euro est-il la monnaie unique ?",
     "answers": [
       "2002"
     ],
@@ -10137,7 +10137,7 @@
       "resident"
     ],
     "crNumber": 122,
-    "question": "Quelle est l’attitude à avoir lorsque qu'on est témoin de violences ?",
+    "question": "Quelle est l’attitude à avoir lorsqu'on est témoin de violences ?",
     "answers": [
       "Aider la victime sans se mettre en danger et appeler les forces de l'ordre"
     ],
@@ -10660,7 +10660,7 @@
       "resident"
     ],
     "crNumber": 144,
-    "question": "En quelle année l'euro est-elle devenue la monnaie utilisée en France ?",
+    "question": "En quelle année l'euro est-il devenu la monnaie utilisée en France ?",
     "answers": [
       "En 2002"
     ],
@@ -10898,7 +10898,7 @@
       "resident"
     ],
     "crNumber": 153,
-    "question": "Qu'est ce que la France d'outre-mer ?",
+    "question": "Qu'est-ce que la France d'outre-mer ?",
     "answers": [
       "Les territoires français situés hors d'Europe"
     ],
