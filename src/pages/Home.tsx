@@ -17,7 +17,7 @@ import { cn } from '@/lib/utils'
 
 export const OFFICIAL_SITE_URL = 'https://formation-civique.interieur.gouv.fr'
 
-// Journey steps that are not links (yet): same pill shape, no interaction
+// Journey steps that are not links (yet), as « Le jour J »: same pill shape, no interaction
 const staticStepClass =
   'inline-flex min-h-12 max-w-full items-center gap-2.5 rounded-[1.5rem] px-[1.125rem] py-1.5 text-base font-bold'
 
@@ -171,10 +171,9 @@ export default function Home() {
         </li>
 
         <li className="max-w-full">
-          <span className={cn(staticStepClass, 'flex-wrap bg-card text-card-foreground')}>
+          <PillLink to="/centres" tone="surface" end={<ArrowRight strokeWidth={2.6} />}>
             3 · Trouver un centre d'examen
-            <span className="rounded-full bg-muted px-2.5 text-[0.8125rem] leading-6 font-bold">bientôt</span>
-          </span>
+          </PillLink>
         </li>
 
         <li className="max-w-full">
