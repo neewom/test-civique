@@ -65,13 +65,15 @@ describe('App routing', () => {
   })
 
   // Le bouton « Affichage » remplace l'interrupteur de thème fixe
-  it.each(['/', '/examen', '/revision', '/regles', '/titre', '/mentions-legales'])(
+  it.each(['/', '/examen', '/revision', '/regles', '/titre', '/mentions-legales', '/examen/inconnu'])(
     'affiche un seul en-tête (logo et bouton « Affichage ») sur %s, sans interrupteur de thème',
     (path) => {
       renderAt(path)
       expect(screen.getAllByRole('button', { name: 'Affichage' })).toHaveLength(1)
       expect(screen.queryByRole('switch')).not.toBeInTheDocument()
       expect(document.querySelectorAll('[data-app-header]')).toHaveLength(1)
+      // Un seul repère « banner » explicite (le <header> du bandeau d'examen n'en est pas un)
+      expect(document.querySelectorAll('[role=banner]')).toHaveLength(1)
     },
   )
 
