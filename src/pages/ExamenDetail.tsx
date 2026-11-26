@@ -1,6 +1,7 @@
 import { useId, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { AnswerBox } from '@/components/AnswerBox'
+import { AppHeader } from '@/components/AppHeader'
 import { BackLink } from '@/components/BackLink'
 import { SourceLink } from '@/components/SourceLink'
 import { ExamVerdict } from '@/components/ExamVerdict'
@@ -94,7 +95,8 @@ export default function ExamenDetail() {
   if (!record) {
     return (
       <main className="flex min-h-svh flex-col bg-background text-foreground">
-        <div className="mx-auto flex w-full max-w-[30rem] flex-col gap-4 px-5 pt-5 pb-7">
+        <AppHeader />
+        <div className="mx-auto flex w-full max-w-[30rem] flex-col gap-4 px-5 pt-0 pb-7">
           <BackLink />
           <h1 className="mt-4 text-[1.875rem] leading-none font-bold tracking-[-0.03em]">Examen introuvable</h1>
           <p className="text-base">
@@ -137,7 +139,8 @@ export default function ExamenDetail() {
 
   return (
     <main className="flex min-h-svh flex-col bg-background text-foreground">
-      <div className="mx-auto flex w-full max-w-[30rem] grow flex-col gap-3.5 px-5 pt-5 pb-7 md:max-w-[36rem] md:px-8 md:pt-8 lg:grid lg:max-w-[62rem] lg:grid-cols-[22rem_minmax(0,1fr)] lg:items-start lg:gap-x-14 lg:px-10 lg:pt-0">
+      <AppHeader />
+      <div className="mx-auto flex w-full max-w-[30rem] grow flex-col gap-3.5 px-5 pt-0 pb-7 md:max-w-[36rem] md:px-8 lg:grid lg:max-w-[62rem] lg:grid-cols-[22rem_minmax(0,1fr)] lg:items-start lg:gap-x-14 lg:px-10">
         {/* From 1024 px: score, filters, scores per theme and actions in a sticky side column (side padding: room for the focus rings) */}
         <div className="flex flex-col gap-3.5 lg:sticky lg:top-0 lg:-mx-2 lg:max-h-svh lg:overflow-y-auto lg:px-2 lg:py-8">
           <BackLink />

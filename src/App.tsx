@@ -1,52 +1,37 @@
-import { BrowserRouter, Routes, Route, Navigate, useLocation } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import Home from '@/pages/Home'
 import Revision from '@/pages/Revision'
 import Examen from '@/pages/Examen'
 import ExamenDetail from '@/pages/ExamenDetail'
+import ExamenBlanc from '@/pages/ExamenBlanc'
 import Regles from '@/pages/Regles'
 import TitreVise from '@/pages/TitreVise'
 import MentionsLegales from '@/pages/MentionsLegales'
-import { ScrollToTop } from '@/components/ScrollToTop'
+import { PageShell } from '@/components/PageShell'
 import { PageViewTracker } from '@/components/PageViewTracker'
 import { ThemeProvider } from '@/components/ThemeProvider'
-import { ThemeSwitch } from '@/components/ThemeSwitch'
-import { useWideScreen } from '@/lib/use-wide-screen'
-
-// Theme switch fixed in the top right corner, except on the home page whose
-// header holds it, on the exam (question, correction, result), where it would
-// cover the verdict with enlarged text, and on the exam detail, where it covered
-// the score per theme while scrolling; the maquettes Pa4 to Pa7 have none.
-// From 1024 px the revision holds it in its side column header
-function FixedThemeSwitch() {
-  const { pathname } = useLocation()
-  const wide = useWideScreen()
-  if (pathname === '/' || pathname === '/examen' || pathname.startsWith('/examen/')) return null
-  if (wide && pathname === '/revision') return null
-  return (
-    <div className="fixed top-4 right-4 z-50">
-      <ThemeSwitch />
-    </div>
-  )
-}
 
 export default function App() {
   return (
     <ThemeProvider>
       <div className="relative">
         <BrowserRouter>
-          <ScrollToTop />
           <PageViewTracker />
-          <FixedThemeSwitch />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/examen" element={<Examen />} />
-            <Route path="/examen/:id" element={<ExamenDetail />} />
-            <Route path="/revision" element={<Revision />} />
-            <Route path="/regles" element={<Regles />} />
-            <Route path="/titre" element={<TitreVise />} />
-            <Route path="/mentions-legales" element={<MentionsLegales />} />
-            <Route path="*" element={<Navigate to="/" replace />} />
-          </Routes>
+          <PageShell>
+            {(location) => (
+              <Routes location={location}>
+                <Route path="/" element={<Home />} />
+                <Route path="/examen-blanc" element={<ExamenBlanc />} />
+                <Route path="/examen" element={<Examen />} />
+                <Route path="/examen/:id" element={<ExamenDetail />} />
+                <Route path="/revision" element={<Revision />} />
+                <Route path="/regles" element={<Regles />} />
+                <Route path="/titre" element={<TitreVise />} />
+                <Route path="/mentions-legales" element={<MentionsLegales />} />
+                <Route path="*" element={<Navigate to="/" replace />} />
+              </Routes>
+            )}
+          </PageShell>
         </BrowserRouter>
       </div>
     </ThemeProvider>

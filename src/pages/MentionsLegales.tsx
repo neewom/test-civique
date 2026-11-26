@@ -1,11 +1,12 @@
 import type { ReactNode } from 'react'
 import { ArrowUpRight } from 'lucide-react'
+import { AppHeader } from '@/components/AppHeader'
 import { BackLink } from '@/components/BackLink'
 import { OrganicBackground } from '@/components/OrganicBackground'
 import { useDocumentTitle } from '@/lib/use-document-title'
 
 // To keep up to date whenever the data collected by the site changes (ads, payment, new events)
-export const LAST_UPDATED = '25 novembre 2026'
+export const LAST_UPDATED = '26 novembre 2026'
 export const CONTACT_EMAIL = 'contact@futurcitoyen.fr'
 export const CNIL_URL = 'https://www.cnil.fr'
 
@@ -35,9 +36,10 @@ export default function MentionsLegales() {
   useDocumentTitle('Mentions légales et confidentialité')
 
   return (
-    <main className="relative min-h-svh overflow-hidden bg-background text-foreground">
+    <main className="relative flex min-h-svh flex-col overflow-hidden bg-background text-foreground">
       <OrganicBackground shape="crest" />
-      <div className="relative mx-auto flex w-full max-w-[30rem] flex-col gap-3.5 px-[22px] pt-5 pb-8">
+      <AppHeader />
+      <div className="relative mx-auto flex w-full max-w-[30rem] flex-col gap-3.5 px-[22px] pt-0 pb-8">
         <BackLink />
         <h1 className="mt-4 max-w-[20rem] text-[2.125rem] leading-none font-bold tracking-[-0.04em] text-balance hyphens-auto">
           Mentions légales et confidentialité
@@ -77,8 +79,8 @@ export default function MentionsLegales() {
         <InfoCard title="Ce qui reste sur votre appareil" level={3}>
           <p>Le site ne demande ni compte, ni nom, ni adresse e-mail.</p>
           <p>
-            Vos examens, votre progression, le titre que vous préparez et le thème clair ou sombre sont enregistrés
-            seulement dans votre navigateur. Ils ne nous sont jamais envoyés.
+            Vos examens, votre progression, le titre que vous préparez, le thème clair ou sombre et votre choix d'animations
+            (activées ou désactivées) sont enregistrés seulement dans votre navigateur. Ils ne nous sont jamais envoyés.
           </p>
           <p>
             Ils restent donc sur cet appareil, dans ce navigateur : vous les retrouvez à chaque visite, mais pas sur un

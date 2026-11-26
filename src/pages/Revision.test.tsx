@@ -249,9 +249,9 @@ describe('Revision — lien source', () => {
   })
 })
 
-describe('Revision — interrupteur de thème', () => {
-  it('grand écran : dans l\'en-tête de la révision', () => {
-    stubWideScreen()
+describe('Revision — en-tête', () => {
+  it.each([true, false])('un seul bouton « Affichage » et aucun interrupteur de thème (grand écran : %s)', (wide) => {
+    stubWideScreen(wide)
     render(
       <ThemeProvider>
         <MemoryRouter initialEntries={['/revision']}>
@@ -259,12 +259,7 @@ describe('Revision — interrupteur de thème', () => {
         </MemoryRouter>
       </ThemeProvider>,
     )
-    expect(screen.getAllByRole('switch')).toHaveLength(1)
-  })
-
-  it('téléphone et tablette : absent de la page (le fixe d\'App.tsx le porte)', () => {
-    stubWideScreen(false)
-    renderRevision()
+    expect(screen.getAllByRole('button', { name: 'Affichage' })).toHaveLength(1)
     expect(screen.queryByRole('switch')).toBeNull()
   })
 })

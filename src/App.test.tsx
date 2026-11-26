@@ -50,7 +50,7 @@ describe('App routing', () => {
     localStorageMock.clear()
     renderAt('/')
     expect(window.location.pathname).toBe('/titre')
-    expect(screen.getByRole('heading', { level: 1, name: 'Quel titre préparez-vous ?' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { level: 1, name: "Préparez l'examen civique" })).toBeInTheDocument()
     await act(async () => {
       fireEvent.click(screen.getByRole('button', { name: 'Continuer' }))
     })
@@ -64,22 +64,18 @@ describe('App routing', () => {
     expect(screen.getByRole('heading', { level: 1, name: "Comment se passe l'examen" })).toBeInTheDocument()
   })
 
-  it('garde l\'interrupteur de thème sur les autres pages, une seule fois sur l\'accueil', () => {
-    renderAt('/regles')
-    expect(screen.getAllByRole('switch')).toHaveLength(1)
-  })
-
-  it('l\'accueil n\'affiche qu\'un interrupteur de thème, dans son en-tête', () => {
-    renderAt('/')
-    const switches = screen.getAllByRole('switch')
-    expect(switches).toHaveLength(1)
-    expect(screen.getByRole('banner')).toContainElement(switches[0])
-  })
-
-  it('n\'affiche pas d\'interrupteur de thème pendant l\'examen (maquettes Pa4 à Pa6)', () => {
-    renderAt('/examen')
-    expect(screen.queryByRole('switch')).not.toBeInTheDocument()
-  })
+  // Le bouton « Affichage » remplace l'interrupteur de thème fixe
+  it.each(['/', '/examen', '/revision', '/regles', '/titre', '/mentions-legales', '/examen/inconnu'])(
+    'affiche un seul en-tête (logo et bouton « Affichage ») sur %s, sans interrupteur de thème',
+    (path) => {
+      renderAt(path)
+      expect(screen.getAllByRole('button', { name: 'Affichage' })).toHaveLength(1)
+      expect(screen.queryByRole('switch')).not.toBeInTheDocument()
+      expect(document.querySelectorAll('[data-app-header]')).toHaveLength(1)
+      // Un seul repère « banner » explicite (le <header> du bandeau d'examen n'en est pas un)
+      expect(document.querySelectorAll('[role=banner]')).toHaveLength(1)
+    },
+  )
 
   it.each([
     ['setItem lève (stockage plein)', { getItem: () => null, setItem: () => { throw new Error('QuotaExceededError') }, removeItem: () => {}, clear: () => {} }],

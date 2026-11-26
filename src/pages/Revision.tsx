@@ -3,13 +3,12 @@ import { useLocation } from 'react-router-dom'
 import { AnswerBox } from '@/components/AnswerBox'
 import { BackLink } from '@/components/BackLink'
 import { SourceLink } from '@/components/SourceLink'
-import { ThemeSwitch } from '@/components/ThemeSwitch'
+import { AppHeader } from '@/components/AppHeader'
 import { questionsForTitle, type Question } from '@/lib/exam'
 import { OFFICIAL_THEMES } from '@/lib/exam-review'
 import { loadQuestionsToReview, parseReviewIds } from '@/lib/review-queue'
 import { DEFAULT_TITLE, loadTargetTitle, TARGET_TITLE_LABELS } from '@/lib/target-title'
 import { useDocumentTitle } from '@/lib/use-document-title'
-import { useWideScreen } from '@/lib/use-wide-screen'
 import { cn } from '@/lib/utils'
 
 // Official themes in the order of the programme, then any other theme of the pool
@@ -63,7 +62,6 @@ export default function Revision() {
   const [filter, setFilter] = useState<Filter>(() => (examIds.length > 0 ? { kind: 'exam' } : { kind: 'all' }))
   const [excludeSituational, setExcludeSituational] = useState(false)
   const checkboxId = useId()
-  const wide = useWideScreen()
 
   const titleLabel = TARGET_TITLE_LABELS[title]
   const pool = excludeSituational ? titlePool.filter((q) => q.notion !== 'mise-en-situation') : titlePool
@@ -93,15 +91,12 @@ export default function Revision() {
 
   return (
     <main className="flex min-h-svh flex-col bg-background text-foreground">
-      <div className="mx-auto flex w-full max-w-[30rem] flex-col gap-3.5 px-5 pt-5 pb-7 md:max-w-[36rem] md:px-8 md:pt-8 lg:grid lg:max-w-[62rem] lg:grid-cols-[17rem_minmax(0,1fr)] lg:items-start lg:gap-x-14 lg:px-10 lg:pt-0">
+      <AppHeader />
+      <div className="mx-auto flex w-full max-w-[30rem] flex-col gap-3.5 px-5 pt-0 pb-7 md:max-w-[36rem] md:px-8 lg:grid lg:max-w-[62rem] lg:grid-cols-[17rem_minmax(0,1fr)] lg:items-start lg:gap-x-14 lg:px-10">
         {/* From 1024 px: a sticky side column with the header and the filters (side padding: room for the focus rings) */}
         <div className="flex flex-col gap-3.5 lg:sticky lg:top-0 lg:-mx-2 lg:max-h-svh lg:overflow-y-auto lg:px-2 lg:py-8">
           <div className="flex flex-col gap-2.5">
-            {/* Right padding: room for the fixed theme switch in the top right corner; from 1024 px the switch is here */}
-            <div className="flex items-center justify-between gap-3 pr-16 lg:pr-0">
-              <BackLink>Mon parcours</BackLink>
-              {wide && <ThemeSwitch />}
-            </div>
+            <BackLink>Mon parcours</BackLink>
             <h1 className="text-[2.125rem] leading-none font-bold tracking-[-0.04em] md:text-[3rem]">Réviser</h1>
             <p className="text-[0.9375rem] dark:text-muted-foreground">
               {titleLabel} · {pool.length} questions

@@ -265,7 +265,7 @@ components:
 
 L'appli se lit comme une carte : un fond crème uni, une seule grande forme organique de terre verte qui serpente sous le contenu, et par-dessus des étapes en pastilles, comme des repères posés sur un chemin qui mène au jour J. Chaque écran dit où l'on est et ce qui vient ensuite ; la couleur sert à marquer l'étape, l'action ou le verdict, jamais à décorer. Le système vise une personne stressée, sur téléphone, parfois peu à l'aise en français : il préfère des formes généreuses, des aplats francs et un texte large à toute finesse graphique.
 
-La densité est faible et la colonne étroite. Une seule famille de caractères, très lisible, en deux graisses ; des titres serrés et massifs qui donnent le ton, un corps de texte calme. Tout est plat : aucune ombre, la profondeur vient des aplats de couleur posés sur le crème et de la forme organique en arrière-plan. Le mouvement se limite à la respiration lente de cette forme, absente des écrans de question, où rien ne bouge pendant que l'on répond.
+La densité est faible et la colonne étroite. Une seule famille de caractères, très lisible, en deux graisses ; des titres serrés et massifs qui donnent le ton, un corps de texte calme. Tout est plat : aucune ombre (seule exception : le panneau « Affichage »), la profondeur vient des aplats de couleur posés sur le crème et de la forme organique en arrière-plan. Le mouvement se limite à la respiration lente de cette forme, absente des écrans de question, où rien ne bouge pendant que l'on répond, et aux transitions de page : 320 ms en `cubic-bezier(0.4, 0, 0.2, 1)`, le contenu glisse (de la droite en avançant en profondeur, de la gauche en revenant), les formes de fond et le bandeau vert de l'examen se fondent sur place (fondu seul, le bandeau ne glisse pas), l'en-tête et la couleur de page restent fixes. Elles reposent sur l'API View Transitions (sans elle, changement de page immédiat) et, comme la forme, se coupent avec le panneau « Affichage » (préférence `motion`).
 
 Le thème sombre est le même parcours, le soir, écran baissé : mêmes formes, mêmes règles, couleurs assourdies pour ne pas éblouir, et sélection inversée (fond clair, texte sombre).
 
@@ -274,7 +274,7 @@ Le thème sombre est le même parcours, le soir, écran baissé : mêmes formes,
 - Pastilles de 48 à 56 px de haut, rayon égal à la moitié de la hauteur, souvent terminées par une pastille ronde (icône ou compteur).
 - Jaune réservé à l'action principale de l'écran.
 - Texte toujours encre sur les aplats colorés en clair.
-- Aucune ombre ; profondeur par aplats.
+- Aucune ombre, sauf le panneau « Affichage » (filet et ombre douce) ; profondeur par aplats.
 - Une seule police (Atkinson Hyperlegible), 400 et 700, tailles en rem pour respecter le texte agrandi.
 - Un résultat est toujours dit par un texte, une icône et une couleur.
 
@@ -350,17 +350,17 @@ Trois points de rupture (texte à la taille par défaut ; agrandi, l'écran reto
 - **lg, 1024 px et plus (tablette en paysage, ordinateur)** : deux colonnes sur l'accueil, la révision et le détail (gouttière 40 px).
 
 Deux largeurs nommées :
-- **Carte, 62rem** : accueil, révision, détail d'un examen à partir de 1024 px. Accueil : le parcours à gauche, sur la forme verte limitée à la moitié gauche de l'écran, la reprise de l'examen sous le titre, au-dessus du parcours ; à droite une colonne de 23rem « Où vous en êtes » (compteur « n sur 3 » en `display-lg`, derniers examens, lien vers les règles) ou, sans historique, la carte « Ce qui vous attend le jour J » ; mentions en bas de page. Révision : colonne latérale fixe (sticky) de 17rem (en-tête avec l'interrupteur de thème, filtres en pastilles pleine largeur, case « Sans les mises en situation »), cartes sur une colonne de 40rem au plus. Détail : colonne latérale fixe de 22rem (retour, score, date, verdict, filtres, « Par thème », boutons), questions sur 40rem au plus.
+- **Carte, 62rem** : accueil, révision, détail d'un examen à partir de 1024 px. Accueil : le parcours à gauche, sur la forme verte limitée à la moitié gauche de l'écran, la reprise de l'examen sous le titre, au-dessus du parcours ; à droite une colonne de 23rem « Où vous en êtes » (compteur « n sur 3 » en `display-lg`, derniers examens, lien vers les règles) ou, sans historique, le titre « Où vous en êtes » et une phrase d'attente (plus de carte « jour J » ; l'étape 4 du parcours reste) ; mentions en bas de page. Révision : colonne latérale fixe (sticky) de 17rem (retour, titre, filtres en pastilles pleine largeur, case « Sans les mises en situation »), cartes sur une colonne de 40rem au plus. Détail : colonne latérale fixe de 22rem (retour, score, date, verdict, filtres, « Par thème », boutons), questions sur 40rem au plus.
 - **Lecture, 44rem** : examen (question, correction) et résultat à partir de 768 px. Réponses sur une colonne ; la place du bouton est réservée sous les réponses, alignée à gauche (8rem), pour que rien ne bouge quand il apparaît ; actions du résultat limitées à 26rem.
 
-Un bloc qui change de colonne (reprise de l'examen, actions du détail, interrupteur de thème de la révision) n'est rendu qu'une fois, à la place qui suit l'ordre visuel (`useWideScreen`, `src/lib/use-wide-screen.ts`) : l'ordre de lecture et de tabulation suit l'écran.
+Un bloc qui change de colonne (reprise de l'examen, actions du détail) n'est rendu qu'une fois, à la place qui suit l'ordre visuel (`useWideScreen`, `src/lib/use-wide-screen.ts`) : l'ordre de lecture et de tabulation suit l'écran.
 
 ## Elevation & Depth
 
-Le système est entièrement plat : aucune ombre portée dans l'appli. La profondeur vient de trois couches seulement : le fond crème (ou mousse de nuit), la forme organique colorée en arrière-plan, et les aplats blancs, jaunes, encre ou colorés des cartes et pastilles posées dessus. Seule la boîte de dialogue « Quitter l'examen ? » ajoute un voile (noir à 10 % avec un léger flou), hérité de shadcn.
+Le système est plat : aucune ombre portée dans l'appli, à une seule exception, le panneau « Affichage » (voir Components). La profondeur vient de trois couches seulement : le fond crème (ou mousse de nuit), la forme organique colorée en arrière-plan, et les aplats blancs, jaunes, encre ou colorés des cartes et pastilles posées dessus. La boîte de dialogue « Quitter l'examen ? » n'a pas d'ombre mais un voile (noir à 10 % avec un léger flou), hérité de shadcn ; le panneau « Affichage », qui flotte sur le contenu, porte un filet (`ring`) et une ombre douce.
 
 ### Named Rules
-**La règle du plat.** Pas d'ombre, ni au repos ni au survol. Un élément se détache par sa couleur de fond, pas par une élévation.
+**La règle du plat.** Pas d'ombre, ni au repos ni au survol, sauf le panneau « Affichage », qui flotte sur le contenu. Un élément se détache par sa couleur de fond, pas par une élévation.
 
 ## Shapes
 
@@ -402,19 +402,21 @@ Tactiles et francs : des pastilles pleines, en gras, qu'on vise sans y penser.
 - **Lien Retour :** flèche et texte en `body-sm` gras, 44 px de haut, souligné au survol.
 - **Parcours de l'accueil :** liste ordonnée de quatre étapes en pastilles, numérotées « 1 · », « 2 · »… ; l'étape 2, grande pastille jaune avec le compteur « n sur 3 », lance directement un nouvel examen blanc.
 - **Bandeau d'examen :** bloc vert terre arrondi en bas, avec « Quitter », « Question n sur 40 » et une barre de temps encre sur une piste translucide.
-- **Interrupteur de thème :** fixe en haut à droite sur le titre visé, les règles et la révision (dans l'en-tête de sa colonne latérale à partir de 1024 px) ; dans l'en-tête, à côté du logo, sur l'accueil ; absent de l'examen (question, correction, résultat) et du détail d'un examen.
+- **En-tête permanent (`AppHeader`) :** sur toutes les pages, en premier enfant de `<main>`, hors de la colonne de la page : il porte sa propre largeur maximale (62rem) et ses gouttières (22 / 32 / 40 px selon la largeur d'écran), si bien que le logo et le bouton « Affichage » sont exactement au même endroit sur toutes les pages (seul l'en-tête fin de l'examen est un peu plus haut, aux mêmes x). Le logo « la pousse » + « Futur Citoyen » (lien vers l'accueil) à gauche, le bouton « Affichage » à droite : rond de 44 px, carte blanche (sable au survol ou ouvert), icône de curseurs horizontaux, `aria-label="Affichage"`, `aria-expanded`, `aria-controls`. Pendant l'examen (`thin`), l'en-tête reste au-dessus du bandeau vert avec un logo en `body` au lieu de 1.25rem, et le logo est un bouton qui ouvre la fenêtre « Quitter l'examen ? ». Le lien « Retour » reste sous l'en-tête.
+- **Première visite (`/titre` sans titre, historique ni examen) :** pas de lien « Retour » ni de nom du site dans l'en-tête (`AppHeader hideBrand` : seul le bouton « Affichage » reste, à droite, aux mêmes x que sur les autres pages). Composition : un champ vert terre (`earth`) en haut, avec des lignes de prairie fines à droite (le jaune y est un trait, jamais un aplat), le symbole « la pousse » en grand (`BrandSymbol large`, traits plus fins, 4.25rem), « Futur Citoyen », le titre « Préparez l'examen civique », une phrase d'accroche et la pastille « Site indépendant, non officiel » ; le bas du champ est une vague de la même couleur ; dessous, le choix du titre en pastilles `sheet` (rond de coche à droite, pastille « Bientôt » pour les titres pas encore ouverts) et « Continuer », seul aplat jaune de l'écran. Les libellés des titres se coupent avec un trait d'union (`hyphens-auto`) et la pastille « Bientôt » passe sous le libellé quand la place manque (texte à 200 %).
+- **Panneau « Affichage » :** carte de 17.5rem au plus, et jamais plus large que l'écran moins 2.75rem (`card-lg`, 1.5rem) sous le bouton, alignée à droite (les deux choix d'un réglage s'empilent quand le texte est très agrandi), avec deux réglages à deux choix « Thème : Clair / Sombre » et « Animations : Activées / Désactivées » : une piste sable (`muted`) en pastille, le choix actif en vert terre (`earth`, texte encre en clair et crème en sombre), `aria-pressed`, 44 px de haut. Focus sur le premier réglage à l'ouverture ; Échap et clic extérieur ferment. Seule exception à la règle du plat (le dialogue a un voile, pas d'ombre) : le panneau flotte sur le contenu, il porte donc un filet (`ring`) et une ombre douce.
 
 ### Verdict (signature)
 Une pastille de statut, annoncée aux lecteurs d'écran : un cercle d'icône à gauche, le texte en gras à droite. Réussi ou bonne réponse : encre avec une coche jaune. Erreur : corail avec une croix. « Pas encore réussi » : surface blanche avec une flèche, rassurant plutôt qu'alarmant. Deux tailles : 40 px pour la correction d'une question, 44 px pour le résultat d'un examen.
 
 ### Forme organique (signature)
-`OrganicBackground` : la terre de la carte. Un tracé SVG plein, posé sous le contenu, qui respire lentement en boucle et s'arrête si l'appareil demande moins de mouvement ou si l'onglet est caché. Jamais sur les écrans de question.
+`OrganicBackground` : la terre de la carte. Un tracé SVG plein, posé sous le contenu, qui respire lentement en boucle et s'arrête si les animations sont désactivées (réglage « Animations » du panneau « Affichage » ; sans choix enregistré, selon `prefers-reduced-motion`) ou si l'onglet est caché. Jamais sur les écrans de question.
 
 ### Logo « la pousse »
 Une tige et deux feuilles (verte, jaune) cerclées d'encre, suivies de « Futur Citoyen », « Futur » en vert. Le symbole fait 1,25 fois la taille du texte qui l'accompagne.
 
 ### Named Rules
-**La règle du calme pendant la question.** Aucune animation ni forme mouvante sur l'écran où l'on répond ; le mouvement est réservé aux écrans de repère (accueil, titre visé, règles, résultat).
+**La règle du calme pendant la question.** Aucune animation ni forme mouvante sur l'écran où l'on répond ; le mouvement est réservé aux écrans de repère (accueil, titre visé, règles, résultat). Seule exception, la transition de page : l'arrivée sur l'examen glisse comme toute autre page, puis plus rien ne bouge, et il n'y a aucune transition entre deux questions de l'examen.
 
 ## Do's and Don'ts
 
@@ -428,7 +430,7 @@ Une tige et deux feuilles (verte, jaune) cerclées d'encre, suivies de « Futur 
 - **Do** vérifier chaque écran en clair et en sombre, et avec le texte agrandi.
 
 ### Don't:
-- **Don't** ajouter d'ombre portée, de dégradé ou de bordure décorative.
+- **Don't** ajouter d'ombre portée (hors panneau « Affichage »), de dégradé ou de bordure décorative.
 - **Don't** mettre du texte blanc sur un aplat jaune, vert clair, corail, bleu ou lilas.
 - **Don't** placer plus d'une forme organique par écran, ni la monter sur un écran de question.
 - **Don't** fixer la hauteur d'une pastille ou d'une carte : seulement une hauteur minimale.
