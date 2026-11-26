@@ -16,7 +16,7 @@ test('examen blanc complet, reprise après rechargement, résultat et détail', 
   await page.getByRole('button', { name: /2 · Réussir 3 examens blancs/ }).click()
   // Page before the exam, then the exam itself
   await expect(page).toHaveURL(/\/examen-blanc$/)
-  await expectPage(page, 'Examen blanc')
+  await expectPage(page, "Avant l'examen blanc")
   await expect(page.getByRole('heading', { level: 1, name: 'Examen blanc' })).toBeVisible()
   const dayJ = page.getByRole('region', { name: 'Comme le jour J' })
   await expect(dayJ).toContainText(`${PASS_THRESHOLD}/${EXAM_SIZE}`)
