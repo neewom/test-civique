@@ -1073,6 +1073,7 @@
     "answers": [
       "Le Président de la République"
     ],
+    "group": "premier-ministre",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/etat-de-droit-et-separation-des-pouvoirs/etat-de-droit-et-separation-des-pouvoirs-presentation-des-3-pouvoirs-1/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -1321,6 +1322,7 @@
     "answers": [
       "Il est jugé comme tout citoyen, personne n'est au-dessus des lois"
     ],
+    "group": "etat-de-droit",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/etat-de-droit-et-separation-des-pouvoirs/etat-de-droit-et-separation-des-pouvoirs--presentation-de-letat-de-droit-et-principe-de-la-separation-des-pouvoirs/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -1773,6 +1775,7 @@
     "answers": [
       "Le pouvoir exécutif, le pouvoir législatif et le pouvoir judiciaire"
     ],
+    "group": "separation-pouvoirs",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/etat-de-droit-et-separation-des-pouvoirs/etat-de-droit-et-separation-des-pouvoirs--presentation-de-letat-de-droit-et-principe-de-la-separation-des-pouvoirs/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -2034,6 +2037,7 @@
     "answers": [
       "Non, les pouvoirs sont séparés et partagés entre plusieurs institutions"
     ],
+    "group": "separation-pouvoirs",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/etat-de-droit-et-separation-des-pouvoirs/etat-de-droit-et-separation-des-pouvoirs--presentation-de-letat-de-droit-et-principe-de-la-separation-des-pouvoirs/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -2182,6 +2186,7 @@
       "Le Royaume-Uni",
       "La Turquie"
     ],
+    "group": "brexit",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/institutions-europeennes/les-etapes-cles-de-la-construction-europeenne/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -8676,7 +8681,7 @@
       "La volonté des partis politiques",
       "La volonté de l'administration"
     ],
-    "explanation": "La loi est l'expression de la volonté générale : elle est proposée, discutée et votée par les représentants du peuple, les députés et les sénateurs, qui forment le Parlement. Elle s'applique ensuite à tous.",
+    "explanation": "La loi est l'expression de la volonté générale : elle est discutée et votée par les représentants élus du peuple, au Parlement. Elle peut être proposée par le Gouvernement (projet de loi) ou par les parlementaires (proposition de loi), puis elle s'applique à tous.",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/democratie-et-droit-de-vote/comment-voter-une-loi-1/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -8793,14 +8798,15 @@
     "crNumber": 48,
     "question": "À la fin de son mandat, le président de la République peut-il décider de rester au pouvoir ?",
     "answers": [
-      "Non, son mandat de 5 ans se termine et il quitte ses fonctions"
+      "Non, il ne peut rester président que s'il est réélu"
     ],
     "distractors": [
       "Oui, s'il obtient l'accord du Parlement pour prolonger son mandat",
       "Oui, tant que le Gouvernement le soutient",
       "Oui, si le Premier ministre le décide",
       "Oui, s'il déclare l'état d'urgence avant la fin de son mandat",
-      "Oui, si le Conseil constitutionnel le demande"
+      "Non, sauf s'il a été élu avec plus de 60 % des voix",
+      "Non, sauf si son parti obtient la majorité à l'Assemblée nationale"
     ],
     "explanation": "Le président de la République est élu pour cinq ans au suffrage universel direct. À la fin de son mandat, il doit quitter ses fonctions : personne ne peut rester au pouvoir sans être réélu. Nul ne peut exercer plus de deux mandats consécutifs.",
     "source": {
@@ -8847,11 +8853,12 @@
       "En communes, départements et régions"
     ],
     "distractors": [
+      "En États fédérés qui votent leurs propres lois",
+      "En provinces dirigées par des gouverneurs nommés",
+      "En départements seulement, dirigés par les préfets",
+      "En communes et en régions seulement, sans départements",
       "En comtés, provinces et États",
-      "En cantons, duchés et régions",
-      "En communes, provinces et empires",
-      "En arrondissements, comtés et nations",
-      "En villages, districts et cantons"
+      "En cantons, duchés et régions"
     ],
     "explanation": "La France est organisée en collectivités territoriales : les communes, les départements et les régions. À côté d'elles existent des collectivités à statut particulier (Paris, la métropole de Lyon, la Corse…) et les collectivités d'outre-mer. C'est la décentralisation : l'État transfère des compétences à ces collectivités.",
     "source": {
@@ -8869,16 +8876,16 @@
     "crNumber": 52,
     "question": "Qu'est-ce que le pouvoir législatif ? Le pouvoir :",
     "answers": [
-      "Le pouvoir de faire et de voter les lois, exercé par le Parlement"
+      "De voter les lois, exercé par le Parlement"
     ],
     "distractors": [
-      "Le pouvoir d'appliquer les lois, exercé par le président de la République",
-      "Le pouvoir de juger les personnes, exercé par les tribunaux",
-      "Le pouvoir de diriger l'administration, exercé par les préfets",
-      "Le pouvoir de contrôler la Constitution, exercé par le Gouvernement",
-      "Le pouvoir de décider seul de la politique de la nation, exercé par le Premier ministre"
+      "D'appliquer les lois, exercé par le président de la République",
+      "De juger les personnes, exercé par les tribunaux",
+      "De diriger l'administration, exercé par les préfets",
+      "De contrôler la constitutionnalité des lois, exercé par le Gouvernement",
+      "De conduire la politique de la nation, exercé par le Premier ministre"
     ],
-    "explanation": "Le pouvoir législatif est exercé par le Parlement, composé de l'Assemblée nationale et du Sénat. Le Parlement propose, négocie et vote la loi. Il vérifie aussi que le Gouvernement agit selon la loi.",
+    "explanation": "Le pouvoir législatif est exercé par le Parlement, qui vote la loi. Le Parlement vérifie aussi que le Gouvernement agit selon la loi. Le pouvoir exécutif applique les lois et le pouvoir judiciaire rend la justice.",
     "group": "pouvoir-legislatif",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/etat-de-droit-et-separation-des-pouvoirs/etat-de-droit-et-separation-des-pouvoirs-presentation-des-3-pouvoirs-1/",
@@ -8905,6 +8912,7 @@
       "Pour que les juges écrivent aussi les lois"
     ],
     "explanation": "La séparation des pouvoirs législatif, exécutif et judiciaire signifie qu'ils ne sont pas entre les mains des mêmes personnes. Elle garantit les droits fondamentaux et conserve un équilibre : les pouvoirs se contrôlent mutuellement et ne peuvent s'exercer de façon arbitraire.",
+    "group": "separation-pouvoirs",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/etat-de-droit-et-separation-des-pouvoirs/etat-de-droit-et-separation-des-pouvoirs--presentation-de-letat-de-droit-et-principe-de-la-separation-des-pouvoirs/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -8972,7 +8980,7 @@
     "crNumber": 68,
     "question": "Quel est le rôle du président de la République ?",
     "answers": [
-      "Chef de l'État et des armées, il nomme le Premier ministre"
+      "Il est le chef de l'État et des armées"
     ],
     "distractors": [
       "Il vote les lois avec les députés et les sénateurs",
@@ -8981,7 +8989,7 @@
       "Il est élu par les sénateurs pour six ans",
       "Il gère les écoles et les collèges du pays"
     ],
-    "explanation": "Le président de la République est le chef de l'État et des armées. Il nomme le Premier ministre, et il veille au respect de la Constitution et au fonctionnement régulier des pouvoirs publics. Avec le Gouvernement, il applique et fait respecter les lois. Il réside au palais de l'Élysée.",
+    "explanation": "Le président de la République est le chef de l'État et des armées. Il veille au respect de la Constitution et au fonctionnement régulier des pouvoirs publics. Avec le Gouvernement, il applique et fait respecter les lois. Il réside au palais de l'Élysée.",
     "group": "pouvoir-executif",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/etat-de-droit-et-separation-des-pouvoirs/etat-de-droit-et-separation-des-pouvoirs-presentation-des-3-pouvoirs-1/",
@@ -9004,7 +9012,7 @@
       "Rendre la justice au nom du peuple",
       "Présider l'Assemblée nationale",
       "Représenter l'État dans un département",
-      "Diriger les armées en tant que chef de l'État",
+      "Nommer seul tous les membres du Conseil constitutionnel",
       "Élaborer seul les lois du pays"
     ],
     "explanation": "Le Premier ministre dirige l'action du Gouvernement, assure l'exécution des lois et nomme aux emplois civils et militaires. Il est nommé par le président de la République.",
@@ -9033,11 +9041,11 @@
       "Le ministre de la Justice",
       "Le préfet de région"
     ],
-    "explanation": "Le chef du Gouvernement est le Premier ministre. Il dirige l'action des ministres, qu'il propose au président de la République, et il réside à l'hôtel de Matignon.",
+    "explanation": "Le Premier ministre est le chef du Gouvernement : il dirige l'action du Gouvernement (article 21 de la Constitution) et propose les ministres au président de la République. Le président de la République préside le Conseil des ministres, mais il n'est pas membre du Gouvernement. Le Premier ministre réside à l'hôtel de Matignon.",
     "group": "premier-ministre",
     "source": {
-      "url": "https://www.conseil-constitutionnel.fr/le-bloc-de-constitutionnalite/texte-integral-de-la-constitution-du-4-octobre-1958-en-vigueur",
-      "label": "conseil-constitutionnel.fr"
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/etat-de-droit-et-separation-des-pouvoirs/etat-de-droit-et-separation-des-pouvoirs-presentation-des-3-pouvoirs-1/",
+      "label": "formation-civique.interieur.gouv.fr"
     }
   },
   {
@@ -9078,10 +9086,11 @@
       "Défendre les droits des personnes et lutter contre les discriminations"
     ],
     "distractors": [
-      "Voter le budget de l'État et les lois",
+      "Défendre les accusés devant les tribunaux, comme un avocat",
+      "Défendre les intérêts de l'État face aux réclamations des usagers",
       "Juger les crimes et les délits graves",
       "Contrôler le déroulement des élections",
-      "Représenter l'État dans les départements",
+      "Voter le budget de l'État et les lois",
       "Commander la police et la gendarmerie"
     ],
     "explanation": "Le Défenseur des droits est une autorité administrative indépendante chargée de veiller au respect des droits. Il défend les personnes dont les droits ne sont pas respectés, lutte contre les discriminations et intervient pour régler les conflits entre un service public et un usager.",
@@ -9106,7 +9115,7 @@
       "1957",
       "1973",
       "1986",
-      "1992",
+      "1995",
       "2007"
     ],
     "explanation": "En 2002, l'euro est devenu la monnaie officielle de plusieurs pays membres de l'Union européenne, dont la France : les pièces et les billets en euros ont alors remplacé les monnaies nationales, comme le franc. L'euro avait été introduit auparavant comme monnaie de paiement non physique (1999).",
@@ -9128,11 +9137,11 @@
       "L'action sociale (handicap, gestion du RSA)"
     ],
     "distractors": [
-      "La gestion des écoles primaires",
-      "La gestion des lycées",
-      "La défense du territoire",
-      "La justice des mineurs",
-      "La délivrance des passeports"
+      "L'enseignement (écoles maternelles et primaires)",
+      "La gestion des lycées (bâtiments, équipements)",
+      "La défense (armée, frontières)",
+      "La justice (tribunaux, prisons)",
+      "La politique étrangère (ambassades, traités)"
     ],
     "explanation": "Le département agit surtout dans l'action sociale (aide aux personnes handicapées, gestion du RSA). Il gère aussi les collèges. Il y a 101 départements en France.",
     "source": {
@@ -9150,7 +9159,7 @@
     "crNumber": 75,
     "question": "Quel est le rôle principal des communes ?",
     "answers": [
-      "Gérer les écoles maternelles et primaires et les services de proximité"
+      "Gérer les écoles maternelles et primaires"
     ],
     "distractors": [
       "Gérer les lycées et les universités",
@@ -9159,7 +9168,7 @@
       "Définir les programmes scolaires nationaux",
       "Nommer les juges des tribunaux"
     ],
-    "explanation": "La commune a de nombreuses compétences, surtout en urbanisme, logement et action sociale. Elle gère les écoles maternelles et primaires et les services de proximité. Elle est dirigée par des personnes élues, dont le maire.",
+    "explanation": "La commune a de nombreuses compétences, surtout en urbanisme, logement et action sociale. Elle gère les écoles maternelles et primaires et les services de proximité. Les collèges relèvent du département et les lycées de la région.",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/organisation-de-la-republique-fran%C3%A7aise/le-decoupage-administratif-de-la-france-1/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -9184,9 +9193,9 @@
       "Environ 100 000",
       "Environ 500 000"
     ],
-    "explanation": "La commune est la collectivité la plus répandue sur le territoire : il y a plus de 35 000 communes en France (34 875 selon les chiffres du ministère).",
+    "explanation": "La commune est la collectivité la plus répandue sur le territoire : il y a environ 35 000 communes en France (34 875 selon le ministère).",
     "source": {
-      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/organisation-de-la-republique-fran%C3%A7aise/le-decoupage-administratif-de-la-france-1/",
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/organisation-de-la-republique-fran%C3%A7aise/le-decoupage-administratif-de-la-france-3/",
       "label": "formation-civique.interieur.gouv.fr"
     }
   },
@@ -9237,6 +9246,7 @@
       "La Norvège"
     ],
     "explanation": "En 2020, pour la première fois, un pays a quitté l'Union européenne : le Royaume-Uni, c'est le Brexit.",
+    "group": "brexit",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/institutions-europeennes/les-etapes-cles-de-la-construction-europeenne/",
       "label": "formation-civique.interieur.gouv.fr"
