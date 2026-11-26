@@ -92,6 +92,25 @@ typography:
     fontSize: "1.0625rem"
     fontWeight: 700
     lineHeight: 1.375
+  stat:
+    fontFamily: "'Atkinson Hyperlegible', system-ui, sans-serif"
+    fontSize: "1.5rem"
+    fontWeight: 700
+    lineHeight: 1.25
+    letterSpacing: "-0.02em"
+    fontFeature: "'tnum'"
+  stat-lg:
+    fontFamily: "'Atkinson Hyperlegible', system-ui, sans-serif"
+    fontSize: "1.625rem"
+    fontWeight: 700
+    lineHeight: 1.25
+    letterSpacing: "-0.02em"
+    fontFeature: "'tnum'"
+  stat-label:
+    fontFamily: "'Atkinson Hyperlegible', system-ui, sans-serif"
+    fontSize: "0.875rem"
+    fontWeight: 400
+    lineHeight: 1.375
   body:
     fontFamily: "'Atkinson Hyperlegible', system-ui, sans-serif"
     fontSize: "1rem"
@@ -325,6 +344,7 @@ Une palette de carte illustrée : un papier crème, une encre presque noire, et 
 - **Question** (`question`) : l'énoncé d'une question d'examen avant validation ; il passe à 1.3125rem une fois la réponse validée, pour laisser la place à la correction. À partir de 768 px, l'énoncé reste à 1,75rem (`question-lg`, interligne 1.25) avant et après validation.
 - **Title** (`title`) : énoncé d'une question dans la révision et le détail d'un examen ; taille du texte des pastilles « lg ».
 - **Title small** (`title-sm`) : titres de section (« Derniers examens », « Répartition des 40 questions ») et titres des options du titre visé.
+- **Stat** (`stat`, `stat-lg` dès 768 px) et **Stat label** (`stat-label`) : valeur et intitulé des repères de la fiche d'un titre (« 40 », « 45 min », « 32/40 ») et chiffre du compteur « questions dans la liste officielle » (`stat`).
 - **Body** (`body`) : texte courant, réponses, pastilles standard. Interligne racine de 145 %.
 - **Body small** (`body-sm`) : explications, liens « Retour », filtres, méta-informations.
 - **Label** (`label`) : intitulés « Bonne réponse » / « Votre réponse », sous-titres de pastilles en 400, étiquette « bientôt ».
@@ -404,6 +424,7 @@ Tactiles et francs : des pastilles pleines, en gras, qu'on vise sans y penser.
 - **Bandeau d'examen :** bloc vert terre arrondi en bas, avec « Quitter », « Question n sur 40 » et une barre de temps encre sur une piste translucide.
 - **En-tête permanent (`AppHeader`) :** sur toutes les pages, en premier enfant de `<main>`, hors de la colonne de la page : il porte sa propre largeur maximale (62rem) et ses gouttières (22 / 32 / 40 px selon la largeur d'écran), si bien que le logo et le bouton « Affichage » sont exactement au même endroit sur toutes les pages (seul l'en-tête fin de l'examen est un peu plus haut, aux mêmes x). Le logo « la pousse » + « Futur Citoyen » (lien vers l'accueil) à gauche, le bouton « Affichage » à droite : rond de 44 px, carte blanche (sable au survol ou ouvert), icône de curseurs horizontaux, `aria-label="Affichage"`, `aria-expanded`, `aria-controls`. Pendant l'examen (`thin`), l'en-tête reste au-dessus du bandeau vert avec un logo en `body` au lieu de 1.25rem, et le logo est un bouton qui ouvre la fenêtre « Quitter l'examen ? ». Le lien « Retour » reste sous l'en-tête.
 - **Première visite (`/titre` sans titre, historique ni examen) :** pas de lien « Retour » ni de nom du site dans l'en-tête (`AppHeader hideBrand` : seul le bouton « Affichage » reste, à droite, aux mêmes x que sur les autres pages). Composition : un champ vert terre (`earth`) en haut, avec des lignes de prairie fines à droite (le jaune y est un trait, jamais un aplat), le symbole « la pousse » en grand (`BrandSymbol large`, traits plus fins, 4.25rem), « Futur Citoyen », le titre « Préparez l'examen civique », une phrase d'accroche et la pastille « Site indépendant, non officiel » ; le bas du champ est une vague de la même couleur ; dessous, le choix du titre en pastilles `sheet` (rond de coche à droite, pastille « Bientôt » pour les titres pas encore ouverts) et « Continuer », seul aplat jaune de l'écran. Les libellés des titres se coupent avec un trait d'union (`hyphens-auto`) et la pastille « Bientôt » passe sous le libellé quand la place manque (texte à 200 %).
+- **Fiche d'un titre (`/titres/:slug`, `FicheTitre`) :** page annexe (profondeur 2) en colonne de 30rem (36rem dès 768 px), forme organique `goal`, « Retour » (revient à la page d'origine) sous l'en-tête permanent. Ordre : titre `display` et résumé en gras avec ses précisions ; **l'action en haut**, seule pastille jaune de l'écran, grande pastille pleine largeur (« M'entraîner pour ce titre », « Continuer mon entraînement » si le titre est déjà choisi ; pour la naturalisation une pastille carte inactive « Entraînement bientôt disponible », sans jaune) ; puis quatre sections en `title-sm` : « Ce qu'il faut » (liste en carte, coches vertes, note d'information avec icône dessous), « L'examen civique pour ce titre » (quatre repères en cartes 2 × 2, dont « 32/40 pour réussir » en vert succès, puis le nombre de questions de la liste officielle et deux paragraphes), « Bon à savoir » (une carte, lignes séparées par un filet) et « Pour aller plus loin » (liens officiels en pastilles carte avec le nom de domaine et l'icône de lien externe, nouvel onglet annoncé aux lecteurs d'écran) ; avertissement final en `muted`. Accès : lien souligné « En savoir plus » (44 px, sous chaque option de `/titre`, hors du bouton de sélection) et « Tout savoir sur ce titre » (sous la pastille du titre de l'accueil).
 - **Panneau « Affichage » :** carte de 17.5rem au plus, et jamais plus large que l'écran moins 2.75rem (`card-lg`, 1.5rem) sous le bouton, alignée à droite (les deux choix d'un réglage s'empilent quand le texte est très agrandi), avec deux réglages à deux choix « Thème : Clair / Sombre » et « Animations : Activées / Désactivées » : une piste sable (`muted`) en pastille, le choix actif en vert terre (`earth`, texte encre en clair et crème en sombre), `aria-pressed`, 44 px de haut. Focus sur le premier réglage à l'ouverture ; Échap et clic extérieur ferment. Seule exception à la règle du plat (le dialogue a un voile, pas d'ombre) : le panneau flotte sur le contenu, il porte donc un filet (`ring`) et une ombre douce.
 
 ### Verdict (signature)

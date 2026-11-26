@@ -6,6 +6,7 @@ import { hasProgress, loadProgressForTitle, clearProgress, resumeIndex } from '@
 import type { ExamInProgress } from '@/lib/exam-types'
 import { loadHistory, loadHistoryForTitle, type HistoryEntry } from '@/lib/history'
 import { passedInARow, READY_GOAL } from '@/lib/readiness'
+import { ficheUrl } from '@/lib/fiches'
 import { DEFAULT_TITLE, loadTargetTitle, TARGET_TITLE_LABELS } from '@/lib/target-title'
 import { AppHeader } from '@/components/AppHeader'
 import { OrganicBackground } from '@/components/OrganicBackground'
@@ -177,6 +178,16 @@ export default function Home() {
     </PillLink>
   )
 
+  const ficheLink = (
+    <Link
+      to={ficheUrl(targetTitle)}
+      className="-mt-1 inline-flex min-h-11 items-center gap-1 self-start rounded-sm px-1 text-[0.9375rem] font-bold underline underline-offset-4"
+    >
+      Tout savoir sur ce titre
+      <ArrowRight aria-hidden="true" className="size-[1em]" strokeWidth={2.6} />
+    </Link>
+  )
+
   const heading = (
     <h1 className="mt-[1.125rem] max-w-[18.75rem] text-[2.375rem] leading-[0.98] font-bold tracking-[-0.04em] text-balance md:max-w-[24rem] md:text-[3rem] lg:max-w-[26rem] lg:text-[3.5rem]">
       Votre chemin vers le jour J
@@ -315,6 +326,7 @@ export default function Home() {
             <div className="grid grid-cols-[minmax(0,1fr)_minmax(0,23rem)] items-start gap-x-16">
               <div className="flex flex-col gap-3">
                 {titlePill}
+                {ficheLink}
                 {heading}
                 {resume}
                 {journey}
@@ -329,6 +341,7 @@ export default function Home() {
         ) : (
           <>
             {titlePill}
+            {ficheLink}
             {heading}
             {journey}
 

@@ -34,19 +34,32 @@ function isIosWebKit(): boolean {
   return /iPhone|iPad|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1)
 }
 
+let inAppBack = false
+
+/**
+ * Call right before the app itself goes back (`navigate(-1)` from a "Retour" button):
+ * that POP is not the browser's back gesture, so it must animate even on iOS.
+ * The mark is consumed by the next navigation decision.
+ */
+export function markInAppBack(): void {
+  inAppBack = true
+}
+
 /**
  * Whether a change of location gets a transition: only to another path (not between
  * two exam questions), with animations on, with the API available, and never on a
- * browser back/forward on iOS, where the swipe-back gesture already animates.
+ * browser back/forward on iOS (unless the app marked it with `markInAppBack`), where the swipe-back gesture already animates.
  */
 export function shouldAnimateNavigation(
   from: string,
   to: string,
   navigationType: 'PUSH' | 'POP' | 'REPLACE',
 ): boolean {
+  const markedBack = inAppBack
+  inAppBack = false
   if (from === to) return false
   if (currentMotion() === 'off') return false
   if (typeof document.startViewTransition !== 'function') return false
-  if (navigationType === 'POP' && isIosWebKit()) return false
+  if (navigationType === 'POP' && !markedBack && isIosWebKit()) return false
   return true
 }

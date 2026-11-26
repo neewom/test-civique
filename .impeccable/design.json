@@ -539,6 +539,14 @@
         "displayName": "Title small",
         "purpose": "Titres de section et des options du titre visé (interligne 1.375 ou 1.45 selon l'écran)."
       },
+      "stat": {
+        "displayName": "Stat",
+        "purpose": "Valeur des repères de la fiche d'un titre et chiffre du compteur de questions (1.625rem dès 768 px pour les repères)."
+      },
+      "stat-label": {
+        "displayName": "Stat label",
+        "purpose": "Intitulé sous la valeur d'un repère de la fiche d'un titre (0.9375rem dès 768 px)."
+      },
       "body": {
         "displayName": "Body",
         "purpose": "Texte courant, réponses, pastilles standard."

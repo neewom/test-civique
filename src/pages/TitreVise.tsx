@@ -1,15 +1,16 @@
 import { useState } from 'react'
-import { Check } from 'lucide-react'
-import { useNavigate } from 'react-router-dom'
+import { ArrowRight, Check } from 'lucide-react'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { AppHeader } from '@/components/AppHeader'
 import { BrandSymbol } from '@/components/BrandLogo'
 import { BackLink } from '@/components/BackLink'
 import { OrganicBackground } from '@/components/OrganicBackground'
 import { PillButton } from '@/components/PillButton'
+import { ficheUrl, FICHE_LABELS } from '@/lib/fiches'
 import { questionsForTitle } from '@/lib/exam'
 import { hasProgress } from '@/lib/exam-types'
 import { loadHistory } from '@/lib/history'
-import { loadTargetTitle, saveTargetTitle, TARGET_TITLE_LABELS, TARGET_TITLES, type TargetTitle } from '@/lib/target-title'
+import { loadTargetTitle, saveTargetTitle, TARGET_TITLE_LABELS, TARGET_TITLES, type TargetTitle, type TitleKey } from '@/lib/target-title'
 import { useDocumentTitle } from '@/lib/use-document-title'
 import { cn } from '@/lib/utils'
 
@@ -18,6 +19,19 @@ const officialCount = (t: TargetTitle) => questionsForTitle(t).filter((q) => q.n
 
 // Titles not available yet: shown, but they cannot be chosen
 const COMING_SOON = [{ label: 'Naturalisation', detail: 'Bientôt' }]
+
+// Own link under each option (a separate target: it never changes the selection)
+function MoreLink({ title }: { title: TitleKey }) {
+  return (
+    <Link
+      to={ficheUrl(title)}
+      className="inline-flex min-h-11 items-center gap-1 self-start rounded-sm px-5 text-[0.9375rem] font-bold underline underline-offset-4"
+    >
+      En savoir plus<span className="sr-only"> sur : {FICHE_LABELS[title]}</span>
+      <ArrowRight aria-hidden="true" className="size-[1em]" strokeWidth={2.6} />
+    </Link>
+  )
+}
 
 const optionClass =
   'flex min-h-16 w-full items-center justify-between gap-3 rounded-[2rem] py-2 pr-2.5 pl-5 text-left'
@@ -44,70 +58,74 @@ function TitleChoices({
       {TARGET_TITLES.map((key) => {
         const on = selected === key
         return (
-          <button
-            key={key}
-            type="button"
-            aria-pressed={on}
-            onClick={() => onSelect(key)}
-            className={cn(
-              optionClass,
-              on
-                ? firstVisit
-                  ? 'bg-earth text-[#2c2e2a] dark:text-[#f1eee4]'
-                  : 'bg-primary text-primary-foreground'
-                : 'bg-card text-card-foreground',
-            )}
-          >
-            <span className="flex min-w-0 flex-col hyphens-auto">
-              <span className="text-[1.0625rem] leading-snug font-bold">{TARGET_TITLE_LABELS[key]}</span>
-              <span className={cn('text-[0.8125rem]', on ? (firstVisit ? '' : 'opacity-90') : 'text-muted-foreground')}>
-                {officialCount(key)} questions officielles
+          <div key={key} className="flex flex-col">
+            <button
+              type="button"
+              aria-pressed={on}
+              onClick={() => onSelect(key)}
+              className={cn(
+                optionClass,
+                on
+                  ? firstVisit
+                    ? 'bg-earth text-[#2c2e2a] dark:text-[#f1eee4]'
+                    : 'bg-primary text-primary-foreground'
+                  : 'bg-card text-card-foreground',
+              )}
+            >
+              <span className="flex min-w-0 flex-col hyphens-auto">
+                <span className="text-[1.0625rem] leading-snug font-bold">{TARGET_TITLE_LABELS[key]}</span>
+                <span className={cn('text-[0.8125rem]', on ? (firstVisit ? '' : 'opacity-90') : 'text-muted-foreground')}>
+                  {officialCount(key)} questions officielles
+                </span>
               </span>
-            </span>
-            {firstVisit ? (
-              // Same round mark on every option: a ring at rest, the check once chosen
-              <span
-                aria-hidden="true"
-                className={cn(
-                  'flex size-10 shrink-0 items-center justify-center rounded-full',
-                  on
-                    ? 'bg-[#2c2e2a] text-[#f5e211] dark:bg-[#f1eee4] dark:text-[#121814]'
-                    : 'border-[3px] border-muted-foreground/40',
-                )}
-              >
-                {on && <Check className="size-[1.125em]" strokeWidth={2.8} />}
-              </span>
-            ) : (
-              on && (
+              {firstVisit ? (
+                // Same round mark on every option: a ring at rest, the check once chosen
                 <span
                   aria-hidden="true"
-                  className="flex size-10 shrink-0 items-center justify-center rounded-full bg-earth text-foreground dark:bg-action dark:text-action-foreground"
+                  className={cn(
+                    'flex size-10 shrink-0 items-center justify-center rounded-full',
+                    on
+                      ? 'bg-[#2c2e2a] text-[#f5e211] dark:bg-[#f1eee4] dark:text-[#121814]'
+                      : 'border-[3px] border-muted-foreground/40',
+                  )}
                 >
-                  <Check className="size-[1.125em]" strokeWidth={2.8} />
+                  {on && <Check className="size-[1.125em]" strokeWidth={2.8} />}
                 </span>
-              )
-            )}
-          </button>
+              ) : (
+                on && (
+                  <span
+                    aria-hidden="true"
+                    className="flex size-10 shrink-0 items-center justify-center rounded-full bg-earth text-foreground dark:bg-action dark:text-action-foreground"
+                  >
+                    <Check className="size-[1.125em]" strokeWidth={2.8} />
+                  </span>
+                )
+              )}
+            </button>
+            <MoreLink title={key} />
+          </div>
         )
       })}
       {COMING_SOON.map((t) => (
-        <button
-          key={t.label}
-          type="button"
-          disabled
-          aria-pressed={false}
-          className={cn(optionClass, 'cursor-not-allowed flex-wrap gap-y-1 bg-card text-card-foreground', firstVisit && 'bg-card/70')}
-        >
-          <span className="flex min-w-0 flex-col hyphens-auto">
-            <span className="text-[1.0625rem] leading-snug font-bold">{t.label}</span>
-            {!firstVisit && <span className="text-[0.8125rem] text-muted-foreground">{t.detail}</span>}
-          </span>
-          {firstVisit && (
-            <span className="ml-auto rounded-full bg-muted px-2.5 text-[0.8125rem] leading-6 font-bold text-muted-foreground">
-              {t.detail}
+        <div key={t.label} className="flex flex-col">
+          <button
+            type="button"
+            disabled
+            aria-pressed={false}
+            className={cn(optionClass, 'cursor-not-allowed flex-wrap gap-y-1 bg-card text-card-foreground', firstVisit && 'bg-card/70')}
+          >
+            <span className="flex min-w-0 flex-col hyphens-auto">
+              <span className="text-[1.0625rem] leading-snug font-bold">{t.label}</span>
+              {!firstVisit && <span className="text-[0.8125rem] text-muted-foreground">{t.detail}</span>}
             </span>
-          )}
-        </button>
+            {firstVisit && (
+              <span className="ml-auto rounded-full bg-muted px-2.5 text-[0.8125rem] leading-6 font-bold text-muted-foreground">
+                {t.detail}
+              </span>
+            )}
+          </button>
+          <MoreLink title="naturalisation" />
+        </div>
       ))}
     </div>
   )
@@ -208,7 +226,18 @@ export default function TitreVise() {
   const [firstVisit] = useState(() => loadTargetTitle() === null && loadHistory().length === 0 && !hasProgress())
   useDocumentTitle(firstVisit ? "Préparez l'examen civique" : 'Quel titre préparez-vous ?')
   const navigate = useNavigate()
-  const [selected, setSelected] = useState<TargetTitle>(() => loadTargetTitle() ?? 'pluriannuelle')
+  const location = useLocation()
+  // The unsaved selection is kept in the history entry, so a round trip to a sheet
+  // (« En savoir plus », then back) does not lose it
+  const [selected, setSelected] = useState<TargetTitle>(() => {
+    const kept = (location.state as { selected?: unknown } | null)?.selected
+    if (typeof kept === 'string' && (TARGET_TITLES as readonly string[]).includes(kept)) return kept as TargetTitle
+    return loadTargetTitle() ?? 'pluriannuelle'
+  })
+  function handleSelect(t: TargetTitle) {
+    setSelected(t)
+    navigate('.', { replace: true, state: { selected: t } })
+  }
 
   function handleContinue() {
     saveTargetTitle(selected)
@@ -216,7 +245,7 @@ export default function TitreVise() {
     navigate('/', { replace: firstVisit })
   }
 
-  if (firstVisit) return <FirstVisit selected={selected} onSelect={setSelected} onContinue={handleContinue} />
+  if (firstVisit) return <FirstVisit selected={selected} onSelect={handleSelect} onContinue={handleContinue} />
 
   return (
     <main className="relative flex min-h-svh flex-col overflow-hidden bg-background text-foreground">
@@ -230,7 +259,7 @@ export default function TitreVise() {
         <p className="max-w-[19rem] text-base leading-[1.45]">
           Les questions officielles ne sont pas les mêmes selon le titre. Vous pourrez changer plus tard.
         </p>
-        <TitleChoices selected={selected} onSelect={setSelected} firstVisit={false} />
+        <TitleChoices selected={selected} onSelect={handleSelect} firstVisit={false} />
         <PillButton size="lg" onClick={handleContinue} className="mt-auto w-full justify-center text-center">
           Continuer
         </PillButton>
