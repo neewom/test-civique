@@ -12725,7 +12725,8 @@
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/devise-et-symboles-de-la-republique/la-liberte/",
       "label": "formation-civique.interieur.gouv.fr"
-    }
+    },
+    "group": "limites-libertes"
   },
   {
     "id": 482,
@@ -12746,7 +12747,7 @@
       "fédérale, laïque, démocratique et libérale"
     ],
     "explanation": "L'article 1er de la Constitution de 1958 précise que « la France est une République indivisible, laïque, démocratique et sociale ». La laïcité n'est pas une opinion : c'est un principe constitutionnel.",
-    "group": "article-1-constitution",
+    "group": "laicite",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/laicite/la-definition-de-la-laicite-1/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -13170,14 +13171,15 @@
       "Avoir au moins 25 ans",
       "Être né dans la commune",
       "Avoir déjà été conseiller municipal",
-      "Être membre d'un parti politique",
+      "Avoir au moins 21 ans",
       "Habiter dans la commune depuis au moins 10 ans"
     ],
     "explanation": "Pour être candidat aux élections municipales, il faut avoir 18 ans révolus au jour du scrutin, être de nationalité française ou d'un autre pays de l'Union européenne, avoir ses droits civiques et avoir un lien avec la commune, par exemple y être inscrit sur la liste électorale.",
     "source": {
       "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000027433881",
       "label": "legifrance.gouv.fr"
-    }
+    },
+    "group": "candidature-municipales"
   },
   {
     "id": 500,
@@ -13240,7 +13242,7 @@
     "natNumber": 49,
     "question": "Une personne, n'ayant pas d'accès à internet, veut s'inscrire sur les listes électorales pour pouvoir voter aux prochaines élections politiques. Où peut-elle s'inscrire ?",
     "answers": [
-      "À la mairie de sa commune, sur place ou par courrier"
+      "À la mairie de son lieu de résidence"
     ],
     "distractors": [
       "À la préfecture du département",
@@ -13318,7 +13320,7 @@
     "natNumber": 53,
     "question": "Comment sont désignés les députés ?",
     "answers": [
-      "Ils sont élus par les citoyens, au suffrage direct"
+      "Ils sont élus directement par les citoyens"
     ],
     "distractors": [
       "Ils sont nommés par le président de la République",
@@ -13370,10 +13372,10 @@
     "natNumber": 59,
     "question": "Quelle est la durée du mandat du Président de la République française ?",
     "answers": [
-      "5 ans (quinquennat)"
+      "5 ans"
     ],
     "distractors": [
-      "7 ans (septennat)",
+      "7 ans",
       "4 ans",
       "6 ans",
       "10 ans",
@@ -13554,8 +13556,8 @@
     "distractors": [
       "La commune",
       "Le département",
-      "Le préfet",
-      "L'Union européenne"
+      "La métropole",
+      "L'intercommunalité"
     ],
     "explanation": "La région est responsable des transports régionaux, notamment des trains régionaux (TER). Elle gère aussi les lycées et soutient le développement économique.",
     "source": {
@@ -13649,7 +13651,7 @@
     "natNumber": 72,
     "question": "Quelle condition est obligatoire pour se présenter à l'élection présidentielle ?",
     "answers": [
-      "Obtenir le parrainage d'au moins 500 élus"
+      "Recueillir des parrainages d'élus"
     ],
     "distractors": [
       "Avoir déjà été ministre ou parlementaire",
@@ -13865,7 +13867,8 @@
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/democratie-et-droit-de-vote/democratie-et-droit-de-vote-les-conditions-pour-voter-en-france-1/",
       "label": "formation-civique.interieur.gouv.fr"
-    }
+    },
+    "group": "candidature-municipales"
   },
   {
     "id": 527,
@@ -14154,7 +14157,7 @@
       "18 ans",
       "21 ans"
     ],
-    "explanation": "La loi du 7 juillet 2023 sur la majorité numérique fixe à 15 ans l'âge en dessous duquel l'inscription sur un réseau social demande l'autorisation d'un parent. Elle ne doit pas être confondue avec la majorité civile.",
+    "explanation": "La loi du 7 juillet 2023 a fixé la « majorité numérique » à 15 ans : en dessous de cet âge, l'inscription sur un réseau social doit être autorisée par un parent. Cette règle n'est pas encore appliquée, faute du décret qui doit fixer son entrée en vigueur. La majorité numérique ne doit pas être confondue avec la majorité civile, fixée à 18 ans.",
     "source": {
       "url": "https://www.legifrance.gouv.fr/jorf/article_jo/JORFARTI000047799537",
       "label": "legifrance.gouv.fr"
@@ -14595,7 +14598,7 @@
       "elle ne peut plus travailler dans aucune entreprise",
       "elle est obligée de quitter le territoire français"
     ],
-    "explanation": "Une personne privée de ses droits civiques et politiques ne peut plus voter, se présenter à une élection ni être élue. Elle peut aussi perdre le droit d'être juge ou de servir dans l'armée. Elle garde sa nationalité et ses autres droits.",
+    "explanation": "Une personne privée de ses droits civiques et politiques ne peut plus voter, se présenter à une élection ni être élue. Elle peut aussi perdre le droit d'être juge ou de servir dans l'armée. Elle garde en revanche sa nationalité, et peut toujours travailler et se faire soigner.",
     "group": "droits-civiques",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/democratie-et-droit-de-vote/democratie-et-droit-de-vote-les-conditions-pour-voter-en-france-1/",
