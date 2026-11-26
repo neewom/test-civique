@@ -265,7 +265,7 @@ components:
 
 L'appli se lit comme une carte : un fond crème uni, une seule grande forme organique de terre verte qui serpente sous le contenu, et par-dessus des étapes en pastilles, comme des repères posés sur un chemin qui mène au jour J. Chaque écran dit où l'on est et ce qui vient ensuite ; la couleur sert à marquer l'étape, l'action ou le verdict, jamais à décorer. Le système vise une personne stressée, sur téléphone, parfois peu à l'aise en français : il préfère des formes généreuses, des aplats francs et un texte large à toute finesse graphique.
 
-La densité est faible et la colonne étroite. Une seule famille de caractères, très lisible, en deux graisses ; des titres serrés et massifs qui donnent le ton, un corps de texte calme. Tout est plat : aucune ombre, la profondeur vient des aplats de couleur posés sur le crème et de la forme organique en arrière-plan. Le mouvement se limite à la respiration lente de cette forme, absente des écrans de question, où rien ne bouge pendant que l'on répond ; le panneau « Affichage » permet de le couper (préférence `motion`).
+La densité est faible et la colonne étroite. Une seule famille de caractères, très lisible, en deux graisses ; des titres serrés et massifs qui donnent le ton, un corps de texte calme. Tout est plat : aucune ombre, la profondeur vient des aplats de couleur posés sur le crème et de la forme organique en arrière-plan. Le mouvement se limite à la respiration lente de cette forme, absente des écrans de question, où rien ne bouge pendant que l'on répond, et aux transitions de page : 320 ms en `cubic-bezier(0.4, 0, 0.2, 1)`, le contenu glisse (de la droite en avançant en profondeur, de la gauche en revenant), les formes de fond se fondent sur place, l'en-tête et la couleur de page restent fixes. Elles reposent sur l'API View Transitions (sans elle, changement de page immédiat) et, comme la forme, se coupent avec le panneau « Affichage » (préférence `motion`).
 
 Le thème sombre est le même parcours, le soir, écran baissé : mêmes formes, mêmes règles, couleurs assourdies pour ne pas éblouir, et sélection inversée (fond clair, texte sombre).
 
@@ -415,7 +415,7 @@ Une pastille de statut, annoncée aux lecteurs d'écran : un cercle d'icône à 
 Une tige et deux feuilles (verte, jaune) cerclées d'encre, suivies de « Futur Citoyen », « Futur » en vert. Le symbole fait 1,25 fois la taille du texte qui l'accompagne.
 
 ### Named Rules
-**La règle du calme pendant la question.** Aucune animation ni forme mouvante sur l'écran où l'on répond ; le mouvement est réservé aux écrans de repère (accueil, titre visé, règles, résultat).
+**La règle du calme pendant la question.** Aucune animation ni forme mouvante sur l'écran où l'on répond ; le mouvement est réservé aux écrans de repère (accueil, titre visé, règles, résultat). Seule exception, la transition de page : l'arrivée sur l'examen glisse comme toute autre page, puis plus rien ne bouge, et il n'y a aucune transition entre deux questions de l'examen.
 
 ## Do's and Don'ts
 
