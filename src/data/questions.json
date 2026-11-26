@@ -13017,11 +13017,11 @@
       "Tout citoyen français majeur qui a ses droits civiques"
     ],
     "distractors": [
-      "Seulement les personnes qui ont déjà été ministres ou parlementaires",
+      "Les personnes qui ont déjà été ministres ou parlementaires",
       "Toute personne majeure qui vit en France, quelle que soit sa nationalité",
-      "Uniquement les membres d'un parti politique",
-      "Seulement les personnes nées en France de parents français",
-      "Seulement les personnes âgées de plus de 35 ans"
+      "Les membres d'un parti politique",
+      "Les personnes nées en France de parents français",
+      "Les Français âgés d'au moins 35 ans"
     ],
     "explanation": "Peut se présenter à l'élection présidentielle tout électeur français qui n'est pas dans un cas d'inéligibilité. Il n'est pas obligatoire d'appartenir à un parti politique ni d'avoir déjà exercé un mandat.",
     "group": "candidature-presidentielle",
@@ -13073,11 +13073,11 @@
       "Payante, selon les communes",
       "Réservée aux personnes âgées de plus de 25 ans"
     ],
-    "explanation": "Pour participer aux élections politiques, il faut être inscrit sur les listes électorales. L'inscription est gratuite : automatique pour les jeunes de 18 ans (sous certaines conditions), elle se demande sinon à la mairie ou en ligne.",
-    "group": "inscription-electorale",
+    "explanation": "Le code électoral (article L9) dispose que « l'inscription sur les listes électorales est obligatoire ». Pour participer aux élections politiques, il faut être inscrit. L'inscription est automatique pour les jeunes de 18 ans (sous certaines conditions) et pour les personnes devenues françaises après 2018 ; sinon, on la demande à la mairie, par courrier ou en ligne.",
+    "group": "vote-conditions",
     "source": {
-      "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F34852",
-      "label": "service-public.gouv.fr"
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000032964777",
+      "label": "legifrance.gouv.fr"
     }
   },
   {
@@ -13127,8 +13127,8 @@
     ],
     "explanation": "Pour être candidat aux élections municipales, il faut avoir 18 ans révolus au jour du scrutin, être de nationalité française ou d'un autre pays de l'Union européenne, avoir ses droits civiques et avoir un lien avec la commune, par exemple y être inscrit sur la liste électorale.",
     "source": {
-      "url": "https://www.vie-publique.fr/eclairage/23820-municipales-2020-qui-peut-etre-candidat",
-      "label": "vie-publique.fr"
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000027433881",
+      "label": "legifrance.gouv.fr"
     }
   },
   {
@@ -13145,14 +13145,14 @@
     ],
     "distractors": [
       "Le préfet du département",
-      "Un juge du tribunal",
+      "Un juge du tribunal judiciaire",
       "Le recteur d'académie",
       "Le commissaire de police",
       "Le procureur de la République"
     ],
     "explanation": "Les conseillers départementaux sont élus par les citoyens pour 6 ans, lors des élections départementales. Les autres autorités ne sont pas élues : les juges et les magistrats sont recrutés par concours, le préfet et le recteur sont nommés.",
     "source": {
-      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/democratie-et-droit-de-vote/democratie-et-droit-de-vote-la-democratie-et-la-republique-2/",
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/etat-de-droit-et-separation-des-pouvoirs/etat-de-droit-et-separation-des-pouvoirs-presentation-des-3-pouvoirs-1/",
       "label": "formation-civique.interieur.gouv.fr"
     }
   },
@@ -13178,8 +13178,8 @@
     "explanation": "Le maire est officier d'état civil : il célèbre les mariages et enregistre les naissances et les décès. Il exerce aussi la police municipale, c'est-à-dire qu'il veille au bon ordre, à la sécurité et à la salubrité publiques, et il exécute les décisions du conseil municipal.",
     "group": "maire",
     "source": {
-      "url": "https://www.vie-publique.fr/fiches/19617-les-fonctions-les-pouvoirs-dun-maire",
-      "label": "vie-publique.fr"
+      "url": "https://www.collectivites-locales.gouv.fr/connaitre-les-acteurs-et-les-institutions/elus-locaux/le-maire/le-maire-chef-de-ladministration-municipale",
+      "label": "collectivites-locales.gouv.fr"
     }
   },
   {
@@ -13202,10 +13202,10 @@
       "À l'hôpital le plus proche de son domicile"
     ],
     "explanation": "La demande d'inscription se fait auprès de la mairie du lieu de résidence. Elle peut être déposée sur place, envoyée par courrier ou faite en ligne : une personne sans accès à internet peut donc se rendre en mairie ou écrire à la mairie.",
-    "group": "inscription-electorale",
+    "group": "vote-conditions",
     "source": {
-      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/democratie-et-droit-de-vote/democratie-et-droit-de-vote-les-conditions-pour-voter-en-france-1/",
-      "label": "formation-civique.interieur.gouv.fr"
+      "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F1367",
+      "label": "service-public.gouv.fr"
     }
   },
   {
@@ -13249,9 +13249,11 @@
       "Oui, et ne pas voter est puni d'une amende",
       "Oui, mais seulement pour l'élection présidentielle",
       "Oui, pour toutes les personnes de plus de 18 ans, sous peine de perdre ses droits civiques",
-      "Oui, mais seulement pour les personnes inscrites depuis plus de 5 ans"
+      "Oui, mais seulement pour les personnes inscrites depuis plus de 5 ans",
+      "Non, sauf pour l'élection présidentielle, où le vote est obligatoire",
+      "Non, sauf pour les personnes naturalisées, qui doivent voter"
     ],
-    "explanation": "Le vote n'est pas obligatoire en France : c'est un droit et non un devoir. En revanche, quand on vote, le vote est personnel, libre et secret.",
+    "explanation": "Le vote n'est pas obligatoire en France : c'est un droit. La carte électorale rappelle que voter est aussi un « devoir civique », mais ce n'est pas une obligation légale. Quand on vote, le vote est personnel, libre et secret.",
     "group": "vote-conditions",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/democratie-et-droit-de-vote/democratie-et-droit-de-vote-les-conditions-pour-voter-en-france-1/",
@@ -13485,8 +13487,8 @@
     "explanation": "Les électeurs élisent les conseillers municipaux, puis le conseil municipal élit le maire parmi ses membres.",
     "group": "maire",
     "source": {
-      "url": "https://www.vie-publique.fr/fiches/19617-les-fonctions-les-pouvoirs-dun-maire",
-      "label": "vie-publique.fr"
+      "url": "https://www.collectivites-locales.gouv.fr/connaitre-les-acteurs-et-les-institutions/elus-locaux/le-maire/lelection-du-maire",
+      "label": "collectivites-locales.gouv.fr"
     }
   },
   {
@@ -13509,8 +13511,8 @@
     ],
     "explanation": "La région est responsable des transports régionaux, notamment des trains régionaux (TER). Elle gère aussi les lycées et soutient le développement économique.",
     "source": {
-      "url": "https://www.vie-publique.fr/fiches/19625-les-competences-des-regions",
-      "label": "vie-publique.fr"
+      "url": "https://www.ecologie.gouv.fr/politiques-publiques/competences-collectivites-territoriales",
+      "label": "ecologie.gouv.fr"
     }
   },
   {
@@ -13533,7 +13535,7 @@
       "Un arrêté signé par le Premier ministre et les ministres",
       "Un vote du Sénat seul, à la majorité absolue"
     ],
-    "explanation": "Une révision de la Constitution doit d'abord être votée en termes identiques par l'Assemblée nationale et le Sénat. Elle est ensuite approuvée par référendum, ou par le Parlement réuni en Congrès à la majorité des trois cinquièmes si le président de la République choisit cette voie (article 89).",
+    "explanation": "Une révision de la Constitution doit d'abord être votée en termes identiques par l'Assemblée nationale et le Sénat. Elle est ensuite approuvée par référendum. Quand la révision vient du président de la République (projet de révision), il peut choisir de la soumettre au Parlement réuni en Congrès, qui doit l'adopter à la majorité des trois cinquièmes des suffrages exprimés (article 89).",
     "source": {
       "url": "https://www.conseil-constitutionnel.fr/le-bloc-de-constitutionnalite/texte-integral-de-la-constitution-du-4-octobre-1958-en-vigueur",
       "label": "conseil-constitutionnel.fr"
@@ -13662,8 +13664,8 @@
     "explanation": "La citoyenneté européenne a été créée par le traité de Maastricht, signé en 1992. Elle s'ajoute à la citoyenneté nationale sans la remplacer.",
     "group": "traite-maastricht",
     "source": {
-      "url": "https://www.vie-publique.fr/fiches/20320-qui-est-citoyen-europeen",
-      "label": "vie-publique.fr"
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-conflits-mondiaux-et-le-nouvel-ordre-mondial/la-construction-europeenne/",
+      "label": "formation-civique.interieur.gouv.fr"
     }
   },
   {
