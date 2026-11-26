@@ -4,35 +4,21 @@ import { AnswerBox } from '@/components/AnswerBox'
 import { BackLink } from '@/components/BackLink'
 import { SourceLink } from '@/components/SourceLink'
 import { ThemeSwitch } from '@/components/ThemeSwitch'
-import questions from '@/data/questions.json'
+import { questionsForTitle, type Question } from '@/lib/exam'
 import { OFFICIAL_THEMES } from '@/lib/exam-review'
 import { loadQuestionsToReview, parseReviewIds } from '@/lib/review-queue'
-import { loadTargetTitle, TARGET_TITLE_LABELS } from '@/lib/target-title'
+import { DEFAULT_TITLE, loadTargetTitle, TARGET_TITLE_LABELS } from '@/lib/target-title'
 import { useDocumentTitle } from '@/lib/use-document-title'
 import { useWideScreen } from '@/lib/use-wide-screen'
-import type { QuestionSource } from '@/lib/exam-types'
 import { cn } from '@/lib/utils'
 
-interface Question {
-  id: number
-  theme: string
-  question: string
-  answers: string[]
-  explanation: string
-  source?: QuestionSource
+// Official themes in the order of the programme, then any other theme of the pool
+function themesOf(pool: Question[]): string[] {
+  return [
+    ...OFFICIAL_THEMES.filter((t) => pool.some((q) => q.theme === t)),
+    ...[...new Set(pool.map((q) => q.theme))].filter((t) => !OFFICIAL_THEMES.includes(t)),
+  ]
 }
-
-// Questions of the chosen title. Every question belongs to the multi-year residence
-// permit list for now (target-title.ts): the pool is filtered here once other lists land.
-const POOL = questions as Question[]
-const POOL_IDS = new Set(POOL.map((q) => q.id))
-const LAST_OFFICIAL_ID = 191
-
-// Official themes in the order of the programme, then any other theme of the data
-const THEMES = [
-  ...OFFICIAL_THEMES.filter((t) => POOL.some((q) => q.theme === t)),
-  ...[...new Set(POOL.map((q) => q.theme))].filter((t) => !OFFICIAL_THEMES.includes(t)),
-]
 
 /** exam: the questions sent by an exam detail · review: « À revoir » · all · one theme */
 type Filter = { kind: 'exam' } | { kind: 'review' } | { kind: 'all' } | { kind: 'theme'; theme: string }
@@ -65,16 +51,22 @@ function QuestionCard({ question }: { question: Question }) {
 export default function Revision() {
   useDocumentTitle('Révision')
   const location = useLocation()
-  const [examIds] = useState(() => parseReviewIds(location.state, POOL_IDS))
-  // Only questions still in the data: an id removed since the exam would count without a card
-  const [reviewIds] = useState(() => loadQuestionsToReview().filter((id) => POOL_IDS.has(id)))
+  // Questions of the chosen title (`lists` of questions.json)
+  const [title] = useState(() => loadTargetTitle() ?? DEFAULT_TITLE)
+  const [{ titlePool, poolIds, themes }] = useState(() => {
+    const questions = questionsForTitle(title)
+    return { titlePool: questions, poolIds: new Set(questions.map((q) => q.id)), themes: themesOf(questions) }
+  })
+  const [examIds] = useState(() => parseReviewIds(location.state, poolIds))
+  // Only questions of the pool: an id removed since the exam would count without a card
+  const [reviewIds] = useState(() => loadQuestionsToReview(title).filter((id) => poolIds.has(id)))
   const [filter, setFilter] = useState<Filter>(() => (examIds.length > 0 ? { kind: 'exam' } : { kind: 'all' }))
   const [excludeSituational, setExcludeSituational] = useState(false)
   const checkboxId = useId()
   const wide = useWideScreen()
 
-  const titleLabel = TARGET_TITLE_LABELS[loadTargetTitle() ?? 'pluriannuelle']
-  const pool = excludeSituational ? POOL.filter((q) => q.id <= LAST_OFFICIAL_ID) : POOL
+  const titleLabel = TARGET_TITLE_LABELS[title]
+  const pool = excludeSituational ? titlePool.filter((q) => q.notion !== 'mise-en-situation') : titlePool
   const examSet = new Set(examIds)
   const reviewSet = new Set(reviewIds)
   const examCount = pool.filter((q) => examSet.has(q.id)).length
@@ -92,7 +84,7 @@ export default function Revision() {
         return true
     }
   })
-  const sections = THEMES.map((theme) => ({ theme, items: shown.filter((q) => q.theme === theme) })).filter(
+  const sections = themes.map((theme) => ({ theme, items: shown.filter((q) => q.theme === theme) })).filter(
     (s) => s.items.length > 0,
   )
 
@@ -145,7 +137,7 @@ export default function Revision() {
               >
                 Tous les thèmes
               </button>
-              {THEMES.map((theme) => (
+              {themes.map((theme) => (
                 <button
                   key={theme}
                   type="button"

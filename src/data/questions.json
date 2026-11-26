@@ -3,6 +3,9 @@
     "id": 1,
     "theme": "Principes et valeurs de la République",
     "notion": "devise-symboles",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "À quoi correspond la date du 14 juillet ?",
     "distractors": [
       "C'est l'anniversaire de la mort de Napoléon Bonaparte",
@@ -28,6 +31,9 @@
     "id": 2,
     "theme": "Principes et valeurs de la République",
     "notion": "devise-symboles",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "Quel est l’un des symboles de la République française ?",
     "distractors": [
       "La fleur de lys royale",
@@ -57,6 +63,9 @@
     "id": 3,
     "theme": "Principes et valeurs de la République",
     "notion": "devise-symboles",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "Le principe d’égalité signifie que :",
     "distractors": [
       "Tous les citoyens doivent avoir le même revenu",
@@ -81,6 +90,9 @@
     "id": 4,
     "theme": "Principes et valeurs de la République",
     "notion": "devise-symboles",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "\"Liberté, égalité, fraternité\", c’est :",
     "distractors": [
       "Le titre de l'hymne national français",
@@ -106,6 +118,11 @@
     "id": 5,
     "theme": "Principes et valeurs de la République",
     "notion": "devise-symboles",
+    "lists": [
+      "pluriannuelle",
+      "resident"
+    ],
+    "crNumber": 25,
     "question": "A-t-on le droit d'insulter publiquement quelqu’un parce qu’il est différent (handicap, apparence physique, sexe…) ?",
     "distractors": [
       "Oui, c'est garanti par la liberté d'expression",
@@ -130,6 +147,9 @@
     "id": 6,
     "theme": "Principes et valeurs de la République",
     "notion": "devise-symboles",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "Certains métiers peuvent-ils être réservés aux hommes ?",
     "distractors": [
       "Oui, les métiers nécessitant une grande force physique",
@@ -154,6 +174,9 @@
     "id": 7,
     "theme": "Principes et valeurs de la République",
     "notion": "devise-symboles",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "De quand date la Constitution de la Ve République ?",
     "distractors": [
       "Du 14 juillet 1789",
@@ -177,6 +200,11 @@
     "id": 8,
     "theme": "Principes et valeurs de la République",
     "notion": "devise-symboles",
+    "lists": [
+      "pluriannuelle",
+      "resident"
+    ],
+    "crNumber": 26,
     "question": "Le régime de la France est :",
     "distractors": [
       "Une monarchie constitutionnelle",
@@ -202,6 +230,9 @@
     "id": 9,
     "theme": "Principes et valeurs de la République",
     "notion": "devise-symboles",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "Lequel de ces symboles représente officiellement la République française ?",
     "distractors": [
       "Le coq",
@@ -226,6 +257,11 @@
     "id": 10,
     "theme": "Principes et valeurs de la République",
     "notion": "devise-symboles",
+    "lists": [
+      "pluriannuelle",
+      "naturalisation"
+    ],
+    "natNumber": 9,
     "question": "Où peut-on voir la devise de la République ?",
     "distractors": [
       "Uniquement dans les tribunaux et les préfectures",
@@ -250,6 +286,11 @@
     "id": 11,
     "theme": "Principes et valeurs de la République",
     "notion": "devise-symboles",
+    "lists": [
+      "pluriannuelle",
+      "resident"
+    ],
+    "crNumber": 24,
     "question": "Quels sont des symboles officiels de la République française ?",
     "distractors": [
       "La fleur de lys, l'aigle impérial et la Croix de Lorraine",
@@ -275,6 +316,9 @@
     "id": 12,
     "theme": "Principes et valeurs de la République",
     "notion": "devise-symboles",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "Qu’est-ce que l’égalité ?",
     "distractors": [
       "Le fait que tout le monde gagne le même salaire",
@@ -299,6 +343,9 @@
     "id": 13,
     "theme": "Principes et valeurs de la République",
     "notion": "devise-symboles",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "Que signifie la liberté ?",
     "distractors": [
       "Le droit de faire absolument tout ce que l'on veut",
@@ -324,6 +371,11 @@
     "id": 14,
     "theme": "Principes et valeurs de la République",
     "notion": "devise-symboles",
+    "lists": [
+      "pluriannuelle",
+      "naturalisation"
+    ],
+    "natNumber": 15,
     "question": "Que signifie le mot \"fraternité\" dans la devise française ?",
     "distractors": [
       "L'appartenance à une même famille biologique",
@@ -348,6 +400,9 @@
     "id": 15,
     "theme": "Principes et valeurs de la République",
     "notion": "devise-symboles",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "Quel animal est un symbole de la France ?",
     "distractors": [
       "L'aigle royal",
@@ -373,6 +428,9 @@
     "id": 16,
     "theme": "Principes et valeurs de la République",
     "notion": "devise-symboles",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "Quel est l’un des rôles des associations ?",
     "distractors": [
       "Remplacer les services publics défaillants de l'État",
@@ -397,6 +455,9 @@
     "id": 17,
     "theme": "Principes et valeurs de la République",
     "notion": "devise-symboles",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "Quel est le nom de l'hymne national ?",
     "distractors": [
       "Le Chant du Départ",
@@ -422,6 +483,9 @@
     "id": 18,
     "theme": "Principes et valeurs de la République",
     "notion": "devise-symboles",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "Quel symbole de la République française est tricolore ?",
     "distractors": [
       "Le sceau officiel de la République",
@@ -445,6 +509,9 @@
     "id": 19,
     "theme": "Principes et valeurs de la République",
     "notion": "devise-symboles",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "Quelle est la date de la fête nationale française ?",
     "distractors": [
       "Le 11 novembre",
@@ -470,6 +537,11 @@
     "id": 20,
     "theme": "Principes et valeurs de la République",
     "notion": "devise-symboles",
+    "lists": [
+      "pluriannuelle",
+      "naturalisation"
+    ],
+    "natNumber": 17,
     "question": "Quelle est la devise de la République française ?",
     "distractors": [
       "Unité, Travail, Progrès",
@@ -495,6 +567,9 @@
     "id": 21,
     "theme": "Principes et valeurs de la République",
     "notion": "devise-symboles",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "Quelle est la langue officielle de la République française ?",
     "distractors": [
       "L'occitan",
@@ -520,6 +595,11 @@
     "id": 22,
     "theme": "Principes et valeurs de la République",
     "notion": "devise-symboles",
+    "lists": [
+      "pluriannuelle",
+      "resident"
+    ],
+    "crNumber": 23,
     "question": "Quelle est la place de la langue française dans la République ?",
     "distractors": [
       "C'est simplement la langue la plus parlée, sans statut officiel",
@@ -545,6 +625,9 @@
     "id": 23,
     "theme": "Principes et valeurs de la République",
     "notion": "devise-symboles",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "Quelle liberté permet à chacun d’exprimer ses idées ?",
     "distractors": [
       "La liberté de circulation",
@@ -570,6 +653,9 @@
     "id": 24,
     "theme": "Principes et valeurs de la République",
     "notion": "devise-symboles",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "Quelle proposition est correcte ? La liberté d'expression :",
     "distractors": [
       "La liberté d'expression est absolue et sans aucune limite légale",
@@ -595,6 +681,9 @@
     "id": 25,
     "theme": "Principes et valeurs de la République",
     "notion": "devise-symboles",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "Quelles sont les couleurs du drapeau français ?",
     "distractors": [
       "Rouge, blanc, bleu",
@@ -620,6 +709,11 @@
     "id": 26,
     "theme": "Principes et valeurs de la République",
     "notion": "devise-symboles",
+    "lists": [
+      "pluriannuelle",
+      "resident"
+    ],
+    "crNumber": 19,
     "question": "Qu'est-ce que la Marseillaise ?",
     "distractors": [
       "Un chant révolutionnaire interdit sous la Ve République",
@@ -645,6 +739,9 @@
     "id": 27,
     "theme": "Principes et valeurs de la République",
     "notion": "devise-symboles",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "Qu'est-ce qui est traditionnellement organisé sur les Champs-Élysées le 14 juillet pour célébrer la fête nationale ?",
     "distractors": [
       "Un concert de la Marseillaise par l'armée",
@@ -670,6 +767,9 @@
     "id": 28,
     "theme": "Principes et valeurs de la République",
     "notion": "devise-symboles",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "Qui est Marianne ?",
     "distractors": [
       "La patronne des soldats et des armées françaises",
@@ -695,6 +795,9 @@
     "id": 29,
     "theme": "Principes et valeurs de la République",
     "notion": "laicite",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "Une personne peut-elle changer librement de religion ?",
     "distractors": [
       "Non, on garde toujours la religion déclarée à la naissance",
@@ -718,6 +821,9 @@
     "id": 30,
     "theme": "Principes et valeurs de la République",
     "notion": "laicite",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "\"La France est une République indivisible, ..., démocratique et sociale\". Complétez cette phrase extraite de l'article 1er de la Constitution :",
     "distractors": [
       "Unitaire",
@@ -742,6 +848,13 @@
     "id": 31,
     "theme": "Principes et valeurs de la République",
     "notion": "laicite",
+    "lists": [
+      "pluriannuelle",
+      "resident",
+      "naturalisation"
+    ],
+    "crNumber": 28,
+    "natNumber": 27,
     "question": "En quelle année la loi de séparation des Églises et de l'État a-t-elle été votée ?",
     "distractors": [
       "1789",
@@ -766,6 +879,9 @@
     "id": 32,
     "theme": "Principes et valeurs de la République",
     "notion": "laicite",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "Que permet le principe de laïcité ?",
     "distractors": [
       "D'interdire toute pratique religieuse dans l'espace public",
@@ -791,6 +907,11 @@
     "id": 33,
     "theme": "Principes et valeurs de la République",
     "notion": "laicite",
+    "lists": [
+      "pluriannuelle",
+      "resident"
+    ],
+    "crNumber": 30,
     "question": "Quel droit est garanti par la laïcité ?",
     "distractors": [
       "Le droit d'imposer sa religion aux autres",
@@ -816,6 +937,11 @@
     "id": 34,
     "theme": "Principes et valeurs de la République",
     "notion": "laicite",
+    "lists": [
+      "pluriannuelle",
+      "resident"
+    ],
+    "crNumber": 27,
     "question": "Pourquoi le principe de laïcité doit-il être respecté à l'école ?",
     "distractors": [
       "Pour interdire aux élèves de parler de religion entre eux",
@@ -840,6 +966,11 @@
     "id": 35,
     "theme": "Principes et valeurs de la République",
     "notion": "laicite",
+    "lists": [
+      "pluriannuelle",
+      "naturalisation"
+    ],
+    "natNumber": 35,
     "question": "Qu'est-ce que la laïcité ?",
     "distractors": [
       "L'interdiction de toute pratique religieuse en public",
@@ -865,6 +996,9 @@
     "id": 36,
     "theme": "Principes et valeurs de la République",
     "notion": "laicite",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "Un enfant peut-il refuser d’aller à l’école pour une raison religieuse ?",
     "distractors": [
       "Oui, si ses parents le justifient par écrit auprès de la direction",
@@ -887,6 +1021,11 @@
     "id": 37,
     "theme": "Principes et valeurs de la République",
     "notion": "laicite",
+    "lists": [
+      "pluriannuelle",
+      "resident"
+    ],
+    "crNumber": 29,
     "question": "Une personne a-t-elle le droit de ne pas croire en une religion ?",
     "distractors": [
       "Non, il faut déclarer une appartenance religieuse à la mairie",
@@ -911,6 +1050,11 @@
     "id": 38,
     "theme": "Système institutionnel et politique",
     "notion": "organisation-republique",
+    "lists": [
+      "pluriannuelle",
+      "resident"
+    ],
+    "crNumber": 50,
     "question": "Qui nomme le Premier ministre ?",
     "distractors": [
       "Le Sénat par vote à la majorité absolue",
@@ -935,6 +1079,11 @@
     "id": 39,
     "theme": "Système institutionnel et politique",
     "notion": "organisation-republique",
+    "lists": [
+      "pluriannuelle",
+      "resident"
+    ],
+    "crNumber": 67,
     "question": "Le Parlement est composé :",
     "distractors": [
       "Du Conseil d'État et du Conseil constitutionnel",
@@ -960,6 +1109,9 @@
     "id": 40,
     "theme": "Système institutionnel et politique",
     "notion": "organisation-republique",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "Qu'est-ce que le pouvoir exécutif ? Le pouvoir :",
     "distractors": [
       "Le pouvoir de voter et d'adopter les lois",
@@ -985,6 +1137,9 @@
     "id": 41,
     "theme": "Système institutionnel et politique",
     "notion": "democratie-vote",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "Les dirigeants sont élus par les citoyens dans :",
     "distractors": [
       "Une théocratie",
@@ -1008,6 +1163,11 @@
     "id": 42,
     "theme": "Système institutionnel et politique",
     "notion": "democratie-vote",
+    "lists": [
+      "pluriannuelle",
+      "naturalisation"
+    ],
+    "natNumber": 52,
     "question": "A-t-on le droit de ne pas respecter une loi ?",
     "distractors": [
       "Oui, si on est en désaccord profond avec elle",
@@ -1032,6 +1192,9 @@
     "id": 43,
     "theme": "Système institutionnel et politique",
     "notion": "democratie-vote",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "Qui doit respecter la loi ?",
     "distractors": [
       "Seulement les citoyens français majeurs",
@@ -1056,6 +1219,9 @@
     "id": 44,
     "theme": "Système institutionnel et politique",
     "notion": "organisation-republique",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "Quel est le rôle de l'autorité judiciaire ?",
     "distractors": [
       "Voter les lois et contrôler le gouvernement",
@@ -1080,6 +1246,9 @@
     "id": 45,
     "theme": "Système institutionnel et politique",
     "notion": "organisation-republique",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "Quel pouvoir détient un juge ? Le pouvoir :",
     "distractors": [
       "Le pouvoir exécutif d'appliquer les lois",
@@ -1104,6 +1273,9 @@
     "id": 46,
     "theme": "Système institutionnel et politique",
     "notion": "organisation-republique",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "L'autorité judiciaire est exercée par :",
     "distractors": [
       "Le Président de la République et ses conseillers",
@@ -1127,6 +1299,11 @@
     "id": 47,
     "theme": "Système institutionnel et politique",
     "notion": "democratie-vote",
+    "lists": [
+      "pluriannuelle",
+      "resident"
+    ],
+    "crNumber": 56,
     "question": "Que se passe-t-il si un ministre ne respecte pas la loi ?",
     "distractors": [
       "Il bénéficie d'une immunité totale pendant ses fonctions",
@@ -1150,6 +1327,11 @@
     "id": 48,
     "theme": "Système institutionnel et politique",
     "notion": "democratie-vote",
+    "lists": [
+      "pluriannuelle",
+      "naturalisation"
+    ],
+    "natNumber": 58,
     "question": "Qui est élu lors des élections législatives ?",
     "distractors": [
       "Les sénateurs du Sénat",
@@ -1175,6 +1357,11 @@
     "id": 49,
     "theme": "Système institutionnel et politique",
     "notion": "organisation-republique",
+    "lists": [
+      "pluriannuelle",
+      "resident"
+    ],
+    "crNumber": 57,
     "question": "Combien de députés composent l’Assemblée nationale ?",
     "distractors": [
       "500 députés",
@@ -1200,6 +1387,9 @@
     "id": 50,
     "theme": "Système institutionnel et politique",
     "notion": "democratie-vote",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "Quand sont élus les sénateurs ?",
     "distractors": [
       "Tous les 5 ans, en même temps que les députés",
@@ -1225,6 +1415,11 @@
     "id": 51,
     "theme": "Système institutionnel et politique",
     "notion": "democratie-vote",
+    "lists": [
+      "pluriannuelle",
+      "naturalisation"
+    ],
+    "natNumber": 42,
     "question": "Qui est élu lors des élections municipales ?",
     "distractors": [
       "Directement le maire au suffrage universel",
@@ -1249,6 +1444,9 @@
     "id": 52,
     "theme": "Système institutionnel et politique",
     "notion": "democratie-vote",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "Qui est élu lors des élections présidentielles ?",
     "distractors": [
       "Le Premier ministre pour 5 ans",
@@ -1274,6 +1472,9 @@
     "id": 53,
     "theme": "Système institutionnel et politique",
     "notion": "democratie-vote",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "À partir de quel âge a-t-on le droit de voter ?",
     "distractors": [
       "16 ans",
@@ -1297,6 +1498,9 @@
     "id": 54,
     "theme": "Système institutionnel et politique",
     "notion": "democratie-vote",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "Pour combien de temps est élu le président de la République française ?",
     "distractors": [
       "4 ans",
@@ -1320,6 +1524,9 @@
     "id": 55,
     "theme": "Système institutionnel et politique",
     "notion": "democratie-vote",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "Pour combien de temps sont élus les députés ?",
     "distractors": [
       "3 ans",
@@ -1343,6 +1550,11 @@
     "id": 56,
     "theme": "Système institutionnel et politique",
     "notion": "democratie-vote",
+    "lists": [
+      "pluriannuelle",
+      "resident"
+    ],
+    "crNumber": 59,
     "question": "Pour combien de temps sont élus les sénateurs ?",
     "distractors": [
       "3 ans",
@@ -1368,6 +1580,9 @@
     "id": 57,
     "theme": "Système institutionnel et politique",
     "notion": "organisation-republique",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "Qui possède le pouvoir exécutif ?",
     "distractors": [
       "Uniquement le Président de la République",
@@ -1393,6 +1608,11 @@
     "id": 58,
     "theme": "Système institutionnel et politique",
     "notion": "democratie-vote",
+    "lists": [
+      "pluriannuelle",
+      "resident"
+    ],
+    "crNumber": 63,
     "question": "Quelle condition est nécessaire pour voter aux élections ?",
     "distractors": [
       "Avoir la nationalité française depuis au moins 10 ans",
@@ -1418,6 +1638,11 @@
     "id": 59,
     "theme": "Système institutionnel et politique",
     "notion": "democratie-vote",
+    "lists": [
+      "pluriannuelle",
+      "resident"
+    ],
+    "crNumber": 58,
     "question": "Qui peut voter aux élections en France ?",
     "distractors": [
       "Tous les résidents en France, quelle que soit leur nationalité",
@@ -1443,6 +1668,9 @@
     "id": 60,
     "theme": "Système institutionnel et politique",
     "notion": "democratie-vote",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "Que signifie « suffrage universel » ?",
     "distractors": [
       "Que les élections se déroulent dans tous les pays du monde",
@@ -1467,6 +1695,9 @@
     "id": 61,
     "theme": "Système institutionnel et politique",
     "notion": "democratie-vote",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "Concernant les partis politiques, quelle proposition est correcte ?",
     "distractors": [
       "Il n'existe qu'un seul parti politique autorisé en France",
@@ -1490,6 +1721,9 @@
     "id": 62,
     "theme": "Système institutionnel et politique",
     "notion": "organisation-republique",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "Quel est le rôle des députés ?",
     "distractors": [
       "Nommer les ministres et le Premier ministre",
@@ -1514,6 +1748,13 @@
     "id": 63,
     "theme": "Système institutionnel et politique",
     "notion": "organisation-republique",
+    "lists": [
+      "pluriannuelle",
+      "resident",
+      "naturalisation"
+    ],
+    "crNumber": 60,
+    "natNumber": 55,
     "question": "La séparation des pouvoirs est un principe fondamental. Quels sont les trois pouvoirs concernés ?",
     "distractors": [
       "Le pouvoir présidentiel, parlementaire et militaire",
@@ -1538,6 +1779,9 @@
     "id": 64,
     "theme": "Système institutionnel et politique",
     "notion": "organisation-republique",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "Qui possède le pouvoir législatif ?",
     "distractors": [
       "Le Président de la République seul",
@@ -1563,6 +1807,13 @@
     "id": 65,
     "theme": "Système institutionnel et politique",
     "notion": "organisation-republique",
+    "lists": [
+      "pluriannuelle",
+      "resident",
+      "naturalisation"
+    ],
+    "crNumber": 54,
+    "natNumber": 64,
     "question": "Qui sanctionne l'auteur d'un vol ?",
     "distractors": [
       "La police nationale qui décide de la peine",
@@ -1587,6 +1838,9 @@
     "id": 66,
     "theme": "Système institutionnel et politique",
     "notion": "democratie-vote",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "Qui élit les députés ?",
     "distractors": [
       "Les sénateurs par vote indirect",
@@ -1612,6 +1866,11 @@
     "id": 67,
     "theme": "Système institutionnel et politique",
     "notion": "organisation-republique",
+    "lists": [
+      "pluriannuelle",
+      "naturalisation"
+    ],
+    "natNumber": 54,
     "question": "Qui vote les lois ?",
     "distractors": [
       "Le Président de la République par décret",
@@ -1637,6 +1896,9 @@
     "id": 68,
     "theme": "Système institutionnel et politique",
     "notion": "organisation-republique",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "Qui réside au palais de l'Élysée ?",
     "distractors": [
       "Le Premier ministre",
@@ -1661,6 +1923,11 @@
     "id": 69,
     "theme": "Système institutionnel et politique",
     "notion": "organisation-republique",
+    "lists": [
+      "pluriannuelle",
+      "naturalisation"
+    ],
+    "natNumber": 73,
     "question": "Combien y a-t-il de départements en France ?",
     "distractors": [
       "96 départements",
@@ -1685,6 +1952,11 @@
     "id": 70,
     "theme": "Système institutionnel et politique",
     "notion": "organisation-republique",
+    "lists": [
+      "pluriannuelle",
+      "naturalisation"
+    ],
+    "natNumber": 75,
     "question": "Qui représente l'État dans un département ?",
     "distractors": [
       "Le maire du chef-lieu",
@@ -1710,6 +1982,11 @@
     "id": 71,
     "theme": "Système institutionnel et politique",
     "notion": "organisation-republique",
+    "lists": [
+      "pluriannuelle",
+      "resident"
+    ],
+    "crNumber": 64,
     "question": "Qui dirige la commune ?",
     "distractors": [
       "Le préfet nommé par le gouvernement",
@@ -1734,6 +2011,11 @@
     "id": 72,
     "theme": "Système institutionnel et politique",
     "notion": "organisation-republique",
+    "lists": [
+      "pluriannuelle",
+      "resident"
+    ],
+    "crNumber": 61,
     "question": "Est-ce que le président de la République a tous les pouvoirs ?",
     "distractors": [
       "Oui, il est le chef suprême de l'État avec tous les pouvoirs",
@@ -1758,6 +2040,11 @@
     "id": 73,
     "theme": "Système institutionnel et politique",
     "notion": "organisation-republique",
+    "lists": [
+      "pluriannuelle",
+      "resident"
+    ],
+    "crNumber": 62,
     "question": "Qui est le préfet ?",
     "distractors": [
       "L'élu local qui dirige le conseil départemental",
@@ -1782,6 +2069,9 @@
     "id": 74,
     "theme": "Système institutionnel et politique",
     "notion": "organisation-republique",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "Quel est le rôle du Parlement ?",
     "distractors": [
       "Gouverner le pays et nommer les ministres",
@@ -1807,6 +2097,11 @@
     "id": 75,
     "theme": "Système institutionnel et politique",
     "notion": "organisation-republique",
+    "lists": [
+      "pluriannuelle",
+      "resident"
+    ],
+    "crNumber": 65,
     "question": "Quel est le régime politique de la France aujourd'hui ?",
     "distractors": [
       "Une monarchie constitutionnelle héréditaire",
@@ -1832,6 +2127,11 @@
     "id": 76,
     "theme": "Système institutionnel et politique",
     "notion": "institutions-europeennes",
+    "lists": [
+      "pluriannuelle",
+      "naturalisation"
+    ],
+    "natNumber": 87,
     "question": "Combien d'États font partie de l'Union européenne au 1er janvier 2025 ?",
     "distractors": [
       "25 États membres",
@@ -1856,6 +2156,11 @@
     "id": 77,
     "theme": "Système institutionnel et politique",
     "notion": "institutions-europeennes",
+    "lists": [
+      "pluriannuelle",
+      "resident"
+    ],
+    "crNumber": 86,
     "question": "Quel État n'est pas membre de l'Union européenne ?",
     "distractors": [
       "L'Autriche",
@@ -1883,6 +2188,11 @@
     "id": 78,
     "theme": "Système institutionnel et politique",
     "notion": "institutions-europeennes",
+    "lists": [
+      "pluriannuelle",
+      "resident"
+    ],
+    "crNumber": 89,
     "question": "Quelle condition est nécessaire pour voter aux élections européennes ?",
     "distractors": [
       "Être exclusivement de nationalité française",
@@ -1907,6 +2217,11 @@
     "id": 79,
     "theme": "Système institutionnel et politique",
     "notion": "institutions-europeennes",
+    "lists": [
+      "pluriannuelle",
+      "resident"
+    ],
+    "crNumber": 88,
     "question": "À quelle fréquence les élections européennes sont-elles organisées ?",
     "distractors": [
       "Tous les 3 ans",
@@ -1931,6 +2246,11 @@
     "id": 80,
     "theme": "Système institutionnel et politique",
     "notion": "institutions-europeennes",
+    "lists": [
+      "pluriannuelle",
+      "resident"
+    ],
+    "crNumber": 90,
     "question": "Quel pays est un pays fondateur de l'Union européenne ?",
     "distractors": [
       "L'Espagne",
@@ -1960,6 +2280,9 @@
     "id": 81,
     "theme": "Système institutionnel et politique",
     "notion": "institutions-europeennes",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "Quelle est la monnaie utilisée en France ?",
     "distractors": [
       "Le franc français",
@@ -1984,6 +2307,11 @@
     "id": 82,
     "theme": "Système institutionnel et politique",
     "notion": "institutions-europeennes",
+    "lists": [
+      "pluriannuelle",
+      "naturalisation"
+    ],
+    "natNumber": 94,
     "question": "Qui élit les députés européens ?",
     "distractors": [
       "Les Parlements nationaux de chaque État membre",
@@ -2008,6 +2336,11 @@
     "id": 83,
     "theme": "Système institutionnel et politique",
     "notion": "institutions-europeennes",
+    "lists": [
+      "pluriannuelle",
+      "resident"
+    ],
+    "crNumber": 87,
     "question": "Quand célèbre-t-on la journée de l'Europe ?",
     "distractors": [
       "Le 1er mai",
@@ -2032,6 +2365,9 @@
     "id": 84,
     "theme": "Droits et devoirs",
     "notion": "droits-fondamentaux",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "Comment s’appelle la Constitution actuelle de la France ?",
     "distractors": [
       "La Déclaration des droits de l'homme et du citoyen",
@@ -2056,6 +2392,9 @@
     "id": 85,
     "theme": "Droits et devoirs",
     "notion": "droits-fondamentaux",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "Comment s'appelle le texte qui énonce les droits et devoirs des personnes résidant en France ?",
     "distractors": [
       "Le traité de Rome fondateur de l'Europe",
@@ -2079,6 +2418,9 @@
     "id": 86,
     "theme": "Droits et devoirs",
     "notion": "droits-fondamentaux",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "Concernant les droits individuels, quelle proposition est correcte ?",
     "distractors": [
       "Les droits individuels sont absolus et ne peuvent jamais être limités",
@@ -2104,6 +2446,9 @@
     "id": 87,
     "theme": "Droits et devoirs",
     "notion": "droits-fondamentaux",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "De quelle année date la Déclaration des droits de l’homme et du citoyen ?",
     "distractors": [
       "1776",
@@ -2129,6 +2474,9 @@
     "id": 88,
     "theme": "Droits et devoirs",
     "notion": "droits-fondamentaux",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "Lequel de ces droits est un droit fondamental ?",
     "distractors": [
       "Le droit d'ignorer les lois que l'on n'approuve pas",
@@ -2154,6 +2502,9 @@
     "id": 89,
     "theme": "Droits et devoirs",
     "notion": "droits-fondamentaux",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "Parmi ces textes, lequel garantit les droits et libertés en France ?",
     "distractors": [
       "La Charte des Nations unies de 1945",
@@ -2178,6 +2529,11 @@
     "id": 90,
     "theme": "Droits et devoirs",
     "notion": "droits-fondamentaux",
+    "lists": [
+      "pluriannuelle",
+      "naturalisation"
+    ],
+    "natNumber": 109,
     "question": "Qu’est-ce que la liberté d’expression ?",
     "distractors": [
       "Le droit absolu de dire tout ce que l'on pense sans conséquence",
@@ -2203,6 +2559,9 @@
     "id": 91,
     "theme": "Droits et devoirs",
     "notion": "droits-fondamentaux",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "Quel droit permet à une personne de se défendre devant la justice ?",
     "distractors": [
       "Le droit de grâce présidentielle",
@@ -2226,6 +2585,9 @@
     "id": 92,
     "theme": "Droits et devoirs",
     "notion": "droits-fondamentaux",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "Quel est le texte fondateur établissant en France les droits et les devoirs de chaque citoyen ?",
     "distractors": [
       "La Déclaration d'indépendance des États-Unis (1776)",
@@ -2250,6 +2612,9 @@
     "id": 93,
     "theme": "Droits et devoirs",
     "notion": "droits-fondamentaux",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "Quel texte a été adopté pendant la Révolution française ?",
     "distractors": [
       "La Constitution de la Ve République",
@@ -2275,6 +2640,9 @@
     "id": 94,
     "theme": "Droits et devoirs",
     "notion": "droits-fondamentaux",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "Quelle liberté permet à une personne de ne pas avoir de religion ?",
     "distractors": [
       "La liberté d'association",
@@ -2300,6 +2668,9 @@
     "id": 95,
     "theme": "Droits et devoirs",
     "notion": "droits-fondamentaux",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "Une femme peut avorter :",
     "distractors": [
       "Non, l'avortement est totalement interdit en France",
@@ -2324,6 +2695,11 @@
     "id": 96,
     "theme": "Droits et devoirs",
     "notion": "droits-fondamentaux",
+    "lists": [
+      "pluriannuelle",
+      "resident"
+    ],
+    "crNumber": 94,
     "question": "Est-il toujours possible de divorcer ?",
     "distractors": [
       "Non, le divorce est interdit en France depuis 2000",
@@ -2348,6 +2724,11 @@
     "id": 97,
     "theme": "Droits et devoirs",
     "notion": "droits-fondamentaux",
+    "lists": [
+      "pluriannuelle",
+      "resident"
+    ],
+    "crNumber": 95,
     "question": "La peine de mort est :",
     "distractors": [
       "Applicable pour les crimes terroristes avérés",
@@ -2372,6 +2753,9 @@
     "id": 98,
     "theme": "Droits et devoirs",
     "notion": "droits-fondamentaux",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "Concernant les limites aux libertés individuelles, quelle proposition est correcte ?",
     "distractors": [
       "Les libertés individuelles sont absolues et ne peuvent jamais être limitées",
@@ -2397,6 +2781,9 @@
     "id": 99,
     "theme": "Droits et devoirs",
     "notion": "droits-fondamentaux",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "En France, est-ce légal d'être marié à plusieurs personnes en même temps ?",
     "distractors": [
       "Oui, si tous les conjoints sont consentants et majeurs",
@@ -2421,6 +2808,9 @@
     "id": 100,
     "theme": "Droits et devoirs",
     "notion": "obligations-devoirs",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "Faut-il réduire ses déchets ?",
     "distractors": [
       "Non, c'est une obligation uniquement pour les entreprises",
@@ -2446,6 +2836,9 @@
     "id": 101,
     "theme": "Droits et devoirs",
     "notion": "obligations-devoirs",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "Jeter une bouteille dans la rue est :",
     "distractors": [
       "Toléré si personne ne regarde et que c'est accidentel",
@@ -2471,6 +2864,9 @@
     "id": 102,
     "theme": "Droits et devoirs",
     "notion": "obligations-devoirs",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "Pourquoi les libertés individuelles peuvent-elles être limitées ?",
     "distractors": [
       "Pour permettre à l'État de mieux contrôler les citoyens",
@@ -2496,6 +2892,9 @@
     "id": 103,
     "theme": "Droits et devoirs",
     "notion": "obligations-devoirs",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "Que doit faire une personne en cas d’accident ?",
     "distractors": [
       "Continuer sa route si elle n'est pas en tort",
@@ -2520,6 +2919,9 @@
     "id": 104,
     "theme": "Droits et devoirs",
     "notion": "obligations-devoirs",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "Que permet la citoyenneté française ?",
     "distractors": [
       "Uniquement de voyager librement sans passeport en Europe",
@@ -2544,6 +2946,9 @@
     "id": 105,
     "theme": "Droits et devoirs",
     "notion": "obligations-devoirs",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "Que risque une personne qui ne respecte pas la loi ?",
     "distractors": [
       "Rien, si c'est la première fois et que personne ne se plaint",
@@ -2568,6 +2973,9 @@
     "id": 106,
     "theme": "Droits et devoirs",
     "notion": "obligations-devoirs",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "Quel est le rôle de la gendarmerie ?",
     "distractors": [
       "Uniquement protéger les frontières nationales",
@@ -2593,6 +3001,11 @@
     "id": 107,
     "theme": "Droits et devoirs",
     "notion": "obligations-devoirs",
+    "lists": [
+      "pluriannuelle",
+      "resident"
+    ],
+    "crNumber": 119,
     "question": "Quel est le rôle de la police ?",
     "distractors": [
       "Uniquement surveiller les frontières et les aéroports",
@@ -2618,6 +3031,9 @@
     "id": 108,
     "theme": "Droits et devoirs",
     "notion": "obligations-devoirs",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "Qu'est-ce qu'une infraction ?",
     "distractors": [
       "Un désaccord contractuel entre deux parties",
@@ -2643,6 +3059,9 @@
     "id": 109,
     "theme": "Droits et devoirs",
     "notion": "obligations-devoirs",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "Comment peut-on réduire ses déchets ?",
     "distractors": [
       "En jetant tout dans la même poubelle sans distinction",
@@ -2668,6 +3087,9 @@
     "id": 110,
     "theme": "Droits et devoirs",
     "notion": "obligations-devoirs",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "Déposer une machine à laver cassée sur le trottoir est :",
     "distractors": [
       "Toléré si c'est pour permettre à d'autres de la récupérer",
@@ -2692,6 +3114,9 @@
     "id": 111,
     "theme": "Droits et devoirs",
     "notion": "obligations-devoirs",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "En quoi consiste la traite des êtres humains ?",
     "distractors": [
       "Le commerce légal de produits exotiques entre pays",
@@ -2716,6 +3141,11 @@
     "id": 112,
     "theme": "Droits et devoirs",
     "notion": "obligations-devoirs",
+    "lists": [
+      "pluriannuelle",
+      "resident"
+    ],
+    "crNumber": 117,
     "question": "Que doit faire une victime de violences ?",
     "distractors": [
       "Attendre que la situation s'améliore d'elle-même",
@@ -2740,6 +3170,13 @@
     "id": 113,
     "theme": "Droits et devoirs",
     "notion": "obligations-devoirs",
+    "lists": [
+      "pluriannuelle",
+      "resident",
+      "naturalisation"
+    ],
+    "crNumber": 123,
+    "natNumber": 128,
     "question": "Quelle est l'infraction la plus grave ?",
     "distractors": [
       "La contravention de 5e classe",
@@ -2765,6 +3202,11 @@
     "id": 114,
     "theme": "Histoire, géographie et culture",
     "notion": "periodes-personnages",
+    "lists": [
+      "pluriannuelle",
+      "naturalisation"
+    ],
+    "natNumber": 143,
     "question": "En quelle année a débuté la Révolution française ?",
     "distractors": [
       "1776",
@@ -2789,6 +3231,9 @@
     "id": 115,
     "theme": "Histoire, géographie et culture",
     "notion": "periodes-personnages",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "Qui était Napoléon Ier ?",
     "distractors": [
       "Un roi de France renversé par la Révolution française",
@@ -2813,6 +3258,9 @@
     "id": 116,
     "theme": "Histoire, géographie et culture",
     "notion": "periodes-personnages",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "Lequel de ces personnages historiques est français ?",
     "distractors": [
       "William Shakespeare",
@@ -2842,6 +3290,9 @@
     "id": 117,
     "theme": "Histoire, géographie et culture",
     "notion": "periodes-personnages",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "Dans quelle République est-on aujourd'hui ?",
     "distractors": [
       "La IVe République",
@@ -2864,6 +3315,11 @@
     "id": 118,
     "theme": "Histoire, géographie et culture",
     "notion": "periodes-personnages",
+    "lists": [
+      "pluriannuelle",
+      "naturalisation"
+    ],
+    "natNumber": 147,
     "question": "Qu'est-ce que la Shoah ?",
     "distractors": [
       "La Première Guerre mondiale de 1914-1918",
@@ -2888,6 +3344,9 @@
     "id": 119,
     "theme": "Histoire, géographie et culture",
     "notion": "periodes-personnages",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "Quel pays ou région du monde a été colonisé par la France ?",
     "distractors": [
       "L'Australie",
@@ -2916,6 +3375,11 @@
     "id": 120,
     "theme": "Histoire, géographie et culture",
     "notion": "periodes-personnages",
+    "lists": [
+      "pluriannuelle",
+      "naturalisation"
+    ],
+    "natNumber": 149,
     "question": "Qui a rendu l’école gratuite, laïque et obligatoire ?",
     "distractors": [
       "Napoléon Bonaparte avec le décret impérial de 1802",
@@ -2941,6 +3405,11 @@
     "id": 121,
     "theme": "Histoire, géographie et culture",
     "notion": "periodes-personnages",
+    "lists": [
+      "pluriannuelle",
+      "naturalisation"
+    ],
+    "natNumber": 152,
     "question": "Quand a eu lieu la Seconde Guerre mondiale ?",
     "distractors": [
       "De 1914 à 1918",
@@ -2965,6 +3434,11 @@
     "id": 122,
     "theme": "Histoire, géographie et culture",
     "notion": "periodes-personnages",
+    "lists": [
+      "pluriannuelle",
+      "naturalisation"
+    ],
+    "natNumber": 153,
     "question": "Quand a eu lieu la Première Guerre mondiale ?",
     "distractors": [
       "De 1905 à 1910",
@@ -2990,6 +3464,9 @@
     "id": 123,
     "theme": "Histoire, géographie et culture",
     "notion": "periodes-personnages",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "En quelle année a été créée la Communauté Économique Européenne (CEE) ?",
     "distractors": [
       "1945",
@@ -3014,6 +3491,11 @@
     "id": 124,
     "theme": "Histoire, géographie et culture",
     "notion": "periodes-personnages",
+    "lists": [
+      "pluriannuelle",
+      "naturalisation"
+    ],
+    "natNumber": 158,
     "question": "Le 11 novembre est un jour férié. À quoi correspond cette date ?",
     "distractors": [
       "La libération de Paris en août 1944",
@@ -3038,6 +3520,9 @@
     "id": 125,
     "theme": "Histoire, géographie et culture",
     "notion": "periodes-personnages",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "Qui a été le premier Président élu sous la Ve République ?",
     "distractors": [
       "Georges Pompidou",
@@ -3063,6 +3548,9 @@
     "id": 126,
     "theme": "Histoire, géographie et culture",
     "notion": "periodes-personnages",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "En quelle année l'esclavage a-t-il été aboli définitivement en France ?",
     "distractors": [
       "1789",
@@ -3087,6 +3575,11 @@
     "id": 127,
     "theme": "Histoire, géographie et culture",
     "notion": "periodes-personnages",
+    "lists": [
+      "pluriannuelle",
+      "naturalisation"
+    ],
+    "natNumber": 161,
     "question": "Depuis quelle année l'école publique est-elle gratuite ?",
     "distractors": [
       "1789",
@@ -3112,6 +3605,9 @@
     "id": 128,
     "theme": "Histoire, géographie et culture",
     "notion": "periodes-personnages",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "Combien y a-t-il eu de républiques en France ?",
     "distractors": [
       "Deux Républiques",
@@ -3134,6 +3630,9 @@
     "id": 129,
     "theme": "Histoire, géographie et culture",
     "notion": "periodes-personnages",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "Qui était le roi de France au moment de la Révolution française ?",
     "distractors": [
       "Louis XIV",
@@ -3158,6 +3657,9 @@
     "id": 130,
     "theme": "Histoire, géographie et culture",
     "notion": "periodes-personnages",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "Qui a fondé la Ve République ?",
     "distractors": [
       "Georges Pompidou",
@@ -3183,6 +3685,9 @@
     "id": 131,
     "theme": "Histoire, géographie et culture",
     "notion": "periodes-personnages",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "Que célèbre-t-on le 14 juillet ?",
     "distractors": [
       "La victoire de Napoléon à la bataille d'Austerlitz",
@@ -3208,6 +3713,9 @@
     "id": 132,
     "theme": "Histoire, géographie et culture",
     "notion": "periodes-personnages",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "Quelle guerre a eu lieu entre 1914 et 1918 ?",
     "distractors": [
       "La Seconde Guerre mondiale",
@@ -3233,6 +3741,11 @@
     "id": 133,
     "theme": "Histoire, géographie et culture",
     "notion": "periodes-personnages",
+    "lists": [
+      "pluriannuelle",
+      "naturalisation"
+    ],
+    "natNumber": 137,
     "question": "Pourquoi l’année 1958 est-elle importante pour la France ?",
     "distractors": [
       "C'est l'année de la libération de Paris pendant la Seconde Guerre mondiale",
@@ -3257,6 +3770,9 @@
     "id": 134,
     "theme": "Histoire, géographie et culture",
     "notion": "territoires-geographie",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "Quel fleuve coule en France ?",
     "distractors": [
       "Le Danube",
@@ -3284,6 +3800,9 @@
     "id": 135,
     "theme": "Histoire, géographie et culture",
     "notion": "territoires-geographie",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "Quelle ville est française ?",
     "distractors": [
       "Madrid",
@@ -3315,6 +3834,9 @@
     "id": 136,
     "theme": "Histoire, géographie et culture",
     "notion": "territoires-geographie",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "Quel océan borde la côte ouest française ?",
     "distractors": [
       "L'océan Indien",
@@ -3340,6 +3862,9 @@
     "id": 137,
     "theme": "Histoire, géographie et culture",
     "notion": "territoires-geographie",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "Qu'est-ce que Paris ?",
     "distractors": [
       "Une région administrative du nord de la France",
@@ -3365,6 +3890,9 @@
     "id": 138,
     "theme": "Histoire, géographie et culture",
     "notion": "territoires-geographie",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "Quelle est la capitale de la France ?",
     "distractors": [
       "Lyon",
@@ -3390,6 +3918,9 @@
     "id": 139,
     "theme": "Histoire, géographie et culture",
     "notion": "territoires-geographie",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "Sur quel continent se situe la France métropolitaine ?",
     "distractors": [
       "En Afrique",
@@ -3415,6 +3946,11 @@
     "id": 140,
     "theme": "Histoire, géographie et culture",
     "notion": "territoires-geographie",
+    "lists": [
+      "pluriannuelle",
+      "naturalisation"
+    ],
+    "natNumber": 203,
     "question": "Quelle île est un département d'outre-mer français ?",
     "distractors": [
       "Madagascar",
@@ -3442,6 +3978,11 @@
     "id": 141,
     "theme": "Histoire, géographie et culture",
     "notion": "territoires-geographie",
+    "lists": [
+      "pluriannuelle",
+      "naturalisation"
+    ],
+    "natNumber": 207,
     "question": "Combien y a-t-il de régions en France métropolitaine ?",
     "distractors": [
       "11 régions",
@@ -3466,6 +4007,9 @@
     "id": 142,
     "theme": "Histoire, géographie et culture",
     "notion": "territoires-geographie",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "Quelle ville est un grand port maritime ?",
     "distractors": [
       "Paris",
@@ -3492,6 +4036,9 @@
     "id": 143,
     "theme": "Histoire, géographie et culture",
     "notion": "territoires-geographie",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "Quelle est la mer au sud de la France métropolitaine ?",
     "distractors": [
       "La mer du Nord",
@@ -3517,6 +4064,9 @@
     "id": 144,
     "theme": "Histoire, géographie et culture",
     "notion": "territoires-geographie",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "Quelle ville est située au bord de la mer Méditerranée ?",
     "distractors": [
       "Bordeaux",
@@ -3545,6 +4095,9 @@
     "id": 145,
     "theme": "Histoire, géographie et culture",
     "notion": "territoires-geographie",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "Où se situe la Corse ?",
     "distractors": [
       "Dans l'océan Atlantique, au large de Bordeaux",
@@ -3570,6 +4123,11 @@
     "id": 146,
     "theme": "Histoire, géographie et culture",
     "notion": "territoires-geographie",
+    "lists": [
+      "pluriannuelle",
+      "naturalisation"
+    ],
+    "natNumber": 181,
     "question": "Quelle chaîne de montagnes est située entre la France et l'Italie ?",
     "distractors": [
       "Les Pyrénées",
@@ -3594,6 +4152,11 @@
     "id": 147,
     "theme": "Histoire, géographie et culture",
     "notion": "patrimoine",
+    "lists": [
+      "pluriannuelle",
+      "naturalisation"
+    ],
+    "natNumber": 182,
     "question": "Qui était Molière ?",
     "distractors": [
       "Un peintre impressionniste français du XIXe siècle",
@@ -3619,6 +4182,11 @@
     "id": 148,
     "theme": "Histoire, géographie et culture",
     "notion": "patrimoine",
+    "lists": [
+      "pluriannuelle",
+      "naturalisation"
+    ],
+    "natNumber": 183,
     "question": "Qui était Charles Baudelaire ?",
     "distractors": [
       "Un peintre impressionniste français du XIXe siècle",
@@ -3642,6 +4210,11 @@
     "id": 149,
     "theme": "Histoire, géographie et culture",
     "notion": "patrimoine",
+    "lists": [
+      "pluriannuelle",
+      "naturalisation"
+    ],
+    "natNumber": 184,
     "question": "Qui était George Sand ?",
     "distractors": [
       "Une reine de France exécutée pendant la Révolution",
@@ -3666,6 +4239,11 @@
     "id": 150,
     "theme": "Histoire, géographie et culture",
     "notion": "patrimoine",
+    "lists": [
+      "pluriannuelle",
+      "naturalisation"
+    ],
+    "natNumber": 185,
     "question": "Qui était Simone de Beauvoir ?",
     "distractors": [
       "Une reine de France exécutée pendant la Révolution",
@@ -3690,6 +4268,11 @@
     "id": 151,
     "theme": "Histoire, géographie et culture",
     "notion": "patrimoine",
+    "lists": [
+      "pluriannuelle",
+      "naturalisation"
+    ],
+    "natNumber": 186,
     "question": "Qui était Albert Camus ?",
     "distractors": [
       "Un général et homme d'État français, chef de la France libre",
@@ -3715,6 +4298,11 @@
     "id": 152,
     "theme": "Histoire, géographie et culture",
     "notion": "patrimoine",
+    "lists": [
+      "pluriannuelle",
+      "naturalisation"
+    ],
+    "natNumber": 188,
     "question": "Qui était Paul Cézanne ?",
     "distractors": [
       "Un poète français symboliste du XIXe siècle",
@@ -3739,6 +4327,9 @@
     "id": 153,
     "theme": "Histoire, géographie et culture",
     "notion": "patrimoine",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "Qui était Marc Chagall ?",
     "distractors": [
       "Un compositeur français romantique du XIXe siècle",
@@ -3762,6 +4353,9 @@
     "id": 154,
     "theme": "Histoire, géographie et culture",
     "notion": "patrimoine",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "Qui était Joséphine Baker ?",
     "distractors": [
       "Une reine de France exécutée pendant la Révolution",
@@ -3785,6 +4379,9 @@
     "id": 155,
     "theme": "Histoire, géographie et culture",
     "notion": "patrimoine",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "Qui était une chanteuse française célèbre ?",
     "distractors": [
       "Camille Claudel",
@@ -3808,6 +4405,9 @@
     "id": 156,
     "theme": "Histoire, géographie et culture",
     "notion": "patrimoine",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "Qu'est-ce que le Louvre ?",
     "distractors": [
       "Le palais présidentiel de la République française",
@@ -3832,6 +4432,9 @@
     "id": 157,
     "theme": "Histoire, géographie et culture",
     "notion": "patrimoine",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "Qui était Jean de la Fontaine ?",
     "distractors": [
       "Un peintre français classique du XVIIe siècle",
@@ -3855,6 +4458,9 @@
     "id": 158,
     "theme": "Histoire, géographie et culture",
     "notion": "patrimoine",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "Quel écrivain est français ?",
     "distractors": [
       "Franz Kafka",
@@ -3884,6 +4490,9 @@
     "id": 159,
     "theme": "Histoire, géographie et culture",
     "notion": "patrimoine",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "Dans quelle ville se trouve la tour Eiffel ?",
     "distractors": [
       "À Lyon",
@@ -3909,6 +4518,9 @@
     "id": 160,
     "theme": "Histoire, géographie et culture",
     "notion": "patrimoine",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "Quand célèbre-t-on Noël ?",
     "distractors": [
       "Le 24 décembre",
@@ -3933,6 +4545,11 @@
     "id": 161,
     "theme": "Vie en société",
     "notion": "s-installer",
+    "lists": [
+      "pluriannuelle",
+      "naturalisation"
+    ],
+    "natNumber": 224,
     "question": "Quel numéro d'urgence permet d'appeler le SAMU ?",
     "distractors": [
       "Le 17",
@@ -3956,6 +4573,9 @@
     "id": 162,
     "theme": "Vie en société",
     "notion": "s-installer",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "Quel numéro d'urgence permet d'appeler les pompiers ?",
     "distractors": [
       "Le 15",
@@ -3978,6 +4598,9 @@
     "id": 163,
     "theme": "Vie en société",
     "notion": "s-installer",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "Après avoir obtenu le permis de conduire, que faut-il faire pour pouvoir conduire sa voiture ?",
     "distractors": [
       "Payer une taxe annuelle spéciale à la préfecture",
@@ -4001,6 +4624,9 @@
     "id": 164,
     "theme": "Vie en société",
     "notion": "s-installer",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "À quelles conditions un mariage est-il reconnu juridiquement ?",
     "distractors": [
       "Une simple cérémonie religieuse devant un prêtre ou imam suffit",
@@ -4025,6 +4651,9 @@
     "id": 165,
     "theme": "Vie en société",
     "notion": "s-installer",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "Quand faut-il déclarer son enfant au service d'état civil de la mairie ?",
     "distractors": [
       "Dans les 30 jours suivant la naissance",
@@ -4049,6 +4678,9 @@
     "id": 166,
     "theme": "Vie en société",
     "notion": "travail",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "Le travail non déclaré est :",
     "distractors": [
       "Toléré pour les petits travaux ponctuels entre particuliers",
@@ -4073,6 +4705,9 @@
     "id": 167,
     "theme": "Vie en société",
     "notion": "travail",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "Que doit faire un employeur pour fixer un salaire ?",
     "distractors": [
       "Il peut proposer le salaire qu'il veut, sans aucune limite légale",
@@ -4097,6 +4732,11 @@
     "id": 168,
     "theme": "Vie en société",
     "notion": "travail",
+    "lists": [
+      "pluriannuelle",
+      "naturalisation"
+    ],
+    "natNumber": 238,
     "question": "Qu'est-ce que le SMIC ?",
     "distractors": [
       "Un syndicat national des travailleurs du commerce",
@@ -4122,6 +4762,11 @@
     "id": 169,
     "theme": "Vie en société",
     "notion": "travail",
+    "lists": [
+      "pluriannuelle",
+      "naturalisation"
+    ],
+    "natNumber": 239,
     "question": "Quelle est la première démarche à réaliser pour chercher un emploi ?",
     "distractors": [
       "Payer une agence de recrutement privée pour trouver un emploi",
@@ -4147,6 +4792,11 @@
     "id": 170,
     "theme": "Vie en société",
     "notion": "travail",
+    "lists": [
+      "pluriannuelle",
+      "naturalisation"
+    ],
+    "natNumber": 240,
     "question": "Quelle est la durée légale du temps de travail par semaine ?",
     "distractors": [
       "32 heures par semaine",
@@ -4171,6 +4821,9 @@
     "id": 171,
     "theme": "Vie en société",
     "notion": "travail",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "Qui est aidé par France Travail ?",
     "distractors": [
       "Uniquement les personnes de moins de 25 ans sans emploi",
@@ -4196,6 +4849,11 @@
     "id": 172,
     "theme": "Vie en société",
     "notion": "travail",
+    "lists": [
+      "pluriannuelle",
+      "naturalisation"
+    ],
+    "natNumber": 242,
     "question": "Une personne étrangère en situation régulière peut créer son entreprise :",
     "distractors": [
       "Seulement si elle a la nationalité française",
@@ -4220,6 +4878,11 @@
     "id": 173,
     "theme": "Vie en société",
     "notion": "travail",
+    "lists": [
+      "pluriannuelle",
+      "naturalisation"
+    ],
+    "natNumber": 243,
     "question": "Une femme peut-elle créer son entreprise ?",
     "distractors": [
       "Oui, mais elle a besoin de l'accord de son mari",
@@ -4244,6 +4907,9 @@
     "id": 174,
     "theme": "Vie en société",
     "notion": "travail",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "À partir de quel âge un mineur peut-il travailler ?",
     "distractors": [
       "12 ans avec accord parental",
@@ -4269,6 +4935,11 @@
     "id": 175,
     "theme": "Vie en société",
     "notion": "soins",
+    "lists": [
+      "pluriannuelle",
+      "naturalisation"
+    ],
+    "natNumber": 229,
     "question": "Auprès de quel organisme faut-il demander le remboursement des frais de santé ?",
     "distractors": [
       "La mairie de sa commune de résidence",
@@ -4294,6 +4965,9 @@
     "id": 176,
     "theme": "Vie en société",
     "notion": "soins",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "Qu’est-ce qu’un numéro d’urgence ?",
     "distractors": [
       "Un numéro permettant d'appeler le gouvernement en cas de problème",
@@ -4318,6 +4992,11 @@
     "id": 177,
     "theme": "Vie en société",
     "notion": "soins",
+    "lists": [
+      "pluriannuelle",
+      "resident"
+    ],
+    "crNumber": 187,
     "question": "Concernant l'accès aux soins, quelle proposition est correcte ?",
     "distractors": [
       "Seuls les citoyens français ont droit aux soins remboursés",
@@ -4343,6 +5022,9 @@
     "id": 178,
     "theme": "Vie en société",
     "notion": "soins",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "En cas de problème de santé non urgent, à qui faut-il s’adresser en premier ?",
     "distractors": [
       "Directement aux urgences de l'hôpital le plus proche",
@@ -4368,6 +5050,9 @@
     "id": 179,
     "theme": "Vie en société",
     "notion": "soins",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "Quel est le rôle du médecin traitant ?",
     "distractors": [
       "Uniquement rédiger des ordonnances pour les médicaments",
@@ -4393,6 +5078,9 @@
     "id": 180,
     "theme": "Vie en société",
     "notion": "soins",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "Dans quelles situations doit-on se rendre aux urgences de l'hôpital ?",
     "distractors": [
       "Pour tout problème de santé, même bénin, car c'est gratuit",
@@ -4418,6 +5106,9 @@
     "id": 181,
     "theme": "Vie en société",
     "notion": "soins",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "Quel est l’objectif des vaccinations obligatoires ?",
     "distractors": [
       "Remplacer les traitements médicaux classiques",
@@ -4441,6 +5132,11 @@
     "id": 182,
     "theme": "Vie en société",
     "notion": "soins",
+    "lists": [
+      "pluriannuelle",
+      "naturalisation"
+    ],
+    "natNumber": 232,
     "question": "À quoi sert la carte Vitale ?",
     "distractors": [
       "À retirer de l'argent dans les distributeurs bancaires",
@@ -4466,6 +5162,11 @@
     "id": 183,
     "theme": "Vie en société",
     "notion": "soins",
+    "lists": [
+      "pluriannuelle",
+      "naturalisation"
+    ],
+    "natNumber": 233,
     "question": "À quoi sert une mutuelle santé ?",
     "distractors": [
       "À remplacer entièrement la Sécurité sociale",
@@ -4491,6 +5192,11 @@
     "id": 184,
     "theme": "Vie en société",
     "notion": "autorite-parentale-ecole",
+    "lists": [
+      "pluriannuelle",
+      "naturalisation"
+    ],
+    "natNumber": 252,
     "question": "Jusqu'à quel âge l'école est-elle obligatoire ?",
     "distractors": [
       "14 ans",
@@ -4516,6 +5222,9 @@
     "id": 185,
     "theme": "Vie en société",
     "notion": "autorite-parentale-ecole",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "L'autorité parentale prévoit l'obligation :",
     "distractors": [
       "D'inscrire son enfant dans une école religieuse",
@@ -4540,6 +5249,9 @@
     "id": 186,
     "theme": "Vie en société",
     "notion": "autorite-parentale-ecole",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "Pour qui l'école est-elle obligatoire ?",
     "distractors": [
       "Uniquement pour les enfants de nationalité française",
@@ -4565,6 +5277,9 @@
     "id": 187,
     "theme": "Vie en société",
     "notion": "autorite-parentale-ecole",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "Quel diplôme obtient-on à la fin du lycée ?",
     "distractors": [
       "Le brevet des collèges (DNB)",
@@ -4590,6 +5305,9 @@
     "id": 188,
     "theme": "Vie en société",
     "notion": "autorite-parentale-ecole",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "Dans quels établissements scolaires vont les élèves après l'école élémentaire ?",
     "distractors": [
       "Directement au lycée professionnel dès 11 ans",
@@ -4615,6 +5333,9 @@
     "id": 189,
     "theme": "Vie en société",
     "notion": "autorite-parentale-ecole",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "Pour qui l'école est-elle obligatoire ? (question complémentaire)",
     "distractors": [
       "Seulement pour les enfants français de naissance",
@@ -4640,6 +5361,9 @@
     "id": 190,
     "theme": "Vie en société",
     "notion": "autorite-parentale-ecole",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "Un enfant inscrit à l'école :",
     "distractors": [
       "Peut s'absenter quand ses parents le décident, sans justification",
@@ -4664,6 +5388,9 @@
     "id": 191,
     "theme": "Vie en société",
     "notion": "autorite-parentale-ecole",
+    "lists": [
+      "pluriannuelle"
+    ],
     "question": "Les enfants qui ne parlent pas français :",
     "distractors": [
       "Ne peuvent pas être scolarisés avant de parler français",
@@ -4687,6 +5414,11 @@
     "id": 192,
     "theme": "Vie en société",
     "notion": "mise-en-situation",
+    "lists": [
+      "pluriannuelle",
+      "resident",
+      "naturalisation"
+    ],
     "question": "Votre voisin s'effondre dans le couloir de l'immeuble et ne répond plus. Quel numéro appelez-vous en priorité ?",
     "distractors": [
       "Le 17 (police nationale)",
@@ -4706,6 +5438,11 @@
     "id": 193,
     "theme": "Vie en société",
     "notion": "mise-en-situation",
+    "lists": [
+      "pluriannuelle",
+      "resident",
+      "naturalisation"
+    ],
     "question": "Un incendie se déclare dans votre appartement. Quelle est la bonne réaction ?",
     "distractors": [
       "Prendre l'ascenseur pour descendre le plus vite possible",
@@ -4725,6 +5462,11 @@
     "id": 194,
     "theme": "Vie en société",
     "notion": "mise-en-situation",
+    "lists": [
+      "pluriannuelle",
+      "resident",
+      "naturalisation"
+    ],
     "question": "Vous trouvez un portefeuille contenant de l'argent et des papiers d'identité dans la rue. Que devez-vous faire ?",
     "distractors": [
       "Le garder, vous l'avez trouvé légitimement",
@@ -4740,6 +5482,11 @@
     "id": 195,
     "theme": "Vie en société",
     "notion": "mise-en-situation",
+    "lists": [
+      "pluriannuelle",
+      "resident",
+      "naturalisation"
+    ],
     "question": "Vous travaillez dans un café. Un client porte un signe religieux ostentatoire. Quelle est la bonne attitude ?",
     "distractors": [
       "Refuser de le servir au nom de la laïcité",
@@ -4759,6 +5506,11 @@
     "id": 196,
     "theme": "Vie en société",
     "notion": "mise-en-situation",
+    "lists": [
+      "pluriannuelle",
+      "resident",
+      "naturalisation"
+    ],
     "question": "Votre enfant de 7 ans est malade et ne peut pas aller à l'école. Que devez-vous faire ?",
     "distractors": [
       "Ne rien signaler, l'école s'en rendra compte elle-même",
@@ -4778,6 +5530,11 @@
     "id": 197,
     "theme": "Vie en société",
     "notion": "mise-en-situation",
+    "lists": [
+      "pluriannuelle",
+      "resident",
+      "naturalisation"
+    ],
     "question": "Vous perdez votre emploi. Quelle est la première démarche à effectuer pour bénéficier d'une aide ?",
     "distractors": [
       "Contacter directement le ministère du Travail",
@@ -4797,6 +5554,11 @@
     "id": 198,
     "theme": "Vie en société",
     "notion": "mise-en-situation",
+    "lists": [
+      "pluriannuelle",
+      "resident",
+      "naturalisation"
+    ],
     "question": "Vous avez de la fièvre depuis deux jours. Vers qui vous tournez-vous en premier ?",
     "distractors": [
       "Directement aux urgences de l'hôpital",
@@ -4816,6 +5578,11 @@
     "id": 199,
     "theme": "Vie en société",
     "notion": "mise-en-situation",
+    "lists": [
+      "pluriannuelle",
+      "resident",
+      "naturalisation"
+    ],
     "question": "Vous venez d'avoir un enfant en France. Dans quel délai devez-vous le déclarer à la mairie ?",
     "distractors": [
       "Dans les 30 jours suivant la naissance",
@@ -4835,6 +5602,11 @@
     "id": 200,
     "theme": "Vie en société",
     "notion": "mise-en-situation",
+    "lists": [
+      "pluriannuelle",
+      "resident",
+      "naturalisation"
+    ],
     "question": "Votre employeur vous propose d'être payé en liquide sans déclaration. Qu'est-ce que vous risquez en acceptant ?",
     "distractors": [
       "Rien, le travail non déclaré est toléré pour les petits montants",
@@ -4854,6 +5626,11 @@
     "id": 201,
     "theme": "Vie en société",
     "notion": "mise-en-situation",
+    "lists": [
+      "pluriannuelle",
+      "resident",
+      "naturalisation"
+    ],
     "question": "Votre employeur ne vous verse pas votre salaire depuis deux mois. Que pouvez-vous faire ?",
     "distractors": [
       "Ne rien faire pour ne pas risquer de perdre votre emploi",
@@ -4873,6 +5650,11 @@
     "id": 202,
     "theme": "Vie en société",
     "notion": "mise-en-situation",
+    "lists": [
+      "pluriannuelle",
+      "resident",
+      "naturalisation"
+    ],
     "question": "Vous souhaitez vous marier avec votre partenaire en France. Quelle démarche est juridiquement obligatoire ?",
     "distractors": [
       "Se marier uniquement à l'église, c'est suffisant en France",
@@ -4892,6 +5674,11 @@
     "id": 203,
     "theme": "Vie en société",
     "notion": "mise-en-situation",
+    "lists": [
+      "pluriannuelle",
+      "resident",
+      "naturalisation"
+    ],
     "question": "Vous déposez vos sacs poubelle devant l'immeuble de votre voisin car votre conteneur est plein. Quel est le problème ?",
     "distractors": [
       "C'est toléré si c'est exceptionnel",
@@ -4911,6 +5698,11 @@
     "id": 204,
     "theme": "Vie en société",
     "notion": "mise-en-situation",
+    "lists": [
+      "pluriannuelle",
+      "resident",
+      "naturalisation"
+    ],
     "question": "Vous n'avez pas encore de médecin traitant en France. Que devez-vous faire ?",
     "distractors": [
       "Aller aux urgences à chaque besoin médical",
@@ -4930,6 +5722,11 @@
     "id": 205,
     "theme": "Vie en société",
     "notion": "mise-en-situation",
+    "lists": [
+      "pluriannuelle",
+      "resident",
+      "naturalisation"
+    ],
     "question": "Votre enfant vient d'avoir 3 ans. Êtes-vous obligé de l'inscrire à l'école ?",
     "distractors": [
       "Non, l'école maternelle est facultative jusqu'à 6 ans",
@@ -4949,6 +5746,11 @@
     "id": 206,
     "theme": "Vie en société",
     "notion": "mise-en-situation",
+    "lists": [
+      "pluriannuelle",
+      "resident",
+      "naturalisation"
+    ],
     "question": "Vous souhaitez créer votre propre entreprise en France. Êtes-vous autorisé à le faire en tant qu'étranger en situation régulière ?",
     "distractors": [
       "Non, seuls les citoyens français peuvent créer une entreprise",
@@ -4968,6 +5770,11 @@
     "id": 207,
     "theme": "Vie en société",
     "notion": "mise-en-situation",
+    "lists": [
+      "pluriannuelle",
+      "resident",
+      "naturalisation"
+    ],
     "question": "Vous êtes impliqué dans un accident de voiture sans blessé. Que devez-vous faire avec l'autre conducteur ?",
     "distractors": [
       "Partir si vous estimez ne pas être en tort",
@@ -4987,6 +5794,11 @@
     "id": 208,
     "theme": "Vie en société",
     "notion": "mise-en-situation",
+    "lists": [
+      "pluriannuelle",
+      "resident",
+      "naturalisation"
+    ],
     "question": "Vous souhaitez voter aux prochaines élections municipales. Quelle condition devez-vous remplir ?",
     "distractors": [
       "Il suffit de résider en France depuis plus de 5 ans",
@@ -5006,6 +5818,11 @@
     "id": 209,
     "theme": "Vie en société",
     "notion": "mise-en-situation",
+    "lists": [
+      "pluriannuelle",
+      "resident",
+      "naturalisation"
+    ],
     "question": "Votre propriétaire n'effectue pas les réparations nécessaires dans votre logement malgré vos demandes. Que pouvez-vous faire ?",
     "distractors": [
       "Cesser de payer votre loyer immédiatement",
@@ -5025,6 +5842,11 @@
     "id": 210,
     "theme": "Vie en société",
     "notion": "mise-en-situation",
+    "lists": [
+      "pluriannuelle",
+      "resident",
+      "naturalisation"
+    ],
     "question": "Vous entendez une dispute violente chez votre voisin avec des cris de douleur. Que faites-vous ?",
     "distractors": [
       "Ne pas intervenir, c'est une affaire privée",
@@ -5044,6 +5866,11 @@
     "id": 211,
     "theme": "Droits et devoirs",
     "notion": "mise-en-situation",
+    "lists": [
+      "pluriannuelle",
+      "resident",
+      "naturalisation"
+    ],
     "question": "Votre employeur vous demande de travailler 50 heures par semaine sans compensation. Quelle est votre situation ?",
     "distractors": [
       "L'employeur peut imposer les heures qu'il souhaite",
@@ -5063,6 +5890,11 @@
     "id": 212,
     "theme": "Droits et devoirs",
     "notion": "mise-en-situation",
+    "lists": [
+      "pluriannuelle",
+      "resident",
+      "naturalisation"
+    ],
     "question": "Vous êtes victime de violences conjugales. Que devez-vous faire ?",
     "distractors": [
       "Garder cela privé, c'est une affaire de famille",
@@ -5083,6 +5915,11 @@
     "id": 213,
     "theme": "Droits et devoirs",
     "notion": "mise-en-situation",
+    "lists": [
+      "pluriannuelle",
+      "resident",
+      "naturalisation"
+    ],
     "question": "Quelqu'un vous insulte publiquement en raison de votre origine. De quoi s'agit-il juridiquement ?",
     "distractors": [
       "D'un simple manque de politesse sans conséquence légale",
@@ -5102,6 +5939,11 @@
     "id": 214,
     "theme": "Droits et devoirs",
     "notion": "mise-en-situation",
+    "lists": [
+      "pluriannuelle",
+      "resident",
+      "naturalisation"
+    ],
     "question": "Vous recevez une convocation du tribunal. Que devez-vous faire ?",
     "distractors": [
       "L'ignorer si vous vous estimez innocent",
@@ -5121,6 +5963,11 @@
     "id": 215,
     "theme": "Droits et devoirs",
     "notion": "mise-en-situation",
+    "lists": [
+      "pluriannuelle",
+      "resident",
+      "naturalisation"
+    ],
     "question": "Un ami vous demande de signer un document officiel à sa place. Que risquez-vous ?",
     "distractors": [
       "Rien, c'est une simple entraide tolérée",
@@ -5140,6 +5987,11 @@
     "id": 216,
     "theme": "Droits et devoirs",
     "notion": "mise-en-situation",
+    "lists": [
+      "pluriannuelle",
+      "resident",
+      "naturalisation"
+    ],
     "question": "Votre enfant de 15 ans souhaite arrêter l'école pour travailler. Est-ce légalement possible ?",
     "distractors": [
       "Oui, si les parents donnent leur accord écrit",
@@ -5159,6 +6011,11 @@
     "id": 217,
     "theme": "Droits et devoirs",
     "notion": "mise-en-situation",
+    "lists": [
+      "pluriannuelle",
+      "resident",
+      "naturalisation"
+    ],
     "question": "Vous pensez qu'une décision administrative de la préfecture vous concernant est injuste. Que pouvez-vous faire ?",
     "distractors": [
       "Rien, les décisions administratives sont définitives et sans appel",
@@ -5178,6 +6035,11 @@
     "id": 218,
     "theme": "Droits et devoirs",
     "notion": "mise-en-situation",
+    "lists": [
+      "pluriannuelle",
+      "resident",
+      "naturalisation"
+    ],
     "question": "Vous êtes victime d'une discrimination à l'embauche. Vers quel organisme pouvez-vous vous tourner ?",
     "distractors": [
       "La préfecture de votre département",
@@ -5197,6 +6059,11 @@
     "id": 219,
     "theme": "Droits et devoirs",
     "notion": "mise-en-situation",
+    "lists": [
+      "pluriannuelle",
+      "resident",
+      "naturalisation"
+    ],
     "question": "Un propriétaire refuse de vous louer son appartement en raison de votre origine étrangère. Qu'est-ce que cela constitue ?",
     "distractors": [
       "Un droit du propriétaire de choisir librement son locataire",
@@ -5216,6 +6083,11 @@
     "id": 220,
     "theme": "Droits et devoirs",
     "notion": "mise-en-situation",
+    "lists": [
+      "pluriannuelle",
+      "resident",
+      "naturalisation"
+    ],
     "question": "La police vous contrôle dans la rue et vous demande de justifier de votre identité. Que devez-vous faire ?",
     "distractors": [
       "Refuser le contrôle car il est illégal sans motif précis",
@@ -5235,6 +6107,11 @@
     "id": 221,
     "theme": "Droits et devoirs",
     "notion": "mise-en-situation",
+    "lists": [
+      "pluriannuelle",
+      "resident",
+      "naturalisation"
+    ],
     "question": "Vous êtes convoqué comme juré d'assises. Pouvez-vous refuser ?",
     "distractors": [
       "Oui, c'est totalement facultatif",
@@ -5254,6 +6131,11 @@
     "id": 222,
     "theme": "Droits et devoirs",
     "notion": "mise-en-situation",
+    "lists": [
+      "pluriannuelle",
+      "resident",
+      "naturalisation"
+    ],
     "question": "Un commerçant refuse de vous rembourser un article défectueux acheté il y a une semaine. Que pouvez-vous faire ?",
     "distractors": [
       "Rien, un article défectueux n'est jamais repris",
@@ -5273,6 +6155,11 @@
     "id": 223,
     "theme": "Droits et devoirs",
     "notion": "mise-en-situation",
+    "lists": [
+      "pluriannuelle",
+      "resident",
+      "naturalisation"
+    ],
     "question": "Vous souhaitez organiser une manifestation dans la rue pour défendre une cause. Que devez-vous faire ?",
     "distractors": [
       "Rien, la liberté de manifester est absolue et sans formalité",
@@ -5292,6 +6179,11 @@
     "id": 224,
     "theme": "Droits et devoirs",
     "notion": "mise-en-situation",
+    "lists": [
+      "pluriannuelle",
+      "resident",
+      "naturalisation"
+    ],
     "question": "Un agent de la fonction publique vous demande un pot-de-vin pour accélérer votre dossier. Que faites-vous ?",
     "distractors": [
       "Accepter pour gagner du temps",
@@ -5311,6 +6203,11 @@
     "id": 225,
     "theme": "Droits et devoirs",
     "notion": "mise-en-situation",
+    "lists": [
+      "pluriannuelle",
+      "resident",
+      "naturalisation"
+    ],
     "question": "Vous louez une voiture et causez un accident. L'assurance du loueur couvre-t-elle automatiquement les dommages ?",
     "distractors": [
       "Oui, totalement, l'assurance du loueur couvre tout sans exception",
@@ -5330,6 +6227,11 @@
     "id": 226,
     "theme": "Droits et devoirs",
     "notion": "mise-en-situation",
+    "lists": [
+      "pluriannuelle",
+      "resident",
+      "naturalisation"
+    ],
     "question": "Vous constatez qu'une entreprise déverse des déchets illégalement dans une rivière. Que pouvez-vous faire ?",
     "distractors": [
       "Rien, cela concerne uniquement les entreprises et l'État",
@@ -5349,6 +6251,11 @@
     "id": 227,
     "theme": "Principes et valeurs de la République",
     "notion": "mise-en-situation",
+    "lists": [
+      "pluriannuelle",
+      "resident",
+      "naturalisation"
+    ],
     "question": "Dans votre entreprise, un responsable impose des horaires différents aux femmes et aux hommes pour les mêmes postes. Que représente cette situation ?",
     "distractors": [
       "Une organisation interne légale et à la discrétion de l'employeur",
@@ -5368,6 +6275,11 @@
     "id": 228,
     "theme": "Principes et valeurs de la République",
     "notion": "mise-en-situation",
+    "lists": [
+      "pluriannuelle",
+      "resident",
+      "naturalisation"
+    ],
     "question": "Votre voisin vous dit que certains métiers doivent être réservés aux hommes. Qu'en est-il en France ?",
     "distractors": [
       "Vrai, certains métiers physiques restent légalement réservés aux hommes",
@@ -5387,6 +6299,11 @@
     "id": 229,
     "theme": "Principes et valeurs de la République",
     "notion": "mise-en-situation",
+    "lists": [
+      "pluriannuelle",
+      "resident",
+      "naturalisation"
+    ],
     "question": "Un enseignant du public porte un signe religieux ostensible en classe. Est-ce autorisé ?",
     "distractors": [
       "Oui, la liberté religieuse s'applique à tous",
@@ -5406,6 +6323,11 @@
     "id": 230,
     "theme": "Principes et valeurs de la République",
     "notion": "mise-en-situation",
+    "lists": [
+      "pluriannuelle",
+      "resident",
+      "naturalisation"
+    ],
     "question": "Des parents d'élèves refusent que leur enfant suive certains cours d'éducation civique pour des raisons religieuses. L'école peut-elle accepter ?",
     "distractors": [
       "Oui, si les parents en font la demande écrite",
@@ -5425,6 +6347,11 @@
     "id": 231,
     "theme": "Principes et valeurs de la République",
     "notion": "mise-en-situation",
+    "lists": [
+      "pluriannuelle",
+      "resident",
+      "naturalisation"
+    ],
     "question": "Lors d'une réunion publique, un orateur tient des propos appelant à la haine contre un groupe religieux. Est-ce protégé par la liberté d'expression ?",
     "distractors": [
       "Oui, la liberté d'expression est absolue dans les réunions publiques",
@@ -5444,6 +6371,11 @@
     "id": 232,
     "theme": "Principes et valeurs de la République",
     "notion": "mise-en-situation",
+    "lists": [
+      "pluriannuelle",
+      "resident",
+      "naturalisation"
+    ],
     "question": "Votre enfant souhaite changer de religion. Quel est son droit en France ?",
     "distractors": [
       "Il doit attendre sa majorité (18 ans) pour en avoir le droit",
@@ -5463,6 +6395,11 @@
     "id": 233,
     "theme": "Principes et valeurs de la République",
     "notion": "mise-en-situation",
+    "lists": [
+      "pluriannuelle",
+      "resident",
+      "naturalisation"
+    ],
     "question": "Un parti politique souhaite réserver ses candidatures aux élections aux personnes d'une seule communauté ethnique. Est-ce légal ?",
     "distractors": [
       "Oui, les partis politiques sont libres de choisir leurs candidats",
@@ -5482,6 +6419,11 @@
     "id": 234,
     "theme": "Principes et valeurs de la République",
     "notion": "mise-en-situation",
+    "lists": [
+      "pluriannuelle",
+      "resident",
+      "naturalisation"
+    ],
     "question": "Quelqu'un vous dit que la France est une République fédérale. Est-ce exact ?",
     "distractors": [
       "Oui, les régions ont une large autonomie législative",
@@ -5501,6 +6443,11 @@
     "id": 235,
     "theme": "Principes et valeurs de la République",
     "notion": "mise-en-situation",
+    "lists": [
+      "pluriannuelle",
+      "resident",
+      "naturalisation"
+    ],
     "question": "Votre employeur vous remet un contrat de travail et un règlement intérieur rédigés uniquement en anglais. Est-ce légal ?",
     "distractors": [
       "Oui, l'employeur est libre de choisir la langue de ses documents",
@@ -5520,6 +6467,11 @@
     "id": 236,
     "theme": "Principes et valeurs de la République",
     "notion": "mise-en-situation",
+    "lists": [
+      "pluriannuelle",
+      "resident",
+      "naturalisation"
+    ],
     "question": "Un groupe de citoyens souhaite créer une association pour défendre une cause. Combien de personnes minimum sont nécessaires ?",
     "distractors": [
       "Il faut au minimum 10 membres fondateurs",
@@ -5539,6 +6491,11 @@
     "id": 237,
     "theme": "Principes et valeurs de la République",
     "notion": "mise-en-situation",
+    "lists": [
+      "pluriannuelle",
+      "resident",
+      "naturalisation"
+    ],
     "question": "Dans votre quartier, les habitants souhaitent s'organiser pour améliorer leur cadre de vie. Quel outil démocratique peuvent-ils utiliser ?",
     "distractors": [
       "Organiser un référendum local indépendant",
@@ -5558,6 +6515,11 @@
     "id": 238,
     "theme": "Principes et valeurs de la République",
     "notion": "mise-en-situation",
+    "lists": [
+      "pluriannuelle",
+      "resident",
+      "naturalisation"
+    ],
     "question": "Un candidat à une élection vous propose de l'argent pour voter pour lui. Que devez-vous faire ?",
     "distractors": [
       "Accepter, le vote reste secret et personnel",
@@ -5577,6 +6539,11 @@
     "id": 239,
     "theme": "Principes et valeurs de la République",
     "notion": "mise-en-situation",
+    "lists": [
+      "pluriannuelle",
+      "resident",
+      "naturalisation"
+    ],
     "question": "Vous souhaitez accrocher le drapeau français à votre balcon à l'occasion du 14 juillet. Est-ce autorisé ?",
     "distractors": [
       "Non, seuls les bâtiments officiels ont le droit d'afficher le drapeau national",
@@ -5596,6 +6563,11 @@
     "id": 240,
     "theme": "Principes et valeurs de la République",
     "notion": "mise-en-situation",
+    "lists": [
+      "pluriannuelle",
+      "resident",
+      "naturalisation"
+    ],
     "question": "Votre commune organise un conseil municipal. Des habitants souhaitent y assister. Est-ce possible ?",
     "distractors": [
       "Non, seuls les élus et leurs collaborateurs peuvent y assister",
@@ -5615,6 +6587,11 @@
     "id": 241,
     "theme": "Système institutionnel et politique",
     "notion": "mise-en-situation",
+    "lists": [
+      "pluriannuelle",
+      "resident",
+      "naturalisation"
+    ],
     "question": "Vous souhaitez contester une loi votée par le Parlement car vous la trouvez inconstitutionnelle. Quel recours existe ?",
     "distractors": [
       "Adresser une pétition directement au président de la République",
@@ -5634,6 +6611,11 @@
     "id": 242,
     "theme": "Système institutionnel et politique",
     "notion": "mise-en-situation",
+    "lists": [
+      "pluriannuelle",
+      "resident",
+      "naturalisation"
+    ],
     "question": "Vous entendez parler d'une motion de censure à l'Assemblée nationale. Qu'est-ce que cela signifie ?",
     "distractors": [
       "C'est un vote pour destituer le président de la République",
@@ -5653,6 +6635,11 @@
     "id": 243,
     "theme": "Système institutionnel et politique",
     "notion": "mise-en-situation",
+    "lists": [
+      "pluriannuelle",
+      "resident",
+      "naturalisation"
+    ],
     "question": "Vous êtes citoyen français vivant à l'étranger. Pouvez-vous voter aux élections présidentielles ?",
     "distractors": [
       "Non, il faut résider en France pour voter",
@@ -5672,6 +6659,11 @@
     "id": 244,
     "theme": "Système institutionnel et politique",
     "notion": "mise-en-situation",
+    "lists": [
+      "pluriannuelle",
+      "resident",
+      "naturalisation"
+    ],
     "question": "Votre député est accusé d'avoir commis un crime. Peut-il être poursuivi pénalement ?",
     "distractors": [
       "Non, les députés bénéficient d'une immunité totale",
@@ -5691,6 +6683,11 @@
     "id": 245,
     "theme": "Système institutionnel et politique",
     "notion": "mise-en-situation",
+    "lists": [
+      "pluriannuelle",
+      "resident",
+      "naturalisation"
+    ],
     "question": "Vous entendez parler d'une dissolution de l'Assemblée nationale. Qui a ce pouvoir ?",
     "distractors": [
       "Le Premier ministre, avec l'accord du Sénat",
@@ -5710,6 +6707,11 @@
     "id": 246,
     "theme": "Système institutionnel et politique",
     "notion": "mise-en-situation",
+    "lists": [
+      "pluriannuelle",
+      "resident",
+      "naturalisation"
+    ],
     "question": "Vous entendez qu'une loi a été votée « en première lecture » par l'Assemblée nationale. Que se passe-t-il ensuite ?",
     "distractors": [
       "La loi entre immédiatement en vigueur",
@@ -5729,6 +6731,11 @@
     "id": 247,
     "theme": "Système institutionnel et politique",
     "notion": "mise-en-situation",
+    "lists": [
+      "pluriannuelle",
+      "resident",
+      "naturalisation"
+    ],
     "question": "Votre commune manque d'un service public essentiel. Vers qui les habitants peuvent-ils se tourner en premier ?",
     "distractors": [
       "Directement le président de la République",
@@ -5748,6 +6755,11 @@
     "id": 248,
     "theme": "Système institutionnel et politique",
     "notion": "mise-en-situation",
+    "lists": [
+      "pluriannuelle",
+      "resident",
+      "naturalisation"
+    ],
     "question": "Votre région souhaite adopter une loi propre à son territoire, différente de la loi nationale. Est-ce possible ?",
     "distractors": [
       "Oui, les régions ont une large autonomie législative depuis 2003",
@@ -5767,6 +6779,11 @@
     "id": 249,
     "theme": "Système institutionnel et politique",
     "notion": "mise-en-situation",
+    "lists": [
+      "pluriannuelle",
+      "resident",
+      "naturalisation"
+    ],
     "question": "Vous entendez parler du « 49-3 ». À quoi cela correspond-il ?",
     "distractors": [
       "Un article autorisant le président à gouverner par décrets",
@@ -5786,6 +6803,11 @@
     "id": 250,
     "theme": "Système institutionnel et politique",
     "notion": "mise-en-situation",
+    "lists": [
+      "pluriannuelle",
+      "resident",
+      "naturalisation"
+    ],
     "question": "L'Assemblée nationale et le Sénat n'arrivent pas à se mettre d'accord sur un texte de loi. Qui a le dernier mot ?",
     "distractors": [
       "Le Sénat, car il représente les collectivités territoriales",
@@ -5805,6 +6827,11 @@
     "id": 251,
     "theme": "Histoire, géographie et culture",
     "notion": "mise-en-situation",
+    "lists": [
+      "pluriannuelle",
+      "resident",
+      "naturalisation"
+    ],
     "question": "Vous visitez une mairie dont la façade porte l'inscription « Liberté, Égalité, Fraternité ». Depuis quand cette devise est-elle officiellement celle de la République française ?",
     "distractors": [
       "Depuis 1945, à la Libération",
@@ -5824,6 +6851,11 @@
     "id": 252,
     "theme": "Histoire, géographie et culture",
     "notion": "mise-en-situation",
+    "lists": [
+      "pluriannuelle",
+      "resident",
+      "naturalisation"
+    ],
     "question": "Lors d'une visite scolaire, un guide explique que la Déclaration des droits de l'homme et du citoyen a été rédigée pendant la Révolution française. En quelle année ?",
     "distractors": [
       "En 1804, lors du sacre de Napoléon",
@@ -5843,6 +6875,11 @@
     "id": 253,
     "theme": "Histoire, géographie et culture",
     "notion": "mise-en-situation",
+    "lists": [
+      "pluriannuelle",
+      "resident",
+      "naturalisation"
+    ],
     "question": "Un ami vous dit que la Tour Eiffel a été construite pour une exposition universelle. Laquelle ?",
     "distractors": [
       "L'Exposition universelle de 1900, pour célébrer le nouveau siècle",
@@ -5862,6 +6899,11 @@
     "id": 254,
     "theme": "Histoire, géographie et culture",
     "notion": "mise-en-situation",
+    "lists": [
+      "pluriannuelle",
+      "resident",
+      "naturalisation"
+    ],
     "question": "Vous apprenez qu'un fleuve traverse Paris. Lequel est-ce ?",
     "distractors": [
       "La Loire",
@@ -5881,6 +6923,11 @@
     "id": 255,
     "theme": "Histoire, géographie et culture",
     "notion": "mise-en-situation",
+    "lists": [
+      "pluriannuelle",
+      "resident",
+      "naturalisation"
+    ],
     "question": "Un élève demande quel personnage historique a fondé la Ve République française. Quelle est la bonne réponse ?",
     "distractors": [
       "Georges Pompidou",
@@ -5900,6 +6947,11 @@
     "id": 256,
     "theme": "Histoire, géographie et culture",
     "notion": "mise-en-situation",
+    "lists": [
+      "pluriannuelle",
+      "resident",
+      "naturalisation"
+    ],
     "question": "Vous passez vos vacances à Nice, sur la Côte d'Azur. Quelle mer borde cette côte ?",
     "distractors": [
       "L'océan Atlantique",
@@ -5919,6 +6971,11 @@
     "id": 257,
     "theme": "Histoire, géographie et culture",
     "notion": "mise-en-situation",
+    "lists": [
+      "pluriannuelle",
+      "resident",
+      "naturalisation"
+    ],
     "question": "Votre enfant vous demande pourquoi le 8 mai est un jour férié en France. Que lui répondez-vous ?",
     "distractors": [
       "Il commémore la fin de la Première Guerre mondiale en 1918",
@@ -5938,6 +6995,11 @@
     "id": 258,
     "theme": "Histoire, géographie et culture",
     "notion": "mise-en-situation",
+    "lists": [
+      "pluriannuelle",
+      "resident",
+      "naturalisation"
+    ],
     "question": "Un touriste vous demande quelle est la plus haute montagne de France. Que lui répondez-vous ?",
     "distractors": [
       "Le Mont-Ventoux, en Provence",
@@ -5953,6 +7015,11 @@
     "id": 259,
     "theme": "Histoire, géographie et culture",
     "notion": "mise-en-situation",
+    "lists": [
+      "pluriannuelle",
+      "resident",
+      "naturalisation"
+    ],
     "question": "Votre collègue vous dit que Molière était un poète romantique du XIXe siècle. Est-ce exact ?",
     "distractors": [
       "Oui, Molière est contemporain de Victor Hugo",
@@ -5972,6 +7039,11 @@
     "id": 260,
     "theme": "Histoire, géographie et culture",
     "notion": "mise-en-situation",
+    "lists": [
+      "pluriannuelle",
+      "resident",
+      "naturalisation"
+    ],
     "question": "Vous apprenez qu'une région française est aussi une île. Laquelle ?",
     "distractors": [
       "La Bretagne",
@@ -5991,6 +7063,11 @@
     "id": 261,
     "theme": "Histoire, géographie et culture",
     "notion": "mise-en-situation",
+    "lists": [
+      "pluriannuelle",
+      "resident",
+      "naturalisation"
+    ],
     "question": "Un ami affirme que l'esclavage a été aboli une seule fois en France. Est-ce exact ?",
     "distractors": [
       "Oui, il a été aboli définitivement en 1794 lors de la Révolution",
@@ -6010,6 +7087,11 @@
     "id": 262,
     "theme": "Histoire, géographie et culture",
     "notion": "mise-en-situation",
+    "lists": [
+      "pluriannuelle",
+      "resident",
+      "naturalisation"
+    ],
     "question": "Vous passez devant un bâtiment portant l'inscription « Liberté, Égalité, Fraternité » sur sa façade. De quel type de bâtiment s'agit-il probablement ?",
     "distractors": [
       "Un bâtiment religieux (église, mosquée, synagogue)",
@@ -6029,6 +7111,11 @@
     "id": 263,
     "theme": "Histoire, géographie et culture",
     "notion": "mise-en-situation",
+    "lists": [
+      "pluriannuelle",
+      "resident",
+      "naturalisation"
+    ],
     "question": "Votre enfant vous demande qui était Joséphine Baker. Comment lui répondez-vous ?",
     "distractors": [
       "Une romancière française du XIXe siècle",
@@ -6048,6 +7135,11 @@
     "id": 264,
     "theme": "Histoire, géographie et culture",
     "notion": "mise-en-situation",
+    "lists": [
+      "pluriannuelle",
+      "resident",
+      "naturalisation"
+    ],
     "question": "Vous visitez le Louvre à Paris. Qu'est-ce que c'est principalement aujourd'hui ?",
     "distractors": [
       "La résidence officielle du président de la République",
@@ -6067,6 +7159,11 @@
     "id": 265,
     "theme": "Histoire, géographie et culture",
     "notion": "mise-en-situation",
+    "lists": [
+      "pluriannuelle",
+      "resident",
+      "naturalisation"
+    ],
     "question": "Votre enfant apprend à l'école que Jules Ferry a rendu l'école gratuite et laïque. À quelle période de l'histoire de France cela correspond-il ?",
     "distractors": [
       "La Révolution française, en 1789",
@@ -6086,6 +7183,11 @@
     "id": 266,
     "theme": "Histoire, géographie et culture",
     "notion": "mise-en-situation",
+    "lists": [
+      "pluriannuelle",
+      "resident",
+      "naturalisation"
+    ],
     "question": "On vous parle de la Shoah dans un contexte historique. À quoi ce terme fait-il référence ?",
     "distractors": [
       "À la résistance française contre l'occupant allemand",
@@ -6105,6 +7207,11 @@
     "id": 267,
     "theme": "Vie en société",
     "notion": "mise-en-situation",
+    "lists": [
+      "pluriannuelle",
+      "resident",
+      "naturalisation"
+    ],
     "question": "Vous êtes salarié et votre employeur souhaite baisser votre salaire ou changer votre durée de travail. Peut-il le faire sans votre accord ?",
     "distractors": [
       "Oui, l'employeur peut modifier le contrat librement",
@@ -6124,6 +7231,11 @@
     "id": 268,
     "theme": "Vie en société",
     "notion": "mise-en-situation",
+    "lists": [
+      "pluriannuelle",
+      "resident",
+      "naturalisation"
+    ],
     "question": "Vous avez un litige avec votre voisin concernant une clôture. Quelle est la première démarche recommandée avant de saisir un tribunal ?",
     "distractors": [
       "Saisir directement le tribunal judiciaire",
@@ -6143,6 +7255,11 @@
     "id": 269,
     "theme": "Vie en société",
     "notion": "mise-en-situation",
+    "lists": [
+      "pluriannuelle",
+      "resident",
+      "naturalisation"
+    ],
     "question": "Vous recevez un courrier d'une administration vous réclamant un document que vous avez déjà envoyé. Que pouvez-vous invoquer ?",
     "distractors": [
       "Rien, il faut renvoyer le document à chaque demande",
@@ -6162,6 +7279,11 @@
     "id": 270,
     "theme": "Vie en société",
     "notion": "mise-en-situation",
+    "lists": [
+      "pluriannuelle",
+      "resident",
+      "naturalisation"
+    ],
     "question": "Vous perdez votre carte Vitale. Que devez-vous faire ?",
     "distractors": [
       "Aller à la mairie pour en obtenir une nouvelle",
@@ -6181,6 +7303,11 @@
     "id": 271,
     "theme": "Vie en société",
     "notion": "mise-en-situation",
+    "lists": [
+      "pluriannuelle",
+      "resident",
+      "naturalisation"
+    ],
     "question": "Vous souhaitez faire garder votre enfant de 2 ans. Quels modes de garde sont possibles en France ?",
     "distractors": [
       "Uniquement les crèches municipales gérées par la mairie",
@@ -6200,6 +7327,11 @@
     "id": 272,
     "theme": "Vie en société",
     "notion": "mise-en-situation",
+    "lists": [
+      "pluriannuelle",
+      "resident",
+      "naturalisation"
+    ],
     "question": "Vous devez déclarer vos revenus aux impôts mais vous ne savez pas comment faire. Quel service peut vous aider gratuitement ?",
     "distractors": [
       "Uniquement un comptable agréé, payant",
@@ -6219,6 +7351,11 @@
     "id": 273,
     "theme": "Droits et devoirs",
     "notion": "mise-en-situation",
+    "lists": [
+      "pluriannuelle",
+      "resident",
+      "naturalisation"
+    ],
     "question": "Vous avez été licencié. Votre employeur doit vous remettre des documents de fin de contrat. Lequel vous permet de faire valoir vos droits aux allocations chômage ?",
     "distractors": [
       "Le bulletin de salaire du dernier mois uniquement",
@@ -6238,6 +7375,11 @@
     "id": 274,
     "theme": "Droits et devoirs",
     "notion": "mise-en-situation",
+    "lists": [
+      "pluriannuelle",
+      "resident",
+      "naturalisation"
+    ],
     "question": "Votre enfant de 12 ans commet un délit. Peut-il être poursuivi pénalement ?",
     "distractors": [
       "Non, la responsabilité pénale commence à 18 ans",
@@ -6257,6 +7399,11 @@
     "id": 275,
     "theme": "Droits et devoirs",
     "notion": "mise-en-situation",
+    "lists": [
+      "pluriannuelle",
+      "resident",
+      "naturalisation"
+    ],
     "question": "Vous publiez sur les réseaux sociaux une photo de quelqu'un sans son accord. Que risquez-vous ?",
     "distractors": [
       "Rien, tout ce qui est public sur Internet est librement partageable",
@@ -6276,6 +7423,11 @@
     "id": 276,
     "theme": "Droits et devoirs",
     "notion": "mise-en-situation",
+    "lists": [
+      "pluriannuelle",
+      "resident",
+      "naturalisation"
+    ],
     "question": "Un commerçant refuse d'accepter vos pièces de monnaie en euros comme paiement. A-t-il le droit ?",
     "distractors": [
       "Oui, les commerçants peuvent refuser les pièces de monnaie",
@@ -6295,6 +7447,11 @@
     "id": 277,
     "theme": "Droits et devoirs",
     "notion": "mise-en-situation",
+    "lists": [
+      "pluriannuelle",
+      "resident",
+      "naturalisation"
+    ],
     "question": "Vous découvrez par hasard une information confidentielle de votre employeur. Pouvez-vous la divulguer à la presse ?",
     "distractors": [
       "Oui, la liberté d'expression prime toujours sur le secret professionnel",
@@ -6315,6 +7472,11 @@
     "id": 278,
     "theme": "Droits et devoirs",
     "notion": "mise-en-situation",
+    "lists": [
+      "pluriannuelle",
+      "resident",
+      "naturalisation"
+    ],
     "question": "Votre voisin fait des travaux bruyants à 23h en semaine. Que pouvez-vous faire ?",
     "distractors": [
       "Rien, les travaux sont autorisés à toute heure chez un particulier",
@@ -6334,6 +7496,11 @@
     "id": 279,
     "theme": "Droits et devoirs",
     "notion": "mise-en-situation",
+    "lists": [
+      "pluriannuelle",
+      "resident",
+      "naturalisation"
+    ],
     "question": "Vous êtes arrêté en état d'ivresse au volant. Quelles sont les conséquences possibles ?",
     "distractors": [
       "Uniquement une amende si c'est la première fois",
@@ -6353,6 +7520,11 @@
     "id": 280,
     "theme": "Droits et devoirs",
     "notion": "mise-en-situation",
+    "lists": [
+      "pluriannuelle",
+      "resident",
+      "naturalisation"
+    ],
     "question": "Vous recevez un email vous demandant vos coordonnées bancaires au nom d'un organisme officiel. Que faites-vous ?",
     "distractors": [
       "Répondre si l'email semble officiel et professionnel",
@@ -6372,6 +7544,11 @@
     "id": 281,
     "theme": "Vie en société",
     "notion": "mise-en-situation",
+    "lists": [
+      "pluriannuelle",
+      "resident",
+      "naturalisation"
+    ],
     "question": "Vous êtes à la caisse d'un supermarché et la personne derrière vous n'a qu'un seul article. Quelle est l'attitude civique habituelle en France ?",
     "distractors": [
       "Ne rien faire, chacun attend son tour sans exception",
@@ -6387,6 +7564,11 @@
     "id": 282,
     "theme": "Vie en société",
     "notion": "mise-en-situation",
+    "lists": [
+      "pluriannuelle",
+      "resident",
+      "naturalisation"
+    ],
     "question": "Votre enfant est victime de harcèlement à l'école. Que devez-vous faire ?",
     "distractors": [
       "Ignorer la situation, les enfants règlent leurs conflits seuls",
@@ -6406,6 +7588,11 @@
     "id": 283,
     "theme": "Vie en société",
     "notion": "mise-en-situation",
+    "lists": [
+      "pluriannuelle",
+      "resident",
+      "naturalisation"
+    ],
     "question": "À l'école, votre enfant passe une visite médicale obligatoire avec un médecin de l'Éducation nationale. Au cours de quelle année de sa vie a-t-elle lieu ?",
     "distractors": [
       "Au cours de sa 9e année (CE2 ou CM1)",
@@ -6425,6 +7612,11 @@
     "id": 284,
     "theme": "Vie en société",
     "notion": "mise-en-situation",
+    "lists": [
+      "pluriannuelle",
+      "resident",
+      "naturalisation"
+    ],
     "question": "Vous êtes locataire et votre propriétaire entre dans votre logement sans votre permission. Quels sont vos droits ?",
     "distractors": [
       "Le propriétaire peut entrer librement, il est propriétaire du bien",
@@ -6444,6 +7636,11 @@
     "id": 285,
     "theme": "Droits et devoirs",
     "notion": "mise-en-situation",
+    "lists": [
+      "pluriannuelle",
+      "resident",
+      "naturalisation"
+    ],
     "question": "Vous êtes salarié et vous constatez une irrégularité grave dans votre entreprise (fraude, danger). Que pouvez-vous faire sans risquer de représailles légales ?",
     "distractors": [
       "Rien, le devoir de loyauté envers l'employeur prime toujours",
@@ -6464,6 +7661,11 @@
     "id": 286,
     "theme": "Principes et valeurs de la République",
     "notion": "mise-en-situation",
+    "lists": [
+      "pluriannuelle",
+      "resident",
+      "naturalisation"
+    ],
     "question": "Dans un service public, un agent vous refuse l'accès à un dossier vous concernant. Avez-vous un recours ?",
     "distractors": [
       "Non, l'administration est souveraine dans ses décisions internes",
@@ -6483,6 +7685,11 @@
     "id": 287,
     "theme": "Principes et valeurs de la République",
     "notion": "mise-en-situation",
+    "lists": [
+      "pluriannuelle",
+      "resident",
+      "naturalisation"
+    ],
     "question": "Votre employeur souhaite connaître vos opinions politiques lors d'un entretien d'embauche. A-t-il le droit de vous poser cette question ?",
     "distractors": [
       "Oui, l'employeur a le droit de connaître les valeurs de ses futurs employés",
@@ -6502,6 +7709,11 @@
     "id": 288,
     "theme": "Système institutionnel et politique",
     "notion": "mise-en-situation",
+    "lists": [
+      "pluriannuelle",
+      "resident",
+      "naturalisation"
+    ],
     "question": "Vous entendez parler du Conseil économique, social et environnemental (CESE). Quel est son rôle ?",
     "distractors": [
       "C'est la troisième chambre du Parlement qui vote les lois sociales",
@@ -6521,6 +7733,11 @@
     "id": 289,
     "theme": "Vie en société",
     "notion": "mise-en-situation",
+    "lists": [
+      "pluriannuelle",
+      "resident",
+      "naturalisation"
+    ],
     "question": "Vous êtes étranger en situation régulière et votre enfant est scolarisé en France. Peut-il bénéficier de la cantine scolaire ?",
     "distractors": [
       "Non, la cantine est réservée aux enfants de nationalité française",
@@ -6540,6 +7757,11 @@
     "id": 290,
     "theme": "Droits et devoirs",
     "notion": "mise-en-situation",
+    "lists": [
+      "pluriannuelle",
+      "resident",
+      "naturalisation"
+    ],
     "question": "Vous êtes témoin d'un acte raciste dans le bus. Quelle est la bonne attitude ?",
     "distractors": [
       "Ne pas intervenir pour ne pas aggraver la situation",
@@ -6559,6 +7781,11 @@
     "id": 291,
     "theme": "Vie en société",
     "notion": "mise-en-situation",
+    "lists": [
+      "pluriannuelle",
+      "resident",
+      "naturalisation"
+    ],
     "question": "Vous souhaitez mieux connaître l'histoire, la culture et les valeurs de la République. Quel document officiel du ministère de l'Intérieur les présente ?",
     "distractors": [
       "Le livret de famille",

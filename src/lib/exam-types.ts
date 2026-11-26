@@ -1,3 +1,5 @@
+import { titleOf, type TitleKey } from '@/lib/target-title'
+
 export interface AnswerRecord {
   questionId: number
   chosen: string | null  // null si le timer a expiré sans réponse
@@ -10,6 +12,8 @@ export interface ExamRecord {
   score: number
   total: number
   answers: AnswerRecord[]
+  /** Title the exam was taken for; missing on exams stored before titles existed */
+  title?: TitleKey
 }
 
 /** Link to the official page that justifies an answer */
@@ -34,6 +38,8 @@ export interface ExamInProgress {
   answers: AnswerRecord[]
   timeLeft: number
   startedAt: string
+  /** Title the exam is taken for; missing on progress stored before titles existed */
+  title?: TitleKey
 }
 
 export const EXAM_PROGRESS_KEY = 'exam-in-progress'
@@ -110,6 +116,14 @@ export function loadProgress(): ExamInProgress | null {
   } catch {
     return null
   }
+}
+
+// Saved progress of the given title: progress stored without a title, or with an
+// unknown one, belongs to the multi-year permit. Progress of another title is not
+// offered (and left in storage).
+export function loadProgressForTitle(title: TitleKey): ExamInProgress | null {
+  const progress = loadProgress()
+  return progress && titleOf(progress) === title ? progress : null
 }
 
 // Index of the question an exam resumes on: a save made during the correction

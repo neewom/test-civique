@@ -2,11 +2,11 @@ import { useState, type ReactNode } from 'react'
 import { Link, Navigate, useNavigate } from 'react-router-dom'
 import { ArrowRight, Check, ChevronDown, ChevronRight, MonitorSmartphone } from 'lucide-react'
 import { EXAM_SIZE, isPassed, passThreshold } from '@/lib/exam'
-import { loadProgress, clearProgress, resumeIndex } from '@/lib/exam-types'
+import { loadProgress, loadProgressForTitle, clearProgress, resumeIndex } from '@/lib/exam-types'
 import type { ExamInProgress } from '@/lib/exam-types'
-import { loadHistory, type HistoryEntry } from '@/lib/history'
+import { loadHistory, loadHistoryForTitle, type HistoryEntry } from '@/lib/history'
 import { passedInARow, READY_GOAL } from '@/lib/readiness'
-import { loadTargetTitle, TARGET_TITLE_LABELS } from '@/lib/target-title'
+import { DEFAULT_TITLE, loadTargetTitle, TARGET_TITLE_LABELS } from '@/lib/target-title'
 import { BrandLogo } from '@/components/BrandLogo'
 import { ThemeSwitch } from '@/components/ThemeSwitch'
 import { OrganicBackground } from '@/components/OrganicBackground'
@@ -150,18 +150,21 @@ export default function Home() {
   useDocumentTitle('Accueil')
   const navigate = useNavigate()
 
-  const [history] = useState(() => loadHistory())
-  const [inProgress, setInProgress] = useState<ExamInProgress | null>(() => loadProgress())
   // First launch: no title chosen yet. Someone who already has exams (history or an
   // exam in progress, from before the title screen existed) keeps the multi-year
   // permit, the only title available, so the resume stays one tap away.
   const [storedTitle] = useState(() => loadTargetTitle())
+  const targetTitle = storedTitle ?? DEFAULT_TITLE
+  // Counter, last exams and resume: exams of the chosen title only
+  const [history] = useState(() => loadHistoryForTitle(targetTitle))
+  const [inProgress, setInProgress] = useState<ExamInProgress | null>(() => loadProgressForTitle(targetTitle))
   const wide = useWideScreen()
-  const [mustChooseTitle] = useState(() => storedTitle === null && history.length === 0 && inProgress === null)
+  const [mustChooseTitle] = useState(
+    () => storedTitle === null && loadHistory().length === 0 && loadProgress() === null,
+  )
 
   if (mustChooseTitle) return <Navigate to="/titre" replace state={{ firstLaunch: true }} />
 
-  const targetTitle = storedTitle ?? 'pluriannuelle'
   const streak = passedInARow(history)
   const recent = history.slice(-3).reverse()
 

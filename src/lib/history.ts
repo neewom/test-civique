@@ -1,13 +1,18 @@
 import type { AnswerRecord, ExamRecord } from '@/lib/exam-types'
+import { isTitleKey, titleOf, type TitleKey } from '@/lib/target-title'
 
 // Single place that reads and writes the exam history in localStorage.
 export const HISTORY_KEY = 'quiz-history'
 
 // Records saved before the detail page existed have neither `id` nor `answers`:
 // they stay listed on the home page, without a link to a detail view.
-export type HistoryEntry = Omit<ExamRecord, 'id' | 'answers'> & {
+// Records saved before titles existed have no `title`: they belong to the multi-year
+// permit (`titleOf`). The stored `title` is never checked nor rewritten, so an unknown
+// value stays as is and counts for the multi-year permit too.
+export type HistoryEntry = Omit<ExamRecord, 'id' | 'answers' | 'title'> & {
   id?: string
   answers?: AnswerRecord[]
+  title?: unknown
 }
 
 function isFiniteNumber(value: unknown): value is number {
@@ -50,11 +55,18 @@ export function loadHistory(): HistoryEntry[] {
   }
 }
 
+// Stored history of the given title, oldest first.
+export function loadHistoryForTitle(title: TitleKey): HistoryEntry[] {
+  return loadHistory().filter((entry) => titleOf(entry) === title)
+}
+
 // Exam with its answers, for the detail page; null when missing or incomplete.
 export function findExamRecord(id: string): ExamRecord | null {
   const entry = loadHistory().find((e) => e.id === id)
   if (!entry || entry.id === undefined || entry.answers === undefined) return null
-  return { ...entry, id: entry.id, answers: entry.answers }
+  // A stored title is kept only when known (no default added: the record reads as stored)
+  const { title, ...rest } = entry
+  return { ...rest, id: entry.id, answers: entry.answers, ...(isTitleKey(title) ? { title } : {}) }
 }
 
 export function addExamRecord(record: ExamRecord): void {

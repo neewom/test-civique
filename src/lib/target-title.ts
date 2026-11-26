@@ -2,9 +2,26 @@
 // « Quel titre préparez-vous ? » screen and kept in localStorage.
 export const TARGET_TITLE_KEY = 'target-title'
 
-// Only the multi-year residence permit is available for now; « carte de
-// résident » and « naturalisation » will be added as their question sets land.
-export const TARGET_TITLES = ['pluriannuelle'] as const
+// Every title the app knows: the keys of `lists` in questions.json, of the `title` of
+// stored exams and of the stored choice. Single source of these keys.
+export const TITLE_KEYS = ['pluriannuelle', 'resident', 'naturalisation'] as const
+export type TitleKey = (typeof TITLE_KEYS)[number]
+
+// Title of exams stored before titles existed, or with an unknown title
+export const DEFAULT_TITLE = 'pluriannuelle' satisfies TitleKey
+
+export function isTitleKey(value: unknown): value is TitleKey {
+  return typeof value === 'string' && (TITLE_KEYS as readonly string[]).includes(value)
+}
+
+/** Title of a stored exam (history entry or exam in progress): its `title`, else the default. */
+export function titleOf(stored: { title?: unknown }): TitleKey {
+  return isTitleKey(stored.title) ? stored.title : DEFAULT_TITLE
+}
+
+// Titles the user can choose. Only the multi-year residence permit for now; « carte
+// de résident » and « naturalisation » open once their question sets have landed.
+export const TARGET_TITLES = ['pluriannuelle'] as const satisfies readonly TitleKey[]
 export type TargetTitle = (typeof TARGET_TITLES)[number]
 
 export const TARGET_TITLE_LABELS: Record<TargetTitle, string> = {
