@@ -821,3 +821,48 @@ describe('Examen — écran de résultat', () => {
     expect(localStorage.getItem(EXAM_PROGRESS_KEY)).toBeNull()
   })
 })
+
+describe('Examen — titre visé', () => {
+  beforeEach(() => {
+    localStorage.clear()
+    vi.useFakeTimers()
+  })
+  afterEach(() => {
+    vi.useRealTimers()
+  })
+
+  it('enregistre le titre dans la progression d\'un nouvel examen', () => {
+    renderExamen()
+    expect(loadProgress()?.title).toBe('pluriannuelle')
+  })
+
+  it('enregistre le titre dans l\'historique à la fin de l\'examen', async () => {
+    renderResumed(makeResume(2, 10))
+    await act(async () => { vi.advanceTimersByTime(3000) })
+    const history = JSON.parse(localStorage.getItem('quiz-history')!)
+    expect(history.at(-1).title).toBe('pluriannuelle')
+  })
+
+  it('reprend un examen en cours enregistré sans titre', () => {
+    const resume = makeResume(1500, 3)
+    renderResumed(resume)
+    expect(screen.getByText(`Question 4 sur ${EXAM_SIZE}`)).toBeInTheDocument()
+  })
+
+  it('ne reprend pas un examen en cours d\'un autre titre : un nouvel examen est tiré', () => {
+    const resume = { ...makeResume(1500, 3), title: 'resident' as const }
+    renderResumed(resume)
+    expect(screen.getByText(`Question 1 sur ${EXAM_SIZE}`)).toBeInTheDocument()
+    expect(timeLeft()).toBe(GLOBAL_EXAM_TIME)
+  })
+
+  it('le message de parcours ne compte que les examens du titre', async () => {
+    localStorage.setItem('quiz-history', JSON.stringify([
+      { id: '1', date: '2026-11-01T10:00:00.000Z', score: 35, total: 40, answers: [] },
+      { id: '2', date: '2026-11-02T10:00:00.000Z', score: 35, total: 40, answers: [], title: 'naturalisation' },
+    ]))
+    renderResumed(makeResume(2, 33))
+    await act(async () => { vi.advanceTimersByTime(3000) })
+    expect(screen.getByText(/^Deuxième réussite d'affilée/)).toBeInTheDocument()
+  })
+})

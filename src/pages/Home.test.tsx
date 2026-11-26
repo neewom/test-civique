@@ -462,3 +462,57 @@ describe('Accueil — progression sur cet appareil', () => {
     expect(screen.getByTestId('location')).toHaveTextContent('/mentions-legales|')
   })
 })
+
+describe('Accueil — examens du titre choisi', () => {
+  function counter() {
+    return screen.getByRole('button', { name: /2 · Réussir 3 examens blancs/ })
+  }
+
+  function progress(title?: string) {
+    const questions = Array.from({ length: 40 }, (_, i) => ({
+      id: i + 1,
+      theme: 'Test',
+      question: `Question ${i + 1}`,
+      answer: 'A',
+      choices: ['A', 'B', 'C', 'D'],
+      explanation: '',
+    }))
+    return { questions, index: 4, answers: [], timeLeft: 1500, startedAt: '2026-11-23T10:00:00.000Z', ...(title ? { title } : {}) }
+  }
+
+  it('le compteur ne compte que les examens de la carte pluriannuelle (sans titre = pluriannuelle)', () => {
+    seedHistory([
+      exam(36, 'a'),
+      { ...exam(36, 'b'), title: 'pluriannuelle' },
+      // Échec d'un autre titre : ne remet pas le compteur à 0
+      { ...exam(10, 'c'), title: 'resident' },
+    ])
+    renderHome()
+    expect(counter()).toHaveTextContent('2 sur 3')
+  })
+
+  it('« Derniers examens » ne liste que les examens du titre choisi', () => {
+    seedHistory([
+      exam(33, 'old', '2026-11-01T10:00:00.000Z'),
+      { ...exam(36, 'nat', '2026-11-02T10:00:00.000Z'), title: 'naturalisation' },
+      { ...exam(31, 'unk', '2026-11-03T10:00:00.000Z'), title: 'inconnu' },
+    ])
+    renderHome()
+    const links = within(screen.getByRole('region', { name: 'Derniers examens' })).getAllByRole('link')
+    expect(links.map((l) => l.getAttribute('href'))).toEqual(['/examen/unk', '/examen/old'])
+  })
+
+  it('ne propose pas la reprise d\'un examen en cours d\'un autre titre, sans l\'effacer', () => {
+    const stored = JSON.stringify(progress('resident'))
+    localStorageMock.setItem('exam-in-progress', stored)
+    renderHome()
+    expect(screen.queryByRole('region', { name: 'Examen en cours' })).toBeNull()
+    expect(localStorageMock.getItem('exam-in-progress')).toBe(stored)
+  })
+
+  it('propose la reprise d\'un examen en cours enregistré sans titre', () => {
+    localStorageMock.setItem('exam-in-progress', JSON.stringify(progress()))
+    renderHome()
+    expect(screen.getByRole('link', { name: /Reprendre l'examen en cours/ })).toHaveTextContent('Question 5 sur 40')
+  })
+})

@@ -11,11 +11,12 @@ import {
 } from '@/components/ui/dialog'
 import { useDocumentTitle } from '@/lib/use-document-title'
 import type { AnswerRecord, ExamQuestion, ExamInProgress } from '@/lib/exam-types'
-import { saveProgress, clearProgress, loadProgress, resumeIndex } from '@/lib/exam-types'
-import { buildExam, saveResult, isPassed } from '@/lib/exam'
+import { saveProgress, clearProgress, loadProgressForTitle, resumeIndex } from '@/lib/exam-types'
+import { buildExam, questionsForTitle, saveResult, isPassed } from '@/lib/exam'
 import { AnswerCard } from '@/components/AnswerCard'
 import { ExamResult, type ExamOutcome } from '@/components/ExamResult'
-import { findExamRecord, loadHistory } from '@/lib/history'
+import { findExamRecord, loadHistoryForTitle } from '@/lib/history'
+import { DEFAULT_TITLE, loadTargetTitle, type TitleKey } from '@/lib/target-title'
 import { journeyMessage, passedInARow, UNSAVED_MESSAGE } from '@/lib/readiness'
 import { PillButton } from '@/components/PillButton'
 import { SourceLink } from '@/components/SourceLink'
@@ -45,14 +46,15 @@ type ExamSetup = {
   resume: ExamInProgress | null
 }
 
-// The stored progress always wins, except when a new exam is explicitly requested.
-function setupExam(startNew: boolean): ExamSetup {
+// The stored progress of the chosen title always wins, except when a new exam is
+// explicitly requested. A new exam is drawn from the questions of that title.
+function setupExam(startNew: boolean, title: TitleKey): ExamSetup {
   if (!startNew) {
-    const saved = loadProgress()
+    const saved = loadProgressForTitle(title)
     if (saved) return { questions: saved.questions, resume: saved }
   }
   clearProgress()
-  return { questions: buildExam(), resume: null }
+  return { questions: buildExam(questionsForTitle(title)), resume: null }
 }
 
 const LETTERS = ['A', 'B', 'C', 'D']
@@ -96,7 +98,9 @@ function ExamSession({ restarted, onRestart }: ExamSessionProps) {
   const location = useLocation()
   const locationState = location.state as LocationState
 
-  const [setup] = useState<ExamSetup>(() => setupExam(restarted || locationState?.start === 'new'))
+  // Title chosen on the title screen; exams stored before it existed count for the multi-year permit
+  const [title] = useState<TitleKey>(() => loadTargetTitle() ?? DEFAULT_TITLE)
+  const [setup] = useState<ExamSetup>(() => setupExam(restarted || locationState?.start === 'new', title))
   const { questions, resume } = setup
   const startIndex = resume ? resumeIndex(resume) : 0
 
@@ -166,6 +170,7 @@ function ExamSession({ restarted, onRestart }: ExamSessionProps) {
       answers: answersRef.current,
       timeLeft: globalTimeLeft,
       startedAt: startedAtRef.current,
+      title,
     })
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [globalTimeLeft, index])
@@ -191,11 +196,11 @@ function ExamSession({ restarted, onRestart }: ExamSessionProps) {
       allAnswers.push({ questionId: questions[i].id, chosen: null, correct: false })
     }
     // Journey counter before and after this exam (no new stored data)
-    const history = loadHistory()
+    const history = loadHistoryForTitle(title)
     const previousStreak = passedInARow(history)
     const result = { score: scoreRef.current, total: questions.length }
     const streak = passedInARow([...history, result])
-    const id = saveResult(result.score, result.total, allAnswers)
+    const id = saveResult(result.score, result.total, allAnswers, title)
     // Once per exam (finishedRef), timed out included: only the verdict is sent
     trackEvent(isPassed(result.score, result.total) ? EXAM_FINISHED_PASSED : EXAM_FINISHED_NOT_YET)
     // Storage unavailable: no detail page to link to, and the home counter will not
@@ -234,6 +239,7 @@ function ExamSession({ restarted, onRestart }: ExamSessionProps) {
       answers: answersRef.current,
       timeLeft: globalTimeLeft,
       startedAt: startedAtRef.current,
+      title,
     })
     setPhase('correction')
   }
@@ -247,6 +253,7 @@ function ExamSession({ restarted, onRestart }: ExamSessionProps) {
         answers: answersRef.current,
         timeLeft: globalTimeLeft,
         startedAt: startedAtRef.current,
+        title,
       })
       focusQuestionRef.current = true
       setIndex(newIndex)

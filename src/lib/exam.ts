@@ -1,6 +1,7 @@
 import allQuestions from '@/data/questions.json'
 import type { AnswerRecord, ExamQuestion, QuestionSource } from '@/lib/exam-types'
 import { addExamRecord } from '@/lib/history'
+import { DEFAULT_TITLE, type TitleKey } from '@/lib/target-title'
 
 export const EXAM_SIZE = 40
 
@@ -81,6 +82,24 @@ export interface Question {
   group?: string
   /** Official page that justifies the answer (optional, added by the « Contenu » card) */
   source?: QuestionSource
+}
+
+/** Question of questions.json: a drawable question, with the official lists that hold it. */
+export interface ListedQuestion extends Question {
+  /** Titles whose official list holds the question (situational ones: every title) */
+  lists: TitleKey[]
+  /** Rank in the official « carte de résident » list, on questions identical to it */
+  crNumber?: number
+  /** Rank in the official naturalisation list, on questions identical to it */
+  natNumber?: number
+}
+
+/** Questions of a title: those whose `lists` holds it. */
+export function questionsForTitle(
+  title: TitleKey,
+  pool: ListedQuestion[] = allQuestions as ListedQuestion[],
+): ListedQuestion[] {
+  return pool.filter((q) => q.lists.includes(title))
 }
 
 export function shuffle<T>(arr: T[]): T[] {
@@ -165,6 +184,7 @@ export function saveResult(
   score: number,
   total: number,
   answers: AnswerRecord[],
+  title: TitleKey = DEFAULT_TITLE,
 ): string {
   const id = String(Date.now())
   addExamRecord({
@@ -173,6 +193,7 @@ export function saveResult(
     score,
     total,
     answers,
+    title,
   })
   return id
 }

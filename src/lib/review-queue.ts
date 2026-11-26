@@ -1,4 +1,5 @@
-import { loadHistory, type HistoryEntry } from '@/lib/history'
+import { loadHistoryForTitle, type HistoryEntry } from '@/lib/history'
+import { DEFAULT_TITLE, type TitleKey } from '@/lib/target-title'
 
 function isAnswer(value: unknown): value is { questionId: number; correct: boolean } {
   if (typeof value !== 'object' || value === null) return false
@@ -25,9 +26,9 @@ export function questionsToReview(history: ReadonlyArray<HistoryEntry>): number[
     .sort((a, b) => a - b)
 }
 
-/** Same list, read from the stored history. */
-export function loadQuestionsToReview(): number[] {
-  return questionsToReview(loadHistory())
+/** Same list, read from the stored exams of the given title. */
+export function loadQuestionsToReview(title: TitleKey = DEFAULT_TITLE): number[] {
+  return questionsToReview(loadHistoryForTitle(title))
 }
 
 /**

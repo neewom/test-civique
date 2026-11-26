@@ -266,3 +266,31 @@ describe('Revision — interrupteur de thème', () => {
     expect(screen.queryByRole('switch')).toBeNull()
   })
 })
+
+describe('Revision — titre visé', () => {
+  it('« À revoir » ne prend que les examens du titre choisi (sans titre = pluriannuelle)', () => {
+    localStorage.setItem(
+      'quiz-history',
+      JSON.stringify([
+        { id: 'a', date: '2026-11-01T10:00:00.000Z', score: 0, total: 40, answers: [{ questionId: 1, chosen: null, correct: false }] },
+        {
+          id: 'b',
+          date: '2026-11-02T10:00:00.000Z',
+          score: 0,
+          total: 40,
+          title: 'resident',
+          answers: [{ questionId: 2, chosen: null, correct: false }],
+        },
+      ]),
+    )
+    renderRevision()
+    expect(pill('À revoir (1)')).toBeInTheDocument()
+  })
+
+  it('« Sans les mises en situation » retire les questions de notion mise-en-situation', () => {
+    renderRevision()
+    fireEvent.click(screen.getByLabelText('Sans les mises en situation'))
+    const classical = questions.filter((q) => q.notion !== 'mise-en-situation')
+    expect(shownCards()).toHaveLength(classical.length)
+  })
+})

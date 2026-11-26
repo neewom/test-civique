@@ -4,9 +4,15 @@ import { useLocation, useNavigate } from 'react-router-dom'
 import { BackLink } from '@/components/BackLink'
 import { OrganicBackground } from '@/components/OrganicBackground'
 import { PillButton } from '@/components/PillButton'
+import { questionsForTitle } from '@/lib/exam'
 import { saveTargetTitle, type TargetTitle } from '@/lib/target-title'
 import { useDocumentTitle } from '@/lib/use-document-title'
 import { cn } from '@/lib/utils'
+
+// Official (non situational) questions of the multi-year permit list
+const MULTI_YEAR_OFFICIAL_COUNT = questionsForTitle('pluriannuelle').filter(
+  (q) => q.notion !== 'mise-en-situation',
+).length
 
 // Titles not available yet: shown, but they cannot be chosen
 const COMING_SOON = [
@@ -53,7 +59,7 @@ export default function TitreVise() {
           >
             <span className="flex min-w-0 flex-col">
               <span className="text-[1.0625rem] leading-snug font-bold">Carte de séjour pluriannuelle</span>
-              <span className="text-[0.8125rem] opacity-90">191 questions officielles</span>
+              <span className="text-[0.8125rem] opacity-90">{MULTI_YEAR_OFFICIAL_COUNT} questions officielles</span>
             </span>
             <span
               aria-hidden="true"
