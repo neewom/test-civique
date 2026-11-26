@@ -8605,5 +8605,818 @@
       "url": "https://www.conseil-constitutionnel.fr/le-bloc-de-constitutionnalite/texte-integral-de-la-constitution-du-4-octobre-1958-en-vigueur",
       "label": "conseil-constitutionnel.fr"
     }
+  },
+  {
+    "id": 323,
+    "theme": "Système institutionnel et politique",
+    "notion": "organisation-republique",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 41,
+    "question": "Qu'est-ce que l'État de droit ?",
+    "answers": [
+      "Un système où la loi est la même pour tous, y compris pour l'État"
+    ],
+    "distractors": [
+      "Un système où le président de la République décide seul des lois",
+      "Un système où seuls les citoyens français doivent respecter la loi",
+      "Un système où l'armée contrôle les décisions du Gouvernement",
+      "Un système où les ministres sont au-dessus des lois",
+      "Un système où chaque région fixe ses propres lois"
+    ],
+    "explanation": "Dans un État de droit, la loi s'impose à tous : aux citoyens, mais aussi à l'État et à ses représentants. Le droit est supérieur aux pouvoirs politiques, et les autorités publiques agissent toujours en respectant la loi. C'est le contraire d'un État arbitraire.",
+    "group": "etat-de-droit",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/etat-de-droit-et-separation-des-pouvoirs/etat-de-droit-et-separation-des-pouvoirs--presentation-de-letat-de-droit-et-principe-de-la-separation-des-pouvoirs/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 324,
+    "theme": "Système institutionnel et politique",
+    "notion": "organisation-republique",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 42,
+    "question": "Le président de la République a commis un crime. Quelle proposition est correcte ?",
+    "answers": [
+      "Il ne peut être poursuivi qu'un mois après la fin de son mandat"
+    ],
+    "distractors": [
+      "Il est arrêté tout de suite par la police, comme tout citoyen",
+      "Il ne peut jamais être poursuivi, même après la fin de son mandat",
+      "Seul le Premier ministre peut décider de le poursuivre",
+      "Il est jugé par l'Assemblée nationale, qui peut le condamner",
+      "Il est jugé aussitôt par le Conseil constitutionnel"
+    ],
+    "explanation": "Selon l'article 67 de la Constitution, pendant son mandat le président de la République ne peut faire l'objet d'aucune poursuite devant une juridiction française. Les procédures sont suspendues et peuvent être reprises ou engagées à l'expiration d'un délai d'un mois suivant la fin de ses fonctions. S'il manque gravement à ses devoirs, le Parlement réuni en Haute Cour peut aussi le destituer (article 68).",
+    "source": {
+      "url": "https://www.conseil-constitutionnel.fr/le-bloc-de-constitutionnalite/texte-integral-de-la-constitution-du-4-octobre-1958-en-vigueur",
+      "label": "conseil-constitutionnel.fr"
+    }
+  },
+  {
+    "id": 325,
+    "theme": "Système institutionnel et politique",
+    "notion": "democratie-vote",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 43,
+    "question": "La loi est l'expression de :",
+    "answers": [
+      "La volonté générale"
+    ],
+    "distractors": [
+      "La volonté du président de la République",
+      "La volonté du Gouvernement",
+      "La volonté des juges",
+      "La volonté des partis politiques",
+      "La volonté de l'administration"
+    ],
+    "explanation": "La loi est l'expression de la volonté générale : elle est proposée, discutée et votée par les représentants du peuple, les députés et les sénateurs, qui forment le Parlement. Elle s'applique ensuite à tous.",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/democratie-et-droit-de-vote/comment-voter-une-loi-1/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 326,
+    "theme": "Système institutionnel et politique",
+    "notion": "organisation-republique",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 44,
+    "question": "Quelle est la durée du mandat du conseil municipal et du maire ?",
+    "answers": [
+      "6 ans"
+    ],
+    "distractors": [
+      "3 ans",
+      "4 ans",
+      "5 ans",
+      "7 ans",
+      "10 ans"
+    ],
+    "explanation": "Le maire et les conseillers municipaux sont élus pour 6 ans lors des élections municipales. Les élus municipaux représentent les habitants de la commune.",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/democratie-et-droit-de-vote/democratie-et-droit-de-vote-la-democratie-et-la-republique-2/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 327,
+    "theme": "Système institutionnel et politique",
+    "notion": "organisation-republique",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 45,
+    "question": "Que garantit l’État de droit ?",
+    "answers": [
+      "Le respect des droits fondamentaux et de la démocratie"
+    ],
+    "distractors": [
+      "Le maintien du même gouvernement pendant tout un mandat",
+      "L'absence totale de conflits entre les citoyens",
+      "La suppression des tribunaux administratifs",
+      "Le pouvoir du Parlement sur les juges",
+      "L'égalité des revenus de tous les habitants"
+    ],
+    "explanation": "L'État de droit garantit le respect des droits fondamentaux et de la démocratie. Par exemple, le droit à la sûreté protège chacun contre les arrestations et les emprisonnements arbitraires. Des juges indépendants contrôlent les autorités publiques.",
+    "group": "etat-de-droit",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/etat-de-droit-et-separation-des-pouvoirs/etat-de-droit-et-separation-des-pouvoirs--presentation-de-letat-de-droit-et-principe-de-la-separation-des-pouvoirs/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 328,
+    "theme": "Système institutionnel et politique",
+    "notion": "democratie-vote",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 46,
+    "question": "Une personne peut-elle voter à la place d'une autre ?",
+    "answers": [
+      "Oui, uniquement si elle vous a donné une procuration"
+    ],
+    "distractors": [
+      "Non, le vote est strictement personnel et aucune exception n'existe",
+      "Oui, si c'est un membre de la famille proche, sans aucune formalité",
+      "Oui, si les deux personnes habitent à la même adresse",
+      "Non, sauf pour les personnes de plus de 80 ans",
+      "Oui, si la personne vous a prévenu par message"
+    ],
+    "explanation": "Le vote est personnel, libre et secret. On ne peut voter pour une autre personne que si elle a fait une procuration, c'est-à-dire si elle vous a officiellement donné le droit de voter à sa place.",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/democratie-et-droit-de-vote/democratie-et-droit-de-vote-les-conditions-pour-voter-en-france-1/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 329,
+    "theme": "Système institutionnel et politique",
+    "notion": "democratie-vote",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 47,
+    "question": "Est-ce que le vote est obligatoire ?",
+    "answers": [
+      "Non, c'est un droit et non un devoir"
+    ],
+    "distractors": [
+      "Oui, sous peine d'une amende",
+      "Oui, pour toutes les élections",
+      "Non, sauf pour l'élection présidentielle",
+      "Non, sauf pour les élections municipales",
+      "Oui, mais seulement pour les élections nationales"
+    ],
+    "explanation": "En France, le vote n'est pas obligatoire : c'est un droit et non un devoir. Pour voter, il faut être inscrit sur les listes électorales.",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/democratie-et-droit-de-vote/democratie-et-droit-de-vote-les-conditions-pour-voter-en-france-1/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 330,
+    "theme": "Système institutionnel et politique",
+    "notion": "democratie-vote",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 48,
+    "question": "À la fin de son mandat, le président de la République peut-il décider de rester au pouvoir ?",
+    "answers": [
+      "Non, son mandat de 5 ans se termine et il quitte ses fonctions"
+    ],
+    "distractors": [
+      "Oui, s'il obtient l'accord du Parlement pour prolonger son mandat",
+      "Oui, tant que le Gouvernement le soutient",
+      "Oui, si le Premier ministre le décide",
+      "Oui, s'il déclare l'état d'urgence avant la fin de son mandat",
+      "Oui, si le Conseil constitutionnel le demande"
+    ],
+    "explanation": "Le président de la République est élu pour cinq ans au suffrage universel direct. À la fin de son mandat, il doit quitter ses fonctions : personne ne peut rester au pouvoir sans être réélu. Nul ne peut exercer plus de deux mandats consécutifs.",
+    "source": {
+      "url": "https://www.conseil-constitutionnel.fr/le-bloc-de-constitutionnalite/texte-integral-de-la-constitution-du-4-octobre-1958-en-vigueur",
+      "label": "conseil-constitutionnel.fr"
+    }
+  },
+  {
+    "id": 331,
+    "theme": "Système institutionnel et politique",
+    "notion": "organisation-republique",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 49,
+    "question": "Qui dirige l'action du Gouvernement ?",
+    "answers": [
+      "Le Premier ministre"
+    ],
+    "distractors": [
+      "Le président de la République",
+      "Le président de l'Assemblée nationale",
+      "Le ministre de l'Intérieur",
+      "Le président du Sénat",
+      "Le préfet de Paris"
+    ],
+    "explanation": "Le Premier ministre dirige l'action du Gouvernement. Il est nommé par le président de la République, et les autres ministres sont nommés sur sa proposition.",
+    "group": "premier-ministre",
+    "source": {
+      "url": "https://www.conseil-constitutionnel.fr/le-bloc-de-constitutionnalite/texte-integral-de-la-constitution-du-4-octobre-1958-en-vigueur",
+      "label": "conseil-constitutionnel.fr"
+    }
+  },
+  {
+    "id": 332,
+    "theme": "Système institutionnel et politique",
+    "notion": "organisation-republique",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 51,
+    "question": "Quelle est l'organisation administrative de la France ?",
+    "answers": [
+      "En communes, départements et régions"
+    ],
+    "distractors": [
+      "En comtés, provinces et États",
+      "En cantons, duchés et régions",
+      "En communes, provinces et empires",
+      "En arrondissements, comtés et nations",
+      "En villages, districts et cantons"
+    ],
+    "explanation": "La France est organisée en collectivités territoriales : les communes, les départements et les régions. À côté d'elles existent des collectivités à statut particulier (Paris, la métropole de Lyon, la Corse…) et les collectivités d'outre-mer. C'est la décentralisation : l'État transfère des compétences à ces collectivités.",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/organisation-de-la-republique-fran%C3%A7aise/le-decoupage-administratif-de-la-france-1/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 333,
+    "theme": "Système institutionnel et politique",
+    "notion": "organisation-republique",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 52,
+    "question": "Qu'est-ce que le pouvoir législatif ? Le pouvoir :",
+    "answers": [
+      "Le pouvoir de faire et de voter les lois, exercé par le Parlement"
+    ],
+    "distractors": [
+      "Le pouvoir d'appliquer les lois, exercé par le président de la République",
+      "Le pouvoir de juger les personnes, exercé par les tribunaux",
+      "Le pouvoir de diriger l'administration, exercé par les préfets",
+      "Le pouvoir de contrôler la Constitution, exercé par le Gouvernement",
+      "Le pouvoir de décider seul de la politique de la nation, exercé par le Premier ministre"
+    ],
+    "explanation": "Le pouvoir législatif est exercé par le Parlement, composé de l'Assemblée nationale et du Sénat. Le Parlement propose, négocie et vote la loi. Il vérifie aussi que le Gouvernement agit selon la loi.",
+    "group": "pouvoir-legislatif",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/etat-de-droit-et-separation-des-pouvoirs/etat-de-droit-et-separation-des-pouvoirs-presentation-des-3-pouvoirs-1/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 334,
+    "theme": "Système institutionnel et politique",
+    "notion": "organisation-republique",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 53,
+    "question": "Pourquoi séparer les trois pouvoirs dans une démocratie ?",
+    "answers": [
+      "Pour que les pouvoirs se contrôlent et ne puissent pas abuser"
+    ],
+    "distractors": [
+      "Pour que le président de la République décide plus vite",
+      "Pour que les lois changent plus souvent",
+      "Pour réduire le nombre d'élus en France",
+      "Pour donner plus de pouvoir au Gouvernement",
+      "Pour que les juges écrivent aussi les lois"
+    ],
+    "explanation": "La séparation des pouvoirs législatif, exécutif et judiciaire signifie qu'ils ne sont pas entre les mains des mêmes personnes. Elle garantit les droits fondamentaux et conserve un équilibre : les pouvoirs se contrôlent mutuellement et ne peuvent s'exercer de façon arbitraire.",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/etat-de-droit-et-separation-des-pouvoirs/etat-de-droit-et-separation-des-pouvoirs--presentation-de-letat-de-droit-et-principe-de-la-separation-des-pouvoirs/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 335,
+    "theme": "Système institutionnel et politique",
+    "notion": "organisation-republique",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 55,
+    "question": "Quel est le rôle du gouvernement ?",
+    "answers": [
+      "Conduire la politique de la nation et diriger l'administration"
+    ],
+    "distractors": [
+      "Voter les lois et contrôler le président",
+      "Rendre la justice dans toute la France",
+      "Gérer les écoles primaires de chaque commune",
+      "Élire les sénateurs",
+      "Contrôler l'application de la Constitution"
+    ],
+    "explanation": "Le Gouvernement, composé du Premier ministre et des ministres, conduit la politique nationale, intérieure et extérieure. Avec le président de la République, il dirige l'administration et applique les lois votées par le Parlement.",
+    "group": "pouvoir-executif",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/etat-de-droit-et-separation-des-pouvoirs/etat-de-droit-et-separation-des-pouvoirs-presentation-des-3-pouvoirs-1/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 336,
+    "theme": "Système institutionnel et politique",
+    "notion": "organisation-republique",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 66,
+    "question": "Qu'est-ce que l'Hôtel de Matignon ?",
+    "answers": [
+      "La résidence du Premier ministre"
+    ],
+    "distractors": [
+      "La résidence du président de la République",
+      "Le siège du Sénat",
+      "Le siège de l'Assemblée nationale",
+      "Le siège du Conseil constitutionnel",
+      "La résidence du ministre de l'Intérieur"
+    ],
+    "explanation": "L'hôtel de Matignon, à Paris, est la résidence et le lieu de travail du Premier ministre. Le président de la République, lui, réside au palais de l'Élysée.",
+    "group": "premier-ministre",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/etat-de-droit-et-separation-des-pouvoirs/etat-de-droit-et-separation-des-pouvoirs-presentation-des-3-pouvoirs-1/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 337,
+    "theme": "Système institutionnel et politique",
+    "notion": "organisation-republique",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 68,
+    "question": "Quel est le rôle du président de la République ?",
+    "answers": [
+      "Chef de l'État et des armées, il nomme le Premier ministre"
+    ],
+    "distractors": [
+      "Il vote les lois avec les députés et les sénateurs",
+      "Il juge les affaires criminelles dans les tribunaux",
+      "Il dirige les mairies de toutes les communes",
+      "Il est élu par les sénateurs pour six ans",
+      "Il gère les écoles et les collèges du pays"
+    ],
+    "explanation": "Le président de la République est le chef de l'État et des armées. Il nomme le Premier ministre, et il veille au respect de la Constitution et au fonctionnement régulier des pouvoirs publics. Avec le Gouvernement, il applique et fait respecter les lois. Il réside au palais de l'Élysée.",
+    "group": "pouvoir-executif",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/etat-de-droit-et-separation-des-pouvoirs/etat-de-droit-et-separation-des-pouvoirs-presentation-des-3-pouvoirs-1/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 338,
+    "theme": "Système institutionnel et politique",
+    "notion": "organisation-republique",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 69,
+    "question": "Quel est le rôle du Premier ministre ?",
+    "answers": [
+      "Diriger l'action du Gouvernement"
+    ],
+    "distractors": [
+      "Rendre la justice au nom du peuple",
+      "Présider l'Assemblée nationale",
+      "Représenter l'État dans un département",
+      "Diriger les armées en tant que chef de l'État",
+      "Élaborer seul les lois du pays"
+    ],
+    "explanation": "Le Premier ministre dirige l'action du Gouvernement, assure l'exécution des lois et nomme aux emplois civils et militaires. Il est nommé par le président de la République.",
+    "group": "premier-ministre",
+    "source": {
+      "url": "https://www.conseil-constitutionnel.fr/le-bloc-de-constitutionnalite/texte-integral-de-la-constitution-du-4-octobre-1958-en-vigueur",
+      "label": "conseil-constitutionnel.fr"
+    }
+  },
+  {
+    "id": 339,
+    "theme": "Système institutionnel et politique",
+    "notion": "organisation-republique",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 70,
+    "question": "Qui est le chef du Gouvernement ?",
+    "answers": [
+      "Le Premier ministre"
+    ],
+    "distractors": [
+      "Le président de la République",
+      "Le président du Sénat",
+      "Le président de l'Assemblée nationale",
+      "Le ministre de la Justice",
+      "Le préfet de région"
+    ],
+    "explanation": "Le chef du Gouvernement est le Premier ministre. Il dirige l'action des ministres, qu'il propose au président de la République, et il réside à l'hôtel de Matignon.",
+    "group": "premier-ministre",
+    "source": {
+      "url": "https://www.conseil-constitutionnel.fr/le-bloc-de-constitutionnalite/texte-integral-de-la-constitution-du-4-octobre-1958-en-vigueur",
+      "label": "conseil-constitutionnel.fr"
+    }
+  },
+  {
+    "id": 340,
+    "theme": "Système institutionnel et politique",
+    "notion": "organisation-republique",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 71,
+    "question": "Combien y a-t-il de régions en France ?",
+    "answers": [
+      "18 régions"
+    ],
+    "distractors": [
+      "12 régions",
+      "15 régions",
+      "22 régions",
+      "27 régions",
+      "10 régions"
+    ],
+    "explanation": "La France compte 18 régions, dont 5 en outre-mer. Les régions gèrent notamment les lycées, soutiennent le développement économique et aménagent le territoire.",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/organisation-de-la-republique-fran%C3%A7aise/le-decoupage-administratif-de-la-france-1/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 341,
+    "theme": "Système institutionnel et politique",
+    "notion": "organisation-republique",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 72,
+    "question": "Quel est le rôle du Défenseur des droits ?",
+    "answers": [
+      "Défendre les droits des personnes et lutter contre les discriminations"
+    ],
+    "distractors": [
+      "Voter le budget de l'État et les lois",
+      "Juger les crimes et les délits graves",
+      "Contrôler le déroulement des élections",
+      "Représenter l'État dans les départements",
+      "Commander la police et la gendarmerie"
+    ],
+    "explanation": "Le Défenseur des droits est une autorité administrative indépendante chargée de veiller au respect des droits. Il défend les personnes dont les droits ne sont pas respectés, lutte contre les discriminations et intervient pour régler les conflits entre un service public et un usager.",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/droits-et-devoirs/droits-fondamentaux/les-acteurs-institutionnels/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 342,
+    "theme": "Système institutionnel et politique",
+    "notion": "institutions-europeennes",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 73,
+    "question": "Depuis quand l'euro est-elle la monnaie unique ?",
+    "answers": [
+      "2002"
+    ],
+    "distractors": [
+      "1957",
+      "1973",
+      "1986",
+      "1992",
+      "2007"
+    ],
+    "explanation": "En 2002, l'euro est devenu la monnaie officielle de plusieurs pays membres de l'Union européenne, dont la France : les pièces et les billets en euros ont alors remplacé les monnaies nationales, comme le franc. L'euro avait été introduit auparavant comme monnaie de paiement non physique (1999).",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-conflits-mondiaux-et-le-nouvel-ordre-mondial/la-construction-europeenne/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 343,
+    "theme": "Système institutionnel et politique",
+    "notion": "organisation-republique",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 74,
+    "question": "Quel est le rôle principal du département ?",
+    "answers": [
+      "L'action sociale (handicap, gestion du RSA)"
+    ],
+    "distractors": [
+      "La gestion des écoles primaires",
+      "La gestion des lycées",
+      "La défense du territoire",
+      "La justice des mineurs",
+      "La délivrance des passeports"
+    ],
+    "explanation": "Le département agit surtout dans l'action sociale (aide aux personnes handicapées, gestion du RSA). Il gère aussi les collèges. Il y a 101 départements en France.",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/organisation-de-la-republique-fran%C3%A7aise/le-decoupage-administratif-de-la-france-1/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 344,
+    "theme": "Système institutionnel et politique",
+    "notion": "organisation-republique",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 75,
+    "question": "Quel est le rôle principal des communes ?",
+    "answers": [
+      "Gérer les écoles maternelles et primaires et les services de proximité"
+    ],
+    "distractors": [
+      "Gérer les lycées et les universités",
+      "Voter les lois de la République",
+      "Décider de la politique étrangère",
+      "Définir les programmes scolaires nationaux",
+      "Nommer les juges des tribunaux"
+    ],
+    "explanation": "La commune a de nombreuses compétences, surtout en urbanisme, logement et action sociale. Elle gère les écoles maternelles et primaires et les services de proximité. Elle est dirigée par des personnes élues, dont le maire.",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/organisation-de-la-republique-fran%C3%A7aise/le-decoupage-administratif-de-la-france-1/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 345,
+    "theme": "Système institutionnel et politique",
+    "notion": "organisation-republique",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 76,
+    "question": "Combien de communes environ existe-t-il en France ?",
+    "answers": [
+      "Environ 35 000"
+    ],
+    "distractors": [
+      "Environ 3 500",
+      "Environ 350",
+      "Environ 10 000",
+      "Environ 100 000",
+      "Environ 500 000"
+    ],
+    "explanation": "La commune est la collectivité la plus répandue sur le territoire : il y a plus de 35 000 communes en France (34 875 selon les chiffres du ministère).",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/organisation-de-la-republique-fran%C3%A7aise/le-decoupage-administratif-de-la-france-1/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 346,
+    "theme": "Système institutionnel et politique",
+    "notion": "institutions-europeennes",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 77,
+    "question": "Quel traité concerne la construction de l'Union européenne ?",
+    "answers": [
+      "Le traité de Maastricht",
+      "Le traité de Rome",
+      "Le traité de Lisbonne"
+    ],
+    "distractors": [
+      "Le traité de Versailles",
+      "Le traité de Westphalie",
+      "Le traité de Tordesillas",
+      "Le traité d'Utrecht"
+    ],
+    "explanation": "La construction européenne s'est faite par une série de traités : le traité de Rome (1957) crée la CEE, le traité de Maastricht (1992) crée l'Union européenne, et le traité de Lisbonne (2007) adapte le fonctionnement de ses institutions.",
+    "group": "traite-maastricht",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/institutions-europeennes/les-etapes-cles-de-la-construction-europeenne/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 347,
+    "theme": "Système institutionnel et politique",
+    "notion": "institutions-europeennes",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 78,
+    "question": "Quel État a quitté l'Union européenne en 2020 ?",
+    "answers": [
+      "Le Royaume-Uni"
+    ],
+    "distractors": [
+      "L'Allemagne",
+      "L'Espagne",
+      "La Suisse",
+      "L'Italie",
+      "La Norvège"
+    ],
+    "explanation": "En 2020, pour la première fois, un pays a quitté l'Union européenne : le Royaume-Uni, c'est le Brexit.",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/institutions-europeennes/les-etapes-cles-de-la-construction-europeenne/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 348,
+    "theme": "Système institutionnel et politique",
+    "notion": "institutions-europeennes",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 79,
+    "question": "Quelle est la devise de l’Union européenne ?",
+    "answers": [
+      "Unie dans la diversité"
+    ],
+    "distractors": [
+      "Liberté, égalité, fraternité",
+      "Un peuple, une monnaie",
+      "Ensemble pour la paix",
+      "Une Europe, des nations",
+      "Travail, famille, patrie"
+    ],
+    "explanation": "La devise de l'Union européenne est « Unie dans la diversité » depuis 2000. Elle illustre la manière dont les Européens se sont rassemblés pour partager la paix et la prospérité, dans le respect de leurs cultures, traditions et langues.",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/institutions-europeennes/les-symboles-europeens-2/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 349,
+    "theme": "Système institutionnel et politique",
+    "notion": "institutions-europeennes",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 80,
+    "question": "Quel est l'hymne de l'Union européenne ?",
+    "answers": [
+      "L'Ode à la joie, de Beethoven"
+    ],
+    "distractors": [
+      "La Marseillaise, de Rouget de Lisle",
+      "Le Boléro, de Ravel",
+      "Les Quatre Saisons, de Vivaldi",
+      "Le Beau Danube bleu, de Strauss",
+      "La Symphonie du Nouveau Monde, de Dvořák"
+    ],
+    "explanation": "L'hymne européen est l'« Ode à la joie », une mélodie du compositeur allemand Ludwig van Beethoven. Il symbolise la liberté, la paix et la solidarité, et on l'entend lors des événements officiels, notamment la Journée de l'Europe.",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/institutions-europeennes/les-symboles-europeens-1/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 350,
+    "theme": "Système institutionnel et politique",
+    "notion": "institutions-europeennes",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 81,
+    "question": "De quoi est composé le drapeau européen ?",
+    "answers": [
+      "Douze étoiles jaunes disposées en cercle"
+    ],
+    "distractors": [
+      "Vingt-sept étoiles jaunes disposées en cercle",
+      "Douze étoiles blanches alignées sur une bande",
+      "Une seule étoile jaune au centre",
+      "Douze étoiles blanches disposées en croix",
+      "Douze étoiles bleues sur un fond blanc"
+    ],
+    "explanation": "Le drapeau européen se compose de douze étoiles jaunes disposées en cercle sur un fond bleu. Ce cercle symbolise l'unité, la solidarité et l'harmonie entre les peuples d'Europe.",
+    "group": "drapeau-europeen",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/institutions-europeennes/les-symboles-europeens-1/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 351,
+    "theme": "Système institutionnel et politique",
+    "notion": "institutions-europeennes",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 82,
+    "question": "De quelle couleur est le drapeau européen ?",
+    "answers": [
+      "Bleu, avec des étoiles jaunes"
+    ],
+    "distractors": [
+      "Rouge, avec des étoiles blanches",
+      "Blanc, avec des étoiles bleues",
+      "Jaune, avec des étoiles bleues",
+      "Vert, avec des étoiles jaunes"
+    ],
+    "explanation": "Le drapeau européen est un fond bleu sur lequel des étoiles jaunes forment un cercle.",
+    "group": "drapeau-europeen",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/institutions-europeennes/les-symboles-europeens-1/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 352,
+    "theme": "Système institutionnel et politique",
+    "notion": "institutions-europeennes",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 83,
+    "question": "En quelle année le traité de Maastricht, qui marque la fondation de l'Union européenne, a-t-il été signé ?",
+    "answers": [
+      "1992"
+    ],
+    "distractors": [
+      "1957",
+      "1973",
+      "1986",
+      "2002",
+      "2007"
+    ],
+    "explanation": "Le traité de Maastricht a été signé en 1992. Il a transformé la CEE en Union européenne, a créé la citoyenneté européenne et a prévu une monnaie unique.",
+    "group": "traite-maastricht",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-conflits-mondiaux-et-le-nouvel-ordre-mondial/la-construction-europeenne/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 353,
+    "theme": "Système institutionnel et politique",
+    "notion": "institutions-europeennes",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 84,
+    "question": "Où est le siège du Parlement européen ?",
+    "answers": [
+      "Strasbourg"
+    ],
+    "distractors": [
+      "Paris",
+      "Berlin",
+      "Rome",
+      "Genève",
+      "Francfort"
+    ],
+    "explanation": "Le Parlement européen est situé à Strasbourg. Il réunit 720 députés européens, vote le budget et les lois avec le Conseil de l'Union européenne, et contrôle la Commission.",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/institutions-europeennes/le-fonctionnement-europeen-2/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 354,
+    "theme": "Système institutionnel et politique",
+    "notion": "institutions-europeennes",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 85,
+    "question": "Où est le siège de la Commission européenne ?",
+    "answers": [
+      "Bruxelles"
+    ],
+    "distractors": [
+      "Strasbourg",
+      "Francfort",
+      "Paris",
+      "Amsterdam",
+      "Genève"
+    ],
+    "explanation": "La Commission européenne est située à Bruxelles. Elle réunit 27 commissaires, un pour chaque pays membre, représente les intérêts communs, propose le budget et les lois, et exécute les décisions du Conseil et du Parlement.",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/institutions-europeennes/le-fonctionnement-europeen-2/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
   }
 ]
