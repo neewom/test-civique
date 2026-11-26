@@ -265,7 +265,7 @@ components:
 
 L'appli se lit comme une carte : un fond crème uni, une seule grande forme organique de terre verte qui serpente sous le contenu, et par-dessus des étapes en pastilles, comme des repères posés sur un chemin qui mène au jour J. Chaque écran dit où l'on est et ce qui vient ensuite ; la couleur sert à marquer l'étape, l'action ou le verdict, jamais à décorer. Le système vise une personne stressée, sur téléphone, parfois peu à l'aise en français : il préfère des formes généreuses, des aplats francs et un texte large à toute finesse graphique.
 
-La densité est faible et la colonne étroite. Une seule famille de caractères, très lisible, en deux graisses ; des titres serrés et massifs qui donnent le ton, un corps de texte calme. Tout est plat : aucune ombre, la profondeur vient des aplats de couleur posés sur le crème et de la forme organique en arrière-plan. Le mouvement se limite à la respiration lente de cette forme, absente des écrans de question, où rien ne bouge pendant que l'on répond.
+La densité est faible et la colonne étroite. Une seule famille de caractères, très lisible, en deux graisses ; des titres serrés et massifs qui donnent le ton, un corps de texte calme. Tout est plat : aucune ombre, la profondeur vient des aplats de couleur posés sur le crème et de la forme organique en arrière-plan. Le mouvement se limite à la respiration lente de cette forme, absente des écrans de question, où rien ne bouge pendant que l'on répond ; le panneau « Affichage » permet de le couper (préférence `motion`).
 
 Le thème sombre est le même parcours, le soir, écran baissé : mêmes formes, mêmes règles, couleurs assourdies pour ne pas éblouir, et sélection inversée (fond clair, texte sombre).
 
@@ -350,10 +350,10 @@ Trois points de rupture (texte à la taille par défaut ; agrandi, l'écran reto
 - **lg, 1024 px et plus (tablette en paysage, ordinateur)** : deux colonnes sur l'accueil, la révision et le détail (gouttière 40 px).
 
 Deux largeurs nommées :
-- **Carte, 62rem** : accueil, révision, détail d'un examen à partir de 1024 px. Accueil : le parcours à gauche, sur la forme verte limitée à la moitié gauche de l'écran, la reprise de l'examen sous le titre, au-dessus du parcours ; à droite une colonne de 23rem « Où vous en êtes » (compteur « n sur 3 » en `display-lg`, derniers examens, lien vers les règles) ou, sans historique, la carte « Ce qui vous attend le jour J » ; mentions en bas de page. Révision : colonne latérale fixe (sticky) de 17rem (en-tête avec l'interrupteur de thème, filtres en pastilles pleine largeur, case « Sans les mises en situation »), cartes sur une colonne de 40rem au plus. Détail : colonne latérale fixe de 22rem (retour, score, date, verdict, filtres, « Par thème », boutons), questions sur 40rem au plus.
+- **Carte, 62rem** : accueil, révision, détail d'un examen à partir de 1024 px. Accueil : le parcours à gauche, sur la forme verte limitée à la moitié gauche de l'écran, la reprise de l'examen sous le titre, au-dessus du parcours ; à droite une colonne de 23rem « Où vous en êtes » (compteur « n sur 3 » en `display-lg`, derniers examens, lien vers les règles) ou, sans historique, le titre « Où vous en êtes » et une phrase d'attente (plus de carte « jour J » ; l'étape 4 du parcours reste) ; mentions en bas de page. Révision : colonne latérale fixe (sticky) de 17rem (retour, titre, filtres en pastilles pleine largeur, case « Sans les mises en situation »), cartes sur une colonne de 40rem au plus. Détail : colonne latérale fixe de 22rem (retour, score, date, verdict, filtres, « Par thème », boutons), questions sur 40rem au plus.
 - **Lecture, 44rem** : examen (question, correction) et résultat à partir de 768 px. Réponses sur une colonne ; la place du bouton est réservée sous les réponses, alignée à gauche (8rem), pour que rien ne bouge quand il apparaît ; actions du résultat limitées à 26rem.
 
-Un bloc qui change de colonne (reprise de l'examen, actions du détail, interrupteur de thème de la révision) n'est rendu qu'une fois, à la place qui suit l'ordre visuel (`useWideScreen`, `src/lib/use-wide-screen.ts`) : l'ordre de lecture et de tabulation suit l'écran.
+Un bloc qui change de colonne (reprise de l'examen, actions du détail) n'est rendu qu'une fois, à la place qui suit l'ordre visuel (`useWideScreen`, `src/lib/use-wide-screen.ts`) : l'ordre de lecture et de tabulation suit l'écran.
 
 ## Elevation & Depth
 
@@ -402,13 +402,14 @@ Tactiles et francs : des pastilles pleines, en gras, qu'on vise sans y penser.
 - **Lien Retour :** flèche et texte en `body-sm` gras, 44 px de haut, souligné au survol.
 - **Parcours de l'accueil :** liste ordonnée de quatre étapes en pastilles, numérotées « 1 · », « 2 · »… ; l'étape 2, grande pastille jaune avec le compteur « n sur 3 », lance directement un nouvel examen blanc.
 - **Bandeau d'examen :** bloc vert terre arrondi en bas, avec « Quitter », « Question n sur 40 » et une barre de temps encre sur une piste translucide.
-- **Interrupteur de thème :** fixe en haut à droite sur le titre visé, les règles et la révision (dans l'en-tête de sa colonne latérale à partir de 1024 px) ; dans l'en-tête, à côté du logo, sur l'accueil ; absent de l'examen (question, correction, résultat) et du détail d'un examen.
+- **En-tête permanent (`AppHeader`) :** sur toutes les pages, en premier enfant de la colonne de la page (il prend sa largeur et sa gouttière ; à partir de 1024 px, sur toute la largeur de la grille de la révision et du détail). Le logo « la pousse » + « Futur Citoyen » (lien vers l'accueil) à gauche, le bouton « Affichage » à droite : rond de 44 px, carte blanche (sable au survol ou ouvert), icône de curseurs horizontaux, `aria-label="Affichage"`, `aria-expanded`, `aria-controls`. Pendant l'examen (`thin`), l'en-tête reste au-dessus du bandeau vert avec un logo en `body` au lieu de 1.25rem, et le logo est un bouton qui ouvre la fenêtre « Quitter l'examen ? ». Le lien « Retour » reste sous l'en-tête.
+- **Panneau « Affichage » :** carte de 17.5rem (`card-lg`, 1.5rem) sous le bouton, alignée à droite, avec deux réglages à deux choix « Thème : Clair / Sombre » et « Animations : Activées / Désactivées » : une piste sable (`muted`) en pastille, le choix actif en vert terre (`earth`, texte encre en clair et crème en sombre), `aria-pressed`, 44 px de haut. Focus sur le premier réglage à l'ouverture ; Échap et clic extérieur ferment. Seule exception à la règle du plat, avec la boîte de dialogue : le panneau flotte sur le contenu, il porte donc un filet (`ring`) et une ombre douce.
 
 ### Verdict (signature)
 Une pastille de statut, annoncée aux lecteurs d'écran : un cercle d'icône à gauche, le texte en gras à droite. Réussi ou bonne réponse : encre avec une coche jaune. Erreur : corail avec une croix. « Pas encore réussi » : surface blanche avec une flèche, rassurant plutôt qu'alarmant. Deux tailles : 40 px pour la correction d'une question, 44 px pour le résultat d'un examen.
 
 ### Forme organique (signature)
-`OrganicBackground` : la terre de la carte. Un tracé SVG plein, posé sous le contenu, qui respire lentement en boucle et s'arrête si l'appareil demande moins de mouvement ou si l'onglet est caché. Jamais sur les écrans de question.
+`OrganicBackground` : la terre de la carte. Un tracé SVG plein, posé sous le contenu, qui respire lentement en boucle et s'arrête si les animations sont désactivées (réglage « Animations » du panneau « Affichage » ; sans choix enregistré, selon `prefers-reduced-motion`) ou si l'onglet est caché. Jamais sur les écrans de question.
 
 ### Logo « la pousse »
 Une tige et deux feuilles (verte, jaune) cerclées d'encre, suivies de « Futur Citoyen », « Futur » en vert. Le symbole fait 1,25 fois la taille du texte qui l'accompagne.
