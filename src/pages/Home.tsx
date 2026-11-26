@@ -148,7 +148,7 @@ export default function Home() {
   )
 
   const journey = (
-    <nav aria-label="Votre parcours" className="mt-[clamp(1.5rem,6svh,3.25rem)] lg:mt-10">
+    <nav aria-label="Votre parcours" className="mt-[clamp(1.5rem,6svh,3.25rem)] lg:order-2 lg:mt-10">
       <ol className="flex flex-col items-start gap-3 md:gap-3.5">
         <li className="max-w-full">
           <PillLink to="/revision" tone="surface" end={<ArrowRight strokeWidth={2.6} />}>
@@ -187,7 +187,7 @@ export default function Home() {
   const resume = inProgress && (
     <section
       aria-label="Examen en cours"
-      className="flex flex-col items-start gap-1 pt-8 lg:mt-6 lg:max-w-[26rem] lg:pt-0"
+      className="mt-auto flex flex-col items-start gap-1 pt-8 lg:order-1 lg:mt-6 lg:max-w-[26rem] lg:pt-0"
     >
       <PillLink to="/examen" tone="ink" size="lg" end={<ArrowRight strokeWidth={2.6} />} className="w-full">
         <span className="flex flex-col">
@@ -214,7 +214,10 @@ export default function Home() {
       className={cn(
         'inline-flex min-h-11 items-center self-start rounded-sm text-[0.9375rem] font-bold underline underline-offset-4',
         // Phone: under the resume (2.5 gap instead of 3) or, without one, at the bottom of the page
-        inProgress ? '-mt-0.5 lg:mt-0' : 'mt-8 lg:mt-0',
+        inProgress
+          ? '-mt-0.5 lg:mt-0'
+          : 'mt-auto min-h-[4.75rem] pt-8 lg:mt-0 lg:min-h-11 lg:pt-0',
+        'lg:order-1',
       )}
     >
       Comment se passe l'examen ?
@@ -280,33 +283,25 @@ export default function Home() {
       <div className="relative mx-auto flex grow w-full max-w-[30rem] flex-col gap-3 px-[22px] pt-0 pb-6 md:max-w-[36rem] md:px-8 md:pb-10 lg:max-w-[62rem] lg:px-10">
 
         {/* Rendered once, placed by CSS: the focused element must survive the switch at 1024 px.
-            DOM order = the order from 1024 px: the journey on the left (resume under the title,
-            never face to face with step 2), « Où vous en êtes » on the right, the mentions at
-            the bottom. On a phone the groups and the footer are `contents` (every block is a
-            direct child of the column), and the two pairs that swap places are laid out in
-            reverse (journey then resume, rules then last exams). */}
+            DOM order = the phone order (what screen readers and the Tab key follow). On a phone the
+            groups and the footer are `contents` (every block is a direct child of the column). From
+            1024 px: the journey on the left (resume moved under the title with `order`, never face
+            to face with step 2), « Où vous en êtes » on the right (last exams before the rules),
+            the mentions at the bottom. */}
         <div className="contents lg:grid lg:grid-cols-[minmax(0,1fr)_minmax(0,23rem)] lg:items-start lg:gap-x-16">
           <div className="contents lg:flex lg:flex-col lg:gap-3">
             {titlePill}
             {ficheLink}
             {heading}
-            <div
-              className={cn(
-                'flex grow flex-col-reverse gap-3 lg:grow-0 lg:flex-col lg:justify-start',
-                // Reversed: the main-start is the bottom, so a lone journey needs `justify-end` to stay on top
-                inProgress ? 'justify-between' : 'justify-end',
-              )}
-            >
-              {resume}
-              {journey}
-            </div>
+            {journey}
+            {resume}
           </div>
 
           <section
             role={wide ? 'region' : undefined}
             aria-labelledby={wide ? 'progress' : undefined}
             className={cn(
-              'flex flex-col-reverse gap-3 lg:mt-[4.25rem] lg:flex-col',
+              'contents lg:mt-[4.25rem] lg:flex lg:flex-col',
               recent.length > 0 ? 'lg:gap-5' : 'lg:gap-4',
             )}
           >
@@ -336,8 +331,8 @@ export default function Home() {
                   </p>
                 </>
               ))}
-            {recentExams}
             {rulesLink}
+            {recentExams}
           </section>
         </div>
 

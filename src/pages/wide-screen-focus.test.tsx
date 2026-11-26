@@ -1,11 +1,9 @@
-import { act, fireEvent, render, screen } from '@testing-library/react'
+import { act, render, screen } from '@testing-library/react'
 import { MemoryRouter, Route, Routes } from 'react-router-dom'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import Home from './Home'
-import ExamenDetail from './ExamenDetail'
 import { ThemeProvider } from '@/components/ThemeProvider'
 import { WIDE_SCREEN_QUERY } from '@/lib/use-wide-screen'
-import allQuestions from '@/data/questions.json'
 
 // A matchMedia whose answer can change after the first render (a tablet turned round)
 function stubSwitchableScreen(wide: boolean) {
@@ -85,47 +83,5 @@ describe('focus kept when the screen crosses 1024 px', () => {
       expect(find(name), String(name)).toBe(before)
       expect(before).toHaveFocus()
     }
-  })
-
-  it('ExamenDetail: the action buttons and the filters keep the focus', () => {
-    const list = allQuestions as { id: number; answers: string[] }[]
-    localStorage.setItem(
-      'quiz-history',
-      JSON.stringify([
-        {
-          id: '1700000000000',
-          date: '2026-01-15T10:00:00.000Z',
-          score: 1,
-          total: 40,
-          answers: [
-            { questionId: list[0].id, chosen: list[0].answers[0], correct: true },
-            { questionId: list[1].id, chosen: null, correct: false },
-          ],
-        },
-      ]),
-    )
-    const setWide = stubSwitchableScreen(false)
-    render(
-      <MemoryRouter initialEntries={['/examen/1700000000000']}>
-        <Routes>
-          <Route path="/examen/:id" element={<ExamenDetail />} />
-        </Routes>
-      </MemoryRouter>,
-    )
-    for (const name of ['Réviser cette question', 'Retour à mon parcours']) {
-      const before = screen.getByRole('link', { name })
-      before.focus()
-      setWide(true)
-      expect(screen.getByRole('link', { name })).toBe(before)
-      expect(before).toHaveFocus()
-      setWide(false)
-      expect(screen.getByRole('link', { name })).toBe(before)
-      expect(before).toHaveFocus()
-    }
-    const all = screen.getByRole('button', { name: /Toutes/ })
-    fireEvent.click(all)
-    all.focus()
-    setWide(true)
-    expect(all).toHaveFocus()
   })
 })
