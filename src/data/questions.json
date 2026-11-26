@@ -2004,7 +2004,7 @@
       "Le directeur général des services communaux",
       "Le président de la communauté de communes"
     ],
-    "explanation": "Le maire est élu par les conseillers municipaux, eux-mêmes élus pour 6 ans par les électeurs de la commune. Il dirige la commune, qui gère notamment les écoles maternelles et primaires, l'urbanisme et les services de proximité.",
+    "explanation": "Le maire est élu par les conseillers municipaux, eux-mêmes élus par les électeurs de la commune. Il dirige la commune et son administration, avec le conseil municipal.",
     "answers": [
       "Le maire, élu par le conseil municipal"
     ],
@@ -8888,7 +8888,7 @@
       "De juger les personnes, exercé par les tribunaux",
       "De diriger l'administration, exercé par les préfets",
       "De contrôler la constitutionnalité des lois, exercé par le Gouvernement",
-      "De conduire la politique de la nation, exercé par le Premier ministre"
+      "D'élire le président de la République, exercé par les maires"
     ],
     "explanation": "Le pouvoir législatif est exercé par le Parlement, qui vote la loi. Le Parlement vérifie aussi que le Gouvernement agit selon la loi. Le pouvoir exécutif applique les lois et le pouvoir judiciaire rend la justice.",
     "group": "pouvoir-legislatif",
@@ -8938,7 +8938,7 @@
     "distractors": [
       "Voter les lois et contrôler le président",
       "Rendre la justice dans toute la France",
-      "Gérer les écoles primaires de chaque commune",
+      "Nommer les maires des communes",
       "Élire les sénateurs",
       "Contrôler l'application de la Constitution"
     ],
@@ -9016,7 +9016,7 @@
     "distractors": [
       "Rendre la justice au nom du peuple",
       "Présider l'Assemblée nationale",
-      "Représenter l'État dans un département",
+      "Diriger les débats du Sénat",
       "Nommer seul tous les membres du Conseil constitutionnel",
       "Élaborer seul les lois du pays"
     ],
@@ -9142,7 +9142,7 @@
       "L'action sociale (handicap, gestion du RSA)"
     ],
     "distractors": [
-      "L'enseignement (écoles maternelles et primaires)",
+      "Les transports (trains régionaux, TER)",
       "La gestion des lycées (bâtiments, équipements)",
       "La défense (armée, frontières)",
       "La justice (tribunaux, prisons)",
@@ -9473,8 +9473,8 @@
       "L'intérêt général, l'ordre public et les libertés des autres"
     ],
     "distractors": [
-      "L'intérêt du Gouvernement et la volonté du président",
-      "Les traditions religieuses et les coutumes locales",
+      "L'intérêt du Gouvernement, la volonté du président et celle de sa majorité",
+      "Les traditions religieuses, les coutumes locales et les croyances de chacun",
       "L'intérêt économique de l'État et des entreprises",
       "La décision personnelle de chaque maire",
       "La volonté de la majorité des habitants"
@@ -9573,8 +9573,8 @@
       "L'organisation de l'État et les principaux droits et libertés fondamentaux"
     ],
     "distractors": [
-      "La liste des lois votées chaque année par le Parlement",
-      "Le détail de tous les impôts et des taxes",
+      "La liste complète des lois votées chaque année par le Parlement et leurs décrets d'application",
+      "Le détail de tous les impôts et des taxes que doivent payer les citoyens et les entreprises",
       "Les règles de la circulation routière sur le territoire",
       "Les décisions rendues par les tribunaux",
       "Le programme politique du président en place"
@@ -9600,9 +9600,9 @@
     ],
     "distractors": [
       "Le droit de publier toute information sans aucune limite",
-      "Le droit pour l'État de contrôler les articles avant leur publication",
+      "Le droit de publier librement, sauf si l'État contrôle les articles avant leur publication",
       "Le droit de ne publier que des informations validées par le Gouvernement",
-      "Le droit réservé aux seuls journalistes de s'exprimer"
+      "Le droit pour les journalistes d'écrire et de publier librement, sauf pour les simples citoyens"
     ],
     "explanation": "L'article 11 de la Déclaration des droits de l'homme et du citoyen de 1789 garantit la libre communication des pensées et des opinions : tout citoyen peut parler, écrire et imprimer librement, sauf à répondre de l'abus de cette liberté dans les cas déterminés par la loi.",
     "group": "liberte-expression",
@@ -9627,7 +9627,7 @@
       "Le droit de posséder un jardin pour chaque habitant",
       "L'interdiction de toute activité industrielle en France",
       "La gratuité des transports en commun pour tous",
-      "Le droit pour les entreprises de ne pas payer d'impôts"
+      "Le devoir pour les seules entreprises de préserver l'environnement, sans obligation pour les particuliers"
     ],
     "explanation": "La Charte de l'environnement de 2004, ajoutée à la Constitution en 2005, prévoit que chacun a le droit de vivre dans un environnement équilibré et respectueux de la santé (article 1er), et que toute personne a le devoir de prendre part à la préservation et à l'amélioration de l'environnement (article 2).",
     "source": {
@@ -9775,8 +9775,8 @@
       "Le droit pour une personne employée de cesser le travail pour exprimer un désaccord"
     ],
     "distractors": [
-      "Le droit de démissionner sans prévenir son employeur",
-      "Le droit de ne jamais travailler le week-end",
+      "Le droit pour une personne employée de démissionner sans prévenir son employeur ni respecter de délai",
+      "Le droit pour une personne employée de refuser de travailler le week-end et les jours fériés",
       "Le droit de choisir librement ses jours de congé",
       "Le droit d'occuper son entreprise sans autorisation"
     ],
@@ -9799,9 +9799,9 @@
       "Un texte fondateur qui organise l'État et garantit les droits et libertés"
     ],
     "distractors": [
-      "Un code de lois qui fixe la peine de chaque infraction",
+      "Un code de lois qui fixe la peine de chaque infraction et les règles de la vie quotidienne",
       "Le règlement intérieur de l'Assemblée nationale",
-      "Un traité signé entre les pays européens",
+      "Un traité signé entre les pays européens pour organiser leur coopération économique",
       "Un décret signé par le président de la République",
       "Le programme politique du Gouvernement"
     ],
@@ -9881,6 +9881,7 @@
       "Une insulte n'est punie que si elle est dite à voix haute"
     ],
     "explanation": "Une injure est une parole ou un écrit destiné à blesser ou à offenser une personne. Si une vidéo injurieuse est diffusée sur un compte de réseau social accessible à tous, il s'agit d'une injure publique, punie par la loi.",
+    "group": "liberte-expression",
     "source": {
       "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F32077",
       "label": "service-public.gouv.fr"
@@ -9999,8 +10000,8 @@
       "Pour protéger les personnes contre les propos haineux et l'incitation à la violence"
     ],
     "distractors": [
-      "Pour empêcher toute critique du Gouvernement",
-      "Pour interdire de critiquer une religion",
+      "Pour empêcher toute personne de critiquer le Gouvernement ou les décisions des élus",
+      "Pour interdire de critiquer ou de se moquer d'une religion, d'un dieu ou de ce qui est sacré",
       "Pour réserver la parole aux journalistes",
       "Pour éviter que l'on exprime des opinions politiques"
     ],
@@ -10099,8 +10100,8 @@
       "La limitation des déplacements pendant l'état d'urgence sanitaire de 2020"
     ],
     "distractors": [
-      "L'interdiction de critiquer le Gouvernement",
-      "L'obligation de pratiquer une religion",
+      "L'interdiction pour les citoyens de critiquer le Gouvernement pendant une crise",
+      "L'obligation de pratiquer une religion pour préserver l'ordre public",
       "L'interdiction de se déplacer selon son origine",
       "La fermeture d'un journal par le Gouvernement"
     ],
