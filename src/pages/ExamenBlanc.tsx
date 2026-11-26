@@ -25,7 +25,7 @@ import { cn } from '@/lib/utils'
  * Arriving here with an exam in progress (by the address) offers to resume it first.
  */
 export default function ExamenBlanc() {
-  useDocumentTitle('Examen blanc')
+  useDocumentTitle("Avant l'examen blanc")
   const navigate = useNavigate()
   const [title] = useState(() => loadTargetTitle() ?? DEFAULT_TITLE)
   const [inProgress] = useState(() => loadProgressForTitle(title))
@@ -74,10 +74,10 @@ export default function ExamenBlanc() {
         </DialogContent>
       </Dialog>
 
-      <main className="relative min-h-svh overflow-hidden bg-background text-foreground">
+      <main className="relative flex min-h-svh flex-col overflow-hidden bg-background text-foreground">
         <OrganicBackground shape="goal" />
-        <div className="relative mx-auto flex w-full max-w-[30rem] flex-col gap-3 px-[22px] pt-2 pb-6 md:max-w-[36rem] md:gap-3.5 md:px-8 md:pb-10">
-          <AppHeader />
+        <AppHeader />
+        <div className="relative mx-auto flex w-full max-w-[30rem] flex-col gap-3 px-[22px] pt-0 pb-6 md:max-w-[36rem] md:gap-3.5 md:px-8 md:pb-10">
           <BackLink />
           <div className="flex flex-col items-start gap-2">
             <h1 className="text-[2.375rem] leading-[0.98] font-bold tracking-[-0.04em] text-balance md:text-[3rem]">
