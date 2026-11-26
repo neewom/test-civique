@@ -2860,7 +2860,7 @@
     ],
     "explanation": "Jeter ou abandonner un déchet sur la voie publique est interdit et puni d'une amende forfaitaire de 135 € (375 € si elle est payée après 45 jours). En cas de contestation ou de non-paiement, le juge peut fixer l'amende jusqu'à 750 €. Chacun est responsable de la propreté de l'espace public.",
     "answers": [
-      "Interdit, c'est une contravention passible d'une amende pouvant aller jusqu'à 750€"
+      "Interdit, c'est une contravention passible d'une amende pouvant aller jusqu'à 750 €"
     ],
     "group": "abandon-dechets",
     "source": {
@@ -3053,7 +3053,7 @@
       "Une violation des clauses d'un contrat commercial",
       "Un manquement à une obligation purement morale"
     ],
-    "explanation": "Une infraction est un acte contraire à la loi pénale. Il en existe trois catégories par ordre de gravité : la contravention (ex : excès de vitesse), le délit (ex : vol, agression), et le crime (ex : meurtre, viol). Chaque catégorie est sanctionnée par des peines différentes.",
+    "explanation": "Une infraction est un acte contraire à la loi pénale. Il en existe trois catégories par ordre de gravité : la contravention (ex : stationnement interdit), le délit (ex : vol, agression), et le crime (ex : meurtre, viol). Chaque catégorie est sanctionnée par des peines différentes.",
     "answers": [
       "Un acte contraire à la loi pénale, classé en contravention, délit ou crime selon sa gravité"
     ],
@@ -6178,6 +6178,7 @@
     "answers": [
       "Déclarer la manifestation en préfecture ou en mairie au préalable"
     ],
+    "group": "manifestation",
     "source": {
       "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F21899",
       "label": "service-public.gouv.fr"
@@ -7780,6 +7781,7 @@
     "answers": [
       "Interpeller le conducteur, appeler le 17 si nécessaire, et soutenir la victime"
     ],
+    "group": "temoin-secours",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/droits-et-devoirs/obligations-et-devoirs-des-personnes-residant-en-france/le-role-des-temoins-en-cas-de-violences/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -7854,6 +7856,7 @@
       "Le droit d'appeler à la violence contre une religion"
     ],
     "explanation": "La liberté d'expression est garantie par la Déclaration des droits de l'homme et du citoyen de 1789 : chacun peut avoir ses opinions, même religieuses, et peut parler, écrire et publier librement. Elle a des limites fixées par la loi : les insultes ou propos haineux envers des personnes, l'incitation à la haine, à la violence ou à la discrimination et la négation de la Shoah sont punis.",
+    "group": "liberte-expression",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/laicite/le-blaspheme/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -8138,6 +8141,7 @@
       "Les impôts servent à payer les dépenses personnelles des élus"
     ],
     "explanation": "Toute personne qui habite en France, française ou non, doit payer des impôts. Cette participation à l'effort commun est adaptée selon les revenus de chacun. Elle permet de faire fonctionner les services publics : police, justice, éducation, hôpitaux, ramassage des ordures… L'obligation de contribuer aux dépenses communes est inscrite dans la Déclaration des droits de l'homme et du citoyen de 1789.",
+    "group": "obligations-residents",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/droits-et-devoirs/obligations-et-devoirs-des-personnes-residant-en-france/les-obligations-en-tant-que-resident-francais/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -8783,6 +8787,7 @@
       "Oui, mais seulement pour les élections nationales"
     ],
     "explanation": "En France, le vote n'est pas obligatoire : c'est un droit et non un devoir. Pour voter, il faut être inscrit sur les listes électorales.",
+    "group": "vote-conditions",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/democratie-et-droit-de-vote/democratie-et-droit-de-vote-les-conditions-pour-voter-en-france-1/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -9520,7 +9525,6 @@
     ],
     "distractors": [
       "« Chacun a le devoir de travailler et le droit d'obtenir un emploi »",
-      "« La France est une République indivisible, laïque, démocratique et sociale »",
       "« La Nation garantit l'égal accès de l'enfant et de l'adulte à l'instruction »",
       "« Le peuple français proclame solennellement son attachement aux Droits de l'homme »"
     ],
@@ -9601,6 +9605,7 @@
       "Le droit réservé aux seuls journalistes de s'exprimer"
     ],
     "explanation": "L'article 11 de la Déclaration des droits de l'homme et du citoyen de 1789 garantit la libre communication des pensées et des opinions : tout citoyen peut parler, écrire et imprimer librement, sauf à répondre de l'abus de cette liberté dans les cas déterminés par la loi.",
+    "group": "liberte-expression",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/droits-et-devoirs/droits-fondamentaux/les-principaux-textes-la-declaraion-des-droits-de-lhomme-et-du-citoyen/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -9640,13 +9645,13 @@
     "crNumber": 101,
     "question": "Que signifie la dignité humaine ?",
     "answers": [
-      "Que chaque personne a de la valeur et mérite le respect, simplement parce qu'elle est un être humain"
+      "Que chaque personne mérite le respect, simplement parce qu'elle est un être humain"
     ],
     "distractors": [
-      "Que le respect se mérite par ses actes et sa réussite",
+      "Que le respect se mérite par ses actes, son travail et sa réussite",
       "Que seuls les citoyens français ont droit au respect",
       "Que le respect dû à une personne dépend de sa religion",
-      "Que chacun peut agir comme il veut sans rendre de comptes",
+      "Que chacun peut agir comme il veut sans rendre de comptes à personne",
       "Que le respect dû à une personne dépend de son état de santé"
     ],
     "explanation": "La dignité humaine, c'est le fait que chaque personne a de la valeur et mérite un respect inconditionnel, quels que soient son âge, son sexe, son état de santé, sa condition sociale, sa religion ou son origine. Un être humain ne doit jamais être traité comme un objet.",
@@ -9674,6 +9679,7 @@
       "Le droit de ne jamais être contrôlé par la police"
     ],
     "explanation": "Participer à une manifestation fait partie des libertés qui concernent plusieurs personnes et qui garantissent à chacun sa place dans la société, comme se rassembler dans un lieu ou adhérer à un syndicat. Comme toute liberté, elle ne doit pas empêcher les autres d'exercer la leur.",
+    "group": "manifestation",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/devise-et-symboles-de-la-republique/la-liberte/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -9723,7 +9729,7 @@
       "Un arrêté du maire",
       "Une circulaire d'un ministre"
     ],
-    "explanation": "La Constitution du 4 octobre 1958 est un texte très difficile à modifier : peu de modifications ont été apportées, comme en 1962 quand le président de la République a été désigné au suffrage direct. Toutes les lois françaises doivent la respecter.",
+    "explanation": "La Constitution du 4 octobre 1958 est un texte très difficile à modifier, même si quelques révisions ont eu lieu : en 1962 par exemple, un référendum a décidé que le président de la République serait élu au suffrage direct. Toutes les lois françaises doivent la respecter.",
     "group": "constitution",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/droits-et-devoirs/droits-fondamentaux/les-principaux-textes-la-constitution-de-la-5-republique/",
@@ -9750,7 +9756,7 @@
       "La liberté d'enseignement"
     ],
     "explanation": "La laïcité garantit la liberté de conscience : chaque personne est libre d'avoir ou de ne pas avoir de religion, d'en changer ou de ne plus en avoir. Elle permet aussi de pratiquer sa religion, sans troubler l'ordre public.",
-    "group": "liberte-conscience",
+    "group": "laicite",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/laicite/la-definition-de-la-laicite-1/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -9769,7 +9775,7 @@
       "Le droit pour une personne employée de cesser le travail pour exprimer un désaccord"
     ],
     "distractors": [
-      "Le droit de quitter son travail sans préavis",
+      "Le droit de démissionner sans prévenir son employeur",
       "Le droit de ne jamais travailler le week-end",
       "Le droit de choisir librement ses jours de congé",
       "Le droit d'occuper son entreprise sans autorisation"
@@ -9844,12 +9850,13 @@
       "Oui, à condition d'être inscrite sur les listes électorales"
     ],
     "distractors": [
-      "Oui, sans aucune formalité à accomplir",
+      "Oui, mais seulement avec l'accord de son mari",
       "Oui, mais seulement aux élections municipales",
       "Non, elle doit être née en France",
       "Non, le vote n'est possible qu'à partir de 25 ans"
     ],
     "explanation": "Le suffrage universel permet de voter, sans distinction de sexe, à tous les citoyens de nationalité française, majeurs, qui ont leurs droits civiques et politiques et qui sont inscrits sur les listes électorales.",
+    "group": "vote-conditions",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/democratie-et-droit-de-vote/democratie-et-droit-de-vote-les-conditions-pour-voter-en-france-1/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -9898,7 +9905,7 @@
       "Interdit seulement dans les parcs et les forêts"
     ],
     "explanation": "Un mégot est un déchet. Il est interdit de jeter ou d'abandonner tout type de déchets dans la rue, et le non-respect de cette interdiction est sanctionné d'une amende.",
-    "group": "abandon-dechets",
+    "group": "dechets",
     "source": {
       "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F31963",
       "label": "service-public.gouv.fr"
@@ -10073,6 +10080,7 @@
       "Prévenir seulement la famille de la victime"
     ],
     "explanation": "Assurer l'assistance à personne en danger, c'est porter secours à toute personne en danger. Si quelqu'un voit une personne en danger et ne l'aide pas, il peut être condamné pour non-assistance à personne en danger.",
+    "group": "temoin-secours",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/droits-et-devoirs/obligations-et-devoirs-des-personnes-residant-en-france/les-obligations-en-tant-que-resident-francais/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -10113,16 +10121,16 @@
     "crNumber": 122,
     "question": "Quelle est l’attitude à avoir lorsque qu'on est témoin de violences ?",
     "answers": [
-      "Agir sans se mettre en danger : se protéger, aider la victime et appeler les forces de l'ordre"
+      "Aider la victime sans se mettre en danger et appeler les forces de l'ordre"
     ],
     "distractors": [
-      "Ne rien faire, car cela ne regarde que la victime",
-      "Filmer la scène sans intervenir",
+      "Ne rien faire, car cela ne regarde que la victime et sa famille",
+      "Filmer la scène sans intervenir, pour la publier ensuite",
       "Intervenir par la force, quel que soit le danger",
       "Attendre que la victime porte plainte avant d'agir"
     ],
     "explanation": "Face à des violences, il faut agir sans mettre la victime ou soi-même en danger : écouter et soutenir la victime, l'orienter vers des aides, intervenir sans se mettre en danger (se protéger d'abord, puis aider la victime, appeler les forces de l'ordre) et témoigner ou signaler les faits.",
-    "group": "victime-violences",
+    "group": "temoin-secours",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/droits-et-devoirs/obligations-et-devoirs-des-personnes-residant-en-france/le-role-des-temoins-en-cas-de-violences/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -10193,7 +10201,7 @@
     "distractors": [
       "Un meurtre",
       "Un viol",
-      "Un excès de vitesse",
+      "Un stationnement interdit",
       "Du tapage nocturne"
     ],
     "explanation": "Le délit est une infraction intermédiaire, plus grave que la contravention mais moins grave que le crime. Le vol en est un exemple, comme la fraude fiscale ou le harcèlement. Il est jugé par le tribunal correctionnel.",
