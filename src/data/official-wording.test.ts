@@ -90,8 +90,9 @@ function normalizeTypography(s: string): string {
 }
 
 // Exceptions par liste : rang officiel → libellé attendu dans nos données. Seules
-// celles des questions présentes figurent ici (coquilles officielles connues, non
-// encore présentes : CR 39 et 153 « Qu'est ce », 73 et 144 « l'euro est-elle »,
+// celles des questions présentes figurent ici (coquille officielle présente et gardée
+// telle quelle, sans exception décidée : CR 39 « Qu'est ce » ; coquilles connues, non
+// encore présentes : CR 153 « Qu'est ce », 73 et 144 « l'euro est-elle »,
 // 122 « lorsque qu'on » ; NAT 151 « fondée? », 198 « océan indien »,
 // 213 « 101ème », 225 « les parents peuvent inscrire »).
 const LIST_EXCEPTIONS: Record<string, Map<number, { reason: string; expected: string }>> = {

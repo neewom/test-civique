@@ -6,6 +6,7 @@ import Examen, { GLOBAL_EXAM_TIME } from './Examen'
 import { UNSAVED_MESSAGE } from '@/lib/readiness'
 import type { ExamInProgress } from '@/lib/exam-types'
 import { saveProgress, loadProgress, EXAM_PROGRESS_KEY } from '@/lib/exam-types'
+import allQuestions from '@/data/questions.json'
 import {
   buildExam,
   saveResult,
@@ -501,7 +502,11 @@ describe('Examen — fiabilité', () => {
     })
     const questions = loadProgress()!.questions
     expect(questions).toHaveLength(EXAM_SIZE)
-    expect(questions.filter((q) => q.id > 191)).toHaveLength(12)
+    // An exam question keeps no notion: look it up in the data
+    const situationalIds = new Set(
+      (allQuestions as { id: number; notion: string }[]).filter((q) => q.notion === 'mise-en-situation').map((q) => q.id),
+    )
+    expect(questions.filter((q) => situationalIds.has(q.id))).toHaveLength(12)
   })
 
   it('une reprise dont toutes les réponses sont données affiche le résultat une seule fois', async () => {

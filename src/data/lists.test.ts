@@ -20,8 +20,21 @@ describe('question lists', () => {
     expect(outliers.map((q) => q.id)).toEqual([])
   })
 
-  it('every official question (1-191) belongs to the multi-year permit list', () => {
-    const outliers = questions.filter((q) => q.notion !== SITUATIONAL && !q.lists.includes('pluriannuelle'))
+  // Id ranges: 1-191 multi-year permit list, 192-291 situational questions,
+  // 292+ questions of another official list only (resident card, naturalisation).
+  it('every question of the multi-year permit list (1-191) belongs to it', () => {
+    const outliers = questions.filter((q) => q.id <= 191 && !q.lists.includes('pluriannuelle'))
+    expect(outliers.map((q) => q.id)).toEqual([])
+  })
+
+  it('every question from 292 on has a resident or naturalisation rank and is not in the multi-year permit list', () => {
+    const outliers = questions.filter(
+      (q) =>
+        q.id >= 292 &&
+        ((q.crNumber === undefined && q.natNumber === undefined) ||
+          q.lists.includes('pluriannuelle') ||
+          q.notion === SITUATIONAL),
+    )
     expect(outliers.map((q) => q.id)).toEqual([])
   })
 
