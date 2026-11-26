@@ -5,6 +5,10 @@ import { DEFAULT_TITLE, type TitleKey } from '@/lib/target-title'
 
 export const EXAM_SIZE = 40
 
+// Arrêté du 10 octobre 2025, art. 4 : 45 minutes au maximum
+export const EXAM_MINUTES = 45
+export const GLOBAL_EXAM_TIME = EXAM_MINUTES * 60 // 2700 secondes
+
 // Arrêté du 10 octobre 2025, art. 4 : réussite à 80 % des points (32/40)
 export const PASS_RATIO = 0.8
 

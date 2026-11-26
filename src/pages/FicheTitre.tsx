@@ -5,7 +5,7 @@ import { BackLink } from '@/components/BackLink'
 import { markInAppBack } from '@/lib/page-transition'
 import { OrganicBackground } from '@/components/OrganicBackground'
 import { PillButton } from '@/components/PillButton'
-import { EXAM_SIZE, passThreshold } from '@/lib/exam'
+import { EXAM_MINUTES, EXAM_SIZE, passThreshold } from '@/lib/exam'
 import { FICHES, FICHE_LABELS, titleOfSlug } from '@/lib/fiches'
 import { hasProgress } from '@/lib/exam-types'
 import { loadHistory } from '@/lib/history'
@@ -39,7 +39,7 @@ function Fiche({ titleKey }: { titleKey: TitleKey }) {
 
   const marks = [
     { icon: ListChecks, value: String(EXAM_SIZE), label: 'questions' },
-    { icon: Timer, value: '45 min', label: 'au maximum' },
+    { icon: Timer, value: `${EXAM_MINUTES} min`, label: 'au maximum' },
     { icon: CircleDot, value: '4 choix', label: 'une seule bonne réponse' },
     { icon: Target, value: `${passThreshold(EXAM_SIZE)}/${EXAM_SIZE}`, label: 'pour réussir', highlight: true },
   ]

@@ -264,13 +264,15 @@ describe('ExamenDetail — placement des actions', () => {
     return { review, back, list }
   }
 
-  it('téléphone et tablette : les actions suivent les questions', () => {
+  // Changed with the fix for the focus lost at 1024 px: the actions are rendered once, in the side
+  // column, and a phone puts them last with CSS (`order-last`; the column is `contents` there)
+  it('téléphone et tablette : une seule copie des actions, placées après les questions par CSS', () => {
     stubWideScreen(false)
     seedHistory(RECORD)
     renderDetail(RECORD_ID)
-    const { review, back, list } = order()
+    const { review, back } = order()
     expect(back).toHaveLength(1)
-    expect(list.compareDocumentPosition(review) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy()
+    expect(review.parentElement).toHaveClass('order-last', 'lg:order-none')
   })
 
   it('grand écran : les actions sont dans la colonne latérale, avant les questions, une seule fois', () => {

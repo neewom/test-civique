@@ -12,7 +12,7 @@ import {
 import { useDocumentTitle } from '@/lib/use-document-title'
 import type { AnswerRecord, ExamQuestion, ExamInProgress } from '@/lib/exam-types'
 import { saveProgress, clearProgress, loadProgressForTitle, resumeIndex } from '@/lib/exam-types'
-import { buildExam, previousExamQuestionIds, questionsForTitle, saveResult, isPassed } from '@/lib/exam'
+import { buildExam, EXAM_MINUTES, GLOBAL_EXAM_TIME, previousExamQuestionIds, questionsForTitle, saveResult, isPassed } from '@/lib/exam'
 import { AnswerCard } from '@/components/AnswerCard'
 import { ExamResult, type ExamOutcome } from '@/components/ExamResult'
 import { findExamRecord, loadHistoryForTitle } from '@/lib/history'
@@ -24,8 +24,8 @@ import { SourceLink } from '@/components/SourceLink'
 import { Verdict } from '@/components/Verdict'
 import { trackEvent, examEvent } from '@/lib/analytics'
 
-// Arrêté du 10 octobre 2025, art. 4 : 45 minutes au maximum
-export const GLOBAL_EXAM_TIME = 45 * 60 // 2700 secondes
+// Re-exported: the duration lives in lib/exam, next to EXAM_SIZE
+export { GLOBAL_EXAM_TIME }
 
 // Re-export for consumers (tests, Home)
 export type { ExamQuestion }
@@ -357,7 +357,7 @@ function ExamSession({ restarted, onRestart }: ExamSessionProps) {
                 aria-valuenow={globalTimeLeft}
                 aria-valuemin={0}
                 aria-valuemax={GLOBAL_EXAM_TIME}
-                aria-valuetext={`${plural(minutes, 'minute')} sur 45`}
+                aria-valuetext={`${plural(minutes, 'minute')} sur ${EXAM_MINUTES}`}
                 className="h-full bg-foreground"
                 style={{ width: `${timerPct}%` }}
               />
