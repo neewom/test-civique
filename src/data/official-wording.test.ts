@@ -92,10 +92,10 @@ function normalizeTypography(s: string): string {
 // Exceptions par liste : rang officiel → libellé attendu dans nos données. Seules
 // celles des questions présentes figurent ici. Aucune coquille officielle présente
 // n'est gardée telle quelle sans décision : toute exception est listée ci-dessous avec
-// sa raison. Gardées telles quelles (décision du lot 4, signalées en PR) : CR 153 « Qu'est ce »,
-// 144 « l'euro est-elle ». Coquilles connues, pas encore présentes dans nos données :
-// CR 73 et 122 « lorsque qu'on » ; NAT 151 « fondée? », 198 « océan indien »,
-// 213 « 101ème », 225 « les parents peuvent inscrire ».
+// sa raison. Coquilles officielles CR gardées telles quelles (décision du lot 4, signalées
+// en PR) : CR 73 et CR 144 « l'euro est-elle », CR 122 « lorsque qu'on », CR 153 « Qu'est ce que ».
+// Coquilles connues, pas encore présentes dans nos données : NAT 151 « fondée? »,
+// 198 « océan indien », 213 « 101ème », 225 « les parents peuvent inscrire ».
 const LIST_EXCEPTIONS: Record<string, Map<number, { reason: string; expected: string }>> = {
   CR: new Map([
     [
