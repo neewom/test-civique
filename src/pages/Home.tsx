@@ -178,9 +178,10 @@ export default function Home() {
     setInProgress(null)
   }
 
-  // Always a new exam, even with one in progress (its resume stays at the bottom)
+  // Resumes the exam in progress of the chosen title (never erased silently);
+  // draws a new one only when there is none
   function startExam() {
-    navigate('/examen', { state: { start: 'new' } })
+    navigate('/examen', inProgress ? undefined : { state: { start: 'new' } })
   }
 
   const titlePill = (
