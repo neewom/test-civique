@@ -92,8 +92,7 @@ function normalizeTypography(s: string): string {
 // Exceptions par liste : rang officiel → libellé attendu dans nos données. Seules
 // celles des questions présentes figurent ici. Aucune coquille officielle présente
 // n'est gardée telle quelle sans décision : toute exception est listée ci-dessous avec
-// sa raison. Coquilles officielles CR gardées telles quelles (décision du lot 4, signalées
-// en PR) : CR 73 et CR 144 « l'euro est-elle », CR 122 « lorsque qu'on », CR 153 « Qu'est ce que ».
+// sa raison.
 // Coquilles connues, pas encore présentes dans nos données : NAT 151 « fondée? »,
 // 198 « océan indien », 213 « 101ème », 225 « les parents peuvent inscrire ».
 const LIST_EXCEPTIONS: Record<string, Map<number, { reason: string; expected: string }>> = {
@@ -113,6 +112,39 @@ const LIST_EXCEPTIONS: Record<string, Map<number, { reason: string; expected: st
         // (trait d'union manquant, comme CSP 27) ; notre question 321.
         reason: 'faute corrigée',
         expected: "Qu'est-ce qui est interdit par la Charte de la laïcité à l'école ?",
+      },
+    ],
+    [
+      73,
+      {
+        // Officiel : « Depuis quand l'euro est-elle la monnaie unique ? » (accord fautif) ;
+        // corrigé sur décision de l'utilisateur (2026-11-26), notre question 342.
+        reason: 'faute corrigée',
+        expected: "Depuis quand l'euro est-il la monnaie unique ?",
+      },
+    ],
+    [
+      122,
+      {
+        // Officiel : « … lorsque qu'on est témoin de violences ? » ; notre question 382.
+        reason: 'faute corrigée',
+        expected: "Quelle est l’attitude à avoir lorsqu'on est témoin de violences ?",
+      },
+    ],
+    [
+      144,
+      {
+        // Officiel : « En quelle année l'euro est-elle devenue … » (accord fautif) ; notre question 403.
+        reason: 'faute corrigée',
+        expected: "En quelle année l'euro est-il devenu la monnaie utilisée en France ?",
+      },
+    ],
+    [
+      153,
+      {
+        // Officiel : « Qu'est ce que la France d'outre-mer ? » (trait d'union manquant) ; notre question 412.
+        reason: 'faute corrigée',
+        expected: "Qu'est-ce que la France d'outre-mer ?",
       },
     ],
   ]),

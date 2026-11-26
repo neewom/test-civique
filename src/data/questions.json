@@ -5531,6 +5531,7 @@
     "answers": [
       "Prévenir l'école au plus tôt et justifier l'absence"
     ],
+    "group": "absence-ecole",
     "source": {
       "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F1899",
       "label": "service-public.gouv.fr"
@@ -5603,6 +5604,7 @@
     "answers": [
       "Dans les 5 jours suivant la naissance"
     ],
+    "group": "declaration-naissance",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/demarches-administratives/la-declaration-de-naissance/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -5627,6 +5629,7 @@
     "answers": [
       "La perte de vos droits sociaux : retraite, chômage, assurance maladie"
     ],
+    "group": "travail-non-declare",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/emploi/le-droit-au-travail-5/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -5651,6 +5654,7 @@
     "answers": [
       "Saisir le Conseil de prud'hommes"
     ],
+    "group": "prudhommes",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/emploi/le-droit-au-travail-2/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -5675,6 +5679,7 @@
     "answers": [
       "Se marier civilement à la mairie"
     ],
+    "group": "mariage-civil",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/demarches-administratives/la-declaration-de-mariage/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -5867,6 +5872,7 @@
     "answers": [
       "Appeler le 17 (police) ou le 15 (SAMU) selon la situation"
     ],
+    "group": "numero-police",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/droits-et-devoirs/obligations-et-devoirs-des-personnes-residant-en-france/le-role-des-temoins-en-cas-de-violences/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -5891,6 +5897,7 @@
     "answers": [
       "La durée légale est de 35 heures ; les heures supplémentaires doivent être compensées"
     ],
+    "group": "heures-supplementaires",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/emploi/le-droit-au-travail-1/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -5961,6 +5968,7 @@
       "Contacter la mairie pour annuler la convocation"
     ],
     "explanation": "Une convocation devant un tribunal doit être respectée. Si la personne poursuivie ne vient pas, elle peut être amenée de force par la police ou jugée en son absence, sans pouvoir se défendre ; un témoin absent sans excuse valable peut aussi être contraint de venir. Toute personne peut être assistée d'un avocat, et l'aide juridictionnelle existe pour ceux qui ne peuvent pas en payer un.",
+    "group": "aide-juridictionnelle",
     "answers": [
       "Vous y rendre, éventuellement assisté d'un avocat"
     ],
@@ -6394,6 +6402,7 @@
       "Ce droit n'existe pas, la religion est déterminée par la famille"
     ],
     "explanation": "La liberté de conscience et de religion est garantie à toute personne, enfants compris. Tant que l'enfant est mineur, son éducation religieuse est un acte important de l'autorité parentale : elle demande l'accord de ses deux parents, qui doivent l'associer aux décisions selon son âge et sa maturité.",
+    "group": "autorite-parentale",
     "answers": [
       "Il est libre de sa religion, mais ses deux parents décident de son éducation en tenant compte de son avis"
     ],
@@ -7762,6 +7771,7 @@
     "answers": [
       "Oui, quand la cantine existe, son accès est un droit pour tous les élèves"
     ],
+    "group": "cantine",
     "source": {
       "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F24570",
       "label": "service-public.gouv.fr"
@@ -9117,7 +9127,7 @@
       "resident"
     ],
     "crNumber": 73,
-    "question": "Depuis quand l'euro est-elle la monnaie unique ?",
+    "question": "Depuis quand l'euro est-il la monnaie unique ?",
     "answers": [
       "2002"
     ],
@@ -9787,6 +9797,7 @@
       "Le droit d'occuper son entreprise sans autorisation"
     ],
     "explanation": "Le droit de grève est l'une des libertés qui découlent du principe de liberté : une personne employée peut cesser le travail pour exprimer un désaccord.",
+    "group": "droit-greve",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/droits-et-devoirs/droits-fondamentaux/les-droits-inherents-a-la-personne-humaine/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -10126,7 +10137,7 @@
       "resident"
     ],
     "crNumber": 122,
-    "question": "Quelle est l’attitude à avoir lorsque qu'on est témoin de violences ?",
+    "question": "Quelle est l’attitude à avoir lorsqu'on est témoin de violences ?",
     "answers": [
       "Aider la victime sans se mettre en danger et appeler les forces de l'ordre"
     ],
@@ -10649,7 +10660,7 @@
       "resident"
     ],
     "crNumber": 144,
-    "question": "En quelle année l'euro est-elle devenue la monnaie utilisée en France ?",
+    "question": "En quelle année l'euro est-il devenu la monnaie utilisée en France ?",
     "answers": [
       "En 2002"
     ],
@@ -10887,7 +10898,7 @@
       "resident"
     ],
     "crNumber": 153,
-    "question": "Qu'est ce que la France d'outre-mer ?",
+    "question": "Qu'est-ce que la France d'outre-mer ?",
     "answers": [
       "Les territoires français situés hors d'Europe"
     ],
@@ -11508,6 +11519,770 @@
     "group": "symboles-republique",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/les-symboles-de-la-republique/la-fete-nationale/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 437,
+    "theme": "Vie en société",
+    "notion": "s-installer",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 178,
+    "question": "Quel mariage est reconnu par l'État ?",
+    "answers": [
+      "Le mariage civil, célébré à la mairie"
+    ],
+    "distractors": [
+      "Le mariage religieux, célébré par un prêtre ou un imam",
+      "Le mariage coutumier, décidé par les deux familles",
+      "L'union libre, après trois ans de vie commune",
+      "Le mariage signé devant un notaire"
+    ],
+    "explanation": "Le mariage civil est le seul mariage reconnu en France. Il est célébré à la mairie, devant un officier d'état civil. Une cérémonie religieuse peut avoir lieu ensuite, mais seulement après le mariage civil, et elle n'a pas de valeur légale.",
+    "group": "mariage-civil",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/demarches-administratives/la-declaration-de-mariage/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 438,
+    "theme": "Vie en société",
+    "notion": "autorite-parentale-ecole",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 179,
+    "question": "Auprès de quelle institution les parents peuvent-ils inscrire leur enfant à l'école publique ?",
+    "answers": [
+      "La mairie de la commune"
+    ],
+    "distractors": [
+      "La préfecture",
+      "La caisse d'allocations familiales (CAF)",
+      "La caisse primaire d'assurance maladie",
+      "Le tribunal judiciaire",
+      "France Travail"
+    ],
+    "explanation": "Pour inscrire son enfant à l'école publique, il suffit de contacter la mairie, ou l'école située près de son domicile. Les parents sont libres de choisir une école publique ou une école privée.",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/parentalite/la-liberte-de-choisir-l-ecole-de-son-enfant/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 439,
+    "theme": "Vie en société",
+    "notion": "autorite-parentale-ecole",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 180,
+    "question": "En cas de divorce, qui exerce l'autorité parentale ?",
+    "answers": [
+      "Les deux parents, à égalité"
+    ],
+    "distractors": [
+      "La mère de l'enfant, en priorité",
+      "Le parent qui a les revenus les plus élevés",
+      "Seulement le parent qui garde l'enfant",
+      "Le juge qui prononce le divorce"
+    ],
+    "explanation": "Les deux parents ont l'autorité parentale : ils ont les mêmes droits et les mêmes devoirs envers leur enfant, qu'ils soient mariés, pacsés, en concubinage ou séparés. Ils sont tous les deux responsables de leur enfant.",
+    "group": "autorite-parentale",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/parentalite/exercice-de-l-autorite-parentale-1/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 440,
+    "theme": "Vie en société",
+    "notion": "s-installer",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 181,
+    "question": "Quelle aide permet aux personnes qui ont des difficultés financières d'avoir un avocat ?",
+    "answers": [
+      "L'aide juridictionnelle"
+    ],
+    "distractors": [
+      "La Complémentaire santé solidaire",
+      "L'aide personnalisée au logement (APL)",
+      "Le revenu de solidarité active (RSA)",
+      "La prime d'activité"
+    ],
+    "explanation": "L'aide juridictionnelle est une aide de l'État qui finance, en totalité ou en partie, les frais d'une procédure en justice, dont les honoraires de l'avocat. Elle s'adresse aux personnes qui ont de faibles ressources.",
+    "group": "aide-juridictionnelle",
+    "source": {
+      "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F18074",
+      "label": "service-public.gouv.fr"
+    }
+  },
+  {
+    "id": 441,
+    "theme": "Vie en société",
+    "notion": "s-installer",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 182,
+    "question": "Où faut-il déclarer la naissance d'un enfant ?",
+    "answers": [
+      "À la mairie du lieu de naissance"
+    ],
+    "distractors": [
+      "À la préfecture du département",
+      "À la caisse d'allocations familiales",
+      "Au commissariat de police",
+      "Au tribunal judiciaire"
+    ],
+    "explanation": "La déclaration de naissance est obligatoire. Elle se fait à la mairie du lieu de naissance, dans les 5 jours qui suivent la naissance. L'officier d'état civil établit alors l'acte de naissance de l'enfant.",
+    "group": "declaration-naissance",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/demarches-administratives/la-declaration-de-naissance/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 442,
+    "theme": "Vie en société",
+    "notion": "s-installer",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 183,
+    "question": "Quelle est l'une des conditions pour passer l'examen du permis de conduire ?",
+    "answers": [
+      "Être résident en France"
+    ],
+    "distractors": [
+      "Avoir la nationalité française",
+      "Avoir déjà acheté une voiture",
+      "Avoir un contrat de travail en cours",
+      "Avoir 21 ans minimum"
+    ],
+    "explanation": "Pour passer l'examen du permis de conduire, il faut résider en France. On peut ensuite passer le permis en auto-école ou en candidat libre. Il comprend un examen du Code de la route et une épreuve pratique de conduite.",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/demarches-administratives/les-demarches-du-quotidien-comme-le-permis-de-conduire-1/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 443,
+    "theme": "Vie en société",
+    "notion": "s-installer",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 184,
+    "question": "Un bail locatif est valide s'il est :",
+    "answers": [
+      "Signé par le locataire et par le propriétaire"
+    ],
+    "distractors": [
+      "Signé seulement par le propriétaire",
+      "Enregistré à la préfecture du département du logement",
+      "Validé par la mairie du lieu du logement",
+      "Approuvé par un notaire"
+    ],
+    "explanation": "Le bail est le contrat de location écrit entre le propriétaire (le bailleur) et le locataire. C'est le seul document qui autorise à vivre dans un logement. Il est valide seulement s'il est signé par le locataire et par le propriétaire.",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/demarches-administratives/les-demarches-relatives-au-logement-1/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 444,
+    "theme": "Vie en société",
+    "notion": "s-installer",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 185,
+    "question": "Où peut-on déposer un lave-vaisselle cassé ?",
+    "answers": [
+      "À la déchetterie de la commune"
+    ],
+    "distractors": [
+      "Dans le bac de tri des emballages",
+      "Dans la poubelle des ordures ménagères",
+      "Au pied d'un conteneur à verre",
+      "Dans un bois, loin des habitations"
+    ],
+    "explanation": "Un gros appareil électroménager cassé fait partie des encombrants. On peut le déposer en déchetterie, où les encombrants sont triés et recyclés. La commune peut aussi organiser une collecte, souvent sur rendez-vous avec la mairie.",
+    "group": "abandon-dechets",
+    "source": {
+      "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F31954",
+      "label": "service-public.gouv.fr"
+    }
+  },
+  {
+    "id": 445,
+    "theme": "Vie en société",
+    "notion": "s-installer",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 186,
+    "question": "Quel numéro d'urgence permet d'appeler la police ?",
+    "answers": [
+      "Le 17"
+    ],
+    "distractors": [
+      "Le 15",
+      "Le 18",
+      "Le 115",
+      "Le 119"
+    ],
+    "explanation": "Le 17 est le numéro de la police, pour signaler une infraction : violences, agression, vol, cambriolage. Les appels aux numéros d'urgence sont gratuits et possibles 24 heures sur 24. Le 15 est le numéro du SAMU et le 18 celui des pompiers.",
+    "group": "numero-police",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/demarches-administratives/annexe-les-numeros-durgence/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 446,
+    "theme": "Vie en société",
+    "notion": "soins",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 188,
+    "question": "À qui est accessible la contraception ?",
+    "answers": [
+      "À toute personne, majeure ou mineure"
+    ],
+    "distractors": [
+      "Aux personnes mariées, avec l'accord de leur conjoint",
+      "Aux majeurs, avec une ordonnance obligatoire",
+      "Aux Français, sur présentation d'une carte d'identité",
+      "Aux mineurs, avec l'accord de leurs parents"
+    ],
+    "explanation": "La contraception est accessible à toute personne, sans autorisation du partenaire. Pour les mineurs, les consultations et les prescriptions peuvent être anonymes et gratuites. La contraception d'urgence est délivrée en pharmacie sans ordonnance.",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/droits-et-devoirs/droits-fondamentaux/un-droit-fondamental-le-droit-de-disposer-de-son-corps/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 447,
+    "theme": "Vie en société",
+    "notion": "soins",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 189,
+    "question": "Qu’est-ce que le principe de confidentialité dans le domaine de la santé ?",
+    "answers": [
+      "Le médecin doit garder secrètes les informations de son patient"
+    ],
+    "distractors": [
+      "Le patient doit garder secret ce que lui dit le médecin",
+      "Le médecin doit prévenir l'employeur de l'état de santé du patient",
+      "Le médecin doit transmettre le dossier médical à la famille du patient",
+      "Le patient ne peut montrer son dossier médical à personne"
+    ],
+    "explanation": "Le principe de confidentialité, ou secret médical, oblige le médecin à garder secrètes les informations sur son patient : son état de santé, son identité, et tout ce qui a été dit pendant la consultation. En dehors des cas prévus par la loi, révéler ces informations est puni par la loi.",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/sante/sante-les-droits-du-patient/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 448,
+    "theme": "Vie en société",
+    "notion": "soins",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 190,
+    "question": "L'inscription à l'Assurance maladie est :",
+    "answers": [
+      "Obligatoire, pour toute personne qui réside en France"
+    ],
+    "distractors": [
+      "Facultative, pour toute personne qui réside en France",
+      "Réservée aux personnes qui ont un emploi",
+      "Réservée aux personnes de nationalité française",
+      "Payante, avec un tarif qui dépend de l'âge et du revenu"
+    ],
+    "explanation": "L'inscription à l'Assurance maladie est obligatoire. Une fois validée, on reçoit un numéro de sécurité sociale et une carte Vitale, qui permettent d'être remboursé de ses frais de santé. La demande se fait auprès de la caisse primaire d'assurance maladie.",
+    "group": "assurance-maladie",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/sante/sante-la-prise-en-charge-les-demarches-pour-etre-rembourse/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 449,
+    "theme": "Vie en société",
+    "notion": "travail",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 191,
+    "question": "Qui peut demander un congé parental d'éducation ?",
+    "answers": [
+      "Tout salarié qui a au moins un an d'ancienneté"
+    ],
+    "distractors": [
+      "Seulement la mère de l'enfant",
+      "Tout salarié qui a au moins cinq ans d'ancienneté",
+      "Tout salarié marié, sans condition d'ancienneté",
+      "Seulement les parents qui ont trois enfants ou plus"
+    ],
+    "explanation": "Le congé parental d'éducation est ouvert à tout salarié qui a au moins un an d'ancienneté dans l'entreprise. Il permet d'arrêter de travailler pour s'occuper de son enfant après une naissance ou une adoption. Sa durée initiale est d'un an au maximum.",
+    "source": {
+      "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F2280",
+      "label": "service-public.gouv.fr"
+    }
+  },
+  {
+    "id": 450,
+    "theme": "Vie en société",
+    "notion": "travail",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 192,
+    "question": "Quelles sont les affaires traitées par le conseil de prud'hommes ?",
+    "answers": [
+      "Les conflits entre un salarié et son employeur sur le contrat"
+    ],
+    "distractors": [
+      "Les conflits entre deux voisins à cause du bruit la nuit",
+      "Les infractions au Code de la route commises en voiture",
+      "Les litiges entre un locataire et son propriétaire sur le loyer",
+      "Les conflits de famille au sujet d'un héritage important"
+    ],
+    "explanation": "Si un salarié et son employeur ne sont pas d'accord sur le contrat de travail (licenciement, salaire…), le salarié peut contacter le conseil de prud'hommes. C'est un lieu de justice qui décide dans ce type de conflit.",
+    "group": "prudhommes",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/emploi/le-droit-au-travail-2/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 451,
+    "theme": "Vie en société",
+    "notion": "travail",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 193,
+    "question": "Travailler sans être déclaré est :",
+    "answers": [
+      "Illégal, car il prive le salarié de ses droits sociaux"
+    ],
+    "distractors": [
+      "Autorisé si le montant est inférieur à 500 euros par mois",
+      "Légal si les deux parties signent un accord écrit",
+      "Autorisé pour les récoltes agricoles saisonnières",
+      "Toléré pour les travaux ménagers à domicile"
+    ],
+    "explanation": "Le travail non déclaré (ou travail dissimulé) est interdit par la loi. L'employeur risque jusqu'à 3 ans de prison et 45 000 euros d'amende. Le salarié ne cotise ni pour le chômage ni pour la retraite, n'a pas de congé payé et n'a pas droit à la sécurité sociale en cas de maladie ou d'accident du travail.",
+    "group": "travail-non-declare",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/emploi/le-droit-au-travail-5/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 452,
+    "theme": "Vie en société",
+    "notion": "travail",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 194,
+    "question": "Lorsqu'un employeur veut qu'un salarié travaille plus longtemps que la durée prévue dans le contrat de travail :",
+    "answers": [
+      "Il doit payer ces heures supplémentaires ou les faire rattraper"
+    ],
+    "distractors": [
+      "Il peut ne pas les payer si le salarié a plus d'un an d'ancienneté",
+      "Il doit les payer le double du salaire normal, sans exception",
+      "Il peut les remplacer par une simple prime de fin d'année",
+      "Il peut les ajouter sans les compter dans le temps de travail"
+    ],
+    "explanation": "La durée de référence du travail à temps complet est de 35 heures par semaine. Au-delà, on parle d'heures supplémentaires. L'employeur doit payer ces heures au salarié ou lui permettre de les rattraper.",
+    "group": "heures-supplementaires",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/emploi/le-droit-au-travail-1/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 453,
+    "theme": "Vie en société",
+    "notion": "travail",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 195,
+    "question": "Quelle est la mission de France Travail ?",
+    "answers": [
+      "Accompagner les personnes qui cherchent un emploi ou une formation"
+    ],
+    "distractors": [
+      "Contrôler le respect du droit du travail dans toutes les entreprises",
+      "Organiser le parcours d'intégration des personnes étrangères en France",
+      "Défendre les salariés en conflit avec leur employeur devant la justice",
+      "Verser les salaires des personnes en arrêt maladie de longue durée"
+    ],
+    "explanation": "France Travail est un organisme public qui accompagne les personnes à la recherche d'un emploi. L'inscription permet d'être aidé pour trouver un travail ou suivre une formation, avec des solutions adaptées à la situation de chacun.",
+    "group": "france-travail",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/emploi/orientation-1/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 454,
+    "theme": "Vie en société",
+    "notion": "travail",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 196,
+    "question": "Dans une entreprise, le droit syndical permet :",
+    "answers": [
+      "À chaque salarié de créer un syndicat ou d'y adhérer"
+    ],
+    "distractors": [
+      "À l'employeur de choisir le syndicat de ses salariés",
+      "À l'État de nommer les représentants des salariés",
+      "Aux seuls cadres de l'entreprise de former un syndicat",
+      "À un syndicat d'obliger tous les salariés à y adhérer"
+    ],
+    "explanation": "Chaque salarié a le droit de se syndiquer : il peut créer un syndicat, y adhérer ou y participer. Un syndicat défend les droits des travailleurs (salaire, conditions de travail, sécurité…). Personne ne peut obliger un salarié à rejoindre un syndicat, ni le punir s'il en fait partie.",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/emploi/le-droit-au-travail-2/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 455,
+    "theme": "Vie en société",
+    "notion": "travail",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 197,
+    "question": "Dans une entreprise, le droit de grève autorise :",
+    "answers": [
+      "Les salariés à cesser ensemble le travail pour leurs revendications"
+    ],
+    "distractors": [
+      "L'employeur à licencier les salariés qui ne sont pas d'accord",
+      "Un salarié à quitter seul son poste pour un motif personnel",
+      "Les salariés à rester payés intégralement pendant tout l'arrêt de travail",
+      "Les grévistes à empêcher les non-grévistes de travailler"
+    ],
+    "explanation": "La grève est un arrêt collectif et concerté du travail, pour appuyer des revendications professionnelles. Tout salarié peut faire grève, sans être syndiqué. Un salarié ne peut pas être sanctionné ni licencié parce qu'il a fait grève, mais l'employeur peut retenir une part du salaire proportionnelle à la durée de l'arrêt.",
+    "group": "droit-greve",
+    "source": {
+      "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F117",
+      "label": "service-public.gouv.fr"
+    }
+  },
+  {
+    "id": 456,
+    "theme": "Vie en société",
+    "notion": "travail",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 198,
+    "question": "Quelles sont les conditions pour toucher les allocations chômage ?",
+    "answers": [
+      "Avoir perdu son emploi sans l'avoir choisi, avoir assez travaillé et être inscrit à France Travail"
+    ],
+    "distractors": [
+      "Avoir démissionné sans motif légitime, après avoir travaillé au moins six mois d'affilée",
+      "Être inscrit à France Travail et chercher un emploi, même sans avoir jamais travaillé",
+      "Avoir perdu son emploi sans l'avoir choisi, même après seulement quinze jours de travail",
+      "Chercher activement un emploi depuis longtemps, sans être inscrit à France Travail"
+    ],
+    "explanation": "Pour toucher l'allocation chômage (ARE), il faut avoir perdu son emploi sans l'avoir choisi (licenciement, fin de CDD, rupture conventionnelle…), avoir travaillé une durée minimale avant la fin de son contrat, être inscrit à France Travail et chercher activement un emploi. Il faut aussi résider en France de manière stable et régulière.",
+    "source": {
+      "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F38881",
+      "label": "service-public.gouv.fr"
+    }
+  },
+  {
+    "id": 457,
+    "theme": "Vie en société",
+    "notion": "autorite-parentale-ecole",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 199,
+    "question": "Qu'est-ce que l'école maternelle ?",
+    "answers": [
+      "L'école des enfants de 3 à 6 ans"
+    ],
+    "distractors": [
+      "L'école des enfants de 6 à 11 ans",
+      "L'école des enfants de 11 à 15 ans",
+      "L'école des enfants de 15 à 18 ans",
+      "Le mode de garde des enfants de moins de 3 ans"
+    ],
+    "explanation": "L'école maternelle accueille les enfants de 3 à 6 ans. Ils y apprennent la langue française s'ils ne la parlent pas encore, à vivre ensemble et à se faire des amis, ainsi qu'à dessiner, écrire, compter et comprendre.",
+    "group": "ecole-obligatoire",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/parentalite/le-systeme-educatif/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 458,
+    "theme": "Vie en société",
+    "notion": "autorite-parentale-ecole",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 200,
+    "question": "Comment s'appelle le diplôme passé par les élèves à la fin du collège ?",
+    "answers": [
+      "Le brevet des collèges (diplôme national du brevet)"
+    ],
+    "distractors": [
+      "Le baccalauréat, passé à la fin du lycée",
+      "Le certificat d'études primaires",
+      "Le brevet de technicien supérieur (BTS), après le lycée",
+      "Le diplôme d'accès aux études universitaires"
+    ],
+    "explanation": "À la fin du collège, l'élève passe un diplôme qui s'appelle le brevet des collèges, ou diplôme national du brevet (DNB). Le collège est suivi du lycée, qui se termine par le baccalauréat.",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/parentalite/le-systeme-educatif/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 459,
+    "theme": "Vie en société",
+    "notion": "autorite-parentale-ecole",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 201,
+    "question": "Les parents d'élève ont le droit de :",
+    "answers": [
+      "Se présenter aux élections des représentants de parents"
+    ],
+    "distractors": [
+      "Choisir eux-mêmes les enseignants de leur enfant",
+      "Décider seuls des programmes enseignés dans toute l'école",
+      "Fixer eux-mêmes le calendrier des vacances scolaires",
+      "Assister aux cours à n'importe quel moment sans prévenir"
+    ],
+    "explanation": "Les parents peuvent participer à la vie de l'école : rejoindre l'association de parents d'élèves, ou se présenter aux élections de représentants des parents d'élèves. Les représentants participent aux décisions importantes sur l'organisation de l'école.",
+    "group": "parents-ecole",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/parentalite/droits-et-devoirs-des-parents-a-l-ecole/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 460,
+    "theme": "Vie en société",
+    "notion": "autorite-parentale-ecole",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 202,
+    "question": "Qui peut manger à la cantine scolaire ?",
+    "answers": [
+      "Tous les enfants scolarisés qui le souhaitent"
+    ],
+    "distractors": [
+      "Les enfants dont les deux parents travaillent",
+      "Les enfants de nationalité française",
+      "Les enfants de familles à faibles revenus",
+      "Les enfants qui habitent loin de l'école"
+    ],
+    "explanation": "Quand l'école a une cantine, tous les enfants scolarisés qui le souhaitent peuvent y manger. On ne peut pas refuser un enfant à cause de sa situation ou de celle de sa famille.",
+    "group": "cantine",
+    "source": {
+      "url": "https://www.collectivites-locales.gouv.fr/competences/la-restauration-scolaire",
+      "label": "collectivites-locales.gouv.fr"
+    }
+  },
+  {
+    "id": 461,
+    "theme": "Vie en société",
+    "notion": "autorite-parentale-ecole",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 203,
+    "question": "À quel âge commence l'instruction obligatoire des enfants ?",
+    "answers": [
+      "À 3 ans"
+    ],
+    "distractors": [
+      "À 4 ans",
+      "À 5 ans",
+      "À 6 ans",
+      "À 7 ans"
+    ],
+    "explanation": "Tous les enfants qui habitent en France, français ou étrangers, doivent aller à l'école entre 3 et 16 ans. C'est une obligation. Après 16 ans, l'école n'est plus obligatoire, mais l'enfant peut poursuivre ses études.",
+    "group": "ecole-obligatoire",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/parentalite/le-systeme-educatif/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 462,
+    "theme": "Vie en société",
+    "notion": "autorite-parentale-ecole",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 204,
+    "question": "Quel est l'âge de la majorité ?",
+    "answers": [
+      "18 ans"
+    ],
+    "distractors": [
+      "16 ans",
+      "17 ans",
+      "21 ans",
+      "25 ans"
+    ],
+    "explanation": "En France, on devient majeur à 18 ans. Jusqu'à cet âge, les parents ont des droits et des devoirs envers leur enfant : c'est l'autorité parentale. Elle se termine quand l'enfant a 18 ans.",
+    "group": "vote-conditions",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/parentalite/exercice-de-l-autorite-parentale-2/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 463,
+    "theme": "Vie en société",
+    "notion": "autorite-parentale-ecole",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 205,
+    "question": "À l'école, il est interdit aux parents de :",
+    "answers": [
+      "Être violents ou agressifs envers le personnel de l'école"
+    ],
+    "distractors": [
+      "Rencontrer les professeurs de leur enfant en réunion",
+      "Se présenter aux élections de représentants des parents",
+      "Se renseigner sur les résultats scolaires de leur enfant",
+      "Rejoindre l'association de parents d'élèves de l'école"
+    ],
+    "explanation": "Insulter, menacer ou frapper un enseignant ou un autre membre du personnel de l'école est un délit puni par la loi, plus sévèrement quand cela se passe dans l'école ou à ses abords. Les parents peuvent rencontrer les professeurs, participer aux réunions et s'engager dans la vie de l'école.",
+    "group": "parents-ecole",
+    "source": {
+      "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F33322",
+      "label": "service-public.gouv.fr"
+    }
+  },
+  {
+    "id": 464,
+    "theme": "Vie en société",
+    "notion": "autorite-parentale-ecole",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 206,
+    "question": "Quel motif d'absence est accepté par l'école ?",
+    "answers": [
+      "La maladie de l'enfant"
+    ],
+    "distractors": [
+      "Une sortie avec des amis",
+      "Une envie de se reposer",
+      "Un anniversaire entre copains",
+      "Un rendez-vous chez le coiffeur"
+    ],
+    "explanation": "La maladie de l'enfant est un motif d'absence accepté par l'école, comme la maladie contagieuse d'un proche ou un empêchement lié aux transports. Les parents doivent prévenir l'école au plus vite en indiquant le motif.",
+    "group": "absence-ecole",
+    "source": {
+      "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F1899",
+      "label": "service-public.gouv.fr"
+    }
+  },
+  {
+    "id": 465,
+    "theme": "Vie en société",
+    "notion": "autorite-parentale-ecole",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 207,
+    "question": "Des parents ne respectent pas l'obligation d'instruction pour leurs enfants. Quelle sanction maximale risquent-ils ?",
+    "answers": [
+      "6 mois de prison et 7 500 euros d'amende"
+    ],
+    "distractors": [
+      "Une amende de 135 euros, sans autre sanction",
+      "3 mois de prison et 1 500 euros d'amende",
+      "10 ans de prison et 150 000 euros d'amende",
+      "Un simple avertissement écrit du maire"
+    ],
+    "explanation": "Si des parents n'inscrivent pas leur enfant à l'école sans raison valable, le directeur académique des services de l'Éducation nationale leur envoie une mise en demeure. S'ils ne la respectent pas, ils risquent 6 mois de prison et 7 500 euros d'amende.",
+    "source": {
+      "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F1898",
+      "label": "service-public.gouv.fr"
+    }
+  },
+  {
+    "id": 466,
+    "theme": "Vie en société",
+    "notion": "autorite-parentale-ecole",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 208,
+    "question": "Quand ont lieu les vacances scolaires de Noël ?",
+    "answers": [
+      "À la fin du mois de décembre, pendant environ deux semaines"
+    ],
+    "distractors": [
+      "À la mi-février, pendant environ deux semaines",
+      "Au début du mois d'avril, pendant environ deux semaines",
+      "Au début du mois de novembre, pendant environ deux semaines",
+      "À la fin du mois de janvier, pendant environ deux semaines"
+    ],
+    "explanation": "Les vacances scolaires de Noël commencent à la fin du mois de décembre et durent environ deux semaines : les élèves reprennent l'école au début du mois de janvier. Elles ont lieu aux mêmes dates dans toute la France métropolitaine.",
+    "source": {
+      "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F31952",
+      "label": "service-public.gouv.fr"
+    }
+  },
+  {
+    "id": 467,
+    "theme": "Vie en société",
+    "notion": "autorite-parentale-ecole",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 209,
+    "question": "À l'école, un enfant en situation de handicap :",
+    "answers": [
+      "Étudie avec les autres et peut avoir un emploi du temps aménagé"
+    ],
+    "distractors": [
+      "Doit être scolarisé dans un établissement séparé des autres",
+      "N'a pas l'obligation d'aller à l'école comme les autres enfants",
+      "Doit rester à la maison avec ses parents toute la journée",
+      "Ne peut pas manger à la cantine avec les autres enfants"
+    ],
+    "explanation": "Les enfants en situation de handicap ont le droit de vivre avec les autres enfants et comme eux. À l'école, ils peuvent bénéficier d'un emploi du temps aménagé.",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/parentalite/les-droits-de-l-enfant/",
       "label": "formation-civique.interieur.gouv.fr"
     }
   }
