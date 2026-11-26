@@ -357,10 +357,10 @@ Un bloc qui change de colonne (reprise de l'examen, actions du détail) n'est re
 
 ## Elevation & Depth
 
-Le système est entièrement plat : aucune ombre portée dans l'appli. La profondeur vient de trois couches seulement : le fond crème (ou mousse de nuit), la forme organique colorée en arrière-plan, et les aplats blancs, jaunes, encre ou colorés des cartes et pastilles posées dessus. Seule la boîte de dialogue « Quitter l'examen ? » ajoute un voile (noir à 10 % avec un léger flou), hérité de shadcn.
+Le système est plat : aucune ombre portée dans l'appli, à une seule exception, le panneau « Affichage » (voir Components). La profondeur vient de trois couches seulement : le fond crème (ou mousse de nuit), la forme organique colorée en arrière-plan, et les aplats blancs, jaunes, encre ou colorés des cartes et pastilles posées dessus. La boîte de dialogue « Quitter l'examen ? » n'a pas d'ombre mais un voile (noir à 10 % avec un léger flou), hérité de shadcn ; le panneau « Affichage », qui flotte sur le contenu, porte un filet (`ring`) et une ombre douce.
 
 ### Named Rules
-**La règle du plat.** Pas d'ombre, ni au repos ni au survol. Un élément se détache par sa couleur de fond, pas par une élévation.
+**La règle du plat.** Pas d'ombre, ni au repos ni au survol, sauf le panneau « Affichage », qui flotte sur le contenu. Un élément se détache par sa couleur de fond, pas par une élévation.
 
 ## Shapes
 
@@ -403,7 +403,7 @@ Tactiles et francs : des pastilles pleines, en gras, qu'on vise sans y penser.
 - **Parcours de l'accueil :** liste ordonnée de quatre étapes en pastilles, numérotées « 1 · », « 2 · »… ; l'étape 2, grande pastille jaune avec le compteur « n sur 3 », lance directement un nouvel examen blanc.
 - **Bandeau d'examen :** bloc vert terre arrondi en bas, avec « Quitter », « Question n sur 40 » et une barre de temps encre sur une piste translucide.
 - **En-tête permanent (`AppHeader`) :** sur toutes les pages, en premier enfant de la colonne de la page (il prend sa largeur et sa gouttière ; à partir de 1024 px, sur toute la largeur de la grille de la révision et du détail). Le logo « la pousse » + « Futur Citoyen » (lien vers l'accueil) à gauche, le bouton « Affichage » à droite : rond de 44 px, carte blanche (sable au survol ou ouvert), icône de curseurs horizontaux, `aria-label="Affichage"`, `aria-expanded`, `aria-controls`. Pendant l'examen (`thin`), l'en-tête reste au-dessus du bandeau vert avec un logo en `body` au lieu de 1.25rem, et le logo est un bouton qui ouvre la fenêtre « Quitter l'examen ? ». Le lien « Retour » reste sous l'en-tête.
-- **Panneau « Affichage » :** carte de 17.5rem (`card-lg`, 1.5rem) sous le bouton, alignée à droite, avec deux réglages à deux choix « Thème : Clair / Sombre » et « Animations : Activées / Désactivées » : une piste sable (`muted`) en pastille, le choix actif en vert terre (`earth`, texte encre en clair et crème en sombre), `aria-pressed`, 44 px de haut. Focus sur le premier réglage à l'ouverture ; Échap et clic extérieur ferment. Seule exception à la règle du plat, avec la boîte de dialogue : le panneau flotte sur le contenu, il porte donc un filet (`ring`) et une ombre douce.
+- **Panneau « Affichage » :** carte de 17.5rem au plus, et jamais plus large que l'écran moins 2.75rem (`card-lg`, 1.5rem) sous le bouton, alignée à droite (les deux choix d'un réglage s'empilent quand le texte est très agrandi), avec deux réglages à deux choix « Thème : Clair / Sombre » et « Animations : Activées / Désactivées » : une piste sable (`muted`) en pastille, le choix actif en vert terre (`earth`, texte encre en clair et crème en sombre), `aria-pressed`, 44 px de haut. Focus sur le premier réglage à l'ouverture ; Échap et clic extérieur ferment. Seule exception à la règle du plat (le dialogue a un voile, pas d'ombre) : le panneau flotte sur le contenu, il porte donc un filet (`ring`) et une ombre douce.
 
 ### Verdict (signature)
 Une pastille de statut, annoncée aux lecteurs d'écran : un cercle d'icône à gauche, le texte en gras à droite. Réussi ou bonne réponse : encre avec une coche jaune. Erreur : corail avec une croix. « Pas encore réussi » : surface blanche avec une flèche, rassurant plutôt qu'alarmant. Deux tailles : 40 px pour la correction d'une question, 44 px pour le résultat d'un examen.
@@ -429,7 +429,7 @@ Une tige et deux feuilles (verte, jaune) cerclées d'encre, suivies de « Futur 
 - **Do** vérifier chaque écran en clair et en sombre, et avec le texte agrandi.
 
 ### Don't:
-- **Don't** ajouter d'ombre portée, de dégradé ou de bordure décorative.
+- **Don't** ajouter d'ombre portée (hors panneau « Affichage »), de dégradé ou de bordure décorative.
 - **Don't** mettre du texte blanc sur un aplat jaune, vert clair, corail, bleu ou lilas.
 - **Don't** placer plus d'une forme organique par écran, ni la monter sur un écran de question.
 - **Don't** fixer la hauteur d'une pastille ou d'une carte : seulement une hauteur minimale.

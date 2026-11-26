@@ -24,7 +24,7 @@ function Setting({
       <p className="text-[0.8125rem] font-bold text-muted-foreground" aria-hidden="true">
         {label}
       </p>
-      <div className="grid grid-cols-2 gap-1 rounded-full bg-muted p-1">
+      <div className="flex flex-wrap gap-1 rounded-[1.375rem] bg-muted p-1">
         {options.map((option, i) => (
           <button
             key={option}
@@ -32,7 +32,7 @@ function Setting({
             aria-pressed={value === i}
             onClick={() => onChange(i as 0 | 1)}
             className={cn(
-              'min-h-11 rounded-full px-3 text-[0.9375rem] font-bold transition-colors',
+              'min-h-11 flex-auto rounded-full px-3 text-[0.9375rem] font-bold whitespace-nowrap transition-colors',
               value === i
                 ? 'bg-earth text-[#2c2e2a] dark:text-[#f1eee4]'
                 : 'text-muted-foreground hover:text-foreground',
@@ -98,7 +98,15 @@ function DisplayMenu() {
   }, [open])
 
   return (
-    <div ref={wrapRef} className="relative">
+    <div
+      ref={wrapRef}
+      className="relative"
+      onBlur={(e) => {
+        // Keyboard focus left the button and the panel: close it (a hidden focus is a trap)
+        const next = e.relatedTarget as Node | null
+        if (open && next && !e.currentTarget.contains(next)) setOpen(false)
+      }}
+    >
       <button
         ref={buttonRef}
         type="button"
@@ -118,7 +126,7 @@ function DisplayMenu() {
           id={panelId}
           role="group"
           aria-label="Affichage"
-          className="absolute top-[calc(100%+0.5rem)] right-0 z-50 flex w-[17.5rem] flex-col gap-4 rounded-[1.5rem] bg-card p-4 text-card-foreground shadow-[0_6px_28px_rgba(44,46,42,0.18)] ring-1 ring-border dark:shadow-[0_6px_28px_rgba(0,0,0,0.5)]"
+          className="absolute top-[calc(100%+0.5rem)] right-0 z-50 flex w-[min(17.5rem,calc(100vw-2.75rem))] flex-col gap-4 rounded-[1.5rem] bg-card p-4 text-card-foreground shadow-[0_6px_28px_rgba(44,46,42,0.18)] ring-1 ring-border dark:shadow-[0_6px_28px_rgba(0,0,0,0.5)]"
         >
           <DisplaySettings />
         </div>
@@ -149,6 +157,8 @@ export function AppHeader({ thin = false, hideBrand = false, className, onLogoCl
   )
   return (
     <header
+      // Explicit landmark: the header sits inside <main>, where <header> alone has no banner role
+      role="banner"
       data-app-header
       className={cn(
         'relative z-40 flex w-full items-center gap-3',
