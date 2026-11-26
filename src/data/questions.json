@@ -2364,6 +2364,7 @@
     "answers": [
       "Le 9 mai"
     ],
+    "group": "ceca",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/institutions-europeennes/les-symboles-europeens-2/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -2752,6 +2753,7 @@
     "answers": [
       "Abolie depuis 1981"
     ],
+    "group": "abolition-peine-de-mort",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/la-cinquieme-republique/focus-sur-la-cinquieme-republique-5/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -6923,6 +6925,7 @@
     "answers": [
       "La Seine"
     ],
+    "group": "seine-paris",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/atlas-de-la-france/les-fleuves-fran%C3%A7ais/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -6995,6 +6998,7 @@
     "answers": [
       "Il commémore la capitulation de l'Allemagne nazie et la victoire des Alliés en Europe en 1945"
     ],
+    "group": "8-mai",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/zoom-sur/patrimoine-francais-les-jours-feries/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -7207,6 +7211,7 @@
     "answers": [
       "Au génocide des Juifs d'Europe par les nazis durant la Seconde Guerre mondiale"
     ],
+    "group": "shoah",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/zoom-sur/focus-sur-la-seconde-guerre-mondiale-la-shoah/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -9124,6 +9129,7 @@
       "2007"
     ],
     "explanation": "En 2002, l'euro est devenu la monnaie officielle de plusieurs pays membres de l'Union européenne, dont la France : les pièces et les billets en euros ont alors remplacé les monnaies nationales, comme le franc. L'euro avait été introduit auparavant comme monnaie de paiement non physique (1999).",
+    "group": "euro-2002",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-conflits-mondiaux-et-le-nouvel-ordre-mondial/la-construction-europeenne/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -10305,7 +10311,7 @@
       "Charles X",
       "Louis-Philippe Ier"
     ],
-    "explanation": "Le roi Louis XVI est exécuté en 1793, pendant la période de la Terreur, où le gouvernement utilise la guillotine contre ceux qu'il considère comme des traîtres.",
+    "explanation": "Le roi Louis XVI est exécuté en 1793, sous la Ière République, proclamée le 22 septembre 1792. Pendant la Révolution, le gouvernement utilise la guillotine contre ceux qu'il considère comme des traîtres.",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-regimes-politiques-depuis-1789/la-premiere-republique-1792-1804/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -10354,6 +10360,7 @@
       "Clovis"
     ],
     "explanation": "Marianne apparaît pendant la Révolution française pour représenter la République. Elle porte le bonnet phrygien, symbole de liberté retrouvée. Son buste est présent dans toutes les mairies.",
+    "group": "marianne",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/les-symboles-de-la-republique/marianne/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -10402,6 +10409,7 @@
       "Pour apprendre les techniques militaires de l'époque"
     ],
     "explanation": "La Shoah est le génocide des Juifs organisé par l'Allemagne nazie : environ 6 millions de Juifs ont été assassinés. On l'étudie aujourd'hui à l'école pour comprendre les conséquences de la haine, du racisme et de l'antisémitisme, et pour rappeler l'importance du devoir de mémoire.",
+    "group": "shoah",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/zoom-sur/focus-sur-la-seconde-guerre-mondiale-la-shoah/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -10456,6 +10464,7 @@
       "Depuis 1981"
     ],
     "explanation": "En 1962, un référendum constitutionnel a validé que le président de la République ne serait plus élu par de grands électeurs (suffrage indirect), mais directement par les citoyens (suffrage direct).",
+    "group": "constitution",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/droits-et-devoirs/droits-fondamentaux/les-principaux-textes-la-constitution-de-la-5-republique/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -10479,7 +10488,8 @@
       "L'arrivée de l'euro comme monnaie",
       "L'élargissement à l'Espagne et au Portugal"
     ],
-    "explanation": "En 1951, la Communauté européenne du charbon et de l'acier (CECA) est créée entre la France, l'Allemagne, l'Italie, la Belgique, les Pays-Bas et le Luxembourg, pour partager le charbon et l'acier. C'est le premier pas de la construction européenne.",
+    "explanation": "En 1951, la Communauté européenne du charbon et de l'acier (CECA) est créée pour partager le charbon et l'acier. C'est le premier pas de la construction européenne.",
+    "group": "ceca",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-conflits-mondiaux-et-le-nouvel-ordre-mondial/la-construction-europeenne/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -10649,7 +10659,8 @@
       "En 1992",
       "En 2007"
     ],
-    "explanation": "En 2002, l'euro devient la monnaie officielle de plusieurs pays membres de l'Union européenne. Le traité de Maastricht, en 1992, avait prévu une monnaie unique.",
+    "explanation": "En 2002, l'euro devient la monnaie officielle de plusieurs pays membres de l'Union européenne.",
+    "group": "euro-2002",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-conflits-mondiaux-et-le-nouvel-ordre-mondial/la-construction-europeenne/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -10747,6 +10758,7 @@
       "L'abolition de la peine de mort, en 1981"
     ],
     "explanation": "Le 8 mai est un jour férié qui commémore la victoire de 1945, c'est-à-dire la fin de la Seconde Guerre mondiale. Des cérémonies ont lieu partout en France.",
+    "group": "8-mai",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/patrimoine-francais-les-jours-feries/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -10860,10 +10872,10 @@
       "La mer Adriatique",
       "La mer Noire"
     ],
-    "explanation": "La Manche borde la France au nord-ouest. Un tunnel sous la Manche relie la France à la Grande-Bretagne.",
+    "explanation": "La Manche borde le nord-ouest de la France et la sépare du Royaume-Uni. Le tunnel sous la Manche relie la région des Hauts-de-France au Royaume-Uni.",
     "group": "mers-et-oceans",
     "source": {
-      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/atlas-de-la-france/les-frontieres-de-la-france/",
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-regions-fran%C3%A7aises/hauts-de-france/",
       "label": "formation-civique.interieur.gouv.fr"
     }
   },
@@ -10935,7 +10947,7 @@
       "La Guadeloupe",
       "Tahiti"
     ],
-    "explanation": "La Réunion et Mayotte, avec les îles Éparses, sont les territoires français de l'océan Indien. La Martinique et la Guadeloupe se trouvent dans l'océan Atlantique, avec les Antilles.",
+    "explanation": "La Réunion et Mayotte, avec les îles Éparses, sont les territoires français de l'océan Indien. La Martinique et la Guadeloupe, aux Antilles, se trouvent dans l'océan Atlantique.",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/la-france-dans-leurope-et-dans-le-monde/une-puissance-maritime/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -10954,10 +10966,10 @@
       "Environ 68,6 millions d'habitants"
     ],
     "distractors": [
-      "Environ 48 millions d'habitants",
-      "Environ 58 millions d'habitants",
-      "Environ 78 millions d'habitants",
-      "Environ 88 millions d'habitants"
+      "Environ 52,3 millions d'habitants",
+      "Environ 59,8 millions d'habitants",
+      "Environ 76,4 millions d'habitants",
+      "Environ 84,1 millions d'habitants"
     ],
     "explanation": "Au 1er janvier 2025, la France compte 68,6 millions d'habitants : 66,4 millions en France hexagonale et 2,3 millions dans les départements et régions d'outre-mer.",
     "source": {
@@ -10984,6 +10996,7 @@
       "Le Rhin"
     ],
     "explanation": "La Seine traverse notamment Troyes, Paris et Rouen avant de se jeter dans la Manche. Elle mesure 776 kilomètres.",
+    "group": "seine-paris",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/atlas-de-la-france/les-fleuves-fran%C3%A7ais/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -11171,6 +11184,7 @@
       "Besançon"
     ],
     "explanation": "Les 10 plus grandes métropoles françaises sont celles du Grand Paris, d'Aix-Marseille-Provence, du Grand Lyon, de Lille, de Bordeaux, de Toulouse, de Nantes, de Nice Côte d'Azur, de Montpellier et de Strasbourg.",
+    "group": "villes-metropoles",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/atlas-de-la-france/la-france-aire-urbaine-et-metropolisation/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -11194,7 +11208,11 @@
       "La Haute-Marne",
       "La Meuse"
     ],
-    "explanation": "Paris est le département français qui reçoit le plus de touristes. On y trouve la tour Eiffel, symbole de la France, et des musées parmi les plus prestigieux au monde."
+    "explanation": "Paris est le département français qui accueille le plus de touristes : en 2025, on y compte près de 42 millions de nuitées dans les hôtels de tourisme, quatre fois plus que dans les Alpes-Maritimes, deuxièmes.",
+    "source": {
+      "url": "https://www.insee.fr/fr/statistiques/2012672",
+      "label": "insee.fr"
+    }
   },
   {
     "id": 425,
@@ -11214,7 +11232,7 @@
       "Chaque mercredi après-midi",
       "Le 1er janvier de chaque année"
     ],
-    "explanation": "L'accès aux collections de la plupart des musées nationaux est gratuit le 1er dimanche de chaque mois, par exemple au musée du Louvre. Les Journées européennes du patrimoine, en septembre, offrent aussi un accès très souvent gratuit à des lieux culturels habituellement fermés au public.",
+    "explanation": "L'accès aux collections de la plupart des musées nationaux est gratuit le 1er dimanche de chaque mois. Les Journées européennes du patrimoine, en septembre, offrent aussi un accès très souvent gratuit à des lieux culturels habituellement fermés au public.",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/culture/patrimoine-francais-acces-a-la-culture/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -11233,10 +11251,10 @@
       "Plus de 396 millions de personnes"
     ],
     "distractors": [
-      "Environ 100 millions de personnes",
-      "Environ 200 millions de personnes",
-      "Environ 700 millions de personnes",
-      "Plus d'un milliard de personnes"
+      "Plus de 124 millions de personnes",
+      "Plus de 218 millions de personnes",
+      "Plus de 652 millions de personnes",
+      "Plus de 1,1 milliard de personnes"
     ],
     "explanation": "Le français compte plus de 396 millions de locuteurs. On le parle sur les 5 continents et il est langue officielle de plus de 30 pays.",
     "source": {
@@ -11456,10 +11474,10 @@
       "Un peintre impressionniste français"
     ],
     "distractors": [
-      "Un sculpteur du XIXe siècle",
-      "Un compositeur du XIXe siècle",
-      "Un écrivain du XIXe siècle",
-      "Un architecte du XIXe siècle"
+      "Un sculpteur impressionniste français",
+      "Un compositeur impressionniste français",
+      "Un écrivain romantique français",
+      "Un architecte français du XIXe siècle"
     ],
     "explanation": "Auguste Renoir (1841-1919) est un peintre impressionniste français. Il a peint des scènes joyeuses de la vie quotidienne, des portraits lumineux et des fêtes.",
     "group": "peintres-francais",
@@ -11481,12 +11499,13 @@
       "Le 14 juillet"
     ],
     "distractors": [
-      "Thanksgiving",
-      "L'Oktoberfest",
-      "La Saint-Patrick",
-      "Le Carnaval de Rio"
+      "Le 4 juillet",
+      "Le 17 mars",
+      "Le 3 octobre",
+      "Le 12 octobre"
     ],
     "explanation": "Le 14 juillet est le jour de la fête nationale depuis 1880. Il commémore la prise de la Bastille (1789) et la fête de la Fédération (1790). C'est à la fois un moment institutionnel, avec le défilé militaire, et une fête populaire avec feux d'artifice et bals.",
+    "group": "symboles-republique",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/les-symboles-de-la-republique/la-fete-nationale/",
       "label": "formation-civique.interieur.gouv.fr"

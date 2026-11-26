@@ -18,6 +18,8 @@ const ACCEPTED_DOMAINS = [
   'cada.fr',
   // Assurance maladie, site officiel de la CNAM
   'ameli.fr',
+  // Insee, institut public de la statistique (seule source officielle sur la fréquentation touristique par département)
+  'insee.fr',
 ]
 
 function isAcceptedSourceUrl(url: string): boolean {
