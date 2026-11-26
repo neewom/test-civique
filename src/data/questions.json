@@ -12437,7 +12437,7 @@
     "natNumber": 5,
     "question": "La liberté d'association est :",
     "answers": [
-      "Un droit de s'engager librement dans une association, pour les personnes françaises comme étrangères"
+      "Un droit ouvert à tous les habitants, Français comme étrangers"
     ],
     "distractors": [
       "Un droit réservé aux personnes de nationalité française qui votent",
@@ -12665,7 +12665,7 @@
     "natNumber": 19,
     "question": "Qu'est-ce qu'une liberté ?",
     "answers": [
-      "Le droit de faire tout ce qui ne nuit pas à autrui, dans les limites fixées par la loi"
+      "Le droit de faire ce qui ne nuit pas à autrui, dans les limites de la loi"
     ],
     "distractors": [
       "Le droit de faire tout ce que l'on veut, même si cela gêne les autres",
@@ -12744,7 +12744,7 @@
     "distractors": [
       "Tous les cultes, à égalité",
       "Seulement la religion la plus pratiquée",
-      "Les religions reconnues par le gouvernement",
+      "Les religions choisies par le gouvernement",
       "La religion choisie par le maire de chaque commune"
     ],
     "explanation": "En France, l'État ne reconnaît aucune religion, ne salarie ni ne subventionne aucun culte : c'est la conséquence de la séparation entre l'État et les organisations religieuses, établie en 1905. L'État reste neutre vis-à-vis de toutes les religions.",
@@ -12821,7 +12821,7 @@
       "Tout signe religieux, à condition d'avoir l'accord des parents",
       "Un signe religieux visible, seulement pendant la récréation"
     ],
-    "explanation": "Dans les écoles, collèges et lycées publics, une loi de 2004 interdit de porter un signe ou un vêtement qui montre de manière ostensible, c'est-à-dire pour être vu, une appartenance religieuse. Un signe discret n'est pas concerné.",
+    "explanation": "Dans les écoles, collèges et lycées publics, une loi de 2004 interdit aux élèves de porter un signe ou un vêtement qui montre de manière ostensible, c'est-à-dire pour être vu, une appartenance religieuse. Un signe discret est permis aux élèves ; les enseignants et les agents du service public, eux, n'en portent aucun.",
     "group": "laicite-ecole",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/laicite/la-laicite-a-ecole-1/",
@@ -12867,10 +12867,10 @@
       "La Déclaration des droits de l'homme et du citoyen de 1789"
     ],
     "distractors": [
-      "Le Concordat de 1801",
-      "Le Code civil de 1804",
-      "La Charte de l'environnement de 2004",
-      "Le traité de Rome de 1957"
+      "Le Concordat signé en 1801 entre Napoléon et le pape",
+      "Le Code civil adopté en 1804 sous Napoléon",
+      "La Charte de l'environnement adoptée en 2004",
+      "Le traité de Rome signé en 1957 par six pays"
     ],
     "explanation": "La Déclaration des droits de l'homme et du citoyen de 1789 crée le principe de la liberté de conscience et de religion, fondement de la laïcité. La loi de 1905 sépare ensuite l'Église et l'État. Ces deux textes sont présentés comme fondateurs de la laïcité.",
     "source": {
@@ -12923,7 +12923,7 @@
       "Obliger les élèves à renoncer à toutes leurs convictions"
     ],
     "explanation": "La charte de la laïcité à l'école rappelle les règles d'application de la laïcité dans les écoles. Elle garantit la liberté de conscience et protège les élèves de tout prosélytisme et de toute pression qui les empêcherait de faire leurs propres choix.",
-    "group": "laicite-ecole",
+    "group": "laicite",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/laicite/la-laicite-a-ecole-2/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -12942,10 +12942,10 @@
       "Les personnes qui travaillent dans les services publics"
     ],
     "distractors": [
-      "Seulement les usagers",
-      "Seulement les responsables religieux",
-      "Tous les habitants de la commune",
-      "Les entreprises privées de la ville"
+      "Seulement les usagers qui fréquentent ces services",
+      "Les responsables religieux de la commune",
+      "Tous les habitants de la commune concernée",
+      "Les entreprises privées installées dans la ville"
     ],
     "explanation": "Les personnes qui travaillent dans les services publics ne peuvent pas exprimer ou montrer leurs convictions religieuses, politiques ou philosophiques. Cela permet de traiter tous les usagers de manière équitable. Cette neutralité ne s'impose pas aux usagers.",
     "group": "neutralite-agents-publics",
