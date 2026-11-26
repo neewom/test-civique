@@ -12,7 +12,7 @@ import {
 import { useDocumentTitle } from '@/lib/use-document-title'
 import type { AnswerRecord, ExamQuestion, ExamInProgress } from '@/lib/exam-types'
 import { saveProgress, clearProgress, loadProgressForTitle, resumeIndex } from '@/lib/exam-types'
-import { buildExam, questionsForTitle, saveResult, isPassed } from '@/lib/exam'
+import { buildExam, previousExamQuestionIds, questionsForTitle, saveResult, isPassed } from '@/lib/exam'
 import { AnswerCard } from '@/components/AnswerCard'
 import { ExamResult, type ExamOutcome } from '@/components/ExamResult'
 import { findExamRecord, loadHistoryForTitle } from '@/lib/history'
@@ -54,7 +54,8 @@ function setupExam(startNew: boolean, title: TitleKey): ExamSetup {
     if (saved) return { questions: saved.questions, resume: saved }
   }
   clearProgress(title)
-  return { questions: buildExam(questionsForTitle(title)), resume: null }
+  const avoid = previousExamQuestionIds(loadHistoryForTitle(title))
+  return { questions: buildExam(questionsForTitle(title), { avoid }), resume: null }
 }
 
 const LETTERS = ['A', 'B', 'C', 'D']
