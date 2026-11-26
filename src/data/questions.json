@@ -12619,7 +12619,7 @@
       "La Tour Eiffel, le béret, la Marseillaise et la devise de la République",
       "Marianne, le coq, la Croix de Lorraine et la fleur de lys"
     ],
-    "explanation": "Les symboles officiels de la République française sont le drapeau tricolore, Marianne, la devise « Liberté, Égalité, Fraternité », l'hymne national, La Marseillaise, et la fête nationale du 14 juillet. D'autres emblèmes, comme le coq, sont très utilisés mais ne sont pas des symboles officiels.",
+    "explanation": "Les symboles officiels de la République française sont le drapeau tricolore, Marianne, la devise de la République, l'hymne national, La Marseillaise, et la fête nationale du 14 juillet. D'autres emblèmes, comme le coq, sont très utilisés mais ne sont pas des symboles officiels.",
     "group": "marianne",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/les-symboles-de-la-republique/",
@@ -15910,9 +15910,9 @@
     ],
     "distractors": [
       "Est autorisé pour une courte durée avec les feux de détresse",
-      "Est autorisé à tous les véhicules entre 20 heures et 8 heures",
       "Est autorisé avec une carte de réduction « famille nombreuse »",
-      "Est autorisé avec le macaron « résident » de la commune"
+      "Est interdit seulement aux véhicules sans macaron « résident »",
+      "Est interdit seulement en journée, de 8 heures à 20 heures"
     ],
     "explanation": "Les places réservées sont destinées aux véhicules portant la carte mobilité inclusion « stationnement ». S'y garer sans cette carte est un stationnement très gênant, sanctionné par une amende forfaitaire de 135 €, et le véhicule peut être mis en fourrière.",
     "source": {
@@ -16122,7 +16122,8 @@
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/droits-et-devoirs/droits-fondamentaux/un-droit-fondamental-le-droit-de-disposer-de-son-corps/",
       "label": "formation-civique.interieur.gouv.fr"
-    }
+    },
+    "group": "ivg"
   },
   {
     "id": 615,
@@ -16341,7 +16342,7 @@
     ],
     "distractors": [
       "Ils doivent être scolarisés dans une école à part",
-      "Ils sont toujours accueillis dans une classe séparée des autres élèves",
+      "Ils doivent suivre les cours dans une classe séparée",
       "Ils n'ont pas droit à un emploi du temps aménagé",
       "L'école peut refuser de les inscrire à cause de leur handicap"
     ],
@@ -16369,9 +16370,9 @@
       "14 jours calendaires",
       "7 jours calendaires",
       "15 jours calendaires",
-      "2 mois"
+      "30 jours calendaires"
     ],
-    "explanation": "La durée du congé de paternité et d'accueil de l'enfant est de 25 jours calendaires, ou de 32 jours en cas de naissances multiples, dont une période obligatoire de 4 jours. Il est précédé du congé de naissance, d'une durée de 3 jours ouvrables.",
+    "explanation": "La durée du congé de paternité et d'accueil de l'enfant est de 25 jours calendaires, ou de 32 jours en cas de naissances multiples, dont une période obligatoire de 4 jours. Il est précédé du congé de naissance, d'une durée de 3 jours ouvrables. Depuis le 1er juillet 2026, chaque parent peut ensuite prendre un congé supplémentaire de naissance de 1 ou 2 mois.",
     "source": {
       "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F3156",
       "label": "service-public.gouv.fr"
