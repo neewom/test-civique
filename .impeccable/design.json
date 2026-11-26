@@ -609,6 +609,21 @@
         "purpose": "Respect du réglage de mouvement réduit."
       },
       {
+        "name": "page-transition",
+        "value": "320ms cubic-bezier(0.4, 0, 0.2, 1) ; contenu en glissement (translateX 100vw, vers la gauche en avançant, vers la droite en revenant) ; fond en fondu sur place ; en-tête et couleur de page fixes",
+        "purpose": "Transition entre deux pages (API View Transitions, variante B), sens selon la profondeur."
+      },
+      {
+        "name": "page-transition-off",
+        "value": "préférence `motion` = off, API View Transitions absente, même page, retour arrière sur iOS Safari : changement immédiat",
+        "purpose": "Cas où la page change sans animation."
+      },
+      {
+        "name": "page-transition-exam",
+        "value": "arrivée sur l'examen : glissement ; entre deux questions de l'examen : aucune transition",
+        "purpose": "La règle du calme pendant la question reste entière."
+      },
+      {
         "name": "state-colors",
         "value": "transition-colors 150ms cubic-bezier(0.4, 0, 0.2, 1)",
         "purpose": "Survol des pastilles, cartes et filtres (défaut Tailwind)."
@@ -774,7 +789,7 @@
       },
       {
         "name": "La règle du calme pendant la question",
-        "body": "Aucune animation ni forme mouvante sur l'écran où l'on répond ; le mouvement est réservé aux écrans de repère (accueil, titre visé, règles, résultat).",
+        "body": "Aucune animation ni forme mouvante sur l'écran où l'on répond ; le mouvement est réservé aux écrans de repère (accueil, titre visé, règles, résultat). Seule exception, la transition de page : l'arrivée sur l'examen glisse comme toute autre page, puis plus rien ne bouge, et il n'y a aucune transition entre deux questions de l'examen.",
         "section": "components"
       }
     ],

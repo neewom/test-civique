@@ -15,10 +15,10 @@ export default function Regles() {
   const [hasExamInProgress] = useState(() => loadProgressForTitle(loadTargetTitle() ?? DEFAULT_TITLE) !== null)
 
   return (
-    <main className="relative min-h-svh overflow-hidden bg-background text-foreground">
+    <main className="relative flex min-h-svh flex-col overflow-hidden bg-background text-foreground">
       <OrganicBackground shape="info" />
-      <div className="relative mx-auto flex w-full max-w-[30rem] flex-col gap-3.5 px-[22px] pt-3 pb-7">
-        <AppHeader />
+      <AppHeader />
+      <div className="relative mx-auto flex w-full max-w-[30rem] flex-col gap-3.5 px-[22px] pt-0 pb-7">
         <BackLink />
         <h1 className="mt-4 max-w-[19rem] text-[2.125rem] leading-none font-bold tracking-[-0.04em] text-balance">
           Comment se passe l'examen
