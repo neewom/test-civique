@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react'
-import { usePrefersReducedMotion } from '@/lib/use-prefers-reduced-motion'
+import { useMotion } from '@/lib/use-motion'
 import { cn } from '@/lib/utils'
 
 /*
@@ -68,7 +68,7 @@ interface OrganicBackgroundProps {
 }
 
 export function OrganicBackground({ shape = 'journey', className }: OrganicBackgroundProps) {
-  const reducedMotion = usePrefersReducedMotion()
+  const reducedMotion = useMotion() === 'off'
   const svgRef = useRef<SVGSVGElement>(null)
   const { frames, duration, fill = 'fill-earth' } = SHAPES[shape]
 

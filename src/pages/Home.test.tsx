@@ -71,9 +71,12 @@ describe('Accueil — en-tête et parcours', () => {
     expect(screen.getByRole('heading', { level: 1, name: 'Votre chemin vers le jour J' })).toBeInTheDocument()
   })
 
-  it('l\'interrupteur de thème est dans l\'en-tête', () => {
+  it('le bouton « Affichage » est dans l\'en-tête, avec le logo', () => {
     renderHome()
-    expect(screen.getByRole('banner')).toContainElement(screen.getByRole('switch'))
+    const header = document.querySelector('[data-app-header]') as HTMLElement
+    expect(within(header).getByRole('button', { name: 'Affichage' })).toBeInTheDocument()
+    expect(within(header).getByRole('link', { name: /Futur Citoyen/ })).toHaveAttribute('href', '/')
+    expect(screen.queryByRole('switch')).toBeNull()
   })
 
   it('donne le titre "Accueil · Futur Citoyen" à l\'onglet', () => {
@@ -358,20 +361,16 @@ describe('Accueil — premier lancement', () => {
 describe('Accueil — grand écran (1024 px et plus)', () => {
   beforeEach(() => stubWideScreen())
 
-  it('sans historique : « Ce qui vous attend le jour J » avec les chiffres de l\'examen', () => {
+  it('sans historique : plus de carte « Ce qui vous attend le jour J », l\'étape 4 reste', () => {
     renderHome()
-    const card = screen.getByRole('region', { name: 'Ce qui vous attend le jour J' })
-    const facts = [...card.querySelectorAll('dl > div')].map((d) => d.textContent)
-    expect(facts).toEqual([
-      '40questions à choix multiples',
-      '45 minpour tout le questionnaire',
-      '32bonnes réponses pour réussir',
-    ])
+    expect(screen.queryByRole('region', { name: 'Ce qui vous attend le jour J' })).toBeNull()
+    expect(screen.queryByText('questions à choix multiples')).toBeNull()
+    expect(screen.getByText('4 · Le jour J')).toBeInTheDocument()
+    const card = screen.getByRole('region', { name: 'Où vous en êtes' })
     expect(card).toHaveTextContent(
       "Vos examens blancs s'afficheront ici, avec votre progression vers les 3 réussites d'affilée.",
     )
     expect(within(card).getByRole('link', { name: "Comment se passe l'examen ?" })).toHaveAttribute('href', '/regles')
-    expect(screen.queryByRole('region', { name: 'Où vous en êtes' })).toBeNull()
   })
 
   it('avec historique : « Où vous en êtes », le compteur, les derniers examens et les règles', () => {

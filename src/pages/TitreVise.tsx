@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Check } from 'lucide-react'
 import { useLocation, useNavigate } from 'react-router-dom'
+import { AppHeader } from '@/components/AppHeader'
 import { BackLink } from '@/components/BackLink'
 import { OrganicBackground } from '@/components/OrganicBackground'
 import { PillButton } from '@/components/PillButton'
@@ -36,7 +37,8 @@ export default function TitreVise() {
   return (
     <main className="relative min-h-svh overflow-hidden bg-background text-foreground">
       <OrganicBackground shape="goal" />
-      <div className="relative mx-auto flex min-h-svh w-full max-w-[30rem] flex-col gap-3.5 px-[22px] pt-5 pb-6">
+      <div className="relative mx-auto flex min-h-svh w-full max-w-[30rem] flex-col gap-3.5 px-[22px] pt-3 pb-6">
+        <AppHeader />
         {firstLaunch ? <div className="min-h-11" aria-hidden="true" /> : <BackLink />}
         <h1 className="mt-[3.75rem] max-w-[16.25rem] text-[2.25rem] leading-none font-bold tracking-[-0.04em] text-balance">
           Quel titre préparez-vous ?

@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { AppHeader } from '@/components/AppHeader'
 import { BackLink } from '@/components/BackLink'
 import { ExamRules } from '@/components/ExamRules'
 import { OrganicBackground } from '@/components/OrganicBackground'
@@ -16,7 +17,8 @@ export default function Regles() {
   return (
     <main className="relative min-h-svh overflow-hidden bg-background text-foreground">
       <OrganicBackground shape="info" />
-      <div className="relative mx-auto flex w-full max-w-[30rem] flex-col gap-3.5 px-[22px] pt-5 pb-7">
+      <div className="relative mx-auto flex w-full max-w-[30rem] flex-col gap-3.5 px-[22px] pt-3 pb-7">
+        <AppHeader />
         <BackLink />
         <h1 className="mt-4 max-w-[19rem] text-[2.125rem] leading-none font-bold tracking-[-0.04em] text-balance">
           Comment se passe l'examen

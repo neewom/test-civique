@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowRight } from 'lucide-react'
+import { AppHeader } from '@/components/AppHeader'
 import { ExamVerdict } from '@/components/ExamVerdict'
 import { OrganicBackground } from '@/components/OrganicBackground'
 import { PillButton, PillLink } from '@/components/PillButton'
@@ -47,7 +48,8 @@ export function ExamResult({ outcome, themeOf, onRestart }: ExamResultProps) {
     <main className="relative min-h-svh overflow-hidden bg-background text-foreground">
       <OrganicBackground shape="crest" />
 
-      <div className="relative mx-auto flex min-h-svh w-full max-w-[30rem] flex-col gap-3 px-[22px] pt-5 pb-6 md:max-w-[44rem] md:px-8 md:pt-8 md:pb-10">
+      <div className="relative mx-auto flex min-h-svh w-full max-w-[30rem] flex-col gap-3 px-[22px] pt-3 pb-6 md:max-w-[44rem] md:px-8 md:pt-4 md:pb-10">
+        <AppHeader />
         <h1 ref={headingRef} tabIndex={-1} className="min-h-11 content-center self-start rounded-sm text-[0.9375rem] font-bold outline-none">
           Examen blanc terminé
         </h1>

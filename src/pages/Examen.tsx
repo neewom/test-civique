@@ -18,6 +18,7 @@ import { ExamResult, type ExamOutcome } from '@/components/ExamResult'
 import { findExamRecord, loadHistoryForTitle } from '@/lib/history'
 import { DEFAULT_TITLE, loadTargetTitle, type TitleKey } from '@/lib/target-title'
 import { journeyMessage, passedInARow, UNSAVED_MESSAGE } from '@/lib/readiness'
+import { AppHeader } from '@/components/AppHeader'
 import { PillButton } from '@/components/PillButton'
 import { SourceLink } from '@/components/SourceLink'
 import { Verdict } from '@/components/Verdict'
@@ -330,6 +331,9 @@ function ExamSession({ restarted, onRestart }: ExamSessionProps) {
     </Dialog>
 
     <main className="flex min-h-svh flex-col bg-background text-foreground">
+      <div className="mx-auto w-full max-w-[30rem] px-5 pt-1 md:max-w-[44rem] md:px-8">
+        <AppHeader thin onLogoClick={() => setShowQuitDialog(true)} />
+      </div>
       <header className="rounded-b-[2rem] bg-earth">
         <div className="mx-auto flex w-full max-w-[30rem] flex-col gap-3 px-5 pt-4 pb-5 md:max-w-[44rem] md:px-8 md:pt-6 md:pb-7">
           <div className="flex flex-wrap items-center justify-between gap-x-4">

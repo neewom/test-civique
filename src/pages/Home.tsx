@@ -1,17 +1,15 @@
 import { useState, type ReactNode } from 'react'
 import { Link, Navigate, useNavigate } from 'react-router-dom'
 import { ArrowRight, Check, ChevronDown, ChevronRight, MonitorSmartphone } from 'lucide-react'
-import { EXAM_SIZE, isPassed, passThreshold } from '@/lib/exam'
+import { isPassed } from '@/lib/exam'
 import { hasProgress, loadProgressForTitle, clearProgress, resumeIndex } from '@/lib/exam-types'
 import type { ExamInProgress } from '@/lib/exam-types'
 import { loadHistory, loadHistoryForTitle, type HistoryEntry } from '@/lib/history'
 import { passedInARow, READY_GOAL } from '@/lib/readiness'
 import { DEFAULT_TITLE, loadTargetTitle, TARGET_TITLE_LABELS } from '@/lib/target-title'
-import { BrandLogo } from '@/components/BrandLogo'
-import { ThemeSwitch } from '@/components/ThemeSwitch'
+import { AppHeader } from '@/components/AppHeader'
 import { OrganicBackground } from '@/components/OrganicBackground'
 import { PillButton, PillLink } from '@/components/PillButton'
-import { GLOBAL_EXAM_TIME } from '@/pages/Examen'
 import { useDocumentTitle } from '@/lib/use-document-title'
 import { useWideScreen } from '@/lib/use-wide-screen'
 import { cn } from '@/lib/utils'
@@ -93,29 +91,11 @@ interface ProgressPanelProps {
  */
 function ProgressPanel({ streak, recentExams, rulesLink }: ProgressPanelProps) {
   if (!recentExams) {
-    const facts = [
-      { value: String(EXAM_SIZE), label: 'questions à choix multiples' },
-      { value: `${GLOBAL_EXAM_TIME / 60} min`, label: 'pour tout le questionnaire' },
-      { value: String(passThreshold(EXAM_SIZE)), label: 'bonnes réponses pour réussir' },
-    ]
     return (
-      <section
-        aria-labelledby="exam-day"
-        className="mt-[4.25rem] flex flex-col gap-4 rounded-2xl bg-card p-6 text-card-foreground"
-      >
-        <h2 id="exam-day" className="text-[1.375rem] leading-tight font-bold">
-          Ce qui vous attend le jour J
+      <section aria-labelledby="progress" className="mt-[4.25rem] flex flex-col gap-4">
+        <h2 id="progress" className="text-[1.0625rem] font-bold">
+          Où vous en êtes
         </h2>
-        <dl className="flex flex-col gap-3">
-          {facts.map(({ value, label }) => (
-            <div key={label} className="flex flex-wrap items-baseline gap-x-3">
-              <dt className="min-w-[5.5rem] text-[1.75rem] leading-none font-bold tracking-[-0.03em] tabular-nums">
-                {value}
-              </dt>
-              <dd className="text-[0.9375rem]">{label}</dd>
-            </div>
-          ))}
-        </dl>
         <p className="text-[0.9375rem] leading-normal">
           Vos examens blancs s'afficheront ici, avec votre progression vers les {READY_GOAL} réussites d'affilée.
         </p>
@@ -325,13 +305,8 @@ export default function Home() {
     <main className="relative min-h-svh overflow-hidden bg-background text-foreground">
       <OrganicBackground shape="journey" className="lg:w-[calc(50%+1.5rem)]" />
 
-      <div className="relative mx-auto flex min-h-svh w-full max-w-[30rem] flex-col gap-3 px-[22px] pt-5 pb-6 md:max-w-[36rem] md:px-8 md:pt-8 md:pb-10 lg:max-w-[62rem] lg:px-10">
-        <header className="flex min-h-11 items-center justify-between gap-3">
-          <span className="min-w-0 text-xl font-bold">
-            <BrandLogo />
-          </span>
-          <ThemeSwitch />
-        </header>
+      <div className="relative mx-auto flex min-h-svh w-full max-w-[30rem] flex-col gap-3 px-[22px] pt-3 pb-6 md:max-w-[36rem] md:px-8 md:pt-4 md:pb-10 lg:max-w-[62rem] lg:px-10">
+        <AppHeader />
 
         {wide ? (
           // From 1024 px: the journey on the left (resume under the title, never face to

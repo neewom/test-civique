@@ -343,6 +343,17 @@ describe('Examen', () => {
     expect(screen.queryByText('Quitter l\'examen ?')).not.toBeInTheDocument()
     expect(screen.getByText(`Question 1 sur ${EXAM_SIZE}`)).toBeInTheDocument()
   })
+
+  it('le logo de l\'en-tête fin ouvre la fenêtre « Quitter l\'examen ? » au lieu de sortir', async () => {
+    renderExamen()
+    const header = document.querySelector('[data-app-header]') as HTMLElement
+    expect(within(header).getByRole('button', { name: 'Affichage' })).toBeInTheDocument()
+    await act(async () => {
+      fireEvent.click(within(header).getByRole('button', { name: /Futur Citoyen/ }))
+    })
+    expect(screen.getByText('Quitter l\'examen ?')).toBeInTheDocument()
+    expect(screen.getByText(`Question 1 sur ${EXAM_SIZE}`)).toBeInTheDocument()
+  })
 })
 
 // ─── Règles officielles : reprise et verdict ──────────────────────────────────
