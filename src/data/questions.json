@@ -2004,7 +2004,7 @@
       "Le directeur général des services communaux",
       "Le président de la communauté de communes"
     ],
-    "explanation": "Le maire est élu par les conseillers municipaux, eux-mêmes élus pour 6 ans par les électeurs de la commune. Il dirige la commune, qui gère notamment les écoles maternelles et primaires, l'urbanisme et les services de proximité.",
+    "explanation": "Le maire est élu par les conseillers municipaux, eux-mêmes élus par les électeurs de la commune. Il dirige la commune et son administration, avec le conseil municipal.",
     "answers": [
       "Le maire, élu par le conseil municipal"
     ],
@@ -2364,6 +2364,7 @@
     "answers": [
       "Le 9 mai"
     ],
+    "group": "ceca",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/institutions-europeennes/les-symboles-europeens-2/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -2752,6 +2753,7 @@
     "answers": [
       "Abolie depuis 1981"
     ],
+    "group": "abolition-peine-de-mort",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/la-cinquieme-republique/focus-sur-la-cinquieme-republique-5/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -6923,6 +6925,7 @@
     "answers": [
       "La Seine"
     ],
+    "group": "seine-paris",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/atlas-de-la-france/les-fleuves-fran%C3%A7ais/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -6995,6 +6998,7 @@
     "answers": [
       "Il commémore la capitulation de l'Allemagne nazie et la victoire des Alliés en Europe en 1945"
     ],
+    "group": "8-mai",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/zoom-sur/patrimoine-francais-les-jours-feries/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -7207,6 +7211,7 @@
     "answers": [
       "Au génocide des Juifs d'Europe par les nazis durant la Seconde Guerre mondiale"
     ],
+    "group": "shoah",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/zoom-sur/focus-sur-la-seconde-guerre-mondiale-la-shoah/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -8888,7 +8893,7 @@
       "De juger les personnes, exercé par les tribunaux",
       "De diriger l'administration, exercé par les préfets",
       "De contrôler la constitutionnalité des lois, exercé par le Gouvernement",
-      "De conduire la politique de la nation, exercé par le Premier ministre"
+      "D'élire le président de la République, exercé par les maires"
     ],
     "explanation": "Le pouvoir législatif est exercé par le Parlement, qui vote la loi. Le Parlement vérifie aussi que le Gouvernement agit selon la loi. Le pouvoir exécutif applique les lois et le pouvoir judiciaire rend la justice.",
     "group": "pouvoir-legislatif",
@@ -8938,7 +8943,7 @@
     "distractors": [
       "Voter les lois et contrôler le président",
       "Rendre la justice dans toute la France",
-      "Gérer les écoles primaires de chaque commune",
+      "Nommer les maires des communes",
       "Élire les sénateurs",
       "Contrôler l'application de la Constitution"
     ],
@@ -9016,7 +9021,7 @@
     "distractors": [
       "Rendre la justice au nom du peuple",
       "Présider l'Assemblée nationale",
-      "Représenter l'État dans un département",
+      "Diriger les débats du Sénat",
       "Nommer seul tous les membres du Conseil constitutionnel",
       "Élaborer seul les lois du pays"
     ],
@@ -9124,6 +9129,7 @@
       "2007"
     ],
     "explanation": "En 2002, l'euro est devenu la monnaie officielle de plusieurs pays membres de l'Union européenne, dont la France : les pièces et les billets en euros ont alors remplacé les monnaies nationales, comme le franc. L'euro avait été introduit auparavant comme monnaie de paiement non physique (1999).",
+    "group": "euro-2002",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-conflits-mondiaux-et-le-nouvel-ordre-mondial/la-construction-europeenne/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -9142,7 +9148,7 @@
       "L'action sociale (handicap, gestion du RSA)"
     ],
     "distractors": [
-      "L'enseignement (écoles maternelles et primaires)",
+      "Les transports (trains régionaux, TER)",
       "La gestion des lycées (bâtiments, équipements)",
       "La défense (armée, frontières)",
       "La justice (tribunaux, prisons)",
@@ -9473,8 +9479,8 @@
       "L'intérêt général, l'ordre public et les libertés des autres"
     ],
     "distractors": [
-      "L'intérêt du Gouvernement et la volonté du président",
-      "Les traditions religieuses et les coutumes locales",
+      "L'intérêt du Gouvernement, la volonté du président et celle de sa majorité",
+      "Les traditions religieuses, les coutumes locales et les croyances de chacun",
       "L'intérêt économique de l'État et des entreprises",
       "La décision personnelle de chaque maire",
       "La volonté de la majorité des habitants"
@@ -9573,8 +9579,8 @@
       "L'organisation de l'État et les principaux droits et libertés fondamentaux"
     ],
     "distractors": [
-      "La liste des lois votées chaque année par le Parlement",
-      "Le détail de tous les impôts et des taxes",
+      "La liste complète des lois votées chaque année par le Parlement et leurs décrets d'application",
+      "Le détail de tous les impôts et des taxes que doivent payer les citoyens et les entreprises",
       "Les règles de la circulation routière sur le territoire",
       "Les décisions rendues par les tribunaux",
       "Le programme politique du président en place"
@@ -9600,9 +9606,9 @@
     ],
     "distractors": [
       "Le droit de publier toute information sans aucune limite",
-      "Le droit pour l'État de contrôler les articles avant leur publication",
+      "Le droit de publier librement, sauf si l'État contrôle les articles avant leur publication",
       "Le droit de ne publier que des informations validées par le Gouvernement",
-      "Le droit réservé aux seuls journalistes de s'exprimer"
+      "Le droit pour les journalistes d'écrire et de publier librement, sauf pour les simples citoyens"
     ],
     "explanation": "L'article 11 de la Déclaration des droits de l'homme et du citoyen de 1789 garantit la libre communication des pensées et des opinions : tout citoyen peut parler, écrire et imprimer librement, sauf à répondre de l'abus de cette liberté dans les cas déterminés par la loi.",
     "group": "liberte-expression",
@@ -9627,7 +9633,7 @@
       "Le droit de posséder un jardin pour chaque habitant",
       "L'interdiction de toute activité industrielle en France",
       "La gratuité des transports en commun pour tous",
-      "Le droit pour les entreprises de ne pas payer d'impôts"
+      "Le devoir pour les seules entreprises de préserver l'environnement, sans obligation pour les particuliers"
     ],
     "explanation": "La Charte de l'environnement de 2004, ajoutée à la Constitution en 2005, prévoit que chacun a le droit de vivre dans un environnement équilibré et respectueux de la santé (article 1er), et que toute personne a le devoir de prendre part à la préservation et à l'amélioration de l'environnement (article 2).",
     "source": {
@@ -9775,8 +9781,8 @@
       "Le droit pour une personne employée de cesser le travail pour exprimer un désaccord"
     ],
     "distractors": [
-      "Le droit de démissionner sans prévenir son employeur",
-      "Le droit de ne jamais travailler le week-end",
+      "Le droit pour une personne employée de démissionner sans prévenir son employeur ni respecter de délai",
+      "Le droit pour une personne employée de refuser de travailler le week-end et les jours fériés",
       "Le droit de choisir librement ses jours de congé",
       "Le droit d'occuper son entreprise sans autorisation"
     ],
@@ -9799,9 +9805,9 @@
       "Un texte fondateur qui organise l'État et garantit les droits et libertés"
     ],
     "distractors": [
-      "Un code de lois qui fixe la peine de chaque infraction",
+      "Un code de lois qui fixe la peine de chaque infraction et les règles de la vie quotidienne",
       "Le règlement intérieur de l'Assemblée nationale",
-      "Un traité signé entre les pays européens",
+      "Un traité signé entre les pays européens pour organiser leur coopération économique",
       "Un décret signé par le président de la République",
       "Le programme politique du Gouvernement"
     ],
@@ -9881,6 +9887,7 @@
       "Une insulte n'est punie que si elle est dite à voix haute"
     ],
     "explanation": "Une injure est une parole ou un écrit destiné à blesser ou à offenser une personne. Si une vidéo injurieuse est diffusée sur un compte de réseau social accessible à tous, il s'agit d'une injure publique, punie par la loi.",
+    "group": "liberte-expression",
     "source": {
       "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F32077",
       "label": "service-public.gouv.fr"
@@ -9999,8 +10006,8 @@
       "Pour protéger les personnes contre les propos haineux et l'incitation à la violence"
     ],
     "distractors": [
-      "Pour empêcher toute critique du Gouvernement",
-      "Pour interdire de critiquer une religion",
+      "Pour empêcher toute personne de critiquer le Gouvernement ou les décisions des élus",
+      "Pour interdire de critiquer ou de se moquer d'une religion, d'un dieu ou de ce qui est sacré",
       "Pour réserver la parole aux journalistes",
       "Pour éviter que l'on exprime des opinions politiques"
     ],
@@ -10099,8 +10106,8 @@
       "La limitation des déplacements pendant l'état d'urgence sanitaire de 2020"
     ],
     "distractors": [
-      "L'interdiction de critiquer le Gouvernement",
-      "L'obligation de pratiquer une religion",
+      "L'interdiction pour les citoyens de critiquer le Gouvernement pendant une crise",
+      "L'obligation de pratiquer une religion pour préserver l'ordre public",
       "L'interdiction de se déplacer selon son origine",
       "La fermeture d'un journal par le Gouvernement"
     ],
@@ -10304,7 +10311,7 @@
       "Charles X",
       "Louis-Philippe Ier"
     ],
-    "explanation": "Le roi Louis XVI est exécuté en 1793, pendant la période de la Terreur, où le gouvernement utilise la guillotine contre ceux qu'il considère comme des traîtres.",
+    "explanation": "Le roi Louis XVI est exécuté en 1793, sous la Ière République, proclamée le 22 septembre 1792. Pendant la Révolution, le gouvernement utilise la guillotine contre ceux qu'il considère comme des traîtres.",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-regimes-politiques-depuis-1789/la-premiere-republique-1792-1804/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -10353,6 +10360,7 @@
       "Clovis"
     ],
     "explanation": "Marianne apparaît pendant la Révolution française pour représenter la République. Elle porte le bonnet phrygien, symbole de liberté retrouvée. Son buste est présent dans toutes les mairies.",
+    "group": "marianne",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/les-symboles-de-la-republique/marianne/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -10401,6 +10409,7 @@
       "Pour apprendre les techniques militaires de l'époque"
     ],
     "explanation": "La Shoah est le génocide des Juifs organisé par l'Allemagne nazie : environ 6 millions de Juifs ont été assassinés. On l'étudie aujourd'hui à l'école pour comprendre les conséquences de la haine, du racisme et de l'antisémitisme, et pour rappeler l'importance du devoir de mémoire.",
+    "group": "shoah",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/zoom-sur/focus-sur-la-seconde-guerre-mondiale-la-shoah/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -10455,6 +10464,7 @@
       "Depuis 1981"
     ],
     "explanation": "En 1962, un référendum constitutionnel a validé que le président de la République ne serait plus élu par de grands électeurs (suffrage indirect), mais directement par les citoyens (suffrage direct).",
+    "group": "constitution",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/droits-et-devoirs/droits-fondamentaux/les-principaux-textes-la-constitution-de-la-5-republique/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -10478,7 +10488,8 @@
       "L'arrivée de l'euro comme monnaie",
       "L'élargissement à l'Espagne et au Portugal"
     ],
-    "explanation": "En 1951, la Communauté européenne du charbon et de l'acier (CECA) est créée entre la France, l'Allemagne, l'Italie, la Belgique, les Pays-Bas et le Luxembourg, pour partager le charbon et l'acier. C'est le premier pas de la construction européenne.",
+    "explanation": "En 1951, la Communauté européenne du charbon et de l'acier (CECA) est créée pour partager le charbon et l'acier. C'est le premier pas de la construction européenne.",
+    "group": "ceca",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-conflits-mondiaux-et-le-nouvel-ordre-mondial/la-construction-europeenne/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -10648,7 +10659,8 @@
       "En 1992",
       "En 2007"
     ],
-    "explanation": "En 2002, l'euro devient la monnaie officielle de plusieurs pays membres de l'Union européenne. Le traité de Maastricht, en 1992, avait prévu une monnaie unique.",
+    "explanation": "En 2002, l'euro devient la monnaie officielle de plusieurs pays membres de l'Union européenne.",
+    "group": "euro-2002",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-conflits-mondiaux-et-le-nouvel-ordre-mondial/la-construction-europeenne/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -10746,6 +10758,7 @@
       "L'abolition de la peine de mort, en 1981"
     ],
     "explanation": "Le 8 mai est un jour férié qui commémore la victoire de 1945, c'est-à-dire la fin de la Seconde Guerre mondiale. Des cérémonies ont lieu partout en France.",
+    "group": "8-mai",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/patrimoine-francais-les-jours-feries/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -10859,10 +10872,10 @@
       "La mer Adriatique",
       "La mer Noire"
     ],
-    "explanation": "La Manche borde la France au nord-ouest. Un tunnel sous la Manche relie la France à la Grande-Bretagne.",
+    "explanation": "La Manche borde le nord-ouest de la France et la sépare du Royaume-Uni. Le tunnel sous la Manche relie la région des Hauts-de-France au Royaume-Uni.",
     "group": "mers-et-oceans",
     "source": {
-      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/atlas-de-la-france/les-frontieres-de-la-france/",
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-regions-fran%C3%A7aises/hauts-de-france/",
       "label": "formation-civique.interieur.gouv.fr"
     }
   },
@@ -10934,7 +10947,7 @@
       "La Guadeloupe",
       "Tahiti"
     ],
-    "explanation": "La Réunion et Mayotte, avec les îles Éparses, sont les territoires français de l'océan Indien. La Martinique et la Guadeloupe se trouvent dans l'océan Atlantique, avec les Antilles.",
+    "explanation": "La Réunion et Mayotte, avec les îles Éparses, sont les territoires français de l'océan Indien. La Martinique et la Guadeloupe, aux Antilles, se trouvent dans l'océan Atlantique.",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/la-france-dans-leurope-et-dans-le-monde/une-puissance-maritime/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -10953,10 +10966,10 @@
       "Environ 68,6 millions d'habitants"
     ],
     "distractors": [
-      "Environ 48 millions d'habitants",
-      "Environ 58 millions d'habitants",
-      "Environ 78 millions d'habitants",
-      "Environ 88 millions d'habitants"
+      "Environ 52,3 millions d'habitants",
+      "Environ 59,8 millions d'habitants",
+      "Environ 76,4 millions d'habitants",
+      "Environ 84,1 millions d'habitants"
     ],
     "explanation": "Au 1er janvier 2025, la France compte 68,6 millions d'habitants : 66,4 millions en France hexagonale et 2,3 millions dans les départements et régions d'outre-mer.",
     "source": {
@@ -10983,6 +10996,7 @@
       "Le Rhin"
     ],
     "explanation": "La Seine traverse notamment Troyes, Paris et Rouen avant de se jeter dans la Manche. Elle mesure 776 kilomètres.",
+    "group": "seine-paris",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/atlas-de-la-france/les-fleuves-fran%C3%A7ais/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -11170,6 +11184,7 @@
       "Besançon"
     ],
     "explanation": "Les 10 plus grandes métropoles françaises sont celles du Grand Paris, d'Aix-Marseille-Provence, du Grand Lyon, de Lille, de Bordeaux, de Toulouse, de Nantes, de Nice Côte d'Azur, de Montpellier et de Strasbourg.",
+    "group": "villes-metropoles",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/atlas-de-la-france/la-france-aire-urbaine-et-metropolisation/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -11193,7 +11208,11 @@
       "La Haute-Marne",
       "La Meuse"
     ],
-    "explanation": "Paris est le département français qui reçoit le plus de touristes. On y trouve la tour Eiffel, symbole de la France, et des musées parmi les plus prestigieux au monde."
+    "explanation": "Paris est le département français qui accueille le plus de touristes : en 2025, on y compte près de 42 millions de nuitées dans les hôtels de tourisme, quatre fois plus que dans les Alpes-Maritimes, deuxièmes.",
+    "source": {
+      "url": "https://www.insee.fr/fr/statistiques/2012672",
+      "label": "insee.fr"
+    }
   },
   {
     "id": 425,
@@ -11213,7 +11232,7 @@
       "Chaque mercredi après-midi",
       "Le 1er janvier de chaque année"
     ],
-    "explanation": "L'accès aux collections de la plupart des musées nationaux est gratuit le 1er dimanche de chaque mois, par exemple au musée du Louvre. Les Journées européennes du patrimoine, en septembre, offrent aussi un accès très souvent gratuit à des lieux culturels habituellement fermés au public.",
+    "explanation": "L'accès aux collections de la plupart des musées nationaux est gratuit le 1er dimanche de chaque mois. Les Journées européennes du patrimoine, en septembre, offrent aussi un accès très souvent gratuit à des lieux culturels habituellement fermés au public.",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/culture/patrimoine-francais-acces-a-la-culture/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -11232,10 +11251,10 @@
       "Plus de 396 millions de personnes"
     ],
     "distractors": [
-      "Environ 100 millions de personnes",
-      "Environ 200 millions de personnes",
-      "Environ 700 millions de personnes",
-      "Plus d'un milliard de personnes"
+      "Plus de 124 millions de personnes",
+      "Plus de 218 millions de personnes",
+      "Plus de 652 millions de personnes",
+      "Plus de 1,1 milliard de personnes"
     ],
     "explanation": "Le français compte plus de 396 millions de locuteurs. On le parle sur les 5 continents et il est langue officielle de plus de 30 pays.",
     "source": {
@@ -11455,10 +11474,10 @@
       "Un peintre impressionniste français"
     ],
     "distractors": [
-      "Un sculpteur du XIXe siècle",
-      "Un compositeur du XIXe siècle",
-      "Un écrivain du XIXe siècle",
-      "Un architecte du XIXe siècle"
+      "Un sculpteur impressionniste français",
+      "Un compositeur impressionniste français",
+      "Un écrivain romantique français",
+      "Un architecte français du XIXe siècle"
     ],
     "explanation": "Auguste Renoir (1841-1919) est un peintre impressionniste français. Il a peint des scènes joyeuses de la vie quotidienne, des portraits lumineux et des fêtes.",
     "group": "peintres-francais",
@@ -11480,12 +11499,13 @@
       "Le 14 juillet"
     ],
     "distractors": [
-      "Thanksgiving",
-      "L'Oktoberfest",
-      "La Saint-Patrick",
-      "Le Carnaval de Rio"
+      "Le 4 juillet",
+      "Le 17 mars",
+      "Le 3 octobre",
+      "Le 12 octobre"
     ],
     "explanation": "Le 14 juillet est le jour de la fête nationale depuis 1880. Il commémore la prise de la Bastille (1789) et la fête de la Fédération (1790). C'est à la fois un moment institutionnel, avec le défilé militaire, et une fête populaire avec feux d'artifice et bals.",
+    "group": "symboles-republique",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/les-symboles-de-la-republique/la-fete-nationale/",
       "label": "formation-civique.interieur.gouv.fr"
