@@ -35,10 +35,10 @@ export default function TitreVise() {
   }
 
   return (
-    <main className="relative min-h-svh overflow-hidden bg-background text-foreground">
+    <main className="relative flex min-h-svh flex-col overflow-hidden bg-background text-foreground">
       <OrganicBackground shape="goal" />
-      <div className="relative mx-auto flex min-h-svh w-full max-w-[30rem] flex-col gap-3.5 px-[22px] pt-3 pb-6">
-        <AppHeader />
+      <AppHeader />
+      <div className="relative mx-auto flex grow w-full max-w-[30rem] flex-col gap-3.5 px-[22px] pt-0 pb-6">
         {firstLaunch ? <div className="min-h-11" aria-hidden="true" /> : <BackLink />}
         <h1 className="mt-[3.75rem] max-w-[16.25rem] text-[2.25rem] leading-none font-bold tracking-[-0.04em] text-balance">
           Quel titre préparez-vous ?

@@ -302,11 +302,11 @@ export default function Home() {
   )
 
   return (
-    <main className="relative min-h-svh overflow-hidden bg-background text-foreground">
+    <main className="relative flex min-h-svh flex-col overflow-hidden bg-background text-foreground">
       <OrganicBackground shape="journey" className="lg:w-[calc(50%+1.5rem)]" />
 
-      <div className="relative mx-auto flex min-h-svh w-full max-w-[30rem] flex-col gap-3 px-[22px] pt-3 pb-6 md:max-w-[36rem] md:px-8 md:pt-4 md:pb-10 lg:max-w-[62rem] lg:px-10">
-        <AppHeader />
+      <AppHeader />
+      <div className="relative mx-auto flex grow w-full max-w-[30rem] flex-col gap-3 px-[22px] pt-0 pb-6 md:max-w-[36rem] md:px-8 md:pb-10 lg:max-w-[62rem] lg:px-10">
 
         {wide ? (
           // From 1024 px: the journey on the left (resume under the title, never face to

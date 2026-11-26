@@ -36,10 +36,10 @@ export default function MentionsLegales() {
   useDocumentTitle('Mentions légales et confidentialité')
 
   return (
-    <main className="relative min-h-svh overflow-hidden bg-background text-foreground">
+    <main className="relative flex min-h-svh flex-col overflow-hidden bg-background text-foreground">
       <OrganicBackground shape="crest" />
-      <div className="relative mx-auto flex w-full max-w-[30rem] flex-col gap-3.5 px-[22px] pt-3 pb-8">
-        <AppHeader />
+      <AppHeader />
+      <div className="relative mx-auto flex w-full max-w-[30rem] flex-col gap-3.5 px-[22px] pt-0 pb-8">
         <BackLink />
         <h1 className="mt-4 max-w-[20rem] text-[2.125rem] leading-none font-bold tracking-[-0.04em] text-balance hyphens-auto">
           Mentions légales et confidentialité
