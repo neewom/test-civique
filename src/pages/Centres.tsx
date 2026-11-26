@@ -62,7 +62,7 @@ export default function Centres() {
           ))}
         </ul>
 
-        <p className="px-1 text-[0.9375rem] leading-snug md:text-base">
+        <p className="text-[0.9375rem] leading-snug md:text-base">
           {CENTRES_FOOTER}{' '}
           <a
             href={OFFICIAL_ORGANISMES_URL}
