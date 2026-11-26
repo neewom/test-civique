@@ -14002,7 +14002,7 @@
     "natNumber": 104,
     "question": "Que sont les droits fondamentaux ?",
     "answers": [
-      "Les droits et libertés élémentaires, les mêmes pour tous"
+      "Les droits et libertés élémentaires communs à tous"
     ],
     "distractors": [
       "Les droits réservés aux personnes de nationalité française",
@@ -14100,7 +14100,7 @@
     "natNumber": 108,
     "question": "Quelle situation est une atteinte à la dignité humaine ?",
     "answers": [
-      "Être traité comme un objet, par exemple par l'esclavage"
+      "Être réduit en esclavage ou traité comme un objet"
     ],
     "distractors": [
       "Être condamné à une amende après une infraction",
@@ -14197,7 +14197,7 @@
     "natNumber": 113,
     "question": "Dans lequel de ces endroits est-on autorisé à fumer ?",
     "answers": [
-      "Chez soi, dans son logement"
+      "Dans son propre logement"
     ],
     "distractors": [
       "Dans un bus ou un abribus",
@@ -15835,8 +15835,8 @@
       "Hauts-de-France",
       "Île-de-France",
       "Centre-Val de Loire",
-      "Nouvelle-Aquitaine",
-      "Bourgogne-Franche-Comté"
+      "Pays de la Loire",
+      "Normandie"
     ],
     "explanation": "L'Auvergne-Rhône-Alpes s'étend des Alpes au Massif central. Le tourisme, notamment les stations de ski, fait partie de ses secteurs économiques clés.",
     "group": "regions",
