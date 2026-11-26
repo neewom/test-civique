@@ -24,6 +24,11 @@ export interface Question {
 export const QUESTIONS: Question[] = (
   JSON.parse(readFileSync(path.resolve(import.meta.dirname, '../src/data/questions.json'), 'utf8')) as Question[]
 ).filter((q) => q.lists.includes('pluriannuelle'))
+const ALL_QUESTIONS = JSON.parse(
+  readFileSync(path.resolve(import.meta.dirname, '../src/data/questions.json'), 'utf8'),
+) as Question[]
+// Questions of the resident card (official + situational)
+export const RESIDENT_QUESTIONS: Question[] = ALL_QUESTIONS.filter((q) => q.lists.includes('resident'))
 export const SITUATION_COUNT = QUESTIONS.filter((q) => q.notion === 'mise-en-situation').length
 export const THEMES = [...new Set(QUESTIONS.map((q) => q.theme))]
 

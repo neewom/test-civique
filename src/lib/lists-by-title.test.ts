@@ -37,9 +37,9 @@ afterEach(() => {
 const listed = allQuestions as ListedQuestion[]
 
 describe('title keys', () => {
-  it('knows the three titles, only the multi-year permit can be chosen for now', () => {
+  it('knows the three titles, the multi-year permit and the resident card can be chosen', () => {
     expect(TITLE_KEYS).toEqual(['pluriannuelle', 'resident', 'naturalisation'])
-    expect(TARGET_TITLES).toEqual(['pluriannuelle'])
+    expect(TARGET_TITLES).toEqual(['pluriannuelle', 'resident'])
   })
 
   it('titleOf: a missing, unknown or malformed title counts for the multi-year permit', () => {

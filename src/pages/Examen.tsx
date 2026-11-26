@@ -21,7 +21,7 @@ import { journeyMessage, passedInARow, UNSAVED_MESSAGE } from '@/lib/readiness'
 import { PillButton } from '@/components/PillButton'
 import { SourceLink } from '@/components/SourceLink'
 import { Verdict } from '@/components/Verdict'
-import { trackEvent, EXAM_STARTED, EXAM_FINISHED_PASSED, EXAM_FINISHED_NOT_YET } from '@/lib/analytics'
+import { trackEvent, examEvent } from '@/lib/analytics'
 
 // Arrêté du 10 octobre 2025, art. 4 : 45 minutes au maximum
 export const GLOBAL_EXAM_TIME = 45 * 60 // 2700 secondes
@@ -53,7 +53,7 @@ function setupExam(startNew: boolean, title: TitleKey): ExamSetup {
     const saved = loadProgressForTitle(title)
     if (saved) return { questions: saved.questions, resume: saved }
   }
-  clearProgress()
+  clearProgress(title)
   return { questions: buildExam(questionsForTitle(title)), resume: null }
 }
 
@@ -131,7 +131,7 @@ function ExamSession({ restarted, onRestart }: ExamSessionProps) {
   useEffect(() => {
     if (resume || startTrackedRef.current) return
     startTrackedRef.current = true
-    trackEvent(EXAM_STARTED)
+    trackEvent(examEvent('started', title))
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
@@ -189,7 +189,7 @@ function ExamSession({ restarted, onRestart }: ExamSessionProps) {
     finishedRef.current = true
     const timedOutUnanswered = timedOut ? questions.length - answersRef.current.length : null
     if (timerRef.current) clearInterval(timerRef.current)
-    clearProgress()
+    clearProgress(title)
     const allAnswers = [...answersRef.current]
     // Questions non répondues (timer expiré avant d'y arriver)
     for (let i = allAnswers.length; i < questions.length; i++) {
@@ -202,7 +202,7 @@ function ExamSession({ restarted, onRestart }: ExamSessionProps) {
     const streak = passedInARow([...history, result])
     const id = saveResult(result.score, result.total, allAnswers, title)
     // Once per exam (finishedRef), timed out included: only the verdict is sent
-    trackEvent(isPassed(result.score, result.total) ? EXAM_FINISHED_PASSED : EXAM_FINISHED_NOT_YET)
+    trackEvent(examEvent(isPassed(result.score, result.total) ? 'passed' : 'notYet', title))
     // Storage unavailable: no detail page to link to, and the home counter will not
     // count this exam, so the journey message must not announce a step forward
     const saved = findExamRecord(id) !== null
@@ -279,7 +279,7 @@ function ExamSession({ restarted, onRestart }: ExamSessionProps) {
   }
 
   function handleRestart() {
-    clearProgress()
+    clearProgress(title)
     onRestart()
   }
 

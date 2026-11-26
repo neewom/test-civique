@@ -48,14 +48,51 @@ describe('Écran « Quel titre préparez-vous ? »', () => {
     expect(option).toBeEnabled()
   })
 
-  it('affiche la carte de résident et la naturalisation « bientôt », non sélectionnables', () => {
+  it('propose la carte de résident, sélectionnable, avec son nombre de questions officielles', () => {
     renderTitre()
-    for (const name of [/Carte de résident/, /Naturalisation/]) {
-      const option = screen.getByRole('button', { name })
-      expect(option).toBeDisabled()
-      expect(option).toHaveAttribute('aria-pressed', 'false')
-      expect(option).toHaveTextContent(/bientôt/i)
-    }
+    const option = screen.getByRole('button', { name: /Carte de résident/ })
+    expect(option).toBeEnabled()
+    expect(option).toHaveAttribute('aria-pressed', 'false')
+    expect(option).toHaveTextContent('209 questions officielles')
+    expect(screen.getByRole('button', { name: /Carte de séjour pluriannuelle/ })).toHaveTextContent('191 questions officielles')
+  })
+
+  it('affiche la naturalisation « bientôt », non sélectionnable', () => {
+    renderTitre()
+    const option = screen.getByRole('button', { name: /Naturalisation/ })
+    expect(option).toBeDisabled()
+    expect(option).toHaveAttribute('aria-pressed', 'false')
+    expect(option).toHaveTextContent(/bientôt/i)
+  })
+
+  it('le groupe d\'options est nommé « Titre visé »', () => {
+    renderTitre()
+    expect(screen.getByRole('group', { name: 'Titre visé' })).toBeInTheDocument()
+  })
+
+  it('choisir la carte de résident déplace la sélection, et « Continuer » l\'enregistre', () => {
+    renderTitre()
+    fireEvent.click(screen.getByRole('button', { name: /Carte de résident/ }))
+    expect(screen.getByRole('button', { name: /Carte de résident/ })).toHaveAttribute('aria-pressed', 'true')
+    expect(screen.getByRole('button', { name: /Carte de séjour pluriannuelle/ })).toHaveAttribute('aria-pressed', 'false')
+    fireEvent.click(screen.getByRole('button', { name: 'Continuer' }))
+    expect(localStorageMock.getItem('target-title')).toBe('resident')
+    expect(screen.getByText('Accueil')).toBeInTheDocument()
+  })
+
+  it.each([
+    ['resident', /Carte de résident/],
+    ['pluriannuelle', /Carte de séjour pluriannuelle/],
+  ])('s\'ouvre sur le titre déjà choisi (%s)', (stored, name) => {
+    localStorageMock.setItem('target-title', stored)
+    renderTitre()
+    expect(screen.getByRole('button', { name })).toHaveAttribute('aria-pressed', 'true')
+  })
+
+  it('un choix illisible ouvre l\'écran sur la pluriannuelle', () => {
+    localStorageMock.setItem('target-title', 'inconnu')
+    renderTitre()
+    expect(screen.getByRole('button', { name: /Carte de séjour pluriannuelle/ })).toHaveAttribute('aria-pressed', 'true')
   })
 
   it('« Continuer » enregistre le choix et mène à l\'accueil', () => {

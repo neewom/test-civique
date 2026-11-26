@@ -296,3 +296,23 @@ describe('Revision — titre visé', () => {
     expect(shownCards()).toHaveLength(classical.length)
   })
 })
+
+describe('Revision — carte de résident', () => {
+  const residentQuestions = allQuestions.filter((q) => q.lists.includes('resident'))
+
+  it('affiche le libellé du titre et le nombre de questions de la liste de la carte de résident', () => {
+    localStorageMock.setItem('target-title', 'resident')
+    renderRevision()
+    expect(residentQuestions.filter((q) => q.notion !== 'mise-en-situation')).toHaveLength(209)
+    expect(screen.getByText(`Carte de résident · ${residentQuestions.length} questions`)).toBeInTheDocument()
+    expect(screen.queryByText(/Carte de séjour pluriannuelle/)).toBeNull()
+  })
+
+  it('« sans les mises en situation » retire celles de la carte de résident', () => {
+    localStorageMock.setItem('target-title', 'resident')
+    renderRevision()
+    fireEvent.click(screen.getByRole('checkbox', { name: /mises en situation/ }))
+    const official = residentQuestions.filter((q) => q.notion !== 'mise-en-situation')
+    expect(screen.getByText(`Carte de résident · ${official.length} questions`)).toBeInTheDocument()
+  })
+})
