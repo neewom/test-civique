@@ -2364,6 +2364,7 @@
     "answers": [
       "Le 9 mai"
     ],
+    "group": "ceca",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/institutions-europeennes/les-symboles-europeens-2/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -2752,6 +2753,7 @@
     "answers": [
       "Abolie depuis 1981"
     ],
+    "group": "abolition-peine-de-mort",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/la-cinquieme-republique/focus-sur-la-cinquieme-republique-5/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -5529,6 +5531,7 @@
     "answers": [
       "Prévenir l'école au plus tôt et justifier l'absence"
     ],
+    "group": "absence-ecole",
     "source": {
       "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F1899",
       "label": "service-public.gouv.fr"
@@ -5601,6 +5604,7 @@
     "answers": [
       "Dans les 5 jours suivant la naissance"
     ],
+    "group": "declaration-naissance",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/demarches-administratives/la-declaration-de-naissance/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -5625,6 +5629,7 @@
     "answers": [
       "La perte de vos droits sociaux : retraite, chômage, assurance maladie"
     ],
+    "group": "travail-non-declare",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/emploi/le-droit-au-travail-5/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -5649,6 +5654,7 @@
     "answers": [
       "Saisir le Conseil de prud'hommes"
     ],
+    "group": "prudhommes",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/emploi/le-droit-au-travail-2/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -5673,6 +5679,7 @@
     "answers": [
       "Se marier civilement à la mairie"
     ],
+    "group": "mariage-civil",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/demarches-administratives/la-declaration-de-mariage/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -5865,6 +5872,7 @@
     "answers": [
       "Appeler le 17 (police) ou le 15 (SAMU) selon la situation"
     ],
+    "group": "numero-police",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/droits-et-devoirs/obligations-et-devoirs-des-personnes-residant-en-france/le-role-des-temoins-en-cas-de-violences/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -5889,6 +5897,7 @@
     "answers": [
       "La durée légale est de 35 heures ; les heures supplémentaires doivent être compensées"
     ],
+    "group": "heures-supplementaires",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/emploi/le-droit-au-travail-1/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -5959,6 +5968,7 @@
       "Contacter la mairie pour annuler la convocation"
     ],
     "explanation": "Une convocation devant un tribunal doit être respectée. Si la personne poursuivie ne vient pas, elle peut être amenée de force par la police ou jugée en son absence, sans pouvoir se défendre ; un témoin absent sans excuse valable peut aussi être contraint de venir. Toute personne peut être assistée d'un avocat, et l'aide juridictionnelle existe pour ceux qui ne peuvent pas en payer un.",
+    "group": "aide-juridictionnelle",
     "answers": [
       "Vous y rendre, éventuellement assisté d'un avocat"
     ],
@@ -6392,6 +6402,7 @@
       "Ce droit n'existe pas, la religion est déterminée par la famille"
     ],
     "explanation": "La liberté de conscience et de religion est garantie à toute personne, enfants compris. Tant que l'enfant est mineur, son éducation religieuse est un acte important de l'autorité parentale : elle demande l'accord de ses deux parents, qui doivent l'associer aux décisions selon son âge et sa maturité.",
+    "group": "autorite-parentale",
     "answers": [
       "Il est libre de sa religion, mais ses deux parents décident de son éducation en tenant compte de son avis"
     ],
@@ -6923,6 +6934,7 @@
     "answers": [
       "La Seine"
     ],
+    "group": "seine-paris",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/atlas-de-la-france/les-fleuves-fran%C3%A7ais/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -6995,6 +7007,7 @@
     "answers": [
       "Il commémore la capitulation de l'Allemagne nazie et la victoire des Alliés en Europe en 1945"
     ],
+    "group": "8-mai",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/zoom-sur/patrimoine-francais-les-jours-feries/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -7207,6 +7220,7 @@
     "answers": [
       "Au génocide des Juifs d'Europe par les nazis durant la Seconde Guerre mondiale"
     ],
+    "group": "shoah",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/zoom-sur/focus-sur-la-seconde-guerre-mondiale-la-shoah/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -7757,6 +7771,7 @@
     "answers": [
       "Oui, quand la cantine existe, son accès est un droit pour tous les élèves"
     ],
+    "group": "cantine",
     "source": {
       "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F24570",
       "label": "service-public.gouv.fr"
@@ -9112,7 +9127,7 @@
       "resident"
     ],
     "crNumber": 73,
-    "question": "Depuis quand l'euro est-elle la monnaie unique ?",
+    "question": "Depuis quand l'euro est-il la monnaie unique ?",
     "answers": [
       "2002"
     ],
@@ -9124,6 +9139,7 @@
       "2007"
     ],
     "explanation": "En 2002, l'euro est devenu la monnaie officielle de plusieurs pays membres de l'Union européenne, dont la France : les pièces et les billets en euros ont alors remplacé les monnaies nationales, comme le franc. L'euro avait été introduit auparavant comme monnaie de paiement non physique (1999).",
+    "group": "euro-2002",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-conflits-mondiaux-et-le-nouvel-ordre-mondial/la-construction-europeenne/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -9781,6 +9797,7 @@
       "Le droit d'occuper son entreprise sans autorisation"
     ],
     "explanation": "Le droit de grève est l'une des libertés qui découlent du principe de liberté : une personne employée peut cesser le travail pour exprimer un désaccord.",
+    "group": "droit-greve",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/droits-et-devoirs/droits-fondamentaux/les-droits-inherents-a-la-personne-humaine/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -10120,7 +10137,7 @@
       "resident"
     ],
     "crNumber": 122,
-    "question": "Quelle est l’attitude à avoir lorsque qu'on est témoin de violences ?",
+    "question": "Quelle est l’attitude à avoir lorsqu'on est témoin de violences ?",
     "answers": [
       "Aider la victime sans se mettre en danger et appeler les forces de l'ordre"
     ],
@@ -10260,6 +10277,2013 @@
     "source": {
       "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F31963",
       "label": "service-public.gouv.fr"
+    }
+  },
+  {
+    "id": 388,
+    "theme": "Histoire, géographie et culture",
+    "notion": "periodes-personnages",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 129,
+    "question": "Quel était le surnom de Louis XIV ?",
+    "answers": [
+      "Le Roi-Soleil"
+    ],
+    "distractors": [
+      "Le Bien-Aimé",
+      "Le Roi-Chevalier",
+      "Le Père du peuple",
+      "Le Roi-Citoyen"
+    ],
+    "explanation": "Louis XIV est surnommé le Roi-Soleil. Il incarne la monarchie absolue de l'Ancien Régime, une période où le roi a tous les pouvoirs.",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-regimes-politiques-depuis-1789/l-ancien-regime-jusqu-en-1789/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 389,
+    "theme": "Histoire, géographie et culture",
+    "notion": "periodes-personnages",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 130,
+    "question": "Quel roi de France a été exécuté pendant la Révolution française ?",
+    "answers": [
+      "Louis XVI"
+    ],
+    "distractors": [
+      "Louis XIV",
+      "Louis XV",
+      "Louis XVIII",
+      "Charles X",
+      "Louis-Philippe Ier"
+    ],
+    "explanation": "Le roi Louis XVI est exécuté en 1793, sous la Ière République. Pendant la Révolution, le gouvernement utilise la guillotine contre ceux qu'il considère comme des traîtres.",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-regimes-politiques-depuis-1789/la-premiere-republique-1792-1804/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 390,
+    "theme": "Histoire, géographie et culture",
+    "notion": "periodes-personnages",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 131,
+    "question": "En quelle année Napoléon Ier est-il devenu empereur ?",
+    "answers": [
+      "En 1804"
+    ],
+    "distractors": [
+      "En 1789",
+      "En 1792",
+      "En 1799",
+      "En 1815"
+    ],
+    "explanation": "Napoléon Bonaparte est nommé empereur le 18 mai 1804 et devient Napoléon Ier. Le 1er Empire dure ensuite jusqu'en 1815.",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-regimes-politiques-depuis-1789/le-1er-empire-1804-1815/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 391,
+    "theme": "Histoire, géographie et culture",
+    "notion": "periodes-personnages",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 132,
+    "question": "Lequel de ces personnages a un lien avec la République française ?",
+    "answers": [
+      "Marianne"
+    ],
+    "distractors": [
+      "Louis XIV",
+      "Charlemagne",
+      "Catherine de Médicis",
+      "Clovis"
+    ],
+    "explanation": "Marianne apparaît pendant la Révolution française pour représenter la République. Elle porte le bonnet phrygien, symbole de liberté retrouvée. Son buste est présent dans toutes les mairies.",
+    "group": "marianne",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/les-symboles-de-la-republique/marianne/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 392,
+    "theme": "Histoire, géographie et culture",
+    "notion": "periodes-personnages",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 133,
+    "question": "De quand date l'appel à la résistance du général de Gaulle ?",
+    "answers": [
+      "Le 18 juin 1940"
+    ],
+    "distractors": [
+      "Le 22 juin 1940",
+      "Le 11 novembre 1918",
+      "Le 6 juin 1944",
+      "Le 8 mai 1945"
+    ],
+    "explanation": "Depuis Londres, le général de Gaulle lance son appel du 18 juin 1940 à la radio. Il encourage les Français à poursuivre le combat et à refuser la capitulation après la défaite de l'armée française face à l'Allemagne.",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/zoom-sur/focus-sur-la-seconde-guerre-mondiale-la-resistance-et-la-lib%C3%A9ration/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 393,
+    "theme": "Histoire, géographie et culture",
+    "notion": "periodes-personnages",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 134,
+    "question": "Pourquoi la Shoah est-elle étudiée à l'école ?",
+    "answers": [
+      "Pour comprendre les conséquences de la haine, du racisme et de l'antisémitisme"
+    ],
+    "distractors": [
+      "Pour connaître les grandes batailles de la Seconde Guerre mondiale",
+      "Pour célébrer la victoire des Alliés sur l'Allemagne en 1945",
+      "Pour étudier l'économie de l'Allemagne avant la guerre",
+      "Pour apprendre les techniques militaires de l'époque"
+    ],
+    "explanation": "La Shoah est le génocide des Juifs organisé par l'Allemagne nazie : environ 6 millions de Juifs ont été assassinés. On l'étudie aujourd'hui à l'école pour comprendre les conséquences de la haine, du racisme et de l'antisémitisme, et pour rappeler l'importance du devoir de mémoire.",
+    "group": "shoah",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/zoom-sur/focus-sur-la-seconde-guerre-mondiale-la-shoah/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 394,
+    "theme": "Histoire, géographie et culture",
+    "notion": "periodes-personnages",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 135,
+    "question": "Quel pays a été colonisé par la France ?",
+    "answers": [
+      "L'Algérie",
+      "Le Maroc",
+      "La Tunisie",
+      "Madagascar",
+      "Le Sénégal"
+    ],
+    "distractors": [
+      "L'Australie",
+      "Le Japon",
+      "L'Argentine",
+      "La Russie",
+      "La Corée"
+    ],
+    "explanation": "La France conquiert l'Algérie en 1830, puis place sous son protectorat la Tunisie (1881), Madagascar (1895) et le Maroc (1912). Le Sénégal fait partie de l'Afrique-Occidentale française, créée en 1895.",
+    "group": "colonisation-decolonisation",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/zoom-sur/le-territoire-francais-dans-le-temps-1/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 395,
+    "theme": "Histoire, géographie et culture",
+    "notion": "periodes-personnages",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 136,
+    "question": "Depuis quand les Français élisent-ils le président de la République au suffrage universel direct ?",
+    "answers": [
+      "Depuis 1962"
+    ],
+    "distractors": [
+      "Depuis 1789",
+      "Depuis 1958",
+      "Depuis 1974",
+      "Depuis 1981"
+    ],
+    "explanation": "En 1962, un référendum constitutionnel a validé que le président de la République ne serait plus élu par de grands électeurs (suffrage indirect), mais directement par les citoyens (suffrage direct).",
+    "group": "constitution",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/droits-et-devoirs/droits-fondamentaux/les-principaux-textes-la-constitution-de-la-5-republique/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 396,
+    "theme": "Histoire, géographie et culture",
+    "notion": "periodes-personnages",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 137,
+    "question": "Quelle est la première étape de la construction européenne en 1951 ?",
+    "answers": [
+      "La création de la CECA (charbon et acier)"
+    ],
+    "distractors": [
+      "La création de la CEE (marché commun)",
+      "La signature du traité de Maastricht",
+      "L'arrivée de l'euro comme monnaie",
+      "L'élargissement à l'Espagne et au Portugal"
+    ],
+    "explanation": "En 1951, la Communauté européenne du charbon et de l'acier (CECA) est créée pour partager le charbon et l'acier. C'est le premier pas de la construction européenne.",
+    "group": "ceca",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-conflits-mondiaux-et-le-nouvel-ordre-mondial/la-construction-europeenne/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 397,
+    "theme": "Histoire, géographie et culture",
+    "notion": "periodes-personnages",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 138,
+    "question": "Durant le mandat de quel président la peine de mort a-t-elle été abolie ?",
+    "answers": [
+      "François Mitterrand"
+    ],
+    "distractors": [
+      "Charles de Gaulle",
+      "Georges Pompidou",
+      "Valéry Giscard d'Estaing",
+      "Jacques Chirac"
+    ],
+    "explanation": "La loi du 9 octobre 1981 met fin à la peine de mort sous la présidence de François Mitterrand. Son ministre de la Justice, Robert Badinter, a soutenu cette abolition totale.",
+    "group": "abolition-peine-de-mort",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/la-cinquieme-republique/focus-sur-la-cinquieme-republique-5/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 398,
+    "theme": "Histoire, géographie et culture",
+    "notion": "periodes-personnages",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 139,
+    "question": "Quel régime politique a été mis en place pendant la Révolution française en 1792 ?",
+    "answers": [
+      "La Ière République"
+    ],
+    "distractors": [
+      "La monarchie absolue",
+      "Le Consulat",
+      "Le 1er Empire",
+      "La Restauration"
+    ],
+    "explanation": "La Ière République est proclamée le 22 septembre 1792, après la monarchie constitutionnelle. Face aux guerres et aux révoltes, le gouvernement met en place la Terreur pour protéger la République.",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-regimes-politiques-depuis-1789/la-premiere-republique-1792-1804/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 399,
+    "theme": "Histoire, géographie et culture",
+    "notion": "periodes-personnages",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 140,
+    "question": "Qui était une figure de la Résistance française pendant la Seconde Guerre mondiale ?",
+    "answers": [
+      "Jean Moulin"
+    ],
+    "distractors": [
+      "Philippe Pétain",
+      "Georges Clemenceau",
+      "Maximilien Robespierre",
+      "Napoléon Bonaparte"
+    ],
+    "explanation": "En 1943, Jean Moulin réussit à unifier les mouvements de la Résistance en créant le Conseil national de la Résistance (CNR). Il est une figure phare de la Résistance française pendant la Seconde Guerre mondiale.",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/zoom-sur/focus-sur-la-seconde-guerre-mondiale-la-resistance-et-la-lib%C3%A9ration/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 400,
+    "theme": "Histoire, géographie et culture",
+    "notion": "periodes-personnages",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 141,
+    "question": "En 1944, qu'est-ce qui a changé pour les femmes ?",
+    "answers": [
+      "Elles ont obtenu le droit de vote"
+    ],
+    "distractors": [
+      "Elles ont obtenu le droit à l'avortement",
+      "Elles ont obtenu le divorce par consentement mutuel",
+      "Elles ont obtenu l'égalité salariale complète avec les hommes",
+      "Elles ont obtenu le droit de travailler sans l'accord de leur mari"
+    ],
+    "explanation": "Le droit de vote est accordé aux femmes en avril 1944, au moment où la démocratie est rétablie et où les citoyens retrouvent leurs droits civiques.",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-regimes-politiques-depuis-1789/le-gouvernement-provisoire-de-la-republique-francaise-1944-1946/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 401,
+    "theme": "Histoire, géographie et culture",
+    "notion": "periodes-personnages",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 142,
+    "question": "Quelle organisation internationale a été créée en 1945 après la Seconde Guerre mondiale ?",
+    "answers": [
+      "L'Organisation des Nations unies (ONU)"
+    ],
+    "distractors": [
+      "L'Organisation du traité de l'Atlantique Nord (OTAN)",
+      "L'Union européenne",
+      "L'Union africaine",
+      "L'Organisation mondiale du commerce"
+    ],
+    "explanation": "L'Organisation des Nations unies (ONU) est créée en 1945, à la fin de la Seconde Guerre mondiale, pour maintenir la paix.",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-conflits-mondiaux-et-le-nouvel-ordre-mondial/la-seconde-guerre-mondiale-2/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 402,
+    "theme": "Histoire, géographie et culture",
+    "notion": "periodes-personnages",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 143,
+    "question": "Quelle peine a été supprimée en 1981 ?",
+    "answers": [
+      "La peine de mort"
+    ],
+    "distractors": [
+      "La réclusion criminelle à perpétuité",
+      "L'emprisonnement",
+      "L'amende",
+      "Le travail d'intérêt général"
+    ],
+    "explanation": "La loi du 9 octobre 1981 met définitivement fin à la peine capitale en France. Cette abolition est inscrite dans la Constitution depuis la loi constitutionnelle du 23 février 2007 (article 66-1).",
+    "group": "abolition-peine-de-mort",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/la-cinquieme-republique/focus-sur-la-cinquieme-republique-5/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 403,
+    "theme": "Histoire, géographie et culture",
+    "notion": "periodes-personnages",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 144,
+    "question": "En quelle année l'euro est-il devenu la monnaie utilisée en France ?",
+    "answers": [
+      "En 2002"
+    ],
+    "distractors": [
+      "En 1957",
+      "En 1986",
+      "En 1992",
+      "En 2007"
+    ],
+    "explanation": "En 2002, l'euro devient la monnaie officielle de plusieurs pays membres de l'Union européenne.",
+    "group": "euro-2002",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-conflits-mondiaux-et-le-nouvel-ordre-mondial/la-construction-europeenne/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 404,
+    "theme": "Histoire, géographie et culture",
+    "notion": "periodes-personnages",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 145,
+    "question": "En quelle année a commencé la Première Guerre mondiale ?",
+    "answers": [
+      "En 1914"
+    ],
+    "distractors": [
+      "En 1870",
+      "En 1905",
+      "En 1916",
+      "En 1939"
+    ],
+    "explanation": "La Première Guerre mondiale commence en 1914, après l'assassinat de l'archiduc François-Ferdinand à Sarajevo, le 28 juin 1914. Elle dure jusqu'en 1918.",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-conflits-mondiaux-et-le-nouvel-ordre-mondial/la-premiere-guerre-mondiale-1/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 405,
+    "theme": "Histoire, géographie et culture",
+    "notion": "periodes-personnages",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 146,
+    "question": "Où a eu lieu le débarquement en 1944 ?",
+    "answers": [
+      "En Normandie"
+    ],
+    "distractors": [
+      "En Bretagne",
+      "En Corse",
+      "En Alsace",
+      "En Aquitaine"
+    ],
+    "explanation": "Le 6 juin 1944, les Alliés débarquent en Normandie. Cet événement marque le début de la Libération de la France et de l'Europe.",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-conflits-mondiaux-et-le-nouvel-ordre-mondial/la-seconde-guerre-mondiale-1/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 406,
+    "theme": "Histoire, géographie et culture",
+    "notion": "periodes-personnages",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 147,
+    "question": "Quel continent a été le plus concerné par la décolonisation française après la Seconde Guerre mondiale ?",
+    "answers": [
+      "L'Afrique"
+    ],
+    "distractors": [
+      "L'Europe",
+      "L'Amérique du Nord",
+      "L'Océanie",
+      "L'Amérique du Sud"
+    ],
+    "explanation": "La décolonisation française touche surtout l'Afrique : l'Afrique subsaharienne française et Madagascar obtiennent leur indépendance en 1960, et la guerre d'Algérie dure de 1954 à 1962. L'Indochine, en Asie, est aussi concernée (guerre d'Indochine, 1946-1954).",
+    "group": "colonisation-decolonisation",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-conflits-mondiaux-et-le-nouvel-ordre-mondial/la-decolonisation/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 407,
+    "theme": "Histoire, géographie et culture",
+    "notion": "periodes-personnages",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 148,
+    "question": "Que fête-t-on le 8 mai ?",
+    "answers": [
+      "La victoire de 1945, fin de la Seconde Guerre mondiale"
+    ],
+    "distractors": [
+      "L'armistice de 1918, fin de la Première Guerre mondiale",
+      "La Libération de Paris, en août 1944",
+      "La Fête du travail, fête des travailleurs",
+      "La fin de la guerre de Cent Ans, en 1453"
+    ],
+    "explanation": "Le 8 mai est un jour férié qui commémore la victoire de 1945, c'est-à-dire la fin de la Seconde Guerre mondiale. Des cérémonies ont lieu partout en France.",
+    "group": "8-mai",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/patrimoine-francais-les-jours-feries/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 408,
+    "theme": "Histoire, géographie et culture",
+    "notion": "territoires-geographie",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 149,
+    "question": "Quelle mer ou océan borde la France métropolitaine ?",
+    "answers": [
+      "L'océan Atlantique",
+      "La mer Méditerranée",
+      "La Manche",
+      "La mer du Nord"
+    ],
+    "distractors": [
+      "L'océan Indien",
+      "L'océan Pacifique",
+      "La mer Baltique",
+      "La mer Noire",
+      "La mer Rouge"
+    ],
+    "explanation": "La France métropolitaine est bordée au nord-ouest par la mer du Nord et la Manche, à l'ouest par l'océan Atlantique et au sud par la mer Méditerranée.",
+    "group": "mers-et-oceans",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/atlas-de-la-france/les-frontieres-de-la-france/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 409,
+    "theme": "Histoire, géographie et culture",
+    "notion": "territoires-geographie",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 150,
+    "question": "Quel pays a une frontière terrestre avec la France métropolitaine ?",
+    "answers": [
+      "La Belgique",
+      "Le Luxembourg",
+      "L'Allemagne",
+      "La Suisse",
+      "L'Italie",
+      "L'Espagne",
+      "Andorre",
+      "Monaco"
+    ],
+    "distractors": [
+      "Le Portugal",
+      "L'Autriche",
+      "La Pologne",
+      "Le Danemark"
+    ],
+    "explanation": "En Europe, la France partage des frontières terrestres avec 8 pays : la Belgique, le Luxembourg, l'Allemagne, la Suisse, l'Italie et l'Espagne, ainsi que les principautés d'Andorre et de Monaco.",
+    "group": "frontieres-terrestres",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/atlas-de-la-france/les-frontieres-de-la-france/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 410,
+    "theme": "Histoire, géographie et culture",
+    "notion": "territoires-geographie",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 151,
+    "question": "Quelle ville française est un port maritime ?",
+    "answers": [
+      "Marseille",
+      "Le Havre",
+      "Dunkerque",
+      "Bordeaux",
+      "La Rochelle"
+    ],
+    "distractors": [
+      "Lyon",
+      "Toulouse",
+      "Dijon",
+      "Limoges",
+      "Clermont-Ferrand"
+    ],
+    "explanation": "Dunkerque, Le Havre, Rouen, Nantes-Saint-Nazaire, La Rochelle, Bordeaux et Marseille sont les 7 grands ports de France métropolitaine. Gérés par l'État, ils traitent plus de 80 % du trafic maritime français de marchandises.",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/la-france-dans-leurope-et-dans-le-monde/les-ports-francais/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 411,
+    "theme": "Histoire, géographie et culture",
+    "notion": "territoires-geographie",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 152,
+    "question": "Quelle mer se situe entre la France et l'Angleterre ?",
+    "answers": [
+      "La Manche"
+    ],
+    "distractors": [
+      "La mer Méditerranée",
+      "La mer Baltique",
+      "La mer Adriatique",
+      "La mer Noire"
+    ],
+    "explanation": "La Manche borde le nord-ouest de la France et la sépare du Royaume-Uni. Le tunnel sous la Manche relie la région des Hauts-de-France au Royaume-Uni.",
+    "group": "mers-et-oceans",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-regions-fran%C3%A7aises/hauts-de-france/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 412,
+    "theme": "Histoire, géographie et culture",
+    "notion": "territoires-geographie",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 153,
+    "question": "Qu'est-ce que la France d'outre-mer ?",
+    "answers": [
+      "Les territoires français situés hors d'Europe"
+    ],
+    "distractors": [
+      "Les régions françaises situées en bord de mer",
+      "Les anciennes colonies françaises devenues indépendantes",
+      "Les pays européens voisins de la France",
+      "Les grandes villes portuaires de France"
+    ],
+    "explanation": "Le territoire français comprend la France hexagonale, en Europe, et plusieurs territoires d'outre-mer répartis dans différents endroits du monde. On distingue les départements et régions d'outre-mer (DROM) et les collectivités d'outre-mer (COM).",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/atlas-de-la-france/le-territoire-de-la-france/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 413,
+    "theme": "Histoire, géographie et culture",
+    "notion": "territoires-geographie",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 154,
+    "question": "Quelle chaîne de montagnes est située entre la France et l’Espagne ?",
+    "answers": [
+      "Les Pyrénées"
+    ],
+    "distractors": [
+      "Les Alpes",
+      "Les Vosges",
+      "Le Jura",
+      "Le Massif central"
+    ],
+    "explanation": "Les Pyrénées forment une barrière montagneuse entre la France et l'Espagne, au sud du pays. Les Alpes, elles, marquent la limite entre la France et l'Italie et, en partie, la Suisse.",
+    "group": "frontieres-terrestres",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/atlas-de-la-france/les-frontieres-de-la-france/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 414,
+    "theme": "Histoire, géographie et culture",
+    "notion": "territoires-geographie",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 155,
+    "question": "Quelle île française se trouve dans l'océan Indien ?",
+    "answers": [
+      "La Réunion",
+      "Mayotte"
+    ],
+    "distractors": [
+      "La Corse",
+      "La Martinique",
+      "La Guadeloupe",
+      "Tahiti"
+    ],
+    "explanation": "La Réunion et Mayotte, avec les îles Éparses, sont les territoires français de l'océan Indien. La Martinique et la Guadeloupe, aux Antilles, se trouvent dans l'océan Atlantique.",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/la-france-dans-leurope-et-dans-le-monde/une-puissance-maritime/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 415,
+    "theme": "Histoire, géographie et culture",
+    "notion": "territoires-geographie",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 156,
+    "question": "Quelle est la population approximative de la France en 2025 ?",
+    "answers": [
+      "Environ 68,6 millions d'habitants"
+    ],
+    "distractors": [
+      "Environ 52,3 millions d'habitants",
+      "Environ 59,8 millions d'habitants",
+      "Environ 76,4 millions d'habitants",
+      "Environ 84,1 millions d'habitants"
+    ],
+    "explanation": "Au 1er janvier 2025, la France compte 68,6 millions d'habitants : 66,4 millions en France hexagonale et 2,3 millions dans les départements et régions d'outre-mer.",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/atlas-de-la-france/la-demographie-francaise/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 416,
+    "theme": "Histoire, géographie et culture",
+    "notion": "territoires-geographie",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 157,
+    "question": "Quel fleuve traverse Paris ?",
+    "answers": [
+      "La Seine"
+    ],
+    "distractors": [
+      "La Loire",
+      "Le Rhône",
+      "La Garonne",
+      "Le Rhin"
+    ],
+    "explanation": "La Seine traverse notamment Troyes, Paris et Rouen avant de se jeter dans la Manche. Elle mesure 776 kilomètres.",
+    "group": "seine-paris",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/atlas-de-la-france/les-fleuves-fran%C3%A7ais/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 417,
+    "theme": "Histoire, géographie et culture",
+    "notion": "territoires-geographie",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 158,
+    "question": "Lequel de ces pays partage des frontières terrestres avec la France ?",
+    "answers": [
+      "L'Espagne",
+      "L'Italie",
+      "La Suisse",
+      "L'Allemagne",
+      "La Belgique",
+      "Le Luxembourg"
+    ],
+    "distractors": [
+      "Le Portugal",
+      "L'Autriche",
+      "La Pologne",
+      "Le Danemark"
+    ],
+    "explanation": "La France partage des frontières terrestres avec la Belgique, le Luxembourg, l'Allemagne, la Suisse, l'Italie, l'Espagne, Andorre et Monaco. Grâce à la Guyane, elle en a aussi avec le Brésil et le Suriname.",
+    "group": "frontieres-terrestres",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/atlas-de-la-france/les-frontieres-de-la-france/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 418,
+    "theme": "Histoire, géographie et culture",
+    "notion": "territoires-geographie",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 159,
+    "question": "Quel pays a une frontière avec la France métropolitaine au nord-est ?",
+    "answers": [
+      "La Belgique",
+      "Le Luxembourg",
+      "L'Allemagne"
+    ],
+    "distractors": [
+      "L'Espagne",
+      "Le Portugal",
+      "Andorre",
+      "La Pologne"
+    ],
+    "explanation": "La Belgique, le Luxembourg et l'Allemagne partagent une frontière terrestre avec la France métropolitaine. Le Rhin sépare la France et l'Allemagne sur une partie de cette frontière.",
+    "group": "frontieres-terrestres",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/atlas-de-la-france/les-frontieres-de-la-france/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 419,
+    "theme": "Histoire, géographie et culture",
+    "notion": "territoires-geographie",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 160,
+    "question": "Où se trouvent les principales activités économiques en France ?",
+    "answers": [
+      "Dans les grandes villes, les métropoles"
+    ],
+    "distractors": [
+      "Dans les villages de montagne",
+      "Dans les zones rurales isolées",
+      "Dans les petites communes agricoles",
+      "Dans les territoires d'outre-mer"
+    ],
+    "explanation": "En France, la population, les principales activités économiques, les emplois, les richesses et les services sont concentrés dans les métropoles, de grandes villes à la tête d'une vaste aire urbaine. Ce phénomène s'appelle la métropolisation.",
+    "group": "villes-metropoles",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/atlas-de-la-france/la-france-aire-urbaine-et-metropolisation/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 420,
+    "theme": "Histoire, géographie et culture",
+    "notion": "territoires-geographie",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 161,
+    "question": "Parmi ces pays, lequel attire le plus de visiteurs chaque année ?",
+    "answers": [
+      "La France"
+    ],
+    "distractors": [
+      "L'Espagne",
+      "L'Italie",
+      "Les États-Unis",
+      "Le Royaume-Uni"
+    ],
+    "explanation": "La France est la première destination touristique au monde : elle attire plus de 100 millions de voyageurs en 2024, grâce à la richesse de son patrimoine et à la diversité de ses paysages.",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/la-france-dans-leurope-et-dans-le-monde/une-puissance-touristique/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 421,
+    "theme": "Histoire, géographie et culture",
+    "notion": "territoires-geographie",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 162,
+    "question": "Où habite la majorité des Français ?",
+    "answers": [
+      "En ville, dans les grandes agglomérations"
+    ],
+    "distractors": [
+      "À la campagne, dans les zones rurales",
+      "En montagne, dans les Alpes et les Pyrénées",
+      "Dans les villages du Massif central",
+      "Dans les territoires d'outre-mer"
+    ],
+    "explanation": "Environ 81 % de la population française vit en ville. Les zones les plus peuplées sont les grandes agglomérations, comme Paris, Lyon, Marseille, Toulouse, Lille et Bordeaux.",
+    "group": "villes-metropoles",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/atlas-de-la-france/la-demographie-francaise/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 422,
+    "theme": "Histoire, géographie et culture",
+    "notion": "territoires-geographie",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 163,
+    "question": "Quelle région est la plus peuplée ?",
+    "answers": [
+      "L'Île-de-France"
+    ],
+    "distractors": [
+      "La Bretagne",
+      "La Normandie",
+      "Le Centre-Val de Loire",
+      "La Corse"
+    ],
+    "explanation": "L'Île-de-France compte environ 12,4 millions d'habitants. C'est la région la plus peuplée de France, avec une forte densité de population et une forte urbanisation.",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-regions-fran%C3%A7aises/ile-de-france/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 423,
+    "theme": "Histoire, géographie et culture",
+    "notion": "territoires-geographie",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 164,
+    "question": "Quelle ville française fait partie des 10 plus grandes métropoles du pays ?",
+    "answers": [
+      "Nantes",
+      "Bordeaux",
+      "Toulouse",
+      "Lille",
+      "Lyon",
+      "Nice",
+      "Montpellier",
+      "Strasbourg"
+    ],
+    "distractors": [
+      "Limoges",
+      "Dijon",
+      "Amiens",
+      "Perpignan",
+      "Besançon"
+    ],
+    "explanation": "Les 10 plus grandes métropoles françaises sont celles du Grand Paris, d'Aix-Marseille-Provence, du Grand Lyon, de Lille, de Bordeaux, de Toulouse, de Nantes, de Nice Côte d'Azur, de Montpellier et de Strasbourg.",
+    "group": "villes-metropoles",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/atlas-de-la-france/la-france-aire-urbaine-et-metropolisation/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 424,
+    "theme": "Histoire, géographie et culture",
+    "notion": "territoires-geographie",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 165,
+    "question": "Lequel de ces départements de France est le plus touristique ?",
+    "answers": [
+      "Paris"
+    ],
+    "distractors": [
+      "La Creuse",
+      "Le Cantal",
+      "La Haute-Marne",
+      "La Meuse"
+    ],
+    "explanation": "Paris est le département français qui accueille le plus de touristes : en 2025, on y compte près de 42 millions de nuitées dans les hôtels de tourisme, quatre fois plus que dans les Alpes-Maritimes, deuxièmes.",
+    "source": {
+      "url": "https://www.insee.fr/fr/statistiques/2012672",
+      "label": "insee.fr"
+    }
+  },
+  {
+    "id": 425,
+    "theme": "Histoire, géographie et culture",
+    "notion": "patrimoine",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 166,
+    "question": "Quand peut-on visiter gratuitement des lieux culturels en France ?",
+    "answers": [
+      "Le premier dimanche de chaque mois"
+    ],
+    "distractors": [
+      "Le premier lundi de chaque mois",
+      "Le dernier vendredi de chaque mois",
+      "Chaque mercredi après-midi",
+      "Le 1er janvier de chaque année"
+    ],
+    "explanation": "L'accès aux collections de la plupart des musées nationaux est gratuit le 1er dimanche de chaque mois. Les Journées européennes du patrimoine, en septembre, offrent aussi un accès très souvent gratuit à des lieux culturels habituellement fermés au public.",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/culture/patrimoine-francais-acces-a-la-culture/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 426,
+    "theme": "Histoire, géographie et culture",
+    "notion": "patrimoine",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 167,
+    "question": "Combien de personnes parlent français dans le monde ?",
+    "answers": [
+      "Environ 400 millions de personnes"
+    ],
+    "distractors": [
+      "Environ 120 millions de personnes",
+      "Environ 220 millions de personnes",
+      "Environ 650 millions de personnes",
+      "Environ 1,1 milliard de personnes"
+    ],
+    "explanation": "Le français compte plus de 396 millions de locuteurs. On le parle sur les 5 continents et il est langue officielle de plus de 30 pays.",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/culture/patrimoine-francais-la-langue-francaise-dans-le-monde/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 427,
+    "theme": "Histoire, géographie et culture",
+    "notion": "patrimoine",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 168,
+    "question": "Qui était Marguerite Yourcenar ?",
+    "answers": [
+      "Une écrivaine, première femme élue à l'Académie française"
+    ],
+    "distractors": [
+      "Une sculptrice, célèbre pour ses œuvres pleines d'émotion",
+      "Une chanteuse, icône de la chanson française",
+      "Une artiste franco-américaine, agent de la Résistance",
+      "Une peintre impressionniste, célèbre pour ses scènes de fêtes"
+    ],
+    "explanation": "Marguerite Yourcenar (1903-1987) est une écrivaine, connue pour ses romans historiques comme Mémoires d'Hadrien. Elle devient en 1980 la première femme élue à l'Académie française.",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/culture/patrimoine-francais-artistes-emblematiques-parmi-les-auteurs-3/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 428,
+    "theme": "Histoire, géographie et culture",
+    "notion": "patrimoine",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 169,
+    "question": "Quel peintre est français ?",
+    "answers": [
+      "Claude Monet",
+      "Eugène Delacroix",
+      "Paul Cézanne",
+      "Auguste Renoir"
+    ],
+    "distractors": [
+      "Vincent van Gogh",
+      "Rembrandt",
+      "Léonard de Vinci",
+      "Salvador Dalí",
+      "Johannes Vermeer"
+    ],
+    "explanation": "Claude Monet, Eugène Delacroix, Paul Cézanne et Auguste Renoir sont des peintres français. Le courant impressionniste est nommé d'après le tableau Impression, soleil levant de Claude Monet.",
+    "group": "peintres-francais",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/culture/patrimoine-francais-artistes-emblematiques-parmi-les-peintres/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 429,
+    "theme": "Histoire, géographie et culture",
+    "notion": "patrimoine",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 170,
+    "question": "Quel musée est situé à Paris ?",
+    "answers": [
+      "Le musée Rodin"
+    ],
+    "distractors": [
+      "Le musée du Prado",
+      "Le British Museum",
+      "Le Rijksmuseum",
+      "La galerie des Offices"
+    ],
+    "explanation": "Le musée Rodin se trouve à Paris. Il est consacré à l'œuvre d'Auguste Rodin et permet d'en découvrir les pièces majeures.",
+    "group": "musee-rodin",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/culture/patrimoine-francais-artistes-emblematiques-parmi-les-sculpteurs/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 430,
+    "theme": "Histoire, géographie et culture",
+    "notion": "patrimoine",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 171,
+    "question": "Qui était Auguste Rodin ?",
+    "answers": [
+      "Un sculpteur français"
+    ],
+    "distractors": [
+      "Un peintre impressionniste français",
+      "Un compositeur français",
+      "Un écrivain romantique français",
+      "Un architecte français"
+    ],
+    "explanation": "Auguste Rodin (1840-1917) est un grand sculpteur français. Son style très expressif et réaliste met en valeur les émotions et les mouvements du corps.",
+    "group": "musee-rodin",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/culture/patrimoine-francais-artistes-emblematiques-parmi-les-sculpteurs/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 431,
+    "theme": "Histoire, géographie et culture",
+    "notion": "patrimoine",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 172,
+    "question": "Quel est le classement de la langue française parmi les langues les plus parlées dans le monde ?",
+    "answers": [
+      "La quatrième langue la plus parlée"
+    ],
+    "distractors": [
+      "La première langue la plus parlée",
+      "La deuxième langue la plus parlée",
+      "La septième langue la plus parlée",
+      "La dixième langue la plus parlée"
+    ],
+    "explanation": "Le français est la 4ème langue la plus parlée au monde. On le parle sur les 5 continents, et c'est une langue de travail dans de grandes organisations internationales.",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/culture/patrimoine-francais-la-langue-francaise-dans-le-monde/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 432,
+    "theme": "Histoire, géographie et culture",
+    "notion": "patrimoine",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 173,
+    "question": "Quelle cathédrale célèbre a été en partie détruite par un incendie en 2019 ?",
+    "answers": [
+      "Notre-Dame de Paris"
+    ],
+    "distractors": [
+      "La cathédrale de Reims",
+      "La cathédrale de Chartres",
+      "La cathédrale de Strasbourg",
+      "La cathédrale d'Amiens"
+    ],
+    "explanation": "Un incendie touche la cathédrale Notre-Dame de Paris en 2019. Plus de 840 millions d'euros ont été récoltés par des dons privés pour la reconstruire, ce qui montre l'attachement des Français à ce patrimoine.",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/culture/patrimoine-francais-le-citoyen-acteur-et-conservateur-de-la-culture-en-france/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 433,
+    "theme": "Histoire, géographie et culture",
+    "notion": "patrimoine",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 174,
+    "question": "Qui était une écrivaine française célèbre ?",
+    "answers": [
+      "George Sand"
+    ],
+    "distractors": [
+      "Camille Claudel",
+      "Edith Piaf",
+      "Joséphine Baker",
+      "Catherine Deneuve"
+    ],
+    "explanation": "George Sand (1804-1876) est une écrivaine importante du XIXe siècle, connue pour son engagement social et la défense des droits des femmes. Ses romans les plus célèbres sont La Mare au Diable, Consuelo et Indiana.",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/culture/patrimoine-francais-artistes-emblematiques-parmi-les-auteurs-2/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 434,
+    "theme": "Histoire, géographie et culture",
+    "notion": "patrimoine",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 175,
+    "question": "Qui était un célèbre musicien français ?",
+    "answers": [
+      "Claude Debussy"
+    ],
+    "distractors": [
+      "Wolfgang Amadeus Mozart",
+      "Ludwig van Beethoven",
+      "Jean-Sébastien Bach",
+      "Giuseppe Verdi"
+    ],
+    "explanation": "Claude Debussy (1862-1918) est un compositeur français, considéré comme le père de la musique moderne. On lui doit Clair de Lune, le Prélude à l'après-midi d'un faune et La Mer.",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/culture/patrimoine-francais-artistes-emblematiques-dans-univers-musique/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 435,
+    "theme": "Histoire, géographie et culture",
+    "notion": "patrimoine",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 176,
+    "question": "Qui était Auguste Renoir ?",
+    "answers": [
+      "Un peintre impressionniste français"
+    ],
+    "distractors": [
+      "Un sculpteur impressionniste français",
+      "Un compositeur impressionniste français",
+      "Un écrivain romantique français",
+      "Un architecte français du XIXe siècle"
+    ],
+    "explanation": "Auguste Renoir (1841-1919) est un peintre impressionniste français. Il a peint des scènes joyeuses de la vie quotidienne, des portraits lumineux et des fêtes.",
+    "group": "peintres-francais",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/culture/patrimoine-francais-artistes-emblematiques-parmi-les-peintres/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 436,
+    "theme": "Histoire, géographie et culture",
+    "notion": "patrimoine",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 177,
+    "question": "Quelle fête est française ?",
+    "answers": [
+      "Le 14 juillet"
+    ],
+    "distractors": [
+      "Le 4 juillet",
+      "Le 17 mars",
+      "Le 3 octobre",
+      "Le 12 octobre"
+    ],
+    "explanation": "Le 14 juillet est le jour de la fête nationale depuis 1880. Il commémore la prise de la Bastille (1789) et la fête de la Fédération (1790). C'est à la fois un moment institutionnel, avec le défilé militaire, et une fête populaire avec feux d'artifice et bals.",
+    "group": "symboles-republique",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/les-symboles-de-la-republique/la-fete-nationale/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 437,
+    "theme": "Vie en société",
+    "notion": "s-installer",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 178,
+    "question": "Quel mariage est reconnu par l'État ?",
+    "answers": [
+      "Le mariage civil, célébré à la mairie"
+    ],
+    "distractors": [
+      "Le mariage religieux, célébré par un prêtre ou un imam",
+      "Le mariage coutumier, décidé par les deux familles",
+      "L'union libre, après trois ans de vie commune",
+      "Le mariage signé devant un notaire"
+    ],
+    "explanation": "Le mariage civil est le seul mariage reconnu en France. Il est célébré à la mairie, devant un officier d'état civil. Une cérémonie religieuse peut avoir lieu ensuite, mais seulement après le mariage civil, et elle n'a pas de valeur légale.",
+    "group": "mariage-civil",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/demarches-administratives/la-declaration-de-mariage/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 438,
+    "theme": "Vie en société",
+    "notion": "autorite-parentale-ecole",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 179,
+    "question": "Auprès de quelle institution les parents peuvent-ils inscrire leur enfant à l'école publique ?",
+    "answers": [
+      "La mairie de la commune"
+    ],
+    "distractors": [
+      "La préfecture",
+      "La caisse d'allocations familiales (CAF)",
+      "La caisse primaire d'assurance maladie",
+      "Le tribunal judiciaire",
+      "France Travail"
+    ],
+    "explanation": "Pour inscrire son enfant à l'école publique, il suffit de contacter la mairie, ou l'école située près de son domicile. Les parents sont libres de choisir une école publique ou une école privée.",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/parentalite/la-liberte-de-choisir-l-ecole-de-son-enfant/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 439,
+    "theme": "Vie en société",
+    "notion": "autorite-parentale-ecole",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 180,
+    "question": "En cas de divorce, qui exerce l'autorité parentale ?",
+    "answers": [
+      "Les deux parents, à égalité"
+    ],
+    "distractors": [
+      "La mère de l'enfant, en priorité",
+      "Le parent qui a les revenus les plus élevés",
+      "Seulement le parent qui garde l'enfant",
+      "Le juge qui prononce le divorce"
+    ],
+    "explanation": "Les deux parents ont l'autorité parentale : ils ont les mêmes droits et les mêmes devoirs envers leur enfant, qu'ils soient mariés, pacsés, en concubinage ou séparés. Ils sont tous les deux responsables de leur enfant.",
+    "group": "autorite-parentale",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/parentalite/exercice-de-l-autorite-parentale-1/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 440,
+    "theme": "Vie en société",
+    "notion": "s-installer",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 181,
+    "question": "Quelle aide permet aux personnes qui ont des difficultés financières d'avoir un avocat ?",
+    "answers": [
+      "L'aide juridictionnelle"
+    ],
+    "distractors": [
+      "La Complémentaire santé solidaire",
+      "L'aide personnalisée au logement (APL)",
+      "Le revenu de solidarité active (RSA)",
+      "La prime d'activité"
+    ],
+    "explanation": "L'aide juridictionnelle est une aide de l'État qui finance, en totalité ou en partie, les frais d'une procédure en justice, dont les honoraires de l'avocat. Elle s'adresse aux personnes qui ont de faibles ressources.",
+    "group": "aide-juridictionnelle",
+    "source": {
+      "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F18074",
+      "label": "service-public.gouv.fr"
+    }
+  },
+  {
+    "id": 441,
+    "theme": "Vie en société",
+    "notion": "s-installer",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 182,
+    "question": "Où faut-il déclarer la naissance d'un enfant ?",
+    "answers": [
+      "À la mairie du lieu de naissance"
+    ],
+    "distractors": [
+      "À la préfecture du département",
+      "À la caisse d'allocations familiales",
+      "Au commissariat de police",
+      "Au tribunal judiciaire"
+    ],
+    "explanation": "La déclaration de naissance est obligatoire. Elle se fait à la mairie du lieu de naissance, dans les 5 jours qui suivent la naissance. L'officier d'état civil établit alors l'acte de naissance de l'enfant.",
+    "group": "declaration-naissance",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/demarches-administratives/la-declaration-de-naissance/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 442,
+    "theme": "Vie en société",
+    "notion": "s-installer",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 183,
+    "question": "Quelle est l'une des conditions pour passer l'examen du permis de conduire ?",
+    "answers": [
+      "Être résident en France"
+    ],
+    "distractors": [
+      "Avoir la nationalité française",
+      "Avoir déjà acheté une voiture",
+      "Avoir un contrat de travail en cours",
+      "Avoir 21 ans minimum"
+    ],
+    "explanation": "Pour passer l'examen du permis de conduire, il faut résider en France. On peut ensuite passer le permis en auto-école ou en candidat libre. Il comprend un examen du Code de la route et une épreuve pratique de conduite.",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/demarches-administratives/les-demarches-du-quotidien-comme-le-permis-de-conduire-1/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 443,
+    "theme": "Vie en société",
+    "notion": "s-installer",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 184,
+    "question": "Un bail locatif est valide s'il est :",
+    "answers": [
+      "Signé par le locataire et par le propriétaire"
+    ],
+    "distractors": [
+      "Signé seulement par le propriétaire",
+      "Enregistré à la préfecture du département du logement",
+      "Validé par la mairie du lieu du logement",
+      "Approuvé par un notaire"
+    ],
+    "explanation": "Le bail est le contrat de location écrit entre le propriétaire (le bailleur) et le locataire. C'est le seul document qui autorise à vivre dans un logement. Il est valide seulement s'il est signé par le locataire et par le propriétaire.",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/demarches-administratives/les-demarches-relatives-au-logement-1/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 444,
+    "theme": "Vie en société",
+    "notion": "s-installer",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 185,
+    "question": "Où peut-on déposer un lave-vaisselle cassé ?",
+    "answers": [
+      "À la déchetterie de la commune"
+    ],
+    "distractors": [
+      "Dans le bac de tri des emballages",
+      "Dans la poubelle des ordures ménagères",
+      "Au pied d'un conteneur à verre",
+      "Dans un bois, loin des habitations"
+    ],
+    "explanation": "Un gros appareil électroménager cassé fait partie des encombrants. On peut le déposer en déchetterie, où les encombrants sont triés et recyclés. La commune peut aussi organiser une collecte, souvent sur rendez-vous avec la mairie.",
+    "group": "abandon-dechets",
+    "source": {
+      "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F31954",
+      "label": "service-public.gouv.fr"
+    }
+  },
+  {
+    "id": 445,
+    "theme": "Vie en société",
+    "notion": "s-installer",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 186,
+    "question": "Quel numéro d'urgence permet d'appeler la police ?",
+    "answers": [
+      "Le 17"
+    ],
+    "distractors": [
+      "Le 15",
+      "Le 18",
+      "Le 115",
+      "Le 119"
+    ],
+    "explanation": "Le 17 est le numéro de la police, pour signaler une infraction : violences, agression, vol, cambriolage. Les appels aux numéros d'urgence sont gratuits et possibles 24 heures sur 24. Le 15 est le numéro du SAMU et le 18 celui des pompiers.",
+    "group": "numero-police",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/demarches-administratives/annexe-les-numeros-durgence/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 446,
+    "theme": "Vie en société",
+    "notion": "soins",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 188,
+    "question": "À qui est accessible la contraception ?",
+    "answers": [
+      "À toute personne, majeure ou mineure"
+    ],
+    "distractors": [
+      "Aux personnes mariées, avec l'accord de leur conjoint",
+      "Aux majeurs, avec une ordonnance obligatoire",
+      "Aux Français, sur présentation d'une carte d'identité",
+      "Aux mineurs, avec l'accord de leurs parents"
+    ],
+    "explanation": "La contraception est accessible à toute personne, sans autorisation du partenaire. Pour les mineurs, les consultations et les prescriptions peuvent être anonymes et gratuites. La contraception d'urgence est délivrée en pharmacie sans ordonnance.",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/droits-et-devoirs/droits-fondamentaux/un-droit-fondamental-le-droit-de-disposer-de-son-corps/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 447,
+    "theme": "Vie en société",
+    "notion": "soins",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 189,
+    "question": "Qu’est-ce que le principe de confidentialité dans le domaine de la santé ?",
+    "answers": [
+      "Le médecin doit garder secrètes les informations de son patient"
+    ],
+    "distractors": [
+      "Le patient doit garder secret ce que lui dit le médecin",
+      "Le médecin doit prévenir l'employeur de l'état de santé du patient",
+      "Le médecin doit transmettre le dossier médical à la famille du patient",
+      "Le patient ne peut montrer son dossier médical à personne"
+    ],
+    "explanation": "Le principe de confidentialité, ou secret médical, oblige le médecin à garder secrètes les informations sur son patient : son état de santé, son identité, et tout ce qui a été dit pendant la consultation. En dehors des cas prévus par la loi, révéler ces informations est puni par la loi.",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/sante/sante-les-droits-du-patient/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 448,
+    "theme": "Vie en société",
+    "notion": "soins",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 190,
+    "question": "L'inscription à l'Assurance maladie est :",
+    "answers": [
+      "Obligatoire, pour toute personne qui réside en France"
+    ],
+    "distractors": [
+      "Facultative, pour toute personne qui réside en France",
+      "Réservée aux personnes qui ont un emploi",
+      "Réservée aux personnes de nationalité française",
+      "Payante, avec un tarif qui dépend de l'âge et du revenu"
+    ],
+    "explanation": "L'inscription à l'Assurance maladie est obligatoire. Une fois validée, on reçoit un numéro de sécurité sociale et une carte Vitale, qui permettent d'être remboursé de ses frais de santé. La demande se fait auprès de la caisse primaire d'assurance maladie.",
+    "group": "assurance-maladie",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/sante/sante-la-prise-en-charge-les-demarches-pour-etre-rembourse/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 449,
+    "theme": "Vie en société",
+    "notion": "travail",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 191,
+    "question": "Qui peut demander un congé parental d'éducation ?",
+    "answers": [
+      "Tout salarié qui a au moins un an d'ancienneté"
+    ],
+    "distractors": [
+      "Seulement la mère de l'enfant",
+      "Tout salarié qui a au moins cinq ans d'ancienneté",
+      "Tout salarié marié, sans condition d'ancienneté",
+      "Seulement les parents qui ont trois enfants ou plus"
+    ],
+    "explanation": "Le congé parental d'éducation est ouvert à tout salarié qui a au moins un an d'ancienneté dans l'entreprise. Il permet d'arrêter de travailler pour s'occuper de son enfant après une naissance ou une adoption. Sa durée initiale est d'un an au maximum.",
+    "source": {
+      "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F2280",
+      "label": "service-public.gouv.fr"
+    }
+  },
+  {
+    "id": 450,
+    "theme": "Vie en société",
+    "notion": "travail",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 192,
+    "question": "Quelles sont les affaires traitées par le conseil de prud'hommes ?",
+    "answers": [
+      "Les conflits entre un salarié et son employeur sur le contrat"
+    ],
+    "distractors": [
+      "Les conflits entre deux voisins à cause du bruit la nuit",
+      "Les infractions au Code de la route commises en voiture",
+      "Les litiges entre un locataire et son propriétaire sur le loyer",
+      "Les conflits de famille au sujet d'un héritage important"
+    ],
+    "explanation": "Si un salarié et son employeur ne sont pas d'accord sur le contrat de travail (licenciement, salaire…), le salarié peut contacter le conseil de prud'hommes. C'est un lieu de justice qui décide dans ce type de conflit.",
+    "group": "prudhommes",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/emploi/le-droit-au-travail-2/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 451,
+    "theme": "Vie en société",
+    "notion": "travail",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 193,
+    "question": "Travailler sans être déclaré est :",
+    "answers": [
+      "Illégal, car il prive le salarié de ses droits sociaux"
+    ],
+    "distractors": [
+      "Autorisé si le montant est inférieur à 500 euros par mois",
+      "Légal si les deux parties signent un accord écrit",
+      "Autorisé pour les récoltes agricoles saisonnières",
+      "Toléré pour les travaux ménagers à domicile"
+    ],
+    "explanation": "Le travail non déclaré (ou travail dissimulé) est interdit par la loi. L'employeur risque jusqu'à 3 ans de prison et 45 000 euros d'amende. Le salarié ne cotise ni pour le chômage ni pour la retraite, n'a pas de congé payé et n'a pas droit à la sécurité sociale en cas de maladie ou d'accident du travail.",
+    "group": "travail-non-declare",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/emploi/le-droit-au-travail-5/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 452,
+    "theme": "Vie en société",
+    "notion": "travail",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 194,
+    "question": "Lorsqu'un employeur veut qu'un salarié travaille plus longtemps que la durée prévue dans le contrat de travail :",
+    "answers": [
+      "Il doit payer ces heures supplémentaires ou les faire rattraper"
+    ],
+    "distractors": [
+      "Il peut ne pas les payer si le salarié a plus d'un an d'ancienneté",
+      "Il doit les payer le double du salaire normal, sans exception",
+      "Il peut les remplacer par une simple prime de fin d'année",
+      "Il peut les ajouter sans les compter dans le temps de travail"
+    ],
+    "explanation": "La durée de référence du travail à temps complet est de 35 heures par semaine. Au-delà, on parle d'heures supplémentaires. L'employeur doit payer ces heures au salarié ou lui permettre de les rattraper.",
+    "group": "heures-supplementaires",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/emploi/le-droit-au-travail-1/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 453,
+    "theme": "Vie en société",
+    "notion": "travail",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 195,
+    "question": "Quelle est la mission de France Travail ?",
+    "answers": [
+      "Accompagner les personnes qui cherchent un emploi ou une formation"
+    ],
+    "distractors": [
+      "Contrôler le respect du droit du travail dans toutes les entreprises",
+      "Organiser le parcours d'intégration des personnes étrangères en France",
+      "Défendre les salariés en conflit avec leur employeur devant la justice",
+      "Verser les salaires des personnes en arrêt maladie de longue durée"
+    ],
+    "explanation": "France Travail est un organisme public qui accompagne les personnes à la recherche d'un emploi. L'inscription permet d'être aidé pour trouver un travail ou suivre une formation, avec des solutions adaptées à la situation de chacun.",
+    "group": "france-travail",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/emploi/orientation-1/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 454,
+    "theme": "Vie en société",
+    "notion": "travail",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 196,
+    "question": "Dans une entreprise, le droit syndical permet :",
+    "answers": [
+      "À chaque salarié de créer un syndicat ou d'y adhérer"
+    ],
+    "distractors": [
+      "À l'employeur de choisir le syndicat de ses salariés",
+      "À l'État de nommer les représentants des salariés",
+      "Aux seuls cadres de l'entreprise de former un syndicat",
+      "À un syndicat d'obliger tous les salariés à y adhérer"
+    ],
+    "explanation": "Chaque salarié a le droit de se syndiquer : il peut créer un syndicat, y adhérer ou y participer. Un syndicat défend les droits des travailleurs (salaire, conditions de travail, sécurité…). Personne ne peut obliger un salarié à rejoindre un syndicat, ni le punir s'il en fait partie.",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/emploi/le-droit-au-travail-2/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 455,
+    "theme": "Vie en société",
+    "notion": "travail",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 197,
+    "question": "Dans une entreprise, le droit de grève autorise :",
+    "answers": [
+      "Les salariés à cesser ensemble le travail pour leurs revendications"
+    ],
+    "distractors": [
+      "L'employeur à licencier les salariés qui ne sont pas d'accord",
+      "Un salarié à quitter seul son poste pour un motif personnel",
+      "Les salariés à rester payés intégralement pendant tout l'arrêt de travail",
+      "Les grévistes à empêcher les non-grévistes de travailler"
+    ],
+    "explanation": "La grève est un arrêt collectif et concerté du travail, pour appuyer des revendications professionnelles. Tout salarié peut faire grève, sans être syndiqué. Un salarié ne peut pas être sanctionné ni licencié parce qu'il a fait grève, mais l'employeur peut retenir une part du salaire proportionnelle à la durée de l'arrêt.",
+    "group": "droit-greve",
+    "source": {
+      "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F117",
+      "label": "service-public.gouv.fr"
+    }
+  },
+  {
+    "id": 456,
+    "theme": "Vie en société",
+    "notion": "travail",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 198,
+    "question": "Quelles sont les conditions pour toucher les allocations chômage ?",
+    "answers": [
+      "Avoir perdu son emploi sans l'avoir choisi, avoir assez travaillé et être inscrit à France Travail"
+    ],
+    "distractors": [
+      "Avoir démissionné sans motif légitime, après avoir travaillé au moins six mois d'affilée",
+      "Être inscrit à France Travail et chercher un emploi, même sans avoir jamais travaillé",
+      "Avoir perdu son emploi sans l'avoir choisi, même après seulement quinze jours de travail",
+      "Chercher activement un emploi depuis longtemps, sans être inscrit à France Travail"
+    ],
+    "explanation": "Pour toucher l'allocation chômage (ARE), il faut avoir perdu son emploi sans l'avoir choisi (licenciement, fin de CDD, rupture conventionnelle…), avoir travaillé une durée minimale avant la fin de son contrat, être inscrit à France Travail et chercher activement un emploi. Il faut aussi résider en France de manière stable et régulière.",
+    "source": {
+      "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F38881",
+      "label": "service-public.gouv.fr"
+    }
+  },
+  {
+    "id": 457,
+    "theme": "Vie en société",
+    "notion": "autorite-parentale-ecole",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 199,
+    "question": "Qu'est-ce que l'école maternelle ?",
+    "answers": [
+      "L'école des enfants de 3 à 6 ans"
+    ],
+    "distractors": [
+      "L'école des enfants de 6 à 11 ans",
+      "L'école des enfants de 11 à 15 ans",
+      "L'école des enfants de 15 à 18 ans",
+      "Le mode de garde des enfants de moins de 3 ans"
+    ],
+    "explanation": "L'école maternelle accueille les enfants de 3 à 6 ans. Ils y apprennent la langue française s'ils ne la parlent pas encore, à vivre ensemble et à se faire des amis, ainsi qu'à dessiner, écrire, compter et comprendre.",
+    "group": "ecole-obligatoire",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/parentalite/le-systeme-educatif/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 458,
+    "theme": "Vie en société",
+    "notion": "autorite-parentale-ecole",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 200,
+    "question": "Comment s'appelle le diplôme passé par les élèves à la fin du collège ?",
+    "answers": [
+      "Le brevet des collèges (diplôme national du brevet)"
+    ],
+    "distractors": [
+      "Le baccalauréat, passé à la fin du lycée",
+      "Le certificat d'études primaires",
+      "Le brevet de technicien supérieur (BTS), après le lycée",
+      "Le diplôme d'accès aux études universitaires"
+    ],
+    "explanation": "À la fin du collège, l'élève passe un diplôme qui s'appelle le brevet des collèges, ou diplôme national du brevet (DNB). Le collège est suivi du lycée, qui se termine par le baccalauréat.",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/parentalite/le-systeme-educatif/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 459,
+    "theme": "Vie en société",
+    "notion": "autorite-parentale-ecole",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 201,
+    "question": "Les parents d'élève ont le droit de :",
+    "answers": [
+      "Se présenter aux élections des représentants de parents"
+    ],
+    "distractors": [
+      "Choisir eux-mêmes les enseignants de leur enfant",
+      "Décider seuls des programmes enseignés dans toute l'école",
+      "Fixer eux-mêmes le calendrier des vacances scolaires",
+      "Assister aux cours à n'importe quel moment sans prévenir"
+    ],
+    "explanation": "Les parents peuvent participer à la vie de l'école : rejoindre l'association de parents d'élèves, ou se présenter aux élections de représentants des parents d'élèves. Les représentants participent aux décisions importantes sur l'organisation de l'école.",
+    "group": "parents-ecole",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/parentalite/droits-et-devoirs-des-parents-a-l-ecole/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 460,
+    "theme": "Vie en société",
+    "notion": "autorite-parentale-ecole",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 202,
+    "question": "Qui peut manger à la cantine scolaire ?",
+    "answers": [
+      "Tous les enfants scolarisés qui le souhaitent"
+    ],
+    "distractors": [
+      "Les enfants dont les deux parents travaillent",
+      "Les enfants de nationalité française",
+      "Les enfants de familles à faibles revenus",
+      "Les enfants qui habitent loin de l'école"
+    ],
+    "explanation": "Quand l'école a une cantine, tous les enfants scolarisés qui le souhaitent peuvent y manger. On ne peut pas refuser un enfant à cause de sa situation ou de celle de sa famille.",
+    "group": "cantine",
+    "source": {
+      "url": "https://www.collectivites-locales.gouv.fr/competences/la-restauration-scolaire",
+      "label": "collectivites-locales.gouv.fr"
+    }
+  },
+  {
+    "id": 461,
+    "theme": "Vie en société",
+    "notion": "autorite-parentale-ecole",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 203,
+    "question": "À quel âge commence l'instruction obligatoire des enfants ?",
+    "answers": [
+      "À 3 ans"
+    ],
+    "distractors": [
+      "À 4 ans",
+      "À 5 ans",
+      "À 6 ans",
+      "À 7 ans"
+    ],
+    "explanation": "Tous les enfants qui habitent en France, français ou étrangers, doivent aller à l'école entre 3 et 16 ans. C'est une obligation. Après 16 ans, l'école n'est plus obligatoire, mais l'enfant peut poursuivre ses études.",
+    "group": "ecole-obligatoire",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/parentalite/le-systeme-educatif/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 462,
+    "theme": "Vie en société",
+    "notion": "autorite-parentale-ecole",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 204,
+    "question": "Quel est l'âge de la majorité ?",
+    "answers": [
+      "18 ans"
+    ],
+    "distractors": [
+      "16 ans",
+      "17 ans",
+      "21 ans",
+      "25 ans"
+    ],
+    "explanation": "En France, on devient majeur à 18 ans. Jusqu'à cet âge, les parents ont des droits et des devoirs envers leur enfant : c'est l'autorité parentale. Elle se termine quand l'enfant a 18 ans.",
+    "group": "vote-conditions",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/parentalite/exercice-de-l-autorite-parentale-2/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 463,
+    "theme": "Vie en société",
+    "notion": "autorite-parentale-ecole",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 205,
+    "question": "À l'école, il est interdit aux parents de :",
+    "answers": [
+      "Être violents ou agressifs envers le personnel de l'école"
+    ],
+    "distractors": [
+      "Rencontrer les professeurs de leur enfant en réunion",
+      "Se présenter aux élections de représentants des parents",
+      "Se renseigner sur les résultats scolaires de leur enfant",
+      "Rejoindre l'association de parents d'élèves de l'école"
+    ],
+    "explanation": "Insulter, menacer ou frapper un enseignant ou un autre membre du personnel de l'école est un délit puni par la loi, plus sévèrement quand cela se passe dans l'école ou à ses abords. Les parents peuvent rencontrer les professeurs, participer aux réunions et s'engager dans la vie de l'école.",
+    "group": "parents-ecole",
+    "source": {
+      "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F33322",
+      "label": "service-public.gouv.fr"
+    }
+  },
+  {
+    "id": 464,
+    "theme": "Vie en société",
+    "notion": "autorite-parentale-ecole",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 206,
+    "question": "Quel motif d'absence est accepté par l'école ?",
+    "answers": [
+      "La maladie de l'enfant"
+    ],
+    "distractors": [
+      "Une sortie avec des amis",
+      "Une envie de se reposer",
+      "Un anniversaire entre copains",
+      "Un rendez-vous chez le coiffeur"
+    ],
+    "explanation": "La maladie de l'enfant est un motif d'absence accepté par l'école, comme la maladie contagieuse d'un proche ou un empêchement lié aux transports. Les parents doivent prévenir l'école au plus vite en indiquant le motif.",
+    "group": "absence-ecole",
+    "source": {
+      "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F1899",
+      "label": "service-public.gouv.fr"
+    }
+  },
+  {
+    "id": 465,
+    "theme": "Vie en société",
+    "notion": "autorite-parentale-ecole",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 207,
+    "question": "Des parents ne respectent pas l'obligation d'instruction pour leurs enfants. Quelle sanction maximale risquent-ils ?",
+    "answers": [
+      "6 mois de prison et 7 500 euros d'amende"
+    ],
+    "distractors": [
+      "Une amende de 135 euros, sans autre sanction",
+      "3 mois de prison et 1 500 euros d'amende",
+      "10 ans de prison et 150 000 euros d'amende",
+      "Un simple avertissement écrit du maire"
+    ],
+    "explanation": "Si des parents n'inscrivent pas leur enfant à l'école sans raison valable, le directeur académique des services de l'Éducation nationale leur envoie une mise en demeure. S'ils ne la respectent pas, ils risquent 6 mois de prison et 7 500 euros d'amende.",
+    "source": {
+      "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F1898",
+      "label": "service-public.gouv.fr"
+    }
+  },
+  {
+    "id": 466,
+    "theme": "Vie en société",
+    "notion": "autorite-parentale-ecole",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 208,
+    "question": "Quand ont lieu les vacances scolaires de Noël ?",
+    "answers": [
+      "À la fin du mois de décembre, pendant environ deux semaines"
+    ],
+    "distractors": [
+      "À la mi-février, pendant environ deux semaines",
+      "Au début du mois d'avril, pendant environ deux semaines",
+      "Au début du mois de novembre, pendant environ deux semaines",
+      "À la fin du mois de janvier, pendant environ deux semaines"
+    ],
+    "explanation": "Les vacances scolaires de Noël commencent à la fin du mois de décembre et durent environ deux semaines : les élèves reprennent l'école au début du mois de janvier. Elles ont lieu aux mêmes dates dans toute la France métropolitaine.",
+    "source": {
+      "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F31952",
+      "label": "service-public.gouv.fr"
+    }
+  },
+  {
+    "id": 467,
+    "theme": "Vie en société",
+    "notion": "autorite-parentale-ecole",
+    "lists": [
+      "resident"
+    ],
+    "crNumber": 209,
+    "question": "À l'école, un enfant en situation de handicap :",
+    "answers": [
+      "Étudie avec les autres et peut avoir un emploi du temps aménagé"
+    ],
+    "distractors": [
+      "Doit être scolarisé dans un établissement séparé des autres",
+      "N'a pas l'obligation d'aller à l'école comme les autres enfants",
+      "Doit rester à la maison avec ses parents toute la journée",
+      "Ne peut pas manger à la cantine avec les autres enfants"
+    ],
+    "explanation": "Les enfants en situation de handicap ont le droit de vivre avec les autres enfants et comme eux. À l'école, ils peuvent bénéficier d'un emploi du temps aménagé.",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/parentalite/les-droits-de-l-enfant/",
+      "label": "formation-civique.interieur.gouv.fr"
     }
   }
 ]
