@@ -3,8 +3,10 @@ import { test, expect, expectPage, RESIDENT_QUESTIONS } from './fixtures'
 test('premier passage : choix du titre, accueil, choix gardé au rechargement', async ({ page }) => {
   await page.goto('/')
   await expect(page).toHaveURL(/\/titre$/)
-  await expect(page.getByRole('heading', { level: 1, name: 'Quel titre préparez-vous ?' })).toBeVisible()
-  await expectPage(page, 'Quel titre préparez-vous ?')
+  await expect(page.getByRole('heading', { level: 1, name: "Préparez l'examen civique" })).toBeVisible()
+  await expect(page.getByText('Site indépendant, non officiel')).toBeVisible()
+  await expect(page.getByRole('link', { name: 'Retour' })).toHaveCount(0)
+  await expectPage(page, "Préparez l'examen civique")
 
   await page.getByRole('button', { name: /Carte de séjour pluriannuelle/ }).click()
   await page.getByRole('button', { name: 'Continuer' }).click()

@@ -41,6 +41,12 @@ describe('AppHeader', () => {
     expect(screen.queryByRole('button', { name: 'Sombre' })).toBeNull()
   })
 
+  it('avec hideBrand, le nom du site disparaît et « Affichage » reste', () => {
+    renderHeader({ hideBrand: true })
+    expect(screen.queryByRole('link')).toBeNull()
+    expect(screen.getByRole('button', { name: 'Affichage' })).toBeInTheDocument()
+  })
+
   it('ouvre le panneau, avec le focus sur le premier réglage', () => {
     renderHeader()
     const button = screen.getByRole('button', { name: 'Affichage' })

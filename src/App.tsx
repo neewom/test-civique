@@ -3,6 +3,7 @@ import Home from '@/pages/Home'
 import Revision from '@/pages/Revision'
 import Examen from '@/pages/Examen'
 import ExamenDetail from '@/pages/ExamenDetail'
+import ExamenBlanc from '@/pages/ExamenBlanc'
 import Regles from '@/pages/Regles'
 import TitreVise from '@/pages/TitreVise'
 import MentionsLegales from '@/pages/MentionsLegales'
@@ -20,6 +21,7 @@ export default function App() {
             {(location) => (
               <Routes location={location}>
                 <Route path="/" element={<Home />} />
+                <Route path="/examen-blanc" element={<ExamenBlanc />} />
                 <Route path="/examen" element={<Examen />} />
                 <Route path="/examen/:id" element={<ExamenDetail />} />
                 <Route path="/revision" element={<Revision />} />

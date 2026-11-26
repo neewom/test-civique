@@ -140,10 +140,10 @@ describe('Accueil — examen blanc (étape 2)', () => {
     return screen.getByRole('button', { name: /2 · Réussir 3 examens blancs/ })
   }
 
-  it('un clic lance directement un nouvel examen conforme', () => {
+  it('sans examen en cours, un clic mène à la page avant l\'examen blanc', () => {
     renderHome()
     fireEvent.click(step2())
-    expect(screen.getByTestId('location')).toHaveTextContent('/examen|{"start":"new"}')
+    expect(screen.getByTestId('location')).toHaveTextContent('/examen-blanc|')
   })
 
   it('n\'est plus un dépliant : ni aria-expanded ni choix du jeu de questions', () => {
@@ -332,7 +332,7 @@ describe('Accueil — premier lancement', () => {
   it('sans titre choisi ni examen, renvoie vers l\'écran du titre', () => {
     localStorageMock.removeItem('target-title')
     renderHome()
-    expect(screen.getByTestId('location')).toHaveTextContent('/titre|{"firstLaunch":true}')
+    expect(screen.getByTestId('location')).toHaveTextContent('/titre|null')
   })
 
   it('un titre illisible compte comme pas de choix', () => {
@@ -584,6 +584,6 @@ describe('Accueil — carte de résident', () => {
   it('premier passage : aucun titre, aucun historique, aucun examen en cours dans aucune clé renvoie vers le titre', () => {
     localStorageMock.removeItem('target-title')
     renderHome()
-    expect(screen.getByTestId('location')).toHaveTextContent('/titre|{"firstLaunch":true}')
+    expect(screen.getByTestId('location')).toHaveTextContent('/titre|null')
   })
 })
