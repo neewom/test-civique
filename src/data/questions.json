@@ -5531,6 +5531,7 @@
     "answers": [
       "Prévenir l'école au plus tôt et justifier l'absence"
     ],
+    "group": "absence-ecole",
     "source": {
       "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F1899",
       "label": "service-public.gouv.fr"
@@ -5603,6 +5604,7 @@
     "answers": [
       "Dans les 5 jours suivant la naissance"
     ],
+    "group": "declaration-naissance",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/demarches-administratives/la-declaration-de-naissance/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -5627,6 +5629,7 @@
     "answers": [
       "La perte de vos droits sociaux : retraite, chômage, assurance maladie"
     ],
+    "group": "travail-non-declare",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/emploi/le-droit-au-travail-5/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -5651,6 +5654,7 @@
     "answers": [
       "Saisir le Conseil de prud'hommes"
     ],
+    "group": "prudhommes",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/emploi/le-droit-au-travail-2/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -5675,6 +5679,7 @@
     "answers": [
       "Se marier civilement à la mairie"
     ],
+    "group": "mariage-civil",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/demarches-administratives/la-declaration-de-mariage/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -5867,6 +5872,7 @@
     "answers": [
       "Appeler le 17 (police) ou le 15 (SAMU) selon la situation"
     ],
+    "group": "numero-police",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/droits-et-devoirs/obligations-et-devoirs-des-personnes-residant-en-france/le-role-des-temoins-en-cas-de-violences/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -5891,6 +5897,7 @@
     "answers": [
       "La durée légale est de 35 heures ; les heures supplémentaires doivent être compensées"
     ],
+    "group": "heures-supplementaires",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/emploi/le-droit-au-travail-1/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -7762,6 +7769,7 @@
     "answers": [
       "Oui, quand la cantine existe, son accès est un droit pour tous les élèves"
     ],
+    "group": "cantine",
     "source": {
       "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F24570",
       "label": "service-public.gouv.fr"
@@ -9787,6 +9795,7 @@
       "Le droit d'occuper son entreprise sans autorisation"
     ],
     "explanation": "Le droit de grève est l'une des libertés qui découlent du principe de liberté : une personne employée peut cesser le travail pour exprimer un désaccord.",
+    "group": "droit-greve",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/droits-et-devoirs/droits-fondamentaux/les-droits-inherents-a-la-personne-humaine/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -11529,7 +11538,8 @@
       "L'union libre, après trois ans de vie commune",
       "Le mariage signé devant un notaire"
     ],
-    "explanation": "Le mariage civil est le seul mariage reconnu en France. Il est célébré à la mairie, devant un officier d'état civil. Une cérémonie religieuse peut avoir lieu en plus, mais elle n'a pas de valeur légale.",
+    "explanation": "Le mariage civil est le seul mariage reconnu en France. Il est célébré à la mairie, devant un officier d'état civil. Une cérémonie religieuse peut avoir lieu ensuite, mais seulement après le mariage civil, et elle n'a pas de valeur légale.",
+    "group": "mariage-civil",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/demarches-administratives/la-declaration-de-mariage/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -11627,6 +11637,7 @@
       "Au tribunal judiciaire"
     ],
     "explanation": "La déclaration de naissance est obligatoire. Elle se fait à la mairie du lieu de naissance, dans les 5 jours qui suivent la naissance. L'officier d'état civil établit alors l'acte de naissance de l'enfant.",
+    "group": "declaration-naissance",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/demarches-administratives/la-declaration-de-naissance/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -11696,7 +11707,7 @@
       "Dans le bac de tri des emballages",
       "Dans la poubelle des ordures ménagères",
       "Au pied d'un conteneur à verre",
-      "Sur le trottoir devant chez soi"
+      "Dans un bois, loin des habitations"
     ],
     "explanation": "Un gros appareil électroménager cassé fait partie des encombrants. On peut le déposer en déchetterie, où les encombrants sont triés et recyclés. La commune peut aussi organiser une collecte, souvent sur rendez-vous avec la mairie.",
     "group": "abandon-dechets",
@@ -11724,6 +11735,7 @@
       "Le 119"
     ],
     "explanation": "Le 17 est le numéro de la police, pour signaler une infraction : violences, agression, vol, cambriolage. Les appels aux numéros d'urgence sont gratuits et possibles 24 heures sur 24. Le 15 est le numéro du SAMU et le 18 celui des pompiers.",
+    "group": "numero-police",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/demarches-administratives/annexe-les-numeros-durgence/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -11796,6 +11808,7 @@
       "Payante, avec un tarif qui dépend de l'âge et du revenu"
     ],
     "explanation": "L'inscription à l'Assurance maladie est obligatoire. Une fois validée, on reçoit un numéro de sécurité sociale et une carte Vitale, qui permettent d'être remboursé de ses frais de santé. La demande se fait auprès de la caisse primaire d'assurance maladie.",
+    "group": "assurance-maladie",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/sante/sante-la-prise-en-charge-les-demarches-pour-etre-rembourse/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -11815,8 +11828,8 @@
     ],
     "distractors": [
       "Seulement la mère de l'enfant",
-      "Seulement les parents mariés",
-      "Seulement les salariés qui ont plus de dix ans d'ancienneté",
+      "Tout salarié qui a au moins cinq ans d'ancienneté",
+      "Tout salarié marié, sans condition d'ancienneté",
       "Seulement les parents qui ont trois enfants ou plus"
     ],
     "explanation": "Le congé parental d'éducation est ouvert à tout salarié qui a au moins un an d'ancienneté dans l'entreprise. Il permet d'arrêter de travailler pour s'occuper de son enfant après une naissance ou une adoption. Sa durée initiale est d'un an au maximum.",
@@ -11844,6 +11857,7 @@
       "Les conflits de famille au sujet d'un héritage important"
     ],
     "explanation": "Si un salarié et son employeur ne sont pas d'accord sur le contrat de travail (licenciement, salaire…), le salarié peut contacter le conseil de prud'hommes. C'est un lieu de justice qui décide dans ce type de conflit.",
+    "group": "prudhommes",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/emploi/le-droit-au-travail-2/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -11868,6 +11882,7 @@
       "Toléré pour les travaux ménagers à domicile"
     ],
     "explanation": "Le travail non déclaré (ou travail dissimulé) est interdit par la loi. L'employeur risque jusqu'à 3 ans de prison et 45 000 euros d'amende. Le salarié ne cotise ni pour le chômage ni pour la retraite, n'a pas de congé payé et n'a pas droit à la sécurité sociale en cas de maladie ou d'accident du travail.",
+    "group": "travail-non-declare",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/emploi/le-droit-au-travail-5/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -11892,6 +11907,7 @@
       "Il peut les ajouter sans les compter dans le temps de travail"
     ],
     "explanation": "La durée de référence du travail à temps complet est de 35 heures par semaine. Au-delà, on parle d'heures supplémentaires. L'employeur doit payer ces heures au salarié ou lui permettre de les rattraper.",
+    "group": "heures-supplementaires",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/emploi/le-droit-au-travail-1/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -11962,9 +11978,10 @@
       "L'employeur à licencier les salariés qui ne sont pas d'accord",
       "Un salarié à quitter seul son poste pour un motif personnel",
       "Les salariés à rester payés intégralement pendant tout l'arrêt de travail",
-      "L'employeur à interdire à un salarié de se syndiquer dans l'entreprise"
+      "Les grévistes à empêcher les non-grévistes de travailler"
     ],
     "explanation": "La grève est un arrêt collectif et concerté du travail, pour appuyer des revendications professionnelles. Tout salarié peut faire grève, sans être syndiqué. Un salarié ne peut pas être sanctionné ni licencié parce qu'il a fait grève, mais l'employeur peut retenir une part du salaire proportionnelle à la durée de l'arrêt.",
+    "group": "droit-greve",
     "source": {
       "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F117",
       "label": "service-public.gouv.fr"
@@ -11988,7 +12005,7 @@
       "Avoir perdu son emploi sans l'avoir choisi, même après seulement quinze jours de travail",
       "Chercher activement un emploi depuis longtemps, sans être inscrit à France Travail"
     ],
-    "explanation": "Pour toucher l'allocation chômage (ARE), il faut avoir perdu son emploi sans l'avoir choisi, avoir travaillé assez longtemps (en général au moins 6 mois dans les 24 derniers mois), être inscrit à France Travail et chercher activement un emploi. Il faut aussi résider en France de manière stable et régulière.",
+    "explanation": "Pour toucher l'allocation chômage (ARE), il faut avoir perdu son emploi sans l'avoir choisi (licenciement, fin de CDD, rupture conventionnelle…), avoir travaillé une durée minimale avant la fin de son contrat, être inscrit à France Travail et chercher activement un emploi. Il faut aussi résider en France de manière stable et régulière.",
     "source": {
       "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F38881",
       "label": "service-public.gouv.fr"
@@ -12062,6 +12079,7 @@
       "Assister aux cours à n'importe quel moment sans prévenir"
     ],
     "explanation": "Les parents peuvent participer à la vie de l'école : rejoindre l'association de parents d'élèves, ou se présenter aux élections de représentants des parents d'élèves. Les représentants participent aux décisions importantes sur l'organisation de l'école.",
+    "group": "parents-ecole",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/parentalite/droits-et-devoirs-des-parents-a-l-ecole/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -12085,10 +12103,11 @@
       "Les enfants de familles à faibles revenus",
       "Les enfants qui habitent loin de l'école"
     ],
-    "explanation": "Une cantine est accessible à tous les enfants qui le souhaitent, dans tous les établissements scolaires.",
+    "explanation": "Quand l'école a une cantine, tous les enfants scolarisés qui le souhaitent peuvent y manger. On ne peut pas refuser un enfant à cause de sa situation ou de celle de sa famille.",
+    "group": "cantine",
     "source": {
-      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/parentalite/le-systeme-educatif/",
-      "label": "formation-civique.interieur.gouv.fr"
+      "url": "https://www.collectivites-locales.gouv.fr/competences/la-restauration-scolaire",
+      "label": "collectivites-locales.gouv.fr"
     }
   },
   {
@@ -12126,13 +12145,13 @@
     "crNumber": 204,
     "question": "Quel est l'âge de la majorité ?",
     "answers": [
-      "À 18 ans"
+      "18 ans"
     ],
     "distractors": [
-      "À 16 ans",
-      "À 17 ans",
-      "À 21 ans",
-      "À 25 ans"
+      "16 ans",
+      "17 ans",
+      "21 ans",
+      "25 ans"
     ],
     "explanation": "En France, on devient majeur à 18 ans. Jusqu'à cet âge, les parents ont des droits et des devoirs envers leur enfant : c'est l'autorité parentale. Elle se termine quand l'enfant a 18 ans.",
     "source": {
@@ -12158,7 +12177,12 @@
       "Se renseigner sur les résultats scolaires de leur enfant",
       "Rejoindre l'association de parents d'élèves de l'école"
     ],
-    "explanation": "La violence et les menaces sont interdites par la loi, y compris à l'école. Les parents doivent rester respectueux envers le personnel de l'école, et ils peuvent communiquer avec les professeurs, participer aux réunions et s'engager dans la vie de l'école."
+    "explanation": "Insulter, menacer ou frapper un enseignant ou un autre membre du personnel de l'école est un délit puni par la loi, plus sévèrement quand cela se passe dans l'école ou à ses abords. Les parents peuvent rencontrer les professeurs, participer aux réunions et s'engager dans la vie de l'école.",
+    "group": "parents-ecole",
+    "source": {
+      "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F33322",
+      "label": "service-public.gouv.fr"
+    }
   },
   {
     "id": 464,
@@ -12176,9 +12200,10 @@
       "Une sortie avec des amis",
       "Une envie de se reposer",
       "Un anniversaire entre copains",
-      "Des vacances commencées en avance"
+      "Un rendez-vous chez le coiffeur"
     ],
     "explanation": "La maladie de l'enfant est un motif d'absence accepté par l'école, comme la maladie contagieuse d'un proche ou un empêchement lié aux transports. Les parents doivent prévenir l'école au plus vite en indiquant le motif.",
+    "group": "absence-ecole",
     "source": {
       "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F1899",
       "label": "service-public.gouv.fr"
@@ -12202,7 +12227,7 @@
       "10 ans de prison et 150 000 euros d'amende",
       "Un simple avertissement écrit du maire"
     ],
-    "explanation": "Si des parents n'inscrivent pas leur enfant à l'école sans raison valable, l'inspection académique leur envoie une mise en demeure. S'ils ne la respectent pas, ils risquent 6 mois de prison et 7 500 euros d'amende.",
+    "explanation": "Si des parents n'inscrivent pas leur enfant à l'école sans raison valable, le directeur académique des services de l'Éducation nationale leur envoie une mise en demeure. S'ils ne la respectent pas, ils risquent 6 mois de prison et 7 500 euros d'amende.",
     "source": {
       "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F1898",
       "label": "service-public.gouv.fr"
@@ -12226,7 +12251,7 @@
       "Au début du mois de novembre, pendant environ deux semaines",
       "À la fin du mois de janvier, pendant environ deux semaines"
     ],
-    "explanation": "Les vacances scolaires de Noël ont lieu à la fin du mois de décembre et durent environ deux semaines. Par exemple, pour l'année scolaire 2026-2027, elles vont du 19 décembre 2026 au 4 janvier 2027.",
+    "explanation": "Les vacances scolaires de Noël commencent à la fin du mois de décembre et durent environ deux semaines : les élèves reprennent l'école au début du mois de janvier. Elles ont lieu aux mêmes dates dans toute la France métropolitaine.",
     "source": {
       "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F31952",
       "label": "service-public.gouv.fr"
