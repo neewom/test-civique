@@ -132,6 +132,8 @@ interface AppHeaderProps {
   thin?: boolean
   /** Extra classes (the header takes the width and gutters of the column it is placed in) */
   className?: string
+  /** Hides the logo and name (first visit: the page shows them large); only « Affichage » stays */
+  hideBrand?: boolean
   /** The logo asks for confirmation instead of leaving (exam in progress) */
   onLogoClick?: () => void
 }
@@ -140,7 +142,7 @@ interface AppHeaderProps {
  * Permanent header, on every page, first child of the page's column: the logo (a
  * link to the home page) and the « Affichage » button (theme, animations).
  */
-export function AppHeader({ thin = false, className, onLogoClick }: AppHeaderProps) {
+export function AppHeader({ thin = false, hideBrand = false, className, onLogoClick }: AppHeaderProps) {
   const logoClass = cn(
     'inline-flex min-h-11 min-w-0 items-center rounded-sm font-bold no-underline',
     thin ? 'text-base' : 'text-xl',
@@ -148,9 +150,13 @@ export function AppHeader({ thin = false, className, onLogoClick }: AppHeaderPro
   return (
     <header
       data-app-header
-      className={cn('relative z-40 flex w-full items-center justify-between gap-3', className)}
+      className={cn(
+        'relative z-40 flex w-full items-center gap-3',
+        hideBrand ? 'justify-end' : 'justify-between',
+        className,
+      )}
     >
-      {onLogoClick ? (
+      {hideBrand ? null : onLogoClick ? (
         <button
           type="button"
           onClick={onLogoClick}

@@ -50,7 +50,7 @@ describe('App routing', () => {
     localStorageMock.clear()
     renderAt('/')
     expect(window.location.pathname).toBe('/titre')
-    expect(screen.getByRole('heading', { level: 1, name: 'Quel titre préparez-vous ?' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { level: 1, name: "Préparez l'examen civique" })).toBeInTheDocument()
     await act(async () => {
       fireEvent.click(screen.getByRole('button', { name: 'Continuer' }))
     })
