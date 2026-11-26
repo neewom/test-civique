@@ -319,6 +319,14 @@
 :root[data-direction='back']::view-transition-new(page-content) {
   animation-name: page-in-left;
 }
+/* Image de l'ancienne page recalée sur sa position avant le clic (voir PageShell) */
+::view-transition-old(page-content),
+::view-transition-old(page-bg) {
+  translate: 0 var(--vt-old-offset, 0px);
+  /* taille d'origine de l'ancienne page, pas celle du groupe (qui est celle de la nouvelle) */
+  inline-size: auto;
+  block-size: auto;
+}
 ::view-transition-old(page-bg) {
   animation-name: page-fade-out;
 }

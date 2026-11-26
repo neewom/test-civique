@@ -152,8 +152,8 @@ function FirstVisit({ selected, onSelect, onContinue }: ChoiceProps) {
     <main className="relative flex min-h-svh flex-col overflow-hidden bg-background text-foreground">
       <div className="relative bg-earth text-[#2c2e2a] dark:text-[#f1eee4]">
         <MeadowLines />
-        <div className="relative mx-auto flex w-full max-w-[30rem] flex-col items-start gap-3 px-[22px] pt-3 pb-4 md:max-w-[34rem] md:px-8">
-          <AppHeader hideBrand />
+        <AppHeader hideBrand />
+        <div className="relative mx-auto flex w-full max-w-[30rem] flex-col items-start gap-3 px-[22px] pt-0 pb-4 md:max-w-[34rem] md:px-8">
           <BrandSymbol large className="size-[4.25rem] shrink-0" />
           <p className="text-xl font-bold">
             <span className="text-[#1f4f15] dark:text-[#8ed462]">Futur</span> Citoyen
@@ -219,10 +219,10 @@ export default function TitreVise() {
   if (firstVisit) return <FirstVisit selected={selected} onSelect={setSelected} onContinue={handleContinue} />
 
   return (
-    <main className="relative min-h-svh overflow-hidden bg-background text-foreground">
+    <main className="relative flex min-h-svh flex-col overflow-hidden bg-background text-foreground">
       <OrganicBackground shape="goal" />
-      <div className="relative mx-auto flex min-h-svh w-full max-w-[30rem] flex-col gap-3.5 px-[22px] pt-3 pb-6">
-        <AppHeader />
+      <AppHeader />
+      <div className="relative mx-auto flex grow w-full max-w-[30rem] flex-col gap-3.5 px-[22px] pt-0 pb-6">
         <BackLink />
         <h1 className="mt-[3.75rem] max-w-[16.25rem] text-[2.25rem] leading-none font-bold tracking-[-0.04em] text-balance">
           Quel titre préparez-vous ?

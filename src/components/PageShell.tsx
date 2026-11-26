@@ -30,10 +30,19 @@ export function PageShell({ children }: { children: (location: Location) => Reac
     const root = document.documentElement
     root.dataset.direction = transitionDirection(previous.pathname, location.pathname, navigationType)
     root.classList.add('page-transition')
-    const clear = () => root.classList.remove('page-transition')
+    const clear = () => {
+      root.classList.remove('page-transition')
+      root.style.removeProperty('--vt-old-offset')
+    }
+    // The group of the page content does not animate: it sits where the NEW page is. If the
+    // scroll changes with the swap (back to the top, anchor), the old picture must be shifted
+    // by the difference of the page's top edge, or it jumps by the scrolled height on frame 1.
+    const topOfPage = () => document.getElementById('page-wrap')?.getBoundingClientRect().top ?? 0
+    const oldTop = topOfPage()
     try {
       const transition = document.startViewTransition(() => {
         flushSync(() => setShown(location))
+        root.style.setProperty('--vt-old-offset', `${oldTop - topOfPage()}px`)
       })
       // A transition skipped by a quicker navigation rejects these promises: nothing to report
       transition.ready?.catch(() => {})

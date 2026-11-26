@@ -138,8 +138,6 @@ function DisplayMenu() {
 interface AppHeaderProps {
   /** Thin variant (exam): smaller logo and tighter spacing, the question keeps the room */
   thin?: boolean
-  /** Extra classes (the header takes the width and gutters of the column it is placed in) */
-  className?: string
   /** Hides the logo and name (first visit: the page shows them large); only « Affichage » stays */
   hideBrand?: boolean
   /** The logo asks for confirmation instead of leaving (exam in progress) */
@@ -147,40 +145,45 @@ interface AppHeaderProps {
 }
 
 /**
- * Permanent header, on every page, first child of the page's column: the logo (a
- * link to the home page) and the « Affichage » button (theme, animations).
+ * Permanent header, on every page, first child of <main> (outside the page's column):
+ * same maximum width, gutters and position everywhere, whatever the page grid, so the
+ * logo and the « Affichage » button never move from one page to the next. Holds the
+ * logo (a link to the home page) and the « Affichage » button (theme, animations).
  */
-export function AppHeader({ thin = false, hideBrand = false, className, onLogoClick }: AppHeaderProps) {
+export function AppHeader({ thin = false, hideBrand = false, onLogoClick }: AppHeaderProps) {
   const logoClass = cn(
     'inline-flex min-h-11 min-w-0 items-center rounded-sm font-bold no-underline',
     thin ? 'text-base' : 'text-xl',
   )
   return (
-    <header
-      // Explicit landmark: the header sits inside <main>, where <header> alone has no banner role
-      role="banner"
-      data-app-header
+    <div
       className={cn(
-        'relative z-40 flex w-full items-center gap-3',
-        hideBrand ? 'justify-end' : 'justify-between',
-        className,
+        'relative z-40 mx-auto w-full max-w-[62rem] px-[22px] md:px-8 lg:px-10',
+        thin ? 'pt-1' : 'pt-3 pb-3 md:pt-4',
       )}
     >
-      {hideBrand ? null : onLogoClick ? (
-        <button
-          type="button"
-          onClick={onLogoClick}
-          aria-label="Futur Citoyen, retour à l'accueil"
-          className={logoClass}
-        >
-          <BrandLogo />
-        </button>
-      ) : (
-        <Link to="/" className={logoClass}>
-          <BrandLogo />
-        </Link>
-      )}
-      <DisplayMenu />
-    </header>
+      <header
+        // Explicit landmark: the header sits inside <main>, where <header> alone has no banner role
+        role="banner"
+        data-app-header
+        className={cn('flex w-full items-center gap-3', hideBrand ? 'justify-end' : 'justify-between')}
+      >
+        {hideBrand ? null : onLogoClick ? (
+          <button
+            type="button"
+            onClick={onLogoClick}
+            aria-label="Futur Citoyen, retour à l'accueil"
+            className={logoClass}
+          >
+            <BrandLogo />
+          </button>
+        ) : (
+          <Link to="/" className={logoClass}>
+            <BrandLogo />
+          </Link>
+        )}
+        <DisplayMenu />
+      </header>
+    </div>
   )
 }
