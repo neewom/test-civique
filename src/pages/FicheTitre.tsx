@@ -9,7 +9,7 @@ import { EXAM_SIZE, passThreshold } from '@/lib/exam'
 import { FICHES, FICHE_LABELS, titleOfSlug } from '@/lib/fiches'
 import { hasProgress } from '@/lib/exam-types'
 import { loadHistory } from '@/lib/history'
-import { DEFAULT_TITLE, TARGET_TITLES, loadTargetTitle, saveTargetTitle, type TargetTitle, type TitleKey } from '@/lib/target-title'
+import { DEFAULT_TITLE, loadTargetTitle, saveTargetTitle, type TargetTitle, type TitleKey } from '@/lib/target-title'
 import { useDocumentTitle } from '@/lib/use-document-title'
 import { cn } from '@/lib/utils'
 
@@ -27,12 +27,13 @@ function Fiche({ titleKey }: { titleKey: TitleKey }) {
   useDocumentTitle(label)
   const navigate = useNavigate()
   const location = useLocation()
-  const target = (TARGET_TITLES as readonly string[]).includes(titleKey) ? (titleKey as TargetTitle) : null
+  // Every title is open now: the sheet always offers to train for it
+  const target: TargetTitle = titleKey
   // Same rule as the home page: an existing user without a stored title has the default one
   const stored = loadTargetTitle()
   const existingUser = loadHistory().length > 0 || hasProgress()
   const chosen = stored ?? (existingUser ? DEFAULT_TITLE : null)
-  const alreadyChosen = target !== null && chosen === target
+  const alreadyChosen = chosen === target
   // First pass (nothing chosen, nothing known): the page is not one to come back to
   const firstPass = chosen === null
 
@@ -73,22 +74,16 @@ function Fiche({ titleKey }: { titleKey: TitleKey }) {
         </div>
 
         <div className="mt-1 flex flex-col items-start gap-1">
-          {target ? (
-            <PillButton
-              size="lg"
-              className="w-full justify-center text-center"
-              onClick={() => {
-                saveTargetTitle(target)
-                navigate('/', { replace: firstPass })
-              }}
-            >
-              {alreadyChosen ? 'Continuer mon entraînement' : "M'entraîner pour ce titre"}
-            </PillButton>
-          ) : (
-            <span className="inline-flex min-h-14 w-full items-center justify-center gap-2 rounded-full bg-card px-5 text-center text-base font-bold text-card-foreground">
-              Entraînement bientôt disponible
-            </span>
-          )}
+          <PillButton
+            size="lg"
+            className="w-full justify-center text-center"
+            onClick={() => {
+              saveTargetTitle(target)
+              navigate('/', { replace: firstPass })
+            }}
+          >
+            {alreadyChosen ? 'Continuer mon entraînement' : "M'entraîner pour ce titre"}
+          </PillButton>
         </div>
 
         <section aria-labelledby="needs" className="mt-2 flex flex-col gap-2">

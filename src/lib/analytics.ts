@@ -20,6 +20,11 @@ export const EXAM_STARTED_RESIDENT = 'examen-commence-resident'
 export const EXAM_FINISHED_PASSED_RESIDENT = 'examen-termine-reussi-resident'
 export const EXAM_FINISHED_NOT_YET_RESIDENT = 'examen-termine-pas-encore-resident'
 
+// Naturalisation too
+export const EXAM_STARTED_NATURALISATION = 'examen-commence-naturalisation'
+export const EXAM_FINISHED_PASSED_NATURALISATION = 'examen-termine-reussi-naturalisation'
+export const EXAM_FINISHED_NOT_YET_NATURALISATION = 'examen-termine-pas-encore-naturalisation'
+
 export type AnalyticsEvent =
   | typeof EXAM_STARTED
   | typeof EXAM_FINISHED_PASSED
@@ -27,16 +32,27 @@ export type AnalyticsEvent =
   | typeof EXAM_STARTED_RESIDENT
   | typeof EXAM_FINISHED_PASSED_RESIDENT
   | typeof EXAM_FINISHED_NOT_YET_RESIDENT
+  | typeof EXAM_STARTED_NATURALISATION
+  | typeof EXAM_FINISHED_PASSED_NATURALISATION
+  | typeof EXAM_FINISHED_NOT_YET_NATURALISATION
 
 const EXAM_EVENTS = {
-  started: [EXAM_STARTED, EXAM_STARTED_RESIDENT],
-  passed: [EXAM_FINISHED_PASSED, EXAM_FINISHED_PASSED_RESIDENT],
-  notYet: [EXAM_FINISHED_NOT_YET, EXAM_FINISHED_NOT_YET_RESIDENT],
-} as const
+  started: { pluriannuelle: EXAM_STARTED, resident: EXAM_STARTED_RESIDENT, naturalisation: EXAM_STARTED_NATURALISATION },
+  passed: {
+    pluriannuelle: EXAM_FINISHED_PASSED,
+    resident: EXAM_FINISHED_PASSED_RESIDENT,
+    naturalisation: EXAM_FINISHED_PASSED_NATURALISATION,
+  },
+  notYet: {
+    pluriannuelle: EXAM_FINISHED_NOT_YET,
+    resident: EXAM_FINISHED_NOT_YET_RESIDENT,
+    naturalisation: EXAM_FINISHED_NOT_YET_NATURALISATION,
+  },
+} as const satisfies Record<string, Record<TitleKey, AnalyticsEvent>>
 
-/** Event name of an exam step for a title: suffixed for the resident card only. */
+/** Event name of an exam step for a title: suffixed for the resident card and naturalisation, not the multi-year permit. */
 export function examEvent(step: keyof typeof EXAM_EVENTS, title: TitleKey): AnalyticsEvent {
-  return EXAM_EVENTS[step][title === 'resident' ? 1 : 0]
+  return EXAM_EVENTS[step][title]
 }
 
 // The external referrer only makes sense for the first page view: after a SPA

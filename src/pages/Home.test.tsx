@@ -587,3 +587,65 @@ describe('Accueil — carte de résident', () => {
     expect(screen.getByTestId('location')).toHaveTextContent('/titre|null')
   })
 })
+
+describe('Accueil — naturalisation', () => {
+  beforeEach(() => localStorageMock.setItem('target-title', 'naturalisation'))
+
+  function progress(title?: string, index = 4) {
+    const questions = Array.from({ length: 40 }, (_, i) => ({
+      id: i + 1, theme: 'Test', question: `Question ${i + 1}`, answer: 'A', choices: ['A', 'B', 'C', 'D'], explanation: '',
+    }))
+    return { questions, index, answers: [], timeLeft: 1500, startedAt: '2026-11-23T10:00:00.000Z', ...(title ? { title } : {}) }
+  }
+
+  it('la pastille du titre affiche « Naturalisation »', () => {
+    renderHome()
+    expect(screen.getByRole('link', { name: /Titre visé : Naturalisation/ })).toHaveAttribute('href', '/titre')
+  })
+
+  it('le compteur et « Derniers examens » ne portent que sur les examens de la naturalisation', () => {
+    seedHistory([
+      { ...exam(36, 'p1', '2026-11-01T10:00:00.000Z') },
+      { ...exam(36, 'r1', '2026-11-02T10:00:00.000Z'), title: 'resident' },
+      { ...exam(36, 'n1', '2026-11-03T10:00:00.000Z'), title: 'naturalisation' },
+      { ...exam(10, 'n2', '2026-11-04T10:00:00.000Z'), title: 'naturalisation' },
+    ])
+    renderHome()
+    expect(screen.getByRole('button', { name: /2 · Réussir 3 examens blancs/ })).toHaveTextContent('0 sur 3')
+    const links = within(screen.getByRole('region', { name: 'Derniers examens' })).getAllByRole('link')
+    expect(links.map((l) => l.getAttribute('href'))).toEqual(['/examen/n2', '/examen/n1'])
+  })
+
+  it('propose la reprise de l\'examen en cours de la naturalisation seulement', () => {
+    localStorageMock.setItem('exam-in-progress', JSON.stringify(progress(undefined, 9)))
+    localStorageMock.setItem('exam-in-progress-resident', JSON.stringify(progress('resident', 8)))
+    renderHome()
+    expect(screen.queryByRole('region', { name: 'Examen en cours' })).toBeNull()
+    localStorageMock.setItem('exam-in-progress-naturalisation', JSON.stringify(progress('naturalisation', 4)))
+    cleanup()
+    renderHome()
+    expect(screen.getByRole('link', { name: /Reprendre l'examen en cours/ })).toHaveTextContent('Question 5 sur 40')
+  })
+
+  it('« Supprimer l\'examen en cours » ne supprime que celui de la naturalisation', async () => {
+    const a = JSON.stringify(progress(undefined, 9))
+    const b = JSON.stringify(progress('resident', 8))
+    localStorageMock.setItem('exam-in-progress', a)
+    localStorageMock.setItem('exam-in-progress-resident', b)
+    localStorageMock.setItem('exam-in-progress-naturalisation', JSON.stringify(progress('naturalisation')))
+    renderHome()
+    await act(async () => {
+      fireEvent.click(screen.getByRole('button', { name: "Supprimer l'examen en cours" }))
+    })
+    expect(localStorageMock.getItem('exam-in-progress-naturalisation')).toBeNull()
+    expect(localStorageMock.getItem('exam-in-progress')).toBe(a)
+    expect(localStorageMock.getItem('exam-in-progress-resident')).toBe(b)
+  })
+
+  it('sans titre choisi, un examen en cours de la naturalisation seul suffit à ne pas renvoyer vers le titre', () => {
+    localStorageMock.removeItem('target-title')
+    localStorageMock.setItem('exam-in-progress-naturalisation', JSON.stringify(progress('naturalisation')))
+    renderHome()
+    expect(screen.queryByTestId('location')).toBeNull()
+  })
+})

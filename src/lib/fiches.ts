@@ -33,10 +33,8 @@ export interface Fiche {
 }
 
 // Official questions (not the situational ones written for the app) of a title's list, counted
-// in the data. Naturalisation: its set is not in the data yet, the count is the one of the
-// official list (verified 2026-11-26: 259 rows, one repeated).
+// in the data (naturalisation: 259 rows in the official list, one repeated, so 258).
 const officialCount = (t: TitleKey) => questionsForTitle(t).filter((q) => q.notion !== 'mise-en-situation').length
-const NATURALISATION_QUESTIONS = 258
 
 const SP = 'https://www.service-public.gouv.fr/particuliers/vosdroits/'
 const FC_INFOS = 'https://formation-civique.interieur.gouv.fr/examen-civique/informations-g%C3%A9n%C3%A9rales-sur-lexamen-civique/'
@@ -111,9 +109,9 @@ export const FICHES: Record<TitleKey, Fiche> = {
       'Passer un entretien à la préfecture.',
     ],
     needsNote: 'Le français et l’examen sont demandés depuis le 1er janvier 2026.',
-    examQuestions: NATURALISATION_QUESTIONS,
+    examQuestions: officialCount('naturalisation'),
     examParas: [
-      `La liste officielle compte ${NATURALISATION_QUESTIONS} questions de connaissance. Les mises en situation ne sont pas publiées.`,
+      `La liste officielle compte ${officialCount('naturalisation')} questions de connaissance. Les mises en situation ne sont pas publiées.`,
       "Vous passez l'examen dans un centre agréé par la CCI Paris Île-de-France ou par France Éducation international. Si vous vivez à l'étranger, adressez-vous à un institut français, une alliance française ou au consulat.",
     ],
     goodToKnow: [

@@ -65,12 +65,17 @@ describe('Changer de titre (« Quel titre préparez-vous ? »)', () => {
     expect(screen.getByRole('button', { name: /Carte de séjour pluriannuelle/ })).toHaveTextContent('191 questions officielles')
   })
 
-  it('affiche la naturalisation « bientôt », non sélectionnable', () => {
+  it('propose la naturalisation comme les deux cartes, sans « Bientôt »', () => {
     renderChangeOfTitle()
     const option = screen.getByRole('button', { name: /Naturalisation/ })
-    expect(option).toBeDisabled()
+    expect(option).toBeEnabled()
     expect(option).toHaveAttribute('aria-pressed', 'false')
-    expect(option).toHaveTextContent(/bientôt/i)
+    expect(option).toHaveTextContent('258 questions officielles')
+    expect(screen.queryByText(/bientôt/i)).not.toBeInTheDocument()
+    fireEvent.click(option)
+    expect(option).toHaveAttribute('aria-pressed', 'true')
+    fireEvent.click(screen.getByRole('button', { name: 'Continuer' }))
+    expect(localStorageMock.getItem('target-title')).toBe('naturalisation')
   })
 
   it('le groupe d\'options est nommé « Titre visé »', () => {
@@ -155,13 +160,18 @@ describe('Page de première visite', () => {
     expect(within(header).getByRole('button', { name: 'Affichage' })).toBeInTheDocument()
   })
 
-  it('propose les titres ouverts et la naturalisation « bientôt »', () => {
+  it('propose les trois titres, la naturalisation comprise, sans « Bientôt »', () => {
     renderTitre()
     expect(screen.getByRole('button', { name: /Carte de séjour pluriannuelle/ })).toHaveAttribute('aria-pressed', 'true')
     expect(screen.getByRole('button', { name: /Carte de résident/ })).toHaveTextContent('209 questions officielles')
-    const soon = screen.getByRole('button', { name: /Naturalisation/ })
-    expect(soon).toBeDisabled()
-    expect(soon).toHaveTextContent(/bientôt/i)
+    const nat = screen.getByRole('button', { name: /Naturalisation/ })
+    expect(nat).toBeEnabled()
+    expect(nat).toHaveTextContent('258 questions officielles')
+    expect(screen.queryByText(/bientôt/i)).not.toBeInTheDocument()
+    fireEvent.click(nat)
+    expect(nat).toHaveAttribute('aria-pressed', 'true')
+    fireEvent.click(screen.getByRole('button', { name: 'Continuer' }))
+    expect(localStorageMock.getItem('target-title')).toBe('naturalisation')
   })
 
   it('« Continuer » enregistre le choix et remplace la page (le retour arrière ne ramène pas ici)', () => {

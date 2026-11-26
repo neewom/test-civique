@@ -29,6 +29,8 @@ const ALL_QUESTIONS = JSON.parse(
 ) as Question[]
 // Questions of the resident card (official + situational)
 export const RESIDENT_QUESTIONS: Question[] = ALL_QUESTIONS.filter((q) => q.lists.includes('resident'))
+// Questions of naturalisation (official + situational)
+export const NATURALISATION_QUESTIONS: Question[] = ALL_QUESTIONS.filter((q) => q.lists.includes('naturalisation'))
 export const SITUATION_COUNT = QUESTIONS.filter((q) => q.notion === 'mise-en-situation').length
 export const THEMES = [...new Set(QUESTIONS.map((q) => q.theme))]
 

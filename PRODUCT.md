@@ -18,7 +18,7 @@ Une application d'entraînement à l'examen civique : examen blanc chronométré
 
 La fidélité au format officiel est attendue de toute appli du secteur ; ce n'est pas la différence. Ce qui doit distinguer celle-ci (décision de l'utilisateur, 2026-11-23) :
 - **L'accompagnement jusqu'au jour J** : savoir si l'on est prêt d'après ses derniers examens blancs, puis trouver un centre d'examen proche et s'inscrire.
-- **La révision ciblée par démarche** : le bon jeu de questions selon le titre visé (carte pluriannuelle, carte de résident, plus tard naturalisation), alors que les listes officielles diffèrent.
+- **La révision ciblée par démarche** : le bon jeu de questions selon le titre visé (carte pluriannuelle, carte de résident, naturalisation), alors que les listes officielles diffèrent.
 - Des réponses dont la source officielle est consultable, et un contenu propre (les mises en situation officielles ne sont pas publiques).
 
 Pistes proposées par le TL, non décidées : révision des questions ratées (répétition espacée), mode « jour J » sans correction entre les questions comme à l'examen réel, aide à la compréhension du français (lexique des mots difficiles, lecture audio des questions), liste des étapes de la démarche (inscription CCIP ou FEI, pièces, convocation).
@@ -32,7 +32,7 @@ Pistes proposées par le TL, non décidées : révision des questions ratées (r
 ## Capabilities and Constraints
 
 - Appli web statique (React, Vite), déployée sur Netlify, sans compte ni serveur ; données des questions dans le dépôt, progression et historique dans le navigateur (`localStorage`).
-- Couverture actuelle : liste CSP (191 questions), liste de la carte de résident (209 questions, ouverte depuis la v1.14.0) et 100 mises en situation rédigées pour l'appli, communes aux titres ; naturalisation à venir.
+- Couverture actuelle : liste CSP (191 questions), liste de la carte de résident (209 questions, ouverte depuis la v1.14.0) et 100 mises en situation rédigées pour l'appli, communes aux titres ; liste de la naturalisation (258 questions, ouverte depuis la v1.21.0).
 - Décidé pour plus tard : modèle gratuit avec publicité (jamais sur l'écran de question) et accès complet payant à prix bas, après une phase de lancement mesurée.
 - Nom : **Futur Citoyen** (décision de l'utilisateur, 2026-11-24), qui remplace « Test Civique », nom du site d'inscription officiel de France Éducation International (test-civique.fr). Logo « la pousse » : une jeune pousse, une feuille verte et une feuille jaune. L'adresse du site et le nom du dépôt restent inchangés tant que le domaine futurcitoyen.fr n'est pas réservé.
 

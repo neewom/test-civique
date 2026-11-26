@@ -311,3 +311,23 @@ describe('Revision — carte de résident', () => {
     expect(screen.getByText(`Carte de résident · ${official.length} questions`)).toBeInTheDocument()
   })
 })
+
+describe('Revision — naturalisation', () => {
+  const natQuestions = allQuestions.filter((q) => q.lists.includes('naturalisation'))
+
+  it('affiche le libellé du titre et le nombre de questions de la liste de la naturalisation', () => {
+    localStorageMock.setItem('target-title', 'naturalisation')
+    renderRevision()
+    expect(natQuestions.filter((q) => q.notion !== 'mise-en-situation')).toHaveLength(258)
+    expect(screen.getByText(`Naturalisation · ${natQuestions.length} questions`)).toBeInTheDocument()
+    expect(screen.queryByText(/Carte de séjour pluriannuelle/)).toBeNull()
+  })
+
+  it('« sans les mises en situation » retire celles de la naturalisation', () => {
+    localStorageMock.setItem('target-title', 'naturalisation')
+    renderRevision()
+    fireEvent.click(screen.getByRole('checkbox', { name: /mises en situation/ }))
+    const official = natQuestions.filter((q) => q.notion !== 'mise-en-situation')
+    expect(screen.getByText(`Naturalisation · ${official.length} questions`)).toBeInTheDocument()
+  })
+})

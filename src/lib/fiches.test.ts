@@ -39,13 +39,14 @@ describe('fiches des titres', () => {
     for (const key of TITLE_KEYS) expect(FICHES[key].needs.length).toBeLessThanOrEqual(5)
   })
 
-  it('le nombre de questions de la liste vient des données (191 et 209) ; 258 pour la naturalisation', () => {
-    const official = (t: 'pluriannuelle' | 'resident') =>
+  it('le nombre de questions de la liste vient des données (191, 209 et 258)', () => {
+    const official = (t: 'pluriannuelle' | 'resident' | 'naturalisation') =>
       questionsForTitle(t).filter((q) => q.notion !== 'mise-en-situation').length
     expect(FICHES.pluriannuelle.examQuestions).toBe(official('pluriannuelle'))
     expect(FICHES.resident.examQuestions).toBe(official('resident'))
     expect(FICHES.pluriannuelle.examQuestions).toBe(191)
     expect(FICHES.resident.examQuestions).toBe(209)
+    expect(FICHES.naturalisation.examQuestions).toBe(official('naturalisation'))
     expect(FICHES.naturalisation.examQuestions).toBe(258)
     expect(FICHES.naturalisation.examParas.join(' ')).toContain('258 questions')
   })

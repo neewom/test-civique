@@ -96,6 +96,9 @@ describe('analytics — production (futurcitoyen.fr)', () => {
     expect(examEvent('started', 'resident')).toBe('examen-commence-resident')
     expect(examEvent('passed', 'resident')).toBe('examen-termine-reussi-resident')
     expect(examEvent('notYet', 'resident')).toBe('examen-termine-pas-encore-resident')
+    expect(examEvent('started', 'naturalisation')).toBe('examen-commence-naturalisation')
+    expect(examEvent('passed', 'naturalisation')).toBe('examen-termine-reussi-naturalisation')
+    expect(examEvent('notYet', 'naturalisation')).toBe('examen-termine-pas-encore-naturalisation')
   })
 
   it('signale un navigateur piloté (navigator.webdriver) comme le fait count.js', () => {
