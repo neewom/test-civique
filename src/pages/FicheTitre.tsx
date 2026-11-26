@@ -2,6 +2,7 @@ import { Check, CircleDot, ExternalLink, Info, ListChecks, Target, Timer } from 
 import { Navigate, useLocation, useNavigate, useParams } from 'react-router-dom'
 import { AppHeader } from '@/components/AppHeader'
 import { BackLink } from '@/components/BackLink'
+import { markInAppBack } from '@/lib/page-transition'
 import { OrganicBackground } from '@/components/OrganicBackground'
 import { PillButton } from '@/components/PillButton'
 import { EXAM_SIZE, passThreshold } from '@/lib/exam'
@@ -54,6 +55,7 @@ function Fiche({ titleKey }: { titleKey: TitleKey }) {
             // Back to the page we came from (first visit, change of title, home)
             if (location.key !== 'default') {
               e.preventDefault()
+              markInAppBack()
               navigate(-1)
             }
           }}

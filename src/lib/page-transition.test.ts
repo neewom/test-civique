@@ -1,5 +1,5 @@
 import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest'
-import { pageDepth, shouldAnimateNavigation, transitionDirection } from '@/lib/page-transition'
+import { markInAppBack, pageDepth, shouldAnimateNavigation, transitionDirection } from '@/lib/page-transition'
 
 const PAGES = ['/titre', '/', '/revision', '/regles', '/mentions-legales', '/examen-blanc', '/examen', '/examen/abc']
 
@@ -90,6 +90,34 @@ describe('shouldAnimateNavigation', () => {
     vi.stubGlobal('navigator', { ...navigator, userAgent: 'Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X)' })
     expect(shouldAnimateNavigation('/revision', '/', 'POP')).toBe(false)
     expect(shouldAnimateNavigation('/', '/revision', 'PUSH')).toBe(true)
+  })
+
+  describe('retour déclenché par l\'appli', () => {
+    beforeEach(() => {
+      vi.stubGlobal('navigator', { ...navigator, userAgent: 'Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X)' })
+    })
+
+    it('anime un POP sur iPhone quand l\'appli l\'a marqué', () => {
+      markInAppBack()
+      expect(shouldAnimateNavigation('/titres/x', '/titre', 'POP')).toBe(true)
+    })
+
+    it('n\'anime pas un POP non marqué sur iPhone', () => {
+      expect(shouldAnimateNavigation('/titres/x', '/titre', 'POP')).toBe(false)
+    })
+
+    it('la marque ne survit pas à la navigation suivante', () => {
+      markInAppBack()
+      shouldAnimateNavigation('/titres/x', '/titre', 'POP')
+      expect(shouldAnimateNavigation('/titre', '/', 'POP')).toBe(false)
+    })
+
+    it('hors iOS, rien ne change (POP animé, marqué ou non)', () => {
+      vi.stubGlobal('navigator', { ...navigator, userAgent: 'Mozilla/5.0 (Windows NT 10.0) Chrome/130' })
+      expect(shouldAnimateNavigation('/titres/x', '/titre', 'POP')).toBe(true)
+      markInAppBack()
+      expect(shouldAnimateNavigation('/titres/x', '/titre', 'POP')).toBe(true)
+    })
   })
 })
 

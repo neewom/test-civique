@@ -18,10 +18,18 @@ export function PageShell({ children }: { children: (location: Location) => Reac
   const startedKey = useRef<string>(location.key)
 
   // No transition for this navigation: the new page replaces the old one in the same render
-  const animate =
-    location.key !== shown.key &&
-    shouldAnimateNavigation(shown.pathname, location.pathname, navigationType)
-  if (location.key !== shown.key && !animate) setShown(location)
+  // (decided once per navigation, kept in state: the decision consumes the in-app-back mark)
+  const [decision, setDecision] = useState<{ key: string; animate: boolean } | null>(null)
+  const pending = location.key !== shown.key
+  if (pending && decision?.key !== location.key) {
+    setDecision({
+      key: location.key,
+      animate: shouldAnimateNavigation(shown.pathname, location.pathname, navigationType),
+    })
+  }
+  const decided = pending && decision?.key === location.key
+  const animate = decided && decision.animate
+  if (decided && !animate) setShown(location)
 
   useEffect(() => {
     if (!animate || startedKey.current === location.key) return
