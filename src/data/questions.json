@@ -14701,11 +14701,11 @@
       "Rendre l'école gratuite, laïque et obligatoire"
     ],
     "distractors": [
-      "Réserver l'école aux enfants des familles nobles",
-      "Confier l'enseignement uniquement à l'Église",
+      "Rendre l'école payante, religieuse et facultative",
+      "Réserver l'école aux garçons, dès 6 ans",
+      "Confier l'enseignement à l'Église, sans l'État",
       "Faire payer l'école à tous les élèves",
-      "Supprimer l'école pour les filles",
-      "Rendre l'enseignement facultatif pour tous"
+      "Supprimer l'école pour les filles, dès 1882"
     ],
     "explanation": "Les lois de Jules Ferry généralisent l'école publique gratuite en 1881, puis l'école laïque et obligatoire en 1882. Elles comptent parmi les grandes réalisations de la IIIe République.",
     "group": "ecole-jules-ferry",
@@ -14890,9 +14890,8 @@
     "distractors": [
       "L'Australie",
       "Le Japon",
-      "L'Argentine",
-      "La Russie",
-      "La Corée"
+      "Cuba",
+      "Singapour"
     ],
     "explanation": "La France a possédé un vaste empire colonial. Madagascar, indépendant en 1960, et le Vietnam, qui faisait partie de l'Indochine française jusqu'en 1954, en ont fait partie. Les autres pays proposés n'ont jamais été des colonies françaises.",
     "group": "colonisation-decolonisation",
@@ -15020,7 +15019,7 @@
     "distractors": [
       "Jules Ferry",
       "Napoléon Bonaparte",
-      "Louis XIV",
+      "Georges Clemenceau",
       "Charles de Gaulle",
       "Léon Gambetta"
     ],
@@ -15171,7 +15170,7 @@
     ],
     "distractors": [
       "L'Étranger",
-      "La Peste",
+      "Le Rouge et le Noir",
       "Le Malade imaginaire",
       "Les Fleurs du Mal",
       "Tartuffe"
@@ -15200,10 +15199,10 @@
     "distractors": [
       "La paella",
       "Les sushis",
-      "Le goulasch hongrois",
-      "Les lasagnes bolognaises",
-      "Le gaspacho andalou",
-      "La moussaka grecque"
+      "Le poulet tikka masala",
+      "Les spaghettis carbonara",
+      "Le chili con carne",
+      "Le pad thaï aux crevettes"
     ],
     "explanation": "Le cassoulet (Languedoc), la choucroute alsacienne et la bouillabaisse, plat méditerranéen, sont des plats traditionnels de la gastronomie française, qui est inscrite au patrimoine mondial de l'UNESCO.",
     "source": {
@@ -15252,7 +15251,7 @@
       "Claude Monet",
       "Paul Cézanne",
       "Auguste Renoir",
-      "Pablo Picasso"
+      "Gustave Courbet"
     ],
     "explanation": "La Liberté guidant le peuple est un tableau d'Eugène Delacroix (1798-1863), peintre majeur du romantisme français, qui met en avant le mouvement, la liberté et la passion.",
     "group": "peintres-francais",
@@ -15324,7 +15323,7 @@
     ],
     "distractors": [
       "Au château de Versailles, en Île-de-France",
-      "Au Mont Saint-Michel, en Normandie",
+      "Au château de Chambord, en Centre-Val de Loire",
       "À la cathédrale de Reims, dans la Marne",
       "Au musée d'Orsay",
       "À la tour Eiffel"
@@ -15448,7 +15447,7 @@
     "distractors": [
       "L'ouverture du premier métro parisien",
       "La fin de la Première Guerre mondiale",
-      "L'inauguration du canal de Suez",
+      "L'inauguration du canal de Suez en 1869",
       "Les Jeux olympiques de Paris en 1900"
     ],
     "explanation": "La tour Eiffel est construite en 2 ans par l'ingénieur Gustave Eiffel pour l'Exposition universelle de 1889, qui fêtait les 100 ans de la Révolution française. D'abord critiquée, elle est aujourd'hui un symbole de la France.",
@@ -15550,12 +15549,10 @@
       "Mayotte"
     ],
     "distractors": [
-      "La Sicile",
       "La Sardaigne",
       "La Crète",
-      "L'île de Madère",
-      "L'île de Malte",
-      "L'île de Cuba"
+      "Cuba",
+      "Trinité-et-Tobago"
     ],
     "explanation": "La Martinique, la Guadeloupe, La Réunion et Mayotte sont des îles qui forment, avec la Guyane, les départements et régions d'outre-mer (DROM) de la France. La Sicile, la Sardaigne, la Crète, Madère, Malte et Cuba appartiennent à d'autres pays.",
     "group": "iles-francaises",
@@ -15578,7 +15575,7 @@
       "Mayotte"
     ],
     "distractors": [
-      "La Corse",
+      "Saint-Martin",
       "La Martinique",
       "La Guadeloupe",
       "Tahiti"
@@ -15680,9 +15677,9 @@
       "Marseille"
     ],
     "distractors": [
-      "Calais",
-      "Brest",
-      "Boulogne-sur-Mer",
+      "Sète",
+      "Bayonne",
+      "Port-Vendres",
       "Saint-Malo",
       "Cherbourg"
     ],
@@ -15783,9 +15780,9 @@
     "distractors": [
       "Nice",
       "Toulon",
-      "Avignon",
+      "Draguignan",
       "Aix-en-Provence",
-      "Gap"
+      "Digne-les-Bains"
     ],
     "explanation": "Marseille est la préfecture, c'est-à-dire le chef-lieu, de la région Provence-Alpes-Côte d'Azur, qui compte 6 départements.",
     "group": "marseille",
@@ -15807,10 +15804,10 @@
       "Mayotte"
     ],
     "distractors": [
-      "La Guyane",
+      "Saint-Martin",
       "La Réunion",
       "La Martinique",
-      "La Guadeloupe"
+      "Wallis-et-Futuna"
     ],
     "explanation": "Mayotte, île de l'océan Indien, devient le 101e département français le 31 mars 2011. Elle est à la fois un département et une région d'outre-mer.",
     "group": "iles-francaises",
