@@ -159,6 +159,42 @@ const LIST_EXCEPTIONS: Record<string, Map<number, { reason: string; expected: st
       },
     ],
     [
+      62,
+      {
+        // Officiel : « … l'action du gouvernement ? » (casse de la liste NAT) ; notre question 331
+        // garde le libellé de la liste CR, verrouillé par le contrôle CR.
+        reason: 'casse de la liste NAT',
+        expected: "Qui dirige l'action du Gouvernement ?",
+      },
+    ],
+    [
+      76,
+      {
+        // Officiel : « … le rôle du Président de la République ? » (casse de la liste NAT) ; notre question 337
+        // garde le libellé de la liste CR, verrouillé par le contrôle CR.
+        reason: 'casse de la liste NAT',
+        expected: 'Quel est le rôle du président de la République ?',
+      },
+    ],
+    [
+      90,
+      {
+        // Officiel : « … l'Union Européenne en 2020 ? » (casse de la liste NAT) ; notre question 347
+        // garde le libellé de la liste CR, verrouillé par le contrôle CR.
+        reason: 'casse de la liste NAT',
+        expected: "Quel État a quitté l'Union européenne en 2020 ?",
+      },
+    ],
+    [
+      92,
+      {
+        // Officiel : « … l'hymne de l'Union Européenne ? » (casse de la liste NAT) ; notre question 349
+        // garde le libellé de la liste CR, verrouillé par le contrôle CR.
+        reason: 'casse de la liste NAT',
+        expected: "Quel est l'hymne de l'Union européenne ?",
+      },
+    ],
+    [
       137,
       {
         // Officiel : « Pourquoi l’année 1958 est importante pour la France ? », même

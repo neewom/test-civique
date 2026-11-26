@@ -8649,7 +8649,8 @@
     "theme": "Système institutionnel et politique",
     "notion": "organisation-republique",
     "lists": [
-      "resident"
+      "resident",
+      "naturalisation"
     ],
     "crNumber": 41,
     "question": "Qu'est-ce que l'État de droit ?",
@@ -8668,7 +8669,8 @@
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/etat-de-droit-et-separation-des-pouvoirs/etat-de-droit-et-separation-des-pouvoirs--presentation-de-letat-de-droit-et-principe-de-la-separation-des-pouvoirs/",
       "label": "formation-civique.interieur.gouv.fr"
-    }
+    },
+    "natNumber": 56
   },
   {
     "id": 324,
@@ -8853,7 +8855,8 @@
     "theme": "Système institutionnel et politique",
     "notion": "organisation-republique",
     "lists": [
-      "resident"
+      "resident",
+      "naturalisation"
     ],
     "crNumber": 49,
     "question": "Qui dirige l'action du Gouvernement ?",
@@ -8872,7 +8875,8 @@
     "source": {
       "url": "https://www.conseil-constitutionnel.fr/le-bloc-de-constitutionnalite/texte-integral-de-la-constitution-du-4-octobre-1958-en-vigueur",
       "label": "conseil-constitutionnel.fr"
-    }
+    },
+    "natNumber": 62
   },
   {
     "id": 332,
@@ -9009,7 +9013,8 @@
     "theme": "Système institutionnel et politique",
     "notion": "organisation-republique",
     "lists": [
-      "resident"
+      "resident",
+      "naturalisation"
     ],
     "crNumber": 68,
     "question": "Quel est le rôle du président de la République ?",
@@ -9028,14 +9033,16 @@
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/etat-de-droit-et-separation-des-pouvoirs/etat-de-droit-et-separation-des-pouvoirs-presentation-des-3-pouvoirs-1/",
       "label": "formation-civique.interieur.gouv.fr"
-    }
+    },
+    "natNumber": 76
   },
   {
     "id": 338,
     "theme": "Système institutionnel et politique",
     "notion": "organisation-republique",
     "lists": [
-      "resident"
+      "resident",
+      "naturalisation"
     ],
     "crNumber": 69,
     "question": "Quel est le rôle du Premier ministre ?",
@@ -9054,7 +9061,8 @@
     "source": {
       "url": "https://www.conseil-constitutionnel.fr/le-bloc-de-constitutionnalite/texte-integral-de-la-constitution-du-4-octobre-1958-en-vigueur",
       "label": "conseil-constitutionnel.fr"
-    }
+    },
+    "natNumber": 77
   },
   {
     "id": 339,
@@ -9112,7 +9120,8 @@
     "theme": "Système institutionnel et politique",
     "notion": "organisation-republique",
     "lists": [
-      "resident"
+      "resident",
+      "naturalisation"
     ],
     "crNumber": 72,
     "question": "Quel est le rôle du Défenseur des droits ?",
@@ -9131,7 +9140,8 @@
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/droits-et-devoirs/droits-fondamentaux/les-acteurs-institutionnels/",
       "label": "formation-civique.interieur.gouv.fr"
-    }
+    },
+    "natNumber": 78
   },
   {
     "id": 342,
@@ -9239,7 +9249,8 @@
     "theme": "Système institutionnel et politique",
     "notion": "institutions-europeennes",
     "lists": [
-      "resident"
+      "resident",
+      "naturalisation"
     ],
     "crNumber": 77,
     "question": "Quel traité concerne la construction de l'Union européenne ?",
@@ -9259,14 +9270,16 @@
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/institutions-europeennes/les-etapes-cles-de-la-construction-europeenne/",
       "label": "formation-civique.interieur.gouv.fr"
-    }
+    },
+    "natNumber": 89
   },
   {
     "id": 347,
     "theme": "Système institutionnel et politique",
     "notion": "institutions-europeennes",
     "lists": [
-      "resident"
+      "resident",
+      "naturalisation"
     ],
     "crNumber": 78,
     "question": "Quel État a quitté l'Union européenne en 2020 ?",
@@ -9285,14 +9298,16 @@
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/institutions-europeennes/les-etapes-cles-de-la-construction-europeenne/",
       "label": "formation-civique.interieur.gouv.fr"
-    }
+    },
+    "natNumber": 90
   },
   {
     "id": 348,
     "theme": "Système institutionnel et politique",
     "notion": "institutions-europeennes",
     "lists": [
-      "resident"
+      "resident",
+      "naturalisation"
     ],
     "crNumber": 79,
     "question": "Quelle est la devise de l’Union européenne ?",
@@ -9310,14 +9325,16 @@
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/institutions-europeennes/les-symboles-europeens-2/",
       "label": "formation-civique.interieur.gouv.fr"
-    }
+    },
+    "natNumber": 91
   },
   {
     "id": 349,
     "theme": "Système institutionnel et politique",
     "notion": "institutions-europeennes",
     "lists": [
-      "resident"
+      "resident",
+      "naturalisation"
     ],
     "crNumber": 80,
     "question": "Quel est l'hymne de l'Union européenne ?",
@@ -9335,14 +9352,16 @@
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/institutions-europeennes/les-symboles-europeens-1/",
       "label": "formation-civique.interieur.gouv.fr"
-    }
+    },
+    "natNumber": 92
   },
   {
     "id": 350,
     "theme": "Système institutionnel et politique",
     "notion": "institutions-europeennes",
     "lists": [
-      "resident"
+      "resident",
+      "naturalisation"
     ],
     "crNumber": 81,
     "question": "De quoi est composé le drapeau européen ?",
@@ -9361,7 +9380,8 @@
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/institutions-europeennes/les-symboles-europeens-1/",
       "label": "formation-civique.interieur.gouv.fr"
-    }
+    },
+    "natNumber": 93
   },
   {
     "id": 351,
@@ -9393,7 +9413,8 @@
     "theme": "Système institutionnel et politique",
     "notion": "institutions-europeennes",
     "lists": [
-      "resident"
+      "resident",
+      "naturalisation"
     ],
     "crNumber": 83,
     "question": "En quelle année le traité de Maastricht, qui marque la fondation de l'Union européenne, a-t-il été signé ?",
@@ -9412,14 +9433,16 @@
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-conflits-mondiaux-et-le-nouvel-ordre-mondial/la-construction-europeenne/",
       "label": "formation-civique.interieur.gouv.fr"
-    }
+    },
+    "natNumber": 88
   },
   {
     "id": 353,
     "theme": "Système institutionnel et politique",
     "notion": "institutions-europeennes",
     "lists": [
-      "resident"
+      "resident",
+      "naturalisation"
     ],
     "crNumber": 84,
     "question": "Où est le siège du Parlement européen ?",
@@ -9437,14 +9460,16 @@
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/institutions-europeennes/le-fonctionnement-europeen-2/",
       "label": "formation-civique.interieur.gouv.fr"
-    }
+    },
+    "natNumber": 95
   },
   {
     "id": 354,
     "theme": "Système institutionnel et politique",
     "notion": "institutions-europeennes",
     "lists": [
-      "resident"
+      "resident",
+      "naturalisation"
     ],
     "crNumber": 85,
     "question": "Où est le siège de la Commission européenne ?",
@@ -9462,7 +9487,8 @@
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/institutions-europeennes/le-fonctionnement-europeen-2/",
       "label": "formation-civique.interieur.gouv.fr"
-    }
+    },
+    "natNumber": 84
   },
   {
     "id": 355,
@@ -12947,6 +12973,845 @@
     "explanation": "Ne pas avoir de religion, ou choisir de ne plus en avoir, est un droit en France. Une personne qui ne croit en aucun dieu est dite athée.",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/laicite/definition-laicite-2/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 494,
+    "theme": "Système institutionnel et politique",
+    "notion": "organisation-republique",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 39,
+    "question": "Comment est désigné le Premier ministre ?",
+    "answers": [
+      "Il est nommé par le président de la République"
+    ],
+    "distractors": [
+      "Il est élu par les députés de l'Assemblée nationale",
+      "Il est élu par les citoyens au suffrage universel direct",
+      "Il est choisi par les sénateurs",
+      "Il est tiré au sort parmi les ministres",
+      "Il est désigné par le Conseil constitutionnel"
+    ],
+    "explanation": "Le président de la République nomme le Premier ministre en tenant compte de la majorité à l'Assemblée nationale. Les autres ministres sont ensuite nommés sur la proposition du Premier ministre.",
+    "group": "premier-ministre",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/democratie-et-droit-de-vote/democratie-et-droit-de-vote-la-democratie-et-la-republique-2/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 495,
+    "theme": "Système institutionnel et politique",
+    "notion": "democratie-vote",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 40,
+    "question": "Qui peut se présenter aux élections présidentielles ?",
+    "answers": [
+      "Tout citoyen français majeur qui a ses droits civiques"
+    ],
+    "distractors": [
+      "Seulement les personnes qui ont déjà été ministres ou parlementaires",
+      "Toute personne majeure qui vit en France, quelle que soit sa nationalité",
+      "Uniquement les membres d'un parti politique",
+      "Seulement les personnes nées en France de parents français",
+      "Seulement les personnes âgées de plus de 35 ans"
+    ],
+    "explanation": "Peut se présenter à l'élection présidentielle tout électeur français qui n'est pas dans un cas d'inéligibilité. Il n'est pas obligatoire d'appartenir à un parti politique ni d'avoir déjà exercé un mandat.",
+    "group": "candidature-presidentielle",
+    "source": {
+      "url": "https://presidentielle2022.conseil-constitutionnel.fr/les-candidats/etre-candidat/etre-candidat-e-a-lelection-presidentielle.html",
+      "label": "conseil-constitutionnel.fr"
+    }
+  },
+  {
+    "id": 496,
+    "theme": "Système institutionnel et politique",
+    "notion": "organisation-republique",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 41,
+    "question": "À qui appartient la souveraineté nationale ?",
+    "answers": [
+      "Au peuple"
+    ],
+    "distractors": [
+      "Au président de la République",
+      "Au Gouvernement",
+      "Au Sénat",
+      "À l'Assemblée nationale",
+      "Au Conseil constitutionnel"
+    ],
+    "explanation": "L'article 3 de la Constitution de 1958 dispose que la souveraineté nationale appartient au peuple, qui l'exerce par ses représentants élus et par la voie du référendum.",
+    "source": {
+      "url": "https://www.conseil-constitutionnel.fr/le-bloc-de-constitutionnalite/texte-integral-de-la-constitution-du-4-octobre-1958-en-vigueur",
+      "label": "conseil-constitutionnel.fr"
+    }
+  },
+  {
+    "id": 497,
+    "theme": "Système institutionnel et politique",
+    "notion": "democratie-vote",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 43,
+    "question": "L'inscription sur les listes électorales est :",
+    "answers": [
+      "Obligatoire pour pouvoir voter"
+    ],
+    "distractors": [
+      "Inutile : on peut voter sans être inscrit",
+      "Réservée aux personnes nées en France",
+      "Payante, selon les communes",
+      "Réservée aux personnes âgées de plus de 25 ans"
+    ],
+    "explanation": "Pour participer aux élections politiques, il faut être inscrit sur les listes électorales. L'inscription est gratuite : automatique pour les jeunes de 18 ans (sous certaines conditions), elle se demande sinon à la mairie ou en ligne.",
+    "group": "inscription-electorale",
+    "source": {
+      "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F34852",
+      "label": "service-public.gouv.fr"
+    }
+  },
+  {
+    "id": 498,
+    "theme": "Système institutionnel et politique",
+    "notion": "democratie-vote",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 44,
+    "question": "Quelle condition est nécessaire pour voter aux élections présidentielles ?",
+    "answers": [
+      "Être français, majeur et inscrit sur les listes électorales"
+    ],
+    "distractors": [
+      "Habiter en France depuis au moins 10 ans, quelle que soit sa nationalité",
+      "Avoir travaillé en France pendant au moins 5 ans",
+      "Être né en France et être membre d'un parti politique",
+      "Avoir au moins 25 ans et avoir fait ses études en France",
+      "Être inscrit dans une commune de plus de 10 000 habitants"
+    ],
+    "explanation": "Pour voter à l'élection présidentielle, il faut être de nationalité française, avoir au moins 18 ans, avoir ses droits civiques et politiques (ne pas en avoir été privé par une condamnation) et être inscrit sur les listes électorales.",
+    "group": "vote-conditions",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/democratie-et-droit-de-vote/democratie-et-droit-de-vote-les-conditions-pour-voter-en-france-1/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 499,
+    "theme": "Système institutionnel et politique",
+    "notion": "democratie-vote",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 45,
+    "question": "Quelle condition faut-il remplir pour être candidat aux élections municipales ?",
+    "answers": [
+      "Avoir au moins 18 ans"
+    ],
+    "distractors": [
+      "Avoir au moins 25 ans",
+      "Être né dans la commune",
+      "Avoir déjà été conseiller municipal",
+      "Être membre d'un parti politique",
+      "Habiter dans la commune depuis au moins 10 ans"
+    ],
+    "explanation": "Pour être candidat aux élections municipales, il faut avoir 18 ans révolus au jour du scrutin, être de nationalité française ou d'un autre pays de l'Union européenne, avoir ses droits civiques et avoir un lien avec la commune, par exemple y être inscrit sur la liste électorale.",
+    "source": {
+      "url": "https://www.vie-publique.fr/eclairage/23820-municipales-2020-qui-peut-etre-candidat",
+      "label": "vie-publique.fr"
+    }
+  },
+  {
+    "id": 500,
+    "theme": "Système institutionnel et politique",
+    "notion": "democratie-vote",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 46,
+    "question": "Parmi ces autorités, laquelle est élue ?",
+    "answers": [
+      "Le conseiller départemental"
+    ],
+    "distractors": [
+      "Le préfet du département",
+      "Un juge du tribunal",
+      "Le recteur d'académie",
+      "Le commissaire de police",
+      "Le procureur de la République"
+    ],
+    "explanation": "Les conseillers départementaux sont élus par les citoyens pour 6 ans, lors des élections départementales. Les autres autorités ne sont pas élues : les juges et les magistrats sont recrutés par concours, le préfet et le recteur sont nommés.",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/democratie-et-droit-de-vote/democratie-et-droit-de-vote-la-democratie-et-la-republique-2/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 501,
+    "theme": "Système institutionnel et politique",
+    "notion": "organisation-republique",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 47,
+    "question": "Quelles sont les fonctions du maire ?",
+    "answers": [
+      "Il célèbre les mariages et veille à la sécurité publique"
+    ],
+    "distractors": [
+      "Il vote les lois qui s'appliquent dans la commune",
+      "Il juge les litiges entre les habitants",
+      "Il représente l'État dans le département",
+      "Il décide des programmes scolaires des écoles de la commune",
+      "Il commande l'armée sur le territoire de la commune"
+    ],
+    "explanation": "Le maire est officier d'état civil : il célèbre les mariages et enregistre les naissances et les décès. Il exerce aussi la police municipale, c'est-à-dire qu'il veille au bon ordre, à la sécurité et à la salubrité publiques, et il exécute les décisions du conseil municipal.",
+    "group": "maire",
+    "source": {
+      "url": "https://www.vie-publique.fr/fiches/19617-les-fonctions-les-pouvoirs-dun-maire",
+      "label": "vie-publique.fr"
+    }
+  },
+  {
+    "id": 502,
+    "theme": "Système institutionnel et politique",
+    "notion": "democratie-vote",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 49,
+    "question": "Une personne, n'ayant pas d'accès à internet, veut s'inscrire sur les listes électorales pour pouvoir voter aux prochaines élections politiques. Où peut-elle s'inscrire ?",
+    "answers": [
+      "À la mairie de sa commune, sur place ou par courrier"
+    ],
+    "distractors": [
+      "À la préfecture du département",
+      "Au commissariat de police ou à la gendarmerie",
+      "Au tribunal judiciaire",
+      "À la caisse d'allocations familiales (CAF)",
+      "À l'hôpital le plus proche de son domicile"
+    ],
+    "explanation": "La demande d'inscription se fait auprès de la mairie du lieu de résidence. Elle peut être déposée sur place, envoyée par courrier ou faite en ligne : une personne sans accès à internet peut donc se rendre en mairie ou écrire à la mairie.",
+    "group": "inscription-electorale",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/democratie-et-droit-de-vote/democratie-et-droit-de-vote-les-conditions-pour-voter-en-france-1/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 503,
+    "theme": "Système institutionnel et politique",
+    "notion": "democratie-vote",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 50,
+    "question": "À quel âge peut-on devenir électeur ?",
+    "answers": [
+      "À 18 ans"
+    ],
+    "distractors": [
+      "À 16 ans",
+      "À 21 ans",
+      "À 25 ans",
+      "À 20 ans"
+    ],
+    "explanation": "On peut devenir électeur à 18 ans, l'âge de la majorité, à condition d'être de nationalité française, d'avoir ses droits civiques et politiques et d'être inscrit sur les listes électorales.",
+    "group": "vote-conditions",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/democratie-et-droit-de-vote/democratie-et-droit-de-vote-les-conditions-pour-voter-en-france-1/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 504,
+    "theme": "Système institutionnel et politique",
+    "notion": "democratie-vote",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 51,
+    "question": "En France, est-ce obligatoire de voter ?",
+    "answers": [
+      "Non, voter est un droit mais pas une obligation"
+    ],
+    "distractors": [
+      "Oui, et ne pas voter est puni d'une amende",
+      "Oui, mais seulement pour l'élection présidentielle",
+      "Oui, pour toutes les personnes de plus de 18 ans, sous peine de perdre ses droits civiques",
+      "Oui, mais seulement pour les personnes inscrites depuis plus de 5 ans"
+    ],
+    "explanation": "Le vote n'est pas obligatoire en France : c'est un droit et non un devoir. En revanche, quand on vote, le vote est personnel, libre et secret.",
+    "group": "vote-conditions",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/democratie-et-droit-de-vote/democratie-et-droit-de-vote-les-conditions-pour-voter-en-france-1/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 505,
+    "theme": "Système institutionnel et politique",
+    "notion": "democratie-vote",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 53,
+    "question": "Comment sont désignés les députés ?",
+    "answers": [
+      "Ils sont élus par les citoyens, au suffrage direct"
+    ],
+    "distractors": [
+      "Ils sont nommés par le président de la République",
+      "Ils sont élus par les sénateurs et les maires",
+      "Ils sont choisis par les maires de leur circonscription",
+      "Ils sont tirés au sort parmi les électeurs inscrits",
+      "Ils sont désignés par le Premier ministre et le Gouvernement"
+    ],
+    "explanation": "Les 577 députés de l'Assemblée nationale sont élus au suffrage universel direct par les citoyens français lors des élections législatives.",
+    "group": "legislatives",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/democratie-et-droit-de-vote/democratie-et-droit-de-vote-les-conditions-pour-voter-en-france-2/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 506,
+    "theme": "Système institutionnel et politique",
+    "notion": "organisation-republique",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 57,
+    "question": "Quelles sont les durées du mandat du conseil municipal et du maire ?",
+    "answers": [
+      "6 ans, pour l'un comme pour l'autre"
+    ],
+    "distractors": [
+      "5 ans pour le conseil municipal et 6 ans pour le maire",
+      "6 ans pour le conseil municipal et 5 ans pour le maire",
+      "5 ans, pour l'un comme pour l'autre",
+      "4 ans, pour l'un comme pour l'autre",
+      "7 ans, pour l'un comme pour l'autre"
+    ],
+    "explanation": "Les élus municipaux (le maire et les conseillers municipaux) sont élus pour 6 ans lors des élections municipales.",
+    "group": "mandat-municipal",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/democratie-et-droit-de-vote/democratie-et-droit-de-vote-la-democratie-et-la-republique-2/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 507,
+    "theme": "Système institutionnel et politique",
+    "notion": "democratie-vote",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 59,
+    "question": "Quelle est la durée du mandat du Président de la République française ?",
+    "answers": [
+      "5 ans (quinquennat)"
+    ],
+    "distractors": [
+      "7 ans (septennat)",
+      "4 ans",
+      "6 ans",
+      "10 ans",
+      "3 ans"
+    ],
+    "explanation": "Le président de la République est élu pour 5 ans au suffrage universel direct : c'est le quinquennat.",
+    "group": "president",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/democratie-et-droit-de-vote/democratie-et-droit-de-vote-la-democratie-et-la-republique-2/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 508,
+    "theme": "Système institutionnel et politique",
+    "notion": "democratie-vote",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 60,
+    "question": "Quelle est la durée du mandat des députés ?",
+    "answers": [
+      "5 ans"
+    ],
+    "distractors": [
+      "4 ans",
+      "6 ans",
+      "7 ans",
+      "3 ans",
+      "10 ans"
+    ],
+    "explanation": "Les députés sont élus pour 5 ans, sauf si l'Assemblée nationale est dissoute avant la fin de leur mandat.",
+    "group": "mandat-deputes",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/democratie-et-droit-de-vote/democratie-et-droit-de-vote-les-conditions-pour-voter-en-france-2/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 509,
+    "theme": "Système institutionnel et politique",
+    "notion": "democratie-vote",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 61,
+    "question": "Quelle est la durée du mandat des sénateurs ?",
+    "answers": [
+      "6 ans"
+    ],
+    "distractors": [
+      "4 ans",
+      "5 ans",
+      "7 ans",
+      "8 ans",
+      "9 ans"
+    ],
+    "explanation": "Les sénateurs sont élus pour 6 ans par les grands électeurs, et le Sénat est renouvelé par moitié tous les 3 ans.",
+    "group": "senateurs",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/democratie-et-droit-de-vote/democratie-et-droit-de-vote-les-conditions-pour-voter-en-france-2/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 510,
+    "theme": "Système institutionnel et politique",
+    "notion": "democratie-vote",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 63,
+    "question": "En France, est-ce possible d'adhérer à un parti politique ?",
+    "answers": [
+      "Oui, chaque citoyen peut rejoindre le parti de son choix"
+    ],
+    "distractors": [
+      "Non, un seul parti politique est autorisé en France",
+      "Oui, mais seulement avec l'autorisation du préfet du département",
+      "Non, seuls les élus peuvent adhérer à un parti politique",
+      "Oui, mais seulement à un parti qui a des députés à l'Assemblée",
+      "Non, c'est réservé aux personnes nées en France"
+    ],
+    "explanation": "La pluralité des partis est un principe fondamental de la démocratie française. Chaque citoyen peut librement rejoindre un parti politique qui correspond à ses convictions : l'article 4 de la Constitution garantit ce droit.",
+    "group": "partis-politiques",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/democratie-et-droit-de-vote/democratie-et-droit-de-vote-le-principe-de-pluralite-des-partis/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 511,
+    "theme": "Système institutionnel et politique",
+    "notion": "organisation-republique",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 65,
+    "question": "Qui gère les collèges publics ?",
+    "answers": [
+      "Le département"
+    ],
+    "distractors": [
+      "La commune",
+      "La région",
+      "L'Union européenne",
+      "Le préfet"
+    ],
+    "explanation": "Le département gère les collèges publics. L'État, de son côté, définit les programmes scolaires et recrute les enseignants.",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/organisation-de-la-republique-fran%C3%A7aise/le-decoupage-administratif-de-la-france-3/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 512,
+    "theme": "Système institutionnel et politique",
+    "notion": "organisation-republique",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 66,
+    "question": "Qui gère les écoles primaires et maternelles publiques ?",
+    "answers": [
+      "La commune"
+    ],
+    "distractors": [
+      "Le département",
+      "La région",
+      "L'Union européenne",
+      "Le préfet"
+    ],
+    "explanation": "Les communes gèrent les écoles maternelles et primaires publiques : construction et entretien des bâtiments, équipements, matériel et cantine.",
+    "group": "ecoles-communes",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/organisation-de-la-republique-fran%C3%A7aise/le-decoupage-administratif-de-la-france-3/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 513,
+    "theme": "Système institutionnel et politique",
+    "notion": "organisation-republique",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 67,
+    "question": "Comment sont désignés les maires ?",
+    "answers": [
+      "Ils sont élus par le conseil municipal"
+    ],
+    "distractors": [
+      "Ils sont élus directement par tous les habitants de la commune",
+      "Ils sont nommés par le préfet",
+      "Ils sont nommés par le président de la République",
+      "Ils sont tirés au sort parmi les habitants",
+      "Ils sont élus par les conseillers départementaux"
+    ],
+    "explanation": "Les électeurs élisent les conseillers municipaux, puis le conseil municipal élit le maire parmi ses membres.",
+    "group": "maire",
+    "source": {
+      "url": "https://www.vie-publique.fr/fiches/19617-les-fonctions-les-pouvoirs-dun-maire",
+      "label": "vie-publique.fr"
+    }
+  },
+  {
+    "id": 514,
+    "theme": "Système institutionnel et politique",
+    "notion": "organisation-republique",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 68,
+    "question": "Quelle collectivité territoriale est responsable des transports régionaux ?",
+    "answers": [
+      "La région"
+    ],
+    "distractors": [
+      "La commune",
+      "Le département",
+      "Le préfet",
+      "L'Union européenne"
+    ],
+    "explanation": "La région est responsable des transports régionaux, notamment des trains régionaux (TER). Elle gère aussi les lycées et soutient le développement économique.",
+    "source": {
+      "url": "https://www.vie-publique.fr/fiches/19625-les-competences-des-regions",
+      "label": "vie-publique.fr"
+    }
+  },
+  {
+    "id": 515,
+    "theme": "Système institutionnel et politique",
+    "notion": "organisation-republique",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 69,
+    "question": "Quelle est l'une des voies possibles pour modifier la Constitution ?",
+    "answers": [
+      "Un référendum, après un vote identique des deux assemblées",
+      "Un vote du Parlement réuni en Congrès, à la majorité des 3/5"
+    ],
+    "distractors": [
+      "Un décret signé par le président de la République",
+      "Un vote de l'Assemblée nationale seule, à la majorité simple",
+      "Une décision du Conseil constitutionnel, seul compétent",
+      "Un arrêté signé par le Premier ministre et les ministres",
+      "Un vote du Sénat seul, à la majorité absolue"
+    ],
+    "explanation": "Une révision de la Constitution doit d'abord être votée en termes identiques par l'Assemblée nationale et le Sénat. Elle est ensuite approuvée par référendum, ou par le Parlement réuni en Congrès à la majorité des trois cinquièmes si le président de la République choisit cette voie (article 89).",
+    "source": {
+      "url": "https://www.conseil-constitutionnel.fr/le-bloc-de-constitutionnalite/texte-integral-de-la-constitution-du-4-octobre-1958-en-vigueur",
+      "label": "conseil-constitutionnel.fr"
+    }
+  },
+  {
+    "id": 516,
+    "theme": "Système institutionnel et politique",
+    "notion": "organisation-republique",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 70,
+    "question": "Qui assure l'intérim du président de la République en cas de décès ?",
+    "answers": [
+      "Le président du Sénat"
+    ],
+    "distractors": [
+      "Le Premier ministre",
+      "Le président de l'Assemblée nationale",
+      "Le président du Conseil constitutionnel",
+      "Le ministre des Armées",
+      "Le doyen d'âge des députés"
+    ],
+    "explanation": "Quand la présidence de la République est vacante, par exemple en cas de décès, ses fonctions sont provisoirement exercées par le président du Sénat (article 7 de la Constitution).",
+    "source": {
+      "url": "https://www.conseil-constitutionnel.fr/le-bloc-de-constitutionnalite/texte-integral-de-la-constitution-du-4-octobre-1958-en-vigueur",
+      "label": "conseil-constitutionnel.fr"
+    }
+  },
+  {
+    "id": 517,
+    "theme": "Système institutionnel et politique",
+    "notion": "organisation-republique",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 71,
+    "question": "Quel est le rôle du Conseil constitutionnel ?",
+    "answers": [
+      "Vérifier que les lois respectent la Constitution"
+    ],
+    "distractors": [
+      "Voter les lois à la place des députés et des sénateurs",
+      "Juger les crimes et les délits commis en France",
+      "Nommer le Premier ministre et les ministres",
+      "Diriger les préfets et l'administration de l'État",
+      "Contrôler le budget de toutes les communes"
+    ],
+    "explanation": "Le Conseil constitutionnel vérifie que les lois sont conformes à la Constitution. Il peut être saisi avant la promulgation d'une loi, par exemple par 60 députés ou 60 sénateurs.",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/democratie-et-droit-de-vote/comment-voter-une-loi-1/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 518,
+    "theme": "Système institutionnel et politique",
+    "notion": "democratie-vote",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 72,
+    "question": "Quelle condition est obligatoire pour se présenter à l'élection présidentielle ?",
+    "answers": [
+      "Obtenir le parrainage d'au moins 500 élus"
+    ],
+    "distractors": [
+      "Avoir déjà été ministre ou parlementaire",
+      "Être membre d'un parti politique",
+      "Être né en France",
+      "Avoir au moins 35 ans",
+      "Avoir plus de 10 000 adhérents"
+    ],
+    "explanation": "Un candidat doit réunir au moins 500 parrainages d'élus (maires, parlementaires, conseillers...), provenant d'au moins 30 départements ou collectivités d'outre-mer différents, avec au maximum 10 % par territoire.",
+    "group": "candidature-presidentielle",
+    "source": {
+      "url": "https://presidentielle2022.conseil-constitutionnel.fr/les-candidats/etre-candidat/etre-candidat-e-a-lelection-presidentielle.html",
+      "label": "conseil-constitutionnel.fr"
+    }
+  },
+  {
+    "id": 519,
+    "theme": "Système institutionnel et politique",
+    "notion": "organisation-republique",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 74,
+    "question": "Comment est organisé le découpage administratif de la France ?",
+    "answers": [
+      "En communes, en départements et en régions"
+    ],
+    "distractors": [
+      "En provinces et en comtés",
+      "En cantons et en États fédérés",
+      "En länder et en municipalités",
+      "En régions uniquement, sans communes ni départements"
+    ],
+    "explanation": "La France est organisée en collectivités territoriales : les communes, les départements et les régions, auxquelles s'ajoutent des collectivités à statut particulier et des collectivités d'outre-mer.",
+    "group": "decoupage-administratif",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/organisation-de-la-republique-fran%C3%A7aise/le-decoupage-administratif-de-la-france-1/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 520,
+    "theme": "Système institutionnel et politique",
+    "notion": "institutions-europeennes",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 79,
+    "question": "En quelle année la citoyenneté européenne a-t-elle été créée ?",
+    "answers": [
+      "1992"
+    ],
+    "distractors": [
+      "1951",
+      "1957",
+      "1973",
+      "2002",
+      "2007"
+    ],
+    "explanation": "La citoyenneté européenne a été créée par le traité de Maastricht, signé en 1992. Elle s'ajoute à la citoyenneté nationale sans la remplacer.",
+    "group": "traite-maastricht",
+    "source": {
+      "url": "https://www.vie-publique.fr/fiches/20320-qui-est-citoyen-europeen",
+      "label": "vie-publique.fr"
+    }
+  },
+  {
+    "id": 521,
+    "theme": "Système institutionnel et politique",
+    "notion": "institutions-europeennes",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 80,
+    "question": "Quel est le dernier État à avoir intégré l’Union Européenne en 2013 ?",
+    "answers": [
+      "La Croatie"
+    ],
+    "distractors": [
+      "La Bulgarie",
+      "La Roumanie",
+      "La Pologne",
+      "La Hongrie",
+      "La Serbie"
+    ],
+    "explanation": "La Croatie a rejoint l'Union européenne en 2013, après la Bulgarie et la Roumanie en 2007.",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/institutions-europeennes/les-etapes-cles-de-la-construction-europeenne/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 522,
+    "theme": "Système institutionnel et politique",
+    "notion": "institutions-europeennes",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 81,
+    "question": "Qui a composé l'hymne de l'Union européenne ?",
+    "answers": [
+      "Ludwig van Beethoven"
+    ],
+    "distractors": [
+      "Wolfgang Amadeus Mozart",
+      "Maurice Ravel",
+      "Antonio Vivaldi",
+      "Giuseppe Verdi",
+      "Claude Debussy"
+    ],
+    "explanation": "L'« Ode à la joie » est une mélodie du compositeur allemand Ludwig van Beethoven. Elle est devenue l'hymne du Conseil de l'Europe en 1972, puis un symbole de l'Union européenne en 1985.",
+    "group": "hymne-europeen",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/institutions-europeennes/les-symboles-europeens-1/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 523,
+    "theme": "Système institutionnel et politique",
+    "notion": "institutions-europeennes",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 82,
+    "question": "Quand est célébrée la journée de l'Europe ?",
+    "answers": [
+      "Le 9 mai"
+    ],
+    "distractors": [
+      "Le 1er mai",
+      "Le 14 juillet",
+      "Le 25 mars",
+      "Le 11 novembre",
+      "Le 1er janvier",
+      "Le 8 mai"
+    ],
+    "explanation": "La Journée de l'Europe est célébrée chaque année le 9 mai, en souvenir de la déclaration Schuman du 9 mai 1950, un texte fondateur de la construction européenne.",
+    "group": "ceca",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/institutions-europeennes/les-symboles-europeens-2/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 524,
+    "theme": "Système institutionnel et politique",
+    "notion": "institutions-europeennes",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 83,
+    "question": "Où est le siège de la Banque centrale européenne ?",
+    "answers": [
+      "À Francfort, en Allemagne"
+    ],
+    "distractors": [
+      "À Bruxelles, en Belgique",
+      "À Strasbourg, en France",
+      "À Luxembourg, au Luxembourg",
+      "À Paris, en France",
+      "À Rome, en Italie"
+    ],
+    "explanation": "La Banque centrale européenne a son siège à Francfort-sur-le-Main, en Allemagne. Elle a été créée en 1998, au moment de la création de l'euro comme monnaie unique.",
+    "source": {
+      "url": "https://www.ecb.europa.eu/ecb/orga/html/index.fr.html",
+      "label": "ecb.europa.eu"
+    }
+  },
+  {
+    "id": 525,
+    "theme": "Système institutionnel et politique",
+    "notion": "institutions-europeennes",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 85,
+    "question": "Qui siège au Parlement européen ?",
+    "answers": [
+      "Les députés européens"
+    ],
+    "distractors": [
+      "Les chefs d'État et de gouvernement des pays membres",
+      "Les commissaires européens",
+      "Les ministres des États membres",
+      "Les juges de la Cour de justice de l'Union européenne"
+    ],
+    "explanation": "Le Parlement européen réunit les députés européens (eurodéputés), répartis en groupes politiques. Il vote le budget et les lois avec le Conseil de l'Union européenne et contrôle la Commission européenne.",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/institutions-europeennes/le-fonctionnement-europeen-2/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 526,
+    "theme": "Système institutionnel et politique",
+    "notion": "institutions-europeennes",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 86,
+    "question": "Les citoyens de l’Union européenne peuvent-ils voter aux élections locales dans un autre État de l’Union ?",
+    "answers": [
+      "Oui, aux élections municipales de leur commune de résidence"
+    ],
+    "distractors": [
+      "Non, seuls les nationaux votent aux élections locales",
+      "Oui, mais seulement s'ils ont aussi la nationalité du pays de résidence",
+      "Oui, à toutes les élections locales, y compris départementales et régionales",
+      "Oui, mais seulement aux élections de leur pays d'origine"
+    ],
+    "explanation": "Un citoyen de l'Union européenne qui réside dans un autre État membre peut voter aux élections municipales de sa commune de résidence, à condition d'être inscrit sur la liste électorale. Il ne vote pas à toutes les élections : l'élection présidentielle et les élections législatives restent réservées aux citoyens français.",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/democratie-et-droit-de-vote/democratie-et-droit-de-vote-les-conditions-pour-voter-en-france-1/",
       "label": "formation-civique.interieur.gouv.fr"
     }
   }
