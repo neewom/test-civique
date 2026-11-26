@@ -8167,9 +8167,11 @@
     "theme": "Principes et valeurs de la République",
     "notion": "devise-symboles",
     "lists": [
-      "resident"
+      "resident",
+      "naturalisation"
     ],
     "crNumber": 14,
+    "natNumber": 11,
     "question": "Peut-on brûler publiquement un drapeau français ?",
     "answers": [
       "Non, c'est interdit par la loi"
@@ -8244,9 +8246,11 @@
     "theme": "Principes et valeurs de la République",
     "notion": "devise-symboles",
     "lists": [
-      "resident"
+      "resident",
+      "naturalisation"
     ],
     "crNumber": 17,
+    "natNumber": 18,
     "question": "Qu'est-ce que la liberté d'association ?",
     "answers": [
       "Le droit de créer une association ou d'y adhérer librement"
@@ -8294,9 +8298,11 @@
     "theme": "Principes et valeurs de la République",
     "notion": "devise-symboles",
     "lists": [
-      "resident"
+      "resident",
+      "naturalisation"
     ],
     "crNumber": 20,
+    "natNumber": 21,
     "question": "Sur quel document peut-on voir Marianne ?",
     "answers": [
       "Sur la carte d'identité"
@@ -8346,9 +8352,11 @@
     "theme": "Principes et valeurs de la République",
     "notion": "devise-symboles",
     "lists": [
-      "resident"
+      "resident",
+      "naturalisation"
     ],
     "crNumber": 22,
+    "natNumber": 22,
     "question": "Une des valeurs de la devise républicaine est l'égalité. Qu'est-ce que cela signifie ?",
     "answers": [
       "Tous les individus ont les mêmes droits et sont traités de la même façon devant la loi"
@@ -8398,9 +8406,11 @@
     "theme": "Principes et valeurs de la République",
     "notion": "laicite",
     "lists": [
-      "resident"
+      "resident",
+      "naturalisation"
     ],
     "crNumber": 32,
+    "natNumber": 24,
     "question": "Selon le principe de laïcité, que signifie la neutralité de l’État ?",
     "answers": [
       "L'État ne favorise ni ne défavorise aucune religion"
@@ -8424,9 +8434,11 @@
     "theme": "Principes et valeurs de la République",
     "notion": "laicite",
     "lists": [
-      "resident"
+      "resident",
+      "naturalisation"
     ],
     "crNumber": 33,
+    "natNumber": 25,
     "question": "Que peut faire un usager du service public dans une mairie ?",
     "answers": [
       "Porter un signe religieux, en respectant les règles du service"
@@ -8502,9 +8514,11 @@
     "theme": "Principes et valeurs de la République",
     "notion": "laicite",
     "lists": [
-      "resident"
+      "resident",
+      "naturalisation"
     ],
     "crNumber": 36,
+    "natNumber": 29,
     "question": "Que garantit le principe de laïcité ?",
     "answers": [
       "La liberté de croire ou de ne pas croire, et la neutralité de l'État envers les religions"
@@ -12283,6 +12297,656 @@
     "explanation": "Les enfants en situation de handicap ont le droit de vivre avec les autres enfants et comme eux. À l'école, ils peuvent bénéficier d'un emploi du temps aménagé.",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/parentalite/les-droits-de-l-enfant/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 468,
+    "theme": "Principes et valeurs de la République",
+    "notion": "devise-symboles",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 1,
+    "question": "Complétez les paroles de la Marseillaise \"Allons enfants de la patrie...\"",
+    "answers": [
+      "Le jour de gloire est arrivé"
+    ],
+    "distractors": [
+      "Le jour de la victoire est arrivé",
+      "L'heure de la liberté est arrivée",
+      "Le temps de la fête est venu",
+      "La gloire de la France est éternelle",
+      "Le jour de la paix est arrivé"
+    ],
+    "explanation": "La Marseillaise commence par : « Allons enfants de la Patrie, Le jour de gloire est arrivé ! ». Ce chant a été composé en avril 1792 sous le nom de « Chant de guerre pour l'armée du Rhin ». Il est déclaré chant national en 1795, puis devient l'hymne national en 1879.",
+    "group": "marseillaise",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/les-symboles-de-la-republique/hymne-francais/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 469,
+    "theme": "Principes et valeurs de la République",
+    "notion": "devise-symboles",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 2,
+    "question": "Dans le cadre d'un entretien d'embauche, que peut-on demander au candidat ?",
+    "answers": [
+      "Seulement des informations qui ont un lien direct avec le poste proposé"
+    ],
+    "distractors": [
+      "Sa religion, ses opinions politiques et ses convictions personnelles",
+      "Son origine, celle de ses parents et sa situation de famille",
+      "Sa situation de famille, ses projets d'enfants et sa vie de couple",
+      "Son orientation sexuelle, son apparence et son lieu de naissance"
+    ],
+    "explanation": "Les informations demandées à une personne qui cherche un travail doivent avoir un lien direct avec le travail proposé. Interroger un candidat sur sa religion, son origine, sa vie de famille ou son orientation sexuelle revient à utiliser des critères de discrimination interdits par la loi.",
+    "group": "discriminations",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/emploi/recrutement-2/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 470,
+    "theme": "Principes et valeurs de la République",
+    "notion": "devise-symboles",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 3,
+    "question": "Déclarer ses revenus aux services fiscaux est :",
+    "answers": [
+      "Obligatoire, même quand les revenus sont faibles ou nuls"
+    ],
+    "distractors": [
+      "Facultatif pour les personnes de nationalité étrangère",
+      "Réservé aux personnes qui travaillent en France",
+      "Facultatif quand on n'a reçu aucun revenu dans l'année",
+      "Obligatoire seulement pour les personnes qui paient des impôts"
+    ],
+    "explanation": "Toute personne de plus de 18 ans qui réside en France, de nationalité française ou non, doit déclarer ses revenus chaque année, entre avril et mai. Quand on n'a rien gagné, on indique « 0 euro ». Ne pas faire sa déclaration peut entraîner des pénalités financières et des difficultés pour obtenir certaines aides.",
+    "group": "obligations-residents",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/demarches-administratives/l-impot-en-france-et-la-declaration-de-revenus/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 471,
+    "theme": "Principes et valeurs de la République",
+    "notion": "devise-symboles",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 4,
+    "question": "En France, les impôts permettent de financer les dépenses publiques. Quelle proposition est correcte ?",
+    "answers": [
+      "Toute personne qui réside en France y participe selon ses revenus"
+    ],
+    "distractors": [
+      "Seules les personnes de nationalité française en paient",
+      "Chaque personne verse la même somme, quel que soit son revenu",
+      "Seules les entreprises sont tenues de payer des impôts",
+      "Le paiement est volontaire : chacun décide d'y participer ou non"
+    ],
+    "explanation": "L'impôt permet de faire fonctionner les services publics gratuits, de financer les aides sociales, l'entretien des routes… L'impôt sur le revenu dépend des revenus du foyer : plus ils sont élevés, plus la part prélevée est importante, ce qui permet de réduire l'écart de richesse.",
+    "group": "obligations-residents",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/demarches-administratives/l-impot-en-france-et-la-declaration-de-revenus/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 472,
+    "theme": "Principes et valeurs de la République",
+    "notion": "devise-symboles",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 5,
+    "question": "La liberté d'association est :",
+    "answers": [
+      "Un droit de s'engager librement dans une association, pour les personnes françaises comme étrangères"
+    ],
+    "distractors": [
+      "Un droit réservé aux personnes de nationalité française qui votent",
+      "Une obligation : chaque habitant doit adhérer à une association",
+      "Un droit soumis à l'accord du maire pour chaque association",
+      "Un droit réservé aux associations qui cherchent à gagner de l'argent"
+    ],
+    "explanation": "En France, chaque personne, française ou étrangère, peut s'engager librement dans une association. Cette liberté d'association est inscrite dans une loi de 1901. On peut y travailler, y être bénévole ou simplement y adhérer.",
+    "group": "liberte-association",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/devise-et-symboles-de-la-republique/fraternite-2/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 473,
+    "theme": "Principes et valeurs de la République",
+    "notion": "devise-symboles",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 6,
+    "question": "La liberté d'expression sur les réseaux sociaux en France est :",
+    "answers": [
+      "Garantie, mais limitée par la loi : les insultes et les appels à la haine sont punis"
+    ],
+    "distractors": [
+      "Totale : sur les réseaux sociaux, on peut tout dire sans risque de sanction",
+      "Interdite : il faut une autorisation de l'État pour publier un message",
+      "Réservée aux personnes qui ont un compte vérifié sur le réseau social",
+      "Garantie seulement pour les messages qui ne critiquent aucune religion"
+    ],
+    "explanation": "La liberté d'expression est un droit fondamental garanti par la Déclaration des droits de l'homme et du citoyen de 1789, y compris sur internet. Elle a des limites : les insultes ou propos haineux envers des personnes, l'incitation à la haine, à la violence ou à la discrimination sont punis par la loi.",
+    "group": "liberte-expression",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/laicite/le-blaspheme/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 474,
+    "theme": "Principes et valeurs de la République",
+    "notion": "devise-symboles",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 7,
+    "question": "Lequel de ces prénoms évoque un symbole de la République ?",
+    "answers": [
+      "Marianne"
+    ],
+    "distractors": [
+      "Marguerite",
+      "Marion",
+      "Mireille",
+      "Margaux",
+      "Marie-Louise"
+    ],
+    "explanation": "Marianne est un prénom féminin populaire. Ce prénom a été choisi pour représenter la République, qui est fondée sur la volonté du peuple. Marianne est un symbole officiel de la République.",
+    "group": "marianne",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/les-symboles-de-la-republique/marianne/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 475,
+    "theme": "Principes et valeurs de la République",
+    "notion": "devise-symboles",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 8,
+    "question": "Lequel de ces symboles représente la République française ?",
+    "answers": [
+      "Marianne"
+    ],
+    "distractors": [
+      "La fleur de lys",
+      "L'aigle impérial",
+      "La Croix de Lorraine",
+      "Le lion",
+      "Le drapeau blanc des rois"
+    ],
+    "explanation": "Marianne apparaît pendant la Révolution française pour représenter la République. De plus en plus utilisée au fil du temps, elle est devenue un symbole officiel de la République.",
+    "group": "marianne",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/les-symboles-de-la-republique/marianne/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 476,
+    "theme": "Principes et valeurs de la République",
+    "notion": "devise-symboles",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 10,
+    "question": "Lesquels sont des symboles officiels de la République française ?",
+    "answers": [
+      "Marianne, le drapeau tricolore, la Marseillaise et la devise de la République"
+    ],
+    "distractors": [
+      "Le coq, la Tour Eiffel, la baguette et le béret",
+      "La fleur de lys, l'aigle impérial, le coq et la couronne",
+      "La Tour Eiffel, le béret, la Marseillaise et la devise de la République",
+      "Marianne, le coq, la Croix de Lorraine et la fleur de lys"
+    ],
+    "explanation": "Les symboles officiels de la République française sont le drapeau tricolore, Marianne, la devise « Liberté, Égalité, Fraternité » et l'hymne national, La Marseillaise. D'autres emblèmes, comme le coq, sont très utilisés mais ne sont pas des symboles officiels.",
+    "group": "symboles-republique",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/les-symboles-de-la-republique/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 477,
+    "theme": "Principes et valeurs de la République",
+    "notion": "devise-symboles",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 12,
+    "question": "Quand la sécurité sociale a-t-elle été établie en France ?",
+    "answers": [
+      "Après la Seconde Guerre mondiale"
+    ],
+    "distractors": [
+      "Pendant la Révolution française",
+      "Sous le Second Empire",
+      "Pendant la Première Guerre mondiale",
+      "Sous la Restauration"
+    ],
+    "explanation": "La Sécurité sociale a été organisée par une ordonnance du 4 octobre 1945, à la Libération, puis étendue à toute la population et développée sous la IVe République. Elle est un exemple de solidarité collective, financée par des cotisations.",
+    "source": {
+      "url": "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000698857/",
+      "label": "legifrance.gouv.fr"
+    }
+  },
+  {
+    "id": 478,
+    "theme": "Principes et valeurs de la République",
+    "notion": "devise-symboles",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 13,
+    "question": "Que commémore la fête nationale ?",
+    "answers": [
+      "La prise de la Bastille en 1789 et la fête de la Fédération en 1790"
+    ],
+    "distractors": [
+      "La Libération de Paris en 1944 et la victoire de 1945",
+      "La proclamation de la Première République en 1792 et l'exécution du roi en 1793",
+      "La signature de l'armistice en 1918 et le traité de Versailles en 1919",
+      "La création du Code civil en 1804 et le sacre de l'empereur"
+    ],
+    "explanation": "Le 14 juillet devient le jour de la fête nationale en 1880. Ce jour commémore deux événements fondateurs de la République : la prise de la Bastille, qui marque le début de la Révolution française, et la première fête de la Fédération, un an plus tard.",
+    "group": "fete-nationale",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/les-symboles-de-la-republique/la-fete-nationale/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 479,
+    "theme": "Principes et valeurs de la République",
+    "notion": "devise-symboles",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 14,
+    "question": "Que porte Marianne sur la tête ?",
+    "answers": [
+      "Un bonnet phrygien"
+    ],
+    "distractors": [
+      "Un béret",
+      "Une couronne royale",
+      "Un chapeau haut-de-forme",
+      "Un foulard blanc",
+      "Une casquette"
+    ],
+    "explanation": "Marianne porte le bonnet phrygien, comme les esclaves de l'Antiquité qui avaient retrouvé leur liberté. Ce bonnet rappelle donc que la République est fondée sur la liberté.",
+    "group": "marianne",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/les-symboles-de-la-republique/marianne/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 480,
+    "theme": "Principes et valeurs de la République",
+    "notion": "devise-symboles",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 16,
+    "question": "Quel symbole de la République peut-on voir sur les maillots de l'équipe de France de football ?",
+    "answers": [
+      "Le coq"
+    ],
+    "distractors": [
+      "La Tour Eiffel",
+      "Le bonnet phrygien",
+      "La fleur de lys",
+      "Le lion",
+      "L'aigle impérial"
+    ],
+    "explanation": "Le coq est un symbole coutumier de la France : en latin, « gallus » signifie à la fois « coq » et « Gaulois ». Très utilisé, notamment sur les maillots des équipes nationales, il n'est pas reconnu officiellement comme symbole de la République.",
+    "group": "coq-gaulois",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/les-symboles-de-la-republique/le-coq/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 481,
+    "theme": "Principes et valeurs de la République",
+    "notion": "devise-symboles",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 19,
+    "question": "Qu'est-ce qu'une liberté ?",
+    "answers": [
+      "Le droit de faire tout ce qui ne nuit pas à autrui, dans les limites fixées par la loi"
+    ],
+    "distractors": [
+      "Le droit de faire tout ce que l'on veut, même si cela gêne les autres",
+      "Le droit de ne respecter que les lois que l'on juge utiles",
+      "Le droit réservé aux citoyens qui ont plus de 18 ans et qui votent",
+      "Le droit de décider seul de ce que les autres ont le droit de faire"
+    ],
+    "explanation": "En France, chaque personne peut penser, s'exprimer et vivre comme elle le souhaite. La seule limite est de ne pas empêcher une autre personne d'en faire autant. La loi fixe ces limites, pour que la liberté des uns n'empêche pas celle des autres.",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/devise-et-symboles-de-la-republique/la-liberte/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 482,
+    "theme": "Principes et valeurs de la République",
+    "notion": "laicite",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 20,
+    "question": "Selon la Constitution, la France est une République…",
+    "answers": [
+      "indivisible, laïque, démocratique et sociale"
+    ],
+    "distractors": [
+      "divisible, laïque, démocratique et sociale",
+      "indivisible, religieuse, démocratique et sociale",
+      "indivisible, laïque, monarchique et sociale",
+      "fédérale, laïque, démocratique et libérale"
+    ],
+    "explanation": "L'article 1er de la Constitution de 1958 précise que « la France est une République indivisible, laïque, démocratique et sociale ». La laïcité n'est pas une opinion : c'est un principe constitutionnel.",
+    "group": "article-1-constitution",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/laicite/la-definition-de-la-laicite-1/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 483,
+    "theme": "Principes et valeurs de la République",
+    "notion": "laicite",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 23,
+    "question": "Une personne peut-elle changer librement de religion en France ?",
+    "answers": [
+      "Oui, la liberté de conscience permet d'en changer"
+    ],
+    "distractors": [
+      "Non, on garde toute sa vie la religion de sa naissance",
+      "Oui, mais une seule fois dans sa vie",
+      "Non, sauf avec l'autorisation de la préfecture",
+      "Oui, mais seulement pour une religion reconnue par l'État"
+    ],
+    "explanation": "La laïcité garantit la liberté de conscience : chaque personne est libre d'avoir ou de ne pas avoir de religion, d'en changer ou de ne plus en avoir. Aucune autorisation n'est nécessaire.",
+    "group": "liberte-conscience",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/laicite/la-definition-de-la-laicite-1/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 484,
+    "theme": "Principes et valeurs de la République",
+    "notion": "laicite",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 26,
+    "question": "En France, il est possible pour l'État de financer :",
+    "answers": [
+      "Aucun culte"
+    ],
+    "distractors": [
+      "Tous les cultes, à égalité",
+      "Seulement la religion la plus pratiquée",
+      "Les religions reconnues par le gouvernement",
+      "Les lieux de culte, un par commune"
+    ],
+    "explanation": "En France, l'État ne reconnaît aucune religion, ne salarie ni ne subventionne aucun culte : c'est la conséquence de la séparation entre l'État et les organisations religieuses, établie en 1905. L'État reste neutre vis-à-vis de toutes les religions.",
+    "group": "separation-1905",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/laicite/la-definition-de-la-laicite-1/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 485,
+    "theme": "Principes et valeurs de la République",
+    "notion": "laicite",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 28,
+    "question": "Que dit la loi de 1905 ?",
+    "answers": [
+      "Elle sépare les Églises et l'État"
+    ],
+    "distractors": [
+      "Elle impose une religion officielle dans les écoles publiques",
+      "Elle interdit toute pratique religieuse en France",
+      "Elle donne à l'Église catholique la direction de l'état civil",
+      "Elle oblige l'État à salarier les ministres des cultes"
+    ],
+    "explanation": "En 1905, une loi sépare l'Église et l'État : l'État est indépendant des religions, ne finance aucune religion, et les religions s'organisent de manière indépendante en respectant les règles fixées par l'État.",
+    "group": "separation-1905",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/laicite/histoire-de-la-laicite/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 486,
+    "theme": "Principes et valeurs de la République",
+    "notion": "laicite",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 30,
+    "question": "Quel jour célèbre-t-on officiellement la laïcité en France ?",
+    "answers": [
+      "Le 9 décembre"
+    ],
+    "distractors": [
+      "Le 14 juillet",
+      "Le 11 novembre",
+      "Le 1er mai",
+      "Le 8 mai"
+    ],
+    "explanation": "La Journée nationale de la laïcité a lieu le 9 décembre, jour anniversaire de la loi de 1905 qui a séparé les Églises et l'État.",
+    "source": {
+      "url": "https://www.info.gouv.fr/actualite/une-journee-nationale-pour-faire-vivre-la-laicite",
+      "label": "info.gouv.fr"
+    }
+  },
+  {
+    "id": 487,
+    "theme": "Principes et valeurs de la République",
+    "notion": "laicite",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 31,
+    "question": "Quel symbole religieux peut être porté dans une école publique dans le respect de la laïcité ?",
+    "answers": [
+      "Un signe discret, qui ne se voit pas de manière ostensible"
+    ],
+    "distractors": [
+      "Une grande croix portée de façon bien visible",
+      "Un vêtement religieux couvrant la tête, porté pour être vu",
+      "Tout signe religieux, à condition d'avoir l'accord des parents",
+      "Un signe religieux visible, seulement pendant la récréation"
+    ],
+    "explanation": "Dans les écoles, collèges et lycées publics, une loi de 2004 interdit de porter un signe ou un vêtement qui montre de manière ostensible, c'est-à-dire pour être vu, une appartenance religieuse. Un signe discret n'est pas concerné.",
+    "group": "laicite-ecole",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/laicite/la-laicite-a-ecole-1/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 488,
+    "theme": "Principes et valeurs de la République",
+    "notion": "laicite",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 32,
+    "question": "Quel terme désigne précisément la haine ou les préjugés contre les Juifs ?",
+    "answers": [
+      "L'antisémitisme"
+    ],
+    "distractors": [
+      "La xénophobie",
+      "L'islamophobie",
+      "Le sexisme",
+      "L'homophobie"
+    ],
+    "explanation": "L'antisémitisme est la haine ou les préjugés envers les Juifs, qui peuvent se traduire par des insultes ou des refus d'embauche. L'État lutte activement contre cette forme de discrimination.",
+    "group": "discriminations",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/devise-et-symboles-de-la-republique/egalite-3/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 489,
+    "theme": "Principes et valeurs de la République",
+    "notion": "laicite",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 33,
+    "question": "Quel texte est considéré comme le texte fondateur de la laïcité ?",
+    "answers": [
+      "La loi de 1905 de séparation des Églises et de l'État",
+      "La Déclaration des droits de l'homme et du citoyen de 1789"
+    ],
+    "distractors": [
+      "Le Concordat de 1801",
+      "Le Code civil de 1804",
+      "La Charte de l'environnement de 2004",
+      "Le traité de Rome de 1957"
+    ],
+    "explanation": "La Déclaration des droits de l'homme et du citoyen de 1789 crée le principe de la liberté de conscience et de religion, fondement de la laïcité. La loi de 1905 sépare ensuite l'Église et l'État. Ces deux textes sont présentés comme fondateurs de la laïcité.",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/laicite/histoire-de-la-laicite/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 490,
+    "theme": "Principes et valeurs de la République",
+    "notion": "laicite",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 34,
+    "question": "Quelle institution française doit rester neutre en matière de religion ?",
+    "answers": [
+      "L'État"
+    ],
+    "distractors": [
+      "Les organisations religieuses",
+      "Les familles",
+      "Les lieux de culte",
+      "Les personnes qui pratiquent une religion"
+    ],
+    "explanation": "Le principe de laïcité implique la séparation entre l'État et les organisations religieuses. L'État, les collectivités territoriales et les services publics sont neutres vis-à-vis des religions.",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/laicite/la-definition-de-la-laicite-1/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 491,
+    "theme": "Principes et valeurs de la République",
+    "notion": "laicite",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 36,
+    "question": "À l'école, la charte de la laïcité permet de :",
+    "answers": [
+      "Garantir à tous les élèves la liberté de croire ou de ne pas croire"
+    ],
+    "distractors": [
+      "Imposer une religion commune à tous les élèves",
+      "Interdire aux élèves de parler de religion entre eux",
+      "Dispenser un élève d'un cours qui heurte sa religion",
+      "Obliger les élèves à renoncer à toutes leurs convictions"
+    ],
+    "explanation": "La charte de la laïcité à l'école rappelle les règles d'application de la laïcité dans les écoles. Elle garantit la liberté de conscience et protège les élèves de tout prosélytisme et de toute pression qui les empêcherait de faire leurs propres choix.",
+    "group": "laicite-ecole",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/laicite/la-laicite-a-ecole-2/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 492,
+    "theme": "Principes et valeurs de la République",
+    "notion": "laicite",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 37,
+    "question": "Qui doit respecter et veiller à la neutralité religieuse dans les services publics ?",
+    "answers": [
+      "Les personnes qui travaillent dans les services publics"
+    ],
+    "distractors": [
+      "Seulement les usagers",
+      "Seulement les responsables religieux",
+      "Tous les habitants de la commune",
+      "Les entreprises privées de la ville"
+    ],
+    "explanation": "Les personnes qui travaillent dans les services publics ne peuvent pas exprimer ou montrer leurs convictions religieuses, politiques ou philosophiques. Cela permet de traiter tous les usagers de manière équitable. Cette neutralité ne s'impose pas aux usagers.",
+    "group": "neutralite-agents-publics",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/laicite/la-laicite-dans-les-services-publics/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 493,
+    "theme": "Principes et valeurs de la République",
+    "notion": "laicite",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 38,
+    "question": "Une personne déclare ne croire en aucun dieu. On peut dire :",
+    "answers": [
+      "Qu'elle est athée"
+    ],
+    "distractors": [
+      "Qu'elle est monothéiste",
+      "Qu'elle est polythéiste",
+      "Qu'elle est pratiquante",
+      "Qu'elle est prosélyte"
+    ],
+    "explanation": "Ne pas avoir de religion, ou choisir de ne plus en avoir, est un droit en France. Une personne qui ne croit en aucun dieu est dite athée.",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/laicite/definition-laicite-2/",
       "label": "formation-civique.interieur.gouv.fr"
     }
   }

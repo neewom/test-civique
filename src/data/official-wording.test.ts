@@ -150,6 +150,15 @@ const LIST_EXCEPTIONS: Record<string, Map<number, { reason: string; expected: st
   ]),
   NAT: new Map([
     [
+      22,
+      {
+        // Officiel : « … est l'Égalité. … » (majuscule de la liste NAT) ; notre question 312
+        // garde le libellé de la liste CR, verrouillé par le contrôle CR.
+        reason: 'casse de la liste NAT',
+        expected: "Une des valeurs de la devise républicaine est l'égalité. Qu'est-ce que cela signifie ?",
+      },
+    ],
+    [
       137,
       {
         // Officiel : « Pourquoi l’année 1958 est importante pour la France ? », même
