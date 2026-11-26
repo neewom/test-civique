@@ -5,6 +5,7 @@ import Examen from '@/pages/Examen'
 import ExamenDetail from '@/pages/ExamenDetail'
 import ExamenBlanc from '@/pages/ExamenBlanc'
 import Regles from '@/pages/Regles'
+import FicheTitre from '@/pages/FicheTitre'
 import TitreVise from '@/pages/TitreVise'
 import MentionsLegales from '@/pages/MentionsLegales'
 import { PageShell } from '@/components/PageShell'
@@ -27,6 +28,7 @@ export default function App() {
                 <Route path="/revision" element={<Revision />} />
                 <Route path="/regles" element={<Regles />} />
                 <Route path="/titre" element={<TitreVise />} />
+                <Route path="/titres/:slug" element={<FicheTitre />} />
                 <Route path="/mentions-legales" element={<MentionsLegales />} />
                 <Route path="*" element={<Navigate to="/" replace />} />
               </Routes>

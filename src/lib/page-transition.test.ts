@@ -92,3 +92,12 @@ describe('shouldAnimateNavigation', () => {
     expect(shouldAnimateNavigation('/', '/revision', 'PUSH')).toBe(true)
   })
 })
+
+describe('pages des fiches des titres', () => {
+  it('une fiche est une page annexe, de profondeur 2', () => {
+    expect(pageDepth('/titres/carte-de-resident')).toBe(2)
+    expect(pageDepth('/titres/naturalisation')).toBe(2)
+    expect(transitionDirection('/titre', '/titres/carte-de-resident', 'PUSH')).toBe('forward')
+    expect(transitionDirection('/titres/carte-de-resident', '/', 'PUSH')).toBe('back')
+  })
+})
