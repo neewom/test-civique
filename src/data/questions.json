@@ -10383,9 +10383,11 @@
     "theme": "Histoire, géographie et culture",
     "notion": "periodes-personnages",
     "lists": [
-      "resident"
+      "resident",
+      "naturalisation"
     ],
     "crNumber": 131,
+    "natNumber": 144,
     "question": "En quelle année Napoléon Ier est-il devenu empereur ?",
     "answers": [
       "En 1804"
@@ -10407,9 +10409,11 @@
     "theme": "Histoire, géographie et culture",
     "notion": "periodes-personnages",
     "lists": [
-      "resident"
+      "resident",
+      "naturalisation"
     ],
     "crNumber": 132,
+    "natNumber": 145,
     "question": "Lequel de ces personnages a un lien avec la République française ?",
     "answers": [
       "Marianne"
@@ -10432,9 +10436,11 @@
     "theme": "Histoire, géographie et culture",
     "notion": "periodes-personnages",
     "lists": [
-      "resident"
+      "resident",
+      "naturalisation"
     ],
     "crNumber": 133,
+    "natNumber": 146,
     "question": "De quand date l'appel à la résistance du général de Gaulle ?",
     "answers": [
       "Le 18 juin 1940"
@@ -10511,9 +10517,11 @@
     "theme": "Histoire, géographie et culture",
     "notion": "periodes-personnages",
     "lists": [
-      "resident"
+      "resident",
+      "naturalisation"
     ],
     "crNumber": 136,
+    "natNumber": 150,
     "question": "Depuis quand les Français élisent-ils le président de la République au suffrage universel direct ?",
     "answers": [
       "Depuis 1962"
@@ -10536,9 +10544,11 @@
     "theme": "Histoire, géographie et culture",
     "notion": "periodes-personnages",
     "lists": [
-      "resident"
+      "resident",
+      "naturalisation"
     ],
     "crNumber": 137,
+    "natNumber": 156,
     "question": "Quelle est la première étape de la construction européenne en 1951 ?",
     "answers": [
       "La création de la CECA (charbon et acier)"
@@ -10610,9 +10620,11 @@
     "theme": "Histoire, géographie et culture",
     "notion": "periodes-personnages",
     "lists": [
-      "resident"
+      "resident",
+      "naturalisation"
     ],
     "crNumber": 140,
+    "natNumber": 157,
     "question": "Qui était une figure de la Résistance française pendant la Seconde Guerre mondiale ?",
     "answers": [
       "Jean Moulin"
@@ -10634,9 +10646,11 @@
     "theme": "Histoire, géographie et culture",
     "notion": "periodes-personnages",
     "lists": [
-      "resident"
+      "resident",
+      "naturalisation"
     ],
     "crNumber": 141,
+    "natNumber": 162,
     "question": "En 1944, qu'est-ce qui a changé pour les femmes ?",
     "answers": [
       "Elles ont obtenu le droit de vote"
@@ -10830,9 +10844,11 @@
     "theme": "Histoire, géographie et culture",
     "notion": "territoires-geographie",
     "lists": [
-      "resident"
+      "resident",
+      "naturalisation"
     ],
     "crNumber": 149,
+    "natNumber": 201,
     "question": "Quelle mer ou océan borde la France métropolitaine ?",
     "answers": [
       "L'océan Atlantique",
@@ -10920,9 +10936,11 @@
     "theme": "Histoire, géographie et culture",
     "notion": "territoires-geographie",
     "lists": [
-      "resident"
+      "resident",
+      "naturalisation"
     ],
     "crNumber": 152,
+    "natNumber": 202,
     "question": "Quelle mer se situe entre la France et l'Angleterre ?",
     "answers": [
       "La Manche"
@@ -10945,9 +10963,11 @@
     "theme": "Histoire, géographie et culture",
     "notion": "territoires-geographie",
     "lists": [
-      "resident"
+      "resident",
+      "naturalisation"
     ],
     "crNumber": 153,
+    "natNumber": 204,
     "question": "Qu'est-ce que la France d'outre-mer ?",
     "answers": [
       "Les territoires français situés hors d'Europe"
@@ -10969,9 +10989,11 @@
     "theme": "Histoire, géographie et culture",
     "notion": "territoires-geographie",
     "lists": [
-      "resident"
+      "resident",
+      "naturalisation"
     ],
     "crNumber": 154,
+    "natNumber": 208,
     "question": "Quelle chaîne de montagnes est située entre la France et l’Espagne ?",
     "answers": [
       "Les Pyrénées"
@@ -11019,9 +11041,11 @@
     "theme": "Histoire, géographie et culture",
     "notion": "territoires-geographie",
     "lists": [
-      "resident"
+      "resident",
+      "naturalisation"
     ],
     "crNumber": 156,
+    "natNumber": 205,
     "question": "Quelle est la population approximative de la France en 2025 ?",
     "answers": [
       "Environ 68,6 millions d'habitants"
@@ -11043,9 +11067,11 @@
     "theme": "Histoire, géographie et culture",
     "notion": "territoires-geographie",
     "lists": [
-      "resident"
+      "resident",
+      "naturalisation"
     ],
     "crNumber": 157,
+    "natNumber": 215,
     "question": "Quel fleuve traverse Paris ?",
     "answers": [
       "La Seine"
@@ -11223,9 +11249,11 @@
     "theme": "Histoire, géographie et culture",
     "notion": "territoires-geographie",
     "lists": [
-      "resident"
+      "resident",
+      "naturalisation"
     ],
     "crNumber": 164,
+    "natNumber": 194,
     "question": "Quelle ville française fait partie des 10 plus grandes métropoles du pays ?",
     "answers": [
       "Nantes",
@@ -11328,9 +11356,11 @@
     "theme": "Histoire, géographie et culture",
     "notion": "patrimoine",
     "lists": [
-      "resident"
+      "resident",
+      "naturalisation"
     ],
     "crNumber": 168,
+    "natNumber": 187,
     "question": "Qui était Marguerite Yourcenar ?",
     "answers": [
       "Une écrivaine, première femme élue à l'Académie française"
@@ -11352,9 +11382,11 @@
     "theme": "Histoire, géographie et culture",
     "notion": "patrimoine",
     "lists": [
-      "resident"
+      "resident",
+      "naturalisation"
     ],
     "crNumber": 169,
+    "natNumber": 169,
     "question": "Quel peintre est français ?",
     "answers": [
       "Claude Monet",
@@ -11381,9 +11413,11 @@
     "theme": "Histoire, géographie et culture",
     "notion": "patrimoine",
     "lists": [
-      "resident"
+      "resident",
+      "naturalisation"
     ],
     "crNumber": 170,
+    "natNumber": 192,
     "question": "Quel musée est situé à Paris ?",
     "answers": [
       "Le musée Rodin"
@@ -11406,9 +11440,11 @@
     "theme": "Histoire, géographie et culture",
     "notion": "patrimoine",
     "lists": [
-      "resident"
+      "resident",
+      "naturalisation"
     ],
     "crNumber": 171,
+    "natNumber": 189,
     "question": "Qui était Auguste Rodin ?",
     "answers": [
       "Un sculpteur français"
@@ -11527,9 +11563,11 @@
     "theme": "Histoire, géographie et culture",
     "notion": "patrimoine",
     "lists": [
-      "resident"
+      "resident",
+      "naturalisation"
     ],
     "crNumber": 176,
+    "natNumber": 191,
     "question": "Qui était Auguste Renoir ?",
     "answers": [
       "Un peintre impressionniste français"
@@ -14561,6 +14599,1194 @@
     "group": "droits-civiques",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/democratie-et-droit-de-vote/democratie-et-droit-de-vote-les-conditions-pour-voter-en-france-1/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 557,
+    "theme": "Histoire, géographie et culture",
+    "notion": "periodes-personnages",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 133,
+    "question": "Parmi ces textes, lequel a été adopté sous Napoléon Ier ?",
+    "answers": [
+      "Le Code civil"
+    ],
+    "distractors": [
+      "La Déclaration des droits de l'homme et du citoyen",
+      "La loi de séparation des Églises et de l'État",
+      "La Constitution de la Ve République",
+      "Les lois scolaires de Jules Ferry",
+      "La Convention européenne des droits de l'homme"
+    ],
+    "explanation": "Le Code civil est adopté sous le 1er Empire de Napoléon Ier. Il fixe des règles communes à tous, notamment sur la famille, la propriété et les contrats, et garantit encore aujourd'hui l'égalité devant la loi.",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-regimes-politiques-depuis-1789/le-1er-empire-1804-1815/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 558,
+    "theme": "Histoire, géographie et culture",
+    "notion": "periodes-personnages",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 134,
+    "question": "Qui a été président de la Ve République ?",
+    "answers": [
+      "Charles de Gaulle",
+      "Georges Pompidou",
+      "Valéry Giscard d'Estaing",
+      "François Mitterrand",
+      "Jacques Chirac",
+      "Nicolas Sarkozy",
+      "François Hollande",
+      "Emmanuel Macron"
+    ],
+    "distractors": [
+      "Napoléon III",
+      "Adolphe Thiers",
+      "Patrice de Mac Mahon",
+      "Philippe Pétain",
+      "Georges Clemenceau"
+    ],
+    "explanation": "Depuis la fondation de la Ve République, huit personnes ont été présidents de la République : Charles de Gaulle, Georges Pompidou, Valéry Giscard d'Estaing, François Mitterrand, Jacques Chirac, Nicolas Sarkozy, François Hollande et Emmanuel Macron.",
+    "group": "ve-republique",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/la-cinquieme-republique/les-presidents-de-la-cinquieme-republique/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 559,
+    "theme": "Histoire, géographie et culture",
+    "notion": "periodes-personnages",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 135,
+    "question": "Quel est l’objectif des lois scolaires de la IIIe République ?",
+    "answers": [
+      "Rendre l'école gratuite, laïque et obligatoire"
+    ],
+    "distractors": [
+      "Réserver l'école aux enfants des familles nobles",
+      "Confier l'enseignement uniquement à l'Église",
+      "Faire payer l'école à tous les élèves",
+      "Supprimer l'école pour les filles",
+      "Rendre l'enseignement facultatif pour tous"
+    ],
+    "explanation": "Les lois de Jules Ferry généralisent l'école publique gratuite en 1881, puis l'école laïque et obligatoire en 1882. Elles comptent parmi les grandes réalisations de la IIIe République.",
+    "group": "ecole-jules-ferry",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-regimes-politiques-depuis-1789/la-troisieme-republique-1870-1940/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 560,
+    "theme": "Histoire, géographie et culture",
+    "notion": "periodes-personnages",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 136,
+    "question": "Que signifie la date du 14 juillet pour les Français ?",
+    "answers": [
+      "La fête nationale de la République française"
+    ],
+    "distractors": [
+      "Le couronnement de Napoléon Ier comme empereur",
+      "La signature du traité de Rome en 1957",
+      "Le début de la Première Guerre mondiale",
+      "Le premier jour de la nouvelle année",
+      "La fin de la guerre d'Algérie en 1962"
+    ],
+    "explanation": "Le 14 juillet est la fête nationale française, qui célèbre la République. On assiste ce jour-là à des feux d'artifice, à des bals populaires et au défilé militaire.",
+    "group": "fete-nationale",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/zoom-sur/patrimoine-francais-les-jours-feries/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 561,
+    "theme": "Histoire, géographie et culture",
+    "notion": "periodes-personnages",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 138,
+    "question": "Lequel de ces pays est un pays fondateur de l'Union Européenne ?",
+    "answers": [
+      "La France",
+      "L'Allemagne",
+      "L'Italie",
+      "La Belgique",
+      "Les Pays-Bas",
+      "Le Luxembourg"
+    ],
+    "distractors": [
+      "L'Espagne",
+      "Le Royaume-Uni",
+      "La Pologne",
+      "Le Portugal",
+      "La Suède",
+      "La Grèce",
+      "L'Autriche",
+      "La Finlande"
+    ],
+    "explanation": "Les 6 pays fondateurs sont la France, l'Allemagne, l'Italie, la Belgique, les Pays-Bas et le Luxembourg : ils créent la CECA en 1951, puis la Communauté économique européenne (CEE) en 1957. Les autres pays ont rejoint l'Union plus tard.",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-conflits-mondiaux-et-le-nouvel-ordre-mondial/la-construction-europeenne/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 562,
+    "theme": "Histoire, géographie et culture",
+    "notion": "periodes-personnages",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 139,
+    "question": "Simone Veil est une figure importante de l’histoire française. Elle a notamment :",
+    "answers": [
+      "présenté la loi qui dépénalise l'avortement"
+    ],
+    "distractors": [
+      "aboli la peine de mort en France",
+      "obtenu le droit de vote des femmes",
+      "rendu l'école gratuite et obligatoire",
+      "fondé la Ve République",
+      "signé le traité de Rome"
+    ],
+    "explanation": "Simone Veil, alors ministre de la Santé, présente et soutient la loi du 17 janvier 1975 : l'avortement (IVG) n'est plus condamnable par la loi. Cette loi est une grande avancée pour les droits des femmes.",
+    "group": "ivg",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/la-cinquieme-republique/focus-sur-la-cinquieme-republique-le-droit-a-l-avortement/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 563,
+    "theme": "Histoire, géographie et culture",
+    "notion": "periodes-personnages",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 140,
+    "question": "Dans quelle région est située une partie des plages du débarquement ayant permis d'engager la libération de la France ?",
+    "answers": [
+      "La Normandie"
+    ],
+    "distractors": [
+      "La Bretagne",
+      "Les Hauts-de-France",
+      "La Nouvelle-Aquitaine",
+      "Les Pays de la Loire",
+      "Le Grand Est"
+    ],
+    "explanation": "La libération de la France s'accélère en 1944 avec le débarquement allié en juin, auquel participent aussi les résistants. La Normandie, bordée par la Manche, est aujourd'hui un lieu de tourisme de mémoire de la Seconde Guerre mondiale.",
+    "group": "normandie",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/zoom-sur/focus-sur-la-seconde-guerre-mondiale-la-resistance-et-la-lib%C3%A9ration/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 564,
+    "theme": "Histoire, géographie et culture",
+    "notion": "periodes-personnages",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 141,
+    "question": "Dans quelle ville les rois de France étaient-ils couronnés ?",
+    "answers": [
+      "Reims"
+    ],
+    "distractors": [
+      "Paris",
+      "Versailles",
+      "Lyon",
+      "Tours",
+      "Rouen"
+    ],
+    "explanation": "La tradition remonte au IXe siècle : 32 rois de France ont été couronnés à Reims, dont 25 dans la cathédrale actuelle. Louis VI (à Orléans) et Henri IV (à Chartres) font exception."
+  },
+  {
+    "id": 565,
+    "theme": "Histoire, géographie et culture",
+    "notion": "periodes-personnages",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 142,
+    "question": "Quel roi de France a été guillotiné pendant la Révolution française ?",
+    "answers": [
+      "Louis XVI"
+    ],
+    "distractors": [
+      "Louis XIV",
+      "Louis XV",
+      "Louis XVIII",
+      "Charles X",
+      "Louis-Philippe Ier"
+    ],
+    "explanation": "Le roi Louis XVI est exécuté en 1793, sous la Ière République. Pendant la Révolution, le gouvernement utilise la guillotine contre ceux qu'il considère comme des traîtres.",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-regimes-politiques-depuis-1789/la-premiere-republique-1792-1804/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 566,
+    "theme": "Histoire, géographie et culture",
+    "notion": "periodes-personnages",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 148,
+    "question": "Quel pays a été une colonie française ?",
+    "answers": [
+      "Madagascar",
+      "Le Vietnam"
+    ],
+    "distractors": [
+      "L'Australie",
+      "Le Japon",
+      "L'Argentine",
+      "La Russie",
+      "La Corée"
+    ],
+    "explanation": "La France a possédé un vaste empire colonial. Madagascar, indépendant en 1960, et le Vietnam, qui faisait partie de l'Indochine française jusqu'en 1954, en ont fait partie. Les autres pays proposés n'ont jamais été des colonies françaises.",
+    "group": "colonisation-decolonisation",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-conflits-mondiaux-et-le-nouvel-ordre-mondial/la-decolonisation/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 567,
+    "theme": "Histoire, géographie et culture",
+    "notion": "periodes-personnages",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 151,
+    "question": "En quelle année l'Union européenne a-t-elle été fondée ?",
+    "answers": [
+      "En 1992"
+    ],
+    "distractors": [
+      "En 1951",
+      "En 1957",
+      "En 1945",
+      "En 2002",
+      "En 1985"
+    ],
+    "explanation": "Le traité de Maastricht, en 1992, transforme la Communauté économique européenne (CEE) en Union européenne (UE) : la citoyenneté européenne est créée et une monnaie unique est prévue.",
+    "group": "traite-maastricht",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-conflits-mondiaux-et-le-nouvel-ordre-mondial/la-construction-europeenne/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 568,
+    "theme": "Histoire, géographie et culture",
+    "notion": "periodes-personnages",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 154,
+    "question": "Sous quel président a été abolie la peine de mort en France ?",
+    "answers": [
+      "François Mitterrand"
+    ],
+    "distractors": [
+      "Charles de Gaulle",
+      "Georges Pompidou",
+      "Valéry Giscard d'Estaing",
+      "Jacques Chirac",
+      "Nicolas Sarkozy"
+    ],
+    "explanation": "La peine de mort est définitivement abolie par la loi du 9 octobre 1981, sous la présidence de François Mitterrand, avec le soutien de son ministre de la Justice, Robert Badinter.",
+    "group": "ve-republique",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/la-cinquieme-republique/focus-sur-la-cinquieme-republique-5/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 569,
+    "theme": "Histoire, géographie et culture",
+    "notion": "periodes-personnages",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 155,
+    "question": "Que célèbre-t-on le 8 mai ?",
+    "answers": [
+      "La fin de la Seconde Guerre mondiale en Europe"
+    ],
+    "distractors": [
+      "L'armistice de la Première Guerre mondiale",
+      "Le début de la Seconde Guerre mondiale",
+      "La prise de la Bastille en 1789",
+      "La fin de la guerre d'Algérie",
+      "La signature du traité de Rome"
+    ],
+    "explanation": "Le 8 mai est un jour férié qui commémore la victoire de 1945, c'est-à-dire la fin de la Seconde Guerre mondiale en Europe. Des cérémonies ont lieu partout en France.",
+    "group": "8-mai",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/zoom-sur/patrimoine-francais-les-jours-feries/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 570,
+    "theme": "Histoire, géographie et culture",
+    "notion": "periodes-personnages",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 159,
+    "question": "Depuis quand l'esclavage a-t-il été aboli en France ?",
+    "answers": [
+      "Depuis 1848"
+    ],
+    "distractors": [
+      "Depuis 1789",
+      "Depuis 1802",
+      "Depuis 1881",
+      "Depuis 1905",
+      "Depuis 1946"
+    ],
+    "explanation": "L'esclavage est aboli une première fois en 1794, rétabli par Napoléon en 1802, puis définitivement aboli en 1848, sous la IIe République, par le décret du 27 avril 1848.",
+    "group": "esclavage",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/zoom-sur/le-territoire-francais-dans-le-temps-2/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 571,
+    "theme": "Histoire, géographie et culture",
+    "notion": "periodes-personnages",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 160,
+    "question": "Qui a aboli l'esclavage en France ?",
+    "answers": [
+      "Victor Schœlcher"
+    ],
+    "distractors": [
+      "Jules Ferry",
+      "Napoléon Bonaparte",
+      "Louis XIV",
+      "Charles de Gaulle",
+      "Léon Gambetta"
+    ],
+    "explanation": "Le décret du 27 avril 1848, qui abolit définitivement l'esclavage dans les colonies françaises, est rédigé par Victor Schœlcher, sous-secrétaire d'État chargé des colonies sous la IIe République.",
+    "group": "esclavage",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-regimes-politiques-depuis-1789/la-deuxieme-republique-1848-1851/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 572,
+    "theme": "Histoire, géographie et culture",
+    "notion": "periodes-personnages",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 163,
+    "question": "Quelle organisation a été créée en 1945 après la Seconde Guerre mondiale ?",
+    "answers": [
+      "L'Organisation des Nations unies (ONU)"
+    ],
+    "distractors": [
+      "L'Organisation du traité de l'Atlantique Nord (OTAN)",
+      "L'Union européenne (UE)",
+      "L'Organisation mondiale du commerce (OMC)",
+      "La Communauté européenne du charbon et de l'acier (CECA)"
+    ],
+    "explanation": "L'Organisation des Nations unies (ONU) est créée en 1945, à la fin de la Seconde Guerre mondiale, pour maintenir la paix.",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-conflits-mondiaux-et-le-nouvel-ordre-mondial/les-conflits-mondiaux-la-seconde-guerre-mondiale-1939-1945-les-consequences/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 573,
+    "theme": "Histoire, géographie et culture",
+    "notion": "periodes-personnages",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 164,
+    "question": "En quelle année l'euro est-il devenu la monnaie officielle de la France ?",
+    "answers": [
+      "En 2002"
+    ],
+    "distractors": [
+      "En 1957",
+      "En 1986",
+      "En 1992",
+      "En 2007"
+    ],
+    "explanation": "En 2002, l'euro devient la monnaie officielle de plusieurs pays membres de l'Union européenne, dont la France.",
+    "group": "euro-2002",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-conflits-mondiaux-et-le-nouvel-ordre-mondial/la-construction-europeenne/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 574,
+    "theme": "Histoire, géographie et culture",
+    "notion": "periodes-personnages",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 165,
+    "question": "Lors de la seconde guerre mondiale, à quelle date la ville de Paris a-t-elle été libérée ?",
+    "answers": [
+      "Le 25 août 1944"
+    ],
+    "distractors": [
+      "Le 6 juin 1944",
+      "Le 14 juillet 1944",
+      "Le 8 mai 1945",
+      "Le 11 novembre 1944"
+    ],
+    "explanation": "Paris est libérée le 25 août 1944, quelques semaines après le débarquement allié de juin 1944. Le reste du territoire est ensuite peu à peu libéré.",
+    "source": {
+      "url": "https://www.defense.gouv.fr/actualites/25-aout-1944-paris-libere",
+      "label": "defense.gouv.fr"
+    }
+  },
+  {
+    "id": 575,
+    "theme": "Histoire, géographie et culture",
+    "notion": "periodes-personnages",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 166,
+    "question": "Quel était le principal port français impliqué dans la traite négrière au XVIIIe siècle ?",
+    "answers": [
+      "Nantes"
+    ],
+    "distractors": [
+      "Marseille",
+      "Dunkerque",
+      "Brest",
+      "Calais",
+      "Toulon"
+    ],
+    "explanation": "Au XVIIIe siècle, des ports français comme Nantes, Bordeaux et La Rochelle s'enrichissent grâce au commerce « triangulaire », qui permet la traite négrière et l'esclavage.",
+    "group": "esclavage",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/zoom-sur/le-territoire-francais-dans-le-temps-2/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 576,
+    "theme": "Histoire, géographie et culture",
+    "notion": "periodes-personnages",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 167,
+    "question": "Quel célèbre philosophe des Lumières a dénoncé l'esclavage ?",
+    "answers": [
+      "Montesquieu",
+      "Condorcet"
+    ],
+    "distractors": [
+      "Blaise Pascal",
+      "René Descartes",
+      "Michel de Montaigne",
+      "Auguste Comte",
+      "Jacques-Bénigne Bossuet"
+    ],
+    "explanation": "Dans l'Europe des Lumières, des penseurs dénoncent et combattent l'esclavage. Montesquieu le fait dans les Lettres persanes (1721), puis dans De l'esprit des lois (1748). Condorcet publie en 1781 ses Réflexions sur l'esclavage des Nègres.",
+    "group": "esclavage"
+  },
+  {
+    "id": 577,
+    "theme": "Histoire, géographie et culture",
+    "notion": "patrimoine",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 168,
+    "question": "Quelle œuvre a été écrite par Victor Hugo ?",
+    "answers": [
+      "Les Misérables"
+    ],
+    "distractors": [
+      "L'Étranger",
+      "La Peste",
+      "Le Malade imaginaire",
+      "Les Fleurs du Mal",
+      "Tartuffe"
+    ],
+    "explanation": "Victor Hugo (1802-1885), écrivain majeur du romantisme français, est notamment l'auteur des Misérables, de Notre-Dame de Paris et du Dernier Jour d'un condamné.",
+    "group": "ecrivains-francais",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/culture/patrimoine-francais-artistes-emblematiques-parmi-les-auteurs-2/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 578,
+    "theme": "Histoire, géographie et culture",
+    "notion": "patrimoine",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 170,
+    "question": "Quel plat est une spécialité de la cuisine française ?",
+    "answers": [
+      "Le cassoulet",
+      "La choucroute",
+      "La bouillabaisse"
+    ],
+    "distractors": [
+      "La paella valencienne",
+      "Le goulasch hongrois",
+      "Les lasagnes bolognaises",
+      "Les sushis au saumon",
+      "Le gaspacho andalou"
+    ],
+    "explanation": "Le cassoulet (Languedoc), la choucroute alsacienne et la bouillabaisse, plat méditerranéen, sont des plats traditionnels de la gastronomie française, qui est inscrite au patrimoine mondial de l'UNESCO.",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/culture/patrimoine-francais-sites-emblematiques-et-gastronomie/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 579,
+    "theme": "Histoire, géographie et culture",
+    "notion": "patrimoine",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 171,
+    "question": "Qui était Marie Curie ?",
+    "answers": [
+      "Une scientifique, double lauréate du prix Nobel"
+    ],
+    "distractors": [
+      "Une chanteuse, icône de la chanson française",
+      "Une écrivaine, première femme à l'Académie française",
+      "Une femme politique, ministre de la Santé",
+      "Une peintre impressionniste du XIXe siècle"
+    ],
+    "explanation": "Née à Varsovie, Marie Curie (née Skłodowska) s'installe à Paris, où elle étudie et mène ses recherches sur la radioactivité avec Pierre Curie. Elle reçoit le prix Nobel de physique en 1903 et celui de chimie en 1911 : elle est la première personne à recevoir deux prix Nobel.",
+    "group": "ecrivains-francais"
+  },
+  {
+    "id": 580,
+    "theme": "Histoire, géographie et culture",
+    "notion": "patrimoine",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 172,
+    "question": "Qui a peint \"La liberté guidant le peuple\" ?",
+    "answers": [
+      "Eugène Delacroix"
+    ],
+    "distractors": [
+      "Claude Monet",
+      "Paul Cézanne",
+      "Auguste Renoir",
+      "Pablo Picasso"
+    ],
+    "explanation": "La Liberté guidant le peuple est un tableau d'Eugène Delacroix (1798-1863), peintre majeur du romantisme français, qui met en avant le mouvement, la liberté et la passion.",
+    "group": "peintres-francais",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/culture/patrimoine-francais-artistes-emblematiques-parmi-les-peintres/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 581,
+    "theme": "Histoire, géographie et culture",
+    "notion": "patrimoine",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 173,
+    "question": "Dans quel grand musée parisien est exposée la Joconde ?",
+    "answers": [
+      "Le musée du Louvre"
+    ],
+    "distractors": [
+      "Le musée d'Orsay",
+      "Le musée Rodin",
+      "Le centre Pompidou",
+      "Le musée de l'Orangerie"
+    ],
+    "explanation": "La Joconde, ou Portrait de Lisa Gherardini, peinte par Léonard de Vinci, est conservée au musée du Louvre, à Paris.",
+    "group": "louvre"
+  },
+  {
+    "id": 582,
+    "theme": "Histoire, géographie et culture",
+    "notion": "patrimoine",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 174,
+    "question": "Quel château célèbre se trouve près de Paris et symbolise le pouvoir royal de Louis XIV ?",
+    "answers": [
+      "Le château de Versailles"
+    ],
+    "distractors": [
+      "Le château de Chambord",
+      "Le château de Chenonceau",
+      "Le château d'Amboise",
+      "Le château d'Azay-le-Rideau"
+    ],
+    "explanation": "Le château de Versailles est la résidence principale de Louis XIV à partir de 1682. Le roi y installe la cour et le gouvernement, et il y reçoit les ambassadeurs : le château est étroitement identifié à son règne."
+  },
+  {
+    "id": 583,
+    "theme": "Histoire, géographie et culture",
+    "notion": "patrimoine",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 175,
+    "question": "Où peut-on voir des peintures préhistoriques en France ?",
+    "answers": [
+      "Dans la grotte de Lascaux"
+    ],
+    "distractors": [
+      "Au château de Versailles",
+      "Au Mont Saint-Michel",
+      "À la cathédrale de Reims",
+      "Au musée d'Orsay",
+      "À la tour Eiffel"
+    ],
+    "explanation": "La grotte de Lascaux, en Dordogne, est célèbre pour ses peintures préhistoriques. Une réplique complète et exacte, Lascaux IV, permet de les découvrir au Centre international d'art pariétal."
+  },
+  {
+    "id": 584,
+    "theme": "Histoire, géographie et culture",
+    "notion": "patrimoine",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 176,
+    "question": "Quel peintre célèbre a peint les Nymphéas ?",
+    "answers": [
+      "Claude Monet"
+    ],
+    "distractors": [
+      "Auguste Renoir",
+      "Paul Cézanne",
+      "Eugène Delacroix",
+      "Pablo Picasso"
+    ],
+    "explanation": "Claude Monet (1840-1926), peintre impressionniste français, représente la lumière, les reflets, les saisons et les paysages. Les Nymphéas comptent parmi ses tableaux incontournables.",
+    "group": "peintres-francais",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/culture/patrimoine-francais-artistes-emblematiques-parmi-les-peintres/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 585,
+    "theme": "Histoire, géographie et culture",
+    "notion": "patrimoine",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 177,
+    "question": "Pendant quelles journées peut-on visiter gratuitement des lieux culturels en France ?",
+    "answers": [
+      "Les Journées européennes du patrimoine"
+    ],
+    "distractors": [
+      "Les Journées du Salon de l'agriculture",
+      "Les Journées du Festival de Cannes",
+      "Les Journées du Tour de France",
+      "Les Journées de la rentrée scolaire"
+    ],
+    "explanation": "Les Journées européennes du patrimoine ont lieu chaque année en septembre, partout sur le territoire. Elles offrent un accès, très souvent gratuit, à des lieux culturels habituellement fermés au public : bâtiments historiques, institutions publiques, coulisses d'opéras…",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/culture/patrimoine-francais-acces-a-la-culture/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 586,
+    "theme": "Histoire, géographie et culture",
+    "notion": "periodes-personnages",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 178,
+    "question": "Que symbolise le 1er mai ?",
+    "answers": [
+      "La fête du travail"
+    ],
+    "distractors": [
+      "La fête de la musique",
+      "L'armistice de 1918",
+      "La fête nationale",
+      "La fin de la guerre de 1945"
+    ],
+    "explanation": "Le 1er mai est la Fête du travail, la fête des travailleurs. Son symbole est le muguet, qui porte bonheur, et des manifestations sont organisées ce jour-là.",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/zoom-sur/patrimoine-francais-les-jours-feries/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 587,
+    "theme": "Histoire, géographie et culture",
+    "notion": "patrimoine",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 179,
+    "question": "Qui était Monsieur Rouget de Lisle ?",
+    "answers": [
+      "L'auteur de La Marseillaise"
+    ],
+    "distractors": [
+      "L'auteur du Code civil",
+      "Le fondateur de la Ve République",
+      "Le dessinateur du drapeau français",
+      "Le premier président de la IIIe République"
+    ],
+    "explanation": "Claude Joseph Rouget de Lisle est l'auteur de La Marseillaise, composée en avril 1792 sous le nom de « Chant de guerre pour l'armée du Rhin ». Elle devient l'hymne national en 1879.",
+    "group": "marseillaise",
+    "source": {
+      "url": "https://www.elysee.fr/la-presidence/la-marseillaise-de-rouget-de-lisle",
+      "label": "elysee.fr"
+    }
+  },
+  {
+    "id": 588,
+    "theme": "Histoire, géographie et culture",
+    "notion": "patrimoine",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 180,
+    "question": "À quelle occasion a été construite la Tour Eiffel ?",
+    "answers": [
+      "L'Exposition universelle de 1889"
+    ],
+    "distractors": [
+      "L'ouverture du premier métro parisien",
+      "La fin de la Première Guerre mondiale",
+      "L'inauguration du canal de Suez",
+      "Les Jeux olympiques de Paris en 1900"
+    ],
+    "explanation": "La tour Eiffel est construite en 2 ans par l'ingénieur Gustave Eiffel pour l'Exposition universelle de 1889, qui fêtait les 100 ans de la Révolution française. D'abord critiquée, elle est aujourd'hui un symbole de la France.",
+    "group": "tour-eiffel",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/culture/patrimoine-francais-sites-emblematiques-et-gastronomie-d-ile-de-france/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 589,
+    "theme": "Histoire, géographie et culture",
+    "notion": "patrimoine",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 190,
+    "question": "Qui était un célèbre compositeur français ?",
+    "answers": [
+      "Claude Debussy"
+    ],
+    "distractors": [
+      "Wolfgang Amadeus Mozart",
+      "Ludwig van Beethoven",
+      "Jean-Sébastien Bach",
+      "Giuseppe Verdi"
+    ],
+    "explanation": "Claude Debussy (1862-1918) est un compositeur français, considéré comme le père de la musique moderne. On lui doit Clair de Lune, le Prélude à l'après-midi d'un faune et La Mer.",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/culture/patrimoine-francais-artistes-emblematiques-dans-univers-musique/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 590,
+    "theme": "Histoire, géographie et culture",
+    "notion": "territoires-geographie",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 193,
+    "question": "Quel monument historique se trouve sur une île en Normandie ?",
+    "answers": [
+      "Le Mont Saint-Michel"
+    ],
+    "distractors": [
+      "Le château de Chambord",
+      "Le Palais des papes",
+      "Le pont du Gard",
+      "La cité de Carcassonne"
+    ],
+    "explanation": "Le Mont Saint-Michel est une île rocheuse située sur la côte normande, célèbre pour son abbaye construite au sommet des rochers. Il est classé au patrimoine mondial de l'UNESCO.",
+    "group": "normandie",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/culture/patrimoine-francais-sites-emblematiques-et-gastronomie-de-normandie/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 591,
+    "theme": "Histoire, géographie et culture",
+    "notion": "territoires-geographie",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 195,
+    "question": "Quelle île fait partie des Antilles françaises ?",
+    "answers": [
+      "La Guadeloupe",
+      "La Martinique"
+    ],
+    "distractors": [
+      "La Réunion",
+      "Mayotte",
+      "Tahiti",
+      "La Corse",
+      "La Nouvelle-Calédonie"
+    ],
+    "explanation": "La Guadeloupe et la Martinique sont des îles des Petites Antilles, dans les Caraïbes. Ce sont des départements et régions d'outre-mer (DROM).",
+    "group": "iles-francaises",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-regions-fran%C3%A7aises/guadeloupe/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 592,
+    "theme": "Histoire, géographie et culture",
+    "notion": "territoires-geographie",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 196,
+    "question": "Quelle île est française ?",
+    "answers": [
+      "La Martinique",
+      "La Guadeloupe",
+      "La Réunion",
+      "Mayotte"
+    ],
+    "distractors": [
+      "La Sicile",
+      "La Sardaigne",
+      "Majorque",
+      "Madère",
+      "Malte",
+      "Cuba"
+    ],
+    "explanation": "La Martinique, la Guadeloupe, La Réunion et Mayotte sont des îles qui forment, avec la Guyane, les départements et régions d'outre-mer (DROM) de la France. La Sicile, la Sardaigne, Majorque, Madère, Malte et Cuba appartiennent à d'autres pays.",
+    "group": "iles-francaises",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/atlas-de-la-france/le-territoire-de-la-france/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 593,
+    "theme": "Histoire, géographie et culture",
+    "notion": "territoires-geographie",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 198,
+    "question": "Quelle île française est située dans l'océan Indien ?",
+    "answers": [
+      "La Réunion",
+      "Mayotte"
+    ],
+    "distractors": [
+      "La Corse",
+      "La Martinique",
+      "La Guadeloupe",
+      "Tahiti"
+    ],
+    "explanation": "La Réunion et Mayotte sont des îles françaises de l'océan Indien. La Martinique et la Guadeloupe se trouvent dans les Caraïbes.",
+    "group": "iles-francaises",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-regions-fran%C3%A7aises/la-reunion/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 594,
+    "theme": "Histoire, géographie et culture",
+    "notion": "territoires-geographie",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 197,
+    "question": "Quelle est la plus haute montagne de France ?",
+    "answers": [
+      "Le Mont Blanc"
+    ],
+    "distractors": [
+      "Le Puy de Dôme",
+      "Le mont Ventoux",
+      "Le Pic du Midi",
+      "Le Canigou",
+      "Le Ballon d'Alsace"
+    ],
+    "explanation": "Le Mont Blanc, dans le massif des Alpes, en Haute-Savoie, à la frontière avec l'Italie, est la plus haute montagne de France.",
+    "group": "mont-blanc"
+  },
+  {
+    "id": 595,
+    "theme": "Histoire, géographie et culture",
+    "notion": "territoires-geographie",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 199,
+    "question": "Quel département français a une frontière avec le Brésil ?",
+    "answers": [
+      "La Guyane"
+    ],
+    "distractors": [
+      "La Martinique",
+      "La Guadeloupe",
+      "La Réunion",
+      "Mayotte"
+    ],
+    "explanation": "Grâce à la Guyane, située en Amérique du Sud, la France possède des frontières avec le Brésil et le Suriname.",
+    "group": "guyane",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/atlas-de-la-france/les-frontieres-de-la-france/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 596,
+    "theme": "Histoire, géographie et culture",
+    "notion": "territoires-geographie",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 200,
+    "question": "De quelle ville française décolle la fusée Ariane ?",
+    "answers": [
+      "Kourou"
+    ],
+    "distractors": [
+      "Toulouse",
+      "Bordeaux",
+      "Nantes",
+      "Brest",
+      "Lille"
+    ],
+    "explanation": "Le centre spatial de Kourou, en Guyane, sur la côte atlantique, est l'une des bases de lancement de fusées parmi les plus importantes au monde. Il est utilisé par l'Agence spatiale européenne pour envoyer des satellites.",
+    "group": "guyane",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/culture/patrimoine-francais-sites-emblematiques-et-gastronomie-de-guyane/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 597,
+    "theme": "Histoire, géographie et culture",
+    "notion": "territoires-geographie",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 206,
+    "question": "Quel est le principal port maritime de France ?",
+    "answers": [
+      "Marseille"
+    ],
+    "distractors": [
+      "Calais",
+      "Brest",
+      "Toulon",
+      "Saint-Malo",
+      "Cherbourg"
+    ],
+    "explanation": "Marseille est l'un des 7 grands ports maritimes de la France métropolitaine, directement gérés par l'État. Il est aussi le premier port de croisière de France.",
+    "group": "marseille",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/la-france-dans-leurope-et-dans-le-monde/les-ports-francais/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 598,
+    "theme": "Histoire, géographie et culture",
+    "notion": "territoires-geographie",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 209,
+    "question": "Quelle île française se trouve au sud-est du continent africain ?",
+    "answers": [
+      "La Réunion"
+    ],
+    "distractors": [
+      "La Corse",
+      "La Martinique",
+      "La Guadeloupe",
+      "Tahiti"
+    ],
+    "explanation": "La Réunion est une île volcanique de l'océan Indien, au sud-ouest de l'île Maurice. C'est un département et une région d'outre-mer (DROM).",
+    "group": "iles-francaises",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-regions-fran%C3%A7aises/la-reunion/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 599,
+    "theme": "Histoire, géographie et culture",
+    "notion": "territoires-geographie",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 210,
+    "question": "Quel est le chef-lieu de la région Auvergne-Rhône-Alpes ?",
+    "answers": [
+      "Lyon"
+    ],
+    "distractors": [
+      "Grenoble",
+      "Clermont-Ferrand",
+      "Saint-Étienne",
+      "Annecy"
+    ],
+    "explanation": "Lyon est la préfecture, c'est-à-dire le chef-lieu, de la région Auvergne-Rhône-Alpes, qui compte 12 départements.",
+    "group": "regions",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-regions-fran%C3%A7aises/auvergne-rhone-alpes/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 600,
+    "theme": "Histoire, géographie et culture",
+    "notion": "territoires-geographie",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 211,
+    "question": "Quel est le chef-lieu de la région Bretagne ?",
+    "answers": [
+      "Rennes"
+    ],
+    "distractors": [
+      "Brest",
+      "Lorient",
+      "Quimper",
+      "Vannes",
+      "Saint-Malo"
+    ],
+    "explanation": "Rennes est la préfecture, c'est-à-dire le chef-lieu, de la région Bretagne, qui compte 4 départements.",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-regions-fran%C3%A7aises/bretagne/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 601,
+    "theme": "Histoire, géographie et culture",
+    "notion": "territoires-geographie",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 212,
+    "question": "Quel est le chef-lieu de la région Provence-Alpes-Côte d'Azur ?",
+    "answers": [
+      "Marseille"
+    ],
+    "distractors": [
+      "Nice",
+      "Toulon",
+      "Avignon",
+      "Aix-en-Provence",
+      "Gap"
+    ],
+    "explanation": "Marseille est la préfecture, c'est-à-dire le chef-lieu, de la région Provence-Alpes-Côte d'Azur, qui compte 6 départements.",
+    "group": "marseille",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-regions-fran%C3%A7aises/provence-alpes-cote-d-azur/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 602,
+    "theme": "Histoire, géographie et culture",
+    "notion": "territoires-geographie",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 213,
+    "question": "Quel est le 101e département français depuis 2011 ?",
+    "answers": [
+      "Mayotte"
+    ],
+    "distractors": [
+      "La Guyane",
+      "La Réunion",
+      "La Martinique",
+      "La Guadeloupe"
+    ],
+    "explanation": "Mayotte, île de l'océan Indien, devient le 101e département français le 31 mars 2011. Elle est à la fois un département et une région d'outre-mer.",
+    "group": "iles-francaises",
+    "source": {
+      "url": "https://www.senat.fr/rap/r11-675/r11-675_mono.html",
+      "label": "senat.fr"
+    }
+  },
+  {
+    "id": 603,
+    "theme": "Histoire, géographie et culture",
+    "notion": "territoires-geographie",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 214,
+    "question": "Quelle région française est réputée pour ses stations de ski ?",
+    "answers": [
+      "Auvergne-Rhône-Alpes"
+    ],
+    "distractors": [
+      "Bretagne",
+      "Normandie",
+      "Hauts-de-France",
+      "Île-de-France",
+      "Pays de la Loire",
+      "Centre-Val de Loire"
+    ],
+    "explanation": "L'Auvergne-Rhône-Alpes s'étend des Alpes au Massif central. Le tourisme, notamment les stations de ski, fait partie de ses secteurs économiques clés.",
+    "group": "regions",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-regions-fran%C3%A7aises/auvergne-rhone-alpes/",
       "label": "formation-civique.interieur.gouv.fr"
     }
   }
