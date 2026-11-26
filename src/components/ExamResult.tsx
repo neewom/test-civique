@@ -45,11 +45,11 @@ export function ExamResult({ outcome, themeOf, onRestart }: ExamResultProps) {
   const weakest = weakestThemesLabel(weakestThemes(themeScores(answers, themeOf)))
 
   return (
-    <main className="relative min-h-svh overflow-hidden bg-background text-foreground">
+    <main className="relative flex min-h-svh flex-col overflow-hidden bg-background text-foreground">
       <OrganicBackground shape="crest" />
 
-      <div className="relative mx-auto flex min-h-svh w-full max-w-[30rem] flex-col gap-3 px-[22px] pt-3 pb-6 md:max-w-[44rem] md:px-8 md:pt-4 md:pb-10">
-        <AppHeader />
+      <AppHeader />
+      <div className="relative mx-auto flex grow w-full max-w-[30rem] flex-col gap-3 px-[22px] pt-0 pb-6 md:max-w-[44rem] md:px-8 md:pb-10">
         <h1 ref={headingRef} tabIndex={-1} className="min-h-11 content-center self-start rounded-sm text-[0.9375rem] font-bold outline-none">
           Examen blanc terminé
         </h1>
