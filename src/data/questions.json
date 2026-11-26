@@ -5968,6 +5968,7 @@
       "Contacter la mairie pour annuler la convocation"
     ],
     "explanation": "Une convocation devant un tribunal doit être respectée. Si la personne poursuivie ne vient pas, elle peut être amenée de force par la police ou jugée en son absence, sans pouvoir se défendre ; un témoin absent sans excuse valable peut aussi être contraint de venir. Toute personne peut être assistée d'un avocat, et l'aide juridictionnelle existe pour ceux qui ne peuvent pas en payer un.",
+    "group": "aide-juridictionnelle",
     "answers": [
       "Vous y rendre, éventuellement assisté d'un avocat"
     ],
@@ -6401,6 +6402,7 @@
       "Ce droit n'existe pas, la religion est déterminée par la famille"
     ],
     "explanation": "La liberté de conscience et de religion est garantie à toute personne, enfants compris. Tant que l'enfant est mineur, son éducation religieuse est un acte important de l'autorité parentale : elle demande l'accord de ses deux parents, qui doivent l'associer aux décisions selon son âge et sa maturité.",
+    "group": "autorite-parentale",
     "answers": [
       "Il est libre de sa religion, mais ses deux parents décident de son éducation en tenant compte de son avis"
     ],
@@ -11583,12 +11585,13 @@
       "Les deux parents, à égalité"
     ],
     "distractors": [
-      "Seulement la mère de l'enfant",
-      "Seulement le père de l'enfant",
+      "La mère de l'enfant, en priorité",
+      "Le parent qui a les revenus les plus élevés",
       "Seulement le parent qui garde l'enfant",
       "Le juge qui prononce le divorce"
     ],
     "explanation": "Les deux parents ont l'autorité parentale : ils ont les mêmes droits et les mêmes devoirs envers leur enfant, qu'ils soient mariés, pacsés, en concubinage ou séparés. Ils sont tous les deux responsables de leur enfant.",
+    "group": "autorite-parentale",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/parentalite/exercice-de-l-autorite-parentale-1/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -11613,6 +11616,7 @@
       "La prime d'activité"
     ],
     "explanation": "L'aide juridictionnelle est une aide de l'État qui finance, en totalité ou en partie, les frais d'une procédure en justice, dont les honoraires de l'avocat. Elle s'adresse aux personnes qui ont de faibles ressources.",
+    "group": "aide-juridictionnelle",
     "source": {
       "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F18074",
       "label": "service-public.gouv.fr"
@@ -12154,6 +12158,7 @@
       "25 ans"
     ],
     "explanation": "En France, on devient majeur à 18 ans. Jusqu'à cet âge, les parents ont des droits et des devoirs envers leur enfant : c'est l'autorité parentale. Elle se termine quand l'enfant a 18 ans.",
+    "group": "vote-conditions",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/parentalite/exercice-de-l-autorite-parentale-2/",
       "label": "formation-civique.interieur.gouv.fr"
