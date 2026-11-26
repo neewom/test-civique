@@ -93,8 +93,6 @@ function normalizeTypography(s: string): string {
 // celles des questions présentes figurent ici. Aucune coquille officielle présente
 // n'est gardée telle quelle sans décision : toute exception est listée ci-dessous avec
 // sa raison.
-// Coquilles connues, pas encore présentes dans nos données : NAT 151 « fondée? »,
-// 198 « océan indien », 213 « 101ème », 225 « les parents peuvent inscrire ».
 const LIST_EXCEPTIONS: Record<string, Map<number, { reason: string; expected: string }>> = {
   CR: new Map([
     [
@@ -195,12 +193,29 @@ const LIST_EXCEPTIONS: Record<string, Map<number, { reason: string; expected: st
       },
     ],
     [
+      98,
+      {
+        // Officiel : « … Droits de l'Homme et du Citoyen de 1789 ? » (casse de la liste NAT) ; notre question 358
+        // garde le libellé de la liste CR, verrouillé par le contrôle CR.
+        reason: 'casse de la liste NAT',
+        expected: "Laquelle de ces citations est inscrite dans la Déclaration des Droits de l'homme et du Citoyen de 1789 ?",
+      },
+    ],
+    [
       137,
       {
         // Officiel : « Pourquoi l’année 1958 est importante pour la France ? », même
         // faute que la liste CSP ; libellé corrigé dans nos données (question 133).
         reason: 'faute corrigée',
         expected: 'Pourquoi l’année 1958 est-elle importante pour la France ?',
+      },
+    ],
+    [
+      151,
+      {
+        // Officiel : « … a-t-elle été fondée? » (espace manquant avant le point d'interrogation) ; libellé corrigé dans nos données (question 567).
+        reason: 'faute corrigée',
+        expected: "En quelle année l'Union européenne a-t-elle été fondée ?",
       },
     ],
     [
@@ -219,6 +234,31 @@ const LIST_EXCEPTIONS: Record<string, Map<number, { reason: string; expected: st
         // garde le libellé de la liste CSP, verrouillé par le contrôle CSP.
         reason: 'casse de la liste NAT',
         expected: "Quand a eu lieu la Première Guerre mondiale ?",
+      },
+    ],
+    [
+      198,
+      {
+        // Officiel : « … dans l'océan indien ? » (casse de « Indien ») ; libellé corrigé dans nos données (question 593).
+        reason: 'faute corrigée',
+        expected: "Quelle île française est située dans l'océan Indien ?",
+      },
+    ],
+    [
+      213,
+      {
+        // Officiel : « … le 101ème département … » (« 101e » en français correct) ; libellé corrigé dans nos données (question 602).
+        reason: 'faute corrigée',
+        expected: "Quel est le 101e département français depuis 2011 ?",
+      },
+    ],
+    [
+      225,
+      {
+        // Officiel : « … les parents peuvent inscrire leurs enfants … » (inversion manquante) ;
+        // libellé corrigé dans nos données (question 610) ; la question 438 reste celle de la liste CR.
+        reason: 'faute corrigée',
+        expected: "Auprès de quelle institution les parents peuvent-ils inscrire leurs enfants à l'école publique ?",
       },
     ],
     [
