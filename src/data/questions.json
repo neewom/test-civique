@@ -15960,7 +15960,7 @@
       "Uniquement si l'un des parents est de nationalité française",
       "Pour toute naissance, sauf si elle a lieu à l'hôpital",
       "Pour toute naissance, sauf si les parents ne souhaitent pas la déclarer",
-      "Pour toute naissance, sauf si les parents sont étrangers"
+      "Seulement si l'enfant est né à domicile"
     ],
     "explanation": "La déclaration de naissance est obligatoire. Elle se fait à la mairie du lieu de naissance, dans les 5 jours qui suivent la naissance, par le père, la mère ou une personne qui a assisté à l'accouchement.",
     "group": "declaration-naissance",
@@ -16137,8 +16137,8 @@
     "distractors": [
       "Le Code civil, le Code pénal, le Code de la route et le Code rural",
       "La Constitution, le Code civil, le Code de la consommation et le Code rural",
-      "Le Code pénal, le Code de la route, le Code de l'urbanisme et le Code rural",
-      "Les statuts des associations, les usages locaux et les coutumes"
+      "Le Code du travail, le Code de la route et le Code de l'urbanisme",
+      "Le Code du travail seul, sans aucun autre texte"
     ],
     "explanation": "Le Code du travail fixe les droits et les obligations de tous : contrat de travail, conditions de travail, salaire… Les conventions collectives précisent les règles générales d'un secteur d'activité, et le règlement intérieur présente les droits et obligations des salariés de l'entreprise en matière de santé, de sécurité et de discipline.",
     "source": {
