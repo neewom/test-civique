@@ -150,14 +150,14 @@ describe('Accueil — examen blanc (étape 2)', () => {
     expect(screen.queryByRole('button', { name: /Avec mises en situation/ })).toBeNull()
   })
 
-  it('lance un nouvel examen même avec un examen en cours', () => {
+  it('reprend l\'examen en cours du titre choisi au lieu de le remplacer', () => {
     const questions = Array.from({ length: 40 }, (_, i) => ({
       id: i + 1, theme: 'Test', question: `Q${i + 1}`, answer: 'A', choices: ['A', 'B', 'C', 'D'], explanation: '',
     }))
     localStorageMock.setItem('exam-in-progress', JSON.stringify({ questions, index: 3, answers: [], timeLeft: 900, startedAt: '2026-11-23T10:00:00.000Z' }))
     renderHome()
     fireEvent.click(step2())
-    expect(screen.getByTestId('location')).toHaveTextContent('/examen|{"start":"new"}')
+    expect(screen.getByTestId('location')).toHaveTextContent('/examen|null')
   })
 })
 

@@ -1,12 +1,17 @@
+import { useState } from 'react'
 import { BackLink } from '@/components/BackLink'
 import { ExamRules } from '@/components/ExamRules'
 import { OrganicBackground } from '@/components/OrganicBackground'
 import { PillLink } from '@/components/PillButton'
+import { loadProgressForTitle } from '@/lib/exam-types'
+import { DEFAULT_TITLE, loadTargetTitle } from '@/lib/target-title'
 import { useDocumentTitle } from '@/lib/use-document-title'
 
 /** « Comment se passe l'examen » (maquette Pa3), opened from the home page. */
 export default function Regles() {
   useDocumentTitle("Comment se passe l'examen")
+  // Same as step 2 of the home page: resume the exam in progress of the chosen title, else draw a new one
+  const [hasExamInProgress] = useState(() => loadProgressForTitle(loadTargetTitle() ?? DEFAULT_TITLE) !== null)
 
   return (
     <main className="relative min-h-svh overflow-hidden bg-background text-foreground">
@@ -19,8 +24,7 @@ export default function Regles() {
         <div className="mt-[3.75rem]">
           <ExamRules />
         </div>
-        {/* Same as step 2 of the home page: always a new exam */}
-        <PillLink to="/examen" state={{ start: 'new' }} size="lg" className="mt-1 justify-center text-center">
+        <PillLink to="/examen" state={hasExamInProgress ? undefined : { start: 'new' }} size="lg" className="mt-1 justify-center text-center">
           M'entraîner maintenant
         </PillLink>
       </div>
