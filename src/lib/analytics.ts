@@ -4,6 +4,8 @@
 // flags requests from data-centre IP ranges as bots, so proxied hits were hidden.
 // Parameters follow GoatCounter's count.js (arp242/goatcounter, public/count.js).
 
+import type { TitleKey } from '@/lib/target-title'
+
 // Only the production domain counts: nothing locally, on worktrees, on Netlify
 // deploy previews or in tests
 export const PRODUCTION_HOSTNAME = 'futurcitoyen.fr'
@@ -13,10 +15,29 @@ export const EXAM_STARTED = 'examen-commence'
 export const EXAM_FINISHED_PASSED = 'examen-termine-reussi'
 export const EXAM_FINISHED_NOT_YET = 'examen-termine-pas-encore'
 
+// The resident card has its own suffixed names; the multi-year permit keeps the names above
+export const EXAM_STARTED_RESIDENT = 'examen-commence-resident'
+export const EXAM_FINISHED_PASSED_RESIDENT = 'examen-termine-reussi-resident'
+export const EXAM_FINISHED_NOT_YET_RESIDENT = 'examen-termine-pas-encore-resident'
+
 export type AnalyticsEvent =
   | typeof EXAM_STARTED
   | typeof EXAM_FINISHED_PASSED
   | typeof EXAM_FINISHED_NOT_YET
+  | typeof EXAM_STARTED_RESIDENT
+  | typeof EXAM_FINISHED_PASSED_RESIDENT
+  | typeof EXAM_FINISHED_NOT_YET_RESIDENT
+
+const EXAM_EVENTS = {
+  started: [EXAM_STARTED, EXAM_STARTED_RESIDENT],
+  passed: [EXAM_FINISHED_PASSED, EXAM_FINISHED_PASSED_RESIDENT],
+  notYet: [EXAM_FINISHED_NOT_YET, EXAM_FINISHED_NOT_YET_RESIDENT],
+} as const
+
+/** Event name of an exam step for a title: suffixed for the resident card only. */
+export function examEvent(step: keyof typeof EXAM_EVENTS, title: TitleKey): AnalyticsEvent {
+  return EXAM_EVENTS[step][title === 'resident' ? 1 : 0]
+}
 
 // The external referrer only makes sense for the first page view: after a SPA
 // navigation, document.referrer still names the page the visitor came from

@@ -117,15 +117,28 @@ export function shuffle<T>(arr: T[]): T[] {
  * never meet in an exam, across lines too. A line short of questions (not expected with
  * questions.json) is completed within its theme, then from the rest of the pool, so the
  * exam keeps 40 questions whenever the pool allows it. Final order is shuffled.
+ *
+ * `avoid` lists question ids (those of the previous exam) kept out as long as possible:
+ * they come last in each draw order, so they are used only when a line cannot be
+ * filled without them, and never at the expense of the blueprint counts or the group rule.
  */
-export function buildExam(pool: Question[] = allQuestions as Question[]): ExamQuestion[] {
+export function buildExam(
+  pool: Question[] = allQuestions as Question[],
+  { avoid = [] }: { avoid?: Iterable<number> } = {},
+): ExamQuestion[] {
+  const avoided = new Set(avoid)
+  // Candidates in draw order: the not-avoided ones first (shuffled), then the avoided ones
+  const prefer = (list: Question[]) => [
+    ...shuffle(list.filter((q) => !avoided.has(q.id))),
+    ...shuffle(list.filter((q) => avoided.has(q.id))),
+  ]
   const seenGroups = new Set<string>()
   const selectedIds = new Set<number>()
   const selected: Question[] = []
 
   function take(candidates: Question[], count: number): number {
     let missing = count
-    for (const q of shuffle(candidates)) {
+    for (const q of prefer(candidates)) {
       if (missing === 0 || selected.length === EXAM_SIZE) break
       if (selectedIds.has(q.id)) continue
       if (q.group) {
@@ -156,12 +169,10 @@ export function buildExam(pool: Question[] = allQuestions as Question[]): ExamQu
     EXAM_BLUEPRINT.filter((l) => l.notion === 'mise-en-situation').map((l) => l.theme),
   )
   for (const [theme, missing] of shortByTheme) {
-    take(
-      pool.filter(
-        (q) => q.theme === theme && (q.notion !== 'mise-en-situation' || situationalThemes.has(theme)),
-      ),
-      missing,
+    const themePool = pool.filter(
+      (q) => q.theme === theme && (q.notion !== 'mise-en-situation' || situationalThemes.has(theme)),
     )
+    take(themePool, missing)
   }
   take(pool, EXAM_SIZE - selected.length)
 
@@ -177,6 +188,17 @@ export function buildExam(pool: Question[] = allQuestions as Question[]): ExamQu
       ...(q.source ? { source: q.source } : {}),
     }
   })
+}
+
+/**
+ * Ids of the questions of the last finished exam of a title (`history`: oldest first).
+ * An old record without `answers` avoids nothing.
+ */
+export function previousExamQuestionIds(history: { answers?: AnswerRecord[] }[]): number[] {
+  const last = history[history.length - 1]
+  return (last?.answers ?? []).flatMap((a) =>
+    typeof a?.questionId === 'number' ? [a.questionId] : [],
+  )
 }
 
 /** Saves the finished exam in the history and returns its id (link to its detail page). */

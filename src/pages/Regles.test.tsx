@@ -50,7 +50,7 @@ describe('Page « Comment se passe l\'examen »', () => {
     expect(screen.getByRole('link', { name: "M'entraîner maintenant" })).toHaveAttribute('href', '/examen')
   })
 
-  it('« M\'entraîner maintenant » demande un nouvel examen, même avec un examen en cours', async () => {
+  it('« M\'entraîner maintenant » demande un nouvel examen quand aucun n\'est en cours (la reprise est testée avec l\'accueil)', async () => {
     function ExamProbe() {
       return <p>état : {JSON.stringify(useLocation().state)}</p>
     }

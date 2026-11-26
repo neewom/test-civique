@@ -1,4 +1,4 @@
-import { titleOf, type TitleKey } from '@/lib/target-title'
+import { DEFAULT_TITLE, TARGET_TITLES, titleOf, type TitleKey } from '@/lib/target-title'
 
 export interface AnswerRecord {
   questionId: number
@@ -42,19 +42,29 @@ export interface ExamInProgress {
   title?: TitleKey
 }
 
+// One exam in progress per title. The multi-year permit keeps the original key (progress
+// stored without a title or with an unknown one included): nothing already stored is
+// moved or reshaped. Every other title has its own key, `exam-in-progress-<title>`.
 export const EXAM_PROGRESS_KEY = 'exam-in-progress'
 
+// The single place where the storage key of a title is computed
+export function progressKey(title: TitleKey): string {
+  return title === DEFAULT_TITLE ? EXAM_PROGRESS_KEY : `${EXAM_PROGRESS_KEY}-${title}`
+}
+
+// Saved in the key of its own title
 export function saveProgress(state: ExamInProgress): void {
   try {
-    localStorage.setItem(EXAM_PROGRESS_KEY, JSON.stringify(state))
+    localStorage.setItem(progressKey(titleOf(state)), JSON.stringify(state))
   } catch {
     // localStorage unavailable
   }
 }
 
-export function clearProgress(): void {
+// Clears the progress of one title only; the other titles' progress is untouched
+export function clearProgress(title: TitleKey): void {
   try {
-    localStorage.removeItem(EXAM_PROGRESS_KEY)
+    localStorage.removeItem(progressKey(title))
   } catch {
     // localStorage unavailable
   }
@@ -106,10 +116,10 @@ function isExamInProgress(value: unknown): value is ExamInProgress {
   )
 }
 
-// Saved progress, or null when missing, unreadable or malformed.
-export function loadProgress(): ExamInProgress | null {
+// Saved progress stored in the key of the given title (required: no default title), or null when missing, unreadable or malformed.
+export function loadProgress(title: TitleKey): ExamInProgress | null {
   try {
-    const raw = localStorage.getItem(EXAM_PROGRESS_KEY)
+    const raw = localStorage.getItem(progressKey(title))
     if (!raw) return null
     const parsed: unknown = JSON.parse(raw)
     return isExamInProgress(parsed) ? parsed : null
@@ -118,12 +128,17 @@ export function loadProgress(): ExamInProgress | null {
   }
 }
 
-// Saved progress of the given title: progress stored without a title, or with an
-// unknown one, belongs to the multi-year permit. Progress of another title is not
-// offered (and left in storage).
+// Saved progress of the given title: read from that title's key only, and only if it
+// is really of that title (progress stored without a title, or with an unknown one,
+// belongs to the multi-year permit). Anything else is not offered, and left in storage.
 export function loadProgressForTitle(title: TitleKey): ExamInProgress | null {
-  const progress = loadProgress()
+  const progress = loadProgress(title)
   return progress && titleOf(progress) === title ? progress : null
+}
+
+// True when an exam is in progress for any title the user can choose
+export function hasProgress(): boolean {
+  return TARGET_TITLES.some((t) => loadProgress(t) !== null)
 }
 
 // Index of the question an exam resumes on: a save made during the correction

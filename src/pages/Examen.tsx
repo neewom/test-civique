@@ -12,7 +12,7 @@ import {
 import { useDocumentTitle } from '@/lib/use-document-title'
 import type { AnswerRecord, ExamQuestion, ExamInProgress } from '@/lib/exam-types'
 import { saveProgress, clearProgress, loadProgressForTitle, resumeIndex } from '@/lib/exam-types'
-import { buildExam, questionsForTitle, saveResult, isPassed } from '@/lib/exam'
+import { buildExam, previousExamQuestionIds, questionsForTitle, saveResult, isPassed } from '@/lib/exam'
 import { AnswerCard } from '@/components/AnswerCard'
 import { ExamResult, type ExamOutcome } from '@/components/ExamResult'
 import { findExamRecord, loadHistoryForTitle } from '@/lib/history'
@@ -21,7 +21,7 @@ import { journeyMessage, passedInARow, UNSAVED_MESSAGE } from '@/lib/readiness'
 import { PillButton } from '@/components/PillButton'
 import { SourceLink } from '@/components/SourceLink'
 import { Verdict } from '@/components/Verdict'
-import { trackEvent, EXAM_STARTED, EXAM_FINISHED_PASSED, EXAM_FINISHED_NOT_YET } from '@/lib/analytics'
+import { trackEvent, examEvent } from '@/lib/analytics'
 
 // Arrêté du 10 octobre 2025, art. 4 : 45 minutes au maximum
 export const GLOBAL_EXAM_TIME = 45 * 60 // 2700 secondes
@@ -53,8 +53,9 @@ function setupExam(startNew: boolean, title: TitleKey): ExamSetup {
     const saved = loadProgressForTitle(title)
     if (saved) return { questions: saved.questions, resume: saved }
   }
-  clearProgress()
-  return { questions: buildExam(questionsForTitle(title)), resume: null }
+  clearProgress(title)
+  const avoid = previousExamQuestionIds(loadHistoryForTitle(title))
+  return { questions: buildExam(questionsForTitle(title), { avoid }), resume: null }
 }
 
 const LETTERS = ['A', 'B', 'C', 'D']
@@ -131,7 +132,7 @@ function ExamSession({ restarted, onRestart }: ExamSessionProps) {
   useEffect(() => {
     if (resume || startTrackedRef.current) return
     startTrackedRef.current = true
-    trackEvent(EXAM_STARTED)
+    trackEvent(examEvent('started', title))
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
@@ -189,7 +190,7 @@ function ExamSession({ restarted, onRestart }: ExamSessionProps) {
     finishedRef.current = true
     const timedOutUnanswered = timedOut ? questions.length - answersRef.current.length : null
     if (timerRef.current) clearInterval(timerRef.current)
-    clearProgress()
+    clearProgress(title)
     const allAnswers = [...answersRef.current]
     // Questions non répondues (timer expiré avant d'y arriver)
     for (let i = allAnswers.length; i < questions.length; i++) {
@@ -202,7 +203,7 @@ function ExamSession({ restarted, onRestart }: ExamSessionProps) {
     const streak = passedInARow([...history, result])
     const id = saveResult(result.score, result.total, allAnswers, title)
     // Once per exam (finishedRef), timed out included: only the verdict is sent
-    trackEvent(isPassed(result.score, result.total) ? EXAM_FINISHED_PASSED : EXAM_FINISHED_NOT_YET)
+    trackEvent(examEvent(isPassed(result.score, result.total) ? 'passed' : 'notYet', title))
     // Storage unavailable: no detail page to link to, and the home counter will not
     // count this exam, so the journey message must not announce a step forward
     const saved = findExamRecord(id) !== null
@@ -279,7 +280,7 @@ function ExamSession({ restarted, onRestart }: ExamSessionProps) {
   }
 
   function handleRestart() {
-    clearProgress()
+    clearProgress(title)
     onRestart()
   }
 

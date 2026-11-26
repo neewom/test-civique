@@ -5,13 +5,18 @@ import { MemoryRouter } from 'react-router-dom'
 import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest'
 import Examen, { GLOBAL_EXAM_TIME } from './Examen'
 import type { ExamInProgress } from '@/lib/exam-types'
-import { saveProgress } from '@/lib/exam-types'
+import { saveProgress, loadProgressForTitle } from '@/lib/exam-types'
+import { saveTargetTitle } from '@/lib/target-title'
+import type { TitleKey } from '@/lib/target-title'
 import { buildExam, questionsForTitle, EXAM_SIZE } from '@/lib/exam'
 import {
   resetAnalyticsForTests,
   EXAM_STARTED,
   EXAM_FINISHED_PASSED,
   EXAM_FINISHED_NOT_YET,
+  EXAM_STARTED_RESIDENT,
+  EXAM_FINISHED_PASSED_RESIDENT,
+  EXAM_FINISHED_NOT_YET_RESIDENT,
 } from '@/lib/analytics'
 
 let beacon: ReturnType<typeof vi.fn>
@@ -24,9 +29,10 @@ function events(): string[] {
     .map((params) => params.get('p') ?? '')
 }
 
-function makeResume(timeLeft: number, answered: number, correct: boolean): ExamInProgress {
-  const questions = buildExam(questionsForTitle('pluriannuelle'))
+function makeResume(timeLeft: number, answered: number, correct: boolean, title: TitleKey = 'pluriannuelle'): ExamInProgress {
+  const questions = buildExam(questionsForTitle(title))
   return {
+    ...(title === 'resident' ? { title } : {}),
     questions,
     index: answered,
     answers: questions.slice(0, answered).map((q) => ({ questionId: q.id, chosen: q.answer, correct })),
@@ -135,5 +141,56 @@ describe('Examen — statistiques de visite', () => {
       fireEvent.click(screen.getByRole('button', { name: 'Nouvel examen blanc' }))
     })
     expect(events()).toEqual([EXAM_FINISHED_NOT_YET, EXAM_STARTED])
+  })
+
+  describe('carte de résident', () => {
+    beforeEach(() => saveTargetTitle('resident'))
+    afterEach(() => {
+      localStorage.clear()
+      saveTargetTitle('pluriannuelle')
+    })
+
+    it('un nouvel examen compte « examen-commence-resident »', () => {
+      renderAt(null)
+      expect(events()).toEqual([EXAM_STARTED_RESIDENT])
+    })
+
+    it('la reprise de l’examen en cours du titre ne compte rien', async () => {
+      saveProgress(makeResume(1500, 2, true, 'resident'))
+      renderAt(null)
+      await act(async () => { vi.advanceTimersByTime(3000) })
+      expect(events()).toEqual([])
+    })
+
+    it('fin réussie : « examen-termine-reussi-resident » une seule fois', async () => {
+      saveProgress(makeResume(2, 32, true, 'resident'))
+      renderAt(null)
+      await act(async () => { vi.advanceTimersByTime(5000) })
+      expect(events()).toEqual([EXAM_FINISHED_PASSED_RESIDENT])
+    })
+
+    it('fin pas encore réussie : « examen-termine-pas-encore-resident »', async () => {
+      saveProgress(makeResume(2, 10, true, 'resident'))
+      renderAt(null)
+      await act(async () => { vi.advanceTimersByTime(5000) })
+      expect(events()).toEqual([EXAM_FINISHED_NOT_YET_RESIDENT])
+    })
+
+    it('terminer l’examen de la carte de résident n’efface pas celui de la pluriannuelle', async () => {
+      saveProgress(makeResume(1500, 3, true))
+      saveProgress(makeResume(2, 10, true, 'resident'))
+      renderAt(null)
+      await act(async () => { vi.advanceTimersByTime(5000) })
+      expect(loadProgressForTitle('resident')).toBeNull()
+      expect(loadProgressForTitle('pluriannuelle')?.index).toBe(3)
+    })
+
+    it('démarrer un nouvel examen pour la carte de résident ne touche pas la progression de la pluriannuelle', () => {
+      saveProgress(makeResume(1500, 3, true))
+      const before = localStorage.getItem('exam-in-progress')
+      renderAt({ start: 'new' })
+      expect(localStorage.getItem('exam-in-progress')).toBe(before)
+      expect(loadProgressForTitle('resident')).not.toBeNull()
+    })
   })
 })

@@ -19,13 +19,14 @@ export function titleOf(stored: { title?: unknown }): TitleKey {
   return isTitleKey(stored.title) ? stored.title : DEFAULT_TITLE
 }
 
-// Titles the user can choose. Only the multi-year residence permit for now; « carte
-// de résident » and « naturalisation » open once their question sets have landed.
-export const TARGET_TITLES = ['pluriannuelle'] as const satisfies readonly TitleKey[]
+// Titles the user can choose: the multi-year residence permit and the resident card.
+// « Naturalisation » opens once its question set has landed.
+export const TARGET_TITLES = ['pluriannuelle', 'resident'] as const satisfies readonly TitleKey[]
 export type TargetTitle = (typeof TARGET_TITLES)[number]
 
 export const TARGET_TITLE_LABELS: Record<TargetTitle, string> = {
   pluriannuelle: 'Carte de séjour pluriannuelle',
+  resident: 'Carte de résident',
 }
 
 function isTargetTitle(value: unknown): value is TargetTitle {

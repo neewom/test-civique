@@ -155,6 +155,32 @@ describe('Examen', () => {
     vi.useRealTimers()
   })
 
+  it('un nouvel examen ne reprend aucune question du dernier examen du même titre', () => {
+    const pool = questionsForTitle('pluriannuelle')
+    const previous = buildExam(pool)
+    const previousTexts = new Set(previous.map((e) => e.question))
+    localStorage.setItem(
+      'quiz-history',
+      JSON.stringify([
+        {
+          id: '1',
+          date: '2026-01-01T00:00:00.000Z',
+          score: 20,
+          total: 40,
+          answers: previous.map((e) => ({ questionId: e.id, chosen: null, correct: false })),
+        },
+      ]),
+    )
+    // Only the first question is on screen: several draws make a leak likely to show
+    for (let i = 0; i < 40; i++) {
+      const { unmount } = renderExamen()
+      const shown = screen.getAllByRole('heading', { level: 1 }).map((h) => h.textContent ?? '')
+      expect(shown.some((text) => previousTexts.has(text))).toBe(false)
+      unmount()
+      localStorage.removeItem(EXAM_PROGRESS_KEY)
+    }
+  })
+
   it('affiche "Question 1 sur 40" au démarrage', () => {
     renderExamen()
     expect(screen.getByText(`Question 1 sur ${EXAM_SIZE}`)).toBeInTheDocument()
@@ -435,7 +461,7 @@ describe('Examen — fiabilité', () => {
     expect(currentQuestionText()).toBe(resume.questions[2].question)
     expect(timeLeft()).toBe(1500)
     await act(async () => { vi.advanceTimersByTime(1000) })
-    const saved = loadProgress()!
+    const saved = loadProgress('pluriannuelle')!
     expect(saved.questions.map((q) => q.id)).toEqual(resume.questions.map((q) => q.id))
     expect(saved.answers).toHaveLength(2)
   })
@@ -486,8 +512,8 @@ describe('Examen — fiabilité', () => {
     })
     expect(screen.getByText(`Question 1 sur ${EXAM_SIZE}`)).toBeInTheDocument()
     expect(timeLeft()).toBe(2700)
-    expect(loadProgress()!.answers).toHaveLength(0)
-    expect(loadProgress()!.timeLeft).toBe(GLOBAL_EXAM_TIME)
+    expect(loadProgress('pluriannuelle')!.answers).toHaveLength(0)
+    expect(loadProgress('pluriannuelle')!.timeLeft).toBe(GLOBAL_EXAM_TIME)
 
     // Le nouvel examen ne se termine pas tout seul
     await act(async () => { vi.advanceTimersByTime(5000) })
@@ -501,7 +527,7 @@ describe('Examen — fiabilité', () => {
     await act(async () => {
       fireEvent.click(screen.getByRole('button', { name: 'Nouvel examen blanc' }))
     })
-    const questions = loadProgress()!.questions
+    const questions = loadProgress('pluriannuelle')!.questions
     expect(questions).toHaveLength(EXAM_SIZE)
     // An exam question keeps no notion: look it up in the data
     const situationalIds = new Set(
@@ -540,7 +566,7 @@ function resumeWith(overrides: Partial<ExamInProgress['questions'][number]>, tim
 }
 
 async function answer(correct: boolean) {
-  const q = loadProgress()!.questions[loadProgress()!.index]
+  const q = loadProgress('pluriannuelle')!.questions[loadProgress('pluriannuelle')!.index]
   const choice = correct ? q.answer : q.choices.find((c) => c !== q.answer)!
   await act(async () => { fireEvent.click(screen.getByRole('radio', { name: choice })) })
   await act(async () => { fireEvent.click(screen.getByRole('button', { name: 'Valider ma réponse' })) })
@@ -839,7 +865,7 @@ describe('Examen — titre visé', () => {
 
   it('enregistre le titre dans la progression d\'un nouvel examen', () => {
     renderExamen()
-    expect(loadProgress()?.title).toBe('pluriannuelle')
+    expect(loadProgress('pluriannuelle')?.title).toBe('pluriannuelle')
   })
 
   it('enregistre le titre dans l\'historique à la fin de l\'examen', async () => {

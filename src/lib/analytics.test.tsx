@@ -9,6 +9,10 @@ import {
   EXAM_STARTED,
   EXAM_FINISHED_PASSED,
   EXAM_FINISHED_NOT_YET,
+  EXAM_STARTED_RESIDENT,
+  EXAM_FINISHED_PASSED_RESIDENT,
+  EXAM_FINISHED_NOT_YET_RESIDENT,
+  examEvent,
 } from './analytics'
 import { PageViewTracker } from '@/components/PageViewTracker'
 
@@ -67,7 +71,14 @@ describe('analytics — production (futurcitoyen.fr)', () => {
     expect(sentUrls().map((u) => u.searchParams.get('p'))).toEqual(['/', '/revision', '/'])
   })
 
-  it.each([EXAM_STARTED, EXAM_FINISHED_PASSED, EXAM_FINISHED_NOT_YET] as const)(
+  it.each([
+    EXAM_STARTED,
+    EXAM_FINISHED_PASSED,
+    EXAM_FINISHED_NOT_YET,
+    EXAM_STARTED_RESIDENT,
+    EXAM_FINISHED_PASSED_RESIDENT,
+    EXAM_FINISHED_NOT_YET_RESIDENT,
+  ] as const)(
     'envoie l’événement %s avec e=true',
     (name) => {
       trackEvent(name)
@@ -77,6 +88,15 @@ describe('analytics — production (futurcitoyen.fr)', () => {
       expect(url.searchParams.get('e')).toBe('true')
     },
   )
+
+  it('examEvent : noms actuels pour la pluriannuelle, suffixe -resident pour la carte de résident', () => {
+    expect(examEvent('started', 'pluriannuelle')).toBe('examen-commence')
+    expect(examEvent('passed', 'pluriannuelle')).toBe('examen-termine-reussi')
+    expect(examEvent('notYet', 'pluriannuelle')).toBe('examen-termine-pas-encore')
+    expect(examEvent('started', 'resident')).toBe('examen-commence-resident')
+    expect(examEvent('passed', 'resident')).toBe('examen-termine-reussi-resident')
+    expect(examEvent('notYet', 'resident')).toBe('examen-termine-pas-encore-resident')
+  })
 
   it('signale un navigateur piloté (navigator.webdriver) comme le fait count.js', () => {
     Object.defineProperty(navigator, 'webdriver', { get: () => true, configurable: true })

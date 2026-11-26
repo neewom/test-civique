@@ -1,4 +1,4 @@
-import { render, screen, fireEvent, act, within } from '@testing-library/react'
+import { render, screen, fireEvent, act, within, cleanup } from '@testing-library/react'
 import { MemoryRouter, Route, Routes, useLocation } from 'react-router-dom'
 import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest'
 import Home, { OFFICIAL_SITE_URL } from './Home'
@@ -150,14 +150,14 @@ describe('Accueil — examen blanc (étape 2)', () => {
     expect(screen.queryByRole('button', { name: /Avec mises en situation/ })).toBeNull()
   })
 
-  it('lance un nouvel examen même avec un examen en cours', () => {
+  it('reprend l\'examen en cours du titre choisi au lieu de le remplacer', () => {
     const questions = Array.from({ length: 40 }, (_, i) => ({
       id: i + 1, theme: 'Test', question: `Q${i + 1}`, answer: 'A', choices: ['A', 'B', 'C', 'D'], explanation: '',
     }))
     localStorageMock.setItem('exam-in-progress', JSON.stringify({ questions, index: 3, answers: [], timeLeft: 900, startedAt: '2026-11-23T10:00:00.000Z' }))
     renderHome()
     fireEvent.click(step2())
-    expect(screen.getByTestId('location')).toHaveTextContent('/examen|{"start":"new"}')
+    expect(screen.getByTestId('location')).toHaveTextContent('/examen|null')
   })
 })
 
@@ -514,5 +514,77 @@ describe('Accueil — examens du titre choisi', () => {
     localStorageMock.setItem('exam-in-progress', JSON.stringify(progress()))
     renderHome()
     expect(screen.getByRole('link', { name: /Reprendre l'examen en cours/ })).toHaveTextContent('Question 5 sur 40')
+  })
+})
+
+describe('Accueil — carte de résident', () => {
+  beforeEach(() => localStorageMock.setItem('target-title', 'resident'))
+
+  function progress(title?: string, index = 4) {
+    const questions = Array.from({ length: 40 }, (_, i) => ({
+      id: i + 1, theme: 'Test', question: `Question ${i + 1}`, answer: 'A', choices: ['A', 'B', 'C', 'D'], explanation: '',
+    }))
+    return { questions, index, answers: [], timeLeft: 1500, startedAt: '2026-11-23T10:00:00.000Z', ...(title ? { title } : {}) }
+  }
+
+  it('la pastille du titre affiche « Carte de résident »', () => {
+    renderHome()
+    expect(screen.getByRole('link', { name: /Titre visé : Carte de résident/ })).toHaveAttribute('href', '/titre')
+  })
+
+  it('le compteur et « Derniers examens » ne portent que sur les examens de la carte de résident', () => {
+    seedHistory([
+      { ...exam(36, 'p1', '2026-11-01T10:00:00.000Z') },
+      { ...exam(36, 'r1', '2026-11-02T10:00:00.000Z'), title: 'resident' },
+      { ...exam(10, 'r2', '2026-11-03T10:00:00.000Z'), title: 'resident' },
+      { ...exam(36, 'r3', '2026-11-04T10:00:00.000Z'), title: 'resident' },
+    ])
+    renderHome()
+    expect(screen.getByRole('button', { name: /2 · Réussir 3 examens blancs/ })).toHaveTextContent('1 sur 3')
+    const links = within(screen.getByRole('region', { name: 'Derniers examens' })).getAllByRole('link')
+    expect(links.map((l) => l.getAttribute('href'))).toEqual(['/examen/r3', '/examen/r2', '/examen/r1'])
+  })
+
+  it('propose la reprise de l\'examen en cours de la carte de résident, pas celui de la pluriannuelle', () => {
+    localStorageMock.setItem('exam-in-progress', JSON.stringify(progress(undefined, 9)))
+    renderHome()
+    expect(screen.queryByRole('region', { name: 'Examen en cours' })).toBeNull()
+    localStorageMock.setItem('exam-in-progress-resident', JSON.stringify(progress('resident', 4)))
+    cleanup()
+    renderHome()
+    expect(screen.getByRole('link', { name: /Reprendre l'examen en cours/ })).toHaveTextContent('Question 5 sur 40')
+  })
+
+  it('avec la pluriannuelle choisie, l\'examen en cours de la carte de résident n\'est pas proposé', () => {
+    localStorageMock.setItem('target-title', 'pluriannuelle')
+    localStorageMock.setItem('exam-in-progress-resident', JSON.stringify(progress('resident')))
+    renderHome()
+    expect(screen.queryByRole('region', { name: 'Examen en cours' })).toBeNull()
+  })
+
+  it('« Supprimer l\'examen en cours » ne supprime que celui de la carte de résident', async () => {
+    const other = JSON.stringify(progress(undefined, 9))
+    localStorageMock.setItem('exam-in-progress', other)
+    localStorageMock.setItem('exam-in-progress-resident', JSON.stringify(progress('resident')))
+    renderHome()
+    await act(async () => {
+      fireEvent.click(screen.getByRole('button', { name: "Supprimer l'examen en cours" }))
+    })
+    expect(localStorageMock.getItem('exam-in-progress-resident')).toBeNull()
+    expect(localStorageMock.getItem('exam-in-progress')).toBe(other)
+  })
+
+  it('sans titre choisi, un examen en cours de la carte de résident seul suffit à ne pas renvoyer vers le titre', () => {
+    localStorageMock.removeItem('target-title')
+    localStorageMock.setItem('exam-in-progress-resident', JSON.stringify(progress('resident')))
+    renderHome()
+    expect(screen.queryByTestId('location')).toBeNull()
+    expect(screen.getByRole('link', { name: /Titre visé : Carte de séjour pluriannuelle/ })).toBeInTheDocument()
+  })
+
+  it('premier passage : aucun titre, aucun historique, aucun examen en cours dans aucune clé renvoie vers le titre', () => {
+    localStorageMock.removeItem('target-title')
+    renderHome()
+    expect(screen.getByTestId('location')).toHaveTextContent('/titre|{"firstLaunch":true}')
   })
 })

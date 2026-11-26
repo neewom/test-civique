@@ -2,7 +2,7 @@ import { useState, type ReactNode } from 'react'
 import { Link, Navigate, useNavigate } from 'react-router-dom'
 import { ArrowRight, Check, ChevronDown, ChevronRight, MonitorSmartphone } from 'lucide-react'
 import { EXAM_SIZE, isPassed, passThreshold } from '@/lib/exam'
-import { loadProgress, loadProgressForTitle, clearProgress, resumeIndex } from '@/lib/exam-types'
+import { hasProgress, loadProgressForTitle, clearProgress, resumeIndex } from '@/lib/exam-types'
 import type { ExamInProgress } from '@/lib/exam-types'
 import { loadHistory, loadHistoryForTitle, type HistoryEntry } from '@/lib/history'
 import { passedInARow, READY_GOAL } from '@/lib/readiness'
@@ -160,7 +160,7 @@ export default function Home() {
   const [inProgress, setInProgress] = useState<ExamInProgress | null>(() => loadProgressForTitle(targetTitle))
   const wide = useWideScreen()
   const [mustChooseTitle] = useState(
-    () => storedTitle === null && loadHistory().length === 0 && loadProgress() === null,
+    () => storedTitle === null && loadHistory().length === 0 && !hasProgress(),
   )
 
   if (mustChooseTitle) return <Navigate to="/titre" replace state={{ firstLaunch: true }} />
@@ -174,13 +174,14 @@ export default function Home() {
     : 0
 
   function handleDeleteProgress() {
-    clearProgress()
+    clearProgress(targetTitle)
     setInProgress(null)
   }
 
-  // Always a new exam, even with one in progress (its resume stays at the bottom)
+  // Resumes the exam in progress of the chosen title (never erased silently);
+  // draws a new one only when there is none
   function startExam() {
-    navigate('/examen', { state: { start: 'new' } })
+    navigate('/examen', inProgress ? undefined : { state: { start: 'new' } })
   }
 
   const titlePill = (
