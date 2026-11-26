@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { ArrowRight, Check } from 'lucide-react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { AppHeader } from '@/components/AppHeader'
 import { BrandSymbol } from '@/components/BrandLogo'
 import { BackLink } from '@/components/BackLink'
@@ -226,7 +226,18 @@ export default function TitreVise() {
   const [firstVisit] = useState(() => loadTargetTitle() === null && loadHistory().length === 0 && !hasProgress())
   useDocumentTitle(firstVisit ? "Préparez l'examen civique" : 'Quel titre préparez-vous ?')
   const navigate = useNavigate()
-  const [selected, setSelected] = useState<TargetTitle>(() => loadTargetTitle() ?? 'pluriannuelle')
+  const location = useLocation()
+  // The unsaved selection is kept in the history entry, so a round trip to a sheet
+  // (« En savoir plus », then back) does not lose it
+  const [selected, setSelected] = useState<TargetTitle>(() => {
+    const kept = (location.state as { selected?: unknown } | null)?.selected
+    if (typeof kept === 'string' && (TARGET_TITLES as readonly string[]).includes(kept)) return kept as TargetTitle
+    return loadTargetTitle() ?? 'pluriannuelle'
+  })
+  function handleSelect(t: TargetTitle) {
+    setSelected(t)
+    navigate('.', { replace: true, state: { selected: t } })
+  }
 
   function handleContinue() {
     saveTargetTitle(selected)
@@ -234,7 +245,7 @@ export default function TitreVise() {
     navigate('/', { replace: firstVisit })
   }
 
-  if (firstVisit) return <FirstVisit selected={selected} onSelect={setSelected} onContinue={handleContinue} />
+  if (firstVisit) return <FirstVisit selected={selected} onSelect={handleSelect} onContinue={handleContinue} />
 
   return (
     <main className="relative flex min-h-svh flex-col overflow-hidden bg-background text-foreground">
@@ -248,7 +259,7 @@ export default function TitreVise() {
         <p className="max-w-[19rem] text-base leading-[1.45]">
           Les questions officielles ne sont pas les mêmes selon le titre. Vous pourrez changer plus tard.
         </p>
-        <TitleChoices selected={selected} onSelect={setSelected} firstVisit={false} />
+        <TitleChoices selected={selected} onSelect={handleSelect} firstVisit={false} />
         <PillButton size="lg" onClick={handleContinue} className="mt-auto w-full justify-center text-center">
           Continuer
         </PillButton>

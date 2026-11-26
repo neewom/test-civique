@@ -1,5 +1,5 @@
 import { render, screen, fireEvent, within } from '@testing-library/react'
-import { MemoryRouter, Route, Routes, useLocation } from 'react-router-dom'
+import { MemoryRouter, Route, Routes, useLocation, useNavigate } from 'react-router-dom'
 import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest'
 import FicheTitre from './FicheTitre'
 import { resetTargetTitleForTests } from '@/lib/target-title'
@@ -121,6 +121,26 @@ describe('Fiche d\'un titre', () => {
       expect(screen.getByText('Accueil')).toBeInTheDocument()
     })
 
+    it('ancien utilisateur sans titre enregistré (historique) : « Continuer mon entraînement » sur la pluriannuelle', () => {
+      ls.setItem('quiz-history', JSON.stringify([{ date: '2026-11-20T10:00:00.000Z', score: 30, total: 40 }]))
+      renderFiche('/titres/carte-de-sejour-pluriannuelle')
+      expect(screen.getByRole('button', { name: 'Continuer mon entraînement' })).toBeInTheDocument()
+      renderFiche('/titres/carte-de-resident')
+      expect(screen.getByRole('button', { name: "M'entraîner pour ce titre" })).toBeInTheDocument()
+    })
+
+    it('ancien utilisateur sans titre enregistré (examen en cours) : « Continuer mon entraînement » sur la pluriannuelle', () => {
+      ls.setItem('exam-in-progress', JSON.stringify({
+        questions: [{ id: 1, theme: 'T', question: 'Q ?', answer: 'A', explanation: 'E', choices: ['A', 'B', 'C', 'D'] }],
+        index: 0,
+        answers: [],
+        timeLeft: 100,
+        startedAt: '2026-11-20T10:00:00.000Z',
+      }))
+      renderFiche('/titres/carte-de-sejour-pluriannuelle')
+      expect(screen.getByRole('button', { name: 'Continuer mon entraînement' })).toBeInTheDocument()
+    })
+
     it('libellé « M\'entraîner » quand un autre titre est choisi', () => {
       ls.setItem('target-title', 'resident')
       renderFiche('/titres/carte-de-sejour-pluriannuelle')
@@ -133,6 +153,48 @@ describe('Fiche d\'un titre', () => {
       expect(ls.getItem('target-title')).toBeNull()
       fireEvent.click(screen.getByRole('button', { name: "M'entraîner pour ce titre" }))
       expect(ls.getItem('target-title')).toBe('resident')
+    })
+
+    it('premier passage : le bouton remplace l\'entrée (le retour arrière ne revient pas à la fiche)', () => {
+      function Back() {
+        const navigate = useNavigate()
+        return <button onClick={() => navigate(-1)}>Précédent</button>
+      }
+      render(
+        <ThemeProvider>
+          <MemoryRouter initialEntries={['/titre', '/titres/carte-de-resident']} initialIndex={1}>
+            <Routes>
+              <Route path="/titres/:slug" element={<FicheTitre />} />
+              <Route path="/titre" element={<p>Écran du titre</p>} />
+              <Route path="/" element={<Back />} />
+            </Routes>
+          </MemoryRouter>
+        </ThemeProvider>,
+      )
+      fireEvent.click(screen.getByRole('button', { name: "M'entraîner pour ce titre" }))
+      fireEvent.click(screen.getByRole('button', { name: 'Précédent' }))
+      expect(screen.getByText('Écran du titre')).toBeInTheDocument()
+    })
+
+    it('titre déjà connu : navigation normale (le retour arrière revient à la fiche)', () => {
+      ls.setItem('target-title', 'pluriannuelle')
+      function Back() {
+        const navigate = useNavigate()
+        return <button onClick={() => navigate(-1)}>Précédent</button>
+      }
+      render(
+        <ThemeProvider>
+          <MemoryRouter initialEntries={['/titres/carte-de-resident']}>
+            <Routes>
+              <Route path="/titres/:slug" element={<><p>Fiche</p><FicheTitre /></>} />
+              <Route path="/" element={<Back />} />
+            </Routes>
+          </MemoryRouter>
+        </ThemeProvider>,
+      )
+      fireEvent.click(screen.getByRole('button', { name: "M'entraîner pour ce titre" }))
+      fireEvent.click(screen.getByRole('button', { name: 'Précédent' }))
+      expect(screen.getByText('Fiche')).toBeInTheDocument()
     })
 
     it('naturalisation : « Entraînement bientôt disponible », inactif, rien d\'enregistré', () => {

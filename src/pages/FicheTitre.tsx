@@ -6,7 +6,9 @@ import { OrganicBackground } from '@/components/OrganicBackground'
 import { PillButton } from '@/components/PillButton'
 import { EXAM_SIZE, passThreshold } from '@/lib/exam'
 import { FICHES, FICHE_LABELS, titleOfSlug } from '@/lib/fiches'
-import { TARGET_TITLES, loadTargetTitle, saveTargetTitle, type TargetTitle, type TitleKey } from '@/lib/target-title'
+import { hasProgress } from '@/lib/exam-types'
+import { loadHistory } from '@/lib/history'
+import { DEFAULT_TITLE, TARGET_TITLES, loadTargetTitle, saveTargetTitle, type TargetTitle, type TitleKey } from '@/lib/target-title'
 import { useDocumentTitle } from '@/lib/use-document-title'
 import { cn } from '@/lib/utils'
 
@@ -25,7 +27,13 @@ function Fiche({ titleKey }: { titleKey: TitleKey }) {
   const navigate = useNavigate()
   const location = useLocation()
   const target = (TARGET_TITLES as readonly string[]).includes(titleKey) ? (titleKey as TargetTitle) : null
-  const alreadyChosen = target !== null && loadTargetTitle() === target
+  // Same rule as the home page: an existing user without a stored title has the default one
+  const stored = loadTargetTitle()
+  const existingUser = loadHistory().length > 0 || hasProgress()
+  const chosen = stored ?? (existingUser ? DEFAULT_TITLE : null)
+  const alreadyChosen = target !== null && chosen === target
+  // First pass (nothing chosen, nothing known): the page is not one to come back to
+  const firstPass = chosen === null
 
   const marks = [
     { icon: ListChecks, value: String(EXAM_SIZE), label: 'questions' },
@@ -69,7 +77,7 @@ function Fiche({ titleKey }: { titleKey: TitleKey }) {
               className="w-full justify-center text-center"
               onClick={() => {
                 saveTargetTitle(target)
-                navigate('/')
+                navigate('/', { replace: firstPass })
               }}
             >
               {alreadyChosen ? 'Continuer mon entraînement' : "M'entraîner pour ce titre"}

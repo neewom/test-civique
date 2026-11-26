@@ -199,3 +199,61 @@ describe('Page de première visite', () => {
     expect(screen.getByRole('link', { name: 'Retour' })).toBeInTheDocument()
   })
 })
+
+describe('Sélection gardée pendant un aller-retour vers une fiche', () => {
+  function Fiche() {
+    const navigate = useNavigate()
+    return (
+      <>
+        <p>Fiche</p>
+        <button onClick={() => navigate(-1)}>Retour navigateur</button>
+      </>
+    )
+  }
+  function renderWithFiche() {
+    render(
+      <MemoryRouter initialEntries={['/titre']}>
+        <Routes>
+          <Route path="/titre" element={<TitreVise />} />
+          <Route path="/titres/:slug" element={<Fiche />} />
+          <Route path="/" element={<p>Accueil</p>} />
+        </Routes>
+      </MemoryRouter>,
+    )
+  }
+  const openSheet = () =>
+    fireEvent.click(screen.getByRole('link', { name: /En savoir plus sur : Carte de séjour pluriannuelle/ }))
+
+  it('première visite : le titre choisi reste choisi au retour', () => {
+    renderWithFiche()
+    fireEvent.click(screen.getByRole('button', { name: /Carte de résident/ }))
+    openSheet()
+    fireEvent.click(screen.getByRole('button', { name: 'Retour navigateur' }))
+    expect(screen.getByRole('button', { name: /Carte de résident/ })).toHaveAttribute('aria-pressed', 'true')
+    fireEvent.click(screen.getByRole('button', { name: 'Continuer' }))
+    expect(localStorageMock.getItem('target-title')).toBe('resident')
+  })
+
+  it('changement de titre : le titre choisi reste choisi au retour, pas le titre enregistré', () => {
+    localStorageMock.setItem('quiz-history', EXISTING_USER_HISTORY)
+    localStorageMock.setItem('target-title', 'pluriannuelle')
+    renderWithFiche()
+    fireEvent.click(screen.getByRole('button', { name: /Carte de résident/ }))
+    openSheet()
+    fireEvent.click(screen.getByRole('button', { name: 'Retour navigateur' }))
+    expect(screen.getByRole('button', { name: /Carte de résident/ })).toHaveAttribute('aria-pressed', 'true')
+    fireEvent.click(screen.getByRole('button', { name: 'Continuer' }))
+    expect(localStorageMock.getItem('target-title')).toBe('resident')
+  })
+
+  it('sans choix fait, un état d\'historique inconnu est ignoré', () => {
+    render(
+      <MemoryRouter initialEntries={[{ pathname: '/titre', state: { selected: 'nimporte' } }]}>
+        <Routes>
+          <Route path="/titre" element={<TitreVise />} />
+        </Routes>
+      </MemoryRouter>,
+    )
+    expect(screen.getByRole('button', { name: /Carte de séjour pluriannuelle/ })).toHaveAttribute('aria-pressed', 'true')
+  })
+})

@@ -92,6 +92,25 @@ typography:
     fontSize: "1.0625rem"
     fontWeight: 700
     lineHeight: 1.375
+  stat:
+    fontFamily: "'Atkinson Hyperlegible', system-ui, sans-serif"
+    fontSize: "1.5rem"
+    fontWeight: 700
+    lineHeight: 1.25
+    letterSpacing: "-0.02em"
+    fontFeature: "'tnum'"
+  stat-lg:
+    fontFamily: "'Atkinson Hyperlegible', system-ui, sans-serif"
+    fontSize: "1.625rem"
+    fontWeight: 700
+    lineHeight: 1.25
+    letterSpacing: "-0.02em"
+    fontFeature: "'tnum'"
+  stat-label:
+    fontFamily: "'Atkinson Hyperlegible', system-ui, sans-serif"
+    fontSize: "0.875rem"
+    fontWeight: 400
+    lineHeight: 1.375
   body:
     fontFamily: "'Atkinson Hyperlegible', system-ui, sans-serif"
     fontSize: "1rem"
@@ -325,6 +344,7 @@ Une palette de carte illustrée : un papier crème, une encre presque noire, et 
 - **Question** (`question`) : l'énoncé d'une question d'examen avant validation ; il passe à 1.3125rem une fois la réponse validée, pour laisser la place à la correction. À partir de 768 px, l'énoncé reste à 1,75rem (`question-lg`, interligne 1.25) avant et après validation.
 - **Title** (`title`) : énoncé d'une question dans la révision et le détail d'un examen ; taille du texte des pastilles « lg ».
 - **Title small** (`title-sm`) : titres de section (« Derniers examens », « Répartition des 40 questions ») et titres des options du titre visé.
+- **Stat** (`stat`, `stat-lg` dès 768 px) et **Stat label** (`stat-label`) : valeur et intitulé des repères de la fiche d'un titre (« 40 », « 45 min », « 32/40 ») et chiffre du compteur « questions dans la liste officielle » (`stat`).
 - **Body** (`body`) : texte courant, réponses, pastilles standard. Interligne racine de 145 %.
 - **Body small** (`body-sm`) : explications, liens « Retour », filtres, méta-informations.
 - **Label** (`label`) : intitulés « Bonne réponse » / « Votre réponse », sous-titres de pastilles en 400, étiquette « bientôt ».
