@@ -93,7 +93,6 @@ function normalizeTypography(s: string): string {
 // celles des questions présentes figurent ici. Aucune coquille officielle présente
 // n'est gardée telle quelle sans décision : toute exception est listée ci-dessous avec
 // sa raison.
-// Coquille connue, pas encore présente dans nos données : NAT 225 « les parents peuvent inscrire ».
 const LIST_EXCEPTIONS: Record<string, Map<number, { reason: string; expected: string }>> = {
   CR: new Map([
     [
@@ -251,6 +250,15 @@ const LIST_EXCEPTIONS: Record<string, Map<number, { reason: string; expected: st
         // Officiel : « … le 101ème département … » (« 101e » en français correct) ; libellé corrigé dans nos données (question 602).
         reason: 'faute corrigée',
         expected: "Quel est le 101e département français depuis 2011 ?",
+      },
+    ],
+    [
+      225,
+      {
+        // Officiel : « … les parents peuvent inscrire leurs enfants … » (inversion manquante) ;
+        // libellé corrigé dans nos données (question 610) ; la question 438 reste celle de la liste CR.
+        reason: 'faute corrigée',
+        expected: "Auprès de quelle institution les parents peuvent-ils inscrire leurs enfants à l'école publique ?",
       },
     ],
     [
