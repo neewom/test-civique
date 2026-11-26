@@ -2004,7 +2004,7 @@
       "Le directeur général des services communaux",
       "Le président de la communauté de communes"
     ],
-    "explanation": "Le maire est élu par les conseillers municipaux, eux-mêmes élus pour 6 ans par les électeurs de la commune. Il dirige la commune, qui gère notamment les écoles maternelles et primaires, l'urbanisme et les services de proximité.",
+    "explanation": "Le maire est élu par les conseillers municipaux, eux-mêmes élus par les électeurs de la commune. Il dirige la commune et son administration, avec le conseil municipal.",
     "answers": [
       "Le maire, élu par le conseil municipal"
     ],
@@ -8888,7 +8888,7 @@
       "De juger les personnes, exercé par les tribunaux",
       "De diriger l'administration, exercé par les préfets",
       "De contrôler la constitutionnalité des lois, exercé par le Gouvernement",
-      "De conduire la politique de la nation, exercé par le Premier ministre"
+      "D'élire le président de la République, exercé par les maires"
     ],
     "explanation": "Le pouvoir législatif est exercé par le Parlement, qui vote la loi. Le Parlement vérifie aussi que le Gouvernement agit selon la loi. Le pouvoir exécutif applique les lois et le pouvoir judiciaire rend la justice.",
     "group": "pouvoir-legislatif",
@@ -8938,7 +8938,7 @@
     "distractors": [
       "Voter les lois et contrôler le président",
       "Rendre la justice dans toute la France",
-      "Gérer les écoles primaires de chaque commune",
+      "Nommer les maires des communes",
       "Élire les sénateurs",
       "Contrôler l'application de la Constitution"
     ],
@@ -9016,7 +9016,7 @@
     "distractors": [
       "Rendre la justice au nom du peuple",
       "Présider l'Assemblée nationale",
-      "Représenter l'État dans un département",
+      "Diriger les débats du Sénat",
       "Nommer seul tous les membres du Conseil constitutionnel",
       "Élaborer seul les lois du pays"
     ],
@@ -9142,7 +9142,7 @@
       "L'action sociale (handicap, gestion du RSA)"
     ],
     "distractors": [
-      "L'enseignement (écoles maternelles et primaires)",
+      "Les transports (trains régionaux, TER)",
       "La gestion des lycées (bâtiments, équipements)",
       "La défense (armée, frontières)",
       "La justice (tribunaux, prisons)",
