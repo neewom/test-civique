@@ -30,3 +30,7 @@ dist-ssr
 
 # Graphify (cache local régénérable via `graphify update .`)
 graphify-out/
+
+# Playwright (npm run tnr) : rapport HTML et traces
+playwright-report/
+test-results/

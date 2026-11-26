@@ -1,7 +1,7 @@
 {
   "name": "test-civique",
   "private": true,
-  "version": "1.11.6",
+  "version": "1.12.0",
   "type": "module",
   "engines": {
     "node": ">=20.19"
@@ -12,7 +12,8 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "tnr": "playwright test"
   },
   "dependencies": {
     "@base-ui/react": "^1.3.0",
@@ -28,6 +29,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.39.4",
+    "@playwright/test": "1.62.1",
     "@tailwindcss/vite": "^4.2.2",
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.2",
