@@ -13930,7 +13930,7 @@
     "natNumber": 102,
     "question": "Que permet la liberté de circulation ?",
     "answers": [
-      "De se déplacer librement, dans le respect de la loi"
+      "De se déplacer librement dans le respect de la loi"
     ],
     "distractors": [
       "D'entrer dans n'importe quel logement sans autorisation",
@@ -13938,7 +13938,7 @@
       "De séjourner dans n'importe quel pays sans aucune formalité",
       "De voter dans la commune de son choix sans y habiter"
     ],
-    "explanation": "La liberté de circulation, ou liberté d'aller et venir, permet à chacun de se déplacer librement. Comme les autres libertés, elle peut être limitée par la loi pour protéger l'intérêt général ou l'ordre public.",
+    "explanation": "La liberté de circulation, ou liberté d'aller et venir, permet à chacun de se déplacer librement. Comme les autres libertés, elle peut être limitée par la loi.",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/droits-et-devoirs/obligations-et-devoirs-des-personnes-residant-en-france/la-limite-des-libertes-individuelles/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -14103,7 +14103,7 @@
       "Garder le silence et demander l'assistance d'un avocat"
     ],
     "distractors": [
-      "Refuser de donner son identité aux policiers",
+      "Exiger d'être relâché sans attendre",
       "Quitter librement les lieux sans l'accord des policiers",
       "Choisir soi-même les policiers qui s'occupent de vous",
       "S'opposer physiquement à la police si l'on se juge innocent"
@@ -14129,7 +14129,7 @@
     "distractors": [
       "Oui, la religion est obligatoire pour tous les citoyens",
       "Oui, chacun a la religion de ses parents",
-      "Oui, chacun doit déclarer sa religion à la mairie de sa commune",
+      "Non, mais chacun doit déclarer sa religion à la mairie",
       "Non, mais il faut en choisir une avant 18 ans"
     ],
     "explanation": "La laïcité garantit à chaque personne la liberté d'avoir ou de ne pas avoir de religion, d'en changer ou de ne plus en avoir. Personne ne peut être obligé de respecter les principes ou les prescriptions d'une religion.",
@@ -14157,7 +14157,7 @@
       "18 ans",
       "21 ans"
     ],
-    "explanation": "La loi du 7 juillet 2023 a fixé la « majorité numérique » à 15 ans : en dessous de cet âge, l'inscription sur un réseau social doit être autorisée par un parent. Cette règle n'est pas encore appliquée, faute du décret qui doit fixer son entrée en vigueur. La majorité numérique ne doit pas être confondue avec la majorité civile, fixée à 18 ans.",
+    "explanation": "La loi du 7 juillet 2023 a fixé la « majorité numérique » à 15 ans : en dessous de cet âge, l'inscription sur un réseau social doit être autorisée par un parent. Cette règle n'est pas encore appliquée, faute du décret qui doit fixer son entrée en vigueur.",
     "source": {
       "url": "https://www.legifrance.gouv.fr/jorf/article_jo/JORFARTI000047799537",
       "label": "legifrance.gouv.fr"
@@ -14197,7 +14197,7 @@
     "natNumber": 114,
     "question": "En France, la conduite sans permis d'une moto est :",
     "answers": [
-      "Un délit, puni d'un an de prison et de 15 000 € d'amende"
+      "Un délit, passible de prison et d'une amende"
     ],
     "distractors": [
       "Une simple contravention, sans peine de prison possible",
@@ -14245,11 +14245,11 @@
     "natNumber": 116,
     "question": "Est-ce légal d'être marié à plusieurs personnes en même temps ?",
     "answers": [
-      "Non, la polygamie est interdite (délit de bigamie)"
+      "Non, la bigamie est un délit puni par la loi"
     ],
     "distractors": [
       "Oui, si tous les conjoints sont d'accord entre eux",
-      "Oui, pour les personnes dont le pays d'origine l'autorise",
+      "Non, sauf pour les personnes dont le pays d'origine l'autorise",
       "Oui, si le deuxième mariage est seulement religieux",
       "Non, sauf avec l'autorisation exceptionnelle du préfet"
     ],
@@ -14272,7 +14272,7 @@
       "Oui, chaque année, même avec peu ou pas de revenus"
     ],
     "distractors": [
-      "Non, seulement pour les personnes salariées",
+      "Oui, mais seulement pour les personnes salariées",
       "Non, seulement tous les deux ans",
       "Non, les personnes étrangères en sont dispensées",
       "Oui, mais seulement à partir de 30 000 € de revenus"
@@ -14298,7 +14298,7 @@
     ],
     "distractors": [
       "Non, c'est seulement un conseil moral",
-      "Non, seuls les professionnels de santé y sont tenus",
+      "Oui, mais seulement pour les professionnels de santé",
       "Non, il suffit de filmer la scène pour garder une preuve",
       "Oui, mais seulement si la personne en danger est un proche"
     ],
@@ -14352,7 +14352,7 @@
       "16 ans",
       "21 ans"
     ],
-    "explanation": "L'article L3342-1 du code de la santé publique interdit la vente d'alcool aux mineurs de moins de 18 ans, que ce soit à emporter ou à consommer sur place. Le vendeur peut demander un document prouvant la majorité de l'acheteur.",
+    "explanation": "L'article L3342-1 du code de la santé publique interdit la vente d'alcool aux mineurs, que ce soit à emporter ou à consommer sur place. Le vendeur peut demander un document prouvant l'âge de l'acheteur.",
     "source": {
       "url": "https://www.drogues.gouv.fr/sites/default/files/2025-03/lessentiel_interdictions_vente_aux_mineurs.pdf",
       "label": "drogues.gouv.fr"
@@ -14479,7 +14479,8 @@
     "source": {
       "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F39617",
       "label": "service-public.gouv.fr"
-    }
+    },
+    "group": "vote-conditions"
   },
   {
     "id": 552,
