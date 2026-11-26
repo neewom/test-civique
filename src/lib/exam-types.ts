@@ -44,12 +44,12 @@ export interface ExamInProgress {
 
 // One exam in progress per title. The multi-year permit keeps the original key (progress
 // stored without a title or with an unknown one included): nothing already stored is
-// moved or reshaped. The resident card has its own key.
+// moved or reshaped. Every other title has its own key, `exam-in-progress-<title>`.
 export const EXAM_PROGRESS_KEY = 'exam-in-progress'
-export const RESIDENT_EXAM_PROGRESS_KEY = 'exam-in-progress-resident'
 
-function progressKey(title: TitleKey): string {
-  return title === 'resident' ? RESIDENT_EXAM_PROGRESS_KEY : EXAM_PROGRESS_KEY
+// The single place where the storage key of a title is computed
+export function progressKey(title: TitleKey): string {
+  return title === DEFAULT_TITLE ? EXAM_PROGRESS_KEY : `${EXAM_PROGRESS_KEY}-${title}`
 }
 
 // Saved in the key of its own title
@@ -62,7 +62,7 @@ export function saveProgress(state: ExamInProgress): void {
 }
 
 // Clears the progress of one title only; the other titles' progress is untouched
-export function clearProgress(title: TitleKey = DEFAULT_TITLE): void {
+export function clearProgress(title: TitleKey): void {
   try {
     localStorage.removeItem(progressKey(title))
   } catch {
@@ -116,9 +116,8 @@ function isExamInProgress(value: unknown): value is ExamInProgress {
   )
 }
 
-// Saved progress stored in the key of the given title (the multi-year permit's by
-// default), or null when missing, unreadable or malformed.
-export function loadProgress(title: TitleKey = DEFAULT_TITLE): ExamInProgress | null {
+// Saved progress stored in the key of the given title (required: no default title), or null when missing, unreadable or malformed.
+export function loadProgress(title: TitleKey): ExamInProgress | null {
   try {
     const raw = localStorage.getItem(progressKey(title))
     if (!raw) return null

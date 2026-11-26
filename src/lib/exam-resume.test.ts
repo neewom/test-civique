@@ -91,24 +91,24 @@ describe('saveProgress', () => {
 describe('clearProgress', () => {
   it('supprime la clé exam-in-progress', () => {
     saveProgress(makeProgress())
-    clearProgress()
+    clearProgress('pluriannuelle')
     expect(localStorage.getItem(EXAM_PROGRESS_KEY)).toBeNull()
   })
 
   it('ne lève pas d\'erreur si la clé est absente', () => {
-    expect(() => clearProgress()).not.toThrow()
+    expect(() => clearProgress('pluriannuelle')).not.toThrow()
   })
 })
 
 describe('loadProgress', () => {
   it('retourne null quand la clé est absente', () => {
-    expect(loadProgress()).toBeNull()
+    expect(loadProgress('pluriannuelle')).toBeNull()
   })
 
   it('retourne le state sauvegardé', () => {
     const state = makeProgress()
     saveProgress(state)
-    const loaded = loadProgress()
+    const loaded = loadProgress('pluriannuelle')
     expect(loaded).not.toBeNull()
     expect(loaded!.index).toBe(state.index)
     expect(loaded!.timeLeft).toBe(state.timeLeft)
@@ -120,7 +120,7 @@ describe('loadProgress', () => {
       { questionId: 1, chosen: 'Réponse 1', correct: true },
     ]
     saveProgress(makeProgress({ answers }))
-    const loaded = loadProgress()!
+    const loaded = loadProgress('pluriannuelle')!
     expect(loaded.answers[0].questionId).toBe(1)
     expect(loaded.answers[0].correct).toBe(true)
     expect(loaded.questions[0].choices).toHaveLength(4)
@@ -128,7 +128,7 @@ describe('loadProgress', () => {
 
   it('retourne null si le JSON est invalide', () => {
     localStorage.setItem(EXAM_PROGRESS_KEY, 'not-json{')
-    expect(loadProgress()).toBeNull()
+    expect(loadProgress('pluriannuelle')).toBeNull()
   })
 
   // Stored data may be corrupted or edited by hand: a malformed value is ignored
@@ -151,19 +151,19 @@ describe('loadProgress', () => {
     ['sans date de début', { ...makeProgress(), startedAt: undefined }],
   ])('retourne null pour une sauvegarde mal formée (%s)', (_label, value) => {
     localStorage.setItem(EXAM_PROGRESS_KEY, JSON.stringify(value))
-    expect(loadProgress()).toBeNull()
+    expect(loadProgress('pluriannuelle')).toBeNull()
   })
 
   it('accepte une réponse sans choix (chrono expiré)', () => {
     saveProgress(makeProgress({ answers: [{ questionId: 1, chosen: null, correct: false }] }))
-    expect(loadProgress()?.answers[0].chosen).toBeNull()
+    expect(loadProgress('pluriannuelle')?.answers[0].chosen).toBeNull()
   })
 
   it('retourne null quand localStorage est inaccessible', () => {
     vi.stubGlobal('localStorage', {
       getItem: () => { throw new Error('SecurityError') },
     })
-    expect(loadProgress()).toBeNull()
+    expect(loadProgress('pluriannuelle')).toBeNull()
   })
 })
 
@@ -180,7 +180,7 @@ describe('cycle complet sauvegarde → restauration', () => {
       ],
     })
     saveProgress(original)
-    const restored = loadProgress()!
+    const restored = loadProgress('pluriannuelle')!
 
     expect(restored.index).toBe(original.index)
     expect(restored.timeLeft).toBe(original.timeLeft)
@@ -191,8 +191,8 @@ describe('cycle complet sauvegarde → restauration', () => {
 
   it('clearProgress après saveProgress → loadProgress retourne null', () => {
     saveProgress(makeProgress())
-    clearProgress()
-    expect(loadProgress()).toBeNull()
+    clearProgress('pluriannuelle')
+    expect(loadProgress('pluriannuelle')).toBeNull()
   })
 })
 

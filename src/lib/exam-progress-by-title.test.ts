@@ -1,11 +1,11 @@
 import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest'
 import {
   EXAM_PROGRESS_KEY,
-  RESIDENT_EXAM_PROGRESS_KEY,
   clearProgress,
   hasProgress,
   loadProgress,
   loadProgressForTitle,
+  progressKey,
   saveProgress,
   type ExamInProgress,
 } from './exam-types'
@@ -54,7 +54,9 @@ describe('exam in progress, one per title', () => {
     expect(JSON.parse(localStorageMock.getItem('exam-in-progress')!).title).toBe('pluriannuelle')
     expect(JSON.parse(localStorageMock.getItem('exam-in-progress-resident')!).title).toBe('resident')
     expect(EXAM_PROGRESS_KEY).toBe('exam-in-progress')
-    expect(RESIDENT_EXAM_PROGRESS_KEY).toBe('exam-in-progress-resident')
+    expect(progressKey('pluriannuelle')).toBe('exam-in-progress')
+    expect(progressKey('resident')).toBe('exam-in-progress-resident')
+    expect(progressKey('naturalisation')).toBe('exam-in-progress-naturalisation')
   })
 
   it('two exams in progress are resumed each for its own title', () => {
@@ -122,12 +124,28 @@ describe('exam in progress, one per title', () => {
     expect(loadProgressForTitle('resident')).not.toBeNull()
   })
 
-  it('clearProgress without title keeps clearing the multi-year permit key', () => {
+  it('clearProgress of the multi-year permit leaves the resident card progress alone', () => {
     saveProgress(progress('pluriannuelle'))
     saveProgress(progress('resident'))
-    clearProgress()
+    clearProgress('pluriannuelle')
     expect(localStorageMock.getItem('exam-in-progress')).toBeNull()
     expect(loadProgress('resident')).not.toBeNull()
+  })
+
+  it('a naturalisation progress never reads as the multi-year permit and never overwrites it', () => {
+    saveProgress(progress('pluriannuelle', 4))
+    const before = localStorageMock.getItem('exam-in-progress')
+    saveProgress(progress('naturalisation', 1))
+    expect(localStorageMock.getItem('exam-in-progress')).toBe(before)
+    expect(JSON.parse(localStorageMock.getItem('exam-in-progress-naturalisation')!).title).toBe('naturalisation')
+    expect(loadProgressForTitle('pluriannuelle')?.index).toBe(4)
+    expect(loadProgressForTitle('naturalisation')?.index).toBe(1)
+    clearProgress('pluriannuelle')
+    expect(loadProgressForTitle('naturalisation')?.index).toBe(1)
+    localStorageMock.clear()
+    saveProgress(progress('naturalisation'))
+    expect(loadProgressForTitle('pluriannuelle')).toBeNull()
+    expect(loadProgress('pluriannuelle')).toBeNull()
   })
 
   it('hasProgress is true when any title has an exam in progress, false when none', () => {

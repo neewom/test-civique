@@ -435,7 +435,7 @@ describe('Examen — fiabilité', () => {
     expect(currentQuestionText()).toBe(resume.questions[2].question)
     expect(timeLeft()).toBe(1500)
     await act(async () => { vi.advanceTimersByTime(1000) })
-    const saved = loadProgress()!
+    const saved = loadProgress('pluriannuelle')!
     expect(saved.questions.map((q) => q.id)).toEqual(resume.questions.map((q) => q.id))
     expect(saved.answers).toHaveLength(2)
   })
@@ -486,8 +486,8 @@ describe('Examen — fiabilité', () => {
     })
     expect(screen.getByText(`Question 1 sur ${EXAM_SIZE}`)).toBeInTheDocument()
     expect(timeLeft()).toBe(2700)
-    expect(loadProgress()!.answers).toHaveLength(0)
-    expect(loadProgress()!.timeLeft).toBe(GLOBAL_EXAM_TIME)
+    expect(loadProgress('pluriannuelle')!.answers).toHaveLength(0)
+    expect(loadProgress('pluriannuelle')!.timeLeft).toBe(GLOBAL_EXAM_TIME)
 
     // Le nouvel examen ne se termine pas tout seul
     await act(async () => { vi.advanceTimersByTime(5000) })
@@ -501,7 +501,7 @@ describe('Examen — fiabilité', () => {
     await act(async () => {
       fireEvent.click(screen.getByRole('button', { name: 'Nouvel examen blanc' }))
     })
-    const questions = loadProgress()!.questions
+    const questions = loadProgress('pluriannuelle')!.questions
     expect(questions).toHaveLength(EXAM_SIZE)
     // An exam question keeps no notion: look it up in the data
     const situationalIds = new Set(
@@ -540,7 +540,7 @@ function resumeWith(overrides: Partial<ExamInProgress['questions'][number]>, tim
 }
 
 async function answer(correct: boolean) {
-  const q = loadProgress()!.questions[loadProgress()!.index]
+  const q = loadProgress('pluriannuelle')!.questions[loadProgress('pluriannuelle')!.index]
   const choice = correct ? q.answer : q.choices.find((c) => c !== q.answer)!
   await act(async () => { fireEvent.click(screen.getByRole('radio', { name: choice })) })
   await act(async () => { fireEvent.click(screen.getByRole('button', { name: 'Valider ma réponse' })) })
@@ -839,7 +839,7 @@ describe('Examen — titre visé', () => {
 
   it('enregistre le titre dans la progression d\'un nouvel examen', () => {
     renderExamen()
-    expect(loadProgress()?.title).toBe('pluriannuelle')
+    expect(loadProgress('pluriannuelle')?.title).toBe('pluriannuelle')
   })
 
   it('enregistre le titre dans l\'historique à la fin de l\'examen', async () => {
