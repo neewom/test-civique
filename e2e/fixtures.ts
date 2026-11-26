@@ -34,6 +34,14 @@ function isGoatCounter(url: string): boolean {
   }
 }
 
+function isDeployPreview(url: string): boolean {
+  try {
+    return new URL(url).hostname.startsWith('deploy-preview-')
+  } catch {
+    return false
+  }
+}
+
 export interface Guard {
   /** GoatCounter requests stopped by the route (none expected outside production) */
   blocked: string[]
@@ -60,6 +68,11 @@ export const test = base.extend<{ guard: Guard }>({
           return route.abort('blockedbyclient')
         },
       )
+      // Netlify injects its review drawer into deploy previews only; our CSP blocks it and
+      // it logs errors that are not the app's: served empty so previews test the app alone
+      await context.route('**/.netlify/scripts/**', (route) =>
+        route.fulfill({ status: 200, contentType: 'application/javascript', body: '' }),
+      )
       context.on('request', (r) => {
         if (isGoatCounter(r.url())) seen.push(r.url())
       })
@@ -73,6 +86,9 @@ export const test = base.extend<{ guard: Guard }>({
       page.on('console', (m) => {
         // The blocked GoatCounter requests log a load error that names them in its location
         if (m.type() !== 'error' || isGoatCounter(m.location().url) || /goatcounter/i.test(m.text())) return
+        // Deploy previews only: the div Netlify inserts carries style="position:fixed", which
+        // our CSP blocks; the production run still catches any inline style of the app itself
+        if (isDeployPreview(m.location().url) && m.text().startsWith('Applying inline style violates')) return
         problems.push(`console: ${m.text()} (${m.location().url})`)
       })
       page.on('pageerror', (e) => problems.push(`exception: ${e.message}`))
