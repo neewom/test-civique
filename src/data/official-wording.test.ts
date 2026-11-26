@@ -195,6 +195,15 @@ const LIST_EXCEPTIONS: Record<string, Map<number, { reason: string; expected: st
       },
     ],
     [
+      98,
+      {
+        // Officiel : « … Droits de l'Homme et du Citoyen de 1789 ? » (casse de la liste NAT) ; notre question 358
+        // garde le libellé de la liste CR, verrouillé par le contrôle CR.
+        reason: 'casse de la liste NAT',
+        expected: "Laquelle de ces citations est inscrite dans la Déclaration des Droits de l'homme et du Citoyen de 1789 ?",
+      },
+    ],
+    [
       137,
       {
         // Officiel : « Pourquoi l’année 1958 est importante pour la France ? », même
