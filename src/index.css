@@ -237,6 +237,10 @@
 :root.page-transition [data-app-header] {
   view-transition-name: app-header;
 }
+/* Bandeau vert de l'examen : se fond sur place comme les formes de fond, ne glisse pas */
+:root.page-transition [data-exam-bar] {
+  view-transition-name: exam-bar;
+}
 :root.page-transition main {
   background: transparent;
 }
@@ -244,7 +248,8 @@
 ::view-transition-group(root),
 ::view-transition-group(page-content),
 ::view-transition-group(page-bg),
-::view-transition-group(app-header) {
+::view-transition-group(app-header),
+::view-transition-group(exam-bar) {
   animation: none;
 }
 ::view-transition-group(page-bg) {
@@ -254,6 +259,9 @@
   z-index: 2;
 }
 ::view-transition-group(app-header) {
+  z-index: 3;
+}
+::view-transition-group(exam-bar) {
   z-index: 3;
 }
 ::view-transition-image-pair(*) {
@@ -321,15 +329,18 @@
 }
 /* Image de l'ancienne page recalée sur sa position avant le clic (voir PageShell) */
 ::view-transition-old(page-content),
-::view-transition-old(page-bg) {
+::view-transition-old(page-bg),
+::view-transition-old(exam-bar) {
   translate: 0 var(--vt-old-offset, 0px);
   /* taille d'origine de l'ancienne page, pas celle du groupe (qui est celle de la nouvelle) */
   inline-size: auto;
   block-size: auto;
 }
-::view-transition-old(page-bg) {
+::view-transition-old(page-bg),
+::view-transition-old(exam-bar) {
   animation-name: page-fade-out;
 }
-::view-transition-new(page-bg) {
+::view-transition-new(page-bg),
+::view-transition-new(exam-bar) {
   animation-name: page-fade-in;
 }
