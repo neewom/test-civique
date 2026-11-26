@@ -119,23 +119,26 @@ export function shuffle<T>(arr: T[]): T[] {
  * exam keeps 40 questions whenever the pool allows it. Final order is shuffled.
  *
  * `avoid` lists question ids (those of the previous exam) kept out as long as possible:
- * they are drawn only as a last resort, after every line has been filled without them,
- * and never at the expense of the blueprint counts or the group rule.
+ * they come last in each draw order, so they are used only when a line cannot be
+ * filled without them, and never at the expense of the blueprint counts or the group rule.
  */
 export function buildExam(
   pool: Question[] = allQuestions as Question[],
   { avoid = [] }: { avoid?: Iterable<number> } = {},
 ): ExamQuestion[] {
   const avoided = new Set(avoid)
-  const fresh = (list: Question[]) => list.filter((q) => !avoided.has(q.id))
-  const stale = (list: Question[]) => list.filter((q) => avoided.has(q.id))
+  // Candidates in draw order: the not-avoided ones first (shuffled), then the avoided ones
+  const prefer = (list: Question[]) => [
+    ...shuffle(list.filter((q) => !avoided.has(q.id))),
+    ...shuffle(list.filter((q) => avoided.has(q.id))),
+  ]
   const seenGroups = new Set<string>()
   const selectedIds = new Set<number>()
   const selected: Question[] = []
 
   function take(candidates: Question[], count: number): number {
     let missing = count
-    for (const q of shuffle(candidates)) {
+    for (const q of prefer(candidates)) {
       if (missing === 0 || selected.length === EXAM_SIZE) break
       if (selectedIds.has(q.id)) continue
       if (q.group) {
@@ -154,15 +157,9 @@ export function buildExam(
     candidates: pool.filter((q) => q.theme === line.theme && q.notion === line.notion),
   })).sort((a, b) => a.candidates.length - b.candidates.length)
 
-  // Pass 1: every line without the avoided questions; pass 2: lines still short, with them
-  const shortLines: { line: BlueprintLine; candidates: Question[]; missing: number }[] = []
-  for (const { line, candidates } of lines) {
-    const missing = take(fresh(candidates), line.count)
-    if (missing > 0) shortLines.push({ line, candidates, missing })
-  }
   const shortByTheme = new Map<string, number>()
-  for (const { line, candidates, missing: before } of shortLines) {
-    const missing = take(stale(candidates), before)
+  for (const { line, candidates } of lines) {
+    const missing = take(candidates, line.count)
     if (missing > 0) shortByTheme.set(line.theme, (shortByTheme.get(line.theme) ?? 0) + missing)
   }
 
@@ -175,9 +172,9 @@ export function buildExam(
     const themePool = pool.filter(
       (q) => q.theme === theme && (q.notion !== 'mise-en-situation' || situationalThemes.has(theme)),
     )
-    take(stale(themePool), take(fresh(themePool), missing))
+    take(themePool, missing)
   }
-  take(stale(pool), take(fresh(pool), EXAM_SIZE - selected.length))
+  take(pool, EXAM_SIZE - selected.length)
 
   return shuffle(selected).map((q) => {
     const answer = shuffle(q.answers)[0]
@@ -199,7 +196,9 @@ export function buildExam(
  */
 export function previousExamQuestionIds(history: { answers?: AnswerRecord[] }[]): number[] {
   const last = history[history.length - 1]
-  return last?.answers ? last.answers.map((a) => a.questionId) : []
+  return (last?.answers ?? []).flatMap((a) =>
+    typeof a?.questionId === 'number' ? [a.questionId] : [],
+  )
 }
 
 /** Saves the finished exam in the history and returns its id (link to its detail page). */

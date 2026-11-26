@@ -87,13 +87,41 @@ describe('buildExam — évitement de l’examen précédent', () => {
   })
 
   it('repli partiel : seules les questions manquantes sont reprises parmi les évitées', () => {
-    const pool = syntheticPool(3) // 3 per line; the big lines need 6 (situational) or 3
-    const first = buildExam(pool).map((e) => e.id)
-    const exam = buildExam(pool, { avoid: first })
-    expect(exam).toHaveLength(EXAM_SIZE)
-    // Lines with count <= 1 always have a fresh question left (3 candidates, at most 1 avoided...)
-    const fresh = exam.filter((e) => !first.includes(e.id))
-    expect(fresh.length).toBeGreaterThan(0)
+    // Every line has count + 2 questions; for « devise-symboles » (3 per exam) 4 of its 5
+    // are avoided, so 1 fresh question is left and exactly 2 avoided ones must come back
+    const pool: Question[] = []
+    let id = 1
+    for (const line of EXAM_BLUEPRINT) {
+      for (let i = 0; i < line.count + 2; i++) pool.push(q(id, line.theme, line.notion, `g${id++}`))
+    }
+    const target = pool.filter((p) => p.notion === 'devise-symboles')
+    const avoid = target.slice(0, 4).map((p) => p.id)
+    for (let i = 0; i < 50; i++) {
+      const exam = buildExam(pool, { avoid })
+      expect(exam).toHaveLength(EXAM_SIZE)
+      expect(exam.filter((e) => avoid.includes(e.id))).toHaveLength(2)
+    }
+  })
+
+  it('une question fraîche d’une case ne prend pas le groupe dont dépend la seule question (évitée) d’une autre case', () => {
+    const THEME = 'Vie en société'
+    const base = syntheticPool(8).filter(
+      (p) => !(p.theme === THEME && (p.notion === 's-installer' || p.notion === 'soins')),
+    )
+    const maxId = Math.max(...base.map((p) => p.id))
+    const b1 = q(maxId + 1, THEME, 's-installer', 'G')
+    const a1 = q(maxId + 2, THEME, 'soins', 'G')
+    const a2 = q(maxId + 3, THEME, 'soins')
+    const pool = [...base, b1, a1, a2]
+    const avoid = [b1.id, a2.id]
+    for (let i = 0; i < 200; i++) {
+      const exam = buildExam(pool, { avoid })
+      const ids = exam.map((e) => e.id)
+      expect(ids).toHaveLength(EXAM_SIZE)
+      expect(ids).toContain(b1.id)
+      expect(ids.filter((x) => x === a1.id || x === a2.id)).toHaveLength(1)
+      expect(ids).toContain(a2.id)
+    }
   })
 
   it('les groupes priment sur l’évitement : jamais deux questions d’un même groupe', () => {
@@ -118,6 +146,11 @@ describe('previousExamQuestionIds', () => {
 
   it('prend les questions du dernier examen (le plus récent en dernier)', () => {
     expect(previousExamQuestionIds([rec([1, 2]), rec([3, 4])])).toEqual([3, 4])
+  })
+
+  it('ignore les réponses corrompues (questionId non numérique)', () => {
+    const bad = { answers: [null, { questionId: 5 }, { questionId: 'x' }, { questionId: 6 }] } as never
+    expect(previousExamQuestionIds([bad])).toEqual([5, 6])
   })
 
   it('un examen ancien sans answers, ou un historique vide, n’évite rien', () => {
