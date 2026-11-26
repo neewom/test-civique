@@ -11,7 +11,7 @@ import { useDocumentTitle } from '@/lib/use-document-title'
 /** « Comment se passe l'examen » (maquette Pa3), opened from the home page. */
 export default function Regles() {
   useDocumentTitle("Comment se passe l'examen")
-  // Same as step 2 of the home page: resume the exam in progress of the chosen title, else draw a new one
+  // Same as step 2 of the home page: resume the exam in progress of the chosen title, else the page before the exam
   const [hasExamInProgress] = useState(() => loadProgressForTitle(loadTargetTitle() ?? DEFAULT_TITLE) !== null)
 
   return (
@@ -26,7 +26,7 @@ export default function Regles() {
         <div className="mt-[3.75rem]">
           <ExamRules />
         </div>
-        <PillLink to="/examen" state={hasExamInProgress ? undefined : { start: 'new' }} size="lg" className="mt-1 justify-center text-center">
+        <PillLink to={hasExamInProgress ? '/examen' : '/examen-blanc'} size="lg" className="mt-1 justify-center text-center">
           M'entraîner maintenant
         </PillLink>
       </div>

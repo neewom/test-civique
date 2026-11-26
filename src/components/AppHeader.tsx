@@ -138,6 +138,8 @@ function DisplayMenu() {
 interface AppHeaderProps {
   /** Thin variant (exam): smaller logo and tighter spacing, the question keeps the room */
   thin?: boolean
+  /** Hides the logo and name (first visit: the page shows them large); only « Affichage » stays */
+  hideBrand?: boolean
   /** The logo asks for confirmation instead of leaving (exam in progress) */
   onLogoClick?: () => void
 }
@@ -148,7 +150,7 @@ interface AppHeaderProps {
  * logo and the « Affichage » button never move from one page to the next. Holds the
  * logo (a link to the home page) and the « Affichage » button (theme, animations).
  */
-export function AppHeader({ thin = false, onLogoClick }: AppHeaderProps) {
+export function AppHeader({ thin = false, hideBrand = false, onLogoClick }: AppHeaderProps) {
   const logoClass = cn(
     'inline-flex min-h-11 min-w-0 items-center rounded-sm font-bold no-underline',
     thin ? 'text-base' : 'text-xl',
@@ -164,9 +166,9 @@ export function AppHeader({ thin = false, onLogoClick }: AppHeaderProps) {
         // Explicit landmark: the header sits inside <main>, where <header> alone has no banner role
         role="banner"
         data-app-header
-        className="flex w-full items-center justify-between gap-3"
+        className={cn('flex w-full items-center gap-3', hideBrand ? 'justify-end' : 'justify-between')}
       >
-        {onLogoClick ? (
+        {hideBrand ? null : onLogoClick ? (
           <button
             type="button"
             onClick={onLogoClick}

@@ -87,7 +87,7 @@ interface ProgressPanelProps {
 
 /**
  * Right column of the home page from 1024 px. With exams: the « n sur 3 » counter in large,
- * the last exams and the rules. Without any: what the exam day holds, in a card.
+ * the last exams and the rules. Without any: a short note and the rules.
  */
 function ProgressPanel({ streak, recentExams, rulesLink }: ProgressPanelProps) {
   if (!recentExams) {
@@ -143,7 +143,7 @@ export default function Home() {
     () => storedTitle === null && loadHistory().length === 0 && !hasProgress(),
   )
 
-  if (mustChooseTitle) return <Navigate to="/titre" replace state={{ firstLaunch: true }} />
+  if (mustChooseTitle) return <Navigate to="/titre" replace />
 
   const streak = passedInARow(history)
   const recent = history.slice(-3).reverse()
@@ -159,9 +159,9 @@ export default function Home() {
   }
 
   // Resumes the exam in progress of the chosen title (never erased silently);
-  // draws a new one only when there is none
+  // goes through the page before the exam only when there is none
   function startExam() {
-    navigate('/examen', inProgress ? undefined : { state: { start: 'new' } })
+    navigate(inProgress ? '/examen' : '/examen-blanc')
   }
 
   const titlePill = (
