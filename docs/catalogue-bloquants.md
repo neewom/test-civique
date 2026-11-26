@@ -11,6 +11,8 @@ Lu par le sous-agent relecteur (`docs/relecteur.md`). Chaque défaut trouvé par
 ## 3. Une règle d'`AGENTS.md` tenue par la prose seulement
 - Question : chaque règle touchée (IDs 1–191 = officielles, 40 questions / 45 minutes / seuil 32/40, pas deux questions du même `group`, UI en français) est-elle **tenue par le code** et un test, pas seulement écrite ?
 
+- Exemple (PR #89, ajout de questions d'un autre titre) : des tests appelaient `buildExam()` sans pool et la suite TNR lisait toutes les questions ; ils passaient encore, mais sur un pool qu'aucun titre n'utilise (pluriannuelle mêlée à la carte de résident), et les TNR auraient échoué en production. Question : quand les données s'élargissent (nouvelle liste, nouveau titre), chaque test (Vitest et `e2e/`) lit-il encore le pool réellement montré à l'utilisateur ?
+
 ## 4. Cas multiples et concurrence
 - Question : deux onglets ouverts, un examen repris puis abandonné, un double clic sur « Valider » ou « Question suivante », le chrono qui expire pendant la correction ?
 
