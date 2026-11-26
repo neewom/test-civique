@@ -9606,9 +9606,9 @@
     ],
     "distractors": [
       "Le droit de publier toute information sans aucune limite",
-      "Le droit de publier librement, sauf si l'État contrôle les articles avant leur publication",
+      "Le droit de publier librement, après contrôle des articles par l'État",
       "Le droit de ne publier que des informations validées par le Gouvernement",
-      "Le droit pour les journalistes d'écrire et de publier librement, sauf pour les simples citoyens"
+      "Le droit d'écrire et de publier librement, réservé aux seuls journalistes"
     ],
     "explanation": "L'article 11 de la Déclaration des droits de l'homme et du citoyen de 1789 garantit la libre communication des pensées et des opinions : tout citoyen peut parler, écrire et imprimer librement, sauf à répondre de l'abus de cette liberté dans les cas déterminés par la loi.",
     "group": "liberte-expression",
@@ -9630,9 +9630,9 @@
       "Le droit de vivre dans un environnement équilibré et respectueux de la santé"
     ],
     "distractors": [
-      "Le droit de posséder un jardin pour chaque habitant",
+      "Le droit pour l'État de suspendre la protection de l'environnement en cas de crise",
       "L'interdiction de toute activité industrielle en France",
-      "La gratuité des transports en commun pour tous",
+      "Le droit pour chaque commune de fixer seule ses règles de protection de l'environnement",
       "Le devoir pour les seules entreprises de préserver l'environnement, sans obligation pour les particuliers"
     ],
     "explanation": "La Charte de l'environnement de 2004, ajoutée à la Constitution en 2005, prévoit que chacun a le droit de vivre dans un environnement équilibré et respectueux de la santé (article 1er), et que toute personne a le devoir de prendre part à la préservation et à l'amélioration de l'environnement (article 2).",
@@ -10311,7 +10311,7 @@
       "Charles X",
       "Louis-Philippe Ier"
     ],
-    "explanation": "Le roi Louis XVI est exécuté en 1793, sous la Ière République, proclamée le 22 septembre 1792. Pendant la Révolution, le gouvernement utilise la guillotine contre ceux qu'il considère comme des traîtres.",
+    "explanation": "Le roi Louis XVI est exécuté en 1793, sous la Ière République. Pendant la Révolution, le gouvernement utilise la guillotine contre ceux qu'il considère comme des traîtres.",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-regimes-politiques-depuis-1789/la-premiere-republique-1792-1804/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -10755,7 +10755,7 @@
       "L'armistice de 1918, fin de la Première Guerre mondiale",
       "La Libération de Paris, en août 1944",
       "La Fête du travail, fête des travailleurs",
-      "L'abolition de la peine de mort, en 1981"
+      "La fin de la guerre de Cent Ans, en 1453"
     ],
     "explanation": "Le 8 mai est un jour férié qui commémore la victoire de 1945, c'est-à-dire la fin de la Seconde Guerre mondiale. Des cérémonies ont lieu partout en France.",
     "group": "8-mai",
@@ -11248,13 +11248,13 @@
     "crNumber": 167,
     "question": "Combien de personnes parlent français dans le monde ?",
     "answers": [
-      "Plus de 396 millions de personnes"
+      "Environ 400 millions de personnes"
     ],
     "distractors": [
-      "Plus de 124 millions de personnes",
-      "Plus de 218 millions de personnes",
-      "Plus de 652 millions de personnes",
-      "Plus de 1,1 milliard de personnes"
+      "Environ 120 millions de personnes",
+      "Environ 220 millions de personnes",
+      "Environ 650 millions de personnes",
+      "Environ 1,1 milliard de personnes"
     ],
     "explanation": "Le français compte plus de 396 millions de locuteurs. On le parle sur les 5 continents et il est langue officielle de plus de 30 pays.",
     "source": {
