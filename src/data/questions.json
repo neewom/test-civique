@@ -1073,6 +1073,7 @@
     "answers": [
       "Le Président de la République"
     ],
+    "group": "premier-ministre",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/etat-de-droit-et-separation-des-pouvoirs/etat-de-droit-et-separation-des-pouvoirs-presentation-des-3-pouvoirs-1/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -1321,6 +1322,7 @@
     "answers": [
       "Il est jugé comme tout citoyen, personne n'est au-dessus des lois"
     ],
+    "group": "etat-de-droit",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/etat-de-droit-et-separation-des-pouvoirs/etat-de-droit-et-separation-des-pouvoirs--presentation-de-letat-de-droit-et-principe-de-la-separation-des-pouvoirs/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -1773,6 +1775,7 @@
     "answers": [
       "Le pouvoir exécutif, le pouvoir législatif et le pouvoir judiciaire"
     ],
+    "group": "separation-pouvoirs",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/etat-de-droit-et-separation-des-pouvoirs/etat-de-droit-et-separation-des-pouvoirs--presentation-de-letat-de-droit-et-principe-de-la-separation-des-pouvoirs/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -2034,6 +2037,7 @@
     "answers": [
       "Non, les pouvoirs sont séparés et partagés entre plusieurs institutions"
     ],
+    "group": "separation-pouvoirs",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/etat-de-droit-et-separation-des-pouvoirs/etat-de-droit-et-separation-des-pouvoirs--presentation-de-letat-de-droit-et-principe-de-la-separation-des-pouvoirs/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -2182,6 +2186,7 @@
       "Le Royaume-Uni",
       "La Turquie"
     ],
+    "group": "brexit",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/institutions-europeennes/les-etapes-cles-de-la-construction-europeenne/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -2855,7 +2860,7 @@
     ],
     "explanation": "Jeter ou abandonner un déchet sur la voie publique est interdit et puni d'une amende forfaitaire de 135 € (375 € si elle est payée après 45 jours). En cas de contestation ou de non-paiement, le juge peut fixer l'amende jusqu'à 750 €. Chacun est responsable de la propreté de l'espace public.",
     "answers": [
-      "Interdit, c'est une contravention passible d'une amende pouvant aller jusqu'à 750€"
+      "Interdit, c'est une contravention passible d'une amende pouvant aller jusqu'à 750 €"
     ],
     "group": "abandon-dechets",
     "source": {
@@ -3048,7 +3053,7 @@
       "Une violation des clauses d'un contrat commercial",
       "Un manquement à une obligation purement morale"
     ],
-    "explanation": "Une infraction est un acte contraire à la loi pénale. Il en existe trois catégories par ordre de gravité : la contravention (ex : excès de vitesse), le délit (ex : vol, agression), et le crime (ex : meurtre, viol). Chaque catégorie est sanctionnée par des peines différentes.",
+    "explanation": "Une infraction est un acte contraire à la loi pénale. Il en existe trois catégories par ordre de gravité : la contravention (ex : stationnement interdit), le délit (ex : vol, agression), et le crime (ex : meurtre, viol). Chaque catégorie est sanctionnée par des peines différentes.",
     "answers": [
       "Un acte contraire à la loi pénale, classé en contravention, délit ou crime selon sa gravité"
     ],
@@ -6173,6 +6178,7 @@
     "answers": [
       "Déclarer la manifestation en préfecture ou en mairie au préalable"
     ],
+    "group": "manifestation",
     "source": {
       "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F21899",
       "label": "service-public.gouv.fr"
@@ -7775,6 +7781,7 @@
     "answers": [
       "Interpeller le conducteur, appeler le 17 si nécessaire, et soutenir la victime"
     ],
+    "group": "temoin-secours",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/droits-et-devoirs/obligations-et-devoirs-des-personnes-residant-en-france/le-role-des-temoins-en-cas-de-violences/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -7849,6 +7856,7 @@
       "Le droit d'appeler à la violence contre une religion"
     ],
     "explanation": "La liberté d'expression est garantie par la Déclaration des droits de l'homme et du citoyen de 1789 : chacun peut avoir ses opinions, même religieuses, et peut parler, écrire et publier librement. Elle a des limites fixées par la loi : les insultes ou propos haineux envers des personnes, l'incitation à la haine, à la violence ou à la discrimination et la négation de la Shoah sont punis.",
+    "group": "liberte-expression",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/laicite/le-blaspheme/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -8133,6 +8141,7 @@
       "Les impôts servent à payer les dépenses personnelles des élus"
     ],
     "explanation": "Toute personne qui habite en France, française ou non, doit payer des impôts. Cette participation à l'effort commun est adaptée selon les revenus de chacun. Elle permet de faire fonctionner les services publics : police, justice, éducation, hôpitaux, ramassage des ordures… L'obligation de contribuer aux dépenses communes est inscrite dans la Déclaration des droits de l'homme et du citoyen de 1789.",
+    "group": "obligations-residents",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/droits-et-devoirs/obligations-et-devoirs-des-personnes-residant-en-france/les-obligations-en-tant-que-resident-francais/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -8676,7 +8685,7 @@
       "La volonté des partis politiques",
       "La volonté de l'administration"
     ],
-    "explanation": "La loi est l'expression de la volonté générale : elle est proposée, discutée et votée par les représentants du peuple, les députés et les sénateurs, qui forment le Parlement. Elle s'applique ensuite à tous.",
+    "explanation": "La loi est l'expression de la volonté générale : elle est discutée et votée par les représentants élus du peuple, au Parlement. Elle peut être proposée par le Gouvernement (projet de loi) ou par les parlementaires (proposition de loi), puis elle s'applique à tous.",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/democratie-et-droit-de-vote/comment-voter-une-loi-1/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -8778,6 +8787,7 @@
       "Oui, mais seulement pour les élections nationales"
     ],
     "explanation": "En France, le vote n'est pas obligatoire : c'est un droit et non un devoir. Pour voter, il faut être inscrit sur les listes électorales.",
+    "group": "vote-conditions",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/democratie-et-droit-de-vote/democratie-et-droit-de-vote-les-conditions-pour-voter-en-france-1/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -8793,14 +8803,15 @@
     "crNumber": 48,
     "question": "À la fin de son mandat, le président de la République peut-il décider de rester au pouvoir ?",
     "answers": [
-      "Non, son mandat de 5 ans se termine et il quitte ses fonctions"
+      "Non, il ne peut rester président que s'il est réélu"
     ],
     "distractors": [
       "Oui, s'il obtient l'accord du Parlement pour prolonger son mandat",
       "Oui, tant que le Gouvernement le soutient",
       "Oui, si le Premier ministre le décide",
       "Oui, s'il déclare l'état d'urgence avant la fin de son mandat",
-      "Oui, si le Conseil constitutionnel le demande"
+      "Non, sauf s'il a été élu avec plus de 60 % des voix",
+      "Non, sauf si son parti obtient la majorité à l'Assemblée nationale"
     ],
     "explanation": "Le président de la République est élu pour cinq ans au suffrage universel direct. À la fin de son mandat, il doit quitter ses fonctions : personne ne peut rester au pouvoir sans être réélu. Nul ne peut exercer plus de deux mandats consécutifs.",
     "source": {
@@ -8847,11 +8858,12 @@
       "En communes, départements et régions"
     ],
     "distractors": [
+      "En États fédérés qui votent leurs propres lois",
+      "En provinces dirigées par des gouverneurs nommés",
+      "En départements seulement, dirigés par les préfets",
+      "En communes et en régions seulement, sans départements",
       "En comtés, provinces et États",
-      "En cantons, duchés et régions",
-      "En communes, provinces et empires",
-      "En arrondissements, comtés et nations",
-      "En villages, districts et cantons"
+      "En cantons, duchés et régions"
     ],
     "explanation": "La France est organisée en collectivités territoriales : les communes, les départements et les régions. À côté d'elles existent des collectivités à statut particulier (Paris, la métropole de Lyon, la Corse…) et les collectivités d'outre-mer. C'est la décentralisation : l'État transfère des compétences à ces collectivités.",
     "source": {
@@ -8869,16 +8881,16 @@
     "crNumber": 52,
     "question": "Qu'est-ce que le pouvoir législatif ? Le pouvoir :",
     "answers": [
-      "Le pouvoir de faire et de voter les lois, exercé par le Parlement"
+      "De voter les lois, exercé par le Parlement"
     ],
     "distractors": [
-      "Le pouvoir d'appliquer les lois, exercé par le président de la République",
-      "Le pouvoir de juger les personnes, exercé par les tribunaux",
-      "Le pouvoir de diriger l'administration, exercé par les préfets",
-      "Le pouvoir de contrôler la Constitution, exercé par le Gouvernement",
-      "Le pouvoir de décider seul de la politique de la nation, exercé par le Premier ministre"
+      "D'appliquer les lois, exercé par le président de la République",
+      "De juger les personnes, exercé par les tribunaux",
+      "De diriger l'administration, exercé par les préfets",
+      "De contrôler la constitutionnalité des lois, exercé par le Gouvernement",
+      "De conduire la politique de la nation, exercé par le Premier ministre"
     ],
-    "explanation": "Le pouvoir législatif est exercé par le Parlement, composé de l'Assemblée nationale et du Sénat. Le Parlement propose, négocie et vote la loi. Il vérifie aussi que le Gouvernement agit selon la loi.",
+    "explanation": "Le pouvoir législatif est exercé par le Parlement, qui vote la loi. Le Parlement vérifie aussi que le Gouvernement agit selon la loi. Le pouvoir exécutif applique les lois et le pouvoir judiciaire rend la justice.",
     "group": "pouvoir-legislatif",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/etat-de-droit-et-separation-des-pouvoirs/etat-de-droit-et-separation-des-pouvoirs-presentation-des-3-pouvoirs-1/",
@@ -8905,6 +8917,7 @@
       "Pour que les juges écrivent aussi les lois"
     ],
     "explanation": "La séparation des pouvoirs législatif, exécutif et judiciaire signifie qu'ils ne sont pas entre les mains des mêmes personnes. Elle garantit les droits fondamentaux et conserve un équilibre : les pouvoirs se contrôlent mutuellement et ne peuvent s'exercer de façon arbitraire.",
+    "group": "separation-pouvoirs",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/etat-de-droit-et-separation-des-pouvoirs/etat-de-droit-et-separation-des-pouvoirs--presentation-de-letat-de-droit-et-principe-de-la-separation-des-pouvoirs/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -8972,7 +8985,7 @@
     "crNumber": 68,
     "question": "Quel est le rôle du président de la République ?",
     "answers": [
-      "Chef de l'État et des armées, il nomme le Premier ministre"
+      "Il est le chef de l'État et des armées"
     ],
     "distractors": [
       "Il vote les lois avec les députés et les sénateurs",
@@ -8981,7 +8994,7 @@
       "Il est élu par les sénateurs pour six ans",
       "Il gère les écoles et les collèges du pays"
     ],
-    "explanation": "Le président de la République est le chef de l'État et des armées. Il nomme le Premier ministre, et il veille au respect de la Constitution et au fonctionnement régulier des pouvoirs publics. Avec le Gouvernement, il applique et fait respecter les lois. Il réside au palais de l'Élysée.",
+    "explanation": "Le président de la République est le chef de l'État et des armées. Il veille au respect de la Constitution et au fonctionnement régulier des pouvoirs publics. Avec le Gouvernement, il applique et fait respecter les lois. Il réside au palais de l'Élysée.",
     "group": "pouvoir-executif",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/etat-de-droit-et-separation-des-pouvoirs/etat-de-droit-et-separation-des-pouvoirs-presentation-des-3-pouvoirs-1/",
@@ -9004,7 +9017,7 @@
       "Rendre la justice au nom du peuple",
       "Présider l'Assemblée nationale",
       "Représenter l'État dans un département",
-      "Diriger les armées en tant que chef de l'État",
+      "Nommer seul tous les membres du Conseil constitutionnel",
       "Élaborer seul les lois du pays"
     ],
     "explanation": "Le Premier ministre dirige l'action du Gouvernement, assure l'exécution des lois et nomme aux emplois civils et militaires. Il est nommé par le président de la République.",
@@ -9033,11 +9046,11 @@
       "Le ministre de la Justice",
       "Le préfet de région"
     ],
-    "explanation": "Le chef du Gouvernement est le Premier ministre. Il dirige l'action des ministres, qu'il propose au président de la République, et il réside à l'hôtel de Matignon.",
+    "explanation": "Le Premier ministre est le chef du Gouvernement : il dirige l'action du Gouvernement (article 21 de la Constitution) et propose les ministres au président de la République. Le président de la République préside le Conseil des ministres, mais il n'est pas membre du Gouvernement. Le Premier ministre réside à l'hôtel de Matignon.",
     "group": "premier-ministre",
     "source": {
-      "url": "https://www.conseil-constitutionnel.fr/le-bloc-de-constitutionnalite/texte-integral-de-la-constitution-du-4-octobre-1958-en-vigueur",
-      "label": "conseil-constitutionnel.fr"
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/etat-de-droit-et-separation-des-pouvoirs/etat-de-droit-et-separation-des-pouvoirs-presentation-des-3-pouvoirs-1/",
+      "label": "formation-civique.interieur.gouv.fr"
     }
   },
   {
@@ -9078,10 +9091,11 @@
       "Défendre les droits des personnes et lutter contre les discriminations"
     ],
     "distractors": [
-      "Voter le budget de l'État et les lois",
+      "Défendre les accusés devant les tribunaux, comme un avocat",
+      "Défendre les intérêts de l'État face aux réclamations des usagers",
       "Juger les crimes et les délits graves",
       "Contrôler le déroulement des élections",
-      "Représenter l'État dans les départements",
+      "Voter le budget de l'État et les lois",
       "Commander la police et la gendarmerie"
     ],
     "explanation": "Le Défenseur des droits est une autorité administrative indépendante chargée de veiller au respect des droits. Il défend les personnes dont les droits ne sont pas respectés, lutte contre les discriminations et intervient pour régler les conflits entre un service public et un usager.",
@@ -9106,7 +9120,7 @@
       "1957",
       "1973",
       "1986",
-      "1992",
+      "1995",
       "2007"
     ],
     "explanation": "En 2002, l'euro est devenu la monnaie officielle de plusieurs pays membres de l'Union européenne, dont la France : les pièces et les billets en euros ont alors remplacé les monnaies nationales, comme le franc. L'euro avait été introduit auparavant comme monnaie de paiement non physique (1999).",
@@ -9128,11 +9142,11 @@
       "L'action sociale (handicap, gestion du RSA)"
     ],
     "distractors": [
-      "La gestion des écoles primaires",
-      "La gestion des lycées",
-      "La défense du territoire",
-      "La justice des mineurs",
-      "La délivrance des passeports"
+      "L'enseignement (écoles maternelles et primaires)",
+      "La gestion des lycées (bâtiments, équipements)",
+      "La défense (armée, frontières)",
+      "La justice (tribunaux, prisons)",
+      "La politique étrangère (ambassades, traités)"
     ],
     "explanation": "Le département agit surtout dans l'action sociale (aide aux personnes handicapées, gestion du RSA). Il gère aussi les collèges. Il y a 101 départements en France.",
     "source": {
@@ -9150,7 +9164,7 @@
     "crNumber": 75,
     "question": "Quel est le rôle principal des communes ?",
     "answers": [
-      "Gérer les écoles maternelles et primaires et les services de proximité"
+      "Gérer les écoles maternelles et primaires"
     ],
     "distractors": [
       "Gérer les lycées et les universités",
@@ -9159,7 +9173,7 @@
       "Définir les programmes scolaires nationaux",
       "Nommer les juges des tribunaux"
     ],
-    "explanation": "La commune a de nombreuses compétences, surtout en urbanisme, logement et action sociale. Elle gère les écoles maternelles et primaires et les services de proximité. Elle est dirigée par des personnes élues, dont le maire.",
+    "explanation": "La commune a de nombreuses compétences, surtout en urbanisme, logement et action sociale. Elle gère les écoles maternelles et primaires et les services de proximité. Les collèges relèvent du département et les lycées de la région.",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/organisation-de-la-republique-fran%C3%A7aise/le-decoupage-administratif-de-la-france-1/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -9184,9 +9198,9 @@
       "Environ 100 000",
       "Environ 500 000"
     ],
-    "explanation": "La commune est la collectivité la plus répandue sur le territoire : il y a plus de 35 000 communes en France (34 875 selon les chiffres du ministère).",
+    "explanation": "La commune est la collectivité la plus répandue sur le territoire : il y a environ 35 000 communes en France (34 875 selon le ministère).",
     "source": {
-      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/organisation-de-la-republique-fran%C3%A7aise/le-decoupage-administratif-de-la-france-1/",
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/organisation-de-la-republique-fran%C3%A7aise/le-decoupage-administratif-de-la-france-3/",
       "label": "formation-civique.interieur.gouv.fr"
     }
   },
@@ -9237,6 +9251,7 @@
       "La Norvège"
     ],
     "explanation": "En 2020, pour la première fois, un pays a quitté l'Union européenne : le Royaume-Uni, c'est le Brexit.",
+    "group": "brexit",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/institutions-europeennes/les-etapes-cles-de-la-construction-europeenne/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -9510,7 +9525,6 @@
     ],
     "distractors": [
       "« Chacun a le devoir de travailler et le droit d'obtenir un emploi »",
-      "« La France est une République indivisible, laïque, démocratique et sociale »",
       "« La Nation garantit l'égal accès de l'enfant et de l'adulte à l'instruction »",
       "« Le peuple français proclame solennellement son attachement aux Droits de l'homme »"
     ],
@@ -9591,6 +9605,7 @@
       "Le droit réservé aux seuls journalistes de s'exprimer"
     ],
     "explanation": "L'article 11 de la Déclaration des droits de l'homme et du citoyen de 1789 garantit la libre communication des pensées et des opinions : tout citoyen peut parler, écrire et imprimer librement, sauf à répondre de l'abus de cette liberté dans les cas déterminés par la loi.",
+    "group": "liberte-expression",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/droits-et-devoirs/droits-fondamentaux/les-principaux-textes-la-declaraion-des-droits-de-lhomme-et-du-citoyen/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -9630,13 +9645,13 @@
     "crNumber": 101,
     "question": "Que signifie la dignité humaine ?",
     "answers": [
-      "Que chaque personne a de la valeur et mérite le respect, simplement parce qu'elle est un être humain"
+      "Que chaque personne mérite le respect, simplement parce qu'elle est un être humain"
     ],
     "distractors": [
-      "Que le respect se mérite par ses actes et sa réussite",
+      "Que le respect se mérite par ses actes, son travail et sa réussite",
       "Que seuls les citoyens français ont droit au respect",
       "Que le respect dû à une personne dépend de sa religion",
-      "Que chacun peut agir comme il veut sans rendre de comptes",
+      "Que chacun peut agir comme il veut sans rendre de comptes à personne",
       "Que le respect dû à une personne dépend de son état de santé"
     ],
     "explanation": "La dignité humaine, c'est le fait que chaque personne a de la valeur et mérite un respect inconditionnel, quels que soient son âge, son sexe, son état de santé, sa condition sociale, sa religion ou son origine. Un être humain ne doit jamais être traité comme un objet.",
@@ -9664,6 +9679,7 @@
       "Le droit de ne jamais être contrôlé par la police"
     ],
     "explanation": "Participer à une manifestation fait partie des libertés qui concernent plusieurs personnes et qui garantissent à chacun sa place dans la société, comme se rassembler dans un lieu ou adhérer à un syndicat. Comme toute liberté, elle ne doit pas empêcher les autres d'exercer la leur.",
+    "group": "manifestation",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/devise-et-symboles-de-la-republique/la-liberte/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -9713,7 +9729,7 @@
       "Un arrêté du maire",
       "Une circulaire d'un ministre"
     ],
-    "explanation": "La Constitution du 4 octobre 1958 est un texte très difficile à modifier : peu de modifications ont été apportées, comme en 1962 quand le président de la République a été désigné au suffrage direct. Toutes les lois françaises doivent la respecter.",
+    "explanation": "La Constitution du 4 octobre 1958 est un texte très difficile à modifier, même si quelques révisions ont eu lieu : en 1962 par exemple, un référendum a décidé que le président de la République serait élu au suffrage direct. Toutes les lois françaises doivent la respecter.",
     "group": "constitution",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/droits-et-devoirs/droits-fondamentaux/les-principaux-textes-la-constitution-de-la-5-republique/",
@@ -9740,7 +9756,7 @@
       "La liberté d'enseignement"
     ],
     "explanation": "La laïcité garantit la liberté de conscience : chaque personne est libre d'avoir ou de ne pas avoir de religion, d'en changer ou de ne plus en avoir. Elle permet aussi de pratiquer sa religion, sans troubler l'ordre public.",
-    "group": "liberte-conscience",
+    "group": "laicite",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/laicite/la-definition-de-la-laicite-1/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -9759,7 +9775,7 @@
       "Le droit pour une personne employée de cesser le travail pour exprimer un désaccord"
     ],
     "distractors": [
-      "Le droit de quitter son travail sans préavis",
+      "Le droit de démissionner sans prévenir son employeur",
       "Le droit de ne jamais travailler le week-end",
       "Le droit de choisir librement ses jours de congé",
       "Le droit d'occuper son entreprise sans autorisation"
@@ -9834,12 +9850,13 @@
       "Oui, à condition d'être inscrite sur les listes électorales"
     ],
     "distractors": [
-      "Oui, sans aucune formalité à accomplir",
+      "Oui, mais seulement avec l'accord de son mari",
       "Oui, mais seulement aux élections municipales",
       "Non, elle doit être née en France",
       "Non, le vote n'est possible qu'à partir de 25 ans"
     ],
     "explanation": "Le suffrage universel permet de voter, sans distinction de sexe, à tous les citoyens de nationalité française, majeurs, qui ont leurs droits civiques et politiques et qui sont inscrits sur les listes électorales.",
+    "group": "vote-conditions",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/democratie-et-droit-de-vote/democratie-et-droit-de-vote-les-conditions-pour-voter-en-france-1/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -9888,7 +9905,7 @@
       "Interdit seulement dans les parcs et les forêts"
     ],
     "explanation": "Un mégot est un déchet. Il est interdit de jeter ou d'abandonner tout type de déchets dans la rue, et le non-respect de cette interdiction est sanctionné d'une amende.",
-    "group": "abandon-dechets",
+    "group": "dechets",
     "source": {
       "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F31963",
       "label": "service-public.gouv.fr"
@@ -10063,6 +10080,7 @@
       "Prévenir seulement la famille de la victime"
     ],
     "explanation": "Assurer l'assistance à personne en danger, c'est porter secours à toute personne en danger. Si quelqu'un voit une personne en danger et ne l'aide pas, il peut être condamné pour non-assistance à personne en danger.",
+    "group": "temoin-secours",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/droits-et-devoirs/obligations-et-devoirs-des-personnes-residant-en-france/les-obligations-en-tant-que-resident-francais/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -10103,16 +10121,16 @@
     "crNumber": 122,
     "question": "Quelle est l’attitude à avoir lorsque qu'on est témoin de violences ?",
     "answers": [
-      "Agir sans se mettre en danger : se protéger, aider la victime et appeler les forces de l'ordre"
+      "Aider la victime sans se mettre en danger et appeler les forces de l'ordre"
     ],
     "distractors": [
-      "Ne rien faire, car cela ne regarde que la victime",
-      "Filmer la scène sans intervenir",
+      "Ne rien faire, car cela ne regarde que la victime et sa famille",
+      "Filmer la scène sans intervenir, pour la publier ensuite",
       "Intervenir par la force, quel que soit le danger",
       "Attendre que la victime porte plainte avant d'agir"
     ],
     "explanation": "Face à des violences, il faut agir sans mettre la victime ou soi-même en danger : écouter et soutenir la victime, l'orienter vers des aides, intervenir sans se mettre en danger (se protéger d'abord, puis aider la victime, appeler les forces de l'ordre) et témoigner ou signaler les faits.",
-    "group": "victime-violences",
+    "group": "temoin-secours",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/droits-et-devoirs/obligations-et-devoirs-des-personnes-residant-en-france/le-role-des-temoins-en-cas-de-violences/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -10183,7 +10201,7 @@
     "distractors": [
       "Un meurtre",
       "Un viol",
-      "Un excès de vitesse",
+      "Un stationnement interdit",
       "Du tapage nocturne"
     ],
     "explanation": "Le délit est une infraction intermédiaire, plus grave que la contravention mais moins grave que le crime. Le vol en est un exemple, comme la fraude fiscale ou le harcèlement. Il est jugé par le tribunal correctionnel.",
