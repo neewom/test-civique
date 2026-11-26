@@ -392,6 +392,7 @@
     "answers": [
       "La solidarité et le lien entre tous les membres de la société"
     ],
+    "group": "fraternite-solidarite",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/devise-et-symboles-de-la-republique/fraternite-1/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -813,6 +814,7 @@
     "answers": [
       "Oui, la liberté de conscience et de religion est garantie par la loi"
     ],
+    "group": "laicite",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/laicite/la-definition-de-la-laicite-1/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -871,6 +873,7 @@
     "answers": [
       "1905"
     ],
+    "group": "laicite",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/laicite/histoire-de-la-laicite/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -1440,6 +1443,7 @@
     "answers": [
       "Les conseillers municipaux, qui élisent ensuite le maire"
     ],
+    "group": "maire",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/democratie-et-droit-de-vote/democratie-et-droit-de-vote-les-conditions-pour-voter-en-france-2/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -1949,6 +1953,7 @@
     "answers": [
       "101 départements"
     ],
+    "group": "iles-francaises",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/organisation-de-la-republique-fran%C3%A7aise/le-decoupage-administratif-de-la-france-1/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -2154,6 +2159,7 @@
     "answers": [
       "27 États membres"
     ],
+    "group": "brexit",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/institutions-europeennes/les-etapes-cles-de-la-construction-europeenne/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -2335,6 +2341,7 @@
     "answers": [
       "Les citoyens des États membres de l'UE, au suffrage universel direct"
     ],
+    "group": "parlement-europeen",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/institutions-europeennes/les-elections-europeennes/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -3232,6 +3239,7 @@
     "answers": [
       "1789"
     ],
+    "group": "fete-nationale",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-regimes-politiques-depuis-1789/la-fin-de-la-monarchie-absolue-et-le-debut-de-la-iere-republique-1789-1792/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -3345,6 +3353,7 @@
     "answers": [
       "Le génocide des Juifs d'Europe par l'Allemagne nazie"
     ],
+    "group": "shoah",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/zoom-sur/focus-sur-la-seconde-guerre-mondiale-la-shoah/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -3435,6 +3444,7 @@
     "answers": [
       "De 1939 à 1945"
     ],
+    "group": "8-mai",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-conflits-mondiaux-et-le-nouvel-ordre-mondial/la-seconde-guerre-mondiale-1/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -3464,7 +3474,7 @@
     "answers": [
       "De 1914 à 1918"
     ],
-    "group": "premiere-guerre-mondiale",
+    "group": "8-mai",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-conflits-mondiaux-et-le-nouvel-ordre-mondial/la-premiere-guerre-mondiale-1/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -3520,7 +3530,7 @@
     "answers": [
       "L'armistice de la Première Guerre mondiale"
     ],
-    "group": "premiere-guerre-mondiale",
+    "group": "8-mai",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/zoom-sur/patrimoine-francais-les-jours-feries/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -3741,7 +3751,7 @@
     "answers": [
       "La Première Guerre mondiale"
     ],
-    "group": "premiere-guerre-mondiale",
+    "group": "8-mai",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-conflits-mondiaux-et-le-nouvel-ordre-mondial/la-premiere-guerre-mondiale-1/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -3979,6 +3989,7 @@
       "La Réunion",
       "Mayotte"
     ],
+    "group": "iles-francaises",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/atlas-de-la-france/le-territoire-de-la-france/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -4008,6 +4019,7 @@
     "answers": [
       "13 régions"
     ],
+    "group": "iles-francaises",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/atlas-de-la-france/le-territoire-de-la-france/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -4153,6 +4165,7 @@
     "answers": [
       "Les Alpes"
     ],
+    "group": "frontieres-terrestres",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/atlas-de-la-france/les-frontieres-de-la-france/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -4328,6 +4341,7 @@
     "answers": [
       "Un peintre français post-impressionniste du XIXe siècle"
     ],
+    "group": "peintres-francais",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/culture/patrimoine-francais-artistes-emblematiques-parmi-les-peintres/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -4822,6 +4836,7 @@
     "answers": [
       "35 heures par semaine"
     ],
+    "group": "heures-supplementaires",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/emploi/le-droit-au-travail-1/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -5556,6 +5571,7 @@
     "answers": [
       "S'inscrire à France Travail dès que possible"
     ],
+    "group": "france-travail",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/emploi/orientation-1/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -5704,6 +5720,7 @@
     "answers": [
       "C'est un dépôt sauvage, une infraction passible d'amende"
     ],
+    "group": "abandon-dechets",
     "source": {
       "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F31963",
       "label": "service-public.gouv.fr"
@@ -5752,6 +5769,7 @@
     "answers": [
       "Oui, l'instruction est obligatoire dès 3 ans depuis 2019"
     ],
+    "group": "ecole-obligatoire",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/parentalite/le-systeme-educatif/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -5824,6 +5842,7 @@
     "answers": [
       "Être Français et inscrit sur les listes électorales (ou Européen, aux municipales)"
     ],
+    "group": "vote-conditions",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/democratie-et-droit-de-vote/democratie-et-droit-de-vote-les-conditions-pour-voter-en-france-1/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -6020,6 +6039,7 @@
     "answers": [
       "Non, l'instruction est obligatoire jusqu'à 16 ans"
     ],
+    "group": "ecole-obligatoire",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/parentalite/le-systeme-educatif/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -6068,6 +6088,7 @@
     "answers": [
       "Le Défenseur des droits"
     ],
+    "group": "defenseur-droits",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/droits-et-devoirs/droits-fondamentaux/les-acteurs-institutionnels/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -6140,6 +6161,7 @@
     "answers": [
       "Non, sauf dispense pour motif reconnu par la loi"
     ],
+    "group": "jury-assises",
     "source": {
       "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F1044",
       "label": "service-public.gouv.fr"
@@ -6333,6 +6355,7 @@
     "answers": [
       "Non, les agents du service public sont soumis au principe de neutralité religieuse"
     ],
+    "group": "laicite-ecole",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/laicite/la-laicite-au-travail/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -6478,6 +6501,7 @@
     "answers": [
       "Non, ces documents doivent être rédigés en français"
     ],
+    "group": "textes-travail",
     "source": {
       "url": "https://www.culture.gouv.fr/thematiques/langue-francaise-et-langues-de-france/agir-pour-les-langues/garantir-l-emploi-du-francais",
       "label": "culture.gouv.fr"
@@ -6670,6 +6694,7 @@
     "answers": [
       "Oui, en vous inscrivant sur une liste électorale consulaire et en votant au consulat ou par procuration"
     ],
+    "group": "vote-conditions",
     "source": {
       "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F16904",
       "label": "service-public.gouv.fr"
@@ -6742,6 +6767,7 @@
     "answers": [
       "Le texte est transmis au Sénat qui l'examine à son tour"
     ],
+    "group": "pouvoir-legislatif",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/democratie-et-droit-de-vote/comment-voter-une-loi-2/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -6862,6 +6888,7 @@
     "answers": [
       "Depuis 1848, sous la IIe République"
     ],
+    "group": "devise",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/devise-et-symboles-de-la-republique/la-devise-francaise/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -6910,6 +6937,7 @@
     "answers": [
       "L'Exposition universelle de 1889, centenaire de la Révolution"
     ],
+    "group": "tour-eiffel",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/culture/patrimoine-francais-sites-emblematiques-et-gastronomie-d-ile-de-france/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -6959,6 +6987,7 @@
     "answers": [
       "Charles de Gaulle"
     ],
+    "group": "ve-republique",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-regimes-politiques-depuis-1789/la-cinquieme-republique/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -6983,6 +7012,7 @@
     "answers": [
       "La mer Méditerranée"
     ],
+    "group": "mers-et-oceans",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/atlas-de-la-france/les-frontieres-de-la-france/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -7031,7 +7061,8 @@
     "explanation": "Le mont Blanc, dans le massif des Alpes, à la frontière avec l'Italie, culmine à environ 4 800 mètres ; son altitude varie de quelques mètres selon l'épaisseur de la neige au sommet. C'est le point culminant de la France et de l'Europe occidentale.",
     "answers": [
       "Le Mont-Blanc, dans les Alpes"
-    ]
+    ],
+    "group": "frontieres-terrestres"
   },
   {
     "id": 259,
@@ -7052,6 +7083,7 @@
     "answers": [
       "Non, Molière était un dramaturge du XVIIe siècle, auteur de comédies"
     ],
+    "group": "ecrivains-francais",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/culture/patrimoine-francais-artistes-emblematiques-parmi-les-auteurs-1/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -7076,6 +7108,7 @@
     "answers": [
       "La Corse"
     ],
+    "group": "iles-francaises",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-regions-fran%C3%A7aises/corse/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -7100,6 +7133,7 @@
     "answers": [
       "Non, l'esclavage a été aboli deux fois : en 1794 puis définitivement en 1848"
     ],
+    "group": "esclavage",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/zoom-sur/le-territoire-francais-dans-le-temps-2/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -7124,6 +7158,7 @@
     "answers": [
       "Un bâtiment public (mairie, école, tribunal, préfecture…)"
     ],
+    "group": "devise",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/devise-et-symboles-de-la-republique/la-devise-francaise/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -7172,6 +7207,7 @@
     "answers": [
       "Un musée national, ancien palais royal"
     ],
+    "group": "louvre",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/culture/une-puissance-culturelle/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -7196,6 +7232,7 @@
     "answers": [
       "La IIIe République, dans les années 1880"
     ],
+    "group": "ecole-jules-ferry",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-regimes-politiques-depuis-1789/la-troisieme-republique-1870-1940/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -7723,6 +7760,7 @@
     "answers": [
       "Non, les opinions politiques font partie de la vie privée et ne peuvent pas être demandées à l'embauche"
     ],
+    "group": "discriminations",
     "source": {
       "url": "https://code.travail.gouv.fr/code-du-travail/l1221-6",
       "label": "code.travail.gouv.fr"
@@ -8263,6 +8301,7 @@
       "L'obligation de demander l'accord du maire pour aider ses voisins"
     ],
     "explanation": "En France, chaque personne, française ou étrangère, peut s'engager librement dans une association : c'est la liberté d'association, inscrite dans une loi de 1901. Créer une association est simple : il faut au moins deux personnes, un objectif non lucratif (qui ne cherche pas à gagner de l'argent), des statuts qui fixent les règles de fonctionnement, et une déclaration à la préfecture ou sur internet.",
+    "group": "liberte-association",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/devise-et-symboles-de-la-republique/fraternite-2/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -8623,9 +8662,11 @@
     "theme": "Principes et valeurs de la République",
     "notion": "laicite",
     "lists": [
-      "resident"
+      "resident",
+      "naturalisation"
     ],
     "crNumber": 40,
+    "natNumber": 100,
     "question": "Que dit l'article 1er de la Constitution française ?",
     "answers": [
       "La France est une République indivisible, laïque, démocratique et sociale"
@@ -8649,7 +8690,8 @@
     "theme": "Système institutionnel et politique",
     "notion": "organisation-republique",
     "lists": [
-      "resident"
+      "resident",
+      "naturalisation"
     ],
     "crNumber": 41,
     "question": "Qu'est-ce que l'État de droit ?",
@@ -8668,7 +8710,8 @@
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/etat-de-droit-et-separation-des-pouvoirs/etat-de-droit-et-separation-des-pouvoirs--presentation-de-letat-de-droit-et-principe-de-la-separation-des-pouvoirs/",
       "label": "formation-civique.interieur.gouv.fr"
-    }
+    },
+    "natNumber": 56
   },
   {
     "id": 324,
@@ -8853,7 +8896,8 @@
     "theme": "Système institutionnel et politique",
     "notion": "organisation-republique",
     "lists": [
-      "resident"
+      "resident",
+      "naturalisation"
     ],
     "crNumber": 49,
     "question": "Qui dirige l'action du Gouvernement ?",
@@ -8872,7 +8916,8 @@
     "source": {
       "url": "https://www.conseil-constitutionnel.fr/le-bloc-de-constitutionnalite/texte-integral-de-la-constitution-du-4-octobre-1958-en-vigueur",
       "label": "conseil-constitutionnel.fr"
-    }
+    },
+    "natNumber": 62
   },
   {
     "id": 332,
@@ -9009,7 +9054,8 @@
     "theme": "Système institutionnel et politique",
     "notion": "organisation-republique",
     "lists": [
-      "resident"
+      "resident",
+      "naturalisation"
     ],
     "crNumber": 68,
     "question": "Quel est le rôle du président de la République ?",
@@ -9028,14 +9074,16 @@
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/etat-de-droit-et-separation-des-pouvoirs/etat-de-droit-et-separation-des-pouvoirs-presentation-des-3-pouvoirs-1/",
       "label": "formation-civique.interieur.gouv.fr"
-    }
+    },
+    "natNumber": 76
   },
   {
     "id": 338,
     "theme": "Système institutionnel et politique",
     "notion": "organisation-republique",
     "lists": [
-      "resident"
+      "resident",
+      "naturalisation"
     ],
     "crNumber": 69,
     "question": "Quel est le rôle du Premier ministre ?",
@@ -9054,7 +9102,8 @@
     "source": {
       "url": "https://www.conseil-constitutionnel.fr/le-bloc-de-constitutionnalite/texte-integral-de-la-constitution-du-4-octobre-1958-en-vigueur",
       "label": "conseil-constitutionnel.fr"
-    }
+    },
+    "natNumber": 77
   },
   {
     "id": 339,
@@ -9112,7 +9161,8 @@
     "theme": "Système institutionnel et politique",
     "notion": "organisation-republique",
     "lists": [
-      "resident"
+      "resident",
+      "naturalisation"
     ],
     "crNumber": 72,
     "question": "Quel est le rôle du Défenseur des droits ?",
@@ -9128,10 +9178,12 @@
       "Commander la police et la gendarmerie"
     ],
     "explanation": "Le Défenseur des droits est une autorité administrative indépendante chargée de veiller au respect des droits. Il défend les personnes dont les droits ne sont pas respectés, lutte contre les discriminations et intervient pour régler les conflits entre un service public et un usager.",
+    "group": "defenseur-droits",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/droits-et-devoirs/droits-fondamentaux/les-acteurs-institutionnels/",
       "label": "formation-civique.interieur.gouv.fr"
-    }
+    },
+    "natNumber": 78
   },
   {
     "id": 342,
@@ -9239,7 +9291,8 @@
     "theme": "Système institutionnel et politique",
     "notion": "institutions-europeennes",
     "lists": [
-      "resident"
+      "resident",
+      "naturalisation"
     ],
     "crNumber": 77,
     "question": "Quel traité concerne la construction de l'Union européenne ?",
@@ -9259,14 +9312,16 @@
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/institutions-europeennes/les-etapes-cles-de-la-construction-europeenne/",
       "label": "formation-civique.interieur.gouv.fr"
-    }
+    },
+    "natNumber": 89
   },
   {
     "id": 347,
     "theme": "Système institutionnel et politique",
     "notion": "institutions-europeennes",
     "lists": [
-      "resident"
+      "resident",
+      "naturalisation"
     ],
     "crNumber": 78,
     "question": "Quel État a quitté l'Union européenne en 2020 ?",
@@ -9285,14 +9340,16 @@
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/institutions-europeennes/les-etapes-cles-de-la-construction-europeenne/",
       "label": "formation-civique.interieur.gouv.fr"
-    }
+    },
+    "natNumber": 90
   },
   {
     "id": 348,
     "theme": "Système institutionnel et politique",
     "notion": "institutions-europeennes",
     "lists": [
-      "resident"
+      "resident",
+      "naturalisation"
     ],
     "crNumber": 79,
     "question": "Quelle est la devise de l’Union européenne ?",
@@ -9310,14 +9367,16 @@
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/institutions-europeennes/les-symboles-europeens-2/",
       "label": "formation-civique.interieur.gouv.fr"
-    }
+    },
+    "natNumber": 91
   },
   {
     "id": 349,
     "theme": "Système institutionnel et politique",
     "notion": "institutions-europeennes",
     "lists": [
-      "resident"
+      "resident",
+      "naturalisation"
     ],
     "crNumber": 80,
     "question": "Quel est l'hymne de l'Union européenne ?",
@@ -9332,17 +9391,20 @@
       "La Symphonie du Nouveau Monde, de Dvořák"
     ],
     "explanation": "L'hymne européen est l'« Ode à la joie », une mélodie du compositeur allemand Ludwig van Beethoven. Il symbolise la liberté, la paix et la solidarité, et on l'entend lors des événements officiels, notamment la Journée de l'Europe.",
+    "group": "hymne-europeen",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/institutions-europeennes/les-symboles-europeens-1/",
       "label": "formation-civique.interieur.gouv.fr"
-    }
+    },
+    "natNumber": 92
   },
   {
     "id": 350,
     "theme": "Système institutionnel et politique",
     "notion": "institutions-europeennes",
     "lists": [
-      "resident"
+      "resident",
+      "naturalisation"
     ],
     "crNumber": 81,
     "question": "De quoi est composé le drapeau européen ?",
@@ -9361,7 +9423,8 @@
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/institutions-europeennes/les-symboles-europeens-1/",
       "label": "formation-civique.interieur.gouv.fr"
-    }
+    },
+    "natNumber": 93
   },
   {
     "id": 351,
@@ -9393,7 +9456,8 @@
     "theme": "Système institutionnel et politique",
     "notion": "institutions-europeennes",
     "lists": [
-      "resident"
+      "resident",
+      "naturalisation"
     ],
     "crNumber": 83,
     "question": "En quelle année le traité de Maastricht, qui marque la fondation de l'Union européenne, a-t-il été signé ?",
@@ -9412,14 +9476,16 @@
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-conflits-mondiaux-et-le-nouvel-ordre-mondial/la-construction-europeenne/",
       "label": "formation-civique.interieur.gouv.fr"
-    }
+    },
+    "natNumber": 88
   },
   {
     "id": 353,
     "theme": "Système institutionnel et politique",
     "notion": "institutions-europeennes",
     "lists": [
-      "resident"
+      "resident",
+      "naturalisation"
     ],
     "crNumber": 84,
     "question": "Où est le siège du Parlement européen ?",
@@ -9434,17 +9500,20 @@
       "Francfort"
     ],
     "explanation": "Le Parlement européen est situé à Strasbourg. Il réunit 720 députés européens, vote le budget et les lois avec le Conseil de l'Union européenne, et contrôle la Commission.",
+    "group": "parlement-europeen",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/institutions-europeennes/le-fonctionnement-europeen-2/",
       "label": "formation-civique.interieur.gouv.fr"
-    }
+    },
+    "natNumber": 95
   },
   {
     "id": 354,
     "theme": "Système institutionnel et politique",
     "notion": "institutions-europeennes",
     "lists": [
-      "resident"
+      "resident",
+      "naturalisation"
     ],
     "crNumber": 85,
     "question": "Où est le siège de la Commission européenne ?",
@@ -9462,7 +9531,8 @@
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/institutions-europeennes/le-fonctionnement-europeen-2/",
       "label": "formation-civique.interieur.gouv.fr"
-    }
+    },
+    "natNumber": 84
   },
   {
     "id": 355,
@@ -9495,9 +9565,11 @@
     "theme": "Droits et devoirs",
     "notion": "obligations-devoirs",
     "lists": [
-      "resident"
+      "resident",
+      "naturalisation"
     ],
     "crNumber": 92,
+    "natNumber": 97,
     "question": "Au nom de quoi l'État justifie-t-il la restriction des droits ?",
     "answers": [
       "L'intérêt général, l'ordre public et les libertés des autres"
@@ -9546,9 +9618,11 @@
     "theme": "Droits et devoirs",
     "notion": "droits-fondamentaux",
     "lists": [
-      "resident"
+      "resident",
+      "naturalisation"
     ],
     "crNumber": 96,
+    "natNumber": 98,
     "question": "Laquelle de ces citations est inscrite dans la Déclaration des Droits de l'homme et du Citoyen de 1789 ?",
     "answers": [
       "« Les hommes naissent et demeurent libres et égaux en droits »"
@@ -9559,6 +9633,7 @@
       "« Le peuple français proclame solennellement son attachement aux Droits de l'homme »"
     ],
     "explanation": "La phrase « Les hommes naissent et demeurent libres et égaux en droits » est l'article 1er de la Déclaration des droits de l'homme et du citoyen, adoptée le 26 août 1789. Les autres phrases viennent de textes différents : le Préambule de la Constitution de 1946, la Constitution de 1958.",
+    "group": "textes-fondateurs",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/droits-et-devoirs/droits-fondamentaux/les-principaux-textes-la-declaraion-des-droits-de-lhomme-et-du-citoyen/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -9621,9 +9696,11 @@
     "theme": "Droits et devoirs",
     "notion": "droits-fondamentaux",
     "lists": [
-      "resident"
+      "resident",
+      "naturalisation"
     ],
     "crNumber": 99,
+    "natNumber": 101,
     "question": "Que garantit la liberté de la presse ?",
     "answers": [
       "Le droit de s'exprimer, d'écrire et de publier librement, sauf abus puni par la loi"
@@ -10023,9 +10100,11 @@
     "theme": "Droits et devoirs",
     "notion": "obligations-devoirs",
     "lists": [
-      "resident"
+      "resident",
+      "naturalisation"
     ],
     "crNumber": 115,
+    "natNumber": 124,
     "question": "Pour quel motif peut-on limiter la liberté d'expression ?",
     "answers": [
       "Pour protéger les personnes contre les propos haineux et l'incitation à la violence"
@@ -10347,9 +10426,11 @@
     "theme": "Histoire, géographie et culture",
     "notion": "periodes-personnages",
     "lists": [
-      "resident"
+      "resident",
+      "naturalisation"
     ],
     "crNumber": 131,
+    "natNumber": 144,
     "question": "En quelle année Napoléon Ier est-il devenu empereur ?",
     "answers": [
       "En 1804"
@@ -10371,9 +10452,11 @@
     "theme": "Histoire, géographie et culture",
     "notion": "periodes-personnages",
     "lists": [
-      "resident"
+      "resident",
+      "naturalisation"
     ],
     "crNumber": 132,
+    "natNumber": 145,
     "question": "Lequel de ces personnages a un lien avec la République française ?",
     "answers": [
       "Marianne"
@@ -10396,9 +10479,11 @@
     "theme": "Histoire, géographie et culture",
     "notion": "periodes-personnages",
     "lists": [
-      "resident"
+      "resident",
+      "naturalisation"
     ],
     "crNumber": 133,
+    "natNumber": 146,
     "question": "De quand date l'appel à la résistance du général de Gaulle ?",
     "answers": [
       "Le 18 juin 1940"
@@ -10475,9 +10560,11 @@
     "theme": "Histoire, géographie et culture",
     "notion": "periodes-personnages",
     "lists": [
-      "resident"
+      "resident",
+      "naturalisation"
     ],
     "crNumber": 136,
+    "natNumber": 150,
     "question": "Depuis quand les Français élisent-ils le président de la République au suffrage universel direct ?",
     "answers": [
       "Depuis 1962"
@@ -10500,9 +10587,11 @@
     "theme": "Histoire, géographie et culture",
     "notion": "periodes-personnages",
     "lists": [
-      "resident"
+      "resident",
+      "naturalisation"
     ],
     "crNumber": 137,
+    "natNumber": 156,
     "question": "Quelle est la première étape de la construction européenne en 1951 ?",
     "answers": [
       "La création de la CECA (charbon et acier)"
@@ -10574,9 +10663,11 @@
     "theme": "Histoire, géographie et culture",
     "notion": "periodes-personnages",
     "lists": [
-      "resident"
+      "resident",
+      "naturalisation"
     ],
     "crNumber": 140,
+    "natNumber": 157,
     "question": "Qui était une figure de la Résistance française pendant la Seconde Guerre mondiale ?",
     "answers": [
       "Jean Moulin"
@@ -10598,9 +10689,11 @@
     "theme": "Histoire, géographie et culture",
     "notion": "periodes-personnages",
     "lists": [
-      "resident"
+      "resident",
+      "naturalisation"
     ],
     "crNumber": 141,
+    "natNumber": 162,
     "question": "En 1944, qu'est-ce qui a changé pour les femmes ?",
     "answers": [
       "Elles ont obtenu le droit de vote"
@@ -10794,9 +10887,11 @@
     "theme": "Histoire, géographie et culture",
     "notion": "territoires-geographie",
     "lists": [
-      "resident"
+      "resident",
+      "naturalisation"
     ],
     "crNumber": 149,
+    "natNumber": 201,
     "question": "Quelle mer ou océan borde la France métropolitaine ?",
     "answers": [
       "L'océan Atlantique",
@@ -10884,9 +10979,11 @@
     "theme": "Histoire, géographie et culture",
     "notion": "territoires-geographie",
     "lists": [
-      "resident"
+      "resident",
+      "naturalisation"
     ],
     "crNumber": 152,
+    "natNumber": 202,
     "question": "Quelle mer se situe entre la France et l'Angleterre ?",
     "answers": [
       "La Manche"
@@ -10909,9 +11006,11 @@
     "theme": "Histoire, géographie et culture",
     "notion": "territoires-geographie",
     "lists": [
-      "resident"
+      "resident",
+      "naturalisation"
     ],
     "crNumber": 153,
+    "natNumber": 204,
     "question": "Qu'est-ce que la France d'outre-mer ?",
     "answers": [
       "Les territoires français situés hors d'Europe"
@@ -10933,9 +11032,11 @@
     "theme": "Histoire, géographie et culture",
     "notion": "territoires-geographie",
     "lists": [
-      "resident"
+      "resident",
+      "naturalisation"
     ],
     "crNumber": 154,
+    "natNumber": 208,
     "question": "Quelle chaîne de montagnes est située entre la France et l’Espagne ?",
     "answers": [
       "Les Pyrénées"
@@ -10983,9 +11084,11 @@
     "theme": "Histoire, géographie et culture",
     "notion": "territoires-geographie",
     "lists": [
-      "resident"
+      "resident",
+      "naturalisation"
     ],
     "crNumber": 156,
+    "natNumber": 205,
     "question": "Quelle est la population approximative de la France en 2025 ?",
     "answers": [
       "Environ 68,6 millions d'habitants"
@@ -11007,9 +11110,11 @@
     "theme": "Histoire, géographie et culture",
     "notion": "territoires-geographie",
     "lists": [
-      "resident"
+      "resident",
+      "naturalisation"
     ],
     "crNumber": 157,
+    "natNumber": 215,
     "question": "Quel fleuve traverse Paris ?",
     "answers": [
       "La Seine"
@@ -11187,9 +11292,11 @@
     "theme": "Histoire, géographie et culture",
     "notion": "territoires-geographie",
     "lists": [
-      "resident"
+      "resident",
+      "naturalisation"
     ],
     "crNumber": 164,
+    "natNumber": 194,
     "question": "Quelle ville française fait partie des 10 plus grandes métropoles du pays ?",
     "answers": [
       "Nantes",
@@ -11292,9 +11399,11 @@
     "theme": "Histoire, géographie et culture",
     "notion": "patrimoine",
     "lists": [
-      "resident"
+      "resident",
+      "naturalisation"
     ],
     "crNumber": 168,
+    "natNumber": 187,
     "question": "Qui était Marguerite Yourcenar ?",
     "answers": [
       "Une écrivaine, première femme élue à l'Académie française"
@@ -11306,6 +11415,7 @@
       "Une peintre impressionniste, célèbre pour ses scènes de fêtes"
     ],
     "explanation": "Marguerite Yourcenar (1903-1987) est une écrivaine, connue pour ses romans historiques comme Mémoires d'Hadrien. Elle devient en 1980 la première femme élue à l'Académie française.",
+    "group": "ecrivains-francais",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/culture/patrimoine-francais-artistes-emblematiques-parmi-les-auteurs-3/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -11316,9 +11426,11 @@
     "theme": "Histoire, géographie et culture",
     "notion": "patrimoine",
     "lists": [
-      "resident"
+      "resident",
+      "naturalisation"
     ],
     "crNumber": 169,
+    "natNumber": 169,
     "question": "Quel peintre est français ?",
     "answers": [
       "Claude Monet",
@@ -11345,9 +11457,11 @@
     "theme": "Histoire, géographie et culture",
     "notion": "patrimoine",
     "lists": [
-      "resident"
+      "resident",
+      "naturalisation"
     ],
     "crNumber": 170,
+    "natNumber": 192,
     "question": "Quel musée est situé à Paris ?",
     "answers": [
       "Le musée Rodin"
@@ -11370,9 +11484,11 @@
     "theme": "Histoire, géographie et culture",
     "notion": "patrimoine",
     "lists": [
-      "resident"
+      "resident",
+      "naturalisation"
     ],
     "crNumber": 171,
+    "natNumber": 189,
     "question": "Qui était Auguste Rodin ?",
     "answers": [
       "Un sculpteur français"
@@ -11491,9 +11607,11 @@
     "theme": "Histoire, géographie et culture",
     "notion": "patrimoine",
     "lists": [
-      "resident"
+      "resident",
+      "naturalisation"
     ],
     "crNumber": 176,
+    "natNumber": 191,
     "question": "Qui était Auguste Renoir ?",
     "answers": [
       "Un peintre impressionniste français"
@@ -11591,16 +11709,18 @@
     "theme": "Vie en société",
     "notion": "autorite-parentale-ecole",
     "lists": [
-      "resident"
+      "resident",
+      "naturalisation"
     ],
     "crNumber": 180,
+    "natNumber": 226,
     "question": "En cas de divorce, qui exerce l'autorité parentale ?",
     "answers": [
       "Les deux parents, à égalité"
     ],
     "distractors": [
       "La mère de l'enfant, en priorité",
-      "Le parent qui a les revenus les plus élevés",
+      "Le père, en tant que chef de famille",
       "Seulement le parent qui garde l'enfant",
       "Le juge qui prononce le divorce"
     ],
@@ -11616,9 +11736,11 @@
     "theme": "Vie en société",
     "notion": "s-installer",
     "lists": [
-      "resident"
+      "resident",
+      "naturalisation"
     ],
     "crNumber": 181,
+    "natNumber": 227,
     "question": "Quelle aide permet aux personnes qui ont des difficultés financières d'avoir un avocat ?",
     "answers": [
       "L'aide juridictionnelle"
@@ -11641,9 +11763,11 @@
     "theme": "Vie en société",
     "notion": "s-installer",
     "lists": [
-      "resident"
+      "resident",
+      "naturalisation"
     ],
     "crNumber": 182,
+    "natNumber": 216,
     "question": "Où faut-il déclarer la naissance d'un enfant ?",
     "answers": [
       "À la mairie du lieu de naissance"
@@ -11739,9 +11863,11 @@
     "theme": "Vie en société",
     "notion": "s-installer",
     "lists": [
-      "resident"
+      "resident",
+      "naturalisation"
     ],
     "crNumber": 186,
+    "natNumber": 223,
     "question": "Quel numéro d'urgence permet d'appeler la police ?",
     "answers": [
       "Le 17"
@@ -11788,9 +11914,11 @@
     "theme": "Vie en société",
     "notion": "soins",
     "lists": [
-      "resident"
+      "resident",
+      "naturalisation"
     ],
     "crNumber": 189,
+    "natNumber": 231,
     "question": "Qu’est-ce que le principe de confidentialité dans le domaine de la santé ?",
     "answers": [
       "Le médecin doit garder secrètes les informations de son patient"
@@ -11812,9 +11940,11 @@
     "theme": "Vie en société",
     "notion": "soins",
     "lists": [
-      "resident"
+      "resident",
+      "naturalisation"
     ],
     "crNumber": 190,
+    "natNumber": 235,
     "question": "L'inscription à l'Assurance maladie est :",
     "answers": [
       "Obligatoire, pour toute personne qui réside en France"
@@ -11837,9 +11967,11 @@
     "theme": "Vie en société",
     "notion": "travail",
     "lists": [
-      "resident"
+      "resident",
+      "naturalisation"
     ],
     "crNumber": 191,
+    "natNumber": 241,
     "question": "Qui peut demander un congé parental d'éducation ?",
     "answers": [
       "Tout salarié qui a au moins un an d'ancienneté"
@@ -11861,9 +11993,11 @@
     "theme": "Vie en société",
     "notion": "travail",
     "lists": [
-      "resident"
+      "resident",
+      "naturalisation"
     ],
     "crNumber": 192,
+    "natNumber": 245,
     "question": "Quelles sont les affaires traitées par le conseil de prud'hommes ?",
     "answers": [
       "Les conflits entre un salarié et son employeur sur le contrat"
@@ -11886,18 +12020,20 @@
     "theme": "Vie en société",
     "notion": "travail",
     "lists": [
-      "resident"
+      "resident",
+      "naturalisation"
     ],
     "crNumber": 193,
+    "natNumber": 237,
     "question": "Travailler sans être déclaré est :",
     "answers": [
       "Illégal, car il prive le salarié de ses droits sociaux"
     ],
     "distractors": [
-      "Autorisé si le montant est inférieur à 500 euros par mois",
-      "Légal si les deux parties signent un accord écrit",
-      "Autorisé pour les récoltes agricoles saisonnières",
-      "Toléré pour les travaux ménagers à domicile"
+      "Autorisé, si le montant reste inférieur à 500 euros par mois",
+      "Légal, si les deux parties signent un accord écrit",
+      "Autorisé, pour les récoltes agricoles saisonnières",
+      "Toléré, pour les travaux ménagers à domicile"
     ],
     "explanation": "Le travail non déclaré (ou travail dissimulé) est interdit par la loi. L'employeur risque jusqu'à 3 ans de prison et 45 000 euros d'amende. Le salarié ne cotise ni pour le chômage ni pour la retraite, n'a pas de congé payé et n'a pas droit à la sécurité sociale en cas de maladie ou d'accident du travail.",
     "group": "travail-non-declare",
@@ -12133,9 +12269,11 @@
     "theme": "Vie en société",
     "notion": "autorite-parentale-ecole",
     "lists": [
-      "resident"
+      "resident",
+      "naturalisation"
     ],
     "crNumber": 203,
+    "natNumber": 253,
     "question": "À quel âge commence l'instruction obligatoire des enfants ?",
     "answers": [
       "À 3 ans"
@@ -12208,9 +12346,11 @@
     "theme": "Vie en société",
     "notion": "autorite-parentale-ecole",
     "lists": [
-      "resident"
+      "resident",
+      "naturalisation"
     ],
     "crNumber": 206,
+    "natNumber": 251,
     "question": "Quel motif d'absence est accepté par l'école ?",
     "answers": [
       "La maladie de l'enfant"
@@ -12233,9 +12373,11 @@
     "theme": "Vie en société",
     "notion": "autorite-parentale-ecole",
     "lists": [
-      "resident"
+      "resident",
+      "naturalisation"
     ],
     "crNumber": 207,
+    "natNumber": 249,
     "question": "Des parents ne respectent pas l'obligation d'instruction pour leurs enfants. Quelle sanction maximale risquent-ils ?",
     "answers": [
       "6 mois de prison et 7 500 euros d'amende"
@@ -12521,7 +12663,7 @@
       "La Tour Eiffel, le béret, la Marseillaise et la devise de la République",
       "Marianne, le coq, la Croix de Lorraine et la fleur de lys"
     ],
-    "explanation": "Les symboles officiels de la République française sont le drapeau tricolore, Marianne, la devise « Liberté, Égalité, Fraternité », l'hymne national, La Marseillaise, et la fête nationale du 14 juillet. D'autres emblèmes, comme le coq, sont très utilisés mais ne sont pas des symboles officiels.",
+    "explanation": "Les symboles officiels de la République française sont le drapeau tricolore, Marianne, la devise de la République, l'hymne national, La Marseillaise, et la fête nationale du 14 juillet. D'autres emblèmes, comme le coq, sont très utilisés mais ne sont pas des symboles officiels.",
     "group": "marianne",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/les-symboles-de-la-republique/",
@@ -12651,7 +12793,8 @@
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/devise-et-symboles-de-la-republique/la-liberte/",
       "label": "formation-civique.interieur.gouv.fr"
-    }
+    },
+    "group": "limites-libertes"
   },
   {
     "id": 482,
@@ -12672,7 +12815,7 @@
       "fédérale, laïque, démocratique et libérale"
     ],
     "explanation": "L'article 1er de la Constitution de 1958 précise que « la France est une République indivisible, laïque, démocratique et sociale ». La laïcité n'est pas une opinion : c'est un principe constitutionnel.",
-    "group": "article-1-constitution",
+    "group": "laicite",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/laicite/la-definition-de-la-laicite-1/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -12697,7 +12840,7 @@
       "Oui, mais seulement pour une religion reconnue par l'État"
     ],
     "explanation": "La laïcité garantit la liberté de conscience : chaque personne est libre d'avoir ou de ne pas avoir de religion, d'en changer ou de ne plus en avoir. Aucune autorisation n'est nécessaire.",
-    "group": "liberte-conscience",
+    "group": "laicite",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/laicite/la-definition-de-la-laicite-1/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -12722,7 +12865,7 @@
       "La religion choisie par le maire de chaque commune"
     ],
     "explanation": "En France, l'État ne reconnaît aucune religion, ne salarie ni ne subventionne aucun culte : c'est la conséquence de la séparation entre l'État et les organisations religieuses, établie en 1905. L'État reste neutre vis-à-vis de toutes les religions.",
-    "group": "separation-1905",
+    "group": "laicite",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/laicite/la-definition-de-la-laicite-1/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -12747,7 +12890,7 @@
       "Elle oblige l'État à salarier les ministres des cultes"
     ],
     "explanation": "En 1905, une loi sépare l'Église et l'État : l'État est indépendant des religions, ne finance aucune religion, et les religions s'organisent de manière indépendante en respectant les règles fixées par l'État.",
-    "group": "separation-1905",
+    "group": "laicite",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/laicite/histoire-de-la-laicite/",
       "label": "formation-civique.interieur.gouv.fr"
@@ -12772,6 +12915,7 @@
       "Le 8 mai"
     ],
     "explanation": "La Journée nationale de la laïcité a lieu le 9 décembre, jour anniversaire de la loi de 1905 qui a séparé les Églises et l'État.",
+    "group": "laicite",
     "source": {
       "url": "https://www.fonction-publique.gouv.fr/toutes-les-actualites/journee-nationale-de-la-laicite",
       "label": "fonction-publique.gouv.fr"
@@ -12851,7 +12995,7 @@
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/laicite/histoire-de-la-laicite/",
       "label": "formation-civique.interieur.gouv.fr"
     },
-    "group": "separation-1905"
+    "group": "laicite"
   },
   {
     "id": 490,
@@ -12949,6 +13093,3361 @@
     "explanation": "Ne pas avoir de religion, ou choisir de ne plus en avoir, est un droit en France. Une personne qui ne croit en aucun dieu est dite athée.",
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/laicite/definition-laicite-2/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 494,
+    "theme": "Système institutionnel et politique",
+    "notion": "organisation-republique",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 39,
+    "question": "Comment est désigné le Premier ministre ?",
+    "answers": [
+      "Il est nommé par le président de la République"
+    ],
+    "distractors": [
+      "Il est élu par les députés de l'Assemblée nationale",
+      "Il est élu par les citoyens au suffrage universel direct",
+      "Il est choisi par les sénateurs",
+      "Il est tiré au sort parmi les ministres",
+      "Il est désigné par le Conseil constitutionnel"
+    ],
+    "explanation": "Le président de la République nomme le Premier ministre en tenant compte de la majorité à l'Assemblée nationale. Les autres ministres sont ensuite nommés sur la proposition du Premier ministre.",
+    "group": "premier-ministre",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/democratie-et-droit-de-vote/democratie-et-droit-de-vote-la-democratie-et-la-republique-2/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 495,
+    "theme": "Système institutionnel et politique",
+    "notion": "democratie-vote",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 40,
+    "question": "Qui peut se présenter aux élections présidentielles ?",
+    "answers": [
+      "Tout citoyen français majeur qui a ses droits civiques"
+    ],
+    "distractors": [
+      "Les personnes qui ont déjà été ministres ou parlementaires",
+      "Toute personne majeure qui vit en France, quelle que soit sa nationalité",
+      "Les membres d'un parti politique",
+      "Les personnes nées en France de parents français",
+      "Les Français âgés d'au moins 35 ans"
+    ],
+    "explanation": "Peut se présenter à l'élection présidentielle tout électeur français qui n'est pas dans un cas d'inéligibilité. Il n'est pas obligatoire d'appartenir à un parti politique ni d'avoir déjà exercé un mandat.",
+    "group": "candidature-presidentielle",
+    "source": {
+      "url": "https://presidentielle2022.conseil-constitutionnel.fr/les-candidats/etre-candidat/etre-candidat-e-a-lelection-presidentielle.html",
+      "label": "conseil-constitutionnel.fr"
+    }
+  },
+  {
+    "id": 496,
+    "theme": "Système institutionnel et politique",
+    "notion": "organisation-republique",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 41,
+    "question": "À qui appartient la souveraineté nationale ?",
+    "answers": [
+      "Au peuple"
+    ],
+    "distractors": [
+      "Au président de la République",
+      "Au Gouvernement",
+      "Au Sénat",
+      "À l'Assemblée nationale",
+      "Au Conseil constitutionnel"
+    ],
+    "explanation": "L'article 3 de la Constitution de 1958 dispose que la souveraineté nationale appartient au peuple, qui l'exerce par ses représentants élus et par la voie du référendum.",
+    "source": {
+      "url": "https://www.conseil-constitutionnel.fr/le-bloc-de-constitutionnalite/texte-integral-de-la-constitution-du-4-octobre-1958-en-vigueur",
+      "label": "conseil-constitutionnel.fr"
+    }
+  },
+  {
+    "id": 497,
+    "theme": "Système institutionnel et politique",
+    "notion": "democratie-vote",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 43,
+    "question": "L'inscription sur les listes électorales est :",
+    "answers": [
+      "Obligatoire pour pouvoir voter"
+    ],
+    "distractors": [
+      "Inutile : on peut voter sans être inscrit",
+      "Réservée aux personnes nées en France",
+      "Payante, selon les communes",
+      "Réservée aux personnes âgées de plus de 25 ans"
+    ],
+    "explanation": "Le code électoral (article L9) dispose que « l'inscription sur les listes électorales est obligatoire ». Pour participer aux élections politiques, il faut être inscrit. L'inscription est automatique pour les jeunes de 18 ans (sous certaines conditions) et pour les personnes devenues françaises après 2018 ; sinon, on la demande à la mairie, par courrier ou en ligne.",
+    "group": "vote-conditions",
+    "source": {
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000032964777",
+      "label": "legifrance.gouv.fr"
+    }
+  },
+  {
+    "id": 498,
+    "theme": "Système institutionnel et politique",
+    "notion": "democratie-vote",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 44,
+    "question": "Quelle condition est nécessaire pour voter aux élections présidentielles ?",
+    "answers": [
+      "Être français, majeur et inscrit sur les listes électorales"
+    ],
+    "distractors": [
+      "Habiter en France depuis au moins 10 ans, quelle que soit sa nationalité",
+      "Avoir travaillé en France pendant au moins 5 ans",
+      "Être né en France et être membre d'un parti politique",
+      "Avoir au moins 25 ans et avoir fait ses études en France",
+      "Être inscrit dans une commune de plus de 10 000 habitants"
+    ],
+    "explanation": "Pour voter à l'élection présidentielle, il faut être de nationalité française, avoir au moins 18 ans, avoir ses droits civiques et politiques (ne pas en avoir été privé par une condamnation) et être inscrit sur les listes électorales.",
+    "group": "vote-conditions",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/democratie-et-droit-de-vote/democratie-et-droit-de-vote-les-conditions-pour-voter-en-france-1/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 499,
+    "theme": "Système institutionnel et politique",
+    "notion": "democratie-vote",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 45,
+    "question": "Quelle condition faut-il remplir pour être candidat aux élections municipales ?",
+    "answers": [
+      "Avoir au moins 18 ans"
+    ],
+    "distractors": [
+      "Avoir au moins 25 ans",
+      "Être né dans la commune",
+      "Avoir déjà été conseiller municipal",
+      "Avoir au moins 21 ans",
+      "Habiter dans la commune depuis au moins 10 ans"
+    ],
+    "explanation": "Pour être candidat aux élections municipales, il faut avoir 18 ans révolus au jour du scrutin, être de nationalité française ou d'un autre pays de l'Union européenne, avoir ses droits civiques et avoir un lien avec la commune, par exemple y être inscrit sur la liste électorale.",
+    "source": {
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000027433881",
+      "label": "legifrance.gouv.fr"
+    },
+    "group": "candidature-municipales"
+  },
+  {
+    "id": 500,
+    "theme": "Système institutionnel et politique",
+    "notion": "democratie-vote",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 46,
+    "question": "Parmi ces autorités, laquelle est élue ?",
+    "answers": [
+      "Le conseiller départemental"
+    ],
+    "distractors": [
+      "Le préfet du département",
+      "Un juge du tribunal judiciaire",
+      "Le recteur d'académie",
+      "Le commissaire de police",
+      "Le procureur de la République"
+    ],
+    "explanation": "Les conseillers départementaux sont élus par les citoyens pour 6 ans, lors des élections départementales. Les autres autorités ne sont pas élues : les juges et les magistrats sont recrutés par concours, le préfet et le recteur sont nommés.",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/etat-de-droit-et-separation-des-pouvoirs/etat-de-droit-et-separation-des-pouvoirs-presentation-des-3-pouvoirs-1/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 501,
+    "theme": "Système institutionnel et politique",
+    "notion": "organisation-republique",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 47,
+    "question": "Quelles sont les fonctions du maire ?",
+    "answers": [
+      "Il célèbre les mariages et veille à la sécurité publique"
+    ],
+    "distractors": [
+      "Il vote les lois qui s'appliquent dans la commune",
+      "Il juge les litiges entre les habitants",
+      "Il représente l'État dans le département",
+      "Il décide des programmes scolaires des écoles de la commune",
+      "Il commande l'armée sur le territoire de la commune"
+    ],
+    "explanation": "Le maire est officier d'état civil : il célèbre les mariages et enregistre les naissances et les décès. Il exerce aussi la police municipale, c'est-à-dire qu'il veille au bon ordre, à la sécurité et à la salubrité publiques, et il exécute les décisions du conseil municipal.",
+    "group": "maire",
+    "source": {
+      "url": "https://www.collectivites-locales.gouv.fr/connaitre-les-acteurs-et-les-institutions/elus-locaux/le-maire/le-maire-chef-de-ladministration-municipale",
+      "label": "collectivites-locales.gouv.fr"
+    }
+  },
+  {
+    "id": 502,
+    "theme": "Système institutionnel et politique",
+    "notion": "democratie-vote",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 49,
+    "question": "Une personne, n'ayant pas d'accès à internet, veut s'inscrire sur les listes électorales pour pouvoir voter aux prochaines élections politiques. Où peut-elle s'inscrire ?",
+    "answers": [
+      "À la mairie de son lieu de résidence"
+    ],
+    "distractors": [
+      "À la préfecture du département",
+      "Au commissariat de police ou à la gendarmerie",
+      "Au tribunal judiciaire",
+      "À la caisse d'allocations familiales (CAF)",
+      "À l'hôpital le plus proche de son domicile"
+    ],
+    "explanation": "La demande d'inscription se fait auprès de la mairie du lieu de résidence. Elle peut être déposée sur place, envoyée par courrier ou faite en ligne : une personne sans accès à internet peut donc se rendre en mairie ou écrire à la mairie.",
+    "group": "vote-conditions",
+    "source": {
+      "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F1367",
+      "label": "service-public.gouv.fr"
+    }
+  },
+  {
+    "id": 503,
+    "theme": "Système institutionnel et politique",
+    "notion": "democratie-vote",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 50,
+    "question": "À quel âge peut-on devenir électeur ?",
+    "answers": [
+      "À 18 ans"
+    ],
+    "distractors": [
+      "À 16 ans",
+      "À 21 ans",
+      "À 25 ans",
+      "À 20 ans"
+    ],
+    "explanation": "On peut devenir électeur à 18 ans, l'âge de la majorité, à condition d'être de nationalité française, d'avoir ses droits civiques et politiques et d'être inscrit sur les listes électorales.",
+    "group": "vote-conditions",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/democratie-et-droit-de-vote/democratie-et-droit-de-vote-les-conditions-pour-voter-en-france-1/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 504,
+    "theme": "Système institutionnel et politique",
+    "notion": "democratie-vote",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 51,
+    "question": "En France, est-ce obligatoire de voter ?",
+    "answers": [
+      "Non, voter est un droit mais pas une obligation"
+    ],
+    "distractors": [
+      "Oui, et ne pas voter est puni d'une amende",
+      "Oui, mais seulement pour l'élection présidentielle",
+      "Oui, pour toutes les personnes de plus de 18 ans, sous peine de perdre ses droits civiques",
+      "Oui, mais seulement pour les personnes inscrites depuis plus de 5 ans",
+      "Non, sauf pour l'élection présidentielle, où le vote est obligatoire",
+      "Non, sauf pour les personnes naturalisées, qui doivent voter"
+    ],
+    "explanation": "Le vote n'est pas obligatoire en France : c'est un droit. La carte électorale rappelle que voter est aussi un « devoir civique », mais ce n'est pas une obligation légale. Quand on vote, le vote est personnel, libre et secret.",
+    "group": "vote-conditions",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/democratie-et-droit-de-vote/democratie-et-droit-de-vote-les-conditions-pour-voter-en-france-1/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 505,
+    "theme": "Système institutionnel et politique",
+    "notion": "democratie-vote",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 53,
+    "question": "Comment sont désignés les députés ?",
+    "answers": [
+      "Ils sont élus directement par les citoyens"
+    ],
+    "distractors": [
+      "Ils sont nommés par le président de la République",
+      "Ils sont élus par les sénateurs et les maires",
+      "Ils sont choisis par les maires de leur circonscription",
+      "Ils sont tirés au sort parmi les électeurs inscrits",
+      "Ils sont désignés par le Premier ministre et le Gouvernement"
+    ],
+    "explanation": "Les 577 députés de l'Assemblée nationale sont élus au suffrage universel direct par les citoyens français lors des élections législatives.",
+    "group": "legislatives",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/democratie-et-droit-de-vote/democratie-et-droit-de-vote-les-conditions-pour-voter-en-france-2/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 506,
+    "theme": "Système institutionnel et politique",
+    "notion": "organisation-republique",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 57,
+    "question": "Quelles sont les durées du mandat du conseil municipal et du maire ?",
+    "answers": [
+      "6 ans, pour l'un comme pour l'autre"
+    ],
+    "distractors": [
+      "5 ans pour le conseil municipal et 6 ans pour le maire",
+      "6 ans pour le conseil municipal et 5 ans pour le maire",
+      "5 ans, pour l'un comme pour l'autre",
+      "4 ans, pour l'un comme pour l'autre",
+      "7 ans, pour l'un comme pour l'autre"
+    ],
+    "explanation": "Les élus municipaux (le maire et les conseillers municipaux) sont élus pour 6 ans lors des élections municipales.",
+    "group": "mandat-municipal",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/democratie-et-droit-de-vote/democratie-et-droit-de-vote-la-democratie-et-la-republique-2/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 507,
+    "theme": "Système institutionnel et politique",
+    "notion": "democratie-vote",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 59,
+    "question": "Quelle est la durée du mandat du Président de la République française ?",
+    "answers": [
+      "5 ans"
+    ],
+    "distractors": [
+      "7 ans",
+      "4 ans",
+      "6 ans",
+      "10 ans",
+      "3 ans"
+    ],
+    "explanation": "Le président de la République est élu pour 5 ans au suffrage universel direct : c'est le quinquennat.",
+    "group": "president",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/democratie-et-droit-de-vote/democratie-et-droit-de-vote-la-democratie-et-la-republique-2/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 508,
+    "theme": "Système institutionnel et politique",
+    "notion": "democratie-vote",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 60,
+    "question": "Quelle est la durée du mandat des députés ?",
+    "answers": [
+      "5 ans"
+    ],
+    "distractors": [
+      "4 ans",
+      "6 ans",
+      "7 ans",
+      "3 ans",
+      "10 ans"
+    ],
+    "explanation": "Les députés sont élus pour 5 ans, sauf si l'Assemblée nationale est dissoute avant la fin de leur mandat.",
+    "group": "legislatives",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/democratie-et-droit-de-vote/democratie-et-droit-de-vote-les-conditions-pour-voter-en-france-2/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 509,
+    "theme": "Système institutionnel et politique",
+    "notion": "democratie-vote",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 61,
+    "question": "Quelle est la durée du mandat des sénateurs ?",
+    "answers": [
+      "6 ans"
+    ],
+    "distractors": [
+      "4 ans",
+      "5 ans",
+      "7 ans",
+      "8 ans",
+      "9 ans"
+    ],
+    "explanation": "Les sénateurs sont élus pour 6 ans par les grands électeurs, et le Sénat est renouvelé par moitié tous les 3 ans.",
+    "group": "senateurs",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/democratie-et-droit-de-vote/democratie-et-droit-de-vote-les-conditions-pour-voter-en-france-2/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 510,
+    "theme": "Système institutionnel et politique",
+    "notion": "democratie-vote",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 63,
+    "question": "En France, est-ce possible d'adhérer à un parti politique ?",
+    "answers": [
+      "Oui, chaque citoyen peut rejoindre le parti de son choix"
+    ],
+    "distractors": [
+      "Non, un seul parti politique est autorisé en France",
+      "Oui, mais seulement avec l'autorisation du préfet du département",
+      "Non, seuls les élus peuvent adhérer à un parti politique",
+      "Oui, mais seulement à un parti qui a des députés à l'Assemblée",
+      "Non, c'est réservé aux personnes nées en France"
+    ],
+    "explanation": "La pluralité des partis est un principe fondamental de la démocratie française. Chaque citoyen peut librement rejoindre un parti politique qui correspond à ses convictions : l'article 4 de la Constitution garantit ce droit.",
+    "group": "partis-politiques",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/democratie-et-droit-de-vote/democratie-et-droit-de-vote-le-principe-de-pluralite-des-partis/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 511,
+    "theme": "Système institutionnel et politique",
+    "notion": "organisation-republique",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 65,
+    "question": "Qui gère les collèges publics ?",
+    "answers": [
+      "Le département"
+    ],
+    "distractors": [
+      "La commune",
+      "La région",
+      "L'Union européenne",
+      "Le préfet"
+    ],
+    "explanation": "Le département gère les collèges publics. L'État, de son côté, définit les programmes scolaires et recrute les enseignants.",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/organisation-de-la-republique-fran%C3%A7aise/le-decoupage-administratif-de-la-france-3/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 512,
+    "theme": "Système institutionnel et politique",
+    "notion": "organisation-republique",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 66,
+    "question": "Qui gère les écoles primaires et maternelles publiques ?",
+    "answers": [
+      "La commune"
+    ],
+    "distractors": [
+      "Le département",
+      "La région",
+      "L'Union européenne",
+      "Le préfet"
+    ],
+    "explanation": "Les communes gèrent les écoles maternelles et primaires publiques : construction et entretien des bâtiments, équipements, matériel et cantine.",
+    "group": "ecoles-communes",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/organisation-de-la-republique-fran%C3%A7aise/le-decoupage-administratif-de-la-france-3/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 513,
+    "theme": "Système institutionnel et politique",
+    "notion": "organisation-republique",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 67,
+    "question": "Comment sont désignés les maires ?",
+    "answers": [
+      "Ils sont élus par le conseil municipal"
+    ],
+    "distractors": [
+      "Ils sont élus directement par tous les habitants de la commune",
+      "Ils sont nommés par le préfet",
+      "Ils sont nommés par le président de la République",
+      "Ils sont tirés au sort parmi les habitants",
+      "Ils sont élus par les conseillers départementaux"
+    ],
+    "explanation": "Les électeurs élisent les conseillers municipaux, puis le conseil municipal élit le maire parmi ses membres.",
+    "group": "maire",
+    "source": {
+      "url": "https://www.collectivites-locales.gouv.fr/connaitre-les-acteurs-et-les-institutions/elus-locaux/le-maire/lelection-du-maire",
+      "label": "collectivites-locales.gouv.fr"
+    }
+  },
+  {
+    "id": 514,
+    "theme": "Système institutionnel et politique",
+    "notion": "organisation-republique",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 68,
+    "question": "Quelle collectivité territoriale est responsable des transports régionaux ?",
+    "answers": [
+      "La région"
+    ],
+    "distractors": [
+      "La commune",
+      "Le département",
+      "La métropole",
+      "L'intercommunalité"
+    ],
+    "explanation": "La région est responsable des transports régionaux, notamment des trains régionaux (TER). Elle gère aussi les lycées et soutient le développement économique.",
+    "source": {
+      "url": "https://www.ecologie.gouv.fr/politiques-publiques/competences-collectivites-territoriales",
+      "label": "ecologie.gouv.fr"
+    }
+  },
+  {
+    "id": 515,
+    "theme": "Système institutionnel et politique",
+    "notion": "organisation-republique",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 69,
+    "question": "Quelle est l'une des voies possibles pour modifier la Constitution ?",
+    "answers": [
+      "Un référendum, après un vote identique des deux assemblées",
+      "Un vote du Parlement réuni en Congrès, à la majorité des 3/5"
+    ],
+    "distractors": [
+      "Un décret signé par le président de la République",
+      "Un vote de l'Assemblée nationale seule, à la majorité simple",
+      "Une décision du Conseil constitutionnel, seul compétent",
+      "Un arrêté signé par le Premier ministre et les ministres",
+      "Un vote du Sénat seul, à la majorité absolue"
+    ],
+    "explanation": "Une révision de la Constitution doit d'abord être votée en termes identiques par l'Assemblée nationale et le Sénat. Elle est ensuite approuvée par référendum. Quand la révision vient du président de la République (projet de révision), il peut choisir de la soumettre au Parlement réuni en Congrès, qui doit l'adopter à la majorité des trois cinquièmes des suffrages exprimés (article 89).",
+    "source": {
+      "url": "https://www.conseil-constitutionnel.fr/le-bloc-de-constitutionnalite/texte-integral-de-la-constitution-du-4-octobre-1958-en-vigueur",
+      "label": "conseil-constitutionnel.fr"
+    }
+  },
+  {
+    "id": 516,
+    "theme": "Système institutionnel et politique",
+    "notion": "organisation-republique",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 70,
+    "question": "Qui assure l'intérim du président de la République en cas de décès ?",
+    "answers": [
+      "Le président du Sénat"
+    ],
+    "distractors": [
+      "Le Premier ministre",
+      "Le président de l'Assemblée nationale",
+      "Le président du Conseil constitutionnel",
+      "Le ministre des Armées",
+      "Le doyen d'âge des députés"
+    ],
+    "explanation": "Quand la présidence de la République est vacante, par exemple en cas de décès, ses fonctions sont provisoirement exercées par le président du Sénat (article 7 de la Constitution).",
+    "source": {
+      "url": "https://www.conseil-constitutionnel.fr/le-bloc-de-constitutionnalite/texte-integral-de-la-constitution-du-4-octobre-1958-en-vigueur",
+      "label": "conseil-constitutionnel.fr"
+    }
+  },
+  {
+    "id": 517,
+    "theme": "Système institutionnel et politique",
+    "notion": "organisation-republique",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 71,
+    "question": "Quel est le rôle du Conseil constitutionnel ?",
+    "answers": [
+      "Vérifier que les lois respectent la Constitution"
+    ],
+    "distractors": [
+      "Voter les lois à la place des députés et des sénateurs",
+      "Juger les crimes et les délits commis en France",
+      "Nommer le Premier ministre et les ministres",
+      "Diriger les préfets et l'administration de l'État",
+      "Contrôler le budget de toutes les communes"
+    ],
+    "explanation": "Le Conseil constitutionnel vérifie que les lois sont conformes à la Constitution. Il peut être saisi avant la promulgation d'une loi, par exemple par 60 députés ou 60 sénateurs.",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/democratie-et-droit-de-vote/comment-voter-une-loi-1/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 518,
+    "theme": "Système institutionnel et politique",
+    "notion": "democratie-vote",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 72,
+    "question": "Quelle condition est obligatoire pour se présenter à l'élection présidentielle ?",
+    "answers": [
+      "Recueillir des parrainages d'élus"
+    ],
+    "distractors": [
+      "Avoir déjà été ministre ou parlementaire",
+      "Être membre d'un parti politique",
+      "Être né en France",
+      "Avoir au moins 35 ans",
+      "Avoir plus de 10 000 adhérents"
+    ],
+    "explanation": "Un candidat doit réunir au moins 500 parrainages d'élus (maires, parlementaires, conseillers...), provenant d'au moins 30 départements ou collectivités d'outre-mer différents, avec au maximum 10 % par territoire.",
+    "group": "candidature-presidentielle",
+    "source": {
+      "url": "https://presidentielle2022.conseil-constitutionnel.fr/les-candidats/etre-candidat/etre-candidat-e-a-lelection-presidentielle.html",
+      "label": "conseil-constitutionnel.fr"
+    }
+  },
+  {
+    "id": 519,
+    "theme": "Système institutionnel et politique",
+    "notion": "organisation-republique",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 74,
+    "question": "Comment est organisé le découpage administratif de la France ?",
+    "answers": [
+      "En communes, en départements et en régions"
+    ],
+    "distractors": [
+      "En provinces et en comtés",
+      "En cantons et en États fédérés",
+      "En länder et en municipalités",
+      "En régions uniquement, sans communes ni départements"
+    ],
+    "explanation": "La France est organisée en collectivités territoriales : les communes, les départements et les régions, auxquelles s'ajoutent des collectivités à statut particulier et des collectivités d'outre-mer.",
+    "group": "decoupage-administratif",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/organisation-de-la-republique-fran%C3%A7aise/le-decoupage-administratif-de-la-france-1/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 520,
+    "theme": "Système institutionnel et politique",
+    "notion": "institutions-europeennes",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 79,
+    "question": "En quelle année la citoyenneté européenne a-t-elle été créée ?",
+    "answers": [
+      "1992"
+    ],
+    "distractors": [
+      "1951",
+      "1957",
+      "1973",
+      "2002",
+      "2007"
+    ],
+    "explanation": "La citoyenneté européenne a été créée par le traité de Maastricht, signé en 1992. Elle s'ajoute à la citoyenneté nationale sans la remplacer.",
+    "group": "traite-maastricht",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-conflits-mondiaux-et-le-nouvel-ordre-mondial/la-construction-europeenne/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 521,
+    "theme": "Système institutionnel et politique",
+    "notion": "institutions-europeennes",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 80,
+    "question": "Quel est le dernier État à avoir intégré l’Union Européenne en 2013 ?",
+    "answers": [
+      "La Croatie"
+    ],
+    "distractors": [
+      "La Bulgarie",
+      "La Roumanie",
+      "La Pologne",
+      "La Hongrie",
+      "La Serbie"
+    ],
+    "explanation": "La Croatie a rejoint l'Union européenne en 2013, après la Bulgarie et la Roumanie en 2007.",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/institutions-europeennes/les-etapes-cles-de-la-construction-europeenne/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 522,
+    "theme": "Système institutionnel et politique",
+    "notion": "institutions-europeennes",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 81,
+    "question": "Qui a composé l'hymne de l'Union européenne ?",
+    "answers": [
+      "Ludwig van Beethoven"
+    ],
+    "distractors": [
+      "Wolfgang Amadeus Mozart",
+      "Maurice Ravel",
+      "Antonio Vivaldi",
+      "Giuseppe Verdi",
+      "Claude Debussy"
+    ],
+    "explanation": "L'« Ode à la joie » est une mélodie du compositeur allemand Ludwig van Beethoven. Elle est devenue l'hymne du Conseil de l'Europe en 1972, puis un symbole de l'Union européenne en 1985.",
+    "group": "hymne-europeen",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/institutions-europeennes/les-symboles-europeens-1/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 523,
+    "theme": "Système institutionnel et politique",
+    "notion": "institutions-europeennes",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 82,
+    "question": "Quand est célébrée la journée de l'Europe ?",
+    "answers": [
+      "Le 9 mai"
+    ],
+    "distractors": [
+      "Le 1er mai",
+      "Le 14 juillet",
+      "Le 25 mars",
+      "Le 11 novembre",
+      "Le 1er janvier",
+      "Le 8 mai"
+    ],
+    "explanation": "La Journée de l'Europe est célébrée chaque année le 9 mai, en souvenir de la déclaration Schuman du 9 mai 1950, un texte fondateur de la construction européenne.",
+    "group": "ceca",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/institutions-europeennes/les-symboles-europeens-2/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 524,
+    "theme": "Système institutionnel et politique",
+    "notion": "institutions-europeennes",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 83,
+    "question": "Où est le siège de la Banque centrale européenne ?",
+    "answers": [
+      "À Francfort, en Allemagne"
+    ],
+    "distractors": [
+      "À Bruxelles, en Belgique",
+      "À Strasbourg, en France",
+      "À Luxembourg, au Luxembourg",
+      "À Paris, en France",
+      "À Rome, en Italie"
+    ],
+    "explanation": "La Banque centrale européenne a son siège à Francfort-sur-le-Main, en Allemagne. Elle a été créée en 1998, au moment de la création de l'euro comme monnaie unique.",
+    "source": {
+      "url": "https://www.ecb.europa.eu/ecb/orga/html/index.fr.html",
+      "label": "ecb.europa.eu"
+    }
+  },
+  {
+    "id": 525,
+    "theme": "Système institutionnel et politique",
+    "notion": "institutions-europeennes",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 85,
+    "question": "Qui siège au Parlement européen ?",
+    "answers": [
+      "Les députés européens"
+    ],
+    "distractors": [
+      "Les chefs d'État et de gouvernement des pays membres",
+      "Les commissaires européens",
+      "Les ministres des États membres",
+      "Les juges de la Cour de justice de l'Union européenne"
+    ],
+    "explanation": "Le Parlement européen réunit les députés européens (eurodéputés), répartis en groupes politiques. Il vote le budget et les lois avec le Conseil de l'Union européenne et contrôle la Commission européenne.",
+    "group": "parlement-europeen",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/institutions-europeennes/le-fonctionnement-europeen-2/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 526,
+    "theme": "Système institutionnel et politique",
+    "notion": "institutions-europeennes",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 86,
+    "question": "Les citoyens de l’Union européenne peuvent-ils voter aux élections locales dans un autre État de l’Union ?",
+    "answers": [
+      "Oui, aux élections municipales de leur commune de résidence"
+    ],
+    "distractors": [
+      "Non, seuls les nationaux votent aux élections locales",
+      "Oui, mais seulement s'ils ont aussi la nationalité du pays de résidence",
+      "Oui, à toutes les élections locales, y compris départementales et régionales",
+      "Oui, mais seulement aux élections de leur pays d'origine"
+    ],
+    "explanation": "Un citoyen de l'Union européenne qui réside dans un autre État membre peut voter aux élections municipales de sa commune de résidence, à condition d'être inscrit sur la liste électorale. Il ne vote pas à toutes les élections : l'élection présidentielle et les élections législatives restent réservées aux citoyens français.",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/democratie-et-droit-de-vote/democratie-et-droit-de-vote-les-conditions-pour-voter-en-france-1/",
+      "label": "formation-civique.interieur.gouv.fr"
+    },
+    "group": "candidature-municipales"
+  },
+  {
+    "id": 527,
+    "theme": "Droits et devoirs",
+    "notion": "droits-fondamentaux",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 96,
+    "question": "À quoi sert le droit de grève ?",
+    "answers": [
+      "À cesser le travail pour exprimer un désaccord"
+    ],
+    "distractors": [
+      "À prendre des congés supplémentaires quand on le souhaite",
+      "À quitter son emploi du jour au lendemain sans préavis",
+      "À occuper l'entreprise pour empêcher les autres de travailler",
+      "À choisir librement ses horaires de travail"
+    ],
+    "explanation": "Le droit de grève est l'une des libertés qui découlent du principe de liberté : une personne employée peut cesser le travail pour exprimer un désaccord. Il s'exerce dans le cadre fixé par la loi.",
+    "group": "droit-greve",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/droits-et-devoirs/droits-fondamentaux/les-droits-inherents-a-la-personne-humaine/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 528,
+    "theme": "Droits et devoirs",
+    "notion": "droits-fondamentaux",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 99,
+    "question": "L'article 4 de la Déclaration des droits de l'homme et du citoyen affirme que \"la liberté consiste à pouvoir faire tout ce qui ne nuit pas à autrui\". Qu'est-ce que cela signifie ?",
+    "answers": [
+      "La liberté de chacun s'arrête où commence celle des autres, selon la loi"
+    ],
+    "distractors": [
+      "Chacun peut faire tout ce qu'il veut, sans aucune limite fixée par personne",
+      "Seul l'État peut décider de ce que les citoyens ont le droit de faire",
+      "Chacun est libre de ne pas respecter les règles qui ne lui plaisent pas",
+      "La liberté est un privilège qui s'obtient en payant ses impôts"
+    ],
+    "explanation": "Selon l'article 4 de la Déclaration de 1789, l'exercice des droits de chacun n'a de bornes que celles qui assurent aux autres la jouissance des mêmes droits. Ces bornes ne peuvent être fixées que par la loi.",
+    "group": "limites-libertes",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/droits-et-devoirs/droits-fondamentaux/les-principaux-textes-la-declaraion-des-droits-de-lhomme-et-du-citoyen/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 529,
+    "theme": "Droits et devoirs",
+    "notion": "droits-fondamentaux",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 102,
+    "question": "Que permet la liberté de circulation ?",
+    "answers": [
+      "De se déplacer librement dans le respect de la loi"
+    ],
+    "distractors": [
+      "D'entrer dans n'importe quel logement sans autorisation",
+      "De circuler sans respecter le code de la route",
+      "De séjourner dans n'importe quel pays sans aucune formalité",
+      "De voter dans la commune de son choix sans y habiter"
+    ],
+    "explanation": "La liberté de circulation, ou liberté d'aller et venir, permet à chacun de se déplacer librement. Comme les autres libertés, elle peut être limitée par la loi.",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/droits-et-devoirs/obligations-et-devoirs-des-personnes-residant-en-france/la-limite-des-libertes-individuelles/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 530,
+    "theme": "Droits et devoirs",
+    "notion": "droits-fondamentaux",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 103,
+    "question": "Que signifie être citoyen d'un État ?",
+    "answers": [
+      "Avoir la nationalité de cet État, avec ses droits et ses devoirs"
+    ],
+    "distractors": [
+      "Habiter dans cet État depuis plus de dix ans, quelle que soit sa nationalité",
+      "Payer des impôts dans cet État, même sans en avoir la nationalité",
+      "Avoir un titre de séjour de longue durée dans cet État",
+      "Pouvoir voter dans tous les pays de l'Union européenne"
+    ],
+    "explanation": "Le citoyen a la nationalité de l'État : il bénéficie de sa protection et doit respecter ses lois. Il a des droits civiques et politiques et des devoirs. Les personnes étrangères qui vivent dans le pays n'ont pas tous ces droits et devoirs.",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/droits-et-devoirs/droits-fondamentaux/un-droit-fondamental-la-citoyennete/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 531,
+    "theme": "Droits et devoirs",
+    "notion": "droits-fondamentaux",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 104,
+    "question": "Que sont les droits fondamentaux ?",
+    "answers": [
+      "Les droits et libertés élémentaires communs à tous"
+    ],
+    "distractors": [
+      "Les droits réservés aux personnes de nationalité française",
+      "Les droits que l'on obtient après avoir voté",
+      "Les droits qui dépendent de la religion de chacun",
+      "Les droits qui ne s'appliquent qu'aux personnes majeures"
+    ],
+    "explanation": "Les droits fondamentaux, ou libertés fondamentales, sont les droits et les libertés élémentaires que tout le monde doit respecter pour assurer le bien-être de chacun. Ils sont les mêmes pour tout le monde, quels que soient le sexe, l'âge, les croyances ou la façon de vivre.",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/droits-et-devoirs/droits-fondamentaux/introduction-aux-droits-fondamentaux/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 532,
+    "theme": "Droits et devoirs",
+    "notion": "droits-fondamentaux",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 105,
+    "question": "Quel droit protège une personne contre une arrestation arbitraire ?",
+    "answers": [
+      "Le droit à la sûreté"
+    ],
+    "distractors": [
+      "Le droit de propriété",
+      "Le droit de grève",
+      "La liberté de culte",
+      "L'égalité devant l'impôt"
+    ],
+    "explanation": "Le droit à la sûreté protège la personne contre l'arbitraire. L'article 7 de la Déclaration de 1789 prévoit que nul ne peut être accusé, arrêté ou détenu que dans les cas déterminés par la loi et selon les formes qu'elle a prescrites.",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/droits-et-devoirs/droits-fondamentaux/les-principaux-textes-la-declaraion-des-droits-de-lhomme-et-du-citoyen/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 533,
+    "theme": "Droits et devoirs",
+    "notion": "droits-fondamentaux",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 106,
+    "question": "Quel est le texte fondateur établissant les droits et les devoirs de chaque citoyen ?",
+    "answers": [
+      "La Déclaration des droits de l'homme et du citoyen de 1789"
+    ],
+    "distractors": [
+      "La Déclaration d'indépendance des États-Unis (1776)",
+      "La Grande Charte (Magna Carta) anglaise (1215)",
+      "Le Concordat conclu entre la France et le pape en 1801",
+      "La Charte des Nations unies, signée à San Francisco en 1945"
+    ],
+    "explanation": "La Déclaration des droits de l'homme et du citoyen, adoptée le 26 août 1789, est le texte fondateur qui affirme les droits de l'être humain et les droits et devoirs civiques et politiques du citoyen.",
+    "group": "textes-fondateurs",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/droits-et-devoirs/droits-fondamentaux/les-principaux-textes-la-declaraion-des-droits-de-lhomme-et-du-citoyen/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 534,
+    "theme": "Droits et devoirs",
+    "notion": "droits-fondamentaux",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 107,
+    "question": "Quel texte affirme que tous les hommes naissent libres et égaux en droits ?",
+    "answers": [
+      "La Déclaration des droits de l'homme et du citoyen"
+    ],
+    "distractors": [
+      "Le Code civil de 1804, appelé aussi Code Napoléon",
+      "La Charte de l'environnement, ajoutée à la Constitution",
+      "Le traité de Maastricht, signé en 1992",
+      "La loi de 1905 sur la séparation des Églises et de l'État"
+    ],
+    "explanation": "C'est l'article 1er de la Déclaration des droits de l'homme et du citoyen, adoptée le 26 août 1789, qui affirme l'égalité en droits : les autres textes cités portent sur d'autres sujets.",
+    "group": "textes-fondateurs",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/droits-et-devoirs/droits-fondamentaux/les-principaux-textes-la-declaraion-des-droits-de-lhomme-et-du-citoyen/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 535,
+    "theme": "Droits et devoirs",
+    "notion": "droits-fondamentaux",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 108,
+    "question": "Quelle situation est une atteinte à la dignité humaine ?",
+    "answers": [
+      "Être réduit en esclavage ou traité comme un objet"
+    ],
+    "distractors": [
+      "Être condamné à une amende après une infraction",
+      "Devoir présenter une pièce d'identité lors d'un contrôle de police",
+      "Devoir respecter le code de la route",
+      "Devoir trier ses déchets"
+    ],
+    "explanation": "La dignité humaine, c'est le fait que chaque personne mérite le respect, simplement parce qu'elle est un être humain. Un être humain ne doit jamais être traité comme un objet : l'esclavage, le travail forcé, la torture et les traitements inhumains ou dégradants sont interdits.",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/droits-et-devoirs/droits-fondamentaux/la-diginite-humaine/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 536,
+    "theme": "Droits et devoirs",
+    "notion": "droits-fondamentaux",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 110,
+    "question": "Suite à une interpellation par la police, il est possible de :",
+    "answers": [
+      "Garder le silence et demander l'assistance d'un avocat"
+    ],
+    "distractors": [
+      "Exiger d'être relâché sans attendre",
+      "Quitter librement les lieux sans l'accord des policiers",
+      "Choisir soi-même les policiers qui s'occupent de vous",
+      "S'opposer physiquement à la police si l'on se juge innocent"
+    ],
+    "explanation": "Une personne interpellée garde ses droits de la défense : elle est présumée innocente, elle a droit à un avocat et elle a le droit de garder le silence. Elle doit en revanche respecter les consignes des forces de l'ordre.",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/droits-et-devoirs/droits-fondamentaux/les-droits-inherents-a-la-personne-humaine/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 537,
+    "theme": "Droits et devoirs",
+    "notion": "droits-fondamentaux",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 111,
+    "question": "Tous les citoyens français ont-ils une religion ?",
+    "answers": [
+      "Non, chacun est libre de croire ou non, et d'en changer"
+    ],
+    "distractors": [
+      "Oui, la religion est obligatoire pour tous les citoyens",
+      "Oui, chacun a la religion de ses parents",
+      "Non, mais chacun doit déclarer sa religion à la mairie",
+      "Non, mais il faut en choisir une avant 18 ans"
+    ],
+    "explanation": "La laïcité garantit à chaque personne la liberté d'avoir ou de ne pas avoir de religion, d'en changer ou de ne plus en avoir. Personne ne peut être obligé de respecter les principes ou les prescriptions d'une religion.",
+    "group": "laicite",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/laicite/la-definition-de-la-laicite-1/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 538,
+    "theme": "Droits et devoirs",
+    "notion": "obligations-devoirs",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 112,
+    "question": "À quel âge est la majorité numérique en France ?",
+    "answers": [
+      "15 ans"
+    ],
+    "distractors": [
+      "13 ans",
+      "16 ans",
+      "18 ans",
+      "21 ans"
+    ],
+    "explanation": "La loi du 7 juillet 2023 a fixé la « majorité numérique » à 15 ans : en dessous de cet âge, l'inscription sur un réseau social doit être autorisée par un parent. Cette règle n'est pas encore appliquée, faute du décret qui doit fixer son entrée en vigueur.",
+    "group": "vote-conditions",
+    "source": {
+      "url": "https://www.legifrance.gouv.fr/jorf/article_jo/JORFARTI000047799537",
+      "label": "legifrance.gouv.fr"
+    }
+  },
+  {
+    "id": 539,
+    "theme": "Droits et devoirs",
+    "notion": "obligations-devoirs",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 113,
+    "question": "Dans lequel de ces endroits est-on autorisé à fumer ?",
+    "answers": [
+      "Dans son propre logement"
+    ],
+    "distractors": [
+      "Dans un bus ou un abribus",
+      "Dans un parc public",
+      "Sur une plage pendant la saison balnéaire",
+      "Dans la salle d'un restaurant"
+    ],
+    "explanation": "L'interdiction de fumer s'applique notamment aux lieux publics fermés et couverts, aux transports publics, aux parcs et jardins publics et aux plages pendant la saison balnéaire. Elle ne vise pas le logement privé.",
+    "source": {
+      "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F160",
+      "label": "service-public.gouv.fr"
+    }
+  },
+  {
+    "id": 540,
+    "theme": "Droits et devoirs",
+    "notion": "obligations-devoirs",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 114,
+    "question": "En France, la conduite sans permis d'une moto est :",
+    "answers": [
+      "Un délit, passible de prison et d'une amende"
+    ],
+    "distractors": [
+      "Une simple contravention, sans peine de prison possible",
+      "Tolérée sur de courtes distances",
+      "Autorisée si l'on a déjà réussi l'épreuve du code de la route",
+      "Une faute civile, sans sanction pénale"
+    ],
+    "explanation": "Conduire un véhicule sans le permis correspondant à sa catégorie est un délit : l'article L221-2 du code de la route prévoit un an d'emprisonnement et 15 000 € d'amende, avec en plus des peines complémentaires possibles (confiscation du véhicule, interdiction de conduire).",
+    "source": {
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000039099784",
+      "label": "legifrance.gouv.fr"
+    }
+  },
+  {
+    "id": 541,
+    "theme": "Droits et devoirs",
+    "notion": "obligations-devoirs",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 115,
+    "question": "En quoi consiste le devoir de solidarité ?",
+    "answers": [
+      "Aider les personnes en difficulté et favoriser l'entraide"
+    ],
+    "distractors": [
+      "Ne s'occuper que de ses proches et de sa famille",
+      "Laisser chacun se débrouiller seul face aux difficultés",
+      "N'aider que les personnes de même nationalité ou de même religion",
+      "Ne participer qu'aux actions décidées par le Gouvernement"
+    ],
+    "explanation": "La fraternité, c'est la solidarité entre les citoyens. Elle prend plusieurs formes : l'aide organisée par les institutions publiques, comme la Sécurité sociale, l'entraide entre les générations et l'aide directe aux personnes en difficulté.",
+    "group": "fraternite-solidarite",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/devise-et-symboles-de-la-republique/fraternite-1/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 542,
+    "theme": "Droits et devoirs",
+    "notion": "droits-fondamentaux",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 116,
+    "question": "Est-ce légal d'être marié à plusieurs personnes en même temps ?",
+    "answers": [
+      "Non, la bigamie est un délit puni par la loi"
+    ],
+    "distractors": [
+      "Oui, si tous les conjoints sont d'accord entre eux",
+      "Non, sauf pour les personnes dont le pays d'origine l'autorise",
+      "Oui, si le deuxième mariage est seulement religieux",
+      "Non, sauf avec l'autorisation exceptionnelle du préfet"
+    ],
+    "explanation": "Contracter un nouveau mariage avant la dissolution du précédent est interdit en France : c'est le délit de bigamie, puni d'un an d'emprisonnement et de 45 000 € d'amende. Le mariage civil ne peut unir que deux personnes.",
+    "group": "mariage-civil",
+    "source": {
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006418588",
+      "label": "legifrance.gouv.fr"
+    }
+  },
+  {
+    "id": 543,
+    "theme": "Droits et devoirs",
+    "notion": "obligations-devoirs",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 117,
+    "question": "Est-ce obligatoire de déclarer ses impôts chaque année en France ?",
+    "answers": [
+      "Oui, chaque année, même avec peu ou pas de revenus"
+    ],
+    "distractors": [
+      "Oui, mais seulement pour les personnes salariées",
+      "Non, seulement tous les deux ans",
+      "Non, les personnes étrangères en sont dispensées",
+      "Oui, mais seulement à partir de 30 000 € de revenus"
+    ],
+    "explanation": "Toute personne qui réside en France, ou dont le domicile fiscal est en France, doit déclarer chaque année ses revenus à l'administration fiscale, même s'ils sont faibles ou nuls. La déclaration en ligne est obligatoire quand le domicile est connecté à internet.",
+    "group": "obligations-residents",
+    "source": {
+      "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F358",
+      "label": "service-public.gouv.fr"
+    }
+  },
+  {
+    "id": 544,
+    "theme": "Droits et devoirs",
+    "notion": "obligations-devoirs",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 118,
+    "question": "Est-il obligatoire de porter secours à une personne en danger ?",
+    "answers": [
+      "Oui, sinon on risque une condamnation pénale"
+    ],
+    "distractors": [
+      "Non, c'est seulement un conseil moral",
+      "Oui, mais seulement pour les professionnels de santé",
+      "Non, il suffit de filmer la scène pour garder une preuve",
+      "Oui, mais seulement si la personne en danger est un proche"
+    ],
+    "explanation": "Toute personne qui voit quelqu'un en danger doit l'aider, sans se mettre elle-même en danger : appeler les secours est déjà une aide. Celui qui n'aide pas peut être condamné pour non-assistance à personne en danger.",
+    "group": "temoin-secours",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/droits-et-devoirs/obligations-et-devoirs-des-personnes-residant-en-france/les-obligations-en-tant-que-resident-francais/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 545,
+    "theme": "Droits et devoirs",
+    "notion": "obligations-devoirs",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 119,
+    "question": "Être juré d'assises est :",
+    "answers": [
+      "Une obligation civique pour les citoyens tirés au sort"
+    ],
+    "distractors": [
+      "Un choix libre, réservé aux personnes volontaires",
+      "Une fonction réservée aux seuls magistrats et avocats de métier",
+      "Un métier rémunéré à plein temps",
+      "Un droit réservé aux personnes nées en France"
+    ],
+    "explanation": "Les jurés d'assises sont des citoyens tirés au sort : leur participation directe à la justice est un devoir civique. Une dispense n'est possible que pour un motif reconnu par la loi.",
+    "group": "jury-assises",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/droits-et-devoirs/obligations-et-devoirs-des-personnes-residant-en-france/les-obligations-en-tant-que-citoyen-francais/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 546,
+    "theme": "Droits et devoirs",
+    "notion": "obligations-devoirs",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 120,
+    "question": "La vente d'alcool en France est interdite aux personnes de moins de :",
+    "answers": [
+      "18 ans"
+    ],
+    "distractors": [
+      "14 ans",
+      "15 ans",
+      "16 ans",
+      "21 ans"
+    ],
+    "explanation": "L'article L3342-1 du code de la santé publique interdit la vente d'alcool aux mineurs, que ce soit à emporter ou à consommer sur place. Le vendeur peut demander un document prouvant l'âge de l'acheteur.",
+    "group": "vote-conditions",
+    "source": {
+      "url": "https://www.drogues.gouv.fr/sites/default/files/2025-03/lessentiel_interdictions_vente_aux_mineurs.pdf",
+      "label": "drogues.gouv.fr"
+    }
+  },
+  {
+    "id": 547,
+    "theme": "Droits et devoirs",
+    "notion": "obligations-devoirs",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 121,
+    "question": "Le non-respect du code de la route est :",
+    "answers": [
+      "Une infraction, sanctionnée selon sa gravité"
+    ],
+    "distractors": [
+      "Une simple faute morale, sans sanction",
+      "Toléré quand le conducteur est expérimenté",
+      "Sans conséquence tant qu'il n'y a pas d'accident",
+      "Un désaccord réglé uniquement entre automobilistes"
+    ],
+    "explanation": "Le non-respect de la loi est une infraction, et le code de la route en fait partie : un excès de vitesse est par exemple une contravention. Le juge prononce la sanction selon la gravité de l'infraction.",
+    "group": "infractions",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/droits-et-devoirs/obligations-et-devoirs-des-personnes-residant-en-france/se-conformer-aux-lois-les-infractions/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 548,
+    "theme": "Droits et devoirs",
+    "notion": "obligations-devoirs",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 122,
+    "question": "Lequel de ces crimes ou délits peut entrainer la privation des droits civils et politiques par un juge ?",
+    "answers": [
+      "Un meurtre ou un acte de corruption"
+    ],
+    "distractors": [
+      "Un stationnement gênant",
+      "Un excès de vitesse de quelques kilomètres par heure",
+      "Le tapage nocturne",
+      "Un retard dans le paiement d'un loyer"
+    ],
+    "explanation": "Un citoyen puni par la loi peut être privé de ses droits civiques et politiques par un juge : c'est une peine complémentaire prévue pour des crimes et des délits graves, comme le meurtre. Les petites infractions du quotidien ne la permettent pas en principe.",
+    "group": "droits-civiques",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/democratie-et-droit-de-vote/democratie-et-droit-de-vote-les-conditions-pour-voter-en-france-1/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 549,
+    "theme": "Droits et devoirs",
+    "notion": "obligations-devoirs",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 123,
+    "question": "Pour obtenir une carte d'identité, il faut :",
+    "answers": [
+      "Se présenter en personne avec une photo et un justificatif de domicile"
+    ],
+    "distractors": [
+      "Envoyer son dossier complet par courrier, sans jamais se déplacer en mairie",
+      "Réussir un examen de langue française organisé par la préfecture du département",
+      "Obtenir l'accord écrit de son employeur et celui de son propriétaire",
+      "Verser une caution de 500 euros à la mairie de son lieu de résidence"
+    ],
+    "explanation": "Pour une première demande de carte d'identité, la présence du demandeur est indispensable, car ses empreintes digitales sont relevées. Il apporte une photo d'identité de moins de 6 mois et un justificatif de domicile. Un acte de naissance n'est demandé que dans certains cas, et la carte est gratuite.",
+    "source": {
+      "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F1341",
+      "label": "service-public.gouv.fr"
+    }
+  },
+  {
+    "id": 550,
+    "theme": "Droits et devoirs",
+    "notion": "obligations-devoirs",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 125,
+    "question": "Que doit faire un citoyen s'il est appelé à être juré dans un procès d'assises ?",
+    "answers": [
+      "Répondre à la convocation, sauf dispense pour un motif reconnu"
+    ],
+    "distractors": [
+      "Refuser de siéger sans avoir besoin de se justifier",
+      "Se faire remplacer par un proche de son choix, sans prévenir",
+      "Ne se présenter que s'il en a vraiment envie ce jour-là",
+      "Ne siéger que s'il a déjà fait des études de droit ou de justice"
+    ],
+    "explanation": "Un citoyen tiré au sort comme juré participe directement à la justice. Il doit répondre à la convocation, sauf s'il obtient une dispense pour un motif reconnu par la loi.",
+    "group": "jury-assises",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/droits-et-devoirs/obligations-et-devoirs-des-personnes-residant-en-france/les-obligations-en-tant-que-citoyen-francais/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 551,
+    "theme": "Droits et devoirs",
+    "notion": "droits-fondamentaux",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 126,
+    "question": "Quel est l'âge de la majorité civile en France ?",
+    "answers": [
+      "18 ans"
+    ],
+    "distractors": [
+      "16 ans",
+      "17 ans",
+      "21 ans",
+      "25 ans"
+    ],
+    "explanation": "En France, la majorité civile est fixée à 18 ans : c'est à cet âge que l'on passe de la minorité à la majorité et que l'on peut exercer seul ses droits.",
+    "source": {
+      "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F39617",
+      "label": "service-public.gouv.fr"
+    },
+    "group": "vote-conditions"
+  },
+  {
+    "id": 552,
+    "theme": "Droits et devoirs",
+    "notion": "obligations-devoirs",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 127,
+    "question": "Quel est l'un des devoirs principaux d'un citoyen français ?",
+    "answers": [
+      "Respecter les lois françaises et européennes"
+    ],
+    "distractors": [
+      "Adhérer à un parti politique de son choix",
+      "Occuper un emploi dans la fonction publique",
+      "Pratiquer la religion de ses parents",
+      "Faire du bénévolat chaque week-end de l'année"
+    ],
+    "explanation": "Le citoyen français doit respecter la loi et tout mettre en œuvre pour essayer de la faire respecter par les autres. Il a aussi d'autres devoirs, comme participer à la vie politique par son vote, à la défense du pays et au fonctionnement de la justice.",
+    "group": "obligations-residents",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/droits-et-devoirs/obligations-et-devoirs-des-personnes-residant-en-france/les-obligations-en-tant-que-citoyen-francais/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 553,
+    "theme": "Droits et devoirs",
+    "notion": "obligations-devoirs",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 129,
+    "question": "Qu'est-ce que la citoyenneté numérique ?",
+    "answers": [
+      "Un usage responsable du numérique, dans le respect des droits de chacun"
+    ],
+    "distractors": [
+      "Le droit de voter par internet à toutes les élections nationales et locales",
+      "L'obligation de posséder un compte sur au moins un réseau social",
+      "Le droit de publier n'importe quel contenu en ligne, sans aucune limite",
+      "L'acquisition de la nationalité française par une démarche en ligne"
+    ],
+    "explanation": "La citoyenneté numérique consiste à utiliser les outils numériques de façon responsable et éthique, avec un esprit critique. Elle suppose de connaître ses droits et ses devoirs en ligne et de respecter ceux des autres.",
+    "source": {
+      "url": "https://www.jeunes.gouv.fr/2025-annee-europeenne-de-l-education-la-citoyennete-numerique-du-conseil-de-l-europe-2619",
+      "label": "jeunes.gouv.fr"
+    }
+  },
+  {
+    "id": 554,
+    "theme": "Droits et devoirs",
+    "notion": "obligations-devoirs",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 130,
+    "question": "Qu'est-ce que le devoir de mémoire ?",
+    "answers": [
+      "Se souvenir des événements tragiques de l'histoire pour ne pas les répéter"
+    ],
+    "distractors": [
+      "L'obligation d'apprendre toutes les dates de l'histoire de France par cœur",
+      "L'obligation de conserver ses documents administratifs pendant dix ans",
+      "Le droit de faire effacer ses données sur internet",
+      "L'obligation de célébrer tous les jours fériés"
+    ],
+    "explanation": "Le devoir de mémoire consiste à garder le souvenir des événements tragiques du passé, comme les génocides et les crimes contre l'humanité, pour comprendre les conséquences de la haine et du racisme et ne pas les répéter. C'est un devoir moral, rappelé notamment à l'école.",
+    "group": "shoah",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/zoom-sur/focus-sur-la-seconde-guerre-mondiale-la-shoah/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 555,
+    "theme": "Droits et devoirs",
+    "notion": "obligations-devoirs",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 131,
+    "question": "Qui peut être appelé à faire partie d’un jury d’assises en France ?",
+    "answers": [
+      "Tout citoyen français de plus de 23 ans inscrit sur les listes électorales"
+    ],
+    "distractors": [
+      "Seulement les magistrats, les avocats et les greffiers de profession",
+      "Toute personne majeure qui habite en France, même de nationalité étrangère",
+      "Seulement les personnes qui ont fait de longues études de droit",
+      "Tout citoyen dès 18 ans, même non inscrit sur les listes électorales"
+    ],
+    "explanation": "Peut être tiré au sort pour être juré d'assises tout citoyen français de plus de 23 ans, qui a tous ses droits civiques et qui est inscrit sur les listes électorales.",
+    "group": "jury-assises",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/droits-et-devoirs/obligations-et-devoirs-des-personnes-residant-en-france/les-obligations-en-tant-que-citoyen-francais/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 556,
+    "theme": "Droits et devoirs",
+    "notion": "obligations-devoirs",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 132,
+    "question": "Une personne est privée de ses droits civils et politiques pendant 5 ans suite à une condamnation. Parmi ces propositions laquelle est correcte ? Pendant 5 ans,...",
+    "answers": [
+      "elle ne peut ni voter ni se présenter à une élection"
+    ],
+    "distractors": [
+      "elle perd sa nationalité française et ses papiers d'identité",
+      "elle n'a plus le droit d'être soignée à l'hôpital",
+      "elle ne peut plus travailler dans aucune entreprise",
+      "elle est obligée de quitter le territoire français"
+    ],
+    "explanation": "Une personne privée de ses droits civiques et politiques ne peut plus voter, se présenter à une élection ni être élue. Elle peut aussi perdre le droit d'être juge ou de servir dans l'armée. Elle garde en revanche sa nationalité, et peut toujours travailler et se faire soigner.",
+    "group": "droits-civiques",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/democratie-et-droit-de-vote/democratie-et-droit-de-vote-les-conditions-pour-voter-en-france-1/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 557,
+    "theme": "Histoire, géographie et culture",
+    "notion": "periodes-personnages",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 133,
+    "question": "Parmi ces textes, lequel a été adopté sous Napoléon Ier ?",
+    "answers": [
+      "Le Code civil"
+    ],
+    "distractors": [
+      "La Déclaration des droits de l'homme et du citoyen",
+      "La loi de séparation des Églises et de l'État",
+      "La Constitution de la Ve République",
+      "Les lois scolaires de Jules Ferry",
+      "La Convention européenne des droits de l'homme"
+    ],
+    "explanation": "Le Code civil est le grand héritage du 1er Empire de Napoléon Ier. Il fixe des règles communes à tous, notamment sur la famille, la propriété et les contrats, et garantit encore aujourd'hui l'égalité devant la loi.",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-regimes-politiques-depuis-1789/le-1er-empire-1804-1815/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 558,
+    "theme": "Histoire, géographie et culture",
+    "notion": "periodes-personnages",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 134,
+    "question": "Qui a été président de la Ve République ?",
+    "answers": [
+      "Charles de Gaulle",
+      "Georges Pompidou",
+      "Valéry Giscard d'Estaing",
+      "François Mitterrand",
+      "Jacques Chirac",
+      "Nicolas Sarkozy",
+      "François Hollande",
+      "Emmanuel Macron"
+    ],
+    "distractors": [
+      "Napoléon III",
+      "Adolphe Thiers",
+      "Patrice de Mac Mahon",
+      "Philippe Pétain",
+      "Georges Clemenceau"
+    ],
+    "explanation": "Depuis la fondation de la Ve République, huit personnes ont été présidents de la République : Charles de Gaulle, Georges Pompidou, Valéry Giscard d'Estaing, François Mitterrand, Jacques Chirac, Nicolas Sarkozy, François Hollande et Emmanuel Macron.",
+    "group": "ve-republique",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/la-cinquieme-republique/les-presidents-de-la-cinquieme-republique/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 559,
+    "theme": "Histoire, géographie et culture",
+    "notion": "periodes-personnages",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 135,
+    "question": "Quel est l’objectif des lois scolaires de la IIIe République ?",
+    "answers": [
+      "Rendre l'école gratuite, laïque et obligatoire"
+    ],
+    "distractors": [
+      "Rendre l'école payante, religieuse et facultative",
+      "Réserver l'école aux garçons, dès 6 ans",
+      "Confier l'enseignement à l'Église, sans l'État",
+      "Faire payer l'école à tous les élèves",
+      "Supprimer l'école pour les filles, dès 1882"
+    ],
+    "explanation": "Les lois de Jules Ferry généralisent l'école publique gratuite en 1881, puis l'école laïque et obligatoire en 1882. Elles comptent parmi les grandes réalisations de la IIIe République.",
+    "group": "ecole-jules-ferry",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-regimes-politiques-depuis-1789/la-troisieme-republique-1870-1940/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 560,
+    "theme": "Histoire, géographie et culture",
+    "notion": "periodes-personnages",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 136,
+    "question": "Que signifie la date du 14 juillet pour les Français ?",
+    "answers": [
+      "La fête nationale de la République française"
+    ],
+    "distractors": [
+      "Le couronnement de Napoléon Ier comme empereur",
+      "La signature du traité de Rome en 1957",
+      "Le début de la Première Guerre mondiale",
+      "Le premier jour de la nouvelle année",
+      "La fin de la guerre d'Algérie en 1962"
+    ],
+    "explanation": "Le 14 juillet est la fête nationale française, qui célèbre la République. On assiste ce jour-là à des feux d'artifice, à des bals populaires et au défilé militaire.",
+    "group": "fete-nationale",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/zoom-sur/patrimoine-francais-les-jours-feries/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 561,
+    "theme": "Histoire, géographie et culture",
+    "notion": "periodes-personnages",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 138,
+    "question": "Lequel de ces pays est un pays fondateur de l'Union Européenne ?",
+    "answers": [
+      "La France",
+      "L'Allemagne",
+      "L'Italie",
+      "La Belgique",
+      "Les Pays-Bas",
+      "Le Luxembourg"
+    ],
+    "distractors": [
+      "La Roumanie",
+      "Le Danemark",
+      "La Slovaquie",
+      "La Lituanie",
+      "La Slovénie",
+      "La Finlande"
+    ],
+    "explanation": "Les 6 pays fondateurs sont la France, l'Allemagne, l'Italie, la Belgique, les Pays-Bas et le Luxembourg : ils créent la CECA en 1951, puis la Communauté économique européenne (CEE) en 1957. Les autres pays ont rejoint l'Union plus tard.",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-conflits-mondiaux-et-le-nouvel-ordre-mondial/la-construction-europeenne/",
+      "label": "formation-civique.interieur.gouv.fr"
+    },
+    "group": "ceca"
+  },
+  {
+    "id": 562,
+    "theme": "Histoire, géographie et culture",
+    "notion": "periodes-personnages",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 139,
+    "question": "Simone Veil est une figure importante de l’histoire française. Elle a notamment :",
+    "answers": [
+      "présenté la loi sur l'avortement"
+    ],
+    "distractors": [
+      "aboli la peine de mort en France",
+      "obtenu le droit de vote des femmes",
+      "rendu l'école gratuite et obligatoire",
+      "fondé la Ve République",
+      "signé le traité de Rome"
+    ],
+    "explanation": "Simone Veil, alors ministre de la Santé, présente et soutient la loi du 17 janvier 1975 : l'avortement (IVG) n'est plus condamnable par la loi. Cette loi est une grande avancée pour les droits des femmes.",
+    "group": "ivg",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/la-cinquieme-republique/focus-sur-la-cinquieme-republique-le-droit-a-l-avortement/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 563,
+    "theme": "Histoire, géographie et culture",
+    "notion": "periodes-personnages",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 140,
+    "question": "Dans quelle région est située une partie des plages du débarquement ayant permis d'engager la libération de la France ?",
+    "answers": [
+      "La Normandie"
+    ],
+    "distractors": [
+      "La Bretagne",
+      "Les Hauts-de-France",
+      "La Nouvelle-Aquitaine",
+      "Les Pays de la Loire",
+      "Le Grand Est"
+    ],
+    "explanation": "La libération de la France s'accélère en 1944 avec le débarquement allié en Normandie, en juin, auquel participent aussi les résistants. Le reste du territoire est ensuite peu à peu libéré.",
+    "group": "normandie",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/zoom-sur/focus-sur-la-seconde-guerre-mondiale-la-resistance-et-la-lib%C3%A9ration/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 564,
+    "theme": "Histoire, géographie et culture",
+    "notion": "periodes-personnages",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 141,
+    "question": "Dans quelle ville les rois de France étaient-ils couronnés ?",
+    "answers": [
+      "Reims"
+    ],
+    "distractors": [
+      "Paris",
+      "Versailles",
+      "Lyon",
+      "Tours",
+      "Rouen"
+    ],
+    "explanation": "Reims est la ville du sacre des rois de France : à partir d'Henri Ier, en 1027, 33 rois de France sur 37 y sont sacrés, dans la cathédrale Notre-Dame.",
+    "source": {
+      "url": "https://histoiredesarts.culture.gouv.fr/Toutes-les-ressources/Panorama-de-l-art/Cathedrale-Notre-Dame-de-Reims",
+      "label": "culture.gouv.fr"
+    }
+  },
+  {
+    "id": 565,
+    "theme": "Histoire, géographie et culture",
+    "notion": "periodes-personnages",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 142,
+    "question": "Quel roi de France a été guillotiné pendant la Révolution française ?",
+    "answers": [
+      "Louis XVI"
+    ],
+    "distractors": [
+      "Louis XIV",
+      "Louis XV",
+      "Louis XVIII",
+      "Charles X",
+      "Louis-Philippe Ier"
+    ],
+    "explanation": "Le roi Louis XVI est exécuté en 1793, sous la Ière République. Pendant la Révolution, le gouvernement utilise la guillotine contre ceux qu'il considère comme des traîtres.",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-regimes-politiques-depuis-1789/la-premiere-republique-1792-1804/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 566,
+    "theme": "Histoire, géographie et culture",
+    "notion": "periodes-personnages",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 148,
+    "question": "Quel pays a été une colonie française ?",
+    "answers": [
+      "Madagascar",
+      "Le Vietnam"
+    ],
+    "distractors": [
+      "L'Australie",
+      "Le Japon",
+      "Cuba",
+      "Singapour"
+    ],
+    "explanation": "La France a possédé un vaste empire colonial. Madagascar, indépendant en 1960, et le Vietnam, qui faisait partie de l'Indochine française jusqu'en 1954, en ont fait partie. Les autres pays proposés n'ont jamais été des colonies françaises.",
+    "group": "colonisation-decolonisation",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-conflits-mondiaux-et-le-nouvel-ordre-mondial/la-decolonisation/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 567,
+    "theme": "Histoire, géographie et culture",
+    "notion": "periodes-personnages",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 151,
+    "question": "En quelle année l'Union européenne a-t-elle été fondée ?",
+    "answers": [
+      "En 1992"
+    ],
+    "distractors": [
+      "En 1968",
+      "En 1975",
+      "En 1945",
+      "En 2002",
+      "En 1985"
+    ],
+    "explanation": "Le traité de Maastricht, en 1992, transforme la Communauté économique européenne (CEE) en Union européenne (UE) : la citoyenneté européenne est créée et une monnaie unique est prévue.",
+    "group": "traite-maastricht",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-conflits-mondiaux-et-le-nouvel-ordre-mondial/la-construction-europeenne/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 568,
+    "theme": "Histoire, géographie et culture",
+    "notion": "periodes-personnages",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 154,
+    "question": "Sous quel président a été abolie la peine de mort en France ?",
+    "answers": [
+      "François Mitterrand"
+    ],
+    "distractors": [
+      "Charles de Gaulle",
+      "Georges Pompidou",
+      "Valéry Giscard d'Estaing",
+      "Jacques Chirac",
+      "Nicolas Sarkozy"
+    ],
+    "explanation": "La peine de mort est définitivement abolie par la loi du 9 octobre 1981, sous la présidence de François Mitterrand, avec le soutien de son ministre de la Justice, Robert Badinter.",
+    "group": "ve-republique",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/la-cinquieme-republique/focus-sur-la-cinquieme-republique-5/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 569,
+    "theme": "Histoire, géographie et culture",
+    "notion": "periodes-personnages",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 155,
+    "question": "Que célèbre-t-on le 8 mai ?",
+    "answers": [
+      "La fin de la Seconde Guerre mondiale"
+    ],
+    "distractors": [
+      "L'armistice de la Première Guerre mondiale",
+      "Le début de la Seconde Guerre mondiale",
+      "La prise de la Bastille en 1789",
+      "La fin de la guerre d'Algérie",
+      "La signature du traité de Rome"
+    ],
+    "explanation": "Le 8 mai est un jour férié qui commémore la victoire de 1945, c'est-à-dire la fin de la Seconde Guerre mondiale en Europe. Des cérémonies ont lieu partout en France.",
+    "group": "8-mai",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/zoom-sur/patrimoine-francais-les-jours-feries/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 570,
+    "theme": "Histoire, géographie et culture",
+    "notion": "periodes-personnages",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 159,
+    "question": "Depuis quand l'esclavage a-t-il été aboli en France ?",
+    "answers": [
+      "Depuis 1848"
+    ],
+    "distractors": [
+      "Depuis 1789",
+      "Depuis 1802",
+      "Depuis 1881",
+      "Depuis 1905",
+      "Depuis 1946"
+    ],
+    "explanation": "L'esclavage est aboli une première fois en 1794, rétabli par Napoléon en 1802, puis définitivement aboli en 1848, sous la IIe République, par le décret du 27 avril 1848.",
+    "group": "esclavage",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/zoom-sur/le-territoire-francais-dans-le-temps-2/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 571,
+    "theme": "Histoire, géographie et culture",
+    "notion": "periodes-personnages",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 160,
+    "question": "Qui a aboli l'esclavage en France ?",
+    "answers": [
+      "Victor Schœlcher"
+    ],
+    "distractors": [
+      "Jules Ferry",
+      "Napoléon Bonaparte",
+      "Georges Clemenceau",
+      "Charles de Gaulle",
+      "Léon Gambetta"
+    ],
+    "explanation": "Le décret du 27 avril 1848, qui abolit définitivement l'esclavage dans les colonies françaises, est rédigé par Victor Schœlcher, sous-secrétaire d'État chargé des colonies sous la IIe République.",
+    "group": "esclavage",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-regimes-politiques-depuis-1789/la-deuxieme-republique-1848-1851/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 572,
+    "theme": "Histoire, géographie et culture",
+    "notion": "periodes-personnages",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 163,
+    "question": "Quelle organisation a été créée en 1945 après la Seconde Guerre mondiale ?",
+    "answers": [
+      "L'Organisation des Nations unies (ONU)"
+    ],
+    "distractors": [
+      "L'Organisation du traité de l'Atlantique Nord (OTAN)",
+      "L'Union européenne (UE)",
+      "L'Organisation mondiale du commerce (OMC)",
+      "La Communauté européenne du charbon et de l'acier (CECA)"
+    ],
+    "explanation": "L'Organisation des Nations unies (ONU) est créée en 1945, à la fin de la Seconde Guerre mondiale, pour maintenir la paix.",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-conflits-mondiaux-et-le-nouvel-ordre-mondial/les-conflits-mondiaux-la-seconde-guerre-mondiale-1939-1945-les-consequences/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 573,
+    "theme": "Histoire, géographie et culture",
+    "notion": "periodes-personnages",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 164,
+    "question": "En quelle année l'euro est-il devenu la monnaie officielle de la France ?",
+    "answers": [
+      "En 2002"
+    ],
+    "distractors": [
+      "En 1957",
+      "En 1986",
+      "En 1992",
+      "En 2007"
+    ],
+    "explanation": "En 2002, l'euro devient la monnaie officielle de plusieurs pays membres de l'Union européenne, dont la France.",
+    "group": "euro-2002",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-conflits-mondiaux-et-le-nouvel-ordre-mondial/la-construction-europeenne/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 574,
+    "theme": "Histoire, géographie et culture",
+    "notion": "periodes-personnages",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 165,
+    "question": "Lors de la seconde guerre mondiale, à quelle date la ville de Paris a-t-elle été libérée ?",
+    "answers": [
+      "Le 25 août 1944"
+    ],
+    "distractors": [
+      "Le 6 juin 1944",
+      "Le 14 juillet 1944",
+      "Le 8 mai 1945",
+      "Le 11 novembre 1944"
+    ],
+    "explanation": "Paris est libérée le 25 août 1944, quelques semaines après le débarquement allié de juin 1944. Le reste du territoire est ensuite peu à peu libéré.",
+    "source": {
+      "url": "https://www.defense.gouv.fr/actualites/25-aout-1944-paris-libere",
+      "label": "defense.gouv.fr"
+    }
+  },
+  {
+    "id": 575,
+    "theme": "Histoire, géographie et culture",
+    "notion": "periodes-personnages",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 166,
+    "question": "Quel était le principal port français impliqué dans la traite négrière au XVIIIe siècle ?",
+    "answers": [
+      "Nantes"
+    ],
+    "distractors": [
+      "Marseille",
+      "Dunkerque",
+      "Brest",
+      "Calais",
+      "Toulon"
+    ],
+    "explanation": "Au XVIIIe siècle, Nantes est le premier port négrier français, devant Bordeaux. Des ports comme Nantes, Bordeaux et La Rochelle s'enrichissent grâce au commerce « triangulaire » entre l'Europe, l'Afrique et les Amériques, qui permet la traite négrière et l'esclavage.",
+    "group": "esclavage",
+    "source": {
+      "url": "https://www.senat.fr/rap/r11-609/r11-609_mono.html",
+      "label": "senat.fr"
+    }
+  },
+  {
+    "id": 576,
+    "theme": "Histoire, géographie et culture",
+    "notion": "periodes-personnages",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 167,
+    "question": "Quel célèbre philosophe des Lumières a dénoncé l'esclavage ?",
+    "answers": [
+      "Montesquieu",
+      "Voltaire"
+    ],
+    "distractors": [
+      "Blaise Pascal",
+      "René Descartes",
+      "Michel de Montaigne",
+      "Auguste Comte",
+      "Jacques-Bénigne Bossuet"
+    ],
+    "explanation": "Au XVIIIe siècle, des philosophes des Lumières dénoncent l'esclavage : dès 1748, Montesquieu choisit l'ironie dans De l'esprit des lois pour en montrer l'horreur, puis Voltaire le dénonce dans Candide.",
+    "group": "separation-pouvoirs",
+    "source": {
+      "url": "https://www.senat.fr/rap/l99-262/l99-2621.html",
+      "label": "senat.fr"
+    }
+  },
+  {
+    "id": 577,
+    "theme": "Histoire, géographie et culture",
+    "notion": "patrimoine",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 168,
+    "question": "Quelle œuvre a été écrite par Victor Hugo ?",
+    "answers": [
+      "Les Misérables"
+    ],
+    "distractors": [
+      "L'Étranger",
+      "Le Rouge et le Noir",
+      "Le Malade imaginaire",
+      "Les Fleurs du Mal",
+      "Tartuffe"
+    ],
+    "explanation": "Victor Hugo (1802-1885), écrivain majeur du romantisme français, est notamment l'auteur des Misérables, de Notre-Dame de Paris et du Dernier Jour d'un condamné.",
+    "group": "ecrivains-francais",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/culture/patrimoine-francais-artistes-emblematiques-parmi-les-auteurs-2/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 578,
+    "theme": "Histoire, géographie et culture",
+    "notion": "patrimoine",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 170,
+    "question": "Quel plat est une spécialité de la cuisine française ?",
+    "answers": [
+      "Le cassoulet",
+      "La choucroute",
+      "La bouillabaisse"
+    ],
+    "distractors": [
+      "La paella",
+      "Les sushis",
+      "Le poulet tikka masala",
+      "Les spaghettis carbonara",
+      "Le chili con carne",
+      "Le pad thaï aux crevettes"
+    ],
+    "explanation": "Le cassoulet (Languedoc), la choucroute alsacienne et la bouillabaisse, plat méditerranéen, sont des plats traditionnels de la gastronomie française, qui est inscrite au patrimoine mondial de l'UNESCO.",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/culture/patrimoine-francais-sites-emblematiques-et-gastronomie/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 579,
+    "theme": "Histoire, géographie et culture",
+    "notion": "patrimoine",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 171,
+    "question": "Qui était Marie Curie ?",
+    "answers": [
+      "Une scientifique, double lauréate du prix Nobel"
+    ],
+    "distractors": [
+      "Une chanteuse, icône de la chanson française",
+      "Une actrice, vedette du cinéma français",
+      "Une femme politique, ministre de la Santé",
+      "Une peintre impressionniste du XIXe siècle"
+    ],
+    "explanation": "Marie Curie est une grande scientifique : avec Pierre Curie, elle découvre en 1898 le polonium et le radium. Elle reçoit le prix Nobel de physique en 1903, puis celui de chimie en 1911.",
+    "group": "ecrivains-francais",
+    "source": {
+      "url": "https://www.culture.gouv.fr/regions/drac-ile-de-france/actualites/actualite-a-la-une/Exposition-Marie-Curie-une-femme-au-Pantheon",
+      "label": "culture.gouv.fr"
+    }
+  },
+  {
+    "id": 580,
+    "theme": "Histoire, géographie et culture",
+    "notion": "patrimoine",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 172,
+    "question": "Qui a peint \"La liberté guidant le peuple\" ?",
+    "answers": [
+      "Eugène Delacroix"
+    ],
+    "distractors": [
+      "Claude Monet",
+      "Paul Cézanne",
+      "Auguste Renoir",
+      "Gustave Courbet"
+    ],
+    "explanation": "La Liberté guidant le peuple est un tableau d'Eugène Delacroix (1798-1863), peintre majeur du romantisme français, qui met en avant le mouvement, la liberté et la passion.",
+    "group": "peintres-francais",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/culture/patrimoine-francais-artistes-emblematiques-parmi-les-peintres/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 581,
+    "theme": "Histoire, géographie et culture",
+    "notion": "patrimoine",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 173,
+    "question": "Dans quel grand musée parisien est exposée la Joconde ?",
+    "answers": [
+      "Le musée du Louvre"
+    ],
+    "distractors": [
+      "Le musée d'Orsay",
+      "Le musée Rodin",
+      "Le centre Pompidou",
+      "Le musée de l'Orangerie"
+    ],
+    "explanation": "La Joconde, peinte par Léonard de Vinci, est conservée au musée du Louvre, à Paris.",
+    "group": "louvre",
+    "source": {
+      "url": "https://histoiredesarts.culture.gouv.fr/Toutes-les-ressources/Musee-du-Louvre/La-Joconde",
+      "label": "culture.gouv.fr"
+    }
+  },
+  {
+    "id": 582,
+    "theme": "Histoire, géographie et culture",
+    "notion": "patrimoine",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 174,
+    "question": "Quel château célèbre se trouve près de Paris et symbolise le pouvoir royal de Louis XIV ?",
+    "answers": [
+      "Le château de Versailles"
+    ],
+    "distractors": [
+      "Le château de Chambord",
+      "Le château de Chenonceau",
+      "Le château d'Amboise",
+      "Le château d'Azay-le-Rideau"
+    ],
+    "explanation": "Transformé et agrandi sous Louis XIV, le château de Versailles remplace Paris en 1682 comme résidence de la monarchie française. Il reste étroitement associé au règne de Louis XIV.",
+    "source": {
+      "url": "https://pop.culture.gouv.fr/notice/museo/M5077",
+      "label": "culture.gouv.fr"
+    }
+  },
+  {
+    "id": 583,
+    "theme": "Histoire, géographie et culture",
+    "notion": "patrimoine",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 175,
+    "question": "Où peut-on voir des peintures préhistoriques en France ?",
+    "answers": [
+      "À Lascaux, en Dordogne"
+    ],
+    "distractors": [
+      "Au château de Versailles, en Île-de-France",
+      "Au château de Chambord, en Centre-Val de Loire",
+      "À la cathédrale de Reims, dans la Marne",
+      "Au musée d'Orsay",
+      "À la tour Eiffel"
+    ],
+    "explanation": "La grotte de Lascaux, en Dordogne, découverte en 1940, abrite des peintures et des gravures préhistoriques vieilles de 18 000 à 20 000 ans. Fermée au public depuis 1963 pour la protéger, elle se découvre grâce à ses fac-similés, dont Lascaux IV, le Centre international d'art pariétal.",
+    "source": {
+      "url": "https://www.culture.gouv.fr/actualites/Lascaux-Chauvet-Cosquer-comment-ces-decouvertes-ont-change-notre-regard-sur-la-prehistoire",
+      "label": "culture.gouv.fr"
+    }
+  },
+  {
+    "id": 584,
+    "theme": "Histoire, géographie et culture",
+    "notion": "patrimoine",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 176,
+    "question": "Quel peintre célèbre a peint les Nymphéas ?",
+    "answers": [
+      "Claude Monet"
+    ],
+    "distractors": [
+      "Auguste Renoir",
+      "Paul Cézanne",
+      "Eugène Delacroix",
+      "Pablo Picasso"
+    ],
+    "explanation": "Claude Monet (1840-1926), peintre impressionniste français, représente la lumière, les reflets, les saisons et les paysages. Les Nymphéas comptent parmi ses tableaux incontournables.",
+    "group": "peintres-francais",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/culture/patrimoine-francais-artistes-emblematiques-parmi-les-peintres/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 585,
+    "theme": "Histoire, géographie et culture",
+    "notion": "patrimoine",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 177,
+    "question": "Pendant quelles journées peut-on visiter gratuitement des lieux culturels en France ?",
+    "answers": [
+      "Les Journées européennes du patrimoine"
+    ],
+    "distractors": [
+      "Les Journées du Salon de l'agriculture",
+      "Les Journées du Festival de Cannes",
+      "Les Journées du Tour de France",
+      "Les Journées de la rentrée scolaire"
+    ],
+    "explanation": "Les Journées européennes du patrimoine ont lieu chaque année en septembre, partout sur le territoire. Elles offrent un accès, très souvent gratuit, à des lieux culturels habituellement fermés au public : bâtiments historiques, institutions publiques, coulisses d'opéras…",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/culture/patrimoine-francais-acces-a-la-culture/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 586,
+    "theme": "Histoire, géographie et culture",
+    "notion": "periodes-personnages",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 178,
+    "question": "Que symbolise le 1er mai ?",
+    "answers": [
+      "La fête du travail"
+    ],
+    "distractors": [
+      "La fête de la musique",
+      "L'armistice de 1918",
+      "La fête nationale",
+      "La fin de la guerre de 1945"
+    ],
+    "explanation": "Le 1er mai est la Fête du travail, la fête des travailleurs. Son symbole est le muguet, qui porte bonheur, et des manifestations sont organisées ce jour-là.",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/zoom-sur/patrimoine-francais-les-jours-feries/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 587,
+    "theme": "Histoire, géographie et culture",
+    "notion": "patrimoine",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 179,
+    "question": "Qui était Monsieur Rouget de Lisle ?",
+    "answers": [
+      "L'auteur de La Marseillaise"
+    ],
+    "distractors": [
+      "L'auteur du Code civil",
+      "Le fondateur de la Ve République",
+      "Le dessinateur du drapeau français",
+      "Le premier président de la IIIe République"
+    ],
+    "explanation": "Claude Joseph Rouget de Lisle est l'auteur de La Marseillaise, composée en avril 1792 sous le nom de « Chant de guerre pour l'armée du Rhin ». Elle devient l'hymne national en 1879.",
+    "group": "marseillaise",
+    "source": {
+      "url": "https://www.elysee.fr/la-presidence/la-marseillaise-de-rouget-de-lisle",
+      "label": "elysee.fr"
+    }
+  },
+  {
+    "id": 588,
+    "theme": "Histoire, géographie et culture",
+    "notion": "patrimoine",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 180,
+    "question": "À quelle occasion a été construite la Tour Eiffel ?",
+    "answers": [
+      "L'Exposition universelle de 1889"
+    ],
+    "distractors": [
+      "L'ouverture du premier métro parisien",
+      "La fin de la Première Guerre mondiale",
+      "L'inauguration du canal de Suez en 1869",
+      "Les Jeux olympiques de Paris en 1900"
+    ],
+    "explanation": "La tour Eiffel est construite en 2 ans par l'ingénieur Gustave Eiffel pour l'Exposition universelle de 1889, qui fêtait les 100 ans de la Révolution française. D'abord critiquée, elle est aujourd'hui un symbole de la France.",
+    "group": "tour-eiffel",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/culture/patrimoine-francais-sites-emblematiques-et-gastronomie-d-ile-de-france/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 589,
+    "theme": "Histoire, géographie et culture",
+    "notion": "patrimoine",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 190,
+    "question": "Qui était un célèbre compositeur français ?",
+    "answers": [
+      "Claude Debussy"
+    ],
+    "distractors": [
+      "Wolfgang Amadeus Mozart",
+      "Ludwig van Beethoven",
+      "Jean-Sébastien Bach",
+      "Giuseppe Verdi"
+    ],
+    "explanation": "Claude Debussy (1862-1918) est un compositeur français, considéré comme le père de la musique moderne. On lui doit Clair de Lune, le Prélude à l'après-midi d'un faune et La Mer.",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/culture/patrimoine-francais-artistes-emblematiques-dans-univers-musique/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 590,
+    "theme": "Histoire, géographie et culture",
+    "notion": "territoires-geographie",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 193,
+    "question": "Quel monument historique se trouve sur une île en Normandie ?",
+    "answers": [
+      "Le Mont Saint-Michel"
+    ],
+    "distractors": [
+      "Le château de Chambord",
+      "Le Palais des papes",
+      "Le pont du Gard",
+      "La cité de Carcassonne"
+    ],
+    "explanation": "Le Mont Saint-Michel est une île rocheuse située sur la côte normande, célèbre pour son abbaye construite au sommet des rochers. Il est classé au patrimoine mondial de l'UNESCO.",
+    "group": "normandie",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/culture/patrimoine-francais-sites-emblematiques-et-gastronomie-de-normandie/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 591,
+    "theme": "Histoire, géographie et culture",
+    "notion": "territoires-geographie",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 195,
+    "question": "Quelle île fait partie des Antilles françaises ?",
+    "answers": [
+      "La Guadeloupe",
+      "La Martinique"
+    ],
+    "distractors": [
+      "La Réunion",
+      "Mayotte",
+      "La Polynésie française",
+      "Saint-Pierre-et-Miquelon",
+      "La Nouvelle-Calédonie"
+    ],
+    "explanation": "La Guadeloupe et la Martinique sont des îles des Petites Antilles, dans les Caraïbes. Ce sont des départements et régions d'outre-mer (DROM).",
+    "group": "iles-francaises",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-regions-fran%C3%A7aises/guadeloupe/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 592,
+    "theme": "Histoire, géographie et culture",
+    "notion": "territoires-geographie",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 196,
+    "question": "Quelle île est française ?",
+    "answers": [
+      "La Martinique",
+      "La Guadeloupe",
+      "La Réunion",
+      "Mayotte"
+    ],
+    "distractors": [
+      "La Sardaigne",
+      "La Crète",
+      "Cuba",
+      "Trinité-et-Tobago"
+    ],
+    "explanation": "La Martinique, la Guadeloupe, La Réunion et Mayotte sont des îles qui forment, avec la Guyane, les départements et régions d'outre-mer (DROM) de la France. La Sicile, la Sardaigne, la Crète, Madère, Malte et Cuba appartiennent à d'autres pays.",
+    "group": "iles-francaises",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/atlas-de-la-france/le-territoire-de-la-france/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 593,
+    "theme": "Histoire, géographie et culture",
+    "notion": "territoires-geographie",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 198,
+    "question": "Quelle île française est située dans l'océan Indien ?",
+    "answers": [
+      "La Réunion",
+      "Mayotte"
+    ],
+    "distractors": [
+      "Saint-Martin",
+      "La Martinique",
+      "La Guadeloupe",
+      "Tahiti"
+    ],
+    "explanation": "La Réunion et Mayotte sont des îles françaises de l'océan Indien. La Martinique et la Guadeloupe se trouvent dans les Caraïbes.",
+    "group": "iles-francaises",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-regions-fran%C3%A7aises/la-reunion/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 594,
+    "theme": "Histoire, géographie et culture",
+    "notion": "territoires-geographie",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 197,
+    "question": "Quelle est la plus haute montagne de France ?",
+    "answers": [
+      "Le Mont Blanc"
+    ],
+    "distractors": [
+      "Le Puy de Dôme",
+      "Le mont Ventoux",
+      "Le Pic du Midi",
+      "Le Canigou",
+      "Le Ballon d'Alsace"
+    ],
+    "explanation": "Le Mont Blanc, dans le massif des Alpes, en Haute-Savoie, à la frontière avec l'Italie, est la plus haute montagne de France.",
+    "group": "frontieres-terrestres",
+    "source": {
+      "url": "https://cnig.gouv.fr/IMG/pdf/cnt-culminants-du-monde_maj2021ok.pdf",
+      "label": "cnig.gouv.fr"
+    }
+  },
+  {
+    "id": 595,
+    "theme": "Histoire, géographie et culture",
+    "notion": "territoires-geographie",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 199,
+    "question": "Quel département français a une frontière avec le Brésil ?",
+    "answers": [
+      "La Guyane"
+    ],
+    "distractors": [
+      "La Martinique",
+      "La Guadeloupe",
+      "La Réunion",
+      "Mayotte"
+    ],
+    "explanation": "Grâce à la Guyane, située en Amérique du Sud, la France possède des frontières avec le Brésil et le Suriname.",
+    "group": "guyane",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/atlas-de-la-france/les-frontieres-de-la-france/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 596,
+    "theme": "Histoire, géographie et culture",
+    "notion": "territoires-geographie",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 200,
+    "question": "De quelle ville française décolle la fusée Ariane ?",
+    "answers": [
+      "Kourou"
+    ],
+    "distractors": [
+      "Toulouse",
+      "Bordeaux",
+      "Nantes",
+      "Brest",
+      "Lille"
+    ],
+    "explanation": "Le centre spatial de Kourou, en Guyane, sur la côte atlantique, est l'une des bases de lancement de fusées parmi les plus importantes au monde. Il est utilisé par l'Agence spatiale européenne pour envoyer des satellites.",
+    "group": "guyane",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/culture/patrimoine-francais-sites-emblematiques-et-gastronomie-de-guyane/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 597,
+    "theme": "Histoire, géographie et culture",
+    "notion": "territoires-geographie",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 206,
+    "question": "Quel est le principal port maritime de France ?",
+    "answers": [
+      "Marseille"
+    ],
+    "distractors": [
+      "Sète",
+      "Bayonne",
+      "Port-Vendres",
+      "Saint-Malo",
+      "Cherbourg"
+    ],
+    "explanation": "Marseille est le premier port français pour le trafic de marchandises (80,4 millions de tonnes en 2017), devant Le Havre. C'est l'un des grands ports maritimes de France, gérés par l'État.",
+    "group": "marseille",
+    "source": {
+      "url": "https://www.statistiques.developpement-durable.gouv.fr/transport-maritime-de-marchandises",
+      "label": "statistiques.developpement-durable.gouv.fr"
+    }
+  },
+  {
+    "id": 598,
+    "theme": "Histoire, géographie et culture",
+    "notion": "territoires-geographie",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 209,
+    "question": "Quelle île française se trouve au sud-est du continent africain ?",
+    "answers": [
+      "La Réunion"
+    ],
+    "distractors": [
+      "La Corse",
+      "La Martinique",
+      "La Guadeloupe",
+      "Tahiti"
+    ],
+    "explanation": "La Réunion est une île volcanique de l'océan Indien, à l'est de Madagascar et au sud-ouest de l'île Maurice. C'est un département et une région d'outre-mer (DROM).",
+    "group": "iles-francaises",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-regions-fran%C3%A7aises/la-reunion/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 599,
+    "theme": "Histoire, géographie et culture",
+    "notion": "territoires-geographie",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 210,
+    "question": "Quel est le chef-lieu de la région Auvergne-Rhône-Alpes ?",
+    "answers": [
+      "Lyon"
+    ],
+    "distractors": [
+      "Grenoble",
+      "Clermont-Ferrand",
+      "Saint-Étienne",
+      "Annecy"
+    ],
+    "explanation": "Lyon est la préfecture, c'est-à-dire le chef-lieu, de la région Auvergne-Rhône-Alpes, qui compte 12 départements.",
+    "group": "regions",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-regions-fran%C3%A7aises/auvergne-rhone-alpes/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 600,
+    "theme": "Histoire, géographie et culture",
+    "notion": "territoires-geographie",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 211,
+    "question": "Quel est le chef-lieu de la région Bretagne ?",
+    "answers": [
+      "Rennes"
+    ],
+    "distractors": [
+      "Brest",
+      "Lorient",
+      "Quimper",
+      "Vannes",
+      "Saint-Malo"
+    ],
+    "explanation": "Rennes est la préfecture, c'est-à-dire le chef-lieu, de la région Bretagne, qui compte 4 départements.",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-regions-fran%C3%A7aises/bretagne/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 601,
+    "theme": "Histoire, géographie et culture",
+    "notion": "territoires-geographie",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 212,
+    "question": "Quel est le chef-lieu de la région Provence-Alpes-Côte d'Azur ?",
+    "answers": [
+      "Marseille"
+    ],
+    "distractors": [
+      "Nice",
+      "Toulon",
+      "Draguignan",
+      "Aix-en-Provence",
+      "Digne-les-Bains"
+    ],
+    "explanation": "Marseille est la préfecture, c'est-à-dire le chef-lieu, de la région Provence-Alpes-Côte d'Azur, qui compte 6 départements.",
+    "group": "marseille",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-regions-fran%C3%A7aises/provence-alpes-cote-d-azur/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 602,
+    "theme": "Histoire, géographie et culture",
+    "notion": "territoires-geographie",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 213,
+    "question": "Quel est le 101e département français depuis 2011 ?",
+    "answers": [
+      "Mayotte"
+    ],
+    "distractors": [
+      "Saint-Martin",
+      "La Réunion",
+      "La Martinique",
+      "Wallis-et-Futuna"
+    ],
+    "explanation": "Mayotte, île de l'océan Indien, devient le 101e département français le 31 mars 2011. Elle est à la fois un département et une région d'outre-mer.",
+    "group": "iles-francaises",
+    "source": {
+      "url": "https://www.senat.fr/rap/r11-675/r11-675_mono.html",
+      "label": "senat.fr"
+    }
+  },
+  {
+    "id": 603,
+    "theme": "Histoire, géographie et culture",
+    "notion": "territoires-geographie",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 214,
+    "question": "Quelle région française est réputée pour ses stations de ski ?",
+    "answers": [
+      "Auvergne-Rhône-Alpes"
+    ],
+    "distractors": [
+      "Hauts-de-France",
+      "Île-de-France",
+      "Centre-Val de Loire",
+      "Pays de la Loire",
+      "Normandie"
+    ],
+    "explanation": "L'Auvergne-Rhône-Alpes s'étend des Alpes au Massif central. Le tourisme, notamment les stations de ski, fait partie de ses secteurs économiques clés.",
+    "group": "regions",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-regions-fran%C3%A7aises/auvergne-rhone-alpes/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 604,
+    "theme": "Vie en société",
+    "notion": "s-installer",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 217,
+    "question": "Quelle action peut réaliser le locataire d'un logement sans l'autorisation du propriétaire ?",
+    "answers": [
+      "Héberger gratuitement les personnes de son choix",
+      "Rafraîchir les peintures murales du logement"
+    ],
+    "distractors": [
+      "Sous-louer le logement à une autre personne",
+      "Casser une cloison pour agrandir une pièce",
+      "Céder son bail à une autre personne de sa famille",
+      "Faire de gros travaux de transformation du logement",
+      "Agrandir le logement en construisant une extension"
+    ],
+    "explanation": "Le locataire a le droit d'aménager librement le logement qu'il occupe, par exemple en rafraîchissant les peintures murales, et d'inviter ou d'héberger gratuitement les personnes de son choix. Il doit en revanche obtenir l'accord du propriétaire pour sous-louer, et l'accord écrit du propriétaire pour de gros travaux de transformation.",
+    "source": {
+      "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F1874",
+      "label": "service-public.gouv.fr"
+    }
+  },
+  {
+    "id": 605,
+    "theme": "Vie en société",
+    "notion": "s-installer",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 218,
+    "question": "Quel mariage est reconnu légalement ?",
+    "answers": [
+      "Le mariage civil, célébré à la mairie"
+    ],
+    "distractors": [
+      "Le mariage religieux, célébré par un prêtre ou un imam",
+      "Le mariage coutumier, décidé par les deux familles",
+      "L'union libre, après trois ans de vie commune",
+      "Le mariage signé devant un notaire"
+    ],
+    "explanation": "Le mariage civil est le seul mariage reconnu en France. Il est célébré à la mairie, devant un officier d'état civil. Une cérémonie religieuse peut avoir lieu, mais elle n'a pas de valeur légale.",
+    "group": "mariage-civil",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/demarches-administratives/la-declaration-de-mariage/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 606,
+    "theme": "Vie en société",
+    "notion": "s-installer",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 219,
+    "question": "Le stationnement sur une place réservée aux personnes handicapées :",
+    "answers": [
+      "Est interdit sans carte mobilité inclusion « stationnement »"
+    ],
+    "distractors": [
+      "Est autorisé pour une courte durée avec les feux de détresse",
+      "Est autorisé avec une carte de réduction « famille nombreuse »",
+      "Est interdit seulement aux véhicules sans macaron « résident »",
+      "Est interdit seulement en journée, de 8 heures à 20 heures"
+    ],
+    "explanation": "Les places réservées sont destinées aux véhicules portant la carte mobilité inclusion « stationnement ». S'y garer sans cette carte est un stationnement très gênant, sanctionné par une amende forfaitaire de 135 €, et le véhicule peut être mis en fourrière.",
+    "source": {
+      "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F34212",
+      "label": "service-public.gouv.fr"
+    }
+  },
+  {
+    "id": 607,
+    "theme": "Vie en société",
+    "notion": "s-installer",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 220,
+    "question": "Si une machine à laver est cassée, il est possible de :",
+    "answers": [
+      "La déposer à la déchetterie de la commune",
+      "La faire enlever lors d'une collecte des encombrants"
+    ],
+    "distractors": [
+      "La jeter avec les ordures ménagères de la semaine",
+      "La mettre dans le bac de tri des emballages",
+      "La mettre dans le conteneur à verre du quartier",
+      "L'abandonner dans un bois ou au bord d'une route"
+    ],
+    "explanation": "Une machine à laver cassée fait partie des encombrants. On peut la déposer en déchetterie, où les encombrants sont triés et recyclés, ou la faire enlever lors d'une collecte organisée par la commune, sur rendez-vous ou à date fixe. L'abandonner sur la voie publique est interdit et puni d'une amende forfaitaire de 135 €.",
+    "group": "abandon-dechets",
+    "source": {
+      "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F31954",
+      "label": "service-public.gouv.fr"
+    }
+  },
+  {
+    "id": 608,
+    "theme": "Vie en société",
+    "notion": "s-installer",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 221,
+    "question": "Dans quel cas faut-il déclarer son enfant au service d'état civil ?",
+    "answers": [
+      "Pour toute naissance, que les parents soient mariés ou non"
+    ],
+    "distractors": [
+      "Seulement si les parents sont mariés",
+      "Uniquement si l'un des parents est de nationalité française",
+      "Pour toute naissance, sauf si elle a lieu à l'hôpital",
+      "Pour toute naissance, sauf si les parents ne souhaitent pas la déclarer",
+      "Seulement si l'enfant est né à domicile"
+    ],
+    "explanation": "La déclaration de naissance est obligatoire. Elle se fait à la mairie du lieu de naissance, dans les 5 jours qui suivent la naissance, par le père, la mère ou une personne qui a assisté à l'accouchement.",
+    "group": "declaration-naissance",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/demarches-administratives/la-declaration-de-naissance/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 609,
+    "theme": "Vie en société",
+    "notion": "s-installer",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 222,
+    "question": "Quand faut-il déclarer son enfant au service d'état civil ?",
+    "answers": [
+      "Dans les 5 jours qui suivent la naissance"
+    ],
+    "distractors": [
+      "Dans les 15 jours qui suivent la naissance",
+      "Dans les 30 jours qui suivent la naissance",
+      "Dans les 3 mois qui suivent la naissance",
+      "Dans l'année qui suit la naissance",
+      "Dès que l'enfant est inscrit à l'école"
+    ],
+    "explanation": "La déclaration de naissance doit être faite dans les 5 jours qui suivent la naissance, à la mairie du lieu de naissance. Elle est obligatoire : l'acte de naissance qui en résulte est nécessaire pour obtenir les prestations sociales, les papiers d'identité et inscrire l'enfant à l'école.",
+    "group": "declaration-naissance",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/demarches-administratives/la-declaration-de-naissance/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 610,
+    "theme": "Vie en société",
+    "notion": "autorite-parentale-ecole",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 225,
+    "question": "Auprès de quelle institution les parents peuvent-ils inscrire leurs enfants à l'école publique ?",
+    "answers": [
+      "La mairie de la commune"
+    ],
+    "distractors": [
+      "La préfecture du département",
+      "La caisse d'allocations familiales (CAF)",
+      "La caisse primaire d'assurance maladie",
+      "Le tribunal judiciaire",
+      "France Travail"
+    ],
+    "explanation": "Pour inscrire son enfant à l'école publique, il suffit de contacter la mairie, ou l'école située près de son domicile. Les parents sont libres de choisir une école publique ou une école privée.",
+    "group": "inscription-ecole",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/parentalite/la-liberte-de-choisir-l-ecole-de-son-enfant/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 611,
+    "theme": "Vie en société",
+    "notion": "s-installer",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 228,
+    "question": "Qui peut demander le divorce de personnes mariées ?",
+    "answers": [
+      "Les deux époux ensemble, ou l'un d'eux seul"
+    ],
+    "distractors": [
+      "Uniquement les deux époux, d'un commun accord",
+      "Seulement l'époux qui n'a commis aucune faute",
+      "Le maire qui a célébré le mariage",
+      "Un juge, de sa propre initiative"
+    ],
+    "explanation": "Le divorce peut être demandé par les deux époux ensemble, quand ils sont d'accord pour divorcer, ou par un seul des époux, qui assigne l'autre devant le tribunal. Le divorce met fin au mariage, sans avoir besoin d'une faute.",
+    "source": {
+      "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F35837",
+      "label": "service-public.gouv.fr"
+    }
+  },
+  {
+    "id": 612,
+    "theme": "Vie en société",
+    "notion": "soins",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 230,
+    "question": "La contraception :",
+    "answers": [
+      "Peut être anonyme et gratuite pour les mineurs"
+    ],
+    "distractors": [
+      "Nécessite l'accord du partenaire ou du conjoint",
+      "Est interdite aux mineurs sans l'accord de leurs parents",
+      "Est réservée aux personnes mariées depuis un an",
+      "Peut être demandée seulement à partir de 30 ans",
+      "Est interdite en France, sauf motif médical"
+    ],
+    "explanation": "La contraception regroupe les moyens d'éviter une grossesse. Pour les mineurs, les consultations et les prescriptions peuvent être anonymes et gratuites, sur demande du « secret ». La contraception d'urgence est délivrée sans ordonnance en pharmacie.",
+    "group": "contraception",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/droits-et-devoirs/droits-fondamentaux/un-droit-fondamental-le-droit-de-disposer-de-son-corps/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 613,
+    "theme": "Vie en société",
+    "notion": "soins",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 234,
+    "question": "Qu'est-ce que le tiers payant ?",
+    "answers": [
+      "Le fait de ne pas avancer la somme que l'Assurance maladie rembourse"
+    ],
+    "distractors": [
+      "La part des frais de santé qui reste à la charge du patient",
+      "Le médecin qui suit le patient et coordonne ses soins",
+      "Une carte qui prouve les droits d'un assuré à l'Assurance maladie",
+      "Une aide de l'État pour payer le loyer des personnes à faibles revenus"
+    ],
+    "explanation": "Le tiers payant permet de ne pas avancer la somme d'argent que l'Assurance maladie rembourse. Il n'est pas automatique : il faut présenter sa carte Vitale chez le médecin ou à la pharmacie pour le demander.",
+    "group": "assurance-maladie",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/sante/sante-la-prise-en-charge-les-demarches-pour-etre-rembourse/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 614,
+    "theme": "Vie en société",
+    "notion": "soins",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 236,
+    "question": "L'avortement est-il possible en France ?",
+    "answers": [
+      "Oui, pour toutes les femmes, sans condition d'âge"
+    ],
+    "distractors": [
+      "Non, il est interdit par la loi",
+      "Oui, mais seulement pour les femmes mariées",
+      "Oui, mais seulement avec l'autorisation du partenaire",
+      "Non, sauf en cas de danger de mort de la mère",
+      "Oui, mais seulement pour les femmes de nationalité française"
+    ],
+    "explanation": "L'interruption volontaire de grossesse (IVG) est possible pour toutes les femmes, sans condition d'âge. Les mineures n'ont pas besoin de l'autorisation de leurs parents, mais doivent être accompagnées d'un adulte de leur choix. Pour une femme assurée, elle est prise en charge à 100 % par l'Assurance maladie.",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/droits-et-devoirs/droits-fondamentaux/un-droit-fondamental-le-droit-de-disposer-de-son-corps/",
+      "label": "formation-civique.interieur.gouv.fr"
+    },
+    "group": "ivg"
+  },
+  {
+    "id": 615,
+    "theme": "Vie en société",
+    "notion": "travail",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 244,
+    "question": "Quels sont les textes qui définissent les règles au travail ?",
+    "answers": [
+      "Le Code du travail, les conventions collectives et le règlement intérieur"
+    ],
+    "distractors": [
+      "Le Code civil, le Code pénal, le Code de la route et le Code rural",
+      "La Constitution, le Code civil, le Code de la consommation et le Code rural",
+      "Le Code du travail, le Code de la route et le Code de l'urbanisme",
+      "Le Code du travail seul, sans aucun autre texte"
+    ],
+    "explanation": "Le Code du travail fixe les droits et les obligations de tous : contrat de travail, conditions de travail, salaire… Les conventions collectives précisent les règles générales d'un secteur d'activité, et le règlement intérieur présente les droits et obligations des salariés de l'entreprise en matière de santé, de sécurité et de discipline.",
+    "group": "textes-travail",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/emploi/le-droit-au-travail-1/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 616,
+    "theme": "Vie en société",
+    "notion": "travail",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 246,
+    "question": "Qui a le droit de se syndiquer ?",
+    "answers": [
+      "Chaque salarié"
+    ],
+    "distractors": [
+      "Chaque salarié de nationalité française",
+      "Chaque salarié qui a plus de dix ans d'ancienneté",
+      "Les salariés autorisés par leur employeur",
+      "Seulement les salariés en contrat à durée indéterminée"
+    ],
+    "explanation": "Chaque salarié a le droit de se syndiquer : il peut créer un syndicat, y adhérer ou y participer. Un syndicat défend les droits des travailleurs (salaire, conditions de travail, sécurité…). Personne ne peut obliger un salarié à rejoindre un syndicat, ni le punir s'il en fait partie.",
+    "group": "droit-syndical",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/emploi/le-droit-au-travail-2/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 617,
+    "theme": "Vie en société",
+    "notion": "travail",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 247,
+    "question": "Est-il possible de licencier une femme enceinte ou en congé maternité, en raison de sa grossesse ?",
+    "answers": [
+      "Non, elle est protégée contre le licenciement"
+    ],
+    "distractors": [
+      "Oui, si elle travaille à temps partiel",
+      "Oui, si son employeur respecte un préavis de trois mois",
+      "Non, sauf si elle a moins d'un an d'ancienneté",
+      "Non, mais seulement pendant les trois premiers mois de grossesse"
+    ],
+    "explanation": "Une salariée enceinte ou en congé de maternité est protégée contre le licenciement. Pendant le congé de maternité, l'employeur n'a pas le droit de la licencier, quel qu'en soit le motif. Pour bénéficier de cette protection, la salariée doit informer son employeur par un certificat médical.",
+    "source": {
+      "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F2873",
+      "label": "service-public.gouv.fr"
+    }
+  },
+  {
+    "id": 618,
+    "theme": "Vie en société",
+    "notion": "autorite-parentale-ecole",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 248,
+    "question": "L'instruction des enfants est obligatoire de :",
+    "answers": [
+      "3 à 16 ans"
+    ],
+    "distractors": [
+      "6 à 16 ans",
+      "3 à 18 ans",
+      "6 à 18 ans",
+      "5 à 16 ans",
+      "3 à 14 ans"
+    ],
+    "explanation": "Tous les enfants âgés de 3 à 16 ans qui habitent en France doivent aller à l'école, quelle que soit leur nationalité. C'est une obligation. Après 16 ans, l'école n'est plus obligatoire, mais tous les jeunes peuvent poursuivre leurs études ou entrer en apprentissage.",
+    "group": "ecole-obligatoire",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/parentalite/le-systeme-educatif/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 619,
+    "theme": "Vie en société",
+    "notion": "autorite-parentale-ecole",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 250,
+    "question": "Quelle est la définition de l'autorité parentale ?",
+    "answers": [
+      "L'ensemble des droits et des devoirs des parents envers leur enfant mineur"
+    ],
+    "distractors": [
+      "Le pouvoir des parents de décider seuls de tout ce que fait leur enfant",
+      "Le droit des parents d'imposer leurs valeurs culturelles à leur enfant",
+      "L'ensemble des règles que l'école impose aux enfants et à leurs parents",
+      "Le droit des parents d'utiliser la force pour éduquer leur enfant"
+    ],
+    "explanation": "L'autorité parentale est l'ensemble des droits et des devoirs que les parents ont envers leur enfant de moins de 18 ans. Les parents l'exercent dans l'intérêt de l'enfant et dans le respect de sa personne : ils n'utilisent ni la violence physique, ni la violence psychologique.",
+    "group": "autorite-parentale",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/parentalite/exercice-de-l-autorite-parentale-1/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 620,
+    "theme": "Vie en société",
+    "notion": "autorite-parentale-ecole",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 254,
+    "question": "Comment s'appellent les établissements scolaires que les élèves intègrent après l'école élémentaire ?",
+    "answers": [
+      "Le collège, puis le lycée"
+    ],
+    "distractors": [
+      "La maternelle, puis le collège",
+      "Le lycée, puis l'université",
+      "Le collège, puis l'université",
+      "L'école primaire, puis le lycée",
+      "Le lycée professionnel, puis le collège"
+    ],
+    "explanation": "Après l'école élémentaire, les élèves vont au collège (de 11 à 15 ans), puis au lycée (de 15 à 18 ans).",
+    "group": "cursus-scolaire",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/parentalite/le-systeme-educatif/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 621,
+    "theme": "Vie en société",
+    "notion": "autorite-parentale-ecole",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 255,
+    "question": "En tant que parent d'élève, il est possible de :",
+    "answers": [
+      "Rejoindre l'association de parents d'élèves",
+      "Se présenter aux élections des représentants de parents d'élèves"
+    ],
+    "distractors": [
+      "Choisir lui-même les professeurs de son enfant dans l'école",
+      "Décider seul des programmes enseignés dans toute l'école",
+      "Fixer lui-même le calendrier des vacances scolaires de l'école",
+      "Assister aux cours à tout moment sans prévenir l'école",
+      "Punir lui-même un élève qui s'est mal comporté en classe"
+    ],
+    "explanation": "Les parents peuvent participer à la vie de l'école en rejoignant l'association de parents d'élèves, qui défend les intérêts des enfants, ou en se présentant aux élections de représentants des parents d'élèves, qui participent aux décisions importantes. Ils peuvent aussi participer aux réunions parents-professeurs.",
+    "group": "parents-ecole",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/parentalite/droits-et-devoirs-des-parents-a-l-ecole/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 622,
+    "theme": "Vie en société",
+    "notion": "autorite-parentale-ecole",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 256,
+    "question": "Quelle instruction est prévue pour les enfants qui ne parlent pas français ?",
+    "answers": [
+      "Des cours adaptés dans une unité pour élèves allophones"
+    ],
+    "distractors": [
+      "Un maintien à la maison jusqu'à ce qu'ils parlent français",
+      "Une école réservée aux enfants de nationalité étrangère",
+      "Un retour dans leur pays d'origine jusqu'à la maîtrise du français",
+      "Aucune : ils suivent les cours normaux sans aucune aide",
+      "Un internat spécialisé, obligatoire pour tous"
+    ],
+    "explanation": "À son arrivée à l'école, un enfant qui ne parle pas français passe un test de positionnement pour évaluer son niveau. Il peut être orienté vers une UPE2A (unité pédagogique pour élèves allophones arrivants) où il suit des cours adaptés. Une fois qu'il maîtrise le français, il peut suivre les mêmes cours que les autres enfants.",
+    "group": "allophones",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/parentalite/l-ecole-pour-les-enfants-allophones/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 623,
+    "theme": "Vie en société",
+    "notion": "autorite-parentale-ecole",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 257,
+    "question": "S'agissant de l'accueil des enfants en situation de handicap à l'école, laquelle des propositions est vraie ?",
+    "answers": [
+      "Ils peuvent avoir un emploi du temps aménagé"
+    ],
+    "distractors": [
+      "Ils doivent être scolarisés dans une école à part",
+      "Ils doivent suivre les cours dans une classe séparée",
+      "Ils n'ont pas droit à un emploi du temps aménagé",
+      "L'école peut refuser de les inscrire à cause de leur handicap"
+    ],
+    "explanation": "Les enfants en situation de handicap ont le droit de vivre avec les autres enfants et comme eux. À l'école, ils peuvent bénéficier d'un emploi du temps aménagé.",
+    "group": "handicap-ecole",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/parentalite/les-droits-de-l-enfant/",
+      "label": "formation-civique.interieur.gouv.fr"
+    }
+  },
+  {
+    "id": 624,
+    "theme": "Vie en société",
+    "notion": "travail",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 258,
+    "question": "Depuis le 1er juillet 2021, quelle est la durée du congé paternité ?",
+    "answers": [
+      "25 jours calendaires"
+    ],
+    "distractors": [
+      "11 jours calendaires",
+      "14 jours calendaires",
+      "7 jours calendaires",
+      "15 jours calendaires",
+      "30 jours calendaires"
+    ],
+    "explanation": "La durée du congé de paternité et d'accueil de l'enfant est de 25 jours calendaires, ou de 32 jours en cas de naissances multiples, dont une période obligatoire de 4 jours. Il est précédé du congé de naissance, d'une durée de 3 jours ouvrables. Depuis le 1er juillet 2026, chaque parent peut ensuite prendre un congé supplémentaire de naissance de 1 ou 2 mois.",
+    "source": {
+      "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F3156",
+      "label": "service-public.gouv.fr"
+    }
+  },
+  {
+    "id": 625,
+    "theme": "Vie en société",
+    "notion": "autorite-parentale-ecole",
+    "lists": [
+      "naturalisation"
+    ],
+    "natNumber": 259,
+    "question": "Est-ce possible de punir physiquement ses enfants ?",
+    "answers": [
+      "Non, c'est interdit par la loi"
+    ],
+    "distractors": [
+      "Oui, c'est un droit des parents",
+      "Oui, si les valeurs de la famille l'autorisent",
+      "Non, sauf si l'enfant a gravement désobéi",
+      "Non, sauf pour une simple tape sur la main"
+    ],
+    "explanation": "Les parents exercent l'autorité parentale dans l'intérêt de l'enfant et dans le respect de sa personne : ils n'utilisent ni la violence physique, ni la violence psychologique. Il est donc interdit de punir physiquement ses enfants.",
+    "group": "autorite-parentale",
+    "source": {
+      "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/parentalite/exercice-de-l-autorite-parentale-1/",
       "label": "formation-civique.interieur.gouv.fr"
     }
   }
