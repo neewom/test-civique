@@ -91,6 +91,22 @@ describe('PageShell', () => {
     expect(document.documentElement.classList.contains('page-transition')).toBe(false)
   })
 
+  it('une transition sautée (navigation plus rapide) ne laisse ni erreur ni classe', async () => {
+    const skipped = () => Promise.reject(new DOMException('Transition was skipped', 'AbortError'))
+    const start = vi.fn((cb: () => void) => {
+      cb()
+      return { ready: skipped(), updateCallbackDone: Promise.resolve(), finished: skipped() }
+    })
+    document.startViewTransition = start as unknown as typeof document.startViewTransition
+    renderShell()
+    fireEvent.click(screen.getByText('vers révision'))
+    await act(async () => {
+      await new Promise((r) => setTimeout(r, 0))
+    })
+    expect(document.documentElement.classList.contains('page-transition')).toBe(false)
+    expect(screen.getByText('Révision')).toBeInTheDocument()
+  })
+
   it('aucune transition quand les animations sont désactivées', () => {
     localStorage.setItem('motion', 'off')
     const start = vi.fn()

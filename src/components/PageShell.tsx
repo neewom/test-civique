@@ -35,6 +35,9 @@ export function PageShell({ children }: { children: (location: Location) => Reac
       const transition = document.startViewTransition(() => {
         flushSync(() => setShown(location))
       })
+      // A transition skipped by a quicker navigation rejects these promises: nothing to report
+      transition.ready?.catch(() => {})
+      transition.updateCallbackDone?.catch(() => {})
       transition.finished.then(clear, clear)
     } catch {
       clear()
