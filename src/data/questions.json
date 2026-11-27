@@ -68,13 +68,13 @@
     ],
     "question": "Le principe d’égalité signifie que :",
     "distractors": [
-      "Tous les citoyens doivent avoir le même revenu",
-      "La loi s'applique différemment selon l'origine des personnes",
-      "Les hommes et les femmes ont des droits différents selon leur rôle",
-      "L'égalité ne s'applique qu'aux citoyens majeurs",
-      "Tout le monde doit gagner le même salaire",
-      "L'égalité s'applique seulement devant les tribunaux pénaux",
-      "L'État garantit un logement et un revenu identiques à tous"
+      "Tous les citoyens ont le même revenu et sont payés de la même façon par l'État",
+      "Tous les individus ont les mêmes devoirs mais des droits différents selon leur origine",
+      "Tous les hommes ont plus de droits et sont traités autrement que les femmes devant la loi",
+      "Tous les citoyens majeurs ont les mêmes droits et les étrangers n'ont pas de droits",
+      "Tous les salariés ont le même salaire et sont traités de la même façon par l'employeur",
+      "Tous les citoyens ont droit à un logement et à un revenu identiques fournis par l'État",
+      "Tous les individus ont des droits égaux mais sont jugés selon leur situation sociale"
     ],
     "explanation": "L'égalité devant la loi signifie que la loi est la même pour toutes les personnes, sans distinction d'origine, de sexe, de religion ou de situation sociale. Ce principe est inscrit dans la Constitution de 1958 et dans la Déclaration des droits de l'homme et du citoyen. Il n'empêche pas de traiter différemment des personnes dans des situations différentes (par exemple, des tarifs réduits pour les étudiants).",
     "answers": [
@@ -153,18 +153,18 @@
     ],
     "question": "Certains métiers peuvent-ils être réservés aux hommes ?",
     "distractors": [
-      "Oui, les métiers nécessitant une grande force physique",
-      "Oui, les métiers de l'armée de terre et de la marine",
-      "Oui, si l'employeur le justifie dans l'offre d'emploi",
-      "Oui, dans les entreprises de moins de 10 salariés",
-      "Oui, les métiers de la sécurité privée et de la défense",
-      "Oui, certaines professions libérales réglementées",
-      "Oui, dans certains secteurs industriels dangereux",
-      "Oui, les postes de direction des grandes entreprises"
+      "Oui, les métiers qui demandent une grande force physique, comme dans le bâtiment ou l'industrie",
+      "Oui, les postes de direction, quand l'employeur le précise dans l'offre d'emploi",
+      "Oui, les métiers de la sécurité et de la défense, selon un décret du ministère de l'Intérieur",
+      "Certains métiers de l'armée et de la police, que la loi réserve encore aux hommes",
+      "Certains métiers du bâtiment et de l'industrie lourde, que la loi réserve encore aux hommes",
+      "Certains métiers de la finance et du droit, que la loi réserve encore aux hommes",
+      "Des métiers dangereux, réservés aux hommes, car la loi protège la santé des femmes",
+      "Des professions réglementées, réservées aux hommes, car leur ordre professionnel en décide ainsi"
     ],
     "explanation": "En France, l'égalité professionnelle entre les femmes et les hommes est garantie par la loi : un employeur ne peut ni indiquer le sexe recherché dans une offre d'emploi, ni refuser une embauche en raison du sexe. Les seules exceptions concernent des emplois où le sexe est déterminant par nature (acteur jouant un rôle féminin ou masculin, mannequin, modèle). Toute discrimination à l'embauche est sanctionnée.",
     "answers": [
-      "Non, l'égalité professionnelle entre hommes et femmes est garantie par la loi"
+      "Les métiers sont ouverts aux hommes comme aux femmes, l'égalité professionnelle est garantie par la loi"
     ],
     "source": {
       "url": "https://code.travail.gouv.fr/code-du-travail/r1142-1",
@@ -208,14 +208,14 @@
     "crNumber": 26,
     "question": "Le régime de la France est :",
     "distractors": [
-      "Une monarchie constitutionnelle",
-      "Une théocratie républicaine",
-      "Une fédération d'États autonomes",
-      "Une oligarchie parlementaire",
-      "Une dictature présidentielle",
-      "Une démocratie directe",
-      "Une monarchie absolue modernisée",
-      "Un régime présidentiel pur comme aux États-Unis"
+      "Une monarchie constitutionnelle (le modèle britannique)",
+      "Une théocratie républicaine (la loi religieuse)",
+      "Une fédération d'États autonomes (comme l'Allemagne)",
+      "Une oligarchie parlementaire (le pouvoir de quelques-uns)",
+      "Une dictature présidentielle (le pouvoir d'un chef)",
+      "Une démocratie directe (le modèle suisse)",
+      "Une monarchie absolue modernisée (le roi décide)",
+      "Un régime présidentiel pur (comme aux États-Unis)"
     ],
     "explanation": "La France est une République démocratique : le pouvoir vient du peuple, qui élit ses représentants au suffrage universel. Le régime actuel est la Ve République, instaurée le 4 octobre 1958, avec un pouvoir exécutif fort.",
     "answers": [
@@ -265,13 +265,13 @@
     "natNumber": 9,
     "question": "Où peut-on voir la devise de la République ?",
     "distractors": [
-      "Uniquement dans les tribunaux et les préfectures",
-      "Seulement à l'Assemblée nationale et au Sénat",
-      "Sur les billets de banque en euros uniquement",
-      "Dans les églises et les lieux de culte reconnus",
-      "Seulement dans les écoles primaires publiques",
-      "Uniquement sur les passeports et cartes d'identité",
-      "Sur les uniformes des forces de l'ordre uniquement"
+      "Dans les églises, les stades et les centres commerciaux",
+      "Sur les billets de banque, les chèques et les cartes bancaires",
+      "Sur les maillots des sportifs, les voitures et les affiches publicitaires",
+      "Sur les billets de train, les tickets de métro et les factures d'électricité",
+      "Dans les hôpitaux privés, les banques et les compagnies d'assurance",
+      "Sur les panneaux routiers, les cartes de transport et les billets d'avion",
+      "Dans les cinémas, les théâtres et les salles de concert privées"
     ],
     "explanation": "La devise « Liberté, Égalité, Fraternité » est inscrite sur la façade des bâtiments publics (mairies, écoles, tribunaux…). On la trouve aussi sur les pièces françaises de 1 et 2 euros, sur certains timbres et sur des documents officiels comme la carte d'identité.",
     "answers": [
@@ -294,14 +294,14 @@
     "crNumber": 24,
     "question": "Quels sont des symboles officiels de la République française ?",
     "distractors": [
-      "La fleur de lys, l'aigle impérial et la Croix de Lorraine",
-      "La croix chrétienne, le coq et la Tour Eiffel",
-      "Le bonnet rouge, la guillotine et la Déclaration de 1789",
-      "L'étoile d'or sur fond bleu de l'UE et la Marseillaise",
-      "Le béret, la baguette et le drapeau tricolore",
-      "La couronne royale, le sceptre et la fleur de lys",
-      "L'arc de triomphe, la Tour Eiffel et la Seine",
-      "Le sceau de l'État, le drapeau blanc et le coq gaulois"
+      "La fleur de lys, l'aigle impérial, la Croix de Lorraine et la devise 'Dieu et mon droit'",
+      "La croix chrétienne, le coq, la Tour Eiffel et la devise 'Travail, Famille, Patrie'",
+      "Le bonnet rouge, la guillotine, la Bastille et la devise 'Un pour tous, tous pour un'",
+      "Le drapeau blanc, la fleur de lys, le coq et la devise 'Montjoie Saint-Denis'",
+      "Le béret, la baguette, la Tour Eiffel et la devise 'Liberté, Égalité, Sécurité'",
+      "L'aigle impérial, l'abeille, le drapeau rouge et la devise 'Honneur et Patrie'",
+      "L'arc de triomphe, le coq gaulois, la Seine et la devise 'Fluctuat nec mergitur'",
+      "Le sceau de l'État, le soleil, le coq gaulois et la devise 'Nec pluribus impar'"
     ],
     "explanation": "L'article 2 de la Constitution cite le drapeau tricolore bleu, blanc, rouge, la Marseillaise (hymne national) et la devise « Liberté, Égalité, Fraternité ». Marianne et la fête nationale du 14 juillet sont aussi des symboles officiels. Le coq est un symbole national, mais non officiel.",
     "answers": [
@@ -322,13 +322,13 @@
     ],
     "question": "Qu’est-ce que l’égalité ?",
     "distractors": [
-      "Le fait que tout le monde gagne le même salaire",
-      "Le partage égal des richesses nationales entre tous les citoyens",
-      "L'obligation pour l'État de donner le même logement à chacun",
-      "La suppression de toute différence entre les individus",
-      "L'obligation de traiter tout étranger comme un citoyen français",
-      "La garantie que chaque enfant ira dans la même école",
-      "Le fait que les élections soient organisées régulièrement"
+      "Le fait que tous les citoyens gagnent le même salaire et reçoivent la même aide de l'État",
+      "Le fait que toutes les richesses du pays soient partagées de façon égale entre les citoyens",
+      "Le fait que l'État donne le même logement et le même revenu à chaque habitant du pays",
+      "Le fait que les individus aient les mêmes droits mais soient traités selon leur origine par la loi",
+      "Le fait que tout étranger soit traité comme un citoyen français et obtienne les mêmes droits politiques",
+      "Le fait que chaque enfant aille dans la même école et reçoive exactement le même diplôme",
+      "Le fait que les élections aient lieu régulièrement et que chaque citoyen puisse voter librement"
     ],
     "explanation": "L'égalité est l'un des trois piliers de la devise républicaine. Elle signifie que tous les individus, quelles que soient leur origine, leur sexe, leur religion ou leur condition sociale, ont les mêmes droits et sont traités de façon identique devant la loi.",
     "answers": [
@@ -349,14 +349,14 @@
     ],
     "question": "Que signifie la liberté ?",
     "distractors": [
-      "Le droit de faire absolument tout ce que l'on veut",
-      "L'absence totale de règles et de contraintes sociales",
-      "Le droit de ne pas payer ses impôts si on le décide",
-      "La possibilité de refuser toute autorité de l'État",
-      "Le droit de s'exprimer sans aucune limite légale",
-      "L'absence d'obligations envers la société et les autres",
-      "Le droit de circuler librement hors des frontières sans passeport",
-      "La possibilité de vivre en dehors des lois de la République"
+      "Le droit de faire ce que l'on veut dans la mesure où cela plaît à la majorité",
+      "Le droit de choisir ses règles de vie sans avoir à respecter celles de l'État",
+      "La possibilité de ne pas payer ses impôts quand on désapprouve la politique du gouvernement",
+      "Le droit de s'exprimer et d'agir à sa guise tant que la police ne le voit pas",
+      "Le droit de faire ce qui ne nuit pas à autrui, à condition d'avoir l'autorisation de la mairie",
+      "Le droit de refuser les lois que l'on juge contraires à ses propres convictions",
+      "La possibilité de vivre à l'écart des lois de la République et de ses institutions",
+      "Le droit de décider pour les autres dès lors que l'on pense agir pour leur bien"
     ],
     "explanation": "En France, chaque personne peut penser, s'exprimer et vivre comme elle le souhaite, à condition de ne pas empêcher les autres d'en faire autant. Selon la Déclaration des droits de l'homme et du citoyen de 1789, la liberté consiste à faire tout ce qui ne nuit pas à autrui, et ses limites sont fixées par la loi.",
     "answers": [
@@ -435,14 +435,14 @@
     ],
     "question": "Quel est l’un des rôles des associations ?",
     "distractors": [
-      "Remplacer les services publics défaillants de l'État",
-      "Élire les représentants politiques locaux",
-      "Rédiger les projets de loi soumis au Parlement",
-      "Gérer le budget des collectivités territoriales",
-      "Contrôler le travail des fonctionnaires",
-      "Fixer le montant des impôts locaux",
-      "Distribuer les aides sociales au nom de l'État",
-      "Nommer les maires des petites communes"
+      "Partager entre leurs membres les bénéfices de leurs activités, comme une entreprise",
+      "Élire les représentants politiques locaux pour gérer les affaires de la commune",
+      "Rédiger les projets de loi soumis au Parlement pour défendre l'intérêt général",
+      "Gérer le budget des collectivités territoriales pour financer les services publics locaux",
+      "Contrôler le travail des fonctionnaires pour vérifier que la loi est bien appliquée",
+      "Fixer le montant des impôts locaux pour financer les actions de la commune",
+      "Obliger les habitants d'un quartier à adhérer pour financer les activités communes",
+      "Rendre la justice entre leurs membres pour régler les conflits sans aller au tribunal"
     ],
     "explanation": "Les associations (loi de 1901) permettent aux citoyens de se regrouper librement pour défendre une cause, pratiquer une activité sportive ou culturelle, ou mener des actions humanitaires. Elles jouent un rôle essentiel dans la démocratie et la vie sociale française.",
     "answers": [
@@ -490,16 +490,18 @@
     ],
     "question": "Quel symbole de la République française est tricolore ?",
     "distractors": [
-      "Le sceau officiel de la République",
-      "Le buste de Marianne dans les mairies",
-      "La tenue des gendarmes en service",
-      "Le bonnet phrygien de la liberté",
-      "La rosette de la Légion d'honneur",
-      "L'uniforme des hussards de la République"
+      "Le coq gaulois",
+      "Le sceau officiel",
+      "La devise",
+      "La Marseillaise",
+      "Le buste de Marianne",
+      "La fête nationale",
+      "Le bonnet phrygien",
+      "La Constitution"
     ],
     "explanation": "Le drapeau tricolore bleu, blanc, rouge est le symbole tricolore officiel de la République française. Né de la Révolution française, il associe les couleurs de Paris (bleu et rouge) à la couleur royale (blanc). Il est inscrit dans la Constitution.",
     "answers": [
-      "Le drapeau"
+      "Le drapeau national"
     ],
     "group": "symboles-republique",
     "source": {
@@ -660,14 +662,14 @@
     ],
     "question": "Quelle proposition est correcte ? La liberté d'expression :",
     "distractors": [
-      "La liberté d'expression est absolue et sans aucune limite légale",
-      "La liberté d'expression ne s'applique qu'aux journalistes professionnels",
-      "La liberté d'expression ne concerne que les discours politiques",
-      "On peut dire tout ce qu'on veut tant qu'on est en privé",
-      "La liberté d'expression n'existe pas en France contrairement aux États-Unis",
-      "La liberté d'expression interdit toute critique du gouvernement",
-      "On peut s'exprimer librement mais seulement en français",
-      "La liberté d'expression est garantie seulement aux citoyens français"
+      "La liberté d'expression est garantie sans limites : la loi n'interdit ni l'injure, ni la diffamation, ni les menaces",
+      "La liberté d'expression est réservée aux journalistes : la loi interdit aux autres de critiquer le gouvernement",
+      "La liberté d'expression est limitée au cercle privé : la loi punit les propos tenus en public, à la radio ou sur Internet",
+      "La liberté d'expression n'existe pas en France : la loi l'interdit, contrairement aux États-Unis et au Royaume-Uni",
+      "La liberté d'expression est garantie mais elle a des limites : la loi punit la critique du gouvernement, de la police et des élus",
+      "La liberté d'expression est garantie aux citoyens français : la loi la refuse aux étrangers, aux mineurs et aux salariés",
+      "La liberté d'expression ne concerne que la politique : la loi interdit de parler de religion, de sport ou de cinéma",
+      "La liberté d'expression s'exerce en français : la loi interdit les autres langues dans la presse et à la radio"
     ],
     "explanation": "La liberté d'expression est garantie en France mais elle n'est pas absolue. Elle s'arrête là où commence le délit : diffamation, injure publique, incitation à la haine raciale ou religieuse, négationnisme, menaces. Ces limitations visent à protéger la dignité et l'ordre public.",
     "answers": [
@@ -718,14 +720,14 @@
     "crNumber": 19,
     "question": "Qu'est-ce que la Marseillaise ?",
     "distractors": [
-      "Un chant révolutionnaire interdit sous la Ve République",
-      "Le titre d'un opéra de Bizet sur la Révolution française",
-      "Un poème de Victor Hugo mis en musique au XIXe siècle",
-      "Le chant officiel de l'armée française uniquement",
-      "Une chanson populaire devenue officielle en 1945",
-      "L'hymne de la ville de Marseille uniquement",
-      "Un chant composé par Napoléon Bonaparte",
-      "L'hymne de la Résistance française pendant la guerre"
+      "Un chant révolutionnaire, interdit sous la Ve République depuis 1958",
+      "Le titre d'un opéra, composé par Georges Bizet en 1875",
+      "Un poème de Victor Hugo, mis en musique en 1830",
+      "Le chant officiel de l'armée française, adopté en 1945",
+      "L'hymne de la ville de Marseille, composé en 1815 par un habitant",
+      "Un chant composé par Napoléon Bonaparte, devenu officiel en 1804",
+      "L'hymne de la Résistance, composé en 1943 à Londres",
+      "Une chanson populaire, devenue officielle en 1945"
     ],
     "explanation": "La Marseillaise a été composée en avril 1792 par Rouget de Lisle, sous le titre « Chant de guerre pour l'armée du Rhin ». Elle est déclarée chant national le 14 juillet 1795 et devient l'hymne national en 1879. On l'entend lors des cérémonies officielles et des compétitions sportives internationales.",
     "answers": [
@@ -757,7 +759,7 @@
     ],
     "explanation": "Le défilé militaire du 14 juillet existe depuis 1880 (cette année-là, il eut lieu à Longchamp). Il descend aujourd'hui les Champs-Élysées, en présence du président de la République : l'avenue en est de nouveau le cadre depuis 1980. Le soir, des bals et des feux d'artifice ont lieu dans tout le pays.",
     "answers": [
-      "Un défilé militaire"
+      "Un défilé militaire des armées françaises"
     ],
     "group": "fete-nationale",
     "source": {
@@ -802,13 +804,13 @@
     ],
     "question": "Une personne peut-elle changer librement de religion ?",
     "distractors": [
-      "Non, on garde toujours la religion déclarée à la naissance",
-      "Oui, mais seulement une fois dans sa vie",
-      "Non, sauf autorisation préfectorale",
-      "Oui, mais uniquement pour les religions reconnues par l'État",
-      "Non, si cela contrevient aux valeurs républicaines",
-      "Oui, mais il faut en informer la mairie de sa commune",
-      "Oui, mais cela doit être validé par un acte notarié"
+      "Non, la religion est inscrite sur la carte d'identité et ne peut plus changer",
+      "Oui, mais seulement une fois dans sa vie, après un délai de réflexion",
+      "Non, la loi interdit de quitter la religion de ses parents avant 25 ans",
+      "Non, la loi impose à chaque citoyen la religion officielle de l'État",
+      "Oui, à condition d'en informer la mairie de sa commune",
+      "Oui, mais cela doit être validé par un acte notarié",
+      "Non, on garde toujours la religion déclarée à la naissance"
     ],
     "explanation": "La liberté de conscience et de religion est un droit fondamental en France. Chacun est libre de croire ou de ne pas croire, de pratiquer la religion de son choix ou d'en changer à tout moment, sans contrainte ni autorisation administrative. Ce droit est garanti par la loi de 1905 et par la Constitution.",
     "answers": [
@@ -888,14 +890,14 @@
     ],
     "question": "Que permet le principe de laïcité ?",
     "distractors": [
-      "D'interdire toute pratique religieuse dans l'espace public",
-      "D'imposer l'athéisme à tous les fonctionnaires et citoyens",
-      "De favoriser la religion catholique, traditionnelle en France",
-      "D'interdire la construction de nouveaux lieux de culte",
-      "De financer les Églises et associations religieuses reconnues",
-      "D'obliger chaque citoyen à déclarer sa religion à l'État",
-      "De supprimer tous les jours fériés d'origine religieuse",
-      "D'interdire le port de tout signe religieux en public"
+      "D'interdire toute pratique religieuse dans l'espace public, tout en protégeant les religions dans les lieux de culte",
+      "D'imposer l'athéisme aux fonctionnaires, tout en laissant les citoyens libres de pratiquer chez eux",
+      "De favoriser la religion catholique, traditionnelle en France, tout en tolérant les autres religions",
+      "De financer les Églises et les associations religieuses, tout en gardant le contrôle de leurs revenus",
+      "D'obliger chaque citoyen à déclarer sa religion à l'État, tout en protégeant ses données personnelles",
+      "De supprimer tous les jours fériés d'origine religieuse, tout en gardant les vacances scolaires",
+      "D'interdire la construction de nouveaux lieux de culte, tout en maintenant ceux qui existent déjà",
+      "D'interdire le port de signes religieux dans la rue, tout en autorisant la pratique à domicile"
     ],
     "explanation": "La laïcité garantit simultanément la liberté de conscience (chacun croit ce qu'il veut) et la neutralité de l'État (qui ne favorise ni ne pénalise aucune religion). C'est un équilibre entre liberté individuelle et égalité de traitement de tous les citoyens.",
     "answers": [
@@ -918,14 +920,13 @@
     "crNumber": 30,
     "question": "Quel droit est garanti par la laïcité ?",
     "distractors": [
-      "Le droit d'imposer sa religion aux autres",
-      "Le droit d'imposer ses croyances à ses enfants à l'école",
-      "Le droit de refuser de travailler les jours de fête religieuse",
-      "Le droit de ne pas être jugé par un tribunal civil",
-      "Le droit de gérer une école selon des principes religieux avec des fonds publics",
-      "Le droit des religions de financer des partis politiques",
-      "Le droit des fonctionnaires de porter des signes religieux en service",
-      "Le droit de refuser des soins médicaux pour raisons religieuses"
+      "La liberté d'imposer : le droit d'obliger ses voisins à suivre sa religion",
+      "La liberté d'éducation : le droit d'imposer ses croyances à ses enfants à l'école",
+      "La liberté de chômer : le droit de refuser de travailler les jours de fête religieuse",
+      "La liberté de jugement : le droit de refuser d'être jugé par un tribunal civil",
+      "La liberté d'influence : le droit d'une religion de financer un parti politique",
+      "La liberté de tenue : le droit des fonctionnaires de porter des signes religieux en service",
+      "La liberté de vote : le droit d'obliger les fidèles à voter pour un candidat religieux"
     ],
     "explanation": "La laïcité garantit en premier lieu la liberté de conscience : chaque personne est libre de croire en une religion, d'en changer ou de n'avoir aucune croyance religieuse, sans que l'État ne s'en mêle ni ne la favorise ou la pénalise.",
     "answers": [
@@ -978,14 +979,14 @@
     "natNumber": 35,
     "question": "Qu'est-ce que la laïcité ?",
     "distractors": [
-      "L'interdiction de toute pratique religieuse en public",
-      "L'obligation d'être athée pour exercer une fonction publique",
-      "La supériorité de la religion catholique dans les lois françaises",
-      "L'interdiction de construire des mosquées et synagogues",
-      "Le financement des Églises par l'État via les impôts",
-      "L'obligation de déclarer sa religion à la mairie",
-      "La suppression de tous les symboles religieux en France",
-      "L'interdiction des religions non chrétiennes sur le territoire"
+      "L'interdiction de toute pratique religieuse en public, imposée à tous les citoyens",
+      "L'obligation d'être athée pour exercer une fonction publique, imposée aux fonctionnaires",
+      "La supériorité de la religion catholique dans les lois, inscrite dans la Constitution",
+      "L'interdiction de construire de nouveaux lieux de culte, décidée par chaque commune",
+      "Le financement des Églises par l'État, assuré par les impôts de tous les citoyens",
+      "L'obligation de déclarer sa religion à la mairie, imposée lors du recensement",
+      "La suppression de tous les symboles religieux en France, votée en 1905",
+      "L'interdiction des religions non chrétiennes, inscrite dans la loi de 1905"
     ],
     "explanation": "La laïcité est le principe fondamental de séparation des Églises et de l'État, établi par la loi de 1905. L'État est neutre vis-à-vis de toutes les religions. Elle garantit la liberté de conscience : chacun peut croire ou ne pas croire librement.",
     "answers": [
@@ -1006,16 +1007,17 @@
     ],
     "question": "Un enfant peut-il refuser d’aller à l’école pour une raison religieuse ?",
     "distractors": [
-      "Oui, si ses parents le justifient par écrit auprès de la direction",
-      "Oui, à condition d'être suivi par un précepteur privé agréé",
-      "Oui, pendant les grandes périodes religieuses (ramadan, Pâques…)",
-      "Oui, si l'école ne propose pas de menu alimentaire adapté",
-      "Oui, si le chef de la communauté religieuse l'autorise",
-      "Oui, si la famille pratique une religion officiellement reconnue"
+      "Oui, l'instruction devient facultative dès 12 ans pour les enfants d'une famille croyante",
+      "Oui, dès 14 ans, avec l'accord écrit d'un précepteur agréé par la mairie",
+      "Oui, dès 6 ans, si la famille pratique une religion officiellement reconnue",
+      "Oui, dès 8 ans, quand le chef de la communauté religieuse l'autorise",
+      "L'instruction est obligatoire de 6 à 14 ans, avec des dispenses selon les convictions",
+      "L'instruction est facultative après 10 ans, si les convictions de la famille l'exigent",
+      "L'instruction est obligatoire de 3 à 12 ans, puis chaque famille choisit selon ses convictions"
     ],
     "explanation": "L'instruction est obligatoire de 3 à 16 ans pour tous les enfants qui vivent en France, sans exception religieuse. Les convictions religieuses ne permettent ni de refuser l'école ni de refuser une matière : seules des autorisations d'absence ponctuelles peuvent être accordées pour les grandes fêtes religieuses.",
     "answers": [
-      "Non, l'instruction est obligatoire de 3 à 16 ans, quelles que soient les convictions religieuses"
+      "L'instruction est obligatoire de 3 à 16 ans, quelles que soient les convictions religieuses"
     ],
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/laicite/la-laicite-a-ecole-1/",
@@ -1093,14 +1095,14 @@
     "crNumber": 67,
     "question": "Le Parlement est composé :",
     "distractors": [
-      "Du Conseil d'État et du Conseil constitutionnel",
-      "De l'Assemblée nationale et du Conseil économique et social",
-      "Du Sénat et de la Cour de cassation",
-      "Du gouvernement et de l'Assemblée nationale",
-      "Des préfets et des présidents de région",
-      "Du Conseil d'État, de la Cour des comptes et du Sénat",
-      "De l'Assemblée nationale et du Conseil supérieur de la magistrature",
-      "Du Premier ministre et des présidents des assemblées"
+      "Du Conseil d'État (juges administratifs) et du Conseil constitutionnel (9 membres)",
+      "De l'Assemblée nationale (577 députés) et du Conseil économique, social et environnemental (175 membres)",
+      "Du Sénat (348 sénateurs) et de la Cour de cassation (juges judiciaires)",
+      "Du gouvernement (Premier ministre et ministres) et de l'Assemblée nationale (577 députés)",
+      "Des préfets (représentants de l'État) et des conseils régionaux (élus des régions)",
+      "Du Conseil d'État (juges administratifs), de la Cour des comptes et du Sénat (348 sénateurs)",
+      "De la Cour des comptes (magistrats financiers) et du Conseil d'État (juges administratifs)",
+      "Du Président de la République (élu pour 5 ans) et du Premier ministre (nommé par lui)"
     ],
     "explanation": "Le Parlement français est composé de deux chambres : l'Assemblée nationale (577 députés, élus pour 5 ans au suffrage universel direct) et le Sénat (348 sénateurs, élus pour 6 ans au suffrage indirect). Ensemble, ils votent les lois et contrôlent le gouvernement.",
     "answers": [
@@ -1121,14 +1123,14 @@
     ],
     "question": "Qu'est-ce que le pouvoir exécutif ? Le pouvoir :",
     "distractors": [
-      "Le pouvoir de voter et d'adopter les lois",
-      "Le pouvoir de juger et de sanctionner les infractions",
-      "Le pouvoir de contrôler la conformité des lois à la Constitution",
-      "Le pouvoir d'administrer les communes et les départements",
-      "Le pouvoir de lever les impôts et de voter le budget",
-      "Le pouvoir de ratifier les traités internationaux uniquement",
-      "Le pouvoir de nommer les juges et les magistrats",
-      "Le pouvoir de surveiller les médias et la presse"
+      "Le pouvoir de voter et d'adopter les lois, exercé par l'Assemblée nationale et le Sénat",
+      "Le pouvoir de juger et de sanctionner les infractions, exercé par les tribunaux et les juges",
+      "Le pouvoir de contrôler la conformité des lois, exercé par le Conseil constitutionnel",
+      "Le pouvoir de voter le budget et de contrôler le gouvernement, exercé par les députés",
+      "Le pouvoir de lever les impôts, exercé par les préfets et les maires",
+      "Le pouvoir de modifier la Constitution, exercé par le Conseil constitutionnel",
+      "Le pouvoir de surveiller les médias et la presse, exercé par l'Arcom",
+      "Le pouvoir de rendre la justice, exercé par la Cour de cassation et le Conseil d'État"
     ],
     "explanation": "Le pouvoir exécutif est le pouvoir de gouverner, c'est-à-dire d'appliquer les lois et de conduire la politique nationale. En France, il est exercé par le Président de la République et le gouvernement (Premier ministre et ministres).",
     "answers": [
@@ -1204,14 +1206,14 @@
     ],
     "question": "Qui doit respecter la loi ?",
     "distractors": [
-      "Seulement les citoyens français majeurs",
-      "Les citoyens, mais pas les élus dans l'exercice de leurs fonctions",
-      "Les citoyens et les étrangers en situation régulière uniquement",
-      "Tout le monde sauf les diplomates étrangers accrédités",
-      "Les citoyens français nés sur le territoire uniquement",
-      "Tout le monde sauf le Président de la République en exercice",
-      "Les personnes qui ont prêté serment devant un tribunal",
-      "Uniquement ceux qui ont signé le contrat d'intégration républicaine"
+      "Seuls les citoyens majeurs : français de naissance, naturalisés et électeurs inscrits",
+      "Tout le monde sauf les élus : députés, sénateurs, maires et ministres en fonction",
+      "Chaque personne née en France : citoyens de naissance, enfants et petits-enfants de Français",
+      "Les citoyens français et les élus : électeurs, députés, sénateurs et ministres",
+      "Les gouvernants et leurs services : ministres, préfets, policiers et magistrats en fonction",
+      "Ceux qui ont prêté serment : jurés, témoins, avocats et magistrats d'un tribunal",
+      "Les signataires du contrat d'intégration républicaine : nouveaux arrivants en France",
+      "Tout le monde sauf le Président en exercice : citoyens, étrangers, élus et ministres"
     ],
     "explanation": "La loi s'applique à tous sans exception : citoyens français, étrangers résidant en France, élus locaux, ministres, et même le Président de la République. Personne n'est au-dessus des lois : c'est le principe de l'État de droit.",
     "answers": [
@@ -1258,14 +1260,14 @@
     ],
     "question": "Quel pouvoir détient un juge ? Le pouvoir :",
     "distractors": [
-      "Le pouvoir exécutif d'appliquer les lois",
-      "Le pouvoir législatif de voter les lois",
-      "Le pouvoir de police administrative",
-      "Le pouvoir de lever des impôts",
-      "Le pouvoir de nommer les fonctionnaires",
-      "Le pouvoir de dissoudre l'Assemblée nationale",
-      "Le pouvoir de gracier les condamnés",
-      "Le pouvoir de modifier la Constitution"
+      "Le pouvoir exécutif : gouverner, appliquer les lois ou nommer les ministres",
+      "Le pouvoir législatif : proposer, voter ou rejeter les lois",
+      "Le pouvoir de police administrative : surveiller, contrôler ou réglementer",
+      "Le pouvoir fiscal : lever les impôts, fixer les taux ou les supprimer",
+      "Le pouvoir de nomination : choisir, nommer ou révoquer les fonctionnaires",
+      "Le pouvoir de dissolution : dissoudre, convoquer ou ajourner l'Assemblée nationale",
+      "Le pouvoir constituant : rédiger, voter ou modifier la Constitution",
+      "Le pouvoir réglementaire : publier, signer ou abroger des décrets"
     ],
     "explanation": "Un juge détient le pouvoir judiciaire : il a le pouvoir de juger les affaires qui lui sont soumises, de condamner ceux qui ont commis des infractions ou d'acquitter les personnes innocentes. Il est indépendant du pouvoir politique, ce qui garantit l'impartialité de la justice.",
     "answers": [
@@ -1400,14 +1402,14 @@
     ],
     "question": "Quand sont élus les sénateurs ?",
     "distractors": [
-      "Tous les 5 ans, en même temps que les députés",
-      "Tous les 6 ans, tous ensemble en même temps",
-      "Tous les 7 ans, par vote de l'Assemblée nationale",
-      "Tous les 4 ans, lors des élections municipales",
-      "Tous les 3 ans, par les citoyens au suffrage direct",
-      "Tous les 6 ans, tous en même temps par les citoyens",
-      "Tous les 5 ans, par les présidents de région",
-      "Tous les 9 ans, par un collège de grands électeurs spéciaux"
+      "Tous les 5 ans (comme les députés), au suffrage direct",
+      "Tous les 6 ans (tous ensemble), au suffrage indirect",
+      "Tous les 7 ans (comme l'ancien septennat), par vote de l'Assemblée nationale",
+      "Tous les 4 ans (avec les municipales), au suffrage direct",
+      "Tous les 3 ans (tous ensemble), au suffrage direct",
+      "Tous les 6 ans (par tiers), au suffrage direct",
+      "Tous les 5 ans (par moitié), par les présidents de région",
+      "Tous les 9 ans (tous ensemble), au suffrage indirect"
     ],
     "explanation": "Le Sénat est renouvelé par moitié tous les 3 ans, ce qui signifie qu'une élection sénatoriale a lieu tous les 3 ans. Les sénateurs sont élus pour 6 ans au total, au suffrage indirect par des grands électeurs (maires, conseillers, députés).",
     "answers": [
@@ -1430,14 +1432,14 @@
     "natNumber": 42,
     "question": "Qui est élu lors des élections municipales ?",
     "distractors": [
-      "Directement le maire au suffrage universel",
-      "Les conseillers départementaux",
-      "Les conseillers régionaux et le président de région",
-      "Les députés de la circonscription",
-      "Les préfets et sous-préfets",
-      "Les juges de proximité",
-      "Les membres du tribunal administratif",
-      "Les délégués de quartier et les adjoints directement"
+      "Directement le maire, qui nomme ensuite les conseillers municipaux",
+      "Les conseillers départementaux, qui élisent ensuite le président du département",
+      "Les conseillers régionaux, qui élisent ensuite le président de région",
+      "Les députés de la circonscription, qui votent ensuite le budget municipal",
+      "Les préfets et sous-préfets, qui nomment ensuite les agents municipaux",
+      "Les juges de proximité, qui jugent ensuite les litiges municipaux",
+      "Les membres du tribunal administratif, qui contrôlent ensuite le conseil municipal",
+      "Les délégués de quartier, qui élisent ensuite les adjoints municipaux"
     ],
     "explanation": "Lors des élections municipales, les citoyens élisent les conseillers municipaux au suffrage universel direct. Le conseil municipal élit ensuite parmi ses membres le maire et ses adjoints. Ces élections ont lieu tous les 6 ans.",
     "answers": [
@@ -1566,14 +1568,14 @@
     "crNumber": 59,
     "question": "Pour combien de temps sont élus les sénateurs ?",
     "distractors": [
-      "3 ans",
-      "4 ans",
-      "5 ans comme les députés",
-      "7 ans",
-      "8 ans non renouvelables",
-      "2 ans renouvelables",
-      "9 ans non renouvelables",
-      "Ils sont nommés à vie"
+      "3 ans (renouvelés en totalité à chaque élection)",
+      "4 ans (renouvelés par moitié tous les 2 ans)",
+      "5 ans (élus en même temps que les députés)",
+      "9 ans (renouvelés par tiers tous les 3 ans)",
+      "8 ans (renouvelés par quart tous les 2 ans)",
+      "2 ans (renouvelables à chaque élection municipale)",
+      "10 ans (renouvelés par moitié tous les 5 ans)",
+      "À vie (nommés par le Président de la République)"
     ],
     "explanation": "Les sénateurs sont élus pour 6 ans, et le Sénat est renouvelé par moitié tous les 3 ans. Contrairement aux députés, ils sont élus au suffrage indirect par des grands électeurs (maires, conseillers, députés).",
     "answers": [
@@ -1594,14 +1596,14 @@
     ],
     "question": "Qui possède le pouvoir exécutif ?",
     "distractors": [
-      "Uniquement le Président de la République",
-      "Le Parlement (Assemblée nationale et Sénat)",
-      "Le Conseil d'État et le Conseil constitutionnel",
-      "Le Premier ministre seul",
-      "Les préfets dans chaque département",
-      "Le Conseil économique, social et environnemental",
-      "La Cour de cassation et le Conseil d'État",
-      "Le Conseil supérieur de la magistrature"
+      "Uniquement le Président de la République (élu pour cinq ans)",
+      "Le Parlement (Assemblée nationale et Sénat) et les préfets",
+      "Le Conseil d'État et le Conseil constitutionnel (juges et conseillers)",
+      "Le Premier ministre seul (sans le Président de la République)",
+      "Les préfets dans chaque département (représentants de l'État)",
+      "Le Conseil économique, social et environnemental (CESE) et le Sénat",
+      "La Cour de cassation et le Conseil d'État (juges suprêmes)",
+      "Le Conseil supérieur de la magistrature (juges et procureurs) et le Sénat"
     ],
     "explanation": "En France, le pouvoir exécutif est partagé entre le Président de la République (qui définit les grandes orientations politiques) et le gouvernement dirigé par le Premier ministre (qui conduit au quotidien la politique de la nation).",
     "answers": [
@@ -1624,14 +1626,14 @@
     "crNumber": 63,
     "question": "Quelle condition est nécessaire pour voter aux élections ?",
     "distractors": [
-      "Avoir la nationalité française depuis au moins 10 ans",
-      "Être né en France et avoir toujours résidé sur le territoire",
-      "Parler parfaitement le français et avoir passé un test",
-      "Avoir payé ses impôts sans interruption depuis 5 ans",
-      "Être propriétaire d'un logement en France",
-      "Ne pas avoir de casier judiciaire, même pour une contravention",
-      "Avoir effectué son service national ou une journée citoyenne",
-      "Être résident depuis plus de 2 ans en France"
+      "Avoir la nationalité française (depuis au moins 10 ans) et avoir voté à l'élection précédente",
+      "Être né en France (de deux parents français) et pouvoir voter depuis l'âge de 16 ans",
+      "Parler parfaitement le français (niveau C2) et avoir passé un test avant les élections",
+      "Être inscrit sur les listes électorales (depuis au moins 5 ans) et avoir un casier vierge",
+      "Être propriétaire d'un logement (ou locataire depuis 3 ans) dans la commune où l'on veut voter",
+      "Ne pas avoir de casier judiciaire (même pour une contravention) et avoir une carte électorale",
+      "Avoir effectué son service national (ou une journée de préparation) avant de voter",
+      "Être résident depuis plus de 2 ans (en France) et avoir déjà participé à des élections"
     ],
     "explanation": "Pour voter en France, il faut : être de nationalité française, avoir au moins 18 ans, et être inscrit sur les listes électorales. Un jeune qui a fait son recensement citoyen à 16 ans est inscrit automatiquement à 18 ans. Certaines condamnations pénales peuvent entraîner la privation du droit de vote.",
     "answers": [
@@ -1794,14 +1796,14 @@
     ],
     "question": "Qui possède le pouvoir législatif ?",
     "distractors": [
-      "Le Président de la République seul",
-      "Le gouvernement et le Premier ministre",
-      "Le Conseil d'État",
-      "Le Conseil constitutionnel",
-      "Le Conseil économique, social et environnemental",
-      "Les préfets de département",
-      "La Cour de cassation",
-      "Le Conseil supérieur de la magistrature"
+      "Le Président de la République (sans le Parlement)",
+      "Le gouvernement (Premier ministre et ministres)",
+      "Le Conseil d'État (juges administratifs)",
+      "Le Conseil constitutionnel (les sages)",
+      "Le Conseil économique, social et environnemental (CESE)",
+      "Les préfets (représentants de l'État)",
+      "La Cour de cassation (juges judiciaires)",
+      "Le Conseil supérieur de la magistrature (juges et procureurs)"
     ],
     "explanation": "Le pouvoir législatif appartient au Parlement, composé de l'Assemblée nationale (577 députés) et du Sénat (348 sénateurs). C'est lui qui vote les lois, vote le budget de l'État et contrôle l'action du gouvernement.",
     "answers": [
@@ -1826,14 +1828,14 @@
     "natNumber": 64,
     "question": "Qui sanctionne l'auteur d'un vol ?",
     "distractors": [
-      "La police nationale qui décide de la peine",
-      "La victime du vol, qui peut punir elle-même",
-      "Le maire de la commune où a eu lieu le vol",
-      "Le préfet du département concerné",
-      "L'employeur si le vol a lieu au travail",
-      "La famille de l'auteur du vol",
-      "Le voisinage et la communauté locale",
-      "L'État directement, sans passer par un tribunal"
+      "La police nationale (les forces de l'ordre), qui décide de la peine",
+      "La victime du vol (la personne lésée), qui peut punir elle-même",
+      "Le maire de la commune (l'élu local), qui fixe l'amende",
+      "Le préfet du département (l'État), qui prononce la sanction",
+      "Le commerçant volé (le magasin), qui fixe lui-même la peine",
+      "La famille de l'auteur (ses proches), qui décide de sa punition",
+      "Le voisinage (la communauté locale), qui juge les habitants",
+      "L'État (le gouvernement), qui punit directement sans tribunal"
     ],
     "explanation": "Seule la justice (les tribunaux) peut sanctionner légalement l'auteur d'un vol ou de toute infraction. Nul ne peut se faire justice soi-même. Un vol est jugé par le tribunal correctionnel, qui peut prononcer des peines d'emprisonnement et/ou d'amende selon la gravité des faits.",
     "answers": [
@@ -1883,14 +1885,14 @@
     "natNumber": 54,
     "question": "Qui vote les lois ?",
     "distractors": [
-      "Le Président de la République par décret",
-      "Le gouvernement en conseil des ministres",
-      "Le Conseil d'État après avis juridique",
-      "Le Conseil constitutionnel",
-      "Les citoyens par référendum pour toutes les lois",
-      "Le Premier ministre avec l'accord du Président",
-      "Les préfets pour les lois locales",
-      "Le Conseil supérieur de la magistrature"
+      "Le Président de la République (par décret)",
+      "Le gouvernement (en conseil des ministres)",
+      "Le Conseil d'État (après avis juridique)",
+      "Le Conseil constitutionnel (les sages)",
+      "Les citoyens (par référendum pour toutes les lois)",
+      "Le Premier ministre (avec l'accord du Président)",
+      "Les préfets (pour les lois locales)",
+      "Le Conseil supérieur de la magistrature (juges et procureurs)"
     ],
     "explanation": "Les lois sont votées par le Parlement, composé de l'Assemblée nationale et du Sénat. En cas de désaccord entre les deux chambres, l'Assemblée nationale a le dernier mot. Le Président peut aussi soumettre certains textes directement aux citoyens par référendum.",
     "answers": [
@@ -2059,13 +2061,13 @@
     "crNumber": 62,
     "question": "Qui est le préfet ?",
     "distractors": [
-      "L'élu local qui dirige le conseil départemental",
-      "Le directeur de la police nationale dans le département",
-      "Le magistrat qui préside le tribunal judiciaire",
-      "Le responsable de l'éducation nationale dans la région",
-      "Le chef des services fiscaux dans le département",
-      "L'ambassadeur de la région auprès du gouvernement",
-      "Le coordinateur des services hospitaliers publics"
+      "L'élu qui préside le conseil départemental, élu par les conseillers départementaux",
+      "Le chef de la police nationale dans le département, qui dirige les commissariats",
+      "Le magistrat qui préside le tribunal judiciaire, nommé par décret du Président de la République",
+      "Le recteur, responsable de l'éducation nationale dans l'académie, nommé en conseil des ministres",
+      "Le chef des services fiscaux dans le département, qui dirige les centres des impôts",
+      "Le maire de la ville chef-lieu du département, élu par le conseil municipal",
+      "Le président du conseil régional, élu par les conseillers régionaux"
     ],
     "explanation": "Le préfet est le haut fonctionnaire représentant l'État dans le département. Nommé en conseil des ministres, il veille à l'application des lois, coordonne les services de l'État et peut prendre des mesures de police administrative pour maintenir l'ordre public.",
     "answers": [
@@ -2116,14 +2118,14 @@
     "crNumber": 65,
     "question": "Quel est le régime politique de la France aujourd'hui ?",
     "distractors": [
-      "Une monarchie constitutionnelle héréditaire",
-      "La IVe République de type parlementaire",
-      "Une dictature présidentielle à parti unique",
-      "Une fédération d'États semi-autonomes",
-      "Une démocratie directe par référendum permanent",
-      "La IIIe République parlementaire",
-      "Un régime présidentiel pur comme aux États-Unis",
-      "Une oligarchie parlementaire multipartite"
+      "Une monarchie, instaurée en 1830",
+      "La IVe République, instaurée en 1946",
+      "Un parti unique, instauré en 1958",
+      "Une fédération, instaurée en 1945",
+      "Une démocratie directe, instaurée en 2002",
+      "La IIIe République, instaurée en 1870",
+      "Un Empire, instauré en 1852",
+      "Une oligarchie, instaurée en 1981"
     ],
     "explanation": "La France est en Ve République depuis la Constitution du 4 octobre 1958, proposée par le général de Gaulle et adoptée par référendum. Ce régime donne un pouvoir exécutif fort au Président de la République, qui partage l'exécutif avec un Premier ministre ; le Gouvernement est responsable devant l'Assemblée nationale.",
     "answers": [
@@ -2209,14 +2211,14 @@
     "crNumber": 89,
     "question": "Quelle condition est nécessaire pour voter aux élections européennes ?",
     "distractors": [
-      "Être exclusivement de nationalité française",
-      "Résider en France depuis au moins 10 ans",
-      "Parler couramment le français et l'anglais",
-      "Être inscrit sur les listes électorales européennes à Bruxelles",
-      "Avoir la double nationalité française et européenne",
-      "Être né dans un pays membre de l'Union européenne",
-      "Avoir travaillé au moins 5 ans dans un pays de l'UE",
-      "Ne pas avoir de condamnation pénale dans aucun pays de l'UE"
+      "Être de nationalité française, âgé de 25 ans, résider en France et avoir une carte électorale",
+      "Être citoyen français, résider en France depuis 10 ans, payer ses impôts et être inscrit sur les listes électorales",
+      "Être citoyen de l'UE, parler couramment le français, avoir un diplôme et voter à Bruxelles",
+      "Avoir la double nationalité, être majeur, être inscrit sur les listes électorales de Bruxelles et avoir déjà voté en France",
+      "Être né dans un pays de l'UE, avoir 21 ans, habiter en France et avoir voté aux élections précédentes",
+      "Avoir travaillé 5 ans dans l'UE, être majeur, parler deux langues et avoir voté aux dernières élections",
+      "Être résident de l'UE depuis 5 ans, être majeur, avoir un permis de séjour et une carte électorale",
+      "Ne pas avoir de condamnation pénale, être majeur, être de nationalité française et voter en France"
     ],
     "explanation": "Pour voter aux élections européennes en France, il faut avoir 18 ans et être soit citoyen français, soit citoyen d'un autre État membre de l'UE résidant en France, et être inscrit sur les listes électorales. Les ressortissants non-UE ne peuvent pas voter à ces élections.",
     "answers": [
@@ -2439,14 +2441,14 @@
     ],
     "question": "Concernant les droits individuels, quelle proposition est correcte ?",
     "distractors": [
-      "Les droits individuels sont absolus et ne peuvent jamais être limités",
-      "Les droits individuels n'existent que pour les citoyens français",
-      "Les droits individuels peuvent être supprimés par décret présidentiel",
-      "Les droits individuels ne s'appliquent qu'en temps de paix",
-      "Les droits individuels sont identiques dans tous les pays du monde",
-      "Les droits individuels peuvent être retirés par un tribunal pour n'importe quel motif",
-      "Les droits individuels ne concernent que les droits économiques et sociaux",
-      "Les droits individuels sont accordés uniquement par le gouvernement en place"
+      "Les droits individuels sont garantis mais peuvent être limités par le Président pour protéger ses propres décisions",
+      "Les droits individuels sont garantis mais peuvent être supprimés par décret pour protéger la sécurité de l'État",
+      "Les droits individuels sont accordés aux citoyens français mais peuvent être retirés par la mairie pour tout motif",
+      "Les droits individuels sont garantis en temps de paix mais sont suspendus par la loi pendant les élections",
+      "Les droits individuels sont garantis mais ne concernent que les droits économiques et sociaux, selon la loi",
+      "Les droits individuels sont garantis mais peuvent être retirés par un tribunal pour protéger un intérêt privé",
+      "Les droits individuels sont identiques dans tous les pays mais peuvent être limités par l'ONU pour protéger la paix",
+      "Les droits individuels sont accordés par le gouvernement mais peuvent être retirés par lui pour protéger ses ministres"
     ],
     "explanation": "Les droits individuels (liberté d'expression, liberté de circuler, droit de propriété…) sont garantis par la Constitution et la DDHC. Ils ne sont pas absolus : la loi peut les limiter pour protéger l'ordre public, la santé, la sécurité ou les droits d'autrui.",
     "answers": [
@@ -2495,14 +2497,14 @@
     ],
     "question": "Lequel de ces droits est un droit fondamental ?",
     "distractors": [
-      "Le droit d'ignorer les lois que l'on n'approuve pas",
-      "Le droit de porter des armes pour se défendre",
-      "Le droit de ne pas payer ses impôts si on en désapprouve l'usage",
-      "Le droit d'entrée gratuite dans les musées nationaux",
-      "Le droit de conduire sans permis si on est prudent",
-      "Le droit de ne pas déclarer ses revenus à l'administration",
-      "Le droit d'imposer ses croyances à ses enfants à l'école",
-      "Le droit de refuser toute autorité de l'État sur soi"
+      "La gratuité des transports publics (pour tous les habitants)",
+      "La liberté de porter des armes (pour se défendre)",
+      "La liberté de ne pas payer ses impôts (si on désapprouve l'usage)",
+      "La gratuité des musées nationaux (pour tous les visiteurs)",
+      "Le droit à une voiture de fonction (pour tous les salariés)",
+      "Le droit au permis de conduire gratuit (dès 18 ans)",
+      "Le droit d'imposer ses croyances (à ses enfants à l'école)",
+      "Le droit de refuser l'autorité de l'État (sur soi)"
     ],
     "explanation": "La liberté de conscience (le droit de croire ou de ne pas croire, d'avoir ou non une religion) est un droit fondamental garanti par la Constitution et par la loi de 1905 sur la laïcité. Parmi les droits fondamentaux, on trouve aussi la liberté d'expression, le droit à la vie, la liberté de circuler, etc.",
     "answers": [
@@ -2552,14 +2554,14 @@
     "natNumber": 109,
     "question": "Qu’est-ce que la liberté d’expression ?",
     "distractors": [
-      "Le droit absolu de dire tout ce que l'on pense sans conséquence",
-      "Le droit de mentir librement si c'est pour une bonne cause",
-      "Le droit réservé aux journalistes et aux artistes professionnels",
-      "Le droit de critiquer le gouvernement sans jamais être poursuivi",
-      "Le droit d'insulter qui on veut au nom de la liberté",
-      "Le droit de diffuser des informations fausses sur Internet",
-      "Le droit de tenir des propos racistes si c'est son opinion",
-      "Le droit de publier des photos de personnes sans leur accord"
+      "Le droit de dire ce que l'on pense, dans la mesure où cela ne déplaît pas au gouvernement",
+      "Le droit de critiquer le gouvernement, dans les limites fixées par le Président",
+      "Le droit de s'exprimer publiquement, dans le cadre réservé aux journalistes et aux artistes",
+      "Le droit de mentir librement, dans l'intérêt d'une bonne cause",
+      "Le droit d'insulter ses adversaires, dans le respect de leurs idées politiques",
+      "Le droit de diffuser des informations, même si elles sont fausses, dans le cadre d'Internet",
+      "Le droit de tenir des propos racistes, dans le respect de son opinion personnelle",
+      "Le droit de publier des photos de personnes sans leur accord, dans l'intérêt de la presse"
     ],
     "explanation": "La liberté d'expression est le droit de chacun d'exprimer librement ses opinions par tous les moyens. Elle est garantie par la DDHC de 1789 et la loi sur la presse de 1881. Elle a des limites légales : diffamation, injure, incitation à la haine, négationnisme.",
     "answers": [
@@ -2611,12 +2613,12 @@
       "La Grande Charte (Magna Carta) anglaise (1215)",
       "La Charte constitutionnelle de la Restauration (1814)",
       "La Charte des Nations unies (1945)",
-      "Le Concordat entre la France et le pape (1801)",
+      "La Déclaration des droits de la femme et de la citoyenne (1791)",
       "La Déclaration universelle des droits de l'homme de l'ONU (1948)"
     ],
     "explanation": "La Déclaration des droits de l'homme et du citoyen du 26 août 1789 est le texte fondateur des droits et devoirs en France. Elle proclame les droits naturels (liberté, propriété, sûreté) et les devoirs civiques. Elle a valeur constitutionnelle depuis 1971.",
     "answers": [
-      "La Déclaration des droits de l'homme et du citoyen de 1789"
+      "La Déclaration des droits de l'homme et du citoyen (1789)"
     ],
     "group": "textes-fondateurs",
     "source": {
@@ -2689,14 +2691,14 @@
     ],
     "question": "Une femme peut avorter :",
     "distractors": [
-      "Non, l'avortement est totalement interdit en France",
+      "Non, l'avortement est interdit en France depuis la loi de 1975",
       "Oui, mais seulement dans les 6 premières semaines de grossesse",
       "Oui, mais uniquement avec l'accord écrit du père",
-      "Oui, mais seulement dans des cas médicaux très précis",
-      "Oui, mais uniquement pour les femmes françaises de naissance",
-      "Oui, mais avec un délai de réflexion obligatoire de 3 mois",
-      "Oui, seulement dans les hôpitaux publics avec autorisation préfectorale",
-      "Oui, mais après approbation d'un comité médical spécial"
+      "Non, c'est un délit puni par le Code pénal depuis mars 2024",
+      "Oui, c'est un droit légal depuis 1975, mais il n'est pas inscrit dans la Constitution",
+      "Non, c'est un droit réservé aux femmes françaises de naissance",
+      "Non, la Constitution de 1958 interdit l'interruption de grossesse",
+      "Oui, c'est un droit légal inscrit dans la Constitution depuis mars 1975"
     ],
     "explanation": "L'IVG est légale en France depuis la loi Veil de 1975. Depuis mars 2024, le droit à l'IVG est inscrit dans la Constitution française comme une 'liberté garantie'. Le délai légal est de 14 semaines de grossesse.",
     "answers": [
@@ -2747,14 +2749,14 @@
     "crNumber": 95,
     "question": "La peine de mort est :",
     "distractors": [
-      "Applicable pour les crimes terroristes avérés",
-      "Suspendue mais pas officiellement abolie",
-      "Réservée aux crimes de guerre devant un tribunal militaire",
-      "Abolie depuis 1945 par ordonnance du général de Gaulle",
-      "Applicable uniquement pour les meurtres d'enfants de moins de 12 ans",
-      "Abolie pour tous les crimes depuis 1848",
-      "Abolie depuis 1789 par la Révolution française",
-      "Applicable sur décision unanime d'un jury populaire"
+      "Abolie depuis 1945",
+      "Abolie depuis 1905",
+      "Abolie depuis 1789",
+      "Abolie depuis 1995",
+      "Abolie depuis 1975",
+      "Suspendue depuis 1981",
+      "Réservée aux terroristes",
+      "Applicable en temps de guerre"
     ],
     "explanation": "La peine de mort a été abolie en France par la loi du 9 octobre 1981, portée par le garde des Sceaux Robert Badinter, sous la présidence de François Mitterrand. Son abolition a été gravée dans la Constitution lors de la révision constitutionnelle du 23 février 2007.",
     "answers": [
@@ -2775,14 +2777,14 @@
     ],
     "question": "Concernant les limites aux libertés individuelles, quelle proposition est correcte ?",
     "distractors": [
-      "Les libertés individuelles sont absolues et ne peuvent jamais être limitées",
-      "Seul le Président peut décider de limiter les libertés en cas de crise",
-      "Les libertés peuvent être limitées par n'importe quelle autorité locale",
-      "Les libertés ne peuvent être limitées que par un vote référendaire",
-      "Les libertés individuelles ne peuvent être limitées que pour des raisons religieuses",
-      "Aucune liberté ne peut être limitée sans l'accord de chaque citoyen",
-      "Les libertés peuvent être supprimées définitivement par décret ministériel",
-      "Les libertés peuvent être limitées uniquement en temps de guerre"
+      "Les libertés individuelles peuvent être limitées par le Président pour protéger sa fonction et ses collaborateurs",
+      "Les libertés individuelles peuvent être limitées par un préfet pour protéger les intérêts économiques de la région",
+      "Les libertés individuelles peuvent être limitées par un référendum local pour protéger les habitants de la commune",
+      "Les libertés individuelles peuvent être limitées par un décret ministériel pour protéger l'image du gouvernement",
+      "Les libertés individuelles peuvent être limitées par le Parlement pour protéger les traditions du pays",
+      "Les libertés individuelles peuvent être limitées par n'importe quel citoyen pour protéger ses droits personnels",
+      "Les libertés individuelles peuvent être limitées par la police sur place pour protéger les intérêts des commerçants",
+      "Les libertés individuelles peuvent être limitées par les juges pour protéger les opinions de la majorité"
     ],
     "explanation": "Les libertés individuelles ne sont pas absolues. La loi peut les encadrer pour protéger l'ordre public, la sécurité, la santé publique et les libertés d'autrui. Par exemple, la liberté d'expression est limitée par l'interdiction de la diffamation et de l'incitation à la haine.",
     "answers": [
@@ -2830,14 +2832,14 @@
     ],
     "question": "Faut-il réduire ses déchets ?",
     "distractors": [
-      "Non, c'est une obligation uniquement pour les entreprises",
-      "Non, la gestion des déchets est entièrement à la charge de l'État",
+      "Non, c'est une obligation réservée aux entreprises et aux administrations",
+      "Non, la gestion des déchets relève de l'État, qui s'en charge à notre place",
+      "Non, c'est un choix personnel, et la loi ne s'occupe pas des déchets des ménages",
       "Oui, mais seulement pour les déchets industriels et non les déchets ménagers",
-      "Non, on peut jeter ses déchets n'importe où si on paie la taxe",
-      "Oui, mais seulement dans les grandes villes de plus de 100 000 habitants",
-      "Non, le tri sélectif est facultatif et sans obligation légale",
-      "Oui, mais uniquement pour les matières plastiques et le verre",
-      "Non, seules les communes frontalières ont cette obligation"
+      "Non, le tri sélectif est facultatif et la loi ne le rend pas obligatoire",
+      "Oui, c'est un devoir réservé aux habitants des grandes villes de plus de 100 000 habitants",
+      "Non, cette obligation concerne les communes frontalières, pas les autres habitants",
+      "Oui, c'est un devoir écologique, mais seulement pour les foyers qui ont un jardin"
     ],
     "explanation": "Réduire ses déchets est un devoir civique et écologique. La loi française (notamment la loi anti-gaspillage de 2020) encourage le tri, le recyclage, le compostage et la réduction à la source. Jeter ses déchets sauvagement dans la nature est une infraction passible d'amende.",
     "answers": [
@@ -2858,14 +2860,12 @@
     ],
     "question": "Jeter une bouteille dans la rue est :",
     "distractors": [
-      "Toléré si personne ne regarde et que c'est accidentel",
-      "Autorisé dans les zones commerciales très fréquentées",
-      "Un droit garanti par la liberté individuelle de chacun",
-      "Interdit seulement entre 20h et 8h du matin",
-      "Autorisé pour les petits déchets biodégradables",
-      "Puni seulement en cas de récidive déclarée au tribunal",
-      "Interdit mais jamais sanctionné dans les grandes villes",
-      "Autorisé si une poubelle publique n'est pas à moins de 100 mètres"
+      "Toléré, c'est une simple impolitesse sans amende entre 8 h et 20 h en ville",
+      "Autorisé, c'est un droit dans les zones commerciales très fréquentées de 8 h à 20 h",
+      "Autorisé, c'est un droit garanti par la liberté individuelle, y compris après 22 h",
+      "Puni, c'est une sanction réservée aux récidivistes déclarés devant un tribunal, à la 3e fois",
+      "Autorisé, c'est permis pour les petits déchets biodégradables sur les trottoirs de 7 h à 9 h",
+      "Autorisé, c'est permis si la poubelle publique la plus proche est trop éloignée, à 100 mètres"
     ],
     "explanation": "Jeter ou abandonner un déchet sur la voie publique est interdit et puni d'une amende forfaitaire de 135 € (375 € si elle est payée après 45 jours). En cas de contestation ou de non-paiement, le juge peut fixer l'amende jusqu'à 750 €. Chacun est responsable de la propreté de l'espace public.",
     "answers": [
@@ -2914,14 +2914,12 @@
     ],
     "question": "Que doit faire une personne en cas d’accident ?",
     "distractors": [
-      "Continuer sa route si elle n'est pas en tort",
-      "Appeler uniquement son assurance avant de faire quoi que ce soit",
-      "Partir rapidement pour ne pas gêner la circulation",
-      "Attendre passivement que les autres appellent les secours",
-      "Prendre des photos et partir pour envoyer le dossier à son assureur",
-      "Appeler un avocat avant d'appeler les secours",
-      "Secourir les victimes uniquement si elles le demandent",
-      "Laisser les autres s'en occuper si on est trop choqué"
+      "Continuer sa route, prévenir son assurance (sous 5 jours) et envoyer le constat plus tard",
+      "Prendre des photos, partir pour libérer la route (en moins de 10 minutes) et appeler un avocat",
+      "Attendre dans sa voiture, appeler un dépanneur (ouvert 24 h/24) et laisser les témoins prévenir les secours",
+      "Appeler un avocat, contacter son assureur (dans les 2 heures) puis seulement les secours",
+      "Secourir les victimes seulement si elles le demandent, repartir et les rappeler (sous 48 heures)",
+      "Laisser les autres s'en occuper, noter la plaque (avant 1 heure) et continuer son chemin"
     ],
     "explanation": "En cas d'accident, toute personne est légalement obligée de s'arrêter et de porter assistance aux victimes (obligation de porter secours, Code pénal). Il faut appeler le 15 (SAMU), le 18 (pompiers) ou le 112 (urgences européennes), sécuriser les lieux et rester jusqu'à l'arrivée des secours.",
     "answers": [
@@ -2941,14 +2939,12 @@
     ],
     "question": "Que permet la citoyenneté française ?",
     "distractors": [
-      "Uniquement de voyager librement sans passeport en Europe",
-      "De ne jamais être jugé par un tribunal français",
-      "D'accéder gratuitement à tous les services publics sans cotisation",
-      "De ne pas payer d'impôts si on est né en France",
-      "D'obtenir automatiquement la nationalité de tous les pays de l'UE",
-      "De bénéficier d'un logement social sans condition d'ancienneté",
-      "D'être exempté du service militaire en cas de guerre",
-      "De pouvoir travailler sans aucune restriction dans le monde entier"
+      "De voter seulement aux élections municipales, d'être élu au conseil municipal et de signer des pétitions locales",
+      "D'obtenir la nationalité de tous les pays de l'UE et d'y voter à toutes les élections nationales",
+      "D'être dispensé d'impôts, du service national, des jurys d'assises et des contrôles d'identité",
+      "De travailler partout dans le monde, de voyager sans visa, de s'installer dans tout pays et d'y voter",
+      "D'accéder gratuitement à tous les services publics, de recevoir un logement social et d'avoir un emploi garanti",
+      "De bénéficier d'un emploi public garanti, d'une retraite anticipée, d'allocations et d'un logement prioritaire"
     ],
     "explanation": "La citoyenneté française donne le droit de voter et d'être élu à toutes les élections nationales et locales, d'exercer des fonctions publiques, et de bénéficier de la pleine protection diplomatique de la France à l'étranger. Elle s'accompagne aussi de devoirs civiques.",
     "answers": [
@@ -2968,14 +2964,11 @@
     ],
     "question": "Que risque une personne qui ne respecte pas la loi ?",
     "distractors": [
-      "Rien, si c'est la première fois et que personne ne se plaint",
-      "Seulement une réprimande verbale de la police",
-      "Une expulsion du territoire si c'est un étranger uniquement",
-      "Une interdiction d'exercer ses droits civiques pendant 6 mois",
-      "Uniquement une amende, jamais de prison en France",
-      "Un simple avertissement inscrit dans un fichier national",
-      "Des sanctions uniquement si elle est récidiviste",
-      "Une obligation de suivre une formation civique de 3 jours"
+      "Un simple avertissement : rappel à l'ordre, mise en garde écrite, sans suite quelle que soit la gravité",
+      "Des sanctions financières : amende, saisie de biens, jamais de prison quelle que soit la gravité",
+      "Des sanctions décidées par le maire : amende, travaux, exclusion de la commune selon la faute",
+      "Une sanction administrative : retrait de la carte Vitale, du compte bancaire, du téléphone selon le préfet",
+      "Des sanctions religieuses : excuses publiques, jeûne, exclusion de la communauté selon la coutume"
     ],
     "explanation": "Toute personne qui ne respecte pas la loi s'expose à des sanctions pénales proportionnelles à la gravité de l'infraction : une amende pour les contraventions, des peines d'emprisonnement et/ou d'amendes pour les délits, et des peines d'emprisonnement pouvant aller jusqu'à la réclusion à perpétuité pour les crimes.",
     "answers": [
@@ -3053,14 +3046,12 @@
     ],
     "question": "Qu'est-ce qu'une infraction ?",
     "distractors": [
-      "Un désaccord contractuel entre deux parties",
-      "Un manquement aux règles de politesse en société",
-      "Une erreur administrative commise par un fonctionnaire",
-      "Un non-paiement d'impôts par oubli",
-      "Un acte contraire au règlement intérieur d'une entreprise",
-      "Un comportement jugé immoral mais non interdit par la loi",
-      "Une violation des clauses d'un contrat commercial",
-      "Un manquement à une obligation purement morale"
+      "Un désaccord entre deux personnes, réglé par un contrat ou un accord écrit selon l'usage",
+      "Un manquement aux règles de politesse, jugé par l'entourage ou la famille selon le contexte",
+      "Une erreur administrative, commise par un fonctionnaire et corrigée par sa hiérarchie selon le cas",
+      "Un acte contraire au règlement intérieur, sanctionné par l'employeur ou le directeur selon la faute",
+      "Un comportement jugé immoral, mais autorisé par la loi et sanctionné par l'opinion publique",
+      "Une violation des clauses d'un contrat, réglée devant un juge civil selon le montant"
     ],
     "explanation": "Une infraction est un acte contraire à la loi pénale. Il en existe trois catégories par ordre de gravité : la contravention (ex : stationnement interdit), le délit (ex : vol, agression), et le crime (ex : meurtre, viol). Chaque catégorie est sanctionnée par des peines différentes.",
     "answers": [
@@ -3165,13 +3156,11 @@
     "crNumber": 117,
     "question": "Que doit faire une victime de violences ?",
     "distractors": [
-      "Attendre que la situation s'améliore d'elle-même",
-      "Garder le silence pour ne pas créer de problèmes",
-      "Attendre d'avoir des preuves écrites avant de demander de l'aide",
-      "Fuir à l'étranger pour échapper à l'agresseur",
-      "Appeler uniquement son assurance habitation",
-      "Saisir le préfet par courrier recommandé",
-      "Écrire une pétition en ligne pour témoigner"
+      "Garder le silence, appeler le 3939 et attendre que ça passe",
+      "Fuir à l'étranger, appeler le 3949 et changer de numéro",
+      "Écrire une pétition, appeler le 196 et témoigner en ligne",
+      "Prévenir son assurance, appeler le 3646 et rester chez soi",
+      "Saisir le préfet par courrier, appeler le 3230 et attendre"
     ],
     "explanation": "Une victime de violences ne doit pas rester seule. Elle peut porter plainte dans n'importe quel commissariat ou gendarmerie (ou écrire au procureur de la République), appeler le 17 en cas de danger immédiat, le 3919 (violences conjugales, gratuit 24h/24), faire constater ses blessures par un médecin et se faire accompagner gratuitement par une association. En cas de violences conjugales, elle peut aussi demander une ordonnance de protection au juge.",
     "answers": [
@@ -3196,14 +3185,12 @@
     "natNumber": 128,
     "question": "Quelle est l'infraction la plus grave ?",
     "distractors": [
-      "La contravention de 5e classe",
-      "Le délit correctionnel aggravé",
-      "La récidive de délit",
-      "La faute civile intentionnelle grave",
-      "La violation d'une ordonnance de protection",
-      "Le délit financier commis par un élu",
-      "La fraude électorale",
-      "L'outrage à magistrat en audience"
+      "La contravention (stationnement interdit, excès de vitesse léger…)",
+      "Le délit (vol, harcèlement, escroquerie…)",
+      "La faute civile (dette impayée, loyer en retard…)",
+      "L'incivilité (impolitesse, retard, bousculade…)",
+      "La contravention de 5e classe (excès de vitesse de 50 km/h ou plus…)",
+      "Le délit routier (conduite sans permis, sans assurance…)"
     ],
     "explanation": "En droit français, il y a trois catégories d'infractions par ordre de gravité croissante : la contravention (la moins grave, amende), le délit (vol, harcèlement…) et le crime (la plus grave : meurtre, viol, terrorisme…). Les crimes sont jugés par la cour d'assises ou la cour criminelle départementale et peuvent être punis de la réclusion criminelle à perpétuité.",
     "answers": [
@@ -3887,14 +3874,13 @@
     ],
     "question": "Qu'est-ce que Paris ?",
     "distractors": [
-      "Une région administrative du nord de la France",
-      "La deuxième ville de France après Lyon",
-      "Un département d'outre-mer français dans la Caraïbe",
+      "Une région du nord de la France",
+      "La deuxième ville de France",
+      "Un département d'outre-mer",
       "Le siège de l'Union européenne",
-      "Le nom de la région Île-de-France uniquement",
-      "Une commune de la banlieue de Lyon",
-      "Le chef-lieu de la région Normandie",
-      "Une ville-État autonome comme Monaco"
+      "Une commune près de Lyon",
+      "Le chef-lieu de la Normandie",
+      "Une ville-État comme Monaco"
     ],
     "explanation": "Paris est la capitale de la France. C'est le siège des grandes institutions de la République : présidence (Élysée), Premier ministre (Matignon), Assemblée nationale, Sénat… La région Île-de-France, autour de Paris, compte environ 12,4 millions d'habitants : c'est la région la plus peuplée du pays.",
     "answers": [
@@ -4627,17 +4613,17 @@
     ],
     "question": "Après avoir obtenu le permis de conduire, que faut-il faire pour pouvoir conduire sa voiture ?",
     "distractors": [
-      "Payer une taxe annuelle spéciale à la préfecture",
-      "Déclarer son permis à la mairie de sa commune",
-      "Passer un contrôle médical annuel obligatoire",
-      "Faire enregistrer son permis au ministère des Transports",
-      "Obtenir un certificat de bonne conduite de la police",
-      "Payer une redevance annuelle pour utiliser les routes",
+      "Payer une taxe annuelle à la préfecture",
+      "Déclarer son permis à la mairie",
+      "Passer un contrôle médical chaque année",
+      "Faire enregistrer son permis au ministère",
+      "Obtenir un certificat de bonne conduite",
+      "Payer une redevance pour utiliser les routes",
       "Faire certifier son permis par un notaire"
     ],
     "explanation": "Pour conduire légalement un véhicule en France, il faut au minimum souscrire une assurance de responsabilité civile (garantie obligatoire, couvrant les dommages causés aux tiers). Sans assurance, conduire est illégal et passible de lourdes sanctions. D'autres assurances complémentaires sont facultatives.",
     "answers": [
-      "Assurer son véhicule"
+      "Souscrire une assurance pour son véhicule"
     ],
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/demarches-administratives/les-demarches-du-quotidien-comme-le-permis-de-conduire-1/",
@@ -4851,14 +4837,12 @@
     ],
     "question": "Qui est aidé par France Travail ?",
     "distractors": [
-      "Uniquement les personnes de moins de 25 ans sans emploi",
-      "Seulement les cadres et les ingénieurs au chômage",
-      "Les retraités qui cherchent un emploi à temps partiel",
-      "Uniquement les personnes licenciées par de grandes entreprises",
-      "Seulement les personnes ayant travaillé plus de 10 ans",
-      "Uniquement les résidents en zone rurale en difficulté",
-      "Les entrepreneurs qui ont fait faillite uniquement",
-      "Seulement les fonctionnaires en reconversion professionnelle"
+      "Les jeunes de moins de 16 ans, pour l'orientation scolaire et les bourses d'études",
+      "Les propriétaires de logements, pour la gestion de leurs loyers et le paiement de leurs impôts",
+      "Les personnes hospitalisées, pour le remboursement des soins et les arrêts maladie",
+      "Les chefs d'entreprise en difficulté, pour la gestion des faillites et les aides au logement",
+      "Les familles de trois enfants ou plus, pour les allocations familiales et les places en crèche",
+      "Les élèves du lycée, pour l'inscription au baccalauréat et les bourses de lycée"
     ],
     "explanation": "France Travail accompagne toute personne à la recherche d'un emploi : aide à la rédaction de CV et lettres de motivation, accès aux offres d'emploi, formations, et versement des allocations chômage (ARE) aux personnes ayant cotisé suffisamment et ayant perdu involontairement leur emploi.",
     "answers": [
@@ -4881,14 +4865,12 @@
     "natNumber": 242,
     "question": "Une personne étrangère en situation régulière peut créer son entreprise :",
     "distractors": [
-      "Seulement si elle a la nationalité française",
-      "Uniquement dans les secteurs non réservés aux Français",
-      "Seulement après 10 ans de résidence légale en France",
-      "Uniquement dans les zones franches urbaines désignées",
-      "Avec une caution bancaire obligatoire de 10 000 euros",
-      "Seulement si son conjoint ou sa conjointe est français",
-      "Uniquement si elle est ressortissante d'un pays de l'UE",
-      "Après avoir obtenu un agrément spécial de la préfecture"
+      "Avec une autorisation spéciale de la préfecture",
+      "Après dix ans de résidence légale en France",
+      "Avec un associé de nationalité française",
+      "Avec une caution bancaire de 10 000 euros",
+      "Dans les zones franches urbaines désignées par l'État",
+      "Seulement si elle est ressortissante d'un pays de l'UE"
     ],
     "explanation": "Toute personne étrangère résidant légalement en France peut créer son entreprise dans les mêmes conditions qu'un Français. La liberté d'entreprendre est garantie par la loi indépendamment de la nationalité, à condition d'être en situation régulière sur le territoire.",
     "answers": [
@@ -4995,14 +4977,12 @@
     ],
     "question": "Qu’est-ce qu’un numéro d’urgence ?",
     "distractors": [
-      "Un numéro permettant d'appeler le gouvernement en cas de problème",
-      "Un numéro réservé aux médecins pour contacter les hôpitaux",
-      "Un numéro payant pour accéder à des services prioritaires",
-      "Un numéro permettant de signaler des infractions fiscales",
-      "Un numéro pour contacter les ambassades en cas de problème",
-      "Un numéro pour accéder aux services sociaux d'urgence uniquement",
-      "Un numéro pour signaler des pannes d'électricité ou de gaz",
-      "Un numéro permettant de contacter les autorités à l'étranger"
+      "Un numéro de téléphone réservé aux médecins pour contacter les hôpitaux de leur région",
+      "Un numéro de téléphone permettant de prendre rendez-vous rapidement à la mairie ou en préfecture",
+      "Un numéro de téléphone permettant de signaler des infractions fiscales à l'administration",
+      "Un numéro de téléphone pour contacter les ambassades de France en cas de problème à l'étranger",
+      "Un numéro de téléphone pour signaler des pannes d'électricité ou de gaz dans son logement",
+      "Un numéro de téléphone permettant de contacter le gouvernement en cas de problème administratif"
     ],
     "explanation": "Un numéro d'urgence est un numéro court, gratuit et joignable 24 h/24 et 7 j/7, qui permet d'appeler rapidement les secours (SAMU, police, pompiers) en cas de danger. Le 112 est le numéro d'urgence européen ; le 114 est réservé aux personnes sourdes ou malentendantes.",
     "answers": [
@@ -5024,14 +5004,12 @@
     "crNumber": 187,
     "question": "Concernant l'accès aux soins, quelle proposition est correcte ?",
     "distractors": [
-      "Seuls les citoyens français ont droit aux soins remboursés",
-      "Les soins ne sont remboursés que pour les personnes qui travaillent",
-      "Les étrangers doivent payer tous leurs soins sans remboursement",
-      "Les soins ne sont gratuits que dans les hôpitaux publics d'urgence",
-      "Seules les personnes cotisant depuis plus de 5 ans ont droit aux remboursements",
-      "Les soins ne sont couverts que pour les maladies graves et hospitalisations",
-      "Les remboursements sont réservés aux personnes ayant une mutuelle",
-      "Seuls les résidents en zones urbaines ont accès aux soins remboursés"
+      "Seuls les citoyens français sont couverts (carte Vitale, ou carte d'identité)",
+      "Il n'y a de remboursement que pour les personnes qui travaillent (salariés, ou fonctionnaires)",
+      "Pour les étrangers, tous les soins sont à payer (sans remboursement, ou avec une mutuelle)",
+      "Toute personne présente en France, même de passage, est couverte (touristes, ou visiteurs)",
+      "Tous les soins sont entièrement gratuits pour tout le monde (consultations, ou médicaments)",
+      "Une mutuelle est nécessaire pour être remboursé (contrat privé, ou entreprise)"
     ],
     "explanation": "La protection universelle maladie (PUMa) prend en charge les frais de santé de toute personne qui travaille ou réside en France de manière stable et régulière. Les étrangers en situation irrégulière qui vivent en France depuis plus de 3 mois peuvent, sous conditions de ressources, bénéficier de l'aide médicale de l'État (AME). La Complémentaire santé solidaire (C2S) aide les personnes aux revenus modestes.",
     "answers": [
@@ -5052,18 +5030,17 @@
     ],
     "question": "En cas de problème de santé non urgent, à qui faut-il s’adresser en premier ?",
     "distractors": [
-      "Directement aux urgences de l'hôpital le plus proche",
-      "À un spécialiste de son choix sans ordonnance",
-      "À la pharmacie uniquement pour un diagnostic",
-      "Au SAMU pour un avis téléphonique gratuit",
-      "Au médecin du travail de son entreprise",
-      "À l'infirmière scolaire ou de l'entreprise",
-      "À un cabinet de télémédecine sans médecin traitant",
-      "Au service hospitalier d'un CHU directement"
+      "Directement aux urgences",
+      "À un spécialiste de son choix",
+      "À la pharmacie pour un diagnostic",
+      "Au SAMU pour un avis téléphonique",
+      "Au médecin du travail de l'entreprise",
+      "À un service de télémédecine",
+      "Au service d'un CHU"
     ],
     "explanation": "Le médecin traitant est le premier interlocuteur à consulter pour un problème de santé courant. On le choisit et on le déclare. Il coordonne le parcours de soins et oriente vers des spécialistes si nécessaire. Sans passer par lui (sauf urgence ou spécialistes en accès direct), les consultations sont moins bien remboursées.",
     "answers": [
-      "À son médecin traitant"
+      "À son médecin traitant déclaré"
     ],
     "group": "parcours-de-soins",
     "source": {
@@ -5194,14 +5171,14 @@
     "natNumber": 233,
     "question": "À quoi sert une mutuelle santé ?",
     "distractors": [
-      "À remplacer entièrement la Sécurité sociale",
-      "À payer uniquement les médicaments non remboursés",
-      "À financer exclusivement les hospitalisations d'urgence",
-      "À obtenir des soins entièrement gratuits à l'étranger",
-      "À couvrir uniquement les accidents du travail",
+      "À remplacer la Sécurité sociale pour les salariés",
+      "À payer les cotisations sociales à la place de l'employeur",
+      "À prendre en charge seule les hospitalisations, à la place de l'Assurance maladie",
+      "À obtenir la carte européenne d'assurance maladie",
+      "À couvrir les accidents du travail à la place de l'employeur",
       "À remplacer la carte Vitale en cas de perte",
-      "À financer uniquement les cures thermales",
-      "À accéder aux soins sans passer par un médecin traitant"
+      "À financer uniquement les cures thermales de ses adhérents",
+      "À payer uniquement les frais de transport en ambulance"
     ],
     "explanation": "La mutuelle (ou complémentaire santé) complète la prise en charge de base de l'Assurance maladie : elle rembourse tout ou partie de ce qui reste à payer (soins, médicaments, dentaire, optique…), selon la formule choisie. Elle n'est pas obligatoire mais recommandée. Tout employeur du secteur privé doit en proposer une à ses salariés.",
     "answers": [
@@ -5279,14 +5256,12 @@
     ],
     "question": "Pour qui l'école est-elle obligatoire ?",
     "distractors": [
-      "Uniquement pour les enfants de nationalité française",
-      "Seulement pour les enfants dont les parents travaillent",
-      "Uniquement dans les grandes villes",
-      "Pour les enfants français et européens uniquement",
-      "Seulement pour les enfants nés sur le territoire",
-      "Pour les enfants en situation régulière uniquement",
-      "Uniquement dans l'enseignement public",
-      "Seulement à partir de 6 ans pour les enfants étrangers"
+      "Pour les enfants français de 6 à 16 ans, nés ou non sur le territoire",
+      "Pour les enfants de 3 à 16 ans dont les parents travaillent, quelle que soit leur nationalité",
+      "Pour tous les enfants de 6 à 14 ans vivant en France, Français ou étrangers",
+      "Pour tous les enfants de 3 à 16 ans nés en France, Français ou étrangers",
+      "Pour les enfants de 3 à 16 ans en situation régulière, français ou étrangers",
+      "Pour les enfants de 3 à 16 ans inscrits dans l'enseignement public, français ou étrangers"
     ],
     "explanation": "L'école est obligatoire pour TOUS les enfants qui vivent en France, de 3 à 16 ans, sans distinction de nationalité ni de situation administrative des parents. C'est à la fois un droit et une obligation. Les enfants vont dans une école publique ou privée ; l'instruction en famille n'est possible qu'à titre exceptionnel, avec une autorisation.",
     "answers": [
@@ -5311,14 +5286,13 @@
       "Le CAP (Certificat d'aptitude professionnelle)",
       "La licence universitaire (Bac+3)",
       "Le BTS (Brevet de technicien supérieur)",
-      "Le certificat d'études primaires",
+      "Le certificat d'études primaires (CEP)",
       "Le BEPC (Brevet d'études du premier cycle)",
-      "Le DUT (Diplôme universitaire de technologie)",
-      "Le diplôme de maturité scolaire"
+      "Le DUT (Diplôme universitaire de technologie)"
     ],
     "explanation": "Le baccalauréat (le 'bac') sanctionne la fin des études secondaires en classe de Terminale (lycée). Créé par Napoléon en 1808, il permet d'accéder à l'enseignement supérieur : université, BTS, IUT, classes préparatoires aux grandes écoles, et écoles spécialisées.",
     "answers": [
-      "Le baccalauréat"
+      "Le baccalauréat (général et technologique ou professionnel)"
     ],
     "group": "cursus-scolaire",
     "source": {
@@ -5335,14 +5309,11 @@
     ],
     "question": "Dans quels établissements scolaires vont les élèves après l'école élémentaire ?",
     "distractors": [
-      "Directement au lycée professionnel dès 11 ans",
-      "À l'université après validation du primaire",
-      "En centre de formation professionnelle (CFA) dès 12 ans",
-      "Au lycée polyvalent dès l'âge de 11 ans",
-      "En école de métiers à partir de 12 ans",
-      "Dans des internats d'excellence sélectifs uniquement",
-      "En école primaire supérieure jusqu'à 15 ans",
-      "En lycée agricole pour les enfants des zones rurales"
+      "À l'école primaire supérieure (CM3 à 3e, 11-14 ans), puis à l'université (Licence, 14-17 ans)",
+      "En centre de formation (CFA, 12-14 ans), puis en école de métiers (2 ans, 14-16 ans)",
+      "Au lycée professionnel (CAP, 11-14 ans), puis en internat spécialisé (3 ans, 14-17 ans)",
+      "À l'université (Licence, 11-14 ans), puis au collège (4e à 3e, 14-16 ans)",
+      "En école de métiers (apprentissage, 11-14 ans), puis au lycée (1re à Terminale, 14-16 ans)"
     ],
     "explanation": "Après l'école élémentaire (CP à CM2, 6-11 ans), les élèves vont au collège (6e à 3e, 11-15 ans, sanctionné par le brevet des collèges), puis au lycée (2nde à Terminale, 15-18 ans, sanctionné par le baccalauréat). Il existe des lycées généraux, technologiques et professionnels.",
     "answers": [
@@ -5363,14 +5334,13 @@
     ],
     "question": "Pour qui l'école est-elle obligatoire ? (question complémentaire)",
     "distractors": [
-      "Seulement pour les enfants français de naissance",
-      "Uniquement pour les enfants dont les parents paient des impôts",
-      "Seulement pour les familles installées en France depuis plus de 2 ans",
-      "Uniquement dans les communes de plus de 5 000 habitants",
-      "Seulement pour les enfants de parents mariés ou en PACS",
-      "Uniquement pour les enfants inscrits par leurs parents dans une école publique",
-      "Seulement à partir de 6 ans pour les enfants non francophones",
-      "Uniquement pour les enfants qui n'ont pas de problème de santé"
+      "Pour les enfants de nationalité française, et pour eux seulement",
+      "Pour les enfants dont les parents paient des impôts, qu'ils soient français ou étrangers",
+      "Pour les familles installées en France depuis plus de 2 ans, y compris les étrangers",
+      "Pour tous les enfants nés en France, y compris les enfants étrangers",
+      "Pour tous les enfants de nationalité française ou européenne, y compris ceux nés à l'étranger",
+      "Pour les enfants inscrits par leurs parents dans une école publique, français ou étrangers",
+      "Pour les enfants en bonne santé, qu'ils soient français ou étrangers"
     ],
     "explanation": "L'obligation scolaire s'applique à TOUS les enfants résidant en France, y compris ceux de familles étrangères quelle que soit leur situation administrative. C'est un droit fondamental. Les enfants sans papiers ont le même droit à l'éducation que les enfants français.",
     "answers": [
@@ -5423,12 +5393,12 @@
       "Sont renvoyés dans leur pays d'origine",
       "Doivent attendre une année complète avant d'entrer à l'école",
       "Suivent les cours normaux sans aucune aide particulière",
-      "Sont placés en internat spécialisé obligatoirement",
+      "Peuvent être dispensés d'école jusqu'à ce qu'ils parlent français",
       "Sont regroupés dans des écoles réservées aux étrangers"
     ],
     "explanation": "Les enfants allophones (qui parlent peu ou pas le français) vont à l'école comme les autres. À leur arrivée, un test de positionnement évalue leur niveau et peut les orienter vers une UPE2A (Unité pédagogique pour élèves allophones arrivants), où ils suivent des cours adaptés. Une fois le français maîtrisé, ils suivent les mêmes cours que les autres élèves.",
     "answers": [
-      "Peuvent suivre des cours adaptés (UPE2A) pour apprendre le français"
+      "Peuvent suivre des cours adaptés pour apprendre la langue"
     ],
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/parentalite/l-ecole-pour-les-enfants-allophones/",
@@ -5470,9 +5440,9 @@
     ],
     "question": "Un incendie se déclare dans votre appartement. Quelle est la bonne réaction ?",
     "distractors": [
-      "Prendre l'ascenseur pour descendre le plus vite possible",
-      "Rester dans son appartement et attendre les secours",
-      "Ouvrir toutes les portes pour faciliter l'évacuation des autres"
+      "Prendre l'ascenseur pour descendre vite, laisser la porte ouverte, puis appeler le 17",
+      "Rester dans l'appartement, ouvrir les fenêtres en grand, puis appeler le 15",
+      "Ouvrir toutes les portes pour aérer, récupérer ses affaires, puis appeler le 17"
     ],
     "explanation": "Si le feu est chez vous, sortez en fermant la porte derrière vous (sans la verrouiller) pour ralentir les flammes et les fumées, ne prenez pas l'ascenseur, puis appelez le 18 (ou le 112) une fois en sécurité. Si le feu est ailleurs dans l'immeuble et que la fumée envahit le couloir, il vaut mieux rester chez soi, porte fermée.",
     "answers": [
@@ -5637,9 +5607,9 @@
     ],
     "question": "Votre employeur vous propose d'être payé en liquide sans déclaration. Qu'est-ce que vous risquez en acceptant ?",
     "distractors": [
-      "Rien, le travail non déclaré est toléré pour les petits montants",
-      "Uniquement une amende mineure et remboursable",
-      "Rien si le montant est inférieur à 1 000 € par mois"
+      "Une simple amende forfaitaire : 135 €, sans conséquence sur vos droits",
+      "Le blocage de votre compte bancaire : gel des avoirs, fermeture du compte",
+      "Une taxe spéciale sur le salaire reçu : majoration, intérêts de retard"
     ],
     "explanation": "Le travail non déclaré est interdit. Le salarié non déclaré ne cotise ni pour le chômage ni pour sa retraite, n'est pas couvert par la Sécurité sociale en cas de maladie ou d'accident du travail et n'a pas de congés payés. S'il touche des aides sociales, il risque de devoir les rembourser ou de payer une amende. L'employeur encourt jusqu'à 3 ans de prison et 45 000 € d'amende.",
     "answers": [
@@ -5668,7 +5638,7 @@
     ],
     "explanation": "Le Conseil de prud'hommes est la juridiction compétente pour les litiges entre salariés et employeurs. Le non-paiement du salaire est une faute grave. Des associations et syndicats peuvent également aider dans ces démarches.",
     "answers": [
-      "Saisir le Conseil de prud'hommes"
+      "Saisir le Conseil de prud'hommes pour réclamer votre salaire"
     ],
     "group": "prudhommes",
     "source": {
@@ -5814,9 +5784,9 @@
       "Appeler la police obligatoirement même sans blessé",
       "Régler l'affaire en liquide entre vous sans passer par les assurances"
     ],
-    "explanation": "En cas d'accident sans blessé, les conducteurs doivent remplir un constat amiable et l'envoyer à leurs assurances respectives. Quitter les lieux sans constater est un délit de fuite, même sans blessé.",
+    "explanation": "En cas d'accident sans blessé, les conducteurs remplissent ensemble un constat amiable, que chacun envoie à son assurance, en général dans les 5 jours ouvrés. Sans blessé, appeler la police n'est pas obligatoire : vous pouvez le faire si l'autre conducteur refuse de remplir le constat ou prend la fuite. Quitter les lieux sans constater est un délit de fuite, même sans blessé.",
     "answers": [
-      "Remplir un constat amiable et l'envoyer à votre assurance dans les 5 jours ouvrés"
+      "Remplir ensemble un constat amiable et l'envoyer à votre assurance"
     ],
     "source": {
       "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F2149",
@@ -5883,9 +5853,9 @@
     ],
     "question": "Vous entendez une dispute violente chez votre voisin avec des cris de douleur. Que faites-vous ?",
     "distractors": [
-      "Ne pas intervenir, c'est une affaire privée",
-      "Frapper à la porte pour intervenir physiquement",
-      "Attendre le lendemain pour en parler au voisin concerné"
+      "Appeler le 115 (hébergement d'urgence) et attendre le lendemain",
+      "Ne pas intervenir (affaire privée) et en parler au voisin le lendemain",
+      "Frapper à la porte (pour intervenir) et séparer vous-même les personnes"
     ],
     "explanation": "Ne pas porter secours à une personne en danger est un délit (non-assistance à personne en danger). Appeler le 17 ou le 15 est le geste approprié. Intervenir soi-même physiquement peut s'avérer dangereux.",
     "answers": [
@@ -5908,9 +5878,9 @@
     ],
     "question": "Votre employeur vous demande de travailler 50 heures par semaine sans compensation. Quelle est votre situation ?",
     "distractors": [
-      "L'employeur peut imposer les heures qu'il souhaite",
-      "Le travail supplémentaire est obligatoire sans compensation si le contrat le prévoit",
-      "Il n'existe pas de durée légale du travail en France"
+      "La durée légale est de 50 heures ; l'employeur peut imposer les heures qu'il souhaite",
+      "La durée légale est de 39 heures ; le travail supplémentaire n'est jamais payé",
+      "Il n'existe pas de durée légale ; l'employeur fixe les heures sans limite"
     ],
     "explanation": "La durée légale du travail est de 35 heures par semaine. Au-delà, les heures supplémentaires doivent être payées (avec une majoration) ou compensées par du repos. Il existe aussi une durée maximale : 48 heures sur une même semaine et 44 heures en moyenne sur 12 semaines. Travailler 50 heures dans la semaine dépasse donc la limite légale.",
     "answers": [
@@ -5933,9 +5903,9 @@
     ],
     "question": "Vous êtes victime de violences conjugales. Que devez-vous faire ?",
     "distractors": [
-      "Garder cela privé, c'est une affaire de famille",
-      "Demander à votre conjoint de promettre par écrit de ne plus recommencer",
-      "Attendre que la situation s'améliore d'elle-même"
+      "Garder cela privé, c'est une affaire de famille, et en parler à un proche",
+      "Demander à votre conjoint une promesse écrite de ne plus recommencer",
+      "Attendre 6 mois que la situation s'améliore avant de faire quoi que ce soit"
     ],
     "explanation": "Les violences conjugales sont interdites et punies par la loi (délit, voire crime). La victime peut porter plainte dans un commissariat ou une gendarmerie, appeler le 17 en cas de danger immédiat et le 3919 (Violences Femmes Info), numéro d'écoute gratuit et anonyme disponible 24h/24. Des associations l'accompagnent gratuitement.",
     "answers": [
@@ -6031,9 +6001,9 @@
     ],
     "question": "Votre enfant de 15 ans souhaite arrêter l'école pour travailler. Est-ce légalement possible ?",
     "distractors": [
-      "Oui, si les parents donnent leur accord écrit",
-      "Oui, à partir de 14 ans avec une dérogation préfectorale",
-      "Oui, si un employeur accepte de l'embaucher"
+      "Non, car il doit d'abord obtenir son baccalauréat",
+      "Oui, si les parents donnent leur accord écrit dès 15 ans",
+      "Oui, car l'instruction n'est obligatoire que jusqu'à 14 ans"
     ],
     "explanation": "L'instruction est obligatoire jusqu'à 16 ans en France. Un jeune de 15 ans peut entrer en apprentissage sous certaines conditions strictes, mais ne peut pas simplement quitter l'école pour travailler.",
     "answers": [
@@ -6251,9 +6221,9 @@
     ],
     "question": "Vous louez une voiture et causez un accident. L'assurance du loueur couvre-t-elle automatiquement les dommages ?",
     "distractors": [
-      "Oui, totalement, l'assurance du loueur couvre tout sans exception",
-      "Non, vous êtes toujours entièrement responsable sans aucune couverture",
-      "Oui, mais uniquement si vous êtes en France métropolitaine"
+      "Non : elle ne couvre pas les dommages causés aux autres conducteurs",
+      "Oui : aucune somme ne reste à votre charge, même avec franchise",
+      "Oui : mais seulement si l'accident a lieu en France"
     ],
     "explanation": "Le loueur doit assurer le véhicule avec la responsabilité civile obligatoire, incluse dans le prix : elle couvre les dommages causés aux autres (conducteurs, piétons, biens). Elle ne couvre pas les dégâts au véhicule loué, le vol ni vos propres blessures : pour ceux-ci, une franchise prévue au contrat peut rester à votre charge, sauf si vous avez souscrit une assurance complémentaire (rachat de franchise).",
     "answers": [
@@ -6275,13 +6245,13 @@
     ],
     "question": "Vous constatez qu'une entreprise déverse des déchets illégalement dans une rivière. Que pouvez-vous faire ?",
     "distractors": [
-      "Rien, cela concerne uniquement les entreprises et l'État",
-      "Filmer et publier sur les réseaux sociaux, c'est suffisant",
-      "Intervenir vous-même pour stopper le déversement"
+      "Ne rien faire, car cela concerne uniquement les entreprises et les services de l'État",
+      "Filmer les faits et les publier sur les réseaux sociaux, ce qui est suffisant",
+      "Intervenir vous-même sur place pour stopper le déversement et bloquer l'entreprise"
     ],
     "explanation": "La pollution de l'environnement est un délit. Tout citoyen peut signaler des faits à la gendarmerie, à la mairie ou à l'Office français de la biodiversité. Des associations de protection de l'environnement peuvent également intervenir.",
     "answers": [
-      "Signaler les faits à la gendarmerie, à la mairie ou à l'Office français de la biodiversité (OFB)"
+      "Signaler les faits à la gendarmerie, à la mairie ou à l'Office français de la biodiversité"
     ],
     "source": {
       "url": "https://www.ecologie.gouv.fr/politiques-publiques/police-leau-nature",
@@ -6323,13 +6293,13 @@
     ],
     "question": "Votre voisin vous dit que certains métiers doivent être réservés aux hommes. Qu'en est-il en France ?",
     "distractors": [
-      "Vrai, certains métiers physiques restent légalement réservés aux hommes",
-      "Vrai, mais uniquement dans le secteur privé",
+      "Certains métiers physiques restent légalement réservés aux hommes",
+      "Certains métiers sont réservés aux hommes dans le secteur privé seulement",
       "Cela dépend du secteur d'activité et des accords de branche"
     ],
     "explanation": "Le Code du travail interdit de réserver un emploi à un sexe, dans l'offre d'emploi comme à l'embauche. Les seules exceptions sont des emplois où le sexe est déterminant par nature : acteur qui joue un rôle féminin ou masculin, mannequin, modèle.",
     "answers": [
-      "Faux, les métiers sont ouverts aux femmes comme aux hommes"
+      "Les métiers sont ouverts aux femmes comme aux hommes en France"
     ],
     "source": {
       "url": "https://code.travail.gouv.fr/code-du-travail/r1142-1",
@@ -6347,13 +6317,13 @@
     ],
     "question": "Un enseignant du public porte un signe religieux ostensible en classe. Est-ce autorisé ?",
     "distractors": [
-      "Oui, la liberté religieuse s'applique à tous",
-      "Oui, si les parents d'élèves ne s'y opposent pas",
-      "Cela dépend de la religion concernée"
+      "Oui, la liberté religieuse s'applique à tous les agents comme aux élèves",
+      "Oui, tant que les parents d'élèves de la classe ne s'y opposent pas",
+      "Non, car les signes religieux sont interdits dans la rue et les transports"
     ],
     "explanation": "La laïcité impose aux agents du service public une stricte neutralité : un enseignant de l'école publique ne peut porter aucun signe religieux dans l'exercice de ses fonctions, même discret. Les élèves ne sont pas tenus à cette neutralité, mais la loi du 15 mars 2004 leur interdit les signes religieux ostensibles dans les écoles, collèges et lycées publics.",
     "answers": [
-      "Non, les agents du service public sont soumis au principe de neutralité religieuse"
+      "Non, les agents du service public doivent rester neutres en matière religieuse"
     ],
     "group": "laicite-ecole",
     "source": {
@@ -6372,13 +6342,13 @@
     ],
     "question": "Des parents d'élèves refusent que leur enfant suive certains cours d'éducation civique pour des raisons religieuses. L'école peut-elle accepter ?",
     "distractors": [
-      "Oui, si les parents en font la demande écrite",
-      "Oui, si la religion de l'élève est reconnue par l'État",
-      "Cela dépend du directeur de l'établissement"
+      "Oui, si les parents en font la demande écrite, avec un motif religieux",
+      "Oui, à condition que la religion de l'élève soit reconnue par l'État",
+      "Non, car l'éducation civique est la seule matière obligatoire à l'école"
     ],
     "explanation": "L'école publique est laïque et ses programmes s'imposent à tous : les convictions religieuses ne permettent pas de refuser une matière inscrite à l'emploi du temps. L'instruction en famille n'est possible que sur autorisation, pour des motifs limités fixés par la loi (santé, handicap, activité sportive ou artistique intensive, itinérance, éloignement, situation propre à l'enfant).",
     "answers": [
-      "Non, les programmes scolaires s'imposent à tous les élèves quelles que soient leurs convictions"
+      "Non, les programmes s'imposent à tous les élèves, quelles que soient leurs convictions"
     ],
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/laicite/la-laicite-a-ecole-1/",
@@ -6397,8 +6367,8 @@
     "question": "Lors d'une réunion publique, un orateur tient des propos appelant à la haine contre un groupe religieux. Est-ce protégé par la liberté d'expression ?",
     "distractors": [
       "Oui, la liberté d'expression est absolue dans les réunions publiques",
-      "Oui, si les propos ne visent pas une personne nommément",
-      "Cela dépend du contexte et du lieu de la réunion"
+      "Non, car critiquer une religion est un délit en France",
+      "Oui, si les propos ne visent pas une personne nommément"
     ],
     "explanation": "La liberté d'expression a des limites fixées par la loi. Les propos incitant à la haine, à la discrimination ou à la violence envers une personne ou un groupe en raison de sa religion, son origine, son sexe ou son orientation sexuelle constituent un délit.",
     "answers": [
@@ -6420,9 +6390,9 @@
     ],
     "question": "Votre enfant souhaite changer de religion. Quel est son droit en France ?",
     "distractors": [
-      "Il doit attendre sa majorité (18 ans) pour en avoir le droit",
-      "Un seul de ses parents peut décider de sa religion, sans l'autre",
-      "Ce droit n'existe pas, la religion est déterminée par la famille"
+      "Il est libre de sa religion, mais seulement à partir de 18 ans, avec l'accord de ses parents",
+      "Il est libre de sa religion, mais un seul de ses parents décide de son éducation, sans l'autre",
+      "Il n'est pas libre de sa religion, car elle est déterminée par la famille de l'enfant"
     ],
     "explanation": "La liberté de conscience et de religion est garantie à toute personne, enfants compris. Tant que l'enfant est mineur, son éducation religieuse est un acte important de l'autorité parentale : elle demande l'accord de ses deux parents, qui doivent l'associer aux décisions selon son âge et sa maturité.",
     "group": "autorite-parentale",
@@ -6447,7 +6417,7 @@
     "distractors": [
       "Oui, les partis politiques sont libres de choisir leurs candidats",
       "Oui, si cela vise à corriger des inégalités historiques",
-      "Cela dépend des statuts internes du parti"
+      "Non, car un parti doit présenter des candidats de plusieurs religions"
     ],
     "explanation": "Le principe d'égalité interdit toute discrimination fondée sur l'origine ethnique, y compris dans la sélection de candidats politiques. En France, les partis politiques doivent respecter le cadre légal anti-discrimination.",
     "answers": [
@@ -6471,7 +6441,7 @@
     "distractors": [
       "Oui, les régions ont une large autonomie législative",
       "Oui, depuis la décentralisation de 1982",
-      "Cela dépend des domaines : fédérale pour certains, unitaire pour d'autres"
+      "Non, mais les régions votent leurs propres lois comme dans un État fédéral"
     ],
     "explanation": "Selon l'article 1er de la Constitution, « La France est une République indivisible ». Contrairement aux États fédéraux (comme l'Allemagne ou les États-Unis), les régions françaises n'ont pas de pouvoir législatif propre.",
     "answers": [
@@ -6494,12 +6464,12 @@
     "question": "Votre employeur vous remet un contrat de travail et un règlement intérieur rédigés uniquement en anglais. Est-ce légal ?",
     "distractors": [
       "Oui, l'employeur est libre de choisir la langue de ses documents",
-      "Oui, si l'entreprise est une multinationale",
+      "Non, car ils doivent être rédigés à la fois en français et en anglais",
       "Cela dépend de ce que prévoit le contrat de travail"
     ],
     "explanation": "La loi Toubon de 1994 et le Code du travail imposent le français pour le contrat de travail, le règlement intérieur et tout document qui comporte des obligations pour le salarié ; une traduction peut y être jointe. En revanche, la loi ne règle pas la langue parlée entre collègues.",
     "answers": [
-      "Non, ces documents doivent être rédigés en français"
+      "Non, le contrat et le règlement intérieur doivent être rédigés en français"
     ],
     "group": "textes-travail",
     "source": {
@@ -6566,9 +6536,9 @@
     ],
     "question": "Un candidat à une élection vous propose de l'argent pour voter pour lui. Que devez-vous faire ?",
     "distractors": [
-      "Accepter, le vote reste secret et personnel",
-      "Prendre l'argent et voter selon votre conscience",
-      "Ne rien faire, cela ne vous concerne pas directement"
+      "Accepter l'argent, puisque le vote reste secret et que personne ne le saura",
+      "Prendre l'argent et voter selon votre conscience, ce n'est qu'un cadeau",
+      "Ne rien faire, ce n'est pas votre rôle de signaler ce genre de faits"
     ],
     "explanation": "L'achat de votes est un délit électoral grave. L'accepter est également punissable. Les citoyens peuvent signaler ces faits au procureur de la République. Le vote doit rester libre et indépendant de toute pression ou avantage matériel.",
     "answers": [
@@ -6638,9 +6608,9 @@
     ],
     "question": "Vous souhaitez contester une loi votée par le Parlement car vous la trouvez inconstitutionnelle. Quel recours existe ?",
     "distractors": [
-      "Adresser une pétition directement au président de la République",
-      "Saisir la Cour européenne des droits de l'homme directement",
-      "Organiser un référendum d'initiative citoyenne"
+      "Saisir directement le Conseil constitutionnel (Conseil des sages) par courrier",
+      "Saisir directement la Cour européenne des droits de l'homme (CEDH)",
+      "Organiser un référendum d'initiative citoyenne (RIC) pour abroger la loi"
     ],
     "explanation": "La QPC (question prioritaire de constitutionnalité) permet, au cours d'un procès, de soutenir qu'une loi appliquée à son affaire porte atteinte aux droits et libertés garantis par la Constitution. Le juge la transmet au Conseil d'État ou à la Cour de cassation, qui peut saisir le Conseil constitutionnel ; on ne peut pas saisir directement le Conseil constitutionnel.",
     "answers": [
@@ -6735,13 +6705,13 @@
     ],
     "question": "Vous entendez parler d'une dissolution de l'Assemblée nationale. Qui a ce pouvoir ?",
     "distractors": [
-      "Le Premier ministre, avec l'accord du Sénat",
-      "Le Conseil constitutionnel en cas de crise grave",
-      "Le président de l'Assemblée nationale lui-même"
+      "Le Premier ministre, qui doit d'abord obtenir l'accord du Sénat",
+      "Le Conseil constitutionnel, en cas de crise institutionnelle grave",
+      "Le président de l'Assemblée nationale, qui peut dissoudre sa propre assemblée"
     ],
     "explanation": "Selon l'article 12 de la Constitution, le président de la République peut dissoudre l'Assemblée nationale. Il doit au préalable consulter le Premier ministre et les présidents des deux assemblées. Cette mesure entraîne l'organisation de nouvelles élections législatives.",
     "answers": [
-      "Le président de la République"
+      "Le président de la République, après des consultations obligatoires"
     ],
     "source": {
       "url": "https://www.conseil-constitutionnel.fr/le-bloc-de-constitutionnalite/texte-integral-de-la-constitution-du-4-octobre-1958-en-vigueur",
@@ -6790,7 +6760,7 @@
     ],
     "explanation": "Le maire est le représentant de la commune et gère les services de proximité. C'est l'interlocuteur naturel pour les questions liées à la vie quotidienne locale. Le conseil municipal vote le budget et les grandes décisions communales.",
     "answers": [
-      "Le maire et le conseil municipal, élus de la commune"
+      "Le maire et le conseil municipal"
     ],
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/organisation-de-la-republique-fran%C3%A7aise/le-decoupage-administratif-de-la-france-1/",
@@ -6809,7 +6779,7 @@
     "question": "Votre région souhaite adopter une loi propre à son territoire, différente de la loi nationale. Est-ce possible ?",
     "distractors": [
       "Oui, les régions ont une large autonomie législative depuis 2003",
-      "Oui, dans certains domaines comme le tourisme et la culture",
+      "Non, car ce sont les départements qui votent les lois locales",
       "Oui, si le conseil régional la vote à l'unanimité"
     ],
     "explanation": "La France est un État unitaire. Les régions ont des compétences administratives (formation, transports, développement économique) mais ne peuvent pas créer leurs propres lois. Seul le Parlement national vote les lois applicables sur tout le territoire.",
@@ -6832,13 +6802,13 @@
     ],
     "question": "Vous entendez parler du « 49-3 ». À quoi cela correspond-il ?",
     "distractors": [
-      "Un article autorisant le président à gouverner par décrets",
-      "Une procédure d'urgence pour convoquer des élections anticipées",
-      "Un article permettant au Sénat de bloquer définitivement une loi"
+      "Un article autorisant le président de la République à gouverner seul par décrets pendant un an",
+      "Une procédure d'urgence permettant au président de convoquer des élections anticipées",
+      "Un article permettant au Sénat de bloquer définitivement n'importe quelle loi de l'Assemblée"
     ],
     "explanation": "L'article 49, alinéa 3, de la Constitution permet au Premier ministre d'engager la responsabilité du Gouvernement sur un texte : le budget de l'État, celui de la Sécurité sociale, ou un autre texte par session. Le texte est alors considéré comme adopté sans vote, sauf si une motion de censure, déposée dans les 24 heures, est votée par la majorité des députés : le Gouvernement est alors renversé.",
     "answers": [
-      "Une procédure permettant au gouvernement de faire passer un texte sans vote de l'Assemblée nationale"
+      "Une procédure permettant au gouvernement de faire adopter un texte sans vote de l'Assemblée"
     ],
     "source": {
       "url": "https://www.conseil-constitutionnel.fr/le-bloc-de-constitutionnalite/texte-integral-de-la-constitution-du-4-octobre-1958-en-vigueur",
@@ -6911,7 +6881,7 @@
     ],
     "explanation": "La Déclaration des droits de l'homme et du citoyen a été adoptée le 26 août 1789 par l'Assemblée nationale constituante, pendant la Révolution française. Elle proclame les droits fondamentaux et fait toujours partie du bloc de constitutionnalité français.",
     "answers": [
-      "En 1789"
+      "En 1789, peu après la prise de la Bastille"
     ],
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-regimes-politiques-depuis-1789/la-fin-de-la-monarchie-absolue-et-le-debut-de-la-iere-republique-1789-1792/",
@@ -7030,12 +7000,12 @@
     "question": "Votre enfant vous demande pourquoi le 8 mai est un jour férié en France. Que lui répondez-vous ?",
     "distractors": [
       "Il commémore la fin de la Première Guerre mondiale en 1918",
-      "Il célèbre la fondation de l'Union européenne",
-      "Il marque l'anniversaire de la Déclaration des droits de l'homme"
+      "Il célèbre la naissance de l'Union européenne et de l'euro en 1999",
+      "Il marque l'anniversaire de la Déclaration des droits de l'homme en 1789"
     ],
     "explanation": "Le 8 mai 1945 marque la capitulation de l'Allemagne nazie et la fin de la Seconde Guerre mondiale en Europe. C'est la fête de la Victoire. Le 11 novembre commémore quant à lui l'armistice de 1918 qui a mis fin à la Première Guerre mondiale.",
     "answers": [
-      "Il commémore la capitulation de l'Allemagne nazie et la victoire des Alliés en Europe en 1945"
+      "Il commémore la capitulation de l'Allemagne nazie en Europe en 1945"
     ],
     "group": "8-mai",
     "source": {
@@ -7276,7 +7246,7 @@
     "distractors": [
       "Oui, l'employeur peut modifier le contrat librement",
       "Oui, s'il vous prévient simplement par oral la veille",
-      "Oui, s'il en informe d'abord l'inspection du travail"
+      "Non, car ces éléments sont fixés une fois pour toutes à la signature"
     ],
     "explanation": "Le salaire et la durée du travail sont des éléments essentiels du contrat : l'employeur peut seulement proposer de les modifier, et le salarié doit donner son accord. S'il refuse, l'employeur renonce ou engage un licenciement. Pour un motif économique, le salarié a un mois pour refuser ; passé ce délai, son silence vaut acceptation. Un simple changement des conditions de travail (tâches, certains horaires) peut en revanche être imposé.",
     "answers": [
@@ -7322,9 +7292,9 @@
     ],
     "question": "Vous recevez un courrier d'une administration vous réclamant un document que vous avez déjà envoyé. Que pouvez-vous invoquer ?",
     "distractors": [
-      "Rien, il faut renvoyer le document à chaque demande",
-      "La prescription administrative de 5 ans",
-      "Votre droit au silence administratif"
+      "Le principe « Silence vaut acceptation »",
+      "Le principe « Nul n'est censé ignorer la loi »",
+      "Le principe « Un dossier, un guichet »"
     ],
     "explanation": "Selon le principe « Dites-le-nous une fois » (article L113-12 du code des relations entre le public et l'administration), l'administration ne peut pas vous obliger à fournir des informations qu'elle détient déjà ou qu'elle peut obtenir directement auprès d'une autre administration. Vous pouvez le lui signaler plutôt que de renvoyer le document.",
     "answers": [
@@ -7370,13 +7340,13 @@
     ],
     "question": "Vous souhaitez faire garder votre enfant de 2 ans. Quels modes de garde sont possibles en France ?",
     "distractors": [
-      "Uniquement les crèches municipales gérées par la mairie",
-      "Seules les nounous non agréées sont autorisées avant 3 ans",
-      "L'école maternelle publique à partir de 2 ans dans tous les cas"
+      "Crèche collective, microcrèche ou halte-garderie, car la garde à domicile est interdite",
+      "Crèche collective ou école maternelle, obligatoire pour tous les enfants dès 2 ans",
+      "Assistante maternelle ou garde à domicile, car la crèche n'accueille les enfants qu'à 3 ans"
     ],
     "explanation": "Plusieurs modes de garde existent pour les enfants de moins de 3 ans : crèche collective ou familiale, assistante maternelle agréée, garde à domicile, microcrèche. Des aides financières (CMG, PAJE) de la CAF peuvent compléter le financement.",
     "answers": [
-      "Crèche collective, assistante maternelle agréée, garde à domicile ou microcrèche"
+      "Crèche, microcrèche, assistante maternelle agréée ou garde à domicile, avec des aides possibles"
     ],
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/parentalite/les-modes-de-garde-des-enfants-de-moins-de-3-ans/",
@@ -7442,9 +7412,9 @@
     ],
     "question": "Votre enfant de 12 ans commet un délit. Peut-il être poursuivi pénalement ?",
     "distractors": [
-      "Non, la responsabilité pénale commence à 18 ans",
-      "Non, seuls les parents sont responsables et poursuivis",
-      "Oui, il peut être jugé comme un adulte dès 13 ans"
+      "Seulement s'il a plus de 10 ans, et sans aucune mesure éducative avant 13 ans",
+      "Seulement si ses parents l'acceptent, et sans possibilité de jugement avant 18 ans",
+      "Seulement si le délit est grave, et avec les mêmes peines qu'un adulte dès 13 ans"
     ],
     "explanation": "Depuis le Code de la justice pénale des mineurs (2021), un mineur de moins de 13 ans est présumé ne pas avoir de discernement : en principe, il ne peut pas être poursuivi. S'il est établi qu'il comprenait ses actes, il peut l'être devant la justice des mineurs, mais il n'encourt aucune peine : seules des mesures éducatives sont possibles. À partir de 13 ans, une peine adaptée à son âge peut être prononcée. Les parents restent responsables des dommages causés par leur enfant.",
     "answers": [
@@ -7490,9 +7460,9 @@
     ],
     "question": "Un commerçant refuse d'accepter vos pièces de monnaie en euros comme paiement. A-t-il le droit ?",
     "distractors": [
-      "Oui, les commerçants peuvent refuser les pièces de monnaie",
-      "Oui, s'il affiche un panneau l'indiquant à l'entrée",
-      "Oui, pour les pièces de moins de 1 euro uniquement"
+      "Oui, les commerçants peuvent refuser les pièces de monnaie quand ils le souhaitent",
+      "Non, car un commerçant doit accepter les pièces sans limite de nombre",
+      "Oui, pour les pièces de moins de 1 euro uniquement, quel que soit le montant"
     ],
     "explanation": "Les billets et pièces en euros ont cours légal : un commerçant ne peut pas refuser d'être payé en espèces, sous peine d'amende. Il existe des exceptions : il peut refuser plus de 50 pièces pour un même paiement, des espèces fausses ou en mauvais état, et il peut exiger que vous fassiez l'appoint.",
     "answers": [
@@ -7514,9 +7484,9 @@
     ],
     "question": "Vous découvrez par hasard une information confidentielle de votre employeur. Pouvez-vous la divulguer à la presse ?",
     "distractors": [
-      "Oui, la liberté d'expression prime toujours sur le secret professionnel",
-      "Oui, si votre employeur ne vous a pas demandé explicitement de le taire",
-      "Non, dans tous les cas et sans aucune exception"
+      "En principe oui, sauf si votre employeur vous l'a interdit par écrit",
+      "En principe non, sauf si vous avez quitté l'entreprise depuis plus d'un an",
+      "En principe oui, sauf pour les secrets de fabrication de l'entreprise"
     ],
     "explanation": "Un salarié doit respecter la confidentialité des informations de son entreprise. La loi protège toutefois les lanceurs d'alerte, qui signalent de bonne foi et sans contrepartie financière directe un crime, un délit ou une menace pour l'intérêt général. Le signalement se fait d'abord à l'employeur ou à une autorité (par exemple le Défenseur des droits). La divulgation publique, à la presse, n'est protégée que dans certains cas : signalement resté sans suite, danger grave et imminent, risque de représailles…",
     "answers": [
@@ -7563,9 +7533,9 @@
     ],
     "question": "Vous êtes arrêté en état d'ivresse au volant. Quelles sont les conséquences possibles ?",
     "distractors": [
-      "Uniquement une amende si c'est la première fois",
-      "Seulement un avertissement si le taux est légèrement dépassé",
-      "Aucune conséquence si vous n'avez pas causé d'accident"
+      "Amende de 35 euros, retrait d'un seul point et simple rappel à la loi sur place",
+      "Simple avertissement, sans retrait de points ni amende, quand il n'y a pas eu d'accident",
+      "Retrait de 3 points, sans amende ni suspension possible du permis"
     ],
     "explanation": "Il est interdit de conduire avec 0,5 g d'alcool par litre de sang ou plus (0,2 g/L en permis probatoire). Jusqu'à 0,8 g/L, c'est une contravention : amende (135 € en général), retrait de 6 points, suspension possible du permis. À partir de 0,8 g/L, c'est un délit : jusqu'à 3 ans de prison et 9 000 € d'amende, 6 points retirés, suspension ou annulation du permis. Ces sanctions s'appliquent même sans accident.",
     "answers": [
@@ -7587,13 +7557,13 @@
     ],
     "question": "Vous recevez un email vous demandant vos coordonnées bancaires au nom d'un organisme officiel. Que faites-vous ?",
     "distractors": [
-      "Répondre si l'email semble officiel et professionnel",
-      "Appeler le numéro indiqué dans l'email pour vérifier",
-      "Cliquer sur le lien pour vérifier que le site est sécurisé"
+      "Répondre si l'email semble officiel, puis vérifier que le site est sécurisé",
+      "Appeler le numéro indiqué dans l'email, puis donner vos coordonnées pour vérifier",
+      "Cliquer sur le lien, vérifier que le site est sécurisé et saisir vos coordonnées"
     ],
     "explanation": "Il s'agit d'un hameçonnage (phishing), un délit : des escrocs se font passer pour une banque ou une administration pour voler vos données. Un organisme officiel ne vous demande pas vos coordonnées bancaires par courriel. Ne répondez pas, ne cliquez sur aucun lien et signalez le message, par exemple sur Signal Spam. Si vous avez déjà donné vos coordonnées, prévenez votre banque pour faire opposition ; vous pouvez aussi porter plainte et vous faire aider par 17Cyber.",
     "answers": [
-      "Ne pas répondre, ne pas cliquer et signaler le message (par exemple sur Signal Spam)"
+      "Ne pas répondre, ne pas cliquer et signaler le message, par exemple sur Signal Spam"
     ],
     "source": {
       "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F34800",
@@ -7632,8 +7602,8 @@
     "question": "Votre enfant est victime de harcèlement à l'école. Que devez-vous faire ?",
     "distractors": [
       "Ignorer la situation, les enfants règlent leurs conflits seuls",
-      "Contacter directement le harceleur et sa famille sans impliquer l'école",
-      "Porter plainte immédiatement à la police sans en informer l'école"
+      "Contacter directement le harceleur et sa famille pour régler cela vous-même",
+      "Attendre 2 ou 3 mois que cela passe, puis changer votre enfant d'école"
     ],
     "explanation": "Face au harcèlement scolaire, il faut d'abord alerter l'établissement. Le 3018 est le numéro national, gratuit et anonyme, contre le harcèlement à l'école et le cyberharcèlement. En cas de faits graves, une plainte peut aussi être déposée.",
     "answers": [
@@ -7729,12 +7699,12 @@
     "question": "Dans un service public, un agent vous refuse l'accès à un dossier vous concernant. Avez-vous un recours ?",
     "distractors": [
       "Non, l'administration est souveraine dans ses décisions internes",
-      "Oui, mais uniquement devant le Conseil d'État",
+      "Oui, mais uniquement en saisissant le Conseil d'État directement",
       "Non, les dossiers administratifs sont toujours confidentiels"
     ],
     "explanation": "Toute personne a le droit d'accéder aux documents administratifs la concernant. En cas de refus, la CADA peut être saisie gratuitement. Elle émet un avis sur la communicabilité du document, et en cas de maintien du refus, le tribunal administratif peut être saisi.",
     "answers": [
-      "Oui, vous pouvez saisir la CADA (Commission d'accès aux documents administratifs)"
+      "Oui, vous pouvez saisir la Commission d'accès aux documents administratifs"
     ],
     "source": {
       "url": "https://www.cada.fr/particulier/quand-et-comment-saisir-la-cada",
@@ -7753,12 +7723,12 @@
     "question": "Votre employeur souhaite connaître vos opinions politiques lors d'un entretien d'embauche. A-t-il le droit de vous poser cette question ?",
     "distractors": [
       "Oui, l'employeur a le droit de connaître les valeurs de ses futurs employés",
-      "Oui, si le poste concerne des fonctions sensibles ou publiques",
-      "Cela dépend de la convention collective applicable"
+      "Non, car cette question ne peut lui être posée que par écrit",
+      "Oui, si le poste concerne des fonctions sensibles ou publiques"
     ],
     "explanation": "Les questions relatives aux opinions politiques, religieuses ou syndicales sont interdites lors d'un entretien d'embauche car elles relèvent de la vie privée et pourraient conduire à des discriminations. L'employeur ne peut poser que des questions en lien direct avec le poste.",
     "answers": [
-      "Non, les opinions politiques font partie de la vie privée et ne peuvent pas être demandées à l'embauche"
+      "Non, les opinions politiques relèvent de la vie privée et ne peuvent pas être demandées"
     ],
     "group": "discriminations",
     "source": {
@@ -7777,13 +7747,13 @@
     ],
     "question": "Vous entendez parler du Conseil économique, social et environnemental (CESE). Quel est son rôle ?",
     "distractors": [
-      "C'est la troisième chambre du Parlement qui vote les lois sociales",
-      "C'est le tribunal compétent pour les litiges environnementaux",
-      "C'est l'organisme qui gère le budget de l'État avec le Parlement"
+      "C'est une chambre du Parlement qui vote les lois sociales avec les députés",
+      "C'est le tribunal compétent pour les litiges environnementaux entre entreprises et citoyens",
+      "C'est l'organisme qui gère le budget de l'État et le contrôle avec les parlementaires"
     ],
     "explanation": "Le Conseil économique, social et environnemental (CESE) est la troisième assemblée constitutionnelle française. Il a un rôle consultatif : il rend des avis sur les politiques économiques, sociales et environnementales à la demande du gouvernement ou du Parlement, et peut être saisi par voie de pétition citoyenne.",
     "answers": [
-      "C'est une assemblée consultative qui représente la société civile et conseille le gouvernement et le Parlement"
+      "C'est une assemblée consultative qui représente la société civile auprès des pouvoirs publics"
     ],
     "source": {
       "url": "https://www.conseil-constitutionnel.fr/le-bloc-de-constitutionnalite/texte-integral-de-la-constitution-du-4-octobre-1958-en-vigueur",
@@ -7826,9 +7796,9 @@
     ],
     "question": "Vous êtes témoin d'un acte raciste dans le bus. Quelle est la bonne attitude ?",
     "distractors": [
-      "Ne pas intervenir pour ne pas aggraver la situation",
-      "Filmer uniquement pour servir de preuve plus tard",
-      "Changer de place et faire comme si vous n'aviez rien vu"
+      "Ne pas intervenir, attendre 2 ou 3 arrêts, et descendre discrètement du bus",
+      "Filmer la scène, la publier sur les réseaux sociaux, et attendre que cela cesse",
+      "S'interposer physiquement, pousser l'auteur hors du bus, et partir aussitôt"
     ],
     "explanation": "Témoin d'un acte raciste, vous devez agir sans vous mettre en danger : alerter le conducteur ou un agent, appeler le 17 si la situation l'exige, écouter et soutenir la victime, et l'orienter vers de l'aide. Vous pourrez ensuite témoigner auprès de la police si elle porte plainte. Ne pas porter secours à une personne en danger est un délit.",
     "answers": [
@@ -7902,11 +7872,12 @@
       "Le droit d'exprimer ses opinions librement, dans le respect des limites fixées par la loi"
     ],
     "distractors": [
-      "Le droit de mentir sur une personne si c'est pour une bonne cause",
+      "Le droit de tout dire et de tout publier, y compris des insultes ou des appels à la haine",
       "Le droit de s'exprimer librement, mais seulement pour les journalistes et les artistes",
-      "Le droit d'insulter une personne au nom de ses opinions",
-      "Le droit de tenir des propos racistes, à condition de dire que c'est son opinion personnelle",
-      "Le droit d'appeler à la violence contre une religion"
+      "Le droit d'exprimer ses opinions, dans le respect des décisions du Gouvernement",
+      "Le droit d'exprimer ses opinions librement, dans le respect de la religion majoritaire",
+      "Le droit de s'exprimer librement, dans le respect des limites fixées par chaque employeur",
+      "Le droit d'exprimer ses opinions, dans le respect des limites fixées par les médias"
     ],
     "explanation": "La liberté d'expression est garantie par la Déclaration des droits de l'homme et du citoyen de 1789 : chacun peut avoir ses opinions, même religieuses, et peut parler, écrire et publier librement. Elle a des limites fixées par la loi : les insultes ou propos haineux envers des personnes, l'incitation à la haine, à la violence ou à la discrimination et la négation de la Shoah sont punis.",
     "group": "liberte-expression",
@@ -8590,12 +8561,12 @@
       "Oui, la liberté de conscience permet de changer de religion"
     ],
     "distractors": [
-      "Non, on garde la religion déclarée à la naissance",
-      "Oui, mais une seule fois dans sa vie",
-      "Non, sauf avec une autorisation de la préfecture",
-      "Oui, mais il faut en informer la mairie",
-      "Oui, mais uniquement pour une religion reconnue par l'État",
-      "Oui, mais avec un acte signé chez un notaire"
+      "Non, on garde la religion déclarée à la naissance et on ne peut pas en changer",
+      "Non, il faut une autorisation de la préfecture pour changer de religion",
+      "Oui, mais on ne peut changer de religion qu'une seule fois dans sa vie",
+      "Oui, mais il faut informer la mairie de son changement de religion",
+      "Oui, en signant chez un notaire l'acte de changement de religion",
+      "Oui, mais uniquement pour une religion reconnue par l'État"
     ],
     "explanation": "La laïcité garantit la liberté de conscience : chaque personne est libre d'avoir ou de ne pas avoir de religion, d'en changer ou de ne plus en avoir. Aucune autorisation ni déclaration n'est nécessaire, et personne ne peut être obligé de suivre les règles d'une religion.",
     "group": "laicite",
@@ -9010,11 +8981,12 @@
       "Conduire la politique de la nation et diriger l'administration"
     ],
     "distractors": [
-      "Voter les lois et contrôler le président",
-      "Rendre la justice dans toute la France",
-      "Nommer les maires des communes",
-      "Élire les sénateurs",
-      "Contrôler l'application de la Constitution"
+      "Voter les lois et contrôler l'action du président",
+      "Rendre la justice et contrôler l'application des peines",
+      "Nommer les maires des communes et diriger les conseils municipaux",
+      "Élire les sénateurs et contrôler le budget de la nation",
+      "Contrôler l'application de la Constitution et diriger le Parlement",
+      "Juger les crimes et diriger les tribunaux de commerce"
     ],
     "explanation": "Le Gouvernement, composé du Premier ministre et des ministres, conduit la politique nationale, intérieure et extérieure. Avec le président de la République, il dirige l'administration et applique les lois votées par le Parlement.",
     "group": "pouvoir-executif",
@@ -9575,11 +9547,12 @@
       "L'intérêt général, l'ordre public et les libertés des autres"
     ],
     "distractors": [
-      "L'intérêt du Gouvernement, la volonté du président et celle de sa majorité",
-      "Les traditions religieuses, les coutumes locales et les croyances de chacun",
-      "L'intérêt économique de l'État et des entreprises",
-      "La décision personnelle de chaque maire",
-      "La volonté de la majorité des habitants"
+      "L'intérêt des entreprises, l'ordre économique et la liberté du commerce",
+      "L'intérêt de la majorité, la tradition nationale et les libertés des élus",
+      "L'intérêt de l'État, la sécurité des élus et les libertés des administrations",
+      "L'intérêt des partis, l'ordre moral et les libertés de la presse",
+      "La volonté des maires, les usages locaux et les libertés des habitants",
+      "L'intérêt des familles, l'ordre religieux et les libertés des parents"
     ],
     "explanation": "Les droits et libertés ont des limites pour protéger la vie en société : ils sont limités par l'intérêt général, par les libertés des autres, par la défense de l'ordre public (sécurité, tranquillité, salubrité) et par le respect de la dignité humaine.",
     "group": "limites-libertes",
@@ -9652,11 +9625,12 @@
       "Oui, c'est un droit pour toute femme, dans un cadre réglementé"
     ],
     "distractors": [
-      "Non, l'avortement est interdit en France",
-      "Oui, mais seulement avec l'accord du conjoint",
-      "Oui, mais seulement pour les femmes majeures",
-      "Oui, mais seulement avec l'autorisation des parents pour les mineures",
-      "Oui, mais il n'est jamais remboursé"
+      "Non, c'est interdit en France, comme dans la plupart des pays",
+      "Non, c'est une infraction, punie par la loi",
+      "Oui, c'est un droit pour toute femme majeure, avec l'accord du conjoint",
+      "Oui, c'est un droit pour toute femme, avec l'autorisation d'un juge",
+      "Oui, c'est un droit pour toute femme, mais il n'est jamais remboursé",
+      "Non, c'est une faute, passible d'une amende"
     ],
     "explanation": "Chaque femme peut avoir recours à l'IVG (interruption volontaire de grossesse) dans un cadre réglementé. L'avortement n'est plus puni par la loi depuis la loi Veil du 17 janvier 1975, et le droit d'y recourir est inscrit dans la Constitution depuis le 4 mars 2024.",
     "group": "ivg",
@@ -9930,13 +9904,15 @@
     "crNumber": 108,
     "question": "Qui peut demander à avorter ?",
     "answers": [
-      "Toute femme, sans condition d'âge"
+      "Toute femme, sans condition d'âge ni accord du conjoint"
     ],
     "distractors": [
-      "Seulement les femmes majeures",
-      "Seulement les femmes mariées",
-      "Seulement les femmes qui ont l'accord de leur conjoint",
-      "Seulement les mineures accompagnées de leurs parents"
+      "Toute femme majeure, avec l'accord écrit de son conjoint",
+      "Seulement les femmes majeures, sur avis d'un juge",
+      "Toute femme mariée, avec l'accord de son mari",
+      "Les femmes de plus de 16 ans, avec l'accord des parents",
+      "Toute femme, sans condition d'âge ni de délai de grossesse",
+      "Les femmes de plus de 18 ans, avec une ordonnance du médecin"
     ],
     "explanation": "Toute femme peut demander une IVG, sans condition d'âge. Les mineures n'ont pas besoin d'une autorisation parentale mais doivent être accompagnées d'une personne majeure de leur choix. L'accord du partenaire n'est pas nécessaire.",
     "group": "ivg",
@@ -10210,10 +10186,11 @@
       "La limitation des déplacements pendant l'état d'urgence sanitaire de 2020"
     ],
     "distractors": [
-      "L'interdiction pour les citoyens de critiquer le Gouvernement pendant une crise",
-      "L'obligation de pratiquer une religion pour préserver l'ordre public",
-      "L'interdiction de se déplacer selon son origine",
-      "La fermeture d'un journal par le Gouvernement"
+      "La limitation du droit de critiquer le Gouvernement pendant la crise de 2020",
+      "L'obligation de pratiquer une religion pour préserver l'ordre public en 2015",
+      "La limitation de l'accès aux hôpitaux selon l'origine des personnes, décidée en 2018",
+      "La limitation de la presse par la fermeture d'un journal décidée en 2016",
+      "La limitation du droit de vote des femmes pendant l'état d'urgence de 2015"
     ],
     "explanation": "Les libertés peuvent être limitées par l'intérêt général. Par exemple, l'état d'urgence sanitaire mis en place contre le Covid-19 en mars 2020 a limité la liberté d'aller et venir, la liberté d'entreprendre et la liberté de réunion.",
     "group": "limites-libertes",
@@ -12252,10 +12229,11 @@
       "Tous les enfants scolarisés qui le souhaitent"
     ],
     "distractors": [
-      "Les enfants dont les deux parents travaillent",
-      "Les enfants de nationalité française",
-      "Les enfants de familles à faibles revenus",
-      "Les enfants qui habitent loin de l'école"
+      "Seuls les enfants scolarisés dont les deux parents travaillent",
+      "Les enfants scolarisés de nationalité française",
+      "Tous les enfants scolarisés de familles à faibles revenus",
+      "Tous les enfants scolarisés qui habitent loin de l'école",
+      "Les enfants scolarisés âgés de plus de 6 ans"
     ],
     "explanation": "Quand l'école a une cantine, tous les enfants scolarisés qui le souhaitent peuvent y manger. On ne peut pas refuser un enfant à cause de sa situation ou de celle de sa famille.",
     "group": "cantine",

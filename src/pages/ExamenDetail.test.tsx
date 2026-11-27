@@ -150,12 +150,14 @@ function renderWithState(id: string) {
 describe('ExamenDetail — revoir ses erreurs', () => {
   beforeEach(() => localStorage.clear())
 
-  // Questions 1 à 4 de la liste : 2 bonnes, 1 fausse, 1 sans réponse
+  // Questions 1 à 4 de la liste : 2 bonnes, 1 fausse, 1 sans réponse. Format d'un examen
+  // enregistré depuis la v1.22.1 : `answer` (la question 2 a plusieurs bonnes réponses, sans
+  // `answer` le détail les liste toutes : couvert plus bas).
   const answers = [
     { questionId: QS[0].id, chosen: QS[0].answers[0], correct: true },
-    { questionId: QS[1].id, chosen: 'Mauvaise réponse', correct: false },
+    { questionId: QS[1].id, chosen: 'Mauvaise réponse', correct: false, answer: QS[1].answers[0] },
     { questionId: QS[2].id, chosen: QS[2].answers[0], correct: true },
-    { questionId: QS[3].id, chosen: null, correct: false },
+    { questionId: QS[3].id, chosen: null, correct: false, answer: QS[3].answers[0] },
   ]
   const record: ExamRecord = { ...RECORD, score: 2, total: 4, answers }
 
@@ -280,5 +282,78 @@ describe('ExamenDetail — placement des actions', () => {
     const { review, back, list } = order()
     expect(back).toHaveLength(1)
     expect(review.compareDocumentPosition(list) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy()
+  })
+})
+
+describe('ExamenDetail — bonne réponse proposée', () => {
+  beforeEach(() => localStorage.clear())
+
+  type Q = { id: number; answers: string[] }
+  const questions = allQuestions as Q[]
+  const multi = questions.find((q) => q.answers.length > 1)!
+  const single = questions.find((q) => q.answers.length === 1)!
+
+  function recordWith(answer: Record<string, unknown>): ExamRecord {
+    return {
+      id: RECORD_ID,
+      date: '2026-01-15T10:00:00.000Z',
+      score: 0,
+      total: 40,
+      answers: [{ chosen: null, correct: false, ...answer } as ExamRecord['answers'][number]],
+    }
+  }
+
+  // Décision de l'utilisateur (2026-11-27) : une bonne réponse par ligne, dans une vraie liste
+  // (certaines réponses contiennent des virgules)
+  function expectAcceptedList() {
+    expect(screen.getByText('Bonnes réponses acceptées')).toBeInTheDocument()
+    const items = within(screen.getByText('Bonnes réponses acceptées').closest('div')!).getAllByRole('listitem')
+    expect(items.map((li) => li.textContent)).toEqual(multi.answers)
+  }
+
+  it('affiche la réponse proposée à l\'examen, même si ce n\'est pas la première', () => {
+    const proposed = multi.answers[1]
+    seedHistory(recordWith({ questionId: multi.id, answer: proposed }))
+    renderDetail(RECORD_ID)
+    expect(screen.getByText('Bonne réponse')).toBeInTheDocument()
+    expect(screen.getByText(proposed)).toBeInTheDocument()
+    expect(screen.queryByText('Bonnes réponses acceptées')).not.toBeInTheDocument()
+  })
+
+  it('ancien examen, une seule bonne réponse : inchangé', () => {
+    seedHistory(recordWith({ questionId: single.id }))
+    renderDetail(RECORD_ID)
+    expect(screen.getByText('Bonne réponse')).toBeInTheDocument()
+    expect(screen.getByText(single.answers[0])).toBeInTheDocument()
+  })
+
+  it('ancien examen, plusieurs bonnes réponses : toutes listées', () => {
+    seedHistory(recordWith({ questionId: multi.id }))
+    renderDetail(RECORD_ID)
+    expectAcceptedList()
+  })
+
+  it.each([
+    ['absente des réponses actuelles', 'une réponse retirée des données'],
+    ['illisible (nombre)', 42],
+    ['illisible (objet)', { a: 1 }],
+  ])('answer %s : repli sur la liste, l\'examen reste lu', (_label, bad) => {
+    seedHistory(recordWith({ questionId: multi.id, answer: bad }))
+    renderDetail(RECORD_ID)
+    expectAcceptedList()
+  })
+
+  it('une réponse juste reste inchangée', () => {
+    seedHistory(recordWith({ questionId: multi.id, chosen: multi.answers[1], correct: true, answer: multi.answers[1] }))
+    renderDetail(RECORD_ID)
+    expect(screen.getByText('Bonne réponse, la vôtre')).toBeInTheDocument()
+  })
+
+  it('ne réécrit pas l\'historique stocké', () => {
+    const record = recordWith({ questionId: multi.id, answer: 42 })
+    seedHistory(record)
+    const before = localStorage.getItem('quiz-history')
+    renderDetail(RECORD_ID)
+    expect(localStorage.getItem('quiz-history')).toBe(before)
   })
 })

@@ -11,6 +11,15 @@ test('page « Comment se passe l\'examen »', async ({ page }) => {
   await expectPage(page, "Comment se passe l'examen")
 })
 
+test('page « Trouver un centre d\'examen », liens externes non suivis', async ({ page }) => {
+  await page.goto('/centres')
+  await expect(page.getByRole('heading', { level: 1, name: "Trouver un centre d'examen" })).toBeVisible()
+  await expect(page.getByRole('link', { name: /Voir la carte des centres/ })).toHaveAttribute('target', '_blank')
+  await expectPage(page, "Trouver un centre d'examen")
+  await page.getByRole('link', { name: /Mon parcours/ }).click()
+  await expect(page).toHaveURL(/\/$/)
+})
+
 test('« En savoir plus » de l\'accueil mène à la section « Vos données »', async ({ page }) => {
   await page.goto('/')
   await expectPage(page, 'Accueil')

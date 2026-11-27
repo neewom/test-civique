@@ -111,10 +111,10 @@ describe('Accueil — en-tête et parcours', () => {
     expect(screen.getByRole('link', { name: /Réviser les thèmes/ })).toHaveAttribute('href', '/revision')
   })
 
-  it('l\'étape 3 est annoncée « bientôt », sans lien', () => {
+  it('l\'étape 3 mène à la page « Trouver un centre d\'examen », sans « bientôt »', () => {
     renderHome()
-    expect(screen.queryByRole('link', { name: /Trouver un centre/ })).toBeNull()
-    expect(screen.getByText("3 · Trouver un centre d'examen")).toHaveTextContent('bientôt')
+    expect(screen.getByRole('link', { name: /Trouver un centre/ })).toHaveAttribute('href', '/centres')
+    expect(screen.queryByText(/bientôt/i)).toBeNull()
   })
 
   it('mène à la page « Comment se passe l\'examen »', () => {

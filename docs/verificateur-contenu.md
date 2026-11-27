@@ -31,3 +31,6 @@ Deux fichiers dans `<SCRATCH>` :
 - `verification.md` : synthèse courte (nombre de questions par verdict, liste des `corriger` et des `doute` avec leur raison, liste des questions sans source).
 
 Ton message final au TL : chemin des deux fichiers et la synthèse.
+
+## Forme des réponses (depuis le 2026-11-27)
+En plus du fond, vérifie que la bonne réponse ne se repère pas à sa forme : lance `node scripts/detect-shape-giveaways.mjs <questions.json> <de> <à>` et juge toi-même, en candidat qui ne connaît pas la réponse, sur toutes les combinaisons de 3 distracteurs. Pièges vus à l'audit du 2026-11-27 : un motif présent seulement dans les distracteurs (tous en « sauf… », tous restrictifs, tous niés), un distracteur qui nie la bonne réponse (« sans appeler le 17 »), un distracteur absurde, un chiffre inventé qui se calcule faux.
