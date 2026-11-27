@@ -566,6 +566,26 @@
       "caption": {
         "displayName": "Caption",
         "purpose": "Mention « site indépendant, non officiel »."
+      },
+      "display-sm": {
+        "displayName": "Display (titre visé)",
+        "purpose": "Titre de l'écran du titre visé, un cran sous `display` (interligne 1)."
+      },
+      "headline-sm": {
+        "displayName": "Headline (détail)",
+        "purpose": "Titre du détail d'un examen et de « Examen introuvable » (interlettrage -0.03em)."
+      },
+      "score-unit": {
+        "displayName": "Score, unité",
+        "purpose": "« /40 » après le score de l'écran de résultat."
+      },
+      "score-unit-lg": {
+        "displayName": "Score, unité (grand écran)",
+        "purpose": "« /40 » après le score à partir de 768 px."
+      },
+      "question-done": {
+        "displayName": "Question validée",
+        "purpose": "Énoncé d'une question d'examen une fois la réponse validée (jusqu'à 767 px)."
       }
     },
     "shadows": [

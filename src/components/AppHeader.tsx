@@ -34,7 +34,7 @@ function Setting({
             className={cn(
               'min-h-11 flex-auto rounded-full px-3 text-[0.9375rem] font-bold whitespace-nowrap transition-colors',
               value === i
-                ? 'bg-earth text-[#2c2e2a] dark:text-[#f1eee4]'
+                ? 'bg-earth text-earth-foreground'
                 : 'text-muted-foreground hover:text-foreground',
             )}
           >

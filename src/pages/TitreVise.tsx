@@ -67,7 +67,7 @@ function TitleChoices({
                 optionClass,
                 on
                   ? firstVisit
-                    ? 'bg-earth text-[#2c2e2a] dark:text-[#f1eee4]'
+                    ? 'bg-earth text-earth-foreground'
                     : 'bg-primary text-primary-foreground'
                   : 'bg-card text-card-foreground',
               )}
@@ -85,7 +85,7 @@ function TitleChoices({
                   className={cn(
                     'flex size-10 shrink-0 items-center justify-center rounded-full',
                     on
-                      ? 'bg-[#2c2e2a] text-[#f5e211] dark:bg-[#f1eee4] dark:text-[#121814]'
+                      ? 'bg-primary text-primary-mark'
                       : 'border-[3px] border-muted-foreground/40',
                   )}
                 >
@@ -124,14 +124,14 @@ function MeadowLines() {
       <path
         d="M410 150 C 340 170, 322 240, 346 300 C 356 326, 380 340, 410 340"
         fill="none"
-        className="stroke-[#f5e211] dark:stroke-[#a89a1c]"
+        className="stroke-meadow-line"
         strokeWidth="3"
         strokeLinecap="round"
       />
       <path
         d="M410 110 C 320 130, 296 230, 326 306 C 340 340, 372 362, 410 366"
         fill="none"
-        className="stroke-[#2c2e2a]/25 dark:stroke-[#f1eee4]/20"
+        className="stroke-earth-foreground/25 dark:stroke-earth-foreground/20"
         strokeWidth="2"
         strokeLinecap="round"
       />
@@ -149,13 +149,13 @@ function FirstVisit({ selected, onSelect, onContinue, showError, groupRef }: Cho
   // The scroll margin keeps a focused link or button clear of the sticky bar (WCAG 2.4.11)
   return (
     <main className="relative flex min-h-svh flex-col overflow-clip bg-background text-foreground [&_a]:scroll-mb-36 [&_button]:scroll-mb-36">
-      <div className="relative bg-earth text-[#2c2e2a] dark:text-[#f1eee4]">
+      <div className="relative bg-earth text-earth-foreground">
         <MeadowLines />
         <AppHeader hideBrand />
         <div className="relative mx-auto flex w-full max-w-[30rem] flex-col items-start gap-3 px-[22px] pt-0 pb-4 md:max-w-[34rem] md:px-8">
           <BrandSymbol large className="size-[4.25rem] shrink-0" />
           <p className="text-xl font-bold">
-            <span className="text-[#1f4f15] dark:text-[#8ed462]">Futur</span> Citoyen
+            <span className="text-wordmark">Futur</span> Citoyen
           </p>
           <h1 className="max-w-[19rem] text-[2.375rem] leading-[0.98] font-bold tracking-[-0.04em] text-balance md:max-w-[22rem] md:text-[3rem]">
             Préparez l'examen civique
