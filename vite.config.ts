@@ -2,10 +2,11 @@ import path from 'path'
 import tailwindcss from '@tailwindcss/vite'
 import react from '@vitejs/plugin-react'
 import { configDefaults, defineConfig } from 'vitest/config'
+import { questionPacks } from './vite-question-packs.ts'
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react(), tailwindcss()],
+  plugins: [react(), tailwindcss(), questionPacks()],
   server: {
     // Accès depuis le réseau Tailscale (tailscale serve, voir AGENTS.md) ; le nom exact de la
     // machine reste hors du dépôt public (TAILSCALE_HOST dans .env), d'où le suffixe seul

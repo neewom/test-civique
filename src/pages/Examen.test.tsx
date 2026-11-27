@@ -8,14 +8,8 @@ import { UNSAVED_MESSAGE } from '@/lib/readiness'
 import type { ExamInProgress } from '@/lib/exam-types'
 import { saveProgress, loadProgress, EXAM_PROGRESS_KEY } from '@/lib/exam-types'
 import allQuestions from '@/data/questions.json'
-import {
-  buildExam,
-  questionsForTitle,
-  saveResult,
-  shuffle,
-  formatTime,
-  EXAM_SIZE,
-} from '@/lib/exam'
+import { buildExam, saveResult, shuffle, formatTime, EXAM_SIZE } from '@/lib/exam'
+import { questionsForTitle } from '@/test/questions'
 
 function renderExamen() {
   return render(
@@ -38,7 +32,13 @@ function timeLeft(): number {
 
 // The verdict pill mixes several text nodes: its full text is compared
 function verdictPill(text: string) {
-  return screen.getByText((_, el) => el?.getAttribute('role') === 'status' && el.textContent?.replace(/\s+/g, ' ') === text)
+  // The spoken form of the threshold (« 32 sur 40 », sr-only) is not part of the visible text
+  const visible = (el: Element) => {
+    const copy = el.cloneNode(true) as Element
+    copy.querySelectorAll('.sr-only').forEach((n) => n.remove())
+    return (copy.textContent ?? '').replace(/\s+/g, ' ')
+  }
+  return screen.getByText((_, el) => el?.getAttribute('role') === 'status' && visible(el) === text)
 }
 
 // ─── Fonctions utilitaires ────────────────────────────────────────────────────
@@ -235,7 +235,9 @@ describe('Examen', () => {
     renderExamen()
     await act(async () => { fireEvent.click(getChoices()[0]) })
     await act(async () => { fireEvent.click(screen.getByRole('button', { name: 'Valider ma réponse' })) })
-    getChoices().forEach((btn) => expect(btn).toBeDisabled())
+    // La correction n'est plus un groupe de boutons radio : les cartes sont du contenu
+    expect(screen.queryByRole('radio')).not.toBeInTheDocument()
+    expect(screen.getByText('Bonne réponse')).toBeInTheDocument()
     expect(screen.getByText('Pourquoi')).toBeInTheDocument()
   })
 
@@ -447,14 +449,14 @@ describe('Examen — règles officielles', () => {
   it('affiche « Réussi » à 32/40', async () => {
     renderResumed(makeResume(2, 32))
     await act(async () => { vi.advanceTimersByTime(3000) })
-    expect(screen.getByLabelText('Score : 32 sur 40')).toBeInTheDocument()
+    expect(screen.getByText('Score : 32 sur 40')).toBeInTheDocument()
     expect(verdictPill('Réussi · seuil 32/40')).toBeInTheDocument()
   })
 
   it('affiche « Pas encore réussi » à 31/40 avec le nombre de réponses manquantes', async () => {
     renderResumed(makeResume(2, 31))
     await act(async () => { vi.advanceTimersByTime(3000) })
-    expect(screen.getByLabelText('Score : 31 sur 40')).toBeInTheDocument()
+    expect(screen.getByText('Score : 31 sur 40')).toBeInTheDocument()
     expect(verdictPill('Pas encore réussi · seuil 32/40')).toBeInTheDocument()
     expect(screen.getByText('Encore 1 bonne réponse pour atteindre 32/40')).toBeInTheDocument()
   })
@@ -482,8 +484,9 @@ function renderAt(state: unknown) {
   )
 }
 
+// Le titre commence par « Question n sur 40 : » (texte masqué, lu au lecteur d'écran) : on le retire
 function currentQuestionText(): string {
-  return screen.getByRole('heading', { level: 1 }).textContent?.trim() ?? ''
+  return (screen.getByRole('heading', { level: 1 }).textContent ?? '').replace(/^Question \d+ sur \d+ : /, '').trim()
 }
 
 function historyLength(): number {
@@ -551,7 +554,7 @@ describe('Examen — fiabilité', () => {
   it('« Nouvel examen blanc » après une reprise lance un nouvel examen à 45:00 sans réponse', async () => {
     renderResumed(makeResume(2, 10))
     await act(async () => { vi.advanceTimersByTime(3000) })
-    expect(screen.getByLabelText('Score : 10 sur 40')).toBeInTheDocument()
+    expect(screen.getByText('Score : 10 sur 40')).toBeInTheDocument()
     expect(historyLength()).toBe(1)
 
     await act(async () => {
@@ -583,11 +586,28 @@ describe('Examen — fiabilité', () => {
     expect(questions.filter((q) => situationalIds.has(q.id))).toHaveLength(12)
   })
 
+  it('« Nouvel examen blanc » met le focus sur le titre de la première question (le bouton a disparu)', async () => {
+    renderAt({ start: 'new' })
+    await act(async () => { vi.advanceTimersByTime(GLOBAL_EXAM_TIME * 1000) })
+    await act(async () => {
+      fireEvent.click(screen.getByRole('button', { name: 'Nouvel examen blanc' }))
+    })
+    expect(screen.getByRole('heading', { level: 1 })).toHaveFocus()
+    expect(screen.getByRole('heading', { level: 1 })).toHaveAccessibleName(new RegExp(`^Question 1 sur ${EXAM_SIZE} : `))
+  })
+
+  it('le score du résultat n\'est pas nommé par un aria-label sur un paragraphe (lu « 39 sur 40 »)', async () => {
+    renderAt({ start: 'new' })
+    await act(async () => { vi.advanceTimersByTime(GLOBAL_EXAM_TIME * 1000) })
+    expect(screen.getByText(`Score : 0 sur ${EXAM_SIZE}`)).toHaveClass('sr-only')
+    expect(document.querySelector('p[aria-label]')).toBeNull()
+  })
+
   it('une reprise dont toutes les réponses sont données affiche le résultat une seule fois', async () => {
     const resume = makeResume(1200, EXAM_SIZE)
     saveProgress({ ...resume, index: EXAM_SIZE - 1 })
     await act(async () => { renderAt(null) })
-    expect(screen.getByLabelText(`Score : ${EXAM_SIZE} sur ${EXAM_SIZE}`)).toBeInTheDocument()
+    expect(screen.getByText(`Score : ${EXAM_SIZE} sur ${EXAM_SIZE}`)).toBeInTheDocument()
     expect(historyLength()).toBe(1)
     expect(localStorage.getItem(EXAM_PROGRESS_KEY)).toBeNull()
   })
@@ -596,7 +616,7 @@ describe('Examen — fiabilité', () => {
     const resume = makeResume(1200, EXAM_SIZE)
     saveProgress({ ...resume, index: EXAM_SIZE - 1 })
     await act(async () => { renderAt(null) })
-    expect(screen.getByLabelText(`Score : ${EXAM_SIZE} sur ${EXAM_SIZE}`)).toBeInTheDocument()
+    expect(screen.getByText(`Score : ${EXAM_SIZE} sur ${EXAM_SIZE}`)).toBeInTheDocument()
     // Seuls des minuteurs ponctuels restent au montage : aucun intervalle ne survit
     await act(async () => { vi.advanceTimersByTime(5000) })
     expect(vi.getTimerCount()).toBe(0)
@@ -640,6 +660,20 @@ describe('Examen — écrans de question et de correction', () => {
     expect(within(group).getAllByRole('radio')).toHaveLength(4)
   })
 
+  it('le titre se lit « Question n sur 40 : … » et le groupe de réponses garde le seul énoncé', () => {
+    const resume = makeResume(1500, 2)
+    renderResumed(resume)
+    const title = screen.getByRole('heading', { level: 1 })
+    expect(title).toHaveAccessibleName(`Question 3 sur ${EXAM_SIZE} : ${resume.questions[2].question}`)
+    expect(screen.getByRole('radiogroup', { name: resume.questions[2].question })).toBeInTheDocument()
+  })
+
+  it('en correction, le titre porte aussi le numéro de la question', async () => {
+    renderResumed(makeResume(1500, 0))
+    await answer(true)
+    expect(screen.getByRole('heading', { level: 1 })).toHaveAccessibleName(new RegExp(`^Question 1 sur ${EXAM_SIZE} : `))
+  })
+
   it('affiche le temps en minutes et secondes, avec une barre nommée en minutes arrondies au supérieur', () => {
     renderResumed(makeResume(31 * 60 - 20, 0))
     expect(screen.getByText('30:40')).toBeInTheDocument()
@@ -663,8 +697,10 @@ describe('Examen — écrans de question et de correction', () => {
     expect(screen.getByRole('status')).toHaveTextContent('Pas tout à fait')
     // The answer is drawn at random: escape it, a parenthesis (question 56) broke the pattern
     const answerStart = resume.questions[0].answer.slice(0, 10).replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
-    expect(screen.getByRole('radio', { name: new RegExp(`Bonne réponse.*${answerStart}`) })).toBeDisabled()
-    expect(screen.getByRole('radio', { name: /Votre réponse/ })).toBeChecked()
+    // Correction : deux cartes de contenu (plus de radio désactivée, lue « non cochée » sur la bonne réponse)
+    expect(screen.queryByRole('radio')).not.toBeInTheDocument()
+    expect(screen.getByText('Bonne réponse').closest('[data-state]')).toHaveTextContent(new RegExp(`Bonne réponse.*${answerStart}`))
+    expect(screen.getByText('Votre réponse').closest('[data-state]')).toHaveAttribute('data-state', 'wrong')
     expect(screen.getByRole('heading', { level: 2, name: 'Pourquoi' })).toBeInTheDocument()
     expect(screen.getByText(resume.questions[0].explanation)).toBeInTheDocument()
   })
@@ -903,7 +939,7 @@ describe('Examen — écran de résultat', () => {
     renderResumed(resume)
     await act(async () => { vi.advanceTimersByTime(3000) })
     const theme = resume.questions[39].theme
-    expect(screen.getByRole('link', { name: new RegExp(`Voir la question à revoir.*Surtout ${themeLabel(theme)}`) })).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: new RegExp(`Voir la question à revoir.*À travailler : ${themeLabel(theme)}`) })).toBeInTheDocument()
   })
 
   it('un seul résultat à revoir : « Voir la question à revoir »', async () => {

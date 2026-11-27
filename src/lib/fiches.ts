@@ -1,5 +1,5 @@
-import { questionsForTitle } from '@/lib/exam'
 import type { TitleKey } from '@/lib/target-title'
+import { TITLE_COUNTS } from '@/lib/title-counts'
 
 export const FICHE_SLUGS = {
   pluriannuelle: 'carte-de-sejour-pluriannuelle',
@@ -32,9 +32,10 @@ export interface Fiche {
   links: { label: string; url: string }[]
 }
 
-// Official questions (not the situational ones written for the app) of a title's list, counted
-// in the data (naturalisation: 259 rows in the official list, one repeated, so 258).
-const officialCount = (t: TitleKey) => questionsForTitle(t).filter((q) => q.notion !== 'mise-en-situation').length
+// Official questions (not the situational ones written for the app) of a title's list, from
+// TITLE_COUNTS (checked against the data; naturalisation: 259 rows in the official list, one
+// repeated, so 258).
+const officialCount = (t: TitleKey) => TITLE_COUNTS[t].official
 
 const SP = 'https://www.service-public.gouv.fr/particuliers/vosdroits/'
 const FC_INFOS = 'https://formation-civique.interieur.gouv.fr/examen-civique/informations-g%C3%A9n%C3%A9rales-sur-lexamen-civique/'

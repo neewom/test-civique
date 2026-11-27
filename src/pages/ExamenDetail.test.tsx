@@ -4,6 +4,7 @@ import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest'
 import ExamenDetail from './ExamenDetail'
 import type { ExamRecord } from '@/lib/exam-types'
 import allQuestions from '@/data/questions.json'
+import { getLoadedPack } from '@/lib/question-packs'
 import { stubWideScreen } from '@/test/wide-screen'
 
 const RECORD_ID = '1700000000000'
@@ -70,7 +71,10 @@ describe('ExamenDetail', () => {
   it('affiche le score global', () => {
     seedHistory(RECORD)
     renderDetail(RECORD_ID)
-    expect(screen.getByLabelText(/Score : 1 sur 40/i)).toBeInTheDocument()
+    // Le titre se lit « Examen du <date> : 1 sur 40 » (le « 1/40 » visible est masqué aux lecteurs d'écran)
+    const title = screen.getByRole('heading', { level: 1 })
+    expect(title).toHaveAccessibleName(/^Examen du .+ : 1 sur 40$/)
+    expect(within(title).getByText('1/40')).toHaveAttribute('aria-hidden', 'true')
   })
 
   it('affiche la date de l\'examen', () => {
@@ -107,9 +111,22 @@ describe('ExamenDetail', () => {
 })
 
 // La pastille de verdict mêle plusieurs nœuds de texte : on compare son texte complet
-function verdict(text: string) {
-  return screen.getByText((_, el) => el?.tagName === 'P' && el.textContent?.replace(/\s+/g, ' ') === text)
+// Texte visible de la pastille : la forme lue (« 32 sur 40 », masquée) est écartée
+function visibleText(el: Element): string {
+  const copy = el.cloneNode(true) as Element
+  copy.querySelectorAll('.sr-only').forEach((n) => n.remove())
+  return (copy.textContent ?? '').replace(/\s+/g, ' ')
 }
+
+function verdict(text: string) {
+  return screen.getByText((_, el) => el?.tagName === 'P' && visibleText(el) === text)
+}
+
+it('la pastille du verdict lit le seuil « 32 sur 40 »', () => {
+  seedHistory(RECORD)
+  renderDetail(RECORD_ID)
+  expect(screen.getByText('32 sur 40')).toHaveClass('sr-only')
+})
 
 describe('ExamenDetail — verdict', () => {
   beforeEach(() => localStorage.clear())
@@ -170,7 +187,7 @@ describe('ExamenDetail — revoir ses erreurs', () => {
   it('affiche d\'abord les erreurs, puis toutes les questions sur demande', () => {
     seedHistory(record)
     renderDetail(RECORD_ID)
-    const mine = screen.getByRole('button', { name: 'Mes erreurs (2)' })
+    const mine = screen.getByRole('button', { name: 'À revoir (2)' })
     expect(mine).toHaveAttribute('aria-pressed', 'true')
     expect(screen.getAllByRole('heading', { level: 3 }).map((h) => h.textContent)).toEqual([QS[1].question, QS[3].question])
     expect(screen.getByText('Question 2 · ' + QS[1].theme)).toBeInTheDocument()
@@ -194,7 +211,7 @@ describe('ExamenDetail — revoir ses erreurs', () => {
     renderDetail(RECORD_ID)
     const section = screen.getByRole('region', { name: 'Par thème' })
     const rows = within(section).getAllByRole('listitem')
-    const total = rows.reduce((n, r) => n + Number(r.textContent!.match(/(\d+)\/(\d+)$/)![2]), 0)
+    const total = rows.reduce((n, r) => n + Number(within(r).getByText(/^\d+\/\d+$/).textContent!.split('/')[1]), 0)
     expect(total).toBe(4)
     expect(within(section).getAllByText('(thème le plus faible)').length).toBeGreaterThan(0)
   })
@@ -211,7 +228,7 @@ describe('ExamenDetail — revoir ses erreurs', () => {
     seedHistory({ ...record, score: 2, total: 2, answers: [answers[0], answers[2]] })
     renderDetail(RECORD_ID)
     expect(screen.getByText('Aucune erreur sur cet examen, bravo.')).toBeInTheDocument()
-    expect(screen.queryByRole('button', { name: /Mes erreurs/ })).not.toBeInTheDocument()
+    expect(screen.queryByRole('button', { name: /À revoir/ })).not.toBeInTheDocument()
     expect(screen.queryByRole('link', { name: /Réviser/ })).not.toBeInTheDocument()
     expect(screen.getAllByRole('heading', { level: 3 })).toHaveLength(2)
     expect(screen.getByRole('region', { name: 'Par thème' }).querySelector('.bg-coral')).toBeNull()
@@ -225,13 +242,17 @@ describe('ExamenDetail — revoir ses erreurs', () => {
 })
 
 describe('ExamenDetail — lien source', () => {
-  const all = allQuestions as { id: number; explanation: string; source?: { url: string; label: string } }[]
-  const first = all[0]
-  // Real sources are set aside so each test controls which question has one.
-  const realSources = new Map(all.filter((q) => q.source).map((q) => [q, q.source]))
+  type WithSource = { id: number; explanation: string; source?: { url: string; label: string } }
+  // The page reads the questions of the pack of the title, in memory since the test setup: edit those objects
+  let first: WithSource
+  let realSources: Map<WithSource, WithSource['source']>
 
   beforeEach(() => {
     localStorage.clear()
+    const all = getLoadedPack('pluriannuelle') as WithSource[]
+    first = all[0]
+    // Real sources are set aside so each test controls which question has one.
+    realSources = new Map(all.filter((q) => q.source).map((q) => [q, q.source]))
     realSources.forEach((_, q) => delete q.source)
   })
   afterEach(() => {

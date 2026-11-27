@@ -5,6 +5,7 @@ import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest'
 import Revision from './Revision'
 import type { ReviewState } from './ExamenDetail'
 import allQuestions from '@/data/questions.json'
+import { getLoadedPack } from '@/lib/question-packs'
 import { stubWideScreen } from '@/test/wide-screen'
 import { ThemeProvider } from '@/components/ThemeProvider'
 
@@ -245,11 +246,15 @@ describe('Revision — arrivée depuis le détail d\'un examen', () => {
 
 describe('Revision — lien source', () => {
   type WithSource = (typeof questions)[number] & { source?: { url: string; label: string } }
-  const first = questions[0] as WithSource
-  // Real sources are set aside so each test controls which question has one.
-  const realSources = new Map((questions as WithSource[]).filter((q) => q.source).map((q) => [q, q.source]))
+  // The page reads the questions of the pack of the title, in memory since the test setup: edit those objects
+  let first: WithSource
+  let realSources: Map<WithSource, WithSource['source']>
 
   beforeEach(() => {
+    const pack = getLoadedPack('pluriannuelle') as WithSource[]
+    first = pack[0]
+    // Real sources are set aside so each test controls which question has one.
+    realSources = new Map(pack.filter((q) => q.source).map((q) => [q, q.source]))
     realSources.forEach((_, q) => delete q.source)
   })
   afterEach(() => {
@@ -441,6 +446,18 @@ describe('Revision — filtres retrouvés au retour (session)', () => {
     expect(JSON.parse(sessionStorage.getItem('revision-view:resident')!).excludeSituational).toBe(true)
     expect(stored().excludeSituational).toBe(true)
     expect(stored().filter.theme).toBe(theme0)
+  })
+
+  it('signale à la coque de page qu\'une position mémorisée sera remise (le focus ne va pas sur le titre)', () => {
+    sessionStorage.setItem(KEY, JSON.stringify({ filter: { kind: 'all' }, excludeSituational: false, scrollY: 1234 }))
+    renderRevision()
+    expect(document.querySelector('[data-restores-scroll]')).not.toBeNull()
+  })
+
+  it('première entrée (aucune position mémorisée) : pas de signal, le focus peut aller au titre', () => {
+    sessionStorage.setItem(KEY, JSON.stringify({ filter: { kind: 'all' }, excludeSituational: false, scrollY: 0 }))
+    renderRevision()
+    expect(document.querySelector('[data-restores-scroll]')).toBeNull()
   })
 
   it('remet la position de défilement mémorisée', () => {

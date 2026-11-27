@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react'
 import { ArrowUpRight } from 'lucide-react'
-import { AppHeader } from '@/components/AppHeader'
+import { PageFrame } from '@/components/PageFrame'
 import { BackLink } from '@/components/BackLink'
 import { OrganicBackground } from '@/components/OrganicBackground'
 import { useDocumentTitle } from '@/lib/use-document-title'
@@ -27,7 +27,7 @@ function InfoCard({
   const Heading = level === 2 ? 'h2' : 'h3'
   return (
     <section
-      className={`flex flex-col gap-2 rounded-xl bg-card p-4 text-[0.9375rem] leading-[1.45] text-card-foreground ${className}`}
+      className={`flex flex-col gap-2 rounded-xl bg-card p-4 text-[0.9375rem] leading-[1.45] text-card-foreground md:text-base ${className}`}
     >
       <Heading className="text-[1.0625rem] leading-snug font-bold">{title}</Heading>
       {children}
@@ -48,15 +48,13 @@ export default function MentionsLegales() {
   useDocumentTitle('Mentions légales et confidentialité')
 
   return (
-    <main className="relative flex min-h-svh flex-col overflow-hidden bg-background text-foreground">
-      <OrganicBackground shape="crest" />
-      <AppHeader />
-      <div className="relative mx-auto flex w-full max-w-[30rem] flex-col gap-3.5 px-[22px] pt-0 pb-8">
+    <PageFrame className="relative overflow-hidden" background={<OrganicBackground shape="crest" />}>
+      <div className="relative mx-auto flex w-full max-w-[30rem] flex-col gap-3.5 px-[22px] pt-0 pb-8 md:max-w-[36rem] md:px-8 md:pb-10">
         <BackLink />
-        <h1 className="mt-4 max-w-[20rem] text-[2.125rem] leading-none font-bold tracking-[-0.04em] text-balance hyphens-auto">
+        <h1 className="mt-4 max-w-[20rem] text-[2.125rem] leading-none font-bold tracking-[-0.04em] text-balance hyphens-auto md:max-w-none md:text-[3rem]">
           Mentions légales et confidentialité
         </h1>
-        <p className="mt-[3.75rem] text-base leading-[1.45]">
+        <p className="mt-[3.75rem] text-base leading-[1.45] md:text-[1.0625rem]">
           Futur Citoyen est un site indépendant d'entraînement à l'examen civique. Il n'est pas un site officiel de
           l'État.
         </p>
@@ -147,6 +145,6 @@ export default function MentionsLegales() {
 
         <p className="mt-1.5 text-sm text-muted-foreground">Dernière mise à jour : {LAST_UPDATED}</p>
       </div>
-    </main>
+    </PageFrame>
   )
 }

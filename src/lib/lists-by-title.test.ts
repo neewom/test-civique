@@ -1,13 +1,7 @@
 import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest'
 import allQuestions from '@/data/questions.json'
-import {
-  buildExam,
-  EXAM_BLUEPRINT,
-  EXAM_SIZE,
-  questionsForTitle,
-  saveResult,
-  type ListedQuestion,
-} from './exam'
+import { buildExam, EXAM_BLUEPRINT, EXAM_SIZE, saveResult, type ListedQuestion } from './exam'
+import { questionsForTitle } from '@/test/questions'
 import { EXAM_PROGRESS_KEY, loadProgress, loadProgressForTitle, type ExamInProgress } from './exam-types'
 import { HISTORY_KEY, findExamRecord, loadHistory, loadHistoryForTitle } from './history'
 import { passedInARow } from './readiness'

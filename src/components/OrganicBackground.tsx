@@ -42,7 +42,7 @@ const SHAPES: Record<OrganicShape, ShapeDef> = {
   // (light text stays above 4.5:1 on it)
   goal: {
     duration: '13s',
-    fill: 'fill-goal dark:fill-[#463858]',
+    fill: 'fill-goal dark:fill-lilac-shape-night',
     frames: [
       'M200 -40 C 330 -30, 440 60, 420 190 C 405 290, 320 320, 250 300 C 170 280, 120 210, 130 120 C 140 40, 150 -45, 200 -40 Z',
       'M210 -40 C 340 -20, 445 75, 415 200 C 395 300, 310 315, 240 295 C 165 270, 125 200, 135 110 C 145 35, 160 -50, 210 -40 Z',
@@ -51,7 +51,7 @@ const SHAPES: Record<OrganicShape, ShapeDef> = {
   // Blue band at the top, exam rules page. Muted in dark mode, as above
   info: {
     duration: '12s',
-    fill: 'fill-info dark:fill-[#24496b]',
+    fill: 'fill-info dark:fill-sky-shape-night',
     frames: [
       'M-60 -40 C 120 -50, 300 -20, 430 40 C 450 150, 360 230, 240 240 C 130 250, 40 300, -60 260 Z',
       'M-60 -40 C 130 -45, 310 -15, 430 50 C 445 165, 350 240, 230 250 C 125 258, 35 290, -60 250 Z',

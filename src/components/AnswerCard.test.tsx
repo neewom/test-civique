@@ -41,6 +41,11 @@ function card(name: string) {
   return screen.getByRole('radio', { name: new RegExp(name) }).closest('label')!
 }
 
+// Carte de correction : du contenu (ni radio ni label), retrouvée par son texte
+function resultCard(text: string) {
+  return screen.getByText(text).closest('[data-state]')!
+}
+
 describe('AnswerCard', () => {
   it('expose 4 boutons radio dans un groupe, aucun coché au repos', () => {
     render(<Question />)
@@ -65,6 +70,13 @@ describe('AnswerCard', () => {
     expect(card('Il est révoqué')).toHaveClass('bg-primary', 'text-primary-foreground')
   })
 
+  it('contraste forcé : la carte choisie prend le fond système (le fond d\'encre disparaît sinon)', async () => {
+    render(<Question />)
+    await userEvent.click(screen.getByText('Il est révoqué'))
+    expect(card('Il est révoqué')).toHaveClass('forced-colors:bg-[Highlight]', 'forced-colors:text-[HighlightText]')
+    expect(card('Rien')).not.toHaveClass('forced-colors:bg-[Highlight]')
+  })
+
   it('passe d\'une carte à l\'autre aux flèches du clavier', async () => {
     render(<Question />)
     await userEvent.click(screen.getByText('Il est révoqué'))
@@ -86,7 +98,7 @@ describe('AnswerCard', () => {
 
   it('montre la bonne réponse en texte, icône et couleur', () => {
     render(<Question disabled initial="Il est révoqué" results={{ [ANSWERS[0]]: 'correct', 'Il est révoqué': 'wrong' }} />)
-    const correct = card('Il est jugé')
+    const correct = resultCard('Il est jugé comme tout citoyen')
     expect(correct).toHaveAttribute('data-state', 'correct')
     expect(correct).toHaveClass('bg-success')
     expect(correct).toHaveTextContent('Bonne réponse')
@@ -95,12 +107,17 @@ describe('AnswerCard', () => {
 
   it('montre la réponse fausse de l\'utilisateur en texte, icône et bordure corail', () => {
     render(<Question disabled initial="Il est révoqué" results={{ [ANSWERS[0]]: 'correct', 'Il est révoqué': 'wrong' }} />)
-    const wrong = card('Il est révoqué')
+    const wrong = resultCard('Il est révoqué')
     expect(wrong).toHaveAttribute('data-state', 'wrong')
     expect(wrong).toHaveClass('border-coral')
     expect(wrong).toHaveTextContent('Votre réponse')
     expect(wrong.querySelector('svg')).not.toBeNull()
-    expect(screen.getByRole('radio', { name: /Votre réponse/ })).toBeChecked()
+  })
+
+  it('rend les cartes de correction comme du contenu : aucun radio (la bonne réponse ne se lit pas « non cochée »)', () => {
+    render(<Question disabled initial="Il est révoqué" results={Object.fromEntries(ANSWERS.map((a) => [a, a === ANSWERS[0] ? 'correct' : 'wrong']))} />)
+    expect(screen.queryByRole('radio')).not.toBeInTheDocument()
+    expect(resultCard('Il est jugé comme tout citoyen').tagName).toBe('DIV')
   })
 
   it('verrouille les cartes une fois la réponse validée', async () => {
@@ -117,9 +134,9 @@ describe('AnswerCard', () => {
       expect(card(name)).toHaveClass('border-transparent')
     }
     rerender(<Question disabled initial="Il est révoqué" results={{ [ANSWERS[0]]: 'correct', 'Il est révoqué': 'wrong' }} />)
-    expect(card('Il est jugé')).toHaveClass('border-3')
-    expect(card('Il est jugé')).toHaveClass('border-transparent')
-    expect(card('Il est révoqué')).toHaveClass('border-3')
-    expect(card('Il est révoqué')).not.toHaveClass('border-transparent')
+    expect(resultCard('Il est jugé comme tout citoyen')).toHaveClass('border-3')
+    expect(resultCard('Il est jugé comme tout citoyen')).toHaveClass('border-transparent')
+    expect(resultCard('Il est révoqué')).toHaveClass('border-3')
+    expect(resultCard('Il est révoqué')).not.toHaveClass('border-transparent')
   })
 })

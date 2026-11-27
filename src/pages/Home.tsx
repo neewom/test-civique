@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Link, Navigate, useNavigate } from 'react-router-dom'
 import { ArrowRight, Check, ChevronDown, ChevronRight, MonitorSmartphone } from 'lucide-react'
 import { isPassed } from '@/lib/exam'
@@ -7,8 +7,10 @@ import type { ExamInProgress } from '@/lib/exam-types'
 import { loadHistory, loadHistoryForTitle, type HistoryEntry } from '@/lib/history'
 import { passedInARow, READY_GOAL } from '@/lib/readiness'
 import { ficheUrl } from '@/lib/fiches'
+import { preloadQuestionPack } from '@/lib/question-packs'
 import { DEFAULT_TITLE, loadTargetTitle, TARGET_TITLE_LABELS } from '@/lib/target-title'
-import { AppHeader } from '@/components/AppHeader'
+import { Fraction } from '@/components/Fraction'
+import { PageFrame } from '@/components/PageFrame'
 import { OrganicBackground } from '@/components/OrganicBackground'
 import { PillButton, PillLink } from '@/components/PillButton'
 import {
@@ -49,7 +51,7 @@ function RecentExam({ entry }: { entry: HistoryEntry }) {
         </span>
         <span className="flex flex-wrap items-center gap-x-2 text-[0.9375rem]">
           <span className="font-bold tabular-nums">
-            {entry.score}/{entry.total}
+            <Fraction value={entry.score} total={entry.total} />
           </span>
           <span className="inline-flex items-center gap-1">
             <span
@@ -107,6 +109,13 @@ export default function Home() {
   const [mustChooseTitle] = useState(
     () => storedTitle === null && loadHistory().length === 0 && !hasProgress(),
   )
+
+  // Once the home page is shown and the browser idle, the pack of the chosen title downloads quietly,
+  // so that the exam and the revision open at once. Nothing is fetched without a chosen title.
+  useEffect(() => {
+    if (storedTitle === null) return
+    return preloadQuestionPack(storedTitle)
+  }, [storedTitle])
 
   if (mustChooseTitle) return <Navigate to="/titre" replace />
 
@@ -277,6 +286,7 @@ export default function Home() {
           className="rounded-sm break-words underline underline-offset-4"
         >
           formation-civique.interieur.gouv.fr
+          <span className="sr-only"> (nouvel onglet)</span>
         </a>
       </p>
       <Link
@@ -289,7 +299,7 @@ export default function Home() {
   )
 
   return (
-    <main className="relative flex min-h-svh flex-col overflow-hidden bg-background text-foreground">
+    <>
       <Dialog open={confirmDelete} onOpenChange={setConfirmDelete}>
         <DialogContent
           showCloseButton={false}
@@ -316,10 +326,18 @@ export default function Home() {
         </DialogContent>
       </Dialog>
 
-      <OrganicBackground shape="journey" className="lg:w-[calc(50%+1.5rem)]" />
-
-      <AppHeader />
-      <div className="relative mx-auto flex grow w-full max-w-[30rem] flex-col gap-3 px-[22px] pt-0 pb-6 md:max-w-[36rem] md:px-8 md:pb-10 lg:max-w-[62rem] lg:px-10">
+      <PageFrame
+        className="relative overflow-hidden"
+        background={<OrganicBackground shape="journey" className="lg:w-[calc(50%+1.5rem)]" />}
+        // The footer is outside <main> (contentinfo): same column, same gap (mt-3) as when it was the column's last child
+        footer={
+          <footer className="relative mx-auto mt-3 flex w-full max-w-[30rem] flex-col gap-3 px-[22px] pb-6 md:max-w-[36rem] md:px-8 md:pb-10 lg:max-w-[62rem] lg:px-10 lg:pt-10">
+            {deviceNotice}
+            {legal}
+          </footer>
+        }
+      >
+      <div className="relative mx-auto flex grow w-full max-w-[30rem] flex-col gap-3 px-[22px] pt-0 md:max-w-[36rem] md:px-8 lg:max-w-[62rem] lg:px-10">
 
         {/* Rendered once, placed by CSS: the focused element must survive the switch at 1024 px.
             DOM order = the phone order (what screen readers and the Tab key follow). On a phone the
@@ -375,11 +393,8 @@ export default function Home() {
           </section>
         </div>
 
-        <footer className="contents lg:mt-auto lg:flex lg:flex-col lg:gap-3 lg:pt-10">
-          {deviceNotice}
-          {legal}
-        </footer>
       </div>
-    </main>
+      </PageFrame>
+    </>
   )
 }

@@ -1,6 +1,7 @@
 import { describe, it, expect } from 'vitest'
 import allQuestions from './questions.json'
-import { EXAM_BLUEPRINT, EXAM_SIZE, NOTIONS, questionsForTitle, type ListedQuestion, type Question } from '@/lib/exam'
+import { EXAM_BLUEPRINT, EXAM_SIZE, NOTIONS, type ListedQuestion, type Question } from '@/lib/exam'
+import { questionsForTitle } from '@/test/questions'
 import { OFFICIAL_LISTS, isListComplete, rankedQuestions } from '@/test/official-lists'
 
 // Sous-thème officiel (« notion ») de chaque question, arrêté du 10 octobre 2025.

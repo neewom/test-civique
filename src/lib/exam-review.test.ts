@@ -58,8 +58,8 @@ describe('weakestThemes', () => {
 
 describe('weakestThemesLabel', () => {
   it('nomme un ou deux thèmes, rien au-delà', () => {
-    expect(weakestThemesLabel([HISTOIRE])).toBe(`Surtout ${HISTOIRE}`)
-    expect(weakestThemesLabel([PRINCIPES, HISTOIRE])).toBe(`Surtout ${PRINCIPES} et ${HISTOIRE}`)
+    expect(weakestThemesLabel([HISTOIRE])).toBe(`À travailler : ${HISTOIRE}`)
+    expect(weakestThemesLabel([PRINCIPES, HISTOIRE])).toBe(`À travailler : ${PRINCIPES} et ${HISTOIRE}`)
     expect(weakestThemesLabel([PRINCIPES, HISTOIRE, VIE])).toBeNull()
     expect(weakestThemesLabel([])).toBeNull()
   })

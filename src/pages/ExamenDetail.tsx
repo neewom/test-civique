@@ -1,15 +1,18 @@
 import { useId, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { AnswerBox } from '@/components/AnswerBox'
-import { AppHeader } from '@/components/AppHeader'
+import { Fraction } from '@/components/Fraction'
+import { PageFrame } from '@/components/PageFrame'
 import { BackLink } from '@/components/BackLink'
 import { SourceLink } from '@/components/SourceLink'
 import { ExamVerdict } from '@/components/ExamVerdict'
 import { PillLink } from '@/components/PillButton'
 import { findExamRecord } from '@/lib/history'
 import { themeScores, weakestThemes } from '@/lib/exam-review'
-import type { AnswerRecord, QuestionSource } from '@/lib/exam-types'
-import allQuestions from '@/data/questions.json'
+import type { AnswerRecord, ExamRecord, QuestionSource } from '@/lib/exam-types'
+import { QuestionPackStatus } from '@/components/QuestionPackStatus'
+import { titleOf } from '@/lib/target-title'
+import { useQuestionPack } from '@/lib/use-question-pack'
 import { useDocumentTitle } from '@/lib/use-document-title'
 import { useWideScreen } from '@/lib/use-wide-screen'
 import { themeLabel } from '@/lib/themes'
@@ -23,8 +26,6 @@ interface Question {
   explanation: string
   source?: QuestionSource
 }
-
-const QUESTIONS = new Map((allQuestions as Question[]).map((q) => [q.id, q]))
 
 /**
  * Navigation state given to the revision page by « Réviser ces n questions »: the ids
@@ -46,7 +47,10 @@ const toggleClass = (pressed: boolean) =>
   cn(
     'inline-flex min-h-11 items-center rounded-[1.375rem] px-4 py-1.5 text-[0.9375rem] font-bold transition-colors',
     'focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ring focus-visible:outline-solid',
-    pressed ? 'bg-primary text-primary-foreground' : 'bg-card text-card-foreground hover:bg-muted',
+    // Forced colours (Windows high contrast) drop the backgrounds: the pressed filter shows as the system highlight
+    pressed
+      ? 'bg-primary text-primary-foreground forced-colors:bg-[Highlight] forced-colors:text-[HighlightText] forced-colors:[forced-color-adjust:none]'
+      : 'bg-card text-card-foreground hover:bg-muted forced-colors:border forced-colors:border-[ButtonText]',
   )
 
 function QuestionReview({ answer, number, question }: Reviewed) {
@@ -89,16 +93,47 @@ function QuestionReview({ answer, number, question }: Reviewed) {
   )
 }
 
-/** Detail of a past exam: mistakes first, score per theme (maquette Pa7). */
+const formatDate = (iso: string) =>
+  new Date(iso).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' })
+
+/**
+ * Detail of a past exam: mistakes first, score per theme (maquette Pa7). The questions come
+ * from the pack of the title of THAT exam (which may differ from the chosen title; an exam
+ * stored without a title counts for the multi-year permit), loaded on demand.
+ */
 export default function ExamenDetail() {
   useDocumentTitle("Détail de l'examen")
   const { id } = useParams<{ id: string }>()
   const record = id ? findExamRecord(id) : null
+  const pack = useQuestionPack(record ? titleOf(record) : null)
+  if (record && pack.status !== 'ready') {
+    return (
+      <PageFrame>
+        <div className="mx-auto flex w-full max-w-[30rem] flex-col gap-6 px-5 pt-0 pb-7">
+          <BackLink />
+          {/* Same title as once loaded (it needs no question) */}
+          <div className="flex flex-col gap-0.5">
+            <h1 className="text-[1.875rem] leading-none font-bold tracking-[-0.03em] tabular-nums">
+              <span className="sr-only">Examen du {formatDate(record.date)} : </span>
+              <Fraction value={record.score} total={record.total} />
+            </h1>
+            <p className="text-[0.9375rem]">{formatDate(record.date)}</p>
+          </div>
+          <QuestionPackStatus pack={pack} />
+        </div>
+      </PageFrame>
+    )
+  }
+  return <ExamenDetailContent record={record} questions={pack.status === 'ready' ? pack.questions : []} />
+}
+
+function ExamenDetailContent({ record, questions }: { record: ExamRecord | null; questions: Question[] }) {
+  const byId = new Map(questions.map((q) => [q.id, q]))
 
   // Exam order is kept; the number is the place of the question in the exam.
   // Questions removed from the data since the exam are skipped.
   const reviewed: Reviewed[] = (record?.answers ?? []).flatMap((answer, i) => {
-    const question = QUESTIONS.get(answer.questionId)
+    const question = byId.get(answer.questionId)
     return question ? [{ answer, number: i + 1, question }] : []
   })
   const errors = reviewed.filter((r) => !r.answer.correct)
@@ -110,11 +145,10 @@ export default function ExamenDetail() {
 
   if (!record) {
     return (
-      <main className="flex min-h-svh flex-col bg-background text-foreground">
-        <AppHeader />
-        <div className="mx-auto flex w-full max-w-[30rem] flex-col gap-4 px-5 pt-0 pb-7">
+      <PageFrame>
+        <div className="mx-auto flex w-full max-w-[30rem] flex-col gap-4 px-5 pt-0 pb-7 md:max-w-[36rem] md:px-8 md:pb-10">
           <BackLink />
-          <h1 className="mt-4 text-[1.875rem] leading-none font-bold tracking-[-0.03em]">Examen introuvable</h1>
+          <h1 className="mt-4 text-[1.875rem] leading-none font-bold tracking-[-0.03em] md:text-[2.5rem]">Examen introuvable</h1>
           <p className="text-base">
             Cet examen n'est pas dans l'historique de ce navigateur, ou son détail n'a pas été enregistré.
           </p>
@@ -122,21 +156,17 @@ export default function ExamenDetail() {
             Retour à mon parcours
           </PillLink>
         </div>
-      </main>
+      </PageFrame>
     )
   }
 
   const shown = filter === 'mistakes' ? errors : reviewed
   const scores = themeScores(
     reviewed.map((r) => r.answer),
-    (qid) => QUESTIONS.get(qid)?.theme,
+    (qid) => byId.get(qid)?.theme,
   )
   const weakest = new Set(weakestThemes(scores))
-  const dateStr = new Date(record.date).toLocaleDateString('fr-FR', {
-    day: 'numeric',
-    month: 'long',
-    year: 'numeric',
-  })
+  const dateStr = formatDate(record.date)
   const reviewState: ReviewState = { reviewIds: errors.map((r) => r.answer.questionId) }
 
   // Same link and same state at the bottom of the page and, on a phone or tablet, under the verdict
@@ -157,8 +187,7 @@ export default function ExamenDetail() {
   )
 
   return (
-    <main className="flex min-h-svh flex-col bg-background text-foreground">
-      <AppHeader />
+    <PageFrame>
       <div className="mx-auto flex w-full max-w-[30rem] grow flex-col gap-3.5 px-5 pt-0 pb-7 md:max-w-[36rem] md:px-8 lg:grid lg:max-w-[62rem] lg:grid-cols-[22rem_minmax(0,1fr)] lg:items-start lg:gap-x-14 lg:px-10">
         {/* From 1024 px: score, filters, scores per theme and actions in a sticky side column (side padding: room for the focus rings) */}
         <div className="flex flex-col gap-3.5 lg:sticky lg:top-0 lg:-mx-2 lg:max-h-svh lg:overflow-y-auto lg:px-2 lg:py-8">
@@ -168,9 +197,9 @@ export default function ExamenDetail() {
             <div className="flex flex-col gap-0.5">
               <h1
                 className="text-[1.875rem] leading-none font-bold tracking-[-0.03em] tabular-nums md:text-[3rem]"
-                aria-label={`Score : ${record.score} sur ${record.total}`}
               >
-                {record.score}/{record.total}
+                <span className="sr-only">Examen du {dateStr} : </span>
+                <Fraction value={record.score} total={record.total} />
               </h1>
               <p className="text-[0.9375rem]">{dateStr}</p>
             </div>
@@ -188,7 +217,7 @@ export default function ExamenDetail() {
                 onClick={() => setFilter('mistakes')}
                 className={toggleClass(filter === 'mistakes')}
               >
-                Mes erreurs ({errors.length})
+                À revoir ({errors.length})
               </button>
               <button
                 type="button"
@@ -225,7 +254,7 @@ export default function ExamenDetail() {
                       <span
                         className={cn('shrink-0 rounded-full px-2 tabular-nums', weak && 'bg-coral text-coral-foreground')}
                       >
-                        {s.correct}/{s.total}
+                        <Fraction value={s.correct} total={s.total} />
                       </span>
                     </li>
                   )
@@ -239,7 +268,7 @@ export default function ExamenDetail() {
 
         <section aria-labelledby={questionsId} className="lg:max-w-[40rem] lg:pt-[5.5rem]">
           <h2 id={questionsId} className="sr-only">
-            {filter === 'mistakes' ? 'Mes erreurs' : 'Toutes les questions'}
+            {filter === 'mistakes' ? 'Questions à revoir' : 'Toutes les questions'}
           </h2>
           <ol className="flex flex-col gap-3.5">
             {shown.map((r) => (
@@ -250,6 +279,6 @@ export default function ExamenDetail() {
 
         {!wide && actions}
       </div>
-    </main>
+    </PageFrame>
   )
 }

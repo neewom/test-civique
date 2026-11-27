@@ -2,20 +2,21 @@ import { useRef, useState } from 'react'
 import { ArrowRight, Check, CircleAlert } from 'lucide-react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { AppHeader } from '@/components/AppHeader'
+import { PageFrame } from '@/components/PageFrame'
 import { BrandSymbol } from '@/components/BrandLogo'
 import { BackLink } from '@/components/BackLink'
 import { OrganicBackground } from '@/components/OrganicBackground'
 import { PillButton } from '@/components/PillButton'
 import { ficheUrl, FICHE_LABELS } from '@/lib/fiches'
-import { questionsForTitle } from '@/lib/exam'
 import { hasProgress } from '@/lib/exam-types'
 import { loadHistory } from '@/lib/history'
 import { loadTargetTitle, saveTargetTitle, TARGET_TITLE_LABELS, TARGET_TITLES, type TargetTitle, type TitleKey } from '@/lib/target-title'
+import { TITLE_COUNTS } from '@/lib/title-counts'
 import { useDocumentTitle } from '@/lib/use-document-title'
 import { cn } from '@/lib/utils'
 
 // Official (non situational) questions of each title's list
-const officialCount = (t: TargetTitle) => questionsForTitle(t).filter((q) => q.notion !== 'mise-en-situation').length
+const officialCount = (t: TargetTitle) => TITLE_COUNTS[t].official
 
 // Own link under each option (a separate target: it never changes the selection)
 function MoreLink({ title }: { title: TitleKey }) {
@@ -53,7 +54,7 @@ function TitleChoices({
       ref={groupRef}
       role="group"
       aria-label="Titre visé"
-      className={cn('flex flex-col', firstVisit ? 'gap-2.5' : 'mt-[clamp(2rem,16svh,8.75rem)] gap-3')}
+      className={cn('flex flex-col', firstVisit ? 'gap-2.5' : 'mt-[clamp(2rem,16svh,8.75rem)] gap-3 md:mt-8')}
     >
       {TARGET_TITLES.map((key) => {
         const on = selected === key
@@ -67,7 +68,7 @@ function TitleChoices({
                 optionClass,
                 on
                   ? firstVisit
-                    ? 'bg-earth text-[#2c2e2a] dark:text-[#f1eee4]'
+                    ? 'bg-earth text-earth-foreground'
                     : 'bg-primary text-primary-foreground'
                   : 'bg-card text-card-foreground',
               )}
@@ -85,8 +86,8 @@ function TitleChoices({
                   className={cn(
                     'flex size-10 shrink-0 items-center justify-center rounded-full',
                     on
-                      ? 'bg-[#2c2e2a] text-[#f5e211] dark:bg-[#f1eee4] dark:text-[#121814]'
-                      : 'border-[3px] border-muted-foreground/40',
+                      ? 'bg-primary text-primary-mark'
+                      : 'border-[3px] border-muted-foreground/70',
                   )}
                 >
                   {on && <Check className="size-[1.125em]" strokeWidth={2.8} />}
@@ -124,14 +125,14 @@ function MeadowLines() {
       <path
         d="M410 150 C 340 170, 322 240, 346 300 C 356 326, 380 340, 410 340"
         fill="none"
-        className="stroke-[#f5e211] dark:stroke-[#a89a1c]"
+        className="stroke-meadow-line"
         strokeWidth="3"
         strokeLinecap="round"
       />
       <path
         d="M410 110 C 320 130, 296 230, 326 306 C 340 340, 372 362, 410 366"
         fill="none"
-        className="stroke-[#2c2e2a]/25 dark:stroke-[#f1eee4]/20"
+        className="stroke-earth-foreground/25 dark:stroke-earth-foreground/20"
         strokeWidth="2"
         strokeLinecap="round"
       />
@@ -145,17 +146,21 @@ function MeadowLines() {
  * (the page shows the logo large).
  */
 function FirstVisit({ selected, onSelect, onContinue, showError, groupRef }: ChoiceProps) {
-  // <main> clips (overflow-clip) rather than hides: hidden would make it the scroll container and break the sticky bar.
+  // The frame clips (overflow-clip) rather than hides: hidden would make it the scroll container and break the sticky bar.
   // The scroll margin keeps a focused link or button clear of the sticky bar (WCAG 2.4.11)
+  // The header comes before <main> (landmark), the green field starts at the very top of the page: it is
+  // pulled up behind the header (negative margin = the header's height, 4.25rem, 4.5rem from 768 px) and given the same padding back
   return (
-    <main className="relative flex min-h-svh flex-col overflow-clip bg-background text-foreground [&_a]:scroll-mb-36 [&_button]:scroll-mb-36">
-      <div className="relative bg-earth text-[#2c2e2a] dark:text-[#f1eee4]">
+    <PageFrame
+      className="relative overflow-clip [&_a]:scroll-mb-36 [&_button]:scroll-mb-36"
+      header={<AppHeader hideBrand />}
+    >
+      <div className="relative -mt-[4.25rem] bg-earth pt-[4.25rem] text-earth-foreground md:-mt-[4.5rem] md:pt-[4.5rem]">
         <MeadowLines />
-        <AppHeader hideBrand />
         <div className="relative mx-auto flex w-full max-w-[30rem] flex-col items-start gap-3 px-[22px] pt-0 pb-4 md:max-w-[34rem] md:px-8">
           <BrandSymbol large className="size-[4.25rem] shrink-0" />
           <p className="text-xl font-bold">
-            <span className="text-[#1f4f15] dark:text-[#8ed462]">Futur</span> Citoyen
+            <span className="text-wordmark">Futur</span> Citoyen
           </p>
           <h1 className="max-w-[19rem] text-[2.375rem] leading-[0.98] font-bold tracking-[-0.04em] text-balance md:max-w-[22rem] md:text-[3rem]">
             Préparez l'examen civique
@@ -203,7 +208,7 @@ function FirstVisit({ selected, onSelect, onContinue, showError, groupRef }: Cho
           </PillButton>
         </div>
       </div>
-    </main>
+    </PageFrame>
   )
 }
 
@@ -267,15 +272,13 @@ export default function TitreVise() {
   }
 
   return (
-    <main className="relative flex min-h-svh flex-col overflow-hidden bg-background text-foreground">
-      <OrganicBackground shape="goal" />
-      <AppHeader />
-      <div className="relative mx-auto flex grow w-full max-w-[30rem] flex-col gap-3.5 px-[22px] pt-0 pb-6">
+    <PageFrame className="relative overflow-hidden" background={<OrganicBackground shape="goal" />}>
+      <div className="relative mx-auto flex grow w-full max-w-[30rem] flex-col gap-3.5 px-[22px] pt-0 pb-6 md:max-w-[34rem] md:px-8 md:pb-10">
         <BackLink />
-        <h1 className="mt-[3.75rem] max-w-[16.25rem] text-[2.25rem] leading-none font-bold tracking-[-0.04em] text-balance">
+        <h1 className="mt-[3.75rem] max-w-[16.25rem] text-[2.25rem] leading-none font-bold tracking-[-0.04em] text-balance md:max-w-none md:text-[3rem]">
           Quel titre préparez-vous ?
         </h1>
-        <p className="max-w-[19rem] text-base leading-[1.45]">
+        <p className="max-w-[19rem] text-base leading-[1.45] md:max-w-none md:text-[1.0625rem]">
           Les questions officielles ne sont pas les mêmes selon le titre. Vous pourrez changer plus tard.
         </p>
         <TitleChoices selected={selected} onSelect={handleSelect} firstVisit={false} />
@@ -283,6 +286,6 @@ export default function TitreVise() {
           Continuer
         </PillButton>
       </div>
-    </main>
+    </PageFrame>
   )
 }
