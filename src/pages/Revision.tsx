@@ -64,10 +64,22 @@ export default function Revision() {
   const [reviewIds] = useState(() => loadQuestionsToReview(title).filter((id) => poolIds.has(id)))
   // Coming from an exam detail wins over the memory of the session: nothing is restored then
   const [restored] = useState(() => (examIds.length > 0 ? null : loadRevisionView(title, themes, reviewIds.length > 0)))
-  const [filter, setFilter] = useState<Filter>(() =>
+  const [filter, setFilterState] = useState<Filter>(() =>
     examIds.length > 0 ? { kind: 'exam' } : (restored?.filter ?? { kind: 'all' }),
   )
-  const [excludeSituational, setExcludeSituational] = useState(restored?.excludeSituational ?? false)
+  const [excludeSituational, setExcludeSituationalState] = useState(restored?.excludeSituational ?? false)
+  // Set when the user (not the mount, not the restoration) changes the list: see the effect below
+  const userChanged = useRef(false)
+  const setFilter = (next: Filter) => {
+    userChanged.current = true
+    setFilterState(next)
+  }
+  const setExcludeSituational = (next: boolean) => {
+    userChanged.current = true
+    setExcludeSituationalState(next)
+  }
+  const bandRef = useRef<HTMLDivElement>(null)
+  const cardsRef = useRef<HTMLDivElement>(null)
   const scrollY = useRef(restored?.scrollY ?? 0)
   // False until the saved position is back: the jump to the top of a new page must not overwrite it
   const tracking = useRef(false)
@@ -77,6 +89,18 @@ export default function Revision() {
     if (filter.kind === 'exam') return
     saveRevisionView(title, { filter, excludeSituational, scrollY: scrollY.current })
   }, [title, filter, excludeSituational])
+
+  // A new list starts at its top: from further down, go back to the top of the cards column (under the stuck band)
+  useEffect(() => {
+    if (!userChanged.current) return
+    userChanged.current = false
+    const column = cardsRef.current
+    if (!column) return
+    const band = bandRef.current
+    const bandHeight = band && getComputedStyle(band).position === 'sticky' ? band.getBoundingClientRect().height : 0
+    const top = column.getBoundingClientRect().top + window.scrollY - bandHeight
+    if (window.scrollY > top) window.scrollTo(0, Math.max(0, top))
+  }, [filter, excludeSituational])
 
   const latest = useRef({ filter, excludeSituational })
   useEffect(() => {
@@ -99,6 +123,12 @@ export default function Revision() {
     // Wait for the page scroll reset of the router, then put the saved position back
     const timer = window.setTimeout(() => {
       if (scrollY.current > 0) window.scrollTo(0, scrollY.current)
+      // The restored pill may be out of sight in the sideways band: bring it in without moving the page
+      const band = bandRef.current
+      const pressed = band?.querySelector<HTMLElement>('[aria-pressed="true"]')
+      if (band && pressed && band.scrollWidth > band.clientWidth) {
+        band.scrollLeft = pressed.offsetLeft - (band.clientWidth - pressed.offsetWidth) / 2
+      }
       tracking.current = true
     }, 50)
     window.addEventListener('scroll', onScroll, { passive: true })
@@ -156,7 +186,7 @@ export default function Revision() {
 
           {/* Pills scroll sideways on a phone and wrap on a wider screen; the vertical padding keeps the focus ring visible.
               Stuck at the top on a phone (below 640 px: page background, thin rule under it) while the cards scroll; the wrapped pills of a tablet would take a quarter of the screen. */}
-          <div className="sticky top-0 z-10 -mx-5 overflow-x-auto border-b border-border bg-background px-5 py-1.5 [scrollbar-width:none] sm:static sm:overflow-visible sm:border-b-0 md:-mx-8 md:px-8 lg:mx-0 lg:bg-transparent lg:px-0">
+          <div ref={bandRef} data-sticky-band className="sticky top-0 z-10 -mx-5 overflow-x-auto border-b border-border bg-background px-5 py-1.5 [scrollbar-width:none] sm:static sm:overflow-visible sm:border-b-0 md:-mx-8 md:px-8 lg:mx-0 lg:bg-transparent lg:px-0">
             <div role="group" aria-label="Questions à afficher" className="flex w-max gap-2 sm:w-auto sm:flex-wrap lg:flex-col lg:items-stretch">
               {examIds.length > 0 && (
                 <button
@@ -214,7 +244,7 @@ export default function Revision() {
         </div>
 
         {/* Cards on one reading column */}
-        <div className="flex flex-col gap-3.5 lg:max-w-[40rem] lg:pt-[7.25rem]">
+        <div ref={cardsRef} className="flex flex-col gap-3.5 lg:max-w-[40rem] lg:pt-[7.25rem]">
           <p aria-live="polite" className="sr-only">
             {shown.length} question{shown.length > 1 ? 's' : ''} affichée{shown.length > 1 ? 's' : ''}
           </p>
@@ -241,7 +271,7 @@ export default function Revision() {
             </div>
           ) : (
             sections.map(({ theme, items }) => (
-              <section key={theme} aria-label={`Thème : ${themeLabel(theme)}`} className="flex scroll-mt-20 flex-col gap-3 pt-2">
+              <section key={theme} aria-label={`Thème : ${themeLabel(theme)}`} className="flex flex-col gap-3 pt-2">
                 <h2 className="text-base font-bold">
                   {themeLabel(theme)} <span className="font-normal tabular-nums">({items.length})</span>
                 </h2>

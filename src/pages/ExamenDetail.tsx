@@ -140,8 +140,8 @@ export default function ExamenDetail() {
   const reviewState: ReviewState = { reviewIds: errors.map((r) => r.answer.questionId) }
 
   // Same link and same state at the bottom of the page and, on a phone or tablet, under the verdict
-  const reviewLink = errors.length > 0 && (
-    <PillLink to="/revision" state={reviewState} size="lg" className="justify-center text-center">
+  const reviewLink = (className?: string) => errors.length > 0 && (
+    <PillLink to="/revision" state={reviewState} size="lg" className={cn('justify-center text-center', className)}>
       {errors.length === 1 ? 'Réviser cette question' : `Réviser ces ${errors.length} questions`}
     </PillLink>
   )
@@ -149,7 +149,7 @@ export default function ExamenDetail() {
   // Under the questions on a phone or tablet, at the bottom of the side column from 1024 px
   const actions = (
     <div className="mt-auto flex flex-col gap-2 pt-2 lg:mt-0">
-      {reviewLink}
+      {reviewLink()}
       <PillLink to="/" tone="surface" className="justify-center text-center">
         Retour à mon parcours
       </PillLink>
@@ -178,7 +178,7 @@ export default function ExamenDetail() {
           </div>
 
           {/* Under the verdict on a phone or tablet: no need to scroll through every question to reach it */}
-          {!wide && reviewLink}
+          {!wide && reviewLink('self-start')}
 
           {errors.length > 0 ? (
             <div role="group" aria-label="Questions affichées" className="flex flex-wrap gap-2">

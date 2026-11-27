@@ -464,3 +464,61 @@ describe('Revision — filtres retrouvés au retour (session)', () => {
     expect(pill(theme0)).toHaveAttribute('aria-pressed', 'true')
   })
 })
+
+describe('Revision — retour en haut des cartes quand on change la liste', () => {
+  const theme0 = themes[0]
+  afterEach(() => {
+    vi.restoreAllMocks()
+    // @ts-expect-error restore the jsdom default (own property removed)
+    delete window.scrollY
+  })
+
+  function setup(scrollY: number) {
+    const scrollTo = vi.spyOn(window, 'scrollTo').mockImplementation(() => {})
+    Object.defineProperty(window, 'scrollY', { configurable: true, value: scrollY })
+    // Cards column 300 px below the top of the page (jsdom has no layout)
+    vi.spyOn(Element.prototype, 'getBoundingClientRect').mockImplementation(
+      () => ({ top: 300 - scrollY, height: 0, bottom: 0, left: 0, right: 0, width: 0, x: 0, y: 0, toJSON: () => ({}) }) as DOMRect,
+    )
+    return scrollTo
+  }
+
+  it("un filtre choisi depuis le bas de la liste remonte au haut des cartes", () => {
+    const scrollTo = setup(20000)
+    renderRevision()
+    fireEvent.click(pill(theme0))
+    expect(scrollTo).toHaveBeenCalledWith(0, 300)
+    scrollTo.mockRestore()
+  })
+
+  it('cocher la case depuis le bas remonte aussi', () => {
+    const scrollTo = setup(20000)
+    renderRevision()
+    fireEvent.click(screen.getByLabelText('Sans les mises en situation'))
+    expect(scrollTo).toHaveBeenCalledWith(0, 300)
+    scrollTo.mockRestore()
+  })
+
+  it('déjà en haut : la page ne bouge pas', () => {
+    const scrollTo = setup(0)
+    renderRevision()
+    fireEvent.click(pill(theme0))
+    expect(scrollTo).not.toHaveBeenCalled()
+    scrollTo.mockRestore()
+  })
+
+  it('jamais au montage ni à la restauration', () => {
+    sessionStorage.setItem(
+      'revision-view:pluriannuelle',
+      JSON.stringify({ filter: { kind: 'theme', theme: theme0 }, excludeSituational: true, scrollY: 900 }),
+    )
+    const scrollTo = setup(20000)
+    vi.useFakeTimers()
+    renderRevision()
+    vi.advanceTimersByTime(100)
+    expect(scrollTo).toHaveBeenCalledTimes(1)
+    expect(scrollTo).toHaveBeenCalledWith(0, 900)
+    vi.useRealTimers()
+    scrollTo.mockRestore()
+  })
+})
