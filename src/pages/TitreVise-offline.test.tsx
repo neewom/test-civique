@@ -157,4 +157,27 @@ describe('Changement de titre hors ligne', () => {
     expect(screen.queryByText(OFFLINE_NOTICE)).not.toBeInTheDocument()
     expect(screen.getAllByText(OFFLINE_TITLE_NOTE)).toHaveLength(3)
   })
+
+  it('la zone d\'annonce est toujours là, la phrase n\'y entre que hors ligne', () => {
+    renderTitre()
+    const status = screen.getByRole('status')
+    expect(status).toBeEmptyDOMElement()
+    setOnline(false)
+    expect(status).toHaveTextContent(OFFLINE_NOTICE)
+    setOnline(true)
+    expect(status).toBeEmptyDOMElement()
+  })
+
+  it('choisi en ligne, puis hors ligne : le titre n\'est plus annoncé choisi et « Continuer » le dit au lieu de ne rien faire', async () => {
+    renderTitre()
+    fireEvent.click(option(/résident/))
+    expect(option(/résident/)).toHaveAttribute('aria-pressed', 'true')
+    setOnline(false)
+    await waitFor(() => expect(option(/résident/)).toHaveAttribute('aria-disabled', 'true'))
+    expect(option(/résident/)).toHaveAttribute('aria-pressed', 'false')
+    fireEvent.click(screen.getByRole('button', { name: 'Continuer' }))
+    expect(screen.getByRole('alert')).toHaveTextContent("Choisissez d'abord le titre que vous préparez.")
+    expect(loadTargetTitle()).toBe('pluriannuelle')
+    expect(screen.queryByText('Accueil')).not.toBeInTheDocument()
+  })
 })

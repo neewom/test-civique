@@ -1,5 +1,5 @@
 import { afterEach, describe, expect, it, vi } from 'vitest'
-import { cachedPackTitles, isTitleAvailable, isWorkerHost, keepPackOffline } from '@/lib/offline'
+import { cachedPackTitles, isTitleAvailable, isWorkerHost, keepPackOffline, registerServiceWorker } from '@/lib/offline'
 
 afterEach(() => vi.unstubAllGlobals())
 
@@ -63,5 +63,16 @@ describe('hôtes où le service worker est enregistré', () => {
     '192.168.1.20',
   ])('%s : non', (host) => {
     expect(isWorkerHost(host)).toBe(false)
+  })
+})
+
+describe('en développement', () => {
+  it('désinscrit tout service worker existant et n\'en enregistre aucun', async () => {
+    const unregister = vi.fn(() => Promise.resolve(true))
+    const register = vi.fn(() => Promise.resolve())
+    vi.stubGlobal('navigator', { serviceWorker: { getRegistrations: () => Promise.resolve([{ unregister }, { unregister }]), register } })
+    registerServiceWorker()
+    await vi.waitFor(() => expect(unregister).toHaveBeenCalledTimes(2))
+    expect(register).not.toHaveBeenCalled()
   })
 })

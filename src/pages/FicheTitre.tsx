@@ -39,7 +39,8 @@ function Fiche({ titleKey }: { titleKey: TitleKey }) {
   const existingUser = loadHistory().length > 0 || hasProgress()
   const chosen = stored ?? (existingUser ? DEFAULT_TITLE : null)
   const alreadyChosen = chosen === target
-  const unavailable = !isAvailable(target)
+  // The title already chosen stays usable: the app already works with it (same rule as the change of title)
+  const unavailable = !alreadyChosen && !isAvailable(target)
   // First pass (nothing chosen, nothing known): the page is not one to come back to
   const firstPass = chosen === null
 
@@ -81,6 +82,7 @@ function Fiche({ titleKey }: { titleKey: TitleKey }) {
           <PillButton
             size="lg"
             aria-disabled={unavailable || undefined}
+            aria-describedby={unavailable ? 'offline-title-note' : undefined}
             className={cn('w-full justify-center text-center', unavailable && 'bg-card/50 text-muted-foreground hover:bg-card/50')}
             onClick={() => {
               if (unavailable) return
@@ -91,7 +93,7 @@ function Fiche({ titleKey }: { titleKey: TitleKey }) {
             {alreadyChosen ? 'Continuer mon entraînement' : "M'entraîner pour ce titre"}
           </PillButton>
           {unavailable && (
-            <p className="flex items-start gap-1.5 px-5 text-[0.8125rem] font-bold text-muted-foreground">
+            <p id="offline-title-note" className="flex items-start gap-1.5 px-5 text-[0.8125rem] font-bold text-muted-foreground">
               <WifiOff aria-hidden="true" className="mt-px size-4 shrink-0" strokeWidth={2.4} />
               {OFFLINE_TITLE_NOTE}
             </p>

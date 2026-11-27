@@ -8,10 +8,12 @@
 //   asked for, or when the page asks for it for the title in use (message `warm-pack`);
 //   the other titles are never fetched in the background;
 // - pages (index.html for every page address, the SPA fallback of public/_redirects) and the
-//   precached files that are not hashed (theme-init.js, icons, manifest) go network first, then the
 //   cache after NETWORK_TIMEOUT_MS or on a failure: a deploy that no longer ships this worker (a
 //   rollback, another server on the same origin) is seen at the first online load, never an old
-//   version for ever. Hashed files (/assets/) and the packs go cache first: their name is their version.
+//   version for ever. Every other precached file and the packs go cache first: the version is
+//   decided by the navigation, and a slow network costs one wait of 3 s at most, not one per file.
+//   The Cache API may throw (quota, blocked storage): it never fails an answer the network gave,
+//   every cache access falls back to the network.
 //   The cache is never refreshed from a network answer: index.html and what it loads stay a pair,
 //   written together by the install of one version;
 // - a new version installs in the background and takes over at once (skipWaiting + claim) but
@@ -70,10 +72,7 @@ self.addEventListener('fetch', (event) => {
     return
   }
   if (packUrls.has(url.pathname)) event.respondWith(packResponse(url.pathname, request))
-  else if (precached.has(url.pathname)) {
-    // A hashed file never changes under its name: cache first. The others: network first
-    event.respondWith(url.pathname.startsWith('/assets/') ? cacheFirst(url.pathname, request) : networkFirst(url.pathname, request))
-  }
+  else if (precached.has(url.pathname)) event.respondWith(cacheFirst(url.pathname, request))
 })
 
 self.addEventListener('message', (event) => {
@@ -87,9 +86,29 @@ self.addEventListener('message', (event) => {
   }
 })
 
+// Reads and writes of the Cache API that never throw: a failure is a miss, and a put that fails
+// costs nothing but the copy
+async function cachedAnswer(cacheName, path) {
+  try {
+    const cache = await caches.open(cacheName)
+    return (await cache.match(path)) ?? null
+  } catch {
+    return null
+  }
+}
+
+async function safePut(cacheName, path, response) {
+  try {
+    const cache = await caches.open(cacheName)
+    await cache.put(path, response)
+    return true
+  } catch {
+    return false
+  }
+}
+
 async function cacheFirst(path, request) {
-  const shell = await caches.open(SHELL_CACHE)
-  return (await shell.match(path)) ?? fetch(request)
+  return (await cachedAnswer(SHELL_CACHE, path)) ?? fetch(request)
 }
 
 function withTimeout(promise, ms) {
@@ -117,35 +136,31 @@ async function networkFirst(path, request) {
   } catch {
     // Offline, failing or too slow: the cache answers
   }
-  const shell = await caches.open(SHELL_CACHE)
-  return (await shell.match(path)) ?? answer ?? fetch(request)
+  return (await cachedAnswer(SHELL_CACHE, path)) ?? answer ?? fetch(request)
 }
 
 async function packResponse(path, request) {
-  const packs = await caches.open(PACKS_CACHE)
-  const cached = await packs.match(path)
+  const cached = await cachedAnswer(PACKS_CACHE, path)
   if (cached) return cached
   const response = await fetch(request)
-  if (response.ok) await packs.put(path, response.clone())
+  if (response.ok) await safePut(PACKS_CACHE, path, response.clone())
   return response
 }
 
 async function warmPack(path) {
-  const packs = await caches.open(PACKS_CACHE)
-  if (await packs.match(path)) return
   try {
+    if (await cachedAnswer(PACKS_CACHE, path)) return
     const response = await fetch(path)
-    if (response.ok) await packs.put(path, response)
+    if (response.ok) await safePut(PACKS_CACHE, path, response)
   } catch {
     // Offline or failing network: nothing cached, the page goes on without
   }
 }
 
 async function cachedTitles() {
-  const packs = await caches.open(PACKS_CACHE)
   const titles = []
   for (const [title, path] of Object.entries(MANIFEST.packs)) {
-    if (await packs.match(path)) titles.push(title)
+    if (await cachedAnswer(PACKS_CACHE, path)) titles.push(title)
   }
   return titles
 }
@@ -155,16 +170,15 @@ async function cachedTitles() {
 // cannot be fetched, the whole install fails: the previous version stays in charge with its own
 // packs (nothing is deleted before the activation) and the next page load tries again.
 async function refreshCachedPacks() {
-  const packs = await caches.open(PACKS_CACHE)
-  const metaResponse = await packs.match(META_URL)
-  const previous = metaResponse ? await metaResponse.json().catch(() => ({})) : {}
+  const meta = await cachedAnswer(PACKS_CACHE, META_URL)
+  const previous = meta ? await meta.json().catch(() => ({})) : {}
   for (const [title, path] of Object.entries(MANIFEST.packs)) {
     const before = previous[title]
-    if (before && before !== path && (await packs.match(before)) && !(await packs.match(path))) {
+    if (before && before !== path && (await cachedAnswer(PACKS_CACHE, before)) && !(await cachedAnswer(PACKS_CACHE, path))) {
       const response = await fetch(path)
       if (!response.ok) throw new Error('pack ' + path + ' not available')
-      await packs.put(path, response)
+      await safePut(PACKS_CACHE, path, response)
     }
   }
-  await packs.put(META_URL, new Response(JSON.stringify(MANIFEST.packs), { headers: { 'Content-Type': 'application/json' } }))
+  await safePut(PACKS_CACHE, META_URL, new Response(JSON.stringify(MANIFEST.packs), { headers: { 'Content-Type': 'application/json' } }))
 }

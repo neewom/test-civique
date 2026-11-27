@@ -1,5 +1,5 @@
 import { LAUNCH_FREE_DETAIL, LAUNCH_FREE_HEADLINE } from '@/lib/launch-message'
-import { useRef, useState, type ReactNode } from 'react'
+import { useRef, useState } from 'react'
 import { ArrowRight, Check, CircleAlert, WifiOff } from 'lucide-react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { AppHeader } from '@/components/AppHeader'
@@ -40,14 +40,19 @@ export const OFFLINE_NOTICE = 'Vous êtes hors ligne : seul le titre dont les qu
 export const OFFLINE_NONE_NOTICE = 'Vous êtes hors ligne : reconnectez-vous pour choisir votre titre.'
 export const OFFLINE_TITLE_NOTE = 'Disponible avec une connexion Internet'
 
-// Shown under the intro while the device has no network (maquettes Hl1 / Hl2)
-// (when no title at all is on the device, there is nothing to choose: the sentence says so)
-export function OfflineNotice({ none = false }: { none?: boolean }) {
+// Under the intro (maquettes Hl1 / Hl2). The live region is always there and the sentence is put
+// in it only offline, so that screen readers announce it. Empty, it cancels the gap it would add
+export function OfflineNotice({ offline, none = false, emptyClass }: { offline: boolean; none?: boolean; emptyClass: string }) {
   return (
-    <p role="status" className="flex max-w-[19rem] items-start gap-2.5 text-base leading-snug font-bold md:max-w-none">
-      <WifiOff aria-hidden="true" className="mt-0.5 size-5 shrink-0" strokeWidth={2.4} />
-      {none ? OFFLINE_NONE_NOTICE : OFFLINE_NOTICE}
-    </p>
+    <div role="status" className={offline ? undefined : emptyClass}>
+      {offline && (
+        <p className="flex max-w-[19rem] items-start gap-2.5 text-base leading-snug font-bold md:max-w-none">
+          <WifiOff aria-hidden="true" className="mt-0.5 size-5 shrink-0" strokeWidth={2.4} />
+          {/* (when no title at all is on the device, there is nothing to choose: the sentence says so) */}
+          {none ? OFFLINE_NONE_NOTICE : OFFLINE_NOTICE}
+        </p>
+      )}
+    </div>
   )
 }
 
@@ -82,7 +87,7 @@ function TitleChoices({
           <div key={key} className="flex flex-col">
             <button
               type="button"
-              aria-pressed={on}
+              aria-pressed={on && !unavailable}
               aria-disabled={unavailable || undefined}
               onClick={() => {
                 if (!unavailable) onSelect(key)
@@ -177,7 +182,7 @@ function MeadowLines() {
  * big green field. No « Retour » (nothing to go back to) and no name in the header
  * (the page shows the logo large).
  */
-function FirstVisit({ selected, onSelect, onContinue, showError, groupRef, notice }: ChoiceProps) {
+function FirstVisit({ selected, onSelect, onContinue, showError, groupRef, offline, none }: ChoiceProps) {
   // The frame clips (overflow-clip) rather than hides: hidden would make it the scroll container and break the sticky bar.
   // The scroll margin keeps a focused link or button clear of the sticky bar (WCAG 2.4.11)
   // The header comes before <main> (landmark), the green field starts at the very top of the page: it is
@@ -221,7 +226,7 @@ function FirstVisit({ selected, onSelect, onContinue, showError, groupRef, notic
 
       <div className="mx-auto flex w-full max-w-[30rem] grow flex-col gap-3 px-[22px] pt-4 pb-6 md:max-w-[34rem] md:px-8 md:pt-2 md:pb-4">
         <h2 className="text-[1.0625rem] font-bold">Quel titre préparez-vous ?</h2>
-        {notice}
+        <OfflineNotice offline={offline} none={none} emptyClass="-mt-3" />
         <TitleChoices selected={selected} onSelect={onSelect} firstVisit groupRef={groupRef} />
         <p className="text-sm text-muted-foreground">Vous pourrez changer plus tard.</p>
       </div>
@@ -254,7 +259,8 @@ interface ChoiceProps {
   onContinue: () => void
   showError: boolean
   groupRef: React.RefObject<HTMLDivElement | null>
-  notice: ReactNode
+  offline: boolean
+  none: boolean
 }
 
 /**
@@ -278,7 +284,7 @@ export default function TitreVise() {
   })
   const [showError, setShowError] = useState(false)
   const { offline, isAvailable } = useTitleAvailability()
-  const notice = offline ? <OfflineNotice none={TARGET_TITLES.every((t) => !isAvailable(t))} /> : null
+  const none = TARGET_TITLES.every((t) => !isAvailable(t))
   const groupRef = useRef<HTMLDivElement>(null)
   function handleSelect(t: TargetTitle) {
     setShowError(false)
@@ -287,15 +293,16 @@ export default function TitreVise() {
   }
 
   function handleContinue() {
-    if (selected === null) {
-      // Nothing chosen: say so, stay here, and put the focus on the first title
+    // Offline, a title chosen while online whose questions are not on the device counts as no choice
+    // (the one already saved is kept: it is the one the app already works with)
+    const chosen = selected !== null && selected !== loadTargetTitle() && !isAvailable(selected) ? null : selected
+    if (chosen === null) {
+      // Nothing chosen: say so, stay here, and put the focus on the first title that can be chosen
       setShowError(true)
-      groupRef.current?.querySelector('button')?.focus()
+      groupRef.current?.querySelector<HTMLButtonElement>('button:not([aria-disabled])')?.focus()
       return
     }
-    // Offline, a title whose questions are not on the device is not saved (the one already saved is)
-    if (selected !== loadTargetTitle() && !isAvailable(selected)) return
-    saveTargetTitle(selected)
+    saveTargetTitle(chosen)
     // The first visit is not a page to come back to
     navigate('/', { replace: firstVisit })
   }
@@ -308,7 +315,8 @@ export default function TitreVise() {
         onContinue={handleContinue}
         showError={showError}
         groupRef={groupRef}
-        notice={notice}
+        offline={offline}
+        none={none}
       />
     )
   }
@@ -323,9 +331,18 @@ export default function TitreVise() {
         <p className="max-w-[19rem] text-base leading-[1.45] md:max-w-none md:text-[1.0625rem]">
           Les questions officielles ne sont pas les mêmes selon le titre. Vous pourrez changer plus tard.
         </p>
-        {notice}
-        <TitleChoices selected={selected} onSelect={handleSelect} firstVisit={false} />
-        <PillButton size="lg" onClick={handleContinue} className="mt-auto w-full justify-center text-center">
+        <OfflineNotice offline={offline} none={none} emptyClass="-mt-3.5" />
+        <TitleChoices selected={selected} onSelect={handleSelect} firstVisit={false} groupRef={groupRef} />
+        {showError && (
+          // Rendered only once the error is there (this page has no alert before): same message as the first visit
+          <div role="alert" className="mt-auto">
+            <p className="flex items-start gap-2 text-[0.9375rem] leading-snug font-bold text-destructive">
+              <CircleAlert aria-hidden="true" className="mt-0.5 size-5 shrink-0" strokeWidth={2.4} />
+              Choisissez d'abord le titre que vous préparez.
+            </p>
+          </div>
+        )}
+        <PillButton size="lg" onClick={handleContinue} className={cn('w-full justify-center text-center', !showError && 'mt-auto')}>
           Continuer
         </PillButton>
       </div>

@@ -14,16 +14,18 @@ const localStorageMock = {
   clear: () => void (store = {}),
 }
 let online = true
+let cachedTitles = ['pluriannuelle']
 
 beforeEach(() => {
   vi.stubGlobal('localStorage', localStorageMock)
   localStorageMock.clear()
   localStorageMock.setItem('target-title', 'pluriannuelle')
   online = true
+  cachedTitles = ['pluriannuelle']
   resetQuestionPacksForTests()
   const worker = {
     postMessage: (m: { type: string }, ports?: MessagePort[]) => {
-      if (m.type === 'cached-packs') ports?.[0]?.postMessage(['pluriannuelle'])
+      if (m.type === 'cached-packs') ports?.[0]?.postMessage(cachedTitles)
     },
   }
   vi.stubGlobal('navigator', {
@@ -62,7 +64,8 @@ describe('Fiche d\'un titre hors ligne', () => {
     renderFiche('carte-de-resident')
     const button = screen.getByRole('button', { name: "M'entraîner pour ce titre" })
     await waitFor(() => expect(button).toHaveAttribute('aria-disabled', 'true'))
-    expect(screen.getByText(OFFLINE_TITLE_NOTE)).toBeInTheDocument()
+    const note = screen.getByText(OFFLINE_TITLE_NOTE)
+    expect(button).toHaveAttribute('aria-describedby', note.closest('p')!.id)
     fireEvent.click(button)
     expect(loadTargetTitle()).toBe('pluriannuelle')
     expect(screen.queryByText('Accueil')).not.toBeInTheDocument()
@@ -74,6 +77,16 @@ describe('Fiche d\'un titre hors ligne', () => {
     await screen.findByRole('button', { name: 'Continuer mon entraînement' })
     await new Promise((r) => setTimeout(r, 20))
     expect(screen.getByRole('button', { name: 'Continuer mon entraînement' })).not.toHaveAttribute('aria-disabled')
+    expect(screen.queryByText(OFFLINE_TITLE_NOTE)).not.toBeInTheDocument()
+  })
+
+  it('le titre déjà choisi n\'est jamais grisé, même si son paquet n\'est pas sur l\'appareil', async () => {
+    online = false
+    cachedTitles = []
+    renderFiche('carte-de-sejour-pluriannuelle')
+    const button = await screen.findByRole('button', { name: 'Continuer mon entraînement' })
+    await new Promise((r) => setTimeout(r, 20))
+    expect(button).not.toHaveAttribute('aria-disabled')
     expect(screen.queryByText(OFFLINE_TITLE_NOTE)).not.toBeInTheDocument()
   })
 })

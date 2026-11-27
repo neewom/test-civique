@@ -21,7 +21,17 @@ export function isWorkerHost(hostname: string): boolean {
 
 /** Registers the service worker, once the page has loaded. Production builds on the hosts above only. */
 export function registerServiceWorker(): void {
-  if (!import.meta.env.PROD || !supported() || !isWorkerHost(location.hostname)) return
+  if (!supported()) return
+  if (import.meta.env.DEV) {
+    // The dev server never has a worker: one left by a production build served from the same
+    // address (localhost, `vite preview`) would hide the code being edited
+    void navigator.serviceWorker
+      .getRegistrations()
+      .then((registrations) => Promise.all(registrations.map((r) => r.unregister())))
+      .catch(() => {})
+    return
+  }
+  if (!import.meta.env.PROD || !isWorkerHost(location.hostname)) return
   const register = () => {
     // A failure (private window, blocked storage) only means no offline mode
     navigator.serviceWorker.register('/sw.js').catch(() => {})

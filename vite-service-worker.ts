@@ -1,5 +1,5 @@
 import { createHash } from 'node:crypto'
-import { readdirSync, readFileSync, writeFileSync } from 'node:fs'
+import { existsSync, readdirSync, readFileSync, writeFileSync } from 'node:fs'
 import path from 'node:path'
 import type { Plugin } from 'vite'
 
@@ -10,9 +10,10 @@ import type { Plugin } from 'vite'
 const PACK_PREFIX = '\0virtual:question-pack/'
 const PLACEHOLDER = "'__SW_MANIFEST__'"
 
-// Never precached: the worker itself, Netlify's files, the social image (only crawlers fetch it),
+// Never precached: the worker itself, Netlify's files, the social image and the big icons (only
+// crawlers and installs fetch them),
 // source maps, and the .woff fallbacks (a browser that loads the .woff2 never asks for them)
-const SKIPPED = [/^sw\.js$/, /^_headers$/, /^_redirects$/, /^og-image\.png$/, /\.map$/, /\.woff$/]
+const SKIPPED = [/^sw\.js$/, /^_headers$/, /^_redirects$/, /^og-image\.png$/, /^icon-512\.png$/, /^apple-touch-icon\.png$/, /\.map$/, /\.woff$/]
 
 export interface SwManifest {
   version: string
@@ -37,6 +38,8 @@ export function buildManifest(outDir: string, packs: Record<string, string>, tem
   hash.update(template)
   for (const file of files) hash.update(file).update(readFileSync(path.join(outDir, file)))
   for (const url of Object.values(packs).sort()) hash.update(url)
+  // Not precached, but a change of headers (the CSP above all) must install a new worker
+  if (existsSync(path.join(outDir, '_headers'))) hash.update('_headers').update(readFileSync(path.join(outDir, '_headers')))
   return {
     version: hash.digest('hex').slice(0, 12),
     precache: files.map((file) => '/' + file),

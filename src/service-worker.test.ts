@@ -23,6 +23,8 @@ const DIST = {
   'theme-init.js': 'a',
   'logo.svg': '<svg/>',
   'og-image.png': 'png',
+  'icon-512.png': 'big',
+  'apple-touch-icon.png': 'big',
   '_headers': 'h',
   '_redirects': 'r',
   'sw.js': 'old worker',
@@ -43,7 +45,7 @@ describe('manifeste du service worker', () => {
     for (const url of Object.values(PACKS)) expect(manifest.precache).not.toContain(url)
   })
   it('laisse de côté le worker lui-même, les fichiers Netlify, l\'image sociale et les polices .woff', () => {
-    for (const url of ['/sw.js', '/_headers', '/_redirects', '/og-image.png', '/assets/font-1.woff']) {
+    for (const url of ['/sw.js', '/_headers', '/_redirects', '/og-image.png', '/icon-512.png', '/apple-touch-icon.png', '/assets/font-1.woff']) {
       expect(manifest.precache).not.toContain(url)
     }
   })
@@ -52,6 +54,8 @@ describe('manifeste du service worker', () => {
     expect(same.version).toBe(manifest.version)
     const edited = buildManifest(fakeDist({ ...DIST, 'theme-init.js': 'b' }), PACKS, TEMPLATE)
     expect(edited.version).not.toBe(manifest.version)
+    const headers = buildManifest(fakeDist({ ...DIST, _headers: 'new csp' }), PACKS, TEMPLATE)
+    expect(headers.version).not.toBe(manifest.version)
     const newPack = buildManifest(fakeDist(DIST), { ...PACKS, resident: '/assets/resident-CCC.js' }, TEMPLATE)
     expect(newPack.version).not.toBe(manifest.version)
   })
@@ -62,20 +66,39 @@ type Listener = (event: Record<string, unknown>) => void
 
 function makeCaches() {
   const stores = new Map<string, Map<string, Response>>()
-  const keyOf = (r: Request | string) => new URL(typeof r === 'string' ? r : r.url, 'https://app.test').pathname
+  // Like the real Cache API, a lookup is by address AND query string
+  const keyOf = (r: Request | string) => {
+    const u = new URL(typeof r === 'string' ? r : r.url, 'https://app.test')
+    return u.pathname + u.search
+  }
+  const faults = { put: false, open: false, match: false }
+  // What the network answers (set by loadWorker): addAll goes through it, like the real one
+  const net = { serve: async (_path: string): Promise<Response> => new Response('', { status: 404 }) }
   const cacheApi = (store: Map<string, Response>) => ({
-    match: async (r: Request | string) => store.get(keyOf(r))?.clone(),
-    put: async (r: Request | string, res: Response) => void store.set(keyOf(r), res),
+    match: async (r: Request | string) => {
+      if (faults.match) throw new Error('match failed')
+      return store.get(keyOf(r))?.clone()
+    },
+    put: async (r: Request | string, res: Response) => {
+      if (faults.put) throw new DOMException('quota', 'QuotaExceededError')
+      store.set(keyOf(r), res)
+    },
     delete: async (r: Request | string) => store.delete(keyOf(r)),
     keys: async () => [...store.keys()].map((k) => new Request('https://app.test' + k)),
+    // Like the real one: every request is fetched, and any answer that is not ok rejects the whole call
     addAll: async (requests: Request[]) => {
-      for (const r of requests) store.set(keyOf(r), new Response('cached:' + keyOf(r)))
+      const answers = await Promise.all(requests.map(async (r) => [r, await net.serve(keyOf(r))] as const))
+      for (const [r, answer] of answers) if (!answer.ok) throw new TypeError('addAll: bad response ' + answer.status + ' for ' + keyOf(r))
+      for (const [r, answer] of answers) store.set(keyOf(r), answer)
     },
   })
   return {
     stores,
+    faults,
+    net,
     api: {
       open: async (name: string) => {
+        if (faults.open) throw new Error('open failed')
         if (!stores.has(name)) stores.set(name, new Map())
         return cacheApi(stores.get(name)!)
       },
@@ -96,12 +119,18 @@ function loadWorker(manifest: SwManifest, caches = makeCaches(), network: Networ
     skipWaiting: async () => {},
     clients: { claim: async () => {} },
   }
+  // The precached files are on the network unless a test says otherwise (an install fetches them all)
+  const served: Network = { ...Object.fromEntries(manifest.precache.map((u) => [u, 'cached:' + u])), ...network }
+  const serve = async (p: string) => {
+    const answer = served[p]
+    if (typeof answer === 'function') return answer()
+    return answer !== undefined ? new Response(answer) : new Response('missing', { status: 404 })
+  }
+  caches.net.serve = serve
   const fetchStub = async (r: Request | string) => {
     const p = new URL(typeof r === 'string' ? r : r.url, 'https://app.test').pathname
     fetched.push(p)
-    const answer = network[p]
-    if (typeof answer === 'function') return answer()
-    return answer !== undefined ? new Response(answer) : new Response('missing', { status: 404 })
+    return serve(p)
   }
   const code = TEMPLATE.replace("'__SW_MANIFEST__'", JSON.stringify(manifest))
   // In a worker, a relative URL resolves against the worker's own address
@@ -183,15 +212,83 @@ describe('service worker : comportement', () => {
     expect(await w.fetchEvent(w.request('/', 'navigate'))).toBe(redirect)
   })
 
-  it('les fichiers précachés non hachés vont réseau d\'abord, les fichiers hachés de /assets/ cache d\'abord', async () => {
+  it('les fichiers précachés autres que la page vont cache d\'abord, sans attendre le réseau', async () => {
     const manifest = { ...MANIFEST, precache: ['/index.html', '/assets/app.js', '/theme-init.js'] }
-    const w = loadWorker(manifest, undefined, { '/theme-init.js': 'fresh', '/assets/app.js': 'network app' })
+    const w = loadWorker(manifest)
     await w.run('install')
-    expect(await (await w.fetchEvent(w.request('/theme-init.js')))!.text()).toBe('fresh')
+    // Installed from the network at the time; the network now answers something else, or nothing
+    w.caches.net.serve = async () => new Response('changed')
+    expect(await (await w.fetchEvent(w.request('/theme-init.js')))!.text()).toBe('cached:/theme-init.js')
     expect(await (await w.fetchEvent(w.request('/assets/app.js')))!.text()).toBe('cached:/assets/app.js')
-    const down = loadWorker(manifest, undefined, { '/theme-init.js': () => Promise.reject(new TypeError('offline')) })
-    await down.run('install')
-    expect(await (await down.fetchEvent(down.request('/theme-init.js')))!.text()).toBe('cached:/theme-init.js')
+    expect(w.fetched).toEqual([])
+  })
+
+  it('une installation échoue si un fichier à précacher répond 404 (rien n\'est servi par un worker incomplet)', async () => {
+    const w = loadWorker(MANIFEST, undefined, { '/assets/app.js': () => Promise.resolve(new Response('gone', { status: 404 })) })
+    await expect(w.run('install')).rejects.toThrow(/bad response 404/)
+  })
+
+  it('le cache cherche par adresse et chaîne de recherche : une demande avec « ?x » ne trouve pas la copie sans', async () => {
+    const w = loadWorker(MANIFEST, undefined, { [PACKS.pluriannuelle]: 'pack1', [PACKS.pluriannuelle + '?x']: 'unused' })
+    await w.run('install')
+    await w.run('message', { data: { type: 'warm-pack', title: 'pluriannuelle' } })
+    const packs = await w.caches.api.open('packs')
+    expect(await packs.match(PACKS.pluriannuelle)).toBeDefined()
+    expect(await packs.match(PACKS.pluriannuelle + '?x')).toBeUndefined()
+  })
+
+  describe('Cache API qui lève (quota, stockage bloqué)', () => {
+    it('un put qui lève ne fait pas échouer un paquet que le réseau a donné', async () => {
+      const w = loadWorker(MANIFEST, undefined, { [PACKS.pluriannuelle]: 'pack1' })
+      await w.run('install')
+      w.caches.faults.put = true
+      expect(await (await w.fetchEvent(w.request(PACKS.pluriannuelle)))!.text()).toBe('pack1')
+      await expect(w.run('message', { data: { type: 'warm-pack', title: 'pluriannuelle' } })).resolves.toBeUndefined()
+    })
+
+    it('un open ou un match qui lève : repli sur le réseau, pour la page, les fichiers et les paquets', async () => {
+      const w = loadWorker(MANIFEST, undefined, { '/': 'net page', '/assets/app.js': 'net app', [PACKS.resident]: 'net pack' })
+      await w.run('install')
+      for (const fault of ['open', 'match'] as const) {
+        w.caches.faults.open = w.caches.faults.match = false
+        w.caches.faults[fault] = true
+        expect(await (await w.fetchEvent(w.request('/assets/app.js')))!.text()).toBe('net app')
+        expect(await (await w.fetchEvent(w.request(PACKS.resident)))!.text()).toBe('net pack')
+        // Page: the network answers, and with the network down the failing cache is not a crash either
+        expect(await (await w.fetchEvent(w.request('/', 'navigate')))!.text()).toBe('net page')
+      }
+    })
+
+    it('la liste des paquets en cache est vide, sans erreur, quand le cache ne répond pas', async () => {
+      const w = loadWorker(MANIFEST)
+      await w.run('install')
+      w.caches.faults.open = true
+      const replies: unknown[] = []
+      await w.run('message', { data: { type: 'cached-packs' }, ports: [{ postMessage: (m: unknown) => replies.push(m) }] })
+      expect(replies).toEqual([[]])
+    })
+  })
+
+  it('le worker de retrait vide les caches et se désinscrit', async () => {
+    const kill = readFileSync(path.resolve(process.cwd(), 'sw/kill-switch.js'), 'utf8')
+    const caches = makeCaches()
+    await caches.api.open('shell-x')
+    await caches.api.open('packs')
+    const listeners: Record<string, Listener> = {}
+    let unregistered = false
+    vm.runInNewContext(kill, {
+      self: {
+        addEventListener: (t: string, f: Listener) => (listeners[t] = f),
+        skipWaiting: () => {},
+        registration: { unregister: async () => (unregistered = true) },
+      },
+      caches: caches.api,
+    })
+    let waited: Promise<unknown> = Promise.resolve()
+    listeners.activate({ waitUntil: (p: Promise<unknown>) => (waited = p) })
+    await waited
+    expect([...caches.stores.keys()]).toEqual([])
+    expect(unregistered).toBe(true)
   })
 
   it('la réponse du réseau ne remplace jamais index.html en cache (il reste le pendant des fichiers précachés)', async () => {
