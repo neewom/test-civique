@@ -11,7 +11,7 @@ import { findExamRecord } from '@/lib/history'
 import { themeScores, weakestThemes } from '@/lib/exam-review'
 import type { AnswerRecord, ExamRecord, QuestionSource } from '@/lib/exam-types'
 import { QuestionPackStatus } from '@/components/QuestionPackStatus'
-import { titleOf } from '@/lib/target-title'
+import { titleOf, type TitleKey } from '@/lib/target-title'
 import { useQuestionPack } from '@/lib/use-question-pack'
 import { useDocumentTitle } from '@/lib/use-document-title'
 import { useWideScreen } from '@/lib/use-wide-screen'
@@ -33,6 +33,8 @@ interface Question {
  */
 export interface ReviewState {
   reviewIds: number[]
+  /** Title of the exam: the revision then loads that title's questions, whatever the chosen title (absent = chosen title) */
+  title?: TitleKey
 }
 
 type Filter = 'mistakes' | 'all'
@@ -167,7 +169,7 @@ function ExamenDetailContent({ record, questions }: { record: ExamRecord | null;
   )
   const weakest = new Set(weakestThemes(scores))
   const dateStr = formatDate(record.date)
-  const reviewState: ReviewState = { reviewIds: errors.map((r) => r.answer.questionId) }
+  const reviewState: ReviewState = { reviewIds: errors.map((r) => r.answer.questionId), title: titleOf(record) }
 
   // Same link and same state at the bottom of the page and, on a phone or tablet, under the verdict
   const reviewLink = (className?: string) => errors.length > 0 && (

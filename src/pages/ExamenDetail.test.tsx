@@ -221,7 +221,7 @@ describe('ExamenDetail — revoir ses erreurs', () => {
     renderWithState(RECORD_ID)
     // Phone layout: the link is also under the verdict (v1.26.0), same state; take the first
     fireEvent.click(screen.getAllByRole('link', { name: 'Réviser ces 2 questions' })[0])
-    expect(JSON.parse(screen.getByTestId('state').textContent!)).toEqual({ reviewIds: [QS[1].id, QS[3].id] })
+    expect(JSON.parse(screen.getByTestId('state').textContent!)).toEqual({ reviewIds: [QS[1].id, QS[3].id], title: 'pluriannuelle' })
   })
 
   it('sans erreur : pas de filtre ni de lien de révision, toutes les questions affichées', () => {
@@ -393,6 +393,14 @@ describe('ExamenDetail — « Réviser » sous le verdict', () => {
 
   const reviewName = 'Réviser cette question'
 
+  it("un examen d'un autre titre transmet son titre", () => {
+    const residentOnly = (allQuestions as { id: number; lists: string[] }[]).find((q) => q.id >= 292 && q.lists.includes('resident'))!
+    seedHistory({ ...RECORD, title: 'resident', answers: [{ questionId: residentOnly.id, chosen: null, correct: false }] })
+    renderWithState(RECORD_ID)
+    fireEvent.click(screen.getAllByRole('link', { name: 'Réviser cette question' })[0])
+    expect(JSON.parse(screen.getByTestId('state').textContent!).title).toBe('resident')
+  })
+
   it('téléphone : le lien est aussi sous le verdict, avant les questions, même état', () => {
     stubWideScreen(false)
     seedHistory(RECORD)
@@ -401,7 +409,7 @@ describe('ExamenDetail — « Réviser » sous le verdict', () => {
     expect(links).toHaveLength(2)
     expect(links[0].compareDocumentPosition(document.querySelector('ol')!) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy()
     fireEvent.click(links[0])
-    expect(JSON.parse(screen.getByTestId('state').textContent!)).toEqual({ reviewIds: [(allQuestions as { id: number }[])[1].id] })
+    expect(JSON.parse(screen.getByTestId('state').textContent!)).toEqual({ reviewIds: [(allQuestions as { id: number }[])[1].id], title: 'pluriannuelle' })
   })
 
   it('grand écran : un seul lien (colonne latérale)', () => {
