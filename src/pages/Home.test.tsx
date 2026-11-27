@@ -60,6 +60,17 @@ function exam(score: number, id?: string, date = '2026-11-20T10:00:00.000Z') {
 }
 
 describe('Accueil — en-tête et parcours', () => {
+  it('annonce que tout est gratuit pendant le lancement, sous le titre et avant le parcours', () => {
+    renderHome()
+    const notice = screen.getByTestId('launch-notice')
+    expect(notice).toHaveTextContent("Tout est gratuit pendant le lancement. L'examen blanc restera toujours gratuit.")
+    expect(notice.querySelector('svg')).toHaveAttribute('aria-hidden', 'true')
+    const heading = screen.getByRole('heading', { level: 1, name: 'Votre chemin vers le jour J' })
+    const journey = screen.getByRole('navigation', { name: 'Votre parcours' })
+    expect(heading.compareDocumentPosition(notice) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy()
+    expect(notice.compareDocumentPosition(journey) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy()
+  })
+
   it('affiche le logo « Futur Citoyen », sans drapeau', () => {
     renderHome()
     const brand = screen.getByRole('banner')

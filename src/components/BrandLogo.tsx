@@ -48,3 +48,32 @@ export function BrandLogo() {
     </span>
   )
 }
+
+/** Gift symbol (leaf bow), same strokes and colours as the sprout. Decorative. */
+export function GiftSymbol({ className }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 64 64"
+      fill="none"
+      aria-hidden="true"
+      focusable="false"
+      className={className ?? 'size-5 shrink-0'}
+    >
+      <rect x="9" y="30" width="46" height="28" rx="4" className={`fill-[#8ed462] ${STROKE}`} strokeWidth={4.5} strokeLinejoin="round" />
+      <rect x="5" y="21" width="54" height="11" rx="3.5" className={`fill-[#f5e211] dark:fill-[#f2de2e] ${STROKE}`} strokeWidth={4.5} strokeLinejoin="round" />
+      <path d="M32 21 V58" className={STROKE} strokeWidth={4.5} strokeLinecap="round" />
+      <path
+        d="M32 21 C 30 12, 22 6, 13 7 C 13 16, 21 22, 32 21 Z"
+        className={`fill-[#8ed462] ${STROKE}`}
+        strokeWidth={4}
+        strokeLinejoin="round"
+      />
+      <path
+        d="M32 21 C 34 12, 42 6, 51 7 C 51 16, 43 22, 32 21 Z"
+        className={`fill-[#f5e211] dark:fill-[#f2de2e] ${STROKE}`}
+        strokeWidth={4}
+        strokeLinejoin="round"
+      />
+    </svg>
+  )
+}

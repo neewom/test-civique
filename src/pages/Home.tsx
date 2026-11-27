@@ -13,6 +13,7 @@ import { useIdleQuestionPack } from '@/lib/use-question-pack'
 import { DEFAULT_TITLE, loadTargetTitle, TARGET_TITLE_LABELS } from '@/lib/target-title'
 import { ThemeProgressCard } from '@/components/ThemeProgressCard'
 import { Fraction } from '@/components/Fraction'
+import { LaunchNotice } from '@/components/LaunchNotice'
 import { PageFrame } from '@/components/PageFrame'
 import { OrganicBackground } from '@/components/OrganicBackground'
 import { PillButton, PillLink } from '@/components/PillButton'
@@ -183,8 +184,10 @@ export default function Home() {
     </h1>
   )
 
+  const launchNotice = <LaunchNotice className="mt-4" />
+
   const journey = (
-    <nav aria-label="Votre parcours" className="mt-[clamp(1.5rem,6svh,3.25rem)] lg:order-2 lg:mt-10">
+    <nav aria-label="Votre parcours" className="mt-[clamp(1.25rem,4svh,2.25rem)] lg:order-2 lg:mt-8">
       <ol className="flex flex-col items-start gap-3 md:gap-3.5">
         <li className="flex max-w-full flex-col items-start">
           <PillLink to="/revision" tone="surface" end={<ArrowRight strokeWidth={2.6} />}>
@@ -399,6 +402,7 @@ export default function Home() {
             {titlePill}
             {ficheLink}
             {heading}
+            {launchNotice}
             {journey}
             {resume}
           </div>

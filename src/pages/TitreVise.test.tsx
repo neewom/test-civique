@@ -1,4 +1,4 @@
-import { render, screen, fireEvent, within } from '@testing-library/react'
+import { render, screen, fireEvent, within, cleanup } from '@testing-library/react'
 import { MemoryRouter, Route, Routes, useNavigate } from 'react-router-dom'
 import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest'
 import TitreVise from './TitreVise'
@@ -142,6 +142,16 @@ describe('Changer de titre (« Quel titre préparez-vous ? »)', () => {
 })
 
 describe('Page de première visite', () => {
+  it('annonce que tout est gratuit pendant le lancement, absent du changement de titre', () => {
+    renderTitre()
+    expect(screen.getByTestId('launch-notice')).toHaveTextContent(
+      "Tout est gratuit pendant le lancement. L'examen blanc restera toujours gratuit.",
+    )
+    cleanup()
+    renderChangeOfTitle()
+    expect(screen.queryByTestId('launch-notice')).toBeNull()
+  })
+
   it('accueil, choix du titre, sans « Retour »', () => {
     renderTitre()
     expect(screen.getByRole('heading', { level: 1, name: "Préparez l'examen civique" })).toBeInTheDocument()
