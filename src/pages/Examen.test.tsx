@@ -737,6 +737,16 @@ describe('Examen — écrans de question et de correction', () => {
     expect(timeLeft()).toBe(atCorrection - 2)
   })
 
+  it('affiche le picto pause à côté du temps pendant la correction seulement', async () => {
+    renderResumed(makeResume(1500, 0))
+    expect(screen.queryByTestId('timer-paused')).not.toBeInTheDocument()
+    await answer(true)
+    expect(screen.getByTestId('timer-paused')).toBeInTheDocument()
+    expect(screen.getByRole('progressbar', { name: 'Temps restant' })).toHaveAttribute('aria-valuetext', '25 minutes sur 45, en pause')
+    await act(async () => { fireEvent.click(screen.getByRole('button', { name: 'Question suivante' })) })
+    expect(screen.queryByTestId('timer-paused')).not.toBeInTheDocument()
+  })
+
   it('le temps expiré pendant la réponse termine toujours l\'examen', async () => {
     renderResumed(makeResume(2, 0))
     await act(async () => { vi.advanceTimersByTime(2000) })
