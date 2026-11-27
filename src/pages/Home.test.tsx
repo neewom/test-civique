@@ -111,10 +111,10 @@ describe('Accueil — en-tête et parcours', () => {
     expect(screen.getByRole('link', { name: /Réviser les thèmes/ })).toHaveAttribute('href', '/revision')
   })
 
-  it('l\'étape 3 est annoncée « bientôt », sans lien', () => {
+  it('l\'étape 3 mène à la page « Trouver un centre d\'examen », sans « bientôt »', () => {
     renderHome()
-    expect(screen.queryByRole('link', { name: /Trouver un centre/ })).toBeNull()
-    expect(screen.getByText("3 · Trouver un centre d'examen")).toHaveTextContent('bientôt')
+    expect(screen.getByRole('link', { name: /Trouver un centre/ })).toHaveAttribute('href', '/centres')
+    expect(screen.queryByText(/bientôt/i)).toBeNull()
   })
 
   it('mène à la page « Comment se passe l\'examen »', () => {
@@ -399,19 +399,43 @@ describe('Accueil — grand écran (1024 px et plus)', () => {
     expect(panel).not.toHaveTextContent('Encore')
   })
 
-  it('la reprise de l\'examen en cours vient avant le parcours, chaque bloc une seule fois', () => {
+  // Changed (TL decision: the DOM follows the phone order, the wide screen reorders with CSS `order`):
+  // the resume is no longer before the journey in the DOM, each block is still rendered once
+  it('la reprise de l\'examen en cours : chaque bloc une seule fois', () => {
     seedHistory([exam(36, 'a')])
     const questions = Array.from({ length: 40 }, (_, i) => ({
       id: i + 1, theme: 'Test', question: `Q${i + 1}`, answer: 'A', choices: ['A', 'B', 'C', 'D'], explanation: '',
     }))
     localStorageMock.setItem('exam-in-progress', JSON.stringify({ questions, index: 1, answers: [], timeLeft: 2700, startedAt: '2026-11-23T10:00:00.000Z' }))
     renderHome()
-    const resume = screen.getByRole('region', { name: 'Examen en cours' })
-    const nav = screen.getByRole('navigation', { name: 'Votre parcours' })
-    expect(resume.compareDocumentPosition(nav) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy()
+    expect(screen.getAllByRole('region', { name: 'Examen en cours' })).toHaveLength(1)
     expect(screen.getAllByRole('link', { name: "Comment se passe l'examen ?" })).toHaveLength(1)
     expect(screen.getAllByRole('region', { name: 'Derniers examens' })).toHaveLength(1)
     expect(screen.getAllByRole('navigation', { name: 'Votre parcours' })).toHaveLength(1)
+  })
+})
+
+describe('Accueil — ordre du DOM = ordre affiché sur téléphone', () => {
+  it('parcours, reprise, règles, derniers examens, mentions', () => {
+    stubWideScreen(false)
+    seedHistory([exam(36, 'a')])
+    const questions = Array.from({ length: 40 }, (_, i) => ({
+      id: i + 1, theme: 'Test', question: `Q${i + 1}`, answer: 'A', choices: ['A', 'B', 'C', 'D'], explanation: '',
+    }))
+    localStorageMock.setItem('exam-in-progress', JSON.stringify({ questions, index: 1, answers: [], timeLeft: 2700, startedAt: '2026-11-23T10:00:00.000Z' }))
+    renderHome()
+    const blocks = [
+      screen.getByRole('heading', { level: 1 }),
+      screen.getByRole('navigation', { name: 'Votre parcours' }),
+      screen.getByRole('region', { name: 'Examen en cours' }),
+      screen.getByRole('link', { name: "Comment se passe l'examen ?" }),
+      screen.getByRole('region', { name: 'Derniers examens' }),
+      screen.getByText(/Votre progression reste sur cet appareil/),
+      screen.getByRole('link', { name: 'Mentions légales et confidentialité' }),
+    ]
+    for (let i = 1; i < blocks.length; i++) {
+      expect(blocks[i - 1].compareDocumentPosition(blocks[i]) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy()
+    }
   })
 })
 

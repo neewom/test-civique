@@ -138,3 +138,30 @@ describe('addExamRecord', () => {
     expect(() => addExamRecord(RECORD)).not.toThrow()
   })
 })
+
+describe('findExamRecord — answer proposée', () => {
+  const base = { id: 'x', date: '2026-01-15T10:00:00.000Z', score: 0, total: 40 }
+
+  it('garde un answer valide et l\'ignore (sans écarter la réponse) s\'il n\'est pas une chaîne', () => {
+    localStorage.setItem(
+      HISTORY_KEY,
+      JSON.stringify([
+        {
+          ...base,
+          answers: [
+            { questionId: 1, chosen: null, correct: false, answer: 'ok' },
+            { questionId: 2, chosen: null, correct: false, answer: 42 },
+            { questionId: 3, chosen: null, correct: false },
+          ],
+        },
+      ]),
+    )
+    const record = findExamRecord('x')!
+    expect(record.answers).toEqual([
+      { questionId: 1, chosen: null, correct: false, answer: 'ok' },
+      { questionId: 2, chosen: null, correct: false },
+      { questionId: 3, chosen: null, correct: false },
+    ])
+    expect(loadHistory()).toHaveLength(1)
+  })
+})

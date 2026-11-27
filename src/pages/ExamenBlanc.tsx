@@ -13,7 +13,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from '@/components/ui/dialog'
-import { EXAM_SIZE, passThreshold } from '@/lib/exam'
+import { EXAM_MINUTES, EXAM_SIZE, passThreshold } from '@/lib/exam'
 import { loadProgressForTitle, resumeIndex } from '@/lib/exam-types'
 import { loadTargetTitle, DEFAULT_TITLE, TARGET_TITLE_LABELS } from '@/lib/target-title'
 import { useDocumentTitle } from '@/lib/use-document-title'
@@ -37,7 +37,7 @@ export default function ExamenBlanc() {
 
   const marks = [
     { icon: ListChecks, value: String(EXAM_SIZE), label: 'questions' },
-    { icon: Timer, value: '45 min', label: 'au maximum' },
+    { icon: Timer, value: `${EXAM_MINUTES} min`, label: 'au maximum' },
     { icon: CircleDot, value: '4 choix', label: 'une seule bonne réponse' },
     { icon: Target, value: `${passThreshold(EXAM_SIZE)}/${EXAM_SIZE}`, label: 'pour réussir', highlight: true },
   ]

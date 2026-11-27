@@ -1,4 +1,4 @@
-import { useState, type ReactNode } from 'react'
+import { useState } from 'react'
 import { Link, Navigate, useNavigate } from 'react-router-dom'
 import { ArrowRight, Check, ChevronDown, ChevronRight, MonitorSmartphone } from 'lucide-react'
 import { isPassed } from '@/lib/exam'
@@ -17,7 +17,7 @@ import { cn } from '@/lib/utils'
 
 export const OFFICIAL_SITE_URL = 'https://formation-civique.interieur.gouv.fr'
 
-// Journey steps that are not links (yet): same pill shape, no interaction
+// Journey steps that are not links (yet), as « Le jour J »: same pill shape, no interaction
 const staticStepClass =
   'inline-flex min-h-12 max-w-full items-center gap-2.5 rounded-[1.5rem] px-[1.125rem] py-1.5 text-base font-bold'
 
@@ -77,53 +77,6 @@ function RecentExam({ entry }: { entry: HistoryEntry }) {
         <div className={boxClass}>{content}</div>
       )}
     </li>
-  )
-}
-
-interface ProgressPanelProps {
-  streak: number
-  recentExams: ReactNode
-  rulesLink: ReactNode
-}
-
-/**
- * Right column of the home page from 1024 px. With exams: the « n sur 3 » counter in large,
- * the last exams and the rules. Without any: a short note and the rules.
- */
-function ProgressPanel({ streak, recentExams, rulesLink }: ProgressPanelProps) {
-  if (!recentExams) {
-    return (
-      <section aria-labelledby="progress" className="mt-[4.25rem] flex flex-col gap-4">
-        <h2 id="progress" className="text-[1.0625rem] font-bold">
-          Où vous en êtes
-        </h2>
-        <p className="text-[0.9375rem] leading-normal">
-          Vos examens blancs s'afficheront ici, avec votre progression vers les {READY_GOAL} réussites d'affilée.
-        </p>
-        {rulesLink}
-      </section>
-    )
-  }
-
-  const left = READY_GOAL - streak
-  return (
-    <section aria-labelledby="progress" className="mt-[4.25rem] flex flex-col gap-5">
-      <div className="flex flex-col gap-1">
-        <h2 id="progress" className="text-[1.0625rem] font-bold">
-          Où vous en êtes
-        </h2>
-        <p className="text-[0.9375rem] leading-normal">
-          <span className="mb-1 block text-[3.5rem] leading-none font-bold tracking-[-0.04em] tabular-nums">
-            {streak} sur {READY_GOAL}
-          </span>{' '}
-          {left > 0
-            ? `examens blancs réussis d'affilée. Encore ${left} pour atteindre l'objectif.`
-            : "examens blancs réussis d'affilée : objectif atteint."}
-        </p>
-      </div>
-      {recentExams}
-      {rulesLink}
-    </section>
   )
 }
 
@@ -195,7 +148,7 @@ export default function Home() {
   )
 
   const journey = (
-    <nav aria-label="Votre parcours" className="mt-[clamp(1.5rem,6svh,3.25rem)] lg:mt-10">
+    <nav aria-label="Votre parcours" className="mt-[clamp(1.5rem,6svh,3.25rem)] lg:order-2 lg:mt-10">
       <ol className="flex flex-col items-start gap-3 md:gap-3.5">
         <li className="max-w-full">
           <PillLink to="/revision" tone="surface" end={<ArrowRight strokeWidth={2.6} />}>
@@ -218,10 +171,9 @@ export default function Home() {
         </li>
 
         <li className="max-w-full">
-          <span className={cn(staticStepClass, 'flex-wrap bg-card text-card-foreground')}>
+          <PillLink to="/centres" tone="surface" end={<ArrowRight strokeWidth={2.6} />}>
             3 · Trouver un centre d'examen
-            <span className="rounded-full bg-muted px-2.5 text-[0.8125rem] leading-6 font-bold">bientôt</span>
-          </span>
+          </PillLink>
         </li>
 
         <li className="max-w-full">
@@ -232,7 +184,10 @@ export default function Home() {
   )
 
   const resume = inProgress && (
-    <section aria-label="Examen en cours" className="flex flex-col items-start gap-1 lg:mt-6 lg:max-w-[26rem]">
+    <section
+      aria-label="Examen en cours"
+      className="mt-auto flex flex-col items-start gap-1 pt-8 lg:order-1 lg:mt-6 lg:max-w-[26rem] lg:pt-0"
+    >
       <PillLink to="/examen" tone="ink" size="lg" end={<ArrowRight strokeWidth={2.6} />} className="w-full">
         <span className="flex flex-col">
           <span className="text-base">Reprendre l'examen en cours</span>
@@ -255,7 +210,14 @@ export default function Home() {
   const rulesLink = (
     <Link
       to="/regles"
-      className="inline-flex min-h-11 items-center self-start rounded-sm text-[0.9375rem] font-bold underline underline-offset-4"
+      className={cn(
+        'inline-flex min-h-11 items-center self-start rounded-sm text-[0.9375rem] font-bold underline underline-offset-4',
+        // Phone: under the resume (2.5 gap instead of 3) or, without one, at the bottom of the page
+        inProgress
+          ? '-mt-0.5 lg:mt-0'
+          : 'mt-auto min-h-[4.75rem] pt-8 lg:mt-0 lg:min-h-11 lg:pt-0',
+        'lg:order-1',
+      )}
     >
       Comment se passe l'examen ?
     </Link>
@@ -276,7 +238,7 @@ export default function Home() {
 
   // Progress lives in localStorage only: say so on every visit, history or not
   const deviceNotice = (
-    <p className="flex items-start gap-2 text-[0.875rem] leading-normal">
+    <p className="mt-4 flex items-start gap-2 text-[0.875rem] lg:mt-0 leading-normal">
       <MonitorSmartphone aria-hidden="true" className="mt-0.5 size-4 shrink-0" strokeWidth={2.2} />
       <span>
         Votre progression reste sur cet appareil, dans ce navigateur.{' '}
@@ -319,42 +281,64 @@ export default function Home() {
       <AppHeader />
       <div className="relative mx-auto flex grow w-full max-w-[30rem] flex-col gap-3 px-[22px] pt-0 pb-6 md:max-w-[36rem] md:px-8 md:pb-10 lg:max-w-[62rem] lg:px-10">
 
-        {wide ? (
-          // From 1024 px: the journey on the left (resume under the title, never face to
-          // face with step 2), « Où vous en êtes » on the right, the mentions at the bottom
-          <>
-            <div className="grid grid-cols-[minmax(0,1fr)_minmax(0,23rem)] items-start gap-x-16">
-              <div className="flex flex-col gap-3">
-                {titlePill}
-                {ficheLink}
-                {heading}
-                {resume}
-                {journey}
-              </div>
-              <ProgressPanel streak={streak} recentExams={recentExams} rulesLink={rulesLink} />
-            </div>
-            <footer className="mt-auto flex flex-col gap-3 pt-10">
-              {deviceNotice}
-              {legal}
-            </footer>
-          </>
-        ) : (
-          <>
+        {/* Rendered once, placed by CSS: the focused element must survive the switch at 1024 px.
+            DOM order = the phone order (what screen readers and the Tab key follow). On a phone the
+            groups and the footer are `contents` (every block is a direct child of the column). From
+            1024 px: the journey on the left (resume moved under the title with `order`, never face
+            to face with step 2), « Où vous en êtes » on the right (last exams before the rules),
+            the mentions at the bottom. */}
+        <div className="contents lg:grid lg:grid-cols-[minmax(0,1fr)_minmax(0,23rem)] lg:items-start lg:gap-x-16">
+          <div className="contents lg:flex lg:flex-col lg:gap-3">
             {titlePill}
             {ficheLink}
             {heading}
             {journey}
+            {resume}
+          </div>
 
-            <div className="mt-auto flex flex-col gap-2.5 pt-8">
-              {resume}
-              {rulesLink}
-            </div>
-
+          <section
+            role={wide ? 'region' : undefined}
+            aria-labelledby={wide ? 'progress' : undefined}
+            className={cn(
+              'contents lg:mt-[4.25rem] lg:flex lg:flex-col',
+              recent.length > 0 ? 'lg:gap-5' : 'lg:gap-4',
+            )}
+          >
+            {wide &&
+              (recent.length > 0 ? (
+                <div className="flex flex-col gap-1">
+                  <h2 id="progress" className="text-[1.0625rem] font-bold">
+                    Où vous en êtes
+                  </h2>
+                  <p className="text-[0.9375rem] leading-normal">
+                    <span className="mb-1 block text-[3.5rem] leading-none font-bold tracking-[-0.04em] tabular-nums">
+                      {streak} sur {READY_GOAL}
+                    </span>{' '}
+                    {READY_GOAL - streak > 0
+                      ? `examens blancs réussis d'affilée. Encore ${READY_GOAL - streak} pour atteindre l'objectif.`
+                      : "examens blancs réussis d'affilée : objectif atteint."}
+                  </p>
+                </div>
+              ) : (
+                <>
+                  <h2 id="progress" className="text-[1.0625rem] font-bold">
+                    Où vous en êtes
+                  </h2>
+                  <p className="text-[0.9375rem] leading-normal">
+                    Vos examens blancs s'afficheront ici, avec votre progression vers les {READY_GOAL} réussites
+                    d'affilée.
+                  </p>
+                </>
+              ))}
+            {rulesLink}
             {recentExams}
-            <div className="mt-4">{deviceNotice}</div>
-            {legal}
-          </>
-        )}
+          </section>
+        </div>
+
+        <footer className="contents lg:mt-auto lg:flex lg:flex-col lg:gap-3 lg:pt-10">
+          {deviceNotice}
+          {legal}
+        </footer>
       </div>
     </main>
   )
