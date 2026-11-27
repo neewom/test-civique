@@ -1,6 +1,6 @@
 import { useEffect, useId, useRef, useState } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
-import { ArrowLeft, Clock } from 'lucide-react'
+import { ArrowLeft, CirclePause, Clock } from 'lucide-react'
 import {
   Dialog,
   DialogContent,
@@ -384,12 +384,14 @@ function ExamSession({ restarted, onRestart }: ExamSessionProps) {
                 aria-valuenow={globalTimeLeft}
                 aria-valuemin={0}
                 aria-valuemax={GLOBAL_EXAM_TIME}
-                aria-valuetext={`${plural(minutes, 'minute')} sur ${EXAM_MINUTES}`}
+                aria-valuetext={`${plural(minutes, 'minute')} sur ${EXAM_MINUTES}${inCorrection ? ', en pause' : ''}`}
                 className={cn('h-full', lowTime ? 'bg-coral' : 'bg-foreground')}
                 style={{ width: `${timerPct}%` }}
               />
             </div>
-            <span aria-hidden="true" className="text-sm font-bold whitespace-nowrap tabular-nums">
+            {/* Paused during the correction: a pause icon before the time (same icon as on /examen-blanc) */}
+            <span aria-hidden="true" className="inline-flex items-center gap-1 text-sm font-bold whitespace-nowrap tabular-nums">
+              {inCorrection && <CirclePause data-testid="timer-paused" className="size-4 shrink-0" strokeWidth={2.4} />}
               {clockLabel(globalTimeLeft)}
             </span>
           </div>
