@@ -73,6 +73,11 @@ export default function MentionsLegales() {
             Ils restent donc sur cet appareil, dans ce navigateur : vous les retrouvez à chaque visite, mais pas sur un
             autre téléphone ou un autre navigateur, ni en navigation privée.
           </p>
+          <p>
+            Pour fonctionner sans connexion Internet, le site garde aussi dans le cache de votre navigateur ses
+            propres fichiers et les questions du titre que vous préparez. Ce sont des données techniques du site, rien
+            de personnel, qui ne nous sont pas envoyées.
+          </p>
           <p>Pour les effacer, supprimez les données du site dans les réglages de votre navigateur.</p>
         </InfoCard>
 

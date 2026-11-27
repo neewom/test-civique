@@ -1,4 +1,4 @@
-import { Check, CircleDot, ExternalLink, Info, ListChecks, Target, Timer } from 'lucide-react'
+import { Check, CircleDot, ExternalLink, Info, ListChecks, Target, Timer, WifiOff } from 'lucide-react'
 import { Navigate, useLocation, useNavigate, useParams } from 'react-router-dom'
 import { Fraction } from '@/components/Fraction'
 import { PageFrame } from '@/components/PageFrame'
@@ -12,6 +12,8 @@ import { hasProgress } from '@/lib/exam-types'
 import { loadHistory } from '@/lib/history'
 import { DEFAULT_TITLE, loadTargetTitle, saveTargetTitle, type TargetTitle, type TitleKey } from '@/lib/target-title'
 import { useDocumentTitle } from '@/lib/use-document-title'
+import { useTitleAvailability } from '@/lib/use-title-availability'
+import { OFFLINE_TITLE_NOTE } from '@/pages/TitreVise'
 import { cn } from '@/lib/utils'
 
 /** « Tout savoir sur ce titre »: one page per title (maquette). */
@@ -28,6 +30,8 @@ function Fiche({ titleKey }: { titleKey: TitleKey }) {
   useDocumentTitle(label)
   const navigate = useNavigate()
   const location = useLocation()
+  // Offline, the title whose questions are not on the device cannot be chosen from here either
+  const { isAvailable } = useTitleAvailability()
   // Every title is open now: the sheet always offers to train for it
   const target: TargetTitle = titleKey
   // Same rule as the home page: an existing user without a stored title has the default one
@@ -35,6 +39,8 @@ function Fiche({ titleKey }: { titleKey: TitleKey }) {
   const existingUser = loadHistory().length > 0 || hasProgress()
   const chosen = stored ?? (existingUser ? DEFAULT_TITLE : null)
   const alreadyChosen = chosen === target
+  // The title already chosen stays usable: the app already works with it (same rule as the change of title)
+  const unavailable = !alreadyChosen && !isAvailable(target)
   // First pass (nothing chosen, nothing known): the page is not one to come back to
   const firstPass = chosen === null
 
@@ -75,14 +81,23 @@ function Fiche({ titleKey }: { titleKey: TitleKey }) {
         <div className="mt-1 flex flex-col items-start gap-1">
           <PillButton
             size="lg"
-            className="w-full justify-center text-center"
+            aria-disabled={unavailable || undefined}
+            aria-describedby={unavailable ? 'offline-title-note' : undefined}
+            className={cn('w-full justify-center text-center', unavailable && 'bg-card/50 text-muted-foreground hover:bg-card/50')}
             onClick={() => {
+              if (unavailable) return
               saveTargetTitle(target)
               navigate('/', { replace: firstPass })
             }}
           >
             {alreadyChosen ? 'Continuer mon entraînement' : "M'entraîner pour ce titre"}
           </PillButton>
+          {unavailable && (
+            <p id="offline-title-note" className="flex items-start gap-1.5 px-5 text-[0.8125rem] font-bold text-muted-foreground">
+              <WifiOff aria-hidden="true" className="mt-px size-4 shrink-0" strokeWidth={2.4} />
+              {OFFLINE_TITLE_NOTE}
+            </p>
+          )}
         </div>
 
         <section aria-labelledby="needs" className="mt-2 flex flex-col gap-2">
