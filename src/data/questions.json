@@ -68,13 +68,13 @@
     ],
     "question": "Le principe d’égalité signifie que :",
     "distractors": [
-      "Tous les citoyens doivent avoir le même revenu",
-      "La loi s'applique différemment selon l'origine des personnes",
-      "Les hommes et les femmes ont des droits différents selon leur rôle",
-      "L'égalité ne s'applique qu'aux citoyens majeurs",
-      "Tout le monde doit gagner le même salaire",
-      "L'égalité s'applique seulement devant les tribunaux pénaux",
-      "L'État garantit un logement et un revenu identiques à tous"
+      "Tous les citoyens ont le même revenu et sont payés de la même façon par l'État",
+      "Tous les individus ont les mêmes devoirs mais des droits différents selon leur origine",
+      "Tous les hommes ont plus de droits et sont traités autrement que les femmes devant la loi",
+      "Tous les citoyens majeurs ont les mêmes droits et les étrangers n'ont pas de droits",
+      "Tous les salariés ont le même salaire et sont traités de la même façon par l'employeur",
+      "Tous les citoyens ont droit à un logement et à un revenu identiques fournis par l'État",
+      "Tous les individus ont des droits égaux mais sont jugés selon leur situation sociale"
     ],
     "explanation": "L'égalité devant la loi signifie que la loi est la même pour toutes les personnes, sans distinction d'origine, de sexe, de religion ou de situation sociale. Ce principe est inscrit dans la Constitution de 1958 et dans la Déclaration des droits de l'homme et du citoyen. Il n'empêche pas de traiter différemment des personnes dans des situations différentes (par exemple, des tarifs réduits pour les étudiants).",
     "answers": [
@@ -153,18 +153,18 @@
     ],
     "question": "Certains métiers peuvent-ils être réservés aux hommes ?",
     "distractors": [
-      "Oui, les métiers nécessitant une grande force physique",
-      "Oui, les métiers de l'armée de terre et de la marine",
-      "Oui, si l'employeur le justifie dans l'offre d'emploi",
-      "Oui, dans les entreprises de moins de 10 salariés",
-      "Oui, les métiers de la sécurité privée et de la défense",
-      "Oui, certaines professions libérales réglementées",
-      "Oui, dans certains secteurs industriels dangereux",
-      "Oui, les postes de direction des grandes entreprises"
+      "Oui, les métiers qui demandent une grande force physique, comme dans le bâtiment ou l'industrie",
+      "Oui, les postes de direction, quand l'employeur le précise dans l'offre d'emploi",
+      "Oui, les métiers de la sécurité et de la défense, selon un décret du ministère de l'Intérieur",
+      "Certains métiers de l'armée et de la police, que la loi réserve encore aux hommes",
+      "Certains métiers du bâtiment et de l'industrie lourde, que la loi réserve encore aux hommes",
+      "Certains métiers de la finance et du droit, que la loi réserve encore aux hommes",
+      "Des métiers dangereux, réservés aux hommes, car la loi protège la santé des femmes",
+      "Des professions réglementées, réservées aux hommes, car leur ordre professionnel en décide ainsi"
     ],
     "explanation": "En France, l'égalité professionnelle entre les femmes et les hommes est garantie par la loi : un employeur ne peut ni indiquer le sexe recherché dans une offre d'emploi, ni refuser une embauche en raison du sexe. Les seules exceptions concernent des emplois où le sexe est déterminant par nature (acteur jouant un rôle féminin ou masculin, mannequin, modèle). Toute discrimination à l'embauche est sanctionnée.",
     "answers": [
-      "Non, l'égalité professionnelle entre hommes et femmes est garantie par la loi"
+      "Les métiers sont ouverts aux hommes comme aux femmes, l'égalité professionnelle est garantie par la loi"
     ],
     "source": {
       "url": "https://code.travail.gouv.fr/code-du-travail/r1142-1",
@@ -208,14 +208,14 @@
     "crNumber": 26,
     "question": "Le régime de la France est :",
     "distractors": [
-      "Une monarchie constitutionnelle",
-      "Une théocratie républicaine",
-      "Une fédération d'États autonomes",
-      "Une oligarchie parlementaire",
-      "Une dictature présidentielle",
-      "Une démocratie directe",
-      "Une monarchie absolue modernisée",
-      "Un régime présidentiel pur comme aux États-Unis"
+      "Une monarchie constitutionnelle (le modèle britannique)",
+      "Une théocratie républicaine (la loi religieuse)",
+      "Une fédération d'États autonomes (comme l'Allemagne)",
+      "Une oligarchie parlementaire (le pouvoir de quelques-uns)",
+      "Une dictature présidentielle (le pouvoir d'un chef)",
+      "Une démocratie directe (le modèle suisse)",
+      "Une monarchie absolue modernisée (le roi décide)",
+      "Un régime présidentiel pur (comme aux États-Unis)"
     ],
     "explanation": "La France est une République démocratique : le pouvoir vient du peuple, qui élit ses représentants au suffrage universel. Le régime actuel est la Ve République, instaurée le 4 octobre 1958, avec un pouvoir exécutif fort.",
     "answers": [
@@ -265,13 +265,13 @@
     "natNumber": 9,
     "question": "Où peut-on voir la devise de la République ?",
     "distractors": [
-      "Uniquement dans les tribunaux et les préfectures",
-      "Seulement à l'Assemblée nationale et au Sénat",
-      "Sur les billets de banque en euros uniquement",
-      "Dans les églises et les lieux de culte reconnus",
-      "Seulement dans les écoles primaires publiques",
-      "Uniquement sur les passeports et cartes d'identité",
-      "Sur les uniformes des forces de l'ordre uniquement"
+      "Dans les églises, les stades et les centres commerciaux",
+      "Sur les billets de banque, les chèques et les cartes bancaires",
+      "Sur les maillots des sportifs, les voitures et les affiches publicitaires",
+      "Sur les billets de train, les tickets de métro et les factures d'électricité",
+      "Dans les hôpitaux privés, les banques et les compagnies d'assurance",
+      "Sur les panneaux routiers, les cartes de transport et les billets d'avion",
+      "Dans les cinémas, les théâtres et les salles de concert privées"
     ],
     "explanation": "La devise « Liberté, Égalité, Fraternité » est inscrite sur la façade des bâtiments publics (mairies, écoles, tribunaux…). On la trouve aussi sur les pièces françaises de 1 et 2 euros, sur certains timbres et sur des documents officiels comme la carte d'identité.",
     "answers": [
@@ -294,14 +294,14 @@
     "crNumber": 24,
     "question": "Quels sont des symboles officiels de la République française ?",
     "distractors": [
-      "La fleur de lys, l'aigle impérial et la Croix de Lorraine",
-      "La croix chrétienne, le coq et la Tour Eiffel",
-      "Le bonnet rouge, la guillotine et la Déclaration de 1789",
-      "L'étoile d'or sur fond bleu de l'UE et la Marseillaise",
-      "Le béret, la baguette et le drapeau tricolore",
-      "La couronne royale, le sceptre et la fleur de lys",
-      "L'arc de triomphe, la Tour Eiffel et la Seine",
-      "Le sceau de l'État, le drapeau blanc et le coq gaulois"
+      "La fleur de lys, l'aigle impérial, la Croix de Lorraine et la devise 'Dieu et mon droit'",
+      "La croix chrétienne, le coq, la Tour Eiffel et la devise 'Travail, Famille, Patrie'",
+      "Le bonnet rouge, la guillotine, la Bastille et la devise 'Un pour tous, tous pour un'",
+      "Le drapeau blanc, la fleur de lys, le coq et la devise 'Montjoie Saint-Denis'",
+      "Le béret, la baguette, la Tour Eiffel et la devise 'Liberté, Égalité, Sécurité'",
+      "L'aigle impérial, l'abeille, le drapeau rouge et la devise 'Honneur et Patrie'",
+      "L'arc de triomphe, le coq gaulois, la Seine et la devise 'Fluctuat nec mergitur'",
+      "Le sceau de l'État, le soleil, le coq gaulois et la devise 'Nec pluribus impar'"
     ],
     "explanation": "L'article 2 de la Constitution cite le drapeau tricolore bleu, blanc, rouge, la Marseillaise (hymne national) et la devise « Liberté, Égalité, Fraternité ». Marianne et la fête nationale du 14 juillet sont aussi des symboles officiels. Le coq est un symbole national, mais non officiel.",
     "answers": [
@@ -322,13 +322,13 @@
     ],
     "question": "Qu’est-ce que l’égalité ?",
     "distractors": [
-      "Le fait que tout le monde gagne le même salaire",
-      "Le partage égal des richesses nationales entre tous les citoyens",
-      "L'obligation pour l'État de donner le même logement à chacun",
-      "La suppression de toute différence entre les individus",
-      "L'obligation de traiter tout étranger comme un citoyen français",
-      "La garantie que chaque enfant ira dans la même école",
-      "Le fait que les élections soient organisées régulièrement"
+      "Le fait que tous les citoyens gagnent le même salaire et reçoivent la même aide de l'État",
+      "Le fait que toutes les richesses du pays soient partagées de façon égale entre les citoyens",
+      "Le fait que l'État donne le même logement et le même revenu à chaque habitant du pays",
+      "Le fait que les individus aient les mêmes droits mais soient traités selon leur origine par la loi",
+      "Le fait que tout étranger soit traité comme un citoyen français et obtienne les mêmes droits politiques",
+      "Le fait que chaque enfant aille dans la même école et reçoive exactement le même diplôme",
+      "Le fait que les élections aient lieu régulièrement et que chaque citoyen puisse voter librement"
     ],
     "explanation": "L'égalité est l'un des trois piliers de la devise républicaine. Elle signifie que tous les individus, quelles que soient leur origine, leur sexe, leur religion ou leur condition sociale, ont les mêmes droits et sont traités de façon identique devant la loi.",
     "answers": [
@@ -349,14 +349,14 @@
     ],
     "question": "Que signifie la liberté ?",
     "distractors": [
-      "Le droit de faire absolument tout ce que l'on veut",
-      "L'absence totale de règles et de contraintes sociales",
-      "Le droit de ne pas payer ses impôts si on le décide",
-      "La possibilité de refuser toute autorité de l'État",
-      "Le droit de s'exprimer sans aucune limite légale",
-      "L'absence d'obligations envers la société et les autres",
-      "Le droit de circuler librement hors des frontières sans passeport",
-      "La possibilité de vivre en dehors des lois de la République"
+      "Le droit de faire ce que l'on veut dans la mesure où cela plaît à la majorité",
+      "Le droit de choisir ses règles de vie sans avoir à respecter celles de l'État",
+      "La possibilité de ne pas payer ses impôts quand on désapprouve la politique du gouvernement",
+      "Le droit de s'exprimer et d'agir à sa guise tant que la police ne le voit pas",
+      "Le droit de faire ce qui ne nuit pas à autrui, à condition d'avoir l'autorisation de la mairie",
+      "Le droit de refuser les lois que l'on juge contraires à ses propres convictions",
+      "La possibilité de vivre à l'écart des lois de la République et de ses institutions",
+      "Le droit de décider pour les autres dès lors que l'on pense agir pour leur bien"
     ],
     "explanation": "En France, chaque personne peut penser, s'exprimer et vivre comme elle le souhaite, à condition de ne pas empêcher les autres d'en faire autant. Selon la Déclaration des droits de l'homme et du citoyen de 1789, la liberté consiste à faire tout ce qui ne nuit pas à autrui, et ses limites sont fixées par la loi.",
     "answers": [
@@ -435,14 +435,14 @@
     ],
     "question": "Quel est l’un des rôles des associations ?",
     "distractors": [
-      "Remplacer les services publics défaillants de l'État",
-      "Élire les représentants politiques locaux",
-      "Rédiger les projets de loi soumis au Parlement",
-      "Gérer le budget des collectivités territoriales",
-      "Contrôler le travail des fonctionnaires",
-      "Fixer le montant des impôts locaux",
-      "Distribuer les aides sociales au nom de l'État",
-      "Nommer les maires des petites communes"
+      "Remplacer les services publics de l'État pour assurer la sécurité des habitants du quartier",
+      "Élire les représentants politiques locaux pour gérer les affaires de la commune",
+      "Rédiger les projets de loi soumis au Parlement pour défendre l'intérêt général",
+      "Gérer le budget des collectivités territoriales pour financer les services publics locaux",
+      "Contrôler le travail des fonctionnaires pour vérifier que la loi est bien appliquée",
+      "Fixer le montant des impôts locaux pour financer les actions de la commune",
+      "Nommer les maires des petites communes pour remplacer les élus qui ont démissionné",
+      "Voter les lois relatives à la vie associative pour protéger les droits des adhérents"
     ],
     "explanation": "Les associations (loi de 1901) permettent aux citoyens de se regrouper librement pour défendre une cause, pratiquer une activité sportive ou culturelle, ou mener des actions humanitaires. Elles jouent un rôle essentiel dans la démocratie et la vie sociale française.",
     "answers": [
@@ -490,16 +490,18 @@
     ],
     "question": "Quel symbole de la République française est tricolore ?",
     "distractors": [
-      "Le sceau officiel de la République",
-      "Le buste de Marianne dans les mairies",
-      "La tenue des gendarmes en service",
-      "Le bonnet phrygien de la liberté",
-      "La rosette de la Légion d'honneur",
-      "L'uniforme des hussards de la République"
+      "Le coq gaulois",
+      "Le sceau officiel",
+      "La devise",
+      "La Marseillaise",
+      "Le buste de Marianne",
+      "La fête nationale",
+      "Le bonnet phrygien",
+      "La Constitution"
     ],
     "explanation": "Le drapeau tricolore bleu, blanc, rouge est le symbole tricolore officiel de la République française. Né de la Révolution française, il associe les couleurs de Paris (bleu et rouge) à la couleur royale (blanc). Il est inscrit dans la Constitution.",
     "answers": [
-      "Le drapeau"
+      "Le drapeau national"
     ],
     "group": "symboles-republique",
     "source": {
@@ -660,14 +662,14 @@
     ],
     "question": "Quelle proposition est correcte ? La liberté d'expression :",
     "distractors": [
-      "La liberté d'expression est absolue et sans aucune limite légale",
-      "La liberté d'expression ne s'applique qu'aux journalistes professionnels",
-      "La liberté d'expression ne concerne que les discours politiques",
-      "On peut dire tout ce qu'on veut tant qu'on est en privé",
-      "La liberté d'expression n'existe pas en France contrairement aux États-Unis",
-      "La liberté d'expression interdit toute critique du gouvernement",
-      "On peut s'exprimer librement mais seulement en français",
-      "La liberté d'expression est garantie seulement aux citoyens français"
+      "La liberté d'expression est garantie sans limites : la loi n'interdit ni l'injure, ni la diffamation, ni les menaces",
+      "La liberté d'expression est réservée aux journalistes : la loi interdit aux autres de critiquer le gouvernement",
+      "La liberté d'expression est limitée au cercle privé : la loi punit les propos tenus en public, à la radio ou sur Internet",
+      "La liberté d'expression n'existe pas en France : la loi l'interdit, contrairement aux États-Unis et au Royaume-Uni",
+      "La liberté d'expression est garantie mais elle a des limites : la loi punit la critique du gouvernement, de la police et des élus",
+      "La liberté d'expression est garantie aux citoyens français : la loi la refuse aux étrangers, aux mineurs et aux salariés",
+      "La liberté d'expression ne concerne que la politique : la loi interdit de parler de religion, de sport ou de cinéma",
+      "La liberté d'expression s'exerce en français : la loi interdit les autres langues dans la presse et à la radio"
     ],
     "explanation": "La liberté d'expression est garantie en France mais elle n'est pas absolue. Elle s'arrête là où commence le délit : diffamation, injure publique, incitation à la haine raciale ou religieuse, négationnisme, menaces. Ces limitations visent à protéger la dignité et l'ordre public.",
     "answers": [
@@ -718,14 +720,14 @@
     "crNumber": 19,
     "question": "Qu'est-ce que la Marseillaise ?",
     "distractors": [
-      "Un chant révolutionnaire interdit sous la Ve République",
-      "Le titre d'un opéra de Bizet sur la Révolution française",
-      "Un poème de Victor Hugo mis en musique au XIXe siècle",
-      "Le chant officiel de l'armée française uniquement",
-      "Une chanson populaire devenue officielle en 1945",
-      "L'hymne de la ville de Marseille uniquement",
-      "Un chant composé par Napoléon Bonaparte",
-      "L'hymne de la Résistance française pendant la guerre"
+      "Un chant révolutionnaire, interdit sous la Ve République depuis 1958",
+      "Le titre d'un opéra, composé par Georges Bizet en 1875",
+      "Un poème de Victor Hugo, mis en musique en 1830",
+      "Le chant officiel de l'armée française, adopté en 1945",
+      "L'hymne de la ville de Marseille, composé en 1815 par un habitant",
+      "Un chant composé par Napoléon Bonaparte, devenu officiel en 1804",
+      "L'hymne de la Résistance, composé en 1943 à Londres",
+      "Une chanson populaire, devenue officielle en 1945"
     ],
     "explanation": "La Marseillaise a été composée en avril 1792 par Rouget de Lisle, sous le titre « Chant de guerre pour l'armée du Rhin ». Elle est déclarée chant national le 14 juillet 1795 et devient l'hymne national en 1879. On l'entend lors des cérémonies officielles et des compétitions sportives internationales.",
     "answers": [
@@ -757,7 +759,7 @@
     ],
     "explanation": "Le défilé militaire du 14 juillet existe depuis 1880 (cette année-là, il eut lieu à Longchamp). Il descend aujourd'hui les Champs-Élysées, en présence du président de la République : l'avenue en est de nouveau le cadre depuis 1980. Le soir, des bals et des feux d'artifice ont lieu dans tout le pays.",
     "answers": [
-      "Un défilé militaire"
+      "Un défilé militaire des armées françaises"
     ],
     "group": "fete-nationale",
     "source": {
@@ -802,13 +804,13 @@
     ],
     "question": "Une personne peut-elle changer librement de religion ?",
     "distractors": [
-      "Non, on garde toujours la religion déclarée à la naissance",
-      "Oui, mais seulement une fois dans sa vie",
-      "Non, sauf autorisation préfectorale",
-      "Oui, mais uniquement pour les religions reconnues par l'État",
-      "Non, si cela contrevient aux valeurs républicaines",
-      "Oui, mais il faut en informer la mairie de sa commune",
-      "Oui, mais cela doit être validé par un acte notarié"
+      "Non, la religion est inscrite sur la carte d'identité et ne peut plus changer",
+      "Oui, mais seulement une fois dans sa vie, après un délai de réflexion",
+      "Non, la loi interdit de quitter la religion de ses parents avant 25 ans",
+      "Non, la loi impose à chaque citoyen la religion officielle de l'État",
+      "Oui, à condition d'en informer la mairie de sa commune",
+      "Oui, mais cela doit être validé par un acte notarié",
+      "Non, on garde toujours la religion déclarée à la naissance"
     ],
     "explanation": "La liberté de conscience et de religion est un droit fondamental en France. Chacun est libre de croire ou de ne pas croire, de pratiquer la religion de son choix ou d'en changer à tout moment, sans contrainte ni autorisation administrative. Ce droit est garanti par la loi de 1905 et par la Constitution.",
     "answers": [
@@ -888,14 +890,14 @@
     ],
     "question": "Que permet le principe de laïcité ?",
     "distractors": [
-      "D'interdire toute pratique religieuse dans l'espace public",
-      "D'imposer l'athéisme à tous les fonctionnaires et citoyens",
-      "De favoriser la religion catholique, traditionnelle en France",
-      "D'interdire la construction de nouveaux lieux de culte",
-      "De financer les Églises et associations religieuses reconnues",
-      "D'obliger chaque citoyen à déclarer sa religion à l'État",
-      "De supprimer tous les jours fériés d'origine religieuse",
-      "D'interdire le port de tout signe religieux en public"
+      "D'interdire toute pratique religieuse dans l'espace public, tout en protégeant les religions dans les lieux de culte",
+      "D'imposer l'athéisme aux fonctionnaires, tout en laissant les citoyens libres de pratiquer chez eux",
+      "De favoriser la religion catholique, traditionnelle en France, tout en tolérant les autres religions",
+      "De financer les Églises et les associations religieuses, tout en gardant le contrôle de leurs revenus",
+      "D'obliger chaque citoyen à déclarer sa religion à l'État, tout en protégeant ses données personnelles",
+      "De supprimer tous les jours fériés d'origine religieuse, tout en gardant les vacances scolaires",
+      "D'interdire la construction de nouveaux lieux de culte, tout en maintenant ceux qui existent déjà",
+      "D'interdire le port de signes religieux dans la rue, tout en autorisant la pratique à domicile"
     ],
     "explanation": "La laïcité garantit simultanément la liberté de conscience (chacun croit ce qu'il veut) et la neutralité de l'État (qui ne favorise ni ne pénalise aucune religion). C'est un équilibre entre liberté individuelle et égalité de traitement de tous les citoyens.",
     "answers": [
@@ -918,14 +920,13 @@
     "crNumber": 30,
     "question": "Quel droit est garanti par la laïcité ?",
     "distractors": [
-      "Le droit d'imposer sa religion aux autres",
-      "Le droit d'imposer ses croyances à ses enfants à l'école",
-      "Le droit de refuser de travailler les jours de fête religieuse",
-      "Le droit de ne pas être jugé par un tribunal civil",
-      "Le droit de gérer une école selon des principes religieux avec des fonds publics",
-      "Le droit des religions de financer des partis politiques",
-      "Le droit des fonctionnaires de porter des signes religieux en service",
-      "Le droit de refuser des soins médicaux pour raisons religieuses"
+      "La liberté religieuse : le droit d'imposer sa religion aux autres",
+      "La liberté d'éducation : le droit d'imposer ses croyances à ses enfants à l'école",
+      "La liberté de culte : le droit de refuser de travailler les jours de fête religieuse",
+      "La liberté de jugement : le droit de refuser d'être jugé par un tribunal civil",
+      "La liberté d'influence : le droit d'une religion de financer un parti politique",
+      "La liberté de tenue : le droit des fonctionnaires de porter des signes religieux en service",
+      "La liberté de vote : le droit d'obliger les fidèles à voter pour un candidat religieux"
     ],
     "explanation": "La laïcité garantit en premier lieu la liberté de conscience : chaque personne est libre de croire en une religion, d'en changer ou de n'avoir aucune croyance religieuse, sans que l'État ne s'en mêle ni ne la favorise ou la pénalise.",
     "answers": [
@@ -978,14 +979,14 @@
     "natNumber": 35,
     "question": "Qu'est-ce que la laïcité ?",
     "distractors": [
-      "L'interdiction de toute pratique religieuse en public",
-      "L'obligation d'être athée pour exercer une fonction publique",
-      "La supériorité de la religion catholique dans les lois françaises",
-      "L'interdiction de construire des mosquées et synagogues",
-      "Le financement des Églises par l'État via les impôts",
-      "L'obligation de déclarer sa religion à la mairie",
-      "La suppression de tous les symboles religieux en France",
-      "L'interdiction des religions non chrétiennes sur le territoire"
+      "L'interdiction de toute pratique religieuse en public, imposée à tous les citoyens",
+      "L'obligation d'être athée pour exercer une fonction publique, imposée aux fonctionnaires",
+      "La supériorité de la religion catholique dans les lois, inscrite dans la Constitution",
+      "L'interdiction de construire de nouveaux lieux de culte, décidée par chaque commune",
+      "Le financement des Églises par l'État, assuré par les impôts de tous les citoyens",
+      "L'obligation de déclarer sa religion à la mairie, imposée lors du recensement",
+      "La suppression de tous les symboles religieux en France, votée en 1905",
+      "L'interdiction des religions non chrétiennes, inscrite dans la loi de 1905"
     ],
     "explanation": "La laïcité est le principe fondamental de séparation des Églises et de l'État, établi par la loi de 1905. L'État est neutre vis-à-vis de toutes les religions. Elle garantit la liberté de conscience : chacun peut croire ou ne pas croire librement.",
     "answers": [
@@ -1006,16 +1007,16 @@
     ],
     "question": "Un enfant peut-il refuser d’aller à l’école pour une raison religieuse ?",
     "distractors": [
-      "Oui, si ses parents le justifient par écrit auprès de la direction",
-      "Oui, à condition d'être suivi par un précepteur privé agréé",
-      "Oui, pendant les grandes périodes religieuses (ramadan, Pâques…)",
-      "Oui, si l'école ne propose pas de menu alimentaire adapté",
-      "Oui, si le chef de la communauté religieuse l'autorise",
-      "Oui, si la famille pratique une religion officiellement reconnue"
+      "Oui, dès 12 ans, si ses parents le justifient par écrit auprès de la direction",
+      "Oui, à partir de 14 ans, à condition d'être suivi par un précepteur agréé",
+      "Oui, dès 6 ans, si la famille pratique une religion officiellement reconnue",
+      "Oui, dès 8 ans, si le chef de la communauté religieuse l'autorise",
+      "L'instruction est obligatoire de 6 à 14 ans, avec des dispenses selon les convictions",
+      "L'instruction est facultative après 10 ans, si les convictions de la famille l'exigent"
     ],
     "explanation": "L'instruction est obligatoire de 3 à 16 ans pour tous les enfants qui vivent en France, sans exception religieuse. Les convictions religieuses ne permettent ni de refuser l'école ni de refuser une matière : seules des autorisations d'absence ponctuelles peuvent être accordées pour les grandes fêtes religieuses.",
     "answers": [
-      "Non, l'instruction est obligatoire de 3 à 16 ans, quelles que soient les convictions religieuses"
+      "L'instruction est obligatoire de 3 à 16 ans, quelles que soient les convictions religieuses"
     ],
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/laicite/la-laicite-a-ecole-1/",
@@ -1093,14 +1094,14 @@
     "crNumber": 67,
     "question": "Le Parlement est composé :",
     "distractors": [
-      "Du Conseil d'État et du Conseil constitutionnel",
-      "De l'Assemblée nationale et du Conseil économique et social",
-      "Du Sénat et de la Cour de cassation",
-      "Du gouvernement et de l'Assemblée nationale",
-      "Des préfets et des présidents de région",
-      "Du Conseil d'État, de la Cour des comptes et du Sénat",
-      "De l'Assemblée nationale et du Conseil supérieur de la magistrature",
-      "Du Premier ministre et des présidents des assemblées"
+      "Du Conseil d'État (200 membres) et du Conseil constitutionnel (9 membres)",
+      "De l'Assemblée nationale (577 députés) et du Conseil économique et social (175 membres)",
+      "Du Sénat (348 sénateurs) et de la Cour de cassation (200 magistrats)",
+      "Du gouvernement (35 ministres) et de l'Assemblée nationale (577 députés)",
+      "Des préfets (101 préfets) et des présidents de région (18 présidents)",
+      "Du Conseil d'État (200 membres), de la Cour des comptes et du Sénat (348 sénateurs)",
+      "De la Cour des comptes (700 magistrats) et du Conseil d'État (200 membres)",
+      "Du Président de la République (1 élu) et du Premier ministre (1 nommé)"
     ],
     "explanation": "Le Parlement français est composé de deux chambres : l'Assemblée nationale (577 députés, élus pour 5 ans au suffrage universel direct) et le Sénat (348 sénateurs, élus pour 6 ans au suffrage indirect). Ensemble, ils votent les lois et contrôlent le gouvernement.",
     "answers": [
@@ -1121,14 +1122,14 @@
     ],
     "question": "Qu'est-ce que le pouvoir exécutif ? Le pouvoir :",
     "distractors": [
-      "Le pouvoir de voter et d'adopter les lois",
-      "Le pouvoir de juger et de sanctionner les infractions",
-      "Le pouvoir de contrôler la conformité des lois à la Constitution",
-      "Le pouvoir d'administrer les communes et les départements",
-      "Le pouvoir de lever les impôts et de voter le budget",
-      "Le pouvoir de ratifier les traités internationaux uniquement",
-      "Le pouvoir de nommer les juges et les magistrats",
-      "Le pouvoir de surveiller les médias et la presse"
+      "Le pouvoir de voter et d'adopter les lois, exercé par l'Assemblée nationale et le Sénat",
+      "Le pouvoir de juger et de sanctionner les infractions, exercé par les tribunaux et les juges",
+      "Le pouvoir de contrôler la conformité des lois, exercé par le Conseil constitutionnel",
+      "Le pouvoir de voter le budget et de contrôler le gouvernement, exercé par les députés",
+      "Le pouvoir de lever les impôts, exercé par les préfets et les maires",
+      "Le pouvoir de modifier la Constitution, exercé par le Conseil constitutionnel",
+      "Le pouvoir de surveiller les médias et la presse, exercé par l'Arcom",
+      "Le pouvoir de rendre la justice, exercé par la Cour de cassation et le Conseil d'État"
     ],
     "explanation": "Le pouvoir exécutif est le pouvoir de gouverner, c'est-à-dire d'appliquer les lois et de conduire la politique nationale. En France, il est exercé par le Président de la République et le gouvernement (Premier ministre et ministres).",
     "answers": [
@@ -1204,14 +1205,14 @@
     ],
     "question": "Qui doit respecter la loi ?",
     "distractors": [
-      "Seulement les citoyens français majeurs",
-      "Les citoyens, mais pas les élus dans l'exercice de leurs fonctions",
-      "Les citoyens et les étrangers en situation régulière uniquement",
-      "Tout le monde sauf les diplomates étrangers accrédités",
-      "Les citoyens français nés sur le territoire uniquement",
-      "Tout le monde sauf le Président de la République en exercice",
-      "Les personnes qui ont prêté serment devant un tribunal",
-      "Uniquement ceux qui ont signé le contrat d'intégration républicaine"
+      "Seuls les citoyens majeurs : français de naissance, naturalisés et électeurs inscrits",
+      "Tout le monde sauf les élus : députés, sénateurs, maires et ministres en fonction",
+      "Chaque personne née en France : citoyens de naissance, enfants et petits-enfants de Français",
+      "Les citoyens français et les élus : électeurs, députés, sénateurs et ministres",
+      "Les gouvernants et leurs services : ministres, préfets, policiers et magistrats en fonction",
+      "Ceux qui ont prêté serment : jurés, témoins, avocats et magistrats d'un tribunal",
+      "Les signataires du contrat d'intégration républicaine : nouveaux arrivants en France",
+      "Tout le monde sauf le Président en exercice : citoyens, étrangers, élus et ministres"
     ],
     "explanation": "La loi s'applique à tous sans exception : citoyens français, étrangers résidant en France, élus locaux, ministres, et même le Président de la République. Personne n'est au-dessus des lois : c'est le principe de l'État de droit.",
     "answers": [
@@ -1258,14 +1259,14 @@
     ],
     "question": "Quel pouvoir détient un juge ? Le pouvoir :",
     "distractors": [
-      "Le pouvoir exécutif d'appliquer les lois",
-      "Le pouvoir législatif de voter les lois",
-      "Le pouvoir de police administrative",
-      "Le pouvoir de lever des impôts",
-      "Le pouvoir de nommer les fonctionnaires",
-      "Le pouvoir de dissoudre l'Assemblée nationale",
-      "Le pouvoir de gracier les condamnés",
-      "Le pouvoir de modifier la Constitution"
+      "Le pouvoir exécutif : gouverner, appliquer les lois ou nommer les ministres",
+      "Le pouvoir législatif : proposer, voter ou rejeter les lois",
+      "Le pouvoir de police administrative : surveiller, contrôler ou réglementer",
+      "Le pouvoir fiscal : lever les impôts, fixer les taux ou les supprimer",
+      "Le pouvoir de nomination : choisir, nommer ou révoquer les fonctionnaires",
+      "Le pouvoir de dissolution : dissoudre, convoquer ou ajourner l'Assemblée nationale",
+      "Le pouvoir constituant : rédiger, voter ou modifier la Constitution",
+      "Le pouvoir réglementaire : publier, signer ou abroger des décrets"
     ],
     "explanation": "Un juge détient le pouvoir judiciaire : il a le pouvoir de juger les affaires qui lui sont soumises, de condamner ceux qui ont commis des infractions ou d'acquitter les personnes innocentes. Il est indépendant du pouvoir politique, ce qui garantit l'impartialité de la justice.",
     "answers": [
@@ -1400,14 +1401,14 @@
     ],
     "question": "Quand sont élus les sénateurs ?",
     "distractors": [
-      "Tous les 5 ans, en même temps que les députés",
-      "Tous les 6 ans, tous ensemble en même temps",
-      "Tous les 7 ans, par vote de l'Assemblée nationale",
-      "Tous les 4 ans, lors des élections municipales",
-      "Tous les 3 ans, par les citoyens au suffrage direct",
-      "Tous les 6 ans, tous en même temps par les citoyens",
-      "Tous les 5 ans, par les présidents de région",
-      "Tous les 9 ans, par un collège de grands électeurs spéciaux"
+      "Tous les 5 ans (comme les députés), au suffrage direct",
+      "Tous les 6 ans (tous ensemble), au suffrage indirect",
+      "Tous les 7 ans (comme l'ancien septennat), par vote de l'Assemblée nationale",
+      "Tous les 4 ans (avec les municipales), au suffrage direct",
+      "Tous les 3 ans (tous ensemble), au suffrage direct",
+      "Tous les 6 ans (par tiers), au suffrage direct",
+      "Tous les 5 ans (par moitié), par les présidents de région",
+      "Tous les 9 ans (tous ensemble), au suffrage indirect"
     ],
     "explanation": "Le Sénat est renouvelé par moitié tous les 3 ans, ce qui signifie qu'une élection sénatoriale a lieu tous les 3 ans. Les sénateurs sont élus pour 6 ans au total, au suffrage indirect par des grands électeurs (maires, conseillers, députés).",
     "answers": [
@@ -1430,14 +1431,14 @@
     "natNumber": 42,
     "question": "Qui est élu lors des élections municipales ?",
     "distractors": [
-      "Directement le maire au suffrage universel",
-      "Les conseillers départementaux",
-      "Les conseillers régionaux et le président de région",
-      "Les députés de la circonscription",
-      "Les préfets et sous-préfets",
-      "Les juges de proximité",
-      "Les membres du tribunal administratif",
-      "Les délégués de quartier et les adjoints directement"
+      "Directement le maire, qui nomme ensuite les conseillers municipaux",
+      "Les conseillers départementaux, qui élisent ensuite le président du département",
+      "Les conseillers régionaux, qui élisent ensuite le président de région",
+      "Les députés de la circonscription, qui votent ensuite le budget municipal",
+      "Les préfets et sous-préfets, qui nomment ensuite les agents municipaux",
+      "Les juges de proximité, qui jugent ensuite les litiges municipaux",
+      "Les membres du tribunal administratif, qui contrôlent ensuite le conseil municipal",
+      "Les délégués de quartier, qui élisent ensuite les adjoints municipaux"
     ],
     "explanation": "Lors des élections municipales, les citoyens élisent les conseillers municipaux au suffrage universel direct. Le conseil municipal élit ensuite parmi ses membres le maire et ses adjoints. Ces élections ont lieu tous les 6 ans.",
     "answers": [
@@ -1566,14 +1567,14 @@
     "crNumber": 59,
     "question": "Pour combien de temps sont élus les sénateurs ?",
     "distractors": [
-      "3 ans",
-      "4 ans",
-      "5 ans comme les députés",
-      "7 ans",
-      "8 ans non renouvelables",
-      "2 ans renouvelables",
-      "9 ans non renouvelables",
-      "Ils sont nommés à vie"
+      "3 ans (renouvelés en totalité à chaque élection)",
+      "4 ans (renouvelés par tiers tous les 2 ans)",
+      "5 ans (élus en même temps que les députés)",
+      "7 ans (renouvelés par moitié tous les 3 ans)",
+      "8 ans (renouvelés par quart tous les 2 ans)",
+      "2 ans (renouvelables à chaque élection municipale)",
+      "10 ans (renouvelés par moitié tous les 5 ans)",
+      "À vie (nommés par le Président de la République)"
     ],
     "explanation": "Les sénateurs sont élus pour 6 ans, et le Sénat est renouvelé par moitié tous les 3 ans. Contrairement aux députés, ils sont élus au suffrage indirect par des grands électeurs (maires, conseillers, députés).",
     "answers": [
@@ -1594,14 +1595,14 @@
     ],
     "question": "Qui possède le pouvoir exécutif ?",
     "distractors": [
-      "Uniquement le Président de la République",
-      "Le Parlement (Assemblée nationale et Sénat)",
-      "Le Conseil d'État et le Conseil constitutionnel",
-      "Le Premier ministre seul",
-      "Les préfets dans chaque département",
-      "Le Conseil économique, social et environnemental",
-      "La Cour de cassation et le Conseil d'État",
-      "Le Conseil supérieur de la magistrature"
+      "Uniquement le Président de la République (élu pour cinq ans)",
+      "Le Parlement (Assemblée nationale et Sénat) et les préfets",
+      "Le Conseil d'État et le Conseil constitutionnel (juges et conseillers)",
+      "Le Premier ministre seul (sans le Président de la République)",
+      "Les préfets dans chaque département (représentants de l'État)",
+      "Le Conseil économique, social et environnemental (CESE) et le Sénat",
+      "La Cour de cassation et le Conseil d'État (juges suprêmes)",
+      "Le Conseil supérieur de la magistrature (juges et procureurs) et le Sénat"
     ],
     "explanation": "En France, le pouvoir exécutif est partagé entre le Président de la République (qui définit les grandes orientations politiques) et le gouvernement dirigé par le Premier ministre (qui conduit au quotidien la politique de la nation).",
     "answers": [
@@ -1624,14 +1625,14 @@
     "crNumber": 63,
     "question": "Quelle condition est nécessaire pour voter aux élections ?",
     "distractors": [
-      "Avoir la nationalité française depuis au moins 10 ans",
-      "Être né en France et avoir toujours résidé sur le territoire",
-      "Parler parfaitement le français et avoir passé un test",
-      "Avoir payé ses impôts sans interruption depuis 5 ans",
-      "Être propriétaire d'un logement en France",
-      "Ne pas avoir de casier judiciaire, même pour une contravention",
-      "Avoir effectué son service national ou une journée citoyenne",
-      "Être résident depuis plus de 2 ans en France"
+      "Avoir la nationalité française (depuis au moins 10 ans) et avoir voté à l'élection précédente",
+      "Être né en France (de deux parents français) et pouvoir voter depuis l'âge de 16 ans",
+      "Parler parfaitement le français (niveau C2) et avoir passé un test avant les élections",
+      "Être inscrit sur les listes électorales (depuis au moins 5 ans) et avoir un casier vierge",
+      "Être propriétaire d'un logement (ou locataire depuis 3 ans) dans la commune où l'on veut voter",
+      "Ne pas avoir de casier judiciaire (même pour une contravention) et avoir une carte électorale",
+      "Avoir effectué son service national (ou une journée de préparation) avant de voter",
+      "Être résident depuis plus de 2 ans (en France) et avoir déjà participé à des élections"
     ],
     "explanation": "Pour voter en France, il faut : être de nationalité française, avoir au moins 18 ans, et être inscrit sur les listes électorales. Un jeune qui a fait son recensement citoyen à 16 ans est inscrit automatiquement à 18 ans. Certaines condamnations pénales peuvent entraîner la privation du droit de vote.",
     "answers": [
@@ -1794,14 +1795,14 @@
     ],
     "question": "Qui possède le pouvoir législatif ?",
     "distractors": [
-      "Le Président de la République seul",
-      "Le gouvernement et le Premier ministre",
-      "Le Conseil d'État",
-      "Le Conseil constitutionnel",
-      "Le Conseil économique, social et environnemental",
-      "Les préfets de département",
-      "La Cour de cassation",
-      "Le Conseil supérieur de la magistrature"
+      "Le Président de la République (sans le Parlement)",
+      "Le gouvernement (Premier ministre et ministres)",
+      "Le Conseil d'État (juges administratifs)",
+      "Le Conseil constitutionnel (les sages)",
+      "Le Conseil économique, social et environnemental (CESE)",
+      "Les préfets (représentants de l'État)",
+      "La Cour de cassation (juges judiciaires)",
+      "Le Conseil supérieur de la magistrature (juges et procureurs)"
     ],
     "explanation": "Le pouvoir législatif appartient au Parlement, composé de l'Assemblée nationale (577 députés) et du Sénat (348 sénateurs). C'est lui qui vote les lois, vote le budget de l'État et contrôle l'action du gouvernement.",
     "answers": [
@@ -1826,14 +1827,14 @@
     "natNumber": 64,
     "question": "Qui sanctionne l'auteur d'un vol ?",
     "distractors": [
-      "La police nationale qui décide de la peine",
-      "La victime du vol, qui peut punir elle-même",
-      "Le maire de la commune où a eu lieu le vol",
-      "Le préfet du département concerné",
-      "L'employeur si le vol a lieu au travail",
-      "La famille de l'auteur du vol",
-      "Le voisinage et la communauté locale",
-      "L'État directement, sans passer par un tribunal"
+      "La police nationale (les forces de l'ordre), qui décide de la peine",
+      "La victime du vol (la personne lésée), qui peut punir elle-même",
+      "Le maire de la commune (l'élu local), qui fixe l'amende",
+      "Le préfet du département (l'État), qui prononce la sanction",
+      "L'employeur (le chef d'entreprise), si le vol a lieu au travail",
+      "La famille de l'auteur (ses proches), qui doit réparer le vol",
+      "Le voisinage (la communauté locale), qui juge les habitants",
+      "L'État (le gouvernement), qui punit directement sans tribunal"
     ],
     "explanation": "Seule la justice (les tribunaux) peut sanctionner légalement l'auteur d'un vol ou de toute infraction. Nul ne peut se faire justice soi-même. Un vol est jugé par le tribunal correctionnel, qui peut prononcer des peines d'emprisonnement et/ou d'amende selon la gravité des faits.",
     "answers": [
@@ -1883,14 +1884,14 @@
     "natNumber": 54,
     "question": "Qui vote les lois ?",
     "distractors": [
-      "Le Président de la République par décret",
-      "Le gouvernement en conseil des ministres",
-      "Le Conseil d'État après avis juridique",
-      "Le Conseil constitutionnel",
-      "Les citoyens par référendum pour toutes les lois",
-      "Le Premier ministre avec l'accord du Président",
-      "Les préfets pour les lois locales",
-      "Le Conseil supérieur de la magistrature"
+      "Le Président de la République (par décret)",
+      "Le gouvernement (en conseil des ministres)",
+      "Le Conseil d'État (après avis juridique)",
+      "Le Conseil constitutionnel (les sages)",
+      "Les citoyens (par référendum pour toutes les lois)",
+      "Le Premier ministre (avec l'accord du Président)",
+      "Les préfets (pour les lois locales)",
+      "Le Conseil supérieur de la magistrature (juges et procureurs)"
     ],
     "explanation": "Les lois sont votées par le Parlement, composé de l'Assemblée nationale et du Sénat. En cas de désaccord entre les deux chambres, l'Assemblée nationale a le dernier mot. Le Président peut aussi soumettre certains textes directement aux citoyens par référendum.",
     "answers": [
@@ -2059,13 +2060,13 @@
     "crNumber": 62,
     "question": "Qui est le préfet ?",
     "distractors": [
-      "L'élu local qui dirige le conseil départemental",
-      "Le directeur de la police nationale dans le département",
-      "Le magistrat qui préside le tribunal judiciaire",
-      "Le responsable de l'éducation nationale dans la région",
-      "Le chef des services fiscaux dans le département",
-      "L'ambassadeur de la région auprès du gouvernement",
-      "Le coordinateur des services hospitaliers publics"
+      "L'élu local qui dirige le conseil départemental, élu par les habitants",
+      "Le directeur de la police nationale dans le département, nommé par le maire",
+      "Le magistrat qui préside le tribunal judiciaire, nommé par les avocats",
+      "Le responsable de l'éducation nationale dans la région, nommé par le recteur",
+      "Le chef des services fiscaux dans le département, nommé par le maire",
+      "L'ambassadeur de la région auprès du gouvernement, élu par les conseillers régionaux",
+      "Le coordinateur des services hospitaliers publics, nommé par le président du département"
     ],
     "explanation": "Le préfet est le haut fonctionnaire représentant l'État dans le département. Nommé en conseil des ministres, il veille à l'application des lois, coordonne les services de l'État et peut prendre des mesures de police administrative pour maintenir l'ordre public.",
     "answers": [
@@ -2116,14 +2117,14 @@
     "crNumber": 65,
     "question": "Quel est le régime politique de la France aujourd'hui ?",
     "distractors": [
-      "Une monarchie constitutionnelle héréditaire",
-      "La IVe République de type parlementaire",
-      "Une dictature présidentielle à parti unique",
-      "Une fédération d'États semi-autonomes",
-      "Une démocratie directe par référendum permanent",
-      "La IIIe République parlementaire",
-      "Un régime présidentiel pur comme aux États-Unis",
-      "Une oligarchie parlementaire multipartite"
+      "Une monarchie, instaurée en 1830",
+      "La IVe République, instaurée en 1946",
+      "Un parti unique, instauré en 1958",
+      "Une fédération, instaurée en 1945",
+      "Une démocratie directe, instaurée en 2002",
+      "La IIIe République, instaurée en 1870",
+      "Un régime présidentiel, instauré en 1962",
+      "Une oligarchie, instaurée en 1981"
     ],
     "explanation": "La France est en Ve République depuis la Constitution du 4 octobre 1958, proposée par le général de Gaulle et adoptée par référendum. Ce régime donne un pouvoir exécutif fort au Président de la République, qui partage l'exécutif avec un Premier ministre ; le Gouvernement est responsable devant l'Assemblée nationale.",
     "answers": [
@@ -2209,14 +2210,14 @@
     "crNumber": 89,
     "question": "Quelle condition est nécessaire pour voter aux élections européennes ?",
     "distractors": [
-      "Être exclusivement de nationalité française",
-      "Résider en France depuis au moins 10 ans",
-      "Parler couramment le français et l'anglais",
-      "Être inscrit sur les listes électorales européennes à Bruxelles",
-      "Avoir la double nationalité française et européenne",
-      "Être né dans un pays membre de l'Union européenne",
-      "Avoir travaillé au moins 5 ans dans un pays de l'UE",
-      "Ne pas avoir de condamnation pénale dans aucun pays de l'UE"
+      "Être de nationalité française, âgé de 25 ans, résider en France et avoir une carte électorale",
+      "Être citoyen français, résider en France depuis 10 ans, payer ses impôts et être inscrit sur les listes électorales",
+      "Être citoyen de l'UE, parler couramment le français, avoir un diplôme et voter à Bruxelles",
+      "Avoir la double nationalité, être majeur, être inscrit sur les listes électorales de Bruxelles et avoir déjà voté en France",
+      "Être né dans un pays de l'UE, avoir 21 ans, habiter en France et avoir voté aux élections précédentes",
+      "Avoir travaillé 5 ans dans l'UE, être majeur, parler deux langues et avoir voté aux dernières élections",
+      "Être résident de l'UE depuis 5 ans, être majeur, avoir un permis de séjour et une carte électorale",
+      "Ne pas avoir de condamnation pénale, être majeur, être de nationalité française et voter en France"
     ],
     "explanation": "Pour voter aux élections européennes en France, il faut avoir 18 ans et être soit citoyen français, soit citoyen d'un autre État membre de l'UE résidant en France, et être inscrit sur les listes électorales. Les ressortissants non-UE ne peuvent pas voter à ces élections.",
     "answers": [
@@ -2439,14 +2440,14 @@
     ],
     "question": "Concernant les droits individuels, quelle proposition est correcte ?",
     "distractors": [
-      "Les droits individuels sont absolus et ne peuvent jamais être limités",
-      "Les droits individuels n'existent que pour les citoyens français",
-      "Les droits individuels peuvent être supprimés par décret présidentiel",
-      "Les droits individuels ne s'appliquent qu'en temps de paix",
-      "Les droits individuels sont identiques dans tous les pays du monde",
-      "Les droits individuels peuvent être retirés par un tribunal pour n'importe quel motif",
-      "Les droits individuels ne concernent que les droits économiques et sociaux",
-      "Les droits individuels sont accordés uniquement par le gouvernement en place"
+      "Les droits individuels sont garantis mais peuvent être limités par le Président pour protéger ses propres décisions",
+      "Les droits individuels sont garantis mais peuvent être supprimés par décret pour protéger la sécurité de l'État",
+      "Les droits individuels sont accordés aux citoyens français mais peuvent être retirés par la mairie pour tout motif",
+      "Les droits individuels sont garantis en temps de paix mais sont suspendus par la loi pendant les élections",
+      "Les droits individuels sont garantis mais ne concernent que les droits économiques et sociaux, selon la loi",
+      "Les droits individuels sont garantis mais peuvent être retirés par un tribunal pour protéger un intérêt privé",
+      "Les droits individuels sont identiques dans tous les pays mais peuvent être limités par l'ONU pour protéger la paix",
+      "Les droits individuels sont accordés par le gouvernement mais peuvent être retirés par lui pour protéger ses ministres"
     ],
     "explanation": "Les droits individuels (liberté d'expression, liberté de circuler, droit de propriété…) sont garantis par la Constitution et la DDHC. Ils ne sont pas absolus : la loi peut les limiter pour protéger l'ordre public, la santé, la sécurité ou les droits d'autrui.",
     "answers": [
@@ -2495,14 +2496,14 @@
     ],
     "question": "Lequel de ces droits est un droit fondamental ?",
     "distractors": [
-      "Le droit d'ignorer les lois que l'on n'approuve pas",
-      "Le droit de porter des armes pour se défendre",
-      "Le droit de ne pas payer ses impôts si on en désapprouve l'usage",
-      "Le droit d'entrée gratuite dans les musées nationaux",
-      "Le droit de conduire sans permis si on est prudent",
-      "Le droit de ne pas déclarer ses revenus à l'administration",
-      "Le droit d'imposer ses croyances à ses enfants à l'école",
-      "Le droit de refuser toute autorité de l'État sur soi"
+      "La liberté d'ignorer les lois (que l'on n'approuve pas)",
+      "La liberté de porter des armes (pour se défendre)",
+      "La liberté de ne pas payer ses impôts (si on désapprouve l'usage)",
+      "La gratuité des musées nationaux (pour tous les visiteurs)",
+      "La liberté de conduire sans permis (si l'on est prudent)",
+      "La liberté de ne pas déclarer ses revenus (à l'administration)",
+      "Le droit d'imposer ses croyances (à ses enfants à l'école)",
+      "Le droit de refuser l'autorité de l'État (sur soi)"
     ],
     "explanation": "La liberté de conscience (le droit de croire ou de ne pas croire, d'avoir ou non une religion) est un droit fondamental garanti par la Constitution et par la loi de 1905 sur la laïcité. Parmi les droits fondamentaux, on trouve aussi la liberté d'expression, le droit à la vie, la liberté de circuler, etc.",
     "answers": [
@@ -2552,14 +2553,14 @@
     "natNumber": 109,
     "question": "Qu’est-ce que la liberté d’expression ?",
     "distractors": [
-      "Le droit absolu de dire tout ce que l'on pense sans conséquence",
-      "Le droit de mentir librement si c'est pour une bonne cause",
-      "Le droit réservé aux journalistes et aux artistes professionnels",
-      "Le droit de critiquer le gouvernement sans jamais être poursuivi",
-      "Le droit d'insulter qui on veut au nom de la liberté",
-      "Le droit de diffuser des informations fausses sur Internet",
-      "Le droit de tenir des propos racistes si c'est son opinion",
-      "Le droit de publier des photos de personnes sans leur accord"
+      "Le droit de dire ce que l'on pense, dans la mesure où cela ne déplaît pas au gouvernement",
+      "Le droit de critiquer le gouvernement, dans les limites fixées par le Président",
+      "Le droit de s'exprimer publiquement, dans le cadre réservé aux journalistes et aux artistes",
+      "Le droit de mentir librement, dans l'intérêt d'une bonne cause",
+      "Le droit d'insulter ses adversaires, dans le respect de leurs idées politiques",
+      "Le droit de diffuser des informations, même si elles sont fausses, dans le cadre d'Internet",
+      "Le droit de tenir des propos racistes, dans le respect de son opinion personnelle",
+      "Le droit de publier des photos de personnes sans leur accord, dans l'intérêt de la presse"
     ],
     "explanation": "La liberté d'expression est le droit de chacun d'exprimer librement ses opinions par tous les moyens. Elle est garantie par la DDHC de 1789 et la loi sur la presse de 1881. Elle a des limites légales : diffamation, injure, incitation à la haine, négationnisme.",
     "answers": [
@@ -2611,12 +2612,12 @@
       "La Grande Charte (Magna Carta) anglaise (1215)",
       "La Charte constitutionnelle de la Restauration (1814)",
       "La Charte des Nations unies (1945)",
-      "Le Concordat entre la France et le pape (1801)",
+      "La Déclaration des droits de la femme et de la citoyenne (1791)",
       "La Déclaration universelle des droits de l'homme de l'ONU (1948)"
     ],
     "explanation": "La Déclaration des droits de l'homme et du citoyen du 26 août 1789 est le texte fondateur des droits et devoirs en France. Elle proclame les droits naturels (liberté, propriété, sûreté) et les devoirs civiques. Elle a valeur constitutionnelle depuis 1971.",
     "answers": [
-      "La Déclaration des droits de l'homme et du citoyen de 1789"
+      "La Déclaration des droits de l'homme et du citoyen (1789)"
     ],
     "group": "textes-fondateurs",
     "source": {
@@ -2689,14 +2690,14 @@
     ],
     "question": "Une femme peut avorter :",
     "distractors": [
-      "Non, l'avortement est totalement interdit en France",
+      "Non, l'avortement est interdit en France depuis la loi de 1975",
       "Oui, mais seulement dans les 6 premières semaines de grossesse",
       "Oui, mais uniquement avec l'accord écrit du père",
-      "Oui, mais seulement dans des cas médicaux très précis",
-      "Oui, mais uniquement pour les femmes françaises de naissance",
-      "Oui, mais avec un délai de réflexion obligatoire de 3 mois",
-      "Oui, seulement dans les hôpitaux publics avec autorisation préfectorale",
-      "Oui, mais après approbation d'un comité médical spécial"
+      "Non, c'est un délit puni par le Code pénal depuis mars 2024",
+      "Oui, c'est un droit légal depuis 1975, mais il n'est pas inscrit dans la Constitution",
+      "Non, c'est un droit réservé aux femmes françaises de naissance",
+      "Non, la Constitution de 1958 interdit l'interruption de grossesse",
+      "Oui, c'est un droit légal inscrit dans la Constitution depuis mars 1975"
     ],
     "explanation": "L'IVG est légale en France depuis la loi Veil de 1975. Depuis mars 2024, le droit à l'IVG est inscrit dans la Constitution française comme une 'liberté garantie'. Le délai légal est de 14 semaines de grossesse.",
     "answers": [
@@ -2747,14 +2748,14 @@
     "crNumber": 95,
     "question": "La peine de mort est :",
     "distractors": [
-      "Applicable pour les crimes terroristes avérés",
-      "Suspendue mais pas officiellement abolie",
-      "Réservée aux crimes de guerre devant un tribunal militaire",
-      "Abolie depuis 1945 par ordonnance du général de Gaulle",
-      "Applicable uniquement pour les meurtres d'enfants de moins de 12 ans",
-      "Abolie pour tous les crimes depuis 1848",
-      "Abolie depuis 1789 par la Révolution française",
-      "Applicable sur décision unanime d'un jury populaire"
+      "Abolie depuis 1945",
+      "Abolie depuis 1905",
+      "Abolie depuis 1789",
+      "Abolie depuis 1995",
+      "Abolie depuis 1975",
+      "Suspendue depuis 1981",
+      "Réservée aux terroristes",
+      "Applicable en temps de guerre"
     ],
     "explanation": "La peine de mort a été abolie en France par la loi du 9 octobre 1981, portée par le garde des Sceaux Robert Badinter, sous la présidence de François Mitterrand. Son abolition a été gravée dans la Constitution lors de la révision constitutionnelle du 23 février 2007.",
     "answers": [
@@ -2775,14 +2776,14 @@
     ],
     "question": "Concernant les limites aux libertés individuelles, quelle proposition est correcte ?",
     "distractors": [
-      "Les libertés individuelles sont absolues et ne peuvent jamais être limitées",
-      "Seul le Président peut décider de limiter les libertés en cas de crise",
-      "Les libertés peuvent être limitées par n'importe quelle autorité locale",
-      "Les libertés ne peuvent être limitées que par un vote référendaire",
-      "Les libertés individuelles ne peuvent être limitées que pour des raisons religieuses",
-      "Aucune liberté ne peut être limitée sans l'accord de chaque citoyen",
-      "Les libertés peuvent être supprimées définitivement par décret ministériel",
-      "Les libertés peuvent être limitées uniquement en temps de guerre"
+      "Les libertés individuelles peuvent être limitées par le Président pour protéger sa fonction et ses collaborateurs",
+      "Les libertés individuelles peuvent être limitées par un préfet pour protéger les intérêts économiques de la région",
+      "Les libertés individuelles peuvent être limitées par un référendum local pour protéger les habitants de la commune",
+      "Les libertés individuelles peuvent être limitées par un décret ministériel pour protéger l'image du gouvernement",
+      "Les libertés individuelles peuvent être limitées par le Parlement pour protéger les traditions du pays",
+      "Les libertés individuelles peuvent être limitées par n'importe quel citoyen pour protéger ses droits personnels",
+      "Les libertés individuelles peuvent être limitées par la police sur place pour protéger les intérêts des commerçants",
+      "Les libertés individuelles peuvent être limitées par les juges pour protéger les opinions de la majorité"
     ],
     "explanation": "Les libertés individuelles ne sont pas absolues. La loi peut les encadrer pour protéger l'ordre public, la sécurité, la santé publique et les libertés d'autrui. Par exemple, la liberté d'expression est limitée par l'interdiction de la diffamation et de l'incitation à la haine.",
     "answers": [
@@ -2830,14 +2831,14 @@
     ],
     "question": "Faut-il réduire ses déchets ?",
     "distractors": [
-      "Non, c'est une obligation uniquement pour les entreprises",
-      "Non, la gestion des déchets est entièrement à la charge de l'État",
+      "Non, c'est une obligation réservée aux entreprises et aux administrations",
+      "Non, la gestion des déchets relève de l'État, qui s'en charge à notre place",
+      "Oui, c'est un devoir moral, mais la loi ne prévoit ni sanction ni obligation",
       "Oui, mais seulement pour les déchets industriels et non les déchets ménagers",
-      "Non, on peut jeter ses déchets n'importe où si on paie la taxe",
-      "Oui, mais seulement dans les grandes villes de plus de 100 000 habitants",
-      "Non, le tri sélectif est facultatif et sans obligation légale",
-      "Oui, mais uniquement pour les matières plastiques et le verre",
-      "Non, seules les communes frontalières ont cette obligation"
+      "Non, le tri sélectif est facultatif et la loi ne le rend pas obligatoire",
+      "Oui, c'est un devoir réservé aux habitants des grandes villes de plus de 100 000 habitants",
+      "Non, cette obligation concerne les communes frontalières, pas les autres habitants",
+      "Oui, c'est un devoir écologique inscrit dans le Code civil, qui impose une amende aux producteurs"
     ],
     "explanation": "Réduire ses déchets est un devoir civique et écologique. La loi française (notamment la loi anti-gaspillage de 2020) encourage le tri, le recyclage, le compostage et la réduction à la source. Jeter ses déchets sauvagement dans la nature est une infraction passible d'amende.",
     "answers": [
