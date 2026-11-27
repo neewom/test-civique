@@ -54,7 +54,7 @@ function TitleChoices({
       ref={groupRef}
       role="group"
       aria-label="Titre visé"
-      className={cn('flex flex-col', firstVisit ? 'gap-2.5' : 'mt-[clamp(2rem,16svh,8.75rem)] gap-3')}
+      className={cn('flex flex-col', firstVisit ? 'gap-2.5' : 'mt-[clamp(2rem,16svh,8.75rem)] gap-3 md:mt-8')}
     >
       {TARGET_TITLES.map((key) => {
         const on = selected === key
@@ -273,12 +273,12 @@ export default function TitreVise() {
 
   return (
     <PageFrame className="relative overflow-hidden" background={<OrganicBackground shape="goal" />}>
-      <div className="relative mx-auto flex grow w-full max-w-[30rem] flex-col gap-3.5 px-[22px] pt-0 pb-6">
+      <div className="relative mx-auto flex grow w-full max-w-[30rem] flex-col gap-3.5 px-[22px] pt-0 pb-6 md:max-w-[34rem] md:px-8 md:pb-10">
         <BackLink />
-        <h1 className="mt-[3.75rem] max-w-[16.25rem] text-[2.25rem] leading-none font-bold tracking-[-0.04em] text-balance">
+        <h1 className="mt-[3.75rem] max-w-[16.25rem] text-[2.25rem] leading-none font-bold tracking-[-0.04em] text-balance md:max-w-none md:text-[3rem]">
           Quel titre préparez-vous ?
         </h1>
-        <p className="max-w-[19rem] text-base leading-[1.45]">
+        <p className="max-w-[19rem] text-base leading-[1.45] md:max-w-none md:text-[1.0625rem]">
           Les questions officielles ne sont pas les mêmes selon le titre. Vous pourrez changer plus tard.
         </p>
         <TitleChoices selected={selected} onSelect={handleSelect} firstVisit={false} />
