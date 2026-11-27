@@ -170,7 +170,7 @@ describe('ExamenDetail — revoir ses erreurs', () => {
   it('affiche d\'abord les erreurs, puis toutes les questions sur demande', () => {
     seedHistory(record)
     renderDetail(RECORD_ID)
-    const mine = screen.getByRole('button', { name: 'Mes erreurs (2)' })
+    const mine = screen.getByRole('button', { name: 'À revoir (2)' })
     expect(mine).toHaveAttribute('aria-pressed', 'true')
     expect(screen.getAllByRole('heading', { level: 3 }).map((h) => h.textContent)).toEqual([QS[1].question, QS[3].question])
     expect(screen.getByText('Question 2 · ' + QS[1].theme)).toBeInTheDocument()
@@ -211,7 +211,7 @@ describe('ExamenDetail — revoir ses erreurs', () => {
     seedHistory({ ...record, score: 2, total: 2, answers: [answers[0], answers[2]] })
     renderDetail(RECORD_ID)
     expect(screen.getByText('Aucune erreur sur cet examen, bravo.')).toBeInTheDocument()
-    expect(screen.queryByRole('button', { name: /Mes erreurs/ })).not.toBeInTheDocument()
+    expect(screen.queryByRole('button', { name: /À revoir/ })).not.toBeInTheDocument()
     expect(screen.queryByRole('link', { name: /Réviser/ })).not.toBeInTheDocument()
     expect(screen.getAllByRole('heading', { level: 3 })).toHaveLength(2)
     expect(screen.getByRole('region', { name: 'Par thème' }).querySelector('.bg-coral')).toBeNull()

@@ -188,7 +188,7 @@ export default function ExamenDetail() {
                 onClick={() => setFilter('mistakes')}
                 className={toggleClass(filter === 'mistakes')}
               >
-                Mes erreurs ({errors.length})
+                À revoir ({errors.length})
               </button>
               <button
                 type="button"
@@ -239,7 +239,7 @@ export default function ExamenDetail() {
 
         <section aria-labelledby={questionsId} className="lg:max-w-[40rem] lg:pt-[5.5rem]">
           <h2 id={questionsId} className="sr-only">
-            {filter === 'mistakes' ? 'Mes erreurs' : 'Toutes les questions'}
+            {filter === 'mistakes' ? 'Questions à revoir' : 'Toutes les questions'}
           </h2>
           <ol className="flex flex-col gap-3.5">
             {shown.map((r) => (

@@ -19,7 +19,7 @@ export interface Organisme {
 }
 
 export const CENTRES_INTRO =
-  "L'examen civique se passe dans un centre agréé. Deux organismes, agréés par le ministère de l'Intérieur, ont chacun leur réseau de centres. L'examen est le même partout : choisissez simplement un centre près de chez vous, dans l'un ou l'autre réseau. C'est ce centre qui vous donne la date et le tarif."
+  "L'examen civique se passe dans un centre agréé. Deux organismes, agréés par le ministère de l'Intérieur, ont chacun leur réseau de centres. L'examen est le même partout : choisissez simplement un centre près de chez vous, dans l'un ou l'autre réseau. C'est ce centre qui vous donne la date et le tarif. Des centres existent aussi en outre-mer : cherchez votre ville sur les deux cartes."
 
 export const ORGANISMES: Organisme[] = [
   {
