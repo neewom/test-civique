@@ -7,7 +7,8 @@
 // - caches a pack of questions (one per title, see vite-question-packs.ts) the first time it is
 //   asked for, or when the page asks for it for the title in use (message `warm-pack`);
 //   the other titles are never fetched in the background;
-// - pages (index.html for every page address, the SPA fallback of public/_redirects) and the
+// - pages (index.html for every page address: online, Netlify answers each address with its own HTML or the
+//   404 page, see public/_redirects; this worker falls back to index.html for any of them) and the
 //   cache after NETWORK_TIMEOUT_MS or on a failure: a deploy that no longer ships this worker (a
 //   rollback, another server on the same origin) is seen at the first online load, never an old
 //   version for ever. Every other precached file and the packs go cache first: the version is

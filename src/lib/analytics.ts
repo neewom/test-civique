@@ -4,7 +4,7 @@
 // flags requests from data-centre IP ranges as bots, so proxied hits were hidden.
 // Parameters follow GoatCounter's count.js (arp242/goatcounter, public/count.js).
 
-import { FICHE_SLUGS, ficheUrl } from '@/lib/fiches'
+import { PUBLIC_ROUTES } from '@/lib/seo'
 import type { TitleKey } from '@/lib/target-title'
 
 // Only the production domain counts: nothing locally, on worktrees, on Netlify
@@ -71,7 +71,9 @@ const KNOWN_PATHS: ReadonlySet<string> = new Set([
   '/mentions-legales',
 ])
 // Fiches are counted only for the exact address (the page compares the slug case-sensitively)
-const FICHE_PATHS: ReadonlySet<string> = new Set((Object.keys(FICHE_SLUGS) as TitleKey[]).map(ficheUrl))
+// (read from seo.ts, not fiches.ts: this module is also the one of the 404 page, which must stay light;
+// seo.test.ts checks that every fiche address is in seo.ts)
+const FICHE_PATHS: ReadonlySet<string> = new Set(PUBLIC_ROUTES.map((r) => r.path as string).filter((p) => p.startsWith('/titres/')))
 
 /** Path sent to GoatCounter for an address: known routes as they are, `/examen/:id` as `/examen/detail`, anything else as `/adresse-inconnue`. Trailing slash never matters; case does not matter either (the router ignores it), except for the fiches, which must match exactly. */
 export function countedPath(pathname: string): string {
