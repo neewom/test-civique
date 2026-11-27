@@ -22,11 +22,11 @@ function ErrorPage() {
         <h1
           ref={titleRef}
           tabIndex={-1}
-          className="mt-4 max-w-[19rem] text-[2.125rem] leading-none font-bold tracking-[-0.04em] text-balance outline-none md:max-w-none md:text-[3rem]"
+          className="max-w-[19rem] text-[2.125rem] leading-none font-bold tracking-[-0.04em] text-balance outline-none md:max-w-none md:text-[3rem]"
         >
           Cette page n'a pas pu s'afficher.
         </h1>
-        <p className="mt-6 text-base leading-snug md:text-[1.0625rem]">
+        <p className="text-base leading-snug md:text-[1.0625rem]">
           Vos examens enregistrés ne sont pas perdus : ils restent sur cet appareil, dans ce navigateur.
         </p>
         {/* Plain link: a full page load restarts from a clean state */}
