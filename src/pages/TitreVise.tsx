@@ -145,9 +145,10 @@ function MeadowLines() {
  * (the page shows the logo large).
  */
 function FirstVisit({ selected, onSelect, onContinue, showError, groupRef }: ChoiceProps) {
-  // <main> clips (overflow-clip) rather than hides: hidden would make it the scroll container and break the sticky bar
+  // <main> clips (overflow-clip) rather than hides: hidden would make it the scroll container and break the sticky bar.
+  // The scroll margin keeps a focused link or button clear of the sticky bar (WCAG 2.4.11)
   return (
-    <main className="relative flex min-h-svh flex-col overflow-clip bg-background text-foreground">
+    <main className="relative flex min-h-svh flex-col overflow-clip bg-background text-foreground [&_a]:scroll-mb-32 [&_button]:scroll-mb-32">
       <div className="relative bg-earth text-[#2c2e2a] dark:text-[#f1eee4]">
         <MeadowLines />
         <AppHeader hideBrand />
