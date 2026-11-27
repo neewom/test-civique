@@ -105,7 +105,7 @@ test('examen blanc complet, reprise après rechargement, résultat et détail', 
   await expect(page.getByRole('heading', { level: 1, name: `Score : ${EXPECTED_SCORE} sur ${EXAM_SIZE}` })).toBeVisible()
   await expect(page.getByRole('heading', { name: 'Par thème' })).toBeVisible()
   const wrong = EXAM_SIZE - EXPECTED_SCORE
-  await expect(page.getByRole('region', { name: 'Mes erreurs' }).getByRole('heading', { level: 3 })).toHaveCount(wrong)
+  await expect(page.getByRole('region', { name: 'Questions à revoir' }).getByRole('heading', { level: 3 })).toHaveCount(wrong)
   await page.getByRole('button', { name: `Toutes (${EXAM_SIZE})` }).click()
   await expect(
     page.getByRole('region', { name: 'Toutes les questions' }).getByRole('heading', { level: 3 }),

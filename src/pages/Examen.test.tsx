@@ -903,7 +903,7 @@ describe('Examen — écran de résultat', () => {
     renderResumed(resume)
     await act(async () => { vi.advanceTimersByTime(3000) })
     const theme = resume.questions[39].theme
-    expect(screen.getByRole('link', { name: new RegExp(`Voir la question à revoir.*Surtout ${themeLabel(theme)}`) })).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: new RegExp(`Voir la question à revoir.*À travailler : ${themeLabel(theme)}`) })).toBeInTheDocument()
   })
 
   it('un seul résultat à revoir : « Voir la question à revoir »', async () => {

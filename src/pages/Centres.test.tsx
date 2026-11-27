@@ -26,6 +26,13 @@ describe('Page « Trouver un centre d\'examen »', () => {
     expect(screen.getByRole('link', { name: 'Mon parcours' })).toHaveAttribute('href', '/')
   })
 
+  it("signale l'existence de centres en outre-mer, sans nommer de territoire", () => {
+    renderCentres()
+    expect(
+      screen.getByText(/Des centres existent aussi en outre-mer : cherchez votre ville sur les deux cartes\./),
+    ).toBeInTheDocument()
+  })
+
   it('présente France Éducation International avec sa carte et sa pré-inscription', () => {
     renderCentres()
     const card = screen.getByRole('region', { name: 'France Éducation International' })

@@ -50,9 +50,9 @@ export function weakestThemes(scores: ReadonlyArray<ThemeScore>): string[] {
   return withMistakes.filter((s) => ratio(s) === lowest).map((s) => s.theme)
 }
 
-/** « Surtout … » line under « Voir mes erreurs »; null with no clear weakest theme. */
+/** « À travailler : … » line under « Voir mes erreurs »; null with no clear weakest theme. */
 export function weakestThemesLabel(themes: ReadonlyArray<string>): string | null {
-  if (themes.length === 1) return `Surtout ${themes[0]}`
-  if (themes.length === 2) return `Surtout ${themes[0]} et ${themes[1]}`
+  if (themes.length === 1) return `À travailler : ${themes[0]}`
+  if (themes.length === 2) return `À travailler : ${themes[0]} et ${themes[1]}`
   return null
 }
