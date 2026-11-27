@@ -2914,10 +2914,10 @@
     "question": "Que doit faire une personne en cas d’accident ?",
     "distractors": [
       "Continuer sa route, prévenir son assurance (sous 5 jours) et envoyer le constat plus tard",
-      "Prendre des photos, partir sans attendre (avant 10 minutes) et appeler un avocat",
-      "Attendre, laisser les autres appeler les secours (15, 18 ou 112) et ne pas rester sur les lieux",
+      "Prendre des photos, partir pour libérer la route (en moins de 10 minutes) et appeler un avocat",
+      "Attendre dans sa voiture, appeler un dépanneur (ouvert 24 h/24) et laisser les témoins prévenir les secours",
       "Appeler un avocat, contacter son assureur (dans les 2 heures) puis seulement les secours",
-      "Secourir les victimes si elles le demandent, repartir (dans les 10 minutes) et prévenir un proche",
+      "Secourir les victimes seulement si elles le demandent, repartir et les rappeler (sous 48 heures)",
       "Laisser les autres s'en occuper, noter la plaque (avant 1 heure) et continuer son chemin"
     ],
     "explanation": "En cas d'accident, toute personne est légalement obligée de s'arrêter et de porter assistance aux victimes (obligation de porter secours, Code pénal). Il faut appeler le 15 (SAMU), le 18 (pompiers) ou le 112 (urgences européennes), sécuriser les lieux et rester jusqu'à l'arrivée des secours.",
@@ -2938,12 +2938,12 @@
     ],
     "question": "Que permet la citoyenneté française ?",
     "distractors": [
-      "De ne jamais être jugé, d'échapper à l'impôt, de refuser les lois et de ne dépendre d'aucun tribunal",
-      "D'accéder gratuitement aux services publics, de recevoir un logement, d'avoir un emploi et de ne pas cotiser",
-      "D'obtenir la nationalité de tous les pays de l'UE, d'y voter et de ne pas payer d'impôts",
-      "De ne pas payer d'impôts, d'être dispensé des lois, de refuser les contrôles et de vivre à l'étranger",
-      "D'être exempté du service militaire, de ne pas être contrôlé, de refuser les lois et de choisir ses juges",
-      "De travailler sans restriction, de voyager sans passeport, de ne pas payer de visa et de vivre partout dans le monde"
+      "De voter seulement aux élections municipales, d'être élu au conseil municipal et de signer des pétitions locales",
+      "D'obtenir la nationalité de tous les pays de l'UE et d'y voter à toutes les élections nationales",
+      "D'être dispensé d'impôts, du service national, des jurys d'assises et des contrôles d'identité",
+      "De travailler partout dans le monde, de voyager sans visa, de s'installer dans tout pays et d'y voter",
+      "D'accéder gratuitement à tous les services publics, de recevoir un logement social et d'avoir un emploi garanti",
+      "De bénéficier d'un emploi public garanti, d'une retraite anticipée, d'allocations et d'un logement prioritaire"
     ],
     "explanation": "La citoyenneté française donne le droit de voter et d'être élu à toutes les élections nationales et locales, d'exercer des fonctions publiques, et de bénéficier de la pleine protection diplomatique de la France à l'étranger. Elle s'accompagne aussi de devoirs civiques.",
     "answers": [
@@ -2963,12 +2963,11 @@
     ],
     "question": "Que risque une personne qui ne respecte pas la loi ?",
     "distractors": [
-      "Une simple convocation : lettre d'avertissement, rappel à l'ordre, suite décidée par la mairie",
-      "Des sanctions religieuses : excuses publiques, jeûne, exclusion de la communauté selon la coutume",
-      "Une sanction administrative : retrait de la carte Vitale, suspension du téléphone selon le préfet",
-      "Une sanction familiale : retrait de l'autorité des parents, exil, changement de nom selon la famille",
-      "Des sanctions sportives : suspension, disqualification, match à huis clos selon la fédération",
-      "Une sanction scolaire : exclusion, devoirs supplémentaires, convocation des parents selon le directeur"
+      "Un simple avertissement : rappel à l'ordre, mise en garde écrite, sans suite quelle que soit la gravité",
+      "Des sanctions financières : amende, saisie de biens, jamais de prison quelle que soit la gravité",
+      "Des sanctions décidées par le maire : amende, travaux, exclusion de la commune selon la faute",
+      "Une sanction administrative : retrait de la carte Vitale, du compte bancaire, du téléphone selon le préfet",
+      "Des sanctions religieuses : excuses publiques, jeûne, exclusion de la communauté selon la coutume"
     ],
     "explanation": "Toute personne qui ne respecte pas la loi s'expose à des sanctions pénales proportionnelles à la gravité de l'infraction : une amende pour les contraventions, des peines d'emprisonnement et/ou d'amendes pour les délits, et des peines d'emprisonnement pouvant aller jusqu'à la réclusion à perpétuité pour les crimes.",
     "answers": [
@@ -3156,12 +3155,11 @@
     "crNumber": 117,
     "question": "Que doit faire une victime de violences ?",
     "distractors": [
-      "Garder le silence, appeler le 115 et éviter de voir un médecin",
-      "Fuir à l'étranger, appeler le 114 et éviter de porter plainte",
-      "Écrire une pétition, appeler le 196 et attendre une année",
-      "Appeler son assurance habitation, composer le 9999 et rester seule chez soi",
-      "Saisir le préfet par courrier, appeler le 8888 et garder le silence",
-      "Attendre des preuves écrites, appeler le 7777 et ne pas consulter de médecin"
+      "Garder le silence, appeler le 3939 et attendre que ça passe",
+      "Fuir à l'étranger, appeler le 3949 et changer de numéro",
+      "Écrire une pétition, appeler le 196 et témoigner en ligne",
+      "Prévenir son assurance, appeler le 3646 et rester chez soi",
+      "Saisir le préfet par courrier, appeler le 3230 et attendre"
     ],
     "explanation": "Une victime de violences ne doit pas rester seule. Elle peut porter plainte dans n'importe quel commissariat ou gendarmerie (ou écrire au procureur de la République), appeler le 17 en cas de danger immédiat, le 3919 (violences conjugales, gratuit 24h/24), faire constater ses blessures par un médecin et se faire accompagner gratuitement par une association. En cas de violences conjugales, elle peut aussi demander une ordonnance de protection au juge.",
     "answers": [
@@ -3189,9 +3187,9 @@
       "La contravention (stationnement interdit, excès de vitesse léger…)",
       "Le délit (vol, harcèlement, escroquerie…)",
       "La faute civile (dette impayée, loyer en retard…)",
-      "L'incivilité (bruit, tag, déchets au sol…)",
-      "La contravention de 5e classe (tapage, vitesse excessive…)",
-      "Le délit routier (conduite sans assurance, téléphone au volant…)"
+      "L'incivilité (impolitesse, retard, bousculade…)",
+      "La contravention de 5e classe (excès de vitesse de 50 km/h ou plus…)",
+      "Le délit routier (conduite sans permis, sans assurance…)"
     ],
     "explanation": "En droit français, il y a trois catégories d'infractions par ordre de gravité croissante : la contravention (la moins grave, amende), le délit (vol, harcèlement…) et le crime (la plus grave : meurtre, viol, terrorisme…). Les crimes sont jugés par la cour d'assises ou la cour criminelle départementale et peuvent être punis de la réclusion criminelle à perpétuité.",
     "answers": [
@@ -4870,10 +4868,8 @@
       "Après dix ans de résidence légale en France",
       "Avec un associé de nationalité française",
       "Avec une caution bancaire de 10 000 euros",
-      "Dans des conditions plus strictes que celles d'un Français",
       "Dans les zones franches urbaines désignées par l'État",
-      "Seulement si elle est ressortissante d'un pays de l'UE",
-      "Uniquement dans les secteurs non réservés aux Français"
+      "Seulement si elle est ressortissante d'un pays de l'UE"
     ],
     "explanation": "Toute personne étrangère résidant légalement en France peut créer son entreprise dans les mêmes conditions qu'un Français. La liberté d'entreprendre est garantie par la loi indépendamment de la nationalité, à condition d'être en situation régulière sur le territoire.",
     "answers": [
@@ -4981,7 +4977,7 @@
     "question": "Qu’est-ce qu’un numéro d’urgence ?",
     "distractors": [
       "Un numéro de téléphone réservé aux médecins pour contacter les hôpitaux de leur région",
-      "Un numéro de téléphone payant permettant d'accéder à des services prioritaires en ville",
+      "Un numéro de téléphone permettant de prendre rendez-vous rapidement à la mairie ou en préfecture",
       "Un numéro de téléphone permettant de signaler des infractions fiscales à l'administration",
       "Un numéro de téléphone pour contacter les ambassades de France en cas de problème à l'étranger",
       "Un numéro de téléphone pour signaler des pannes d'électricité ou de gaz dans son logement",
@@ -5010,8 +5006,8 @@
       "Seuls les citoyens français sont couverts (carte Vitale, ou carte d'identité)",
       "Il n'y a de remboursement que pour les personnes qui travaillent (salariés, ou fonctionnaires)",
       "Pour les étrangers, tous les soins sont à payer (sans remboursement, ou avec une mutuelle)",
-      "Il faut cotiser depuis 5 ans pour être remboursé (salariés, ou indépendants)",
-      "Les soins couverts sont ceux des maladies graves (hospitalisations, ou opérations)",
+      "Toute personne présente en France, même de passage, est couverte (touristes, ou visiteurs)",
+      "Tous les soins sont entièrement gratuits pour tout le monde (consultations, ou médicaments)",
       "Une mutuelle est nécessaire pour être remboursé (contrat privé, ou entreprise)"
     ],
     "explanation": "La protection universelle maladie (PUMa) prend en charge les frais de santé de toute personne qui travaille ou réside en France de manière stable et régulière. Les étrangers en situation irrégulière qui vivent en France depuis plus de 3 mois peuvent, sous conditions de ressources, bénéficier de l'aide médicale de l'État (AME). La Complémentaire santé solidaire (C2S) aide les personnes aux revenus modestes.",
@@ -5175,12 +5171,12 @@
     "question": "À quoi sert une mutuelle santé ?",
     "distractors": [
       "À remplacer la Sécurité sociale pour les salariés",
-      "À payer les impôts à la place du salarié",
-      "À financer les hospitalisations d'urgence à la place de l'hôpital",
-      "À obtenir des soins gratuits à l'étranger",
+      "À payer les cotisations sociales à la place de l'employeur",
+      "À prendre en charge seule les hospitalisations, à la place de l'Assurance maladie",
+      "À obtenir la carte européenne d'assurance maladie",
       "À couvrir les accidents du travail à la place de l'employeur",
       "À remplacer la carte Vitale en cas de perte",
-      "À financer les cures thermales de ses adhérents",
+      "À financer uniquement les cures thermales de ses adhérents",
       "À payer uniquement les frais de transport en ambulance"
     ],
     "explanation": "La mutuelle (ou complémentaire santé) complète la prise en charge de base de l'Assurance maladie : elle rembourse tout ou partie de ce qui reste à payer (soins, médicaments, dentaire, optique…), selon la formule choisie. Elle n'est pas obligatoire mais recommandée. Tout employeur du secteur privé doit en proposer une à ses salariés.",
@@ -5261,8 +5257,8 @@
     "distractors": [
       "Pour les enfants français de 6 à 16 ans, nés ou non sur le territoire",
       "Pour les enfants de 3 à 16 ans dont les parents travaillent, quelle que soit leur nationalité",
-      "Pour les enfants de 6 à 16 ans des grandes villes, quelle que soit leur nationalité",
-      "Pour les enfants français et européens de 3 à 16 ans, nés ici ou non",
+      "Pour tous les enfants de 6 à 14 ans vivant en France, Français ou étrangers",
+      "Pour tous les enfants de 3 à 16 ans nés en France, Français ou étrangers",
       "Pour les enfants de 3 à 16 ans en situation régulière, français ou étrangers",
       "Pour les enfants de 3 à 16 ans inscrits dans l'enseignement public, français ou étrangers"
     ],
@@ -5291,12 +5287,11 @@
       "Le BTS (Brevet de technicien supérieur)",
       "Le certificat d'études primaires (CEP)",
       "Le BEPC (Brevet d'études du premier cycle)",
-      "Le DUT (Diplôme universitaire de technologie)",
-      "Le diplôme de maturité (DM)"
+      "Le DUT (Diplôme universitaire de technologie)"
     ],
     "explanation": "Le baccalauréat (le 'bac') sanctionne la fin des études secondaires en classe de Terminale (lycée). Créé par Napoléon en 1808, il permet d'accéder à l'enseignement supérieur : université, BTS, IUT, classes préparatoires aux grandes écoles, et écoles spécialisées.",
     "answers": [
-      "Le baccalauréat (bac) de fin de lycée"
+      "Le baccalauréat (général et technologique ou professionnel)"
     ],
     "group": "cursus-scolaire",
     "source": {
@@ -5314,11 +5309,10 @@
     "question": "Dans quels établissements scolaires vont les élèves après l'école élémentaire ?",
     "distractors": [
       "À l'école primaire supérieure (CM3 à 3e, 11-14 ans), puis à l'université (Licence, 14-17 ans)",
-      "Au lycée (2nde à Terminale, 11-14 ans), puis au collège (6e à 3e, 14-17 ans)",
       "En centre de formation (CFA, 12-14 ans), puis en école de métiers (2 ans, 14-16 ans)",
       "Au lycée professionnel (CAP, 11-14 ans), puis en internat spécialisé (3 ans, 14-17 ans)",
-      "À l'université (Licence, 11-14 ans), puis au collège (6e à 3e, 14-18 ans)",
-      "En école de métiers (apprentissage, 12-15 ans), puis au lycée (2nde à Terminale, 15-18 ans)"
+      "À l'université (Licence, 11-14 ans), puis au collège (4e à 3e, 14-16 ans)",
+      "En école de métiers (apprentissage, 11-14 ans), puis au lycée (1re à Terminale, 14-16 ans)"
     ],
     "explanation": "Après l'école élémentaire (CP à CM2, 6-11 ans), les élèves vont au collège (6e à 3e, 11-15 ans, sanctionné par le brevet des collèges), puis au lycée (2nde à Terminale, 15-18 ans, sanctionné par le baccalauréat). Il existe des lycées généraux, technologiques et professionnels.",
     "answers": [
@@ -5342,8 +5336,8 @@
       "Pour les enfants de nationalité française, et pour eux seulement",
       "Pour les enfants dont les parents paient des impôts, qu'ils soient français ou étrangers",
       "Pour les familles installées en France depuis plus de 2 ans, y compris les étrangers",
-      "Pour les enfants des communes de plus de 5 000 habitants, français ou étrangers",
-      "Pour les enfants de parents mariés ou en PACS, y compris les enfants étrangers",
+      "Pour tous les enfants nés en France, y compris les enfants étrangers",
+      "Pour tous les enfants de nationalité française ou européenne, y compris ceux nés à l'étranger",
       "Pour les enfants inscrits par leurs parents dans une école publique, français ou étrangers",
       "Pour les enfants en bonne santé, qu'ils soient français ou étrangers"
     ],
@@ -5398,7 +5392,7 @@
       "Sont renvoyés dans leur pays d'origine",
       "Doivent attendre une année complète avant d'entrer à l'école",
       "Suivent les cours normaux sans aucune aide particulière",
-      "Sont placés en internat spécialisé obligatoirement",
+      "Peuvent être dispensés d'école jusqu'à ce qu'ils parlent français",
       "Sont regroupés dans des écoles réservées aux étrangers"
     ],
     "explanation": "Les enfants allophones (qui parlent peu ou pas le français) vont à l'école comme les autres. À leur arrivée, un test de positionnement évalue leur niveau et peut les orienter vers une UPE2A (Unité pédagogique pour élèves allophones arrivants), où ils suivent des cours adaptés. Une fois le français maîtrisé, ils suivent les mêmes cours que les autres élèves.",
@@ -7877,7 +7871,7 @@
       "Le droit d'exprimer ses opinions librement, dans le respect des limites fixées par la loi"
     ],
     "distractors": [
-      "Le droit de s'exprimer librement, sans aucune limite fixée par la loi",
+      "Le droit de tout dire et de tout publier, y compris des insultes ou des appels à la haine",
       "Le droit de s'exprimer librement, mais seulement pour les journalistes et les artistes",
       "Le droit d'exprimer ses opinions, dans le respect des décisions du Gouvernement",
       "Le droit d'exprimer ses opinions librement, dans le respect de la religion majoritaire",
@@ -9916,7 +9910,7 @@
       "Seulement les femmes majeures, sur avis d'un juge",
       "Toute femme mariée, avec l'accord de son mari",
       "Les femmes de plus de 16 ans, avec l'accord des parents",
-      "Seulement les mineures, accompagnées de leurs deux parents",
+      "Toute femme, sans condition d'âge ni de délai de grossesse",
       "Les femmes de plus de 18 ans, avec une ordonnance du médecin"
     ],
     "explanation": "Toute femme peut demander une IVG, sans condition d'âge. Les mineures n'ont pas besoin d'une autorisation parentale mais doivent être accompagnées d'une personne majeure de leur choix. L'accord du partenaire n'est pas nécessaire.",
@@ -10193,7 +10187,7 @@
     "distractors": [
       "La limitation du droit de critiquer le Gouvernement pendant la crise de 2020",
       "L'obligation de pratiquer une religion pour préserver l'ordre public en 2015",
-      "La limitation des déplacements selon l'origine des personnes, décidée en 2018",
+      "La limitation de l'accès aux hôpitaux selon l'origine des personnes, décidée en 2018",
       "La limitation de la presse par la fermeture d'un journal décidée en 2016",
       "La limitation du droit de vote des femmes pendant l'état d'urgence de 2015"
     ],
@@ -12238,7 +12232,7 @@
       "Les enfants scolarisés de nationalité française",
       "Tous les enfants scolarisés de familles à faibles revenus",
       "Tous les enfants scolarisés qui habitent loin de l'école",
-      "Les enfants scolarisés dont les parents ont un emploi"
+      "Les enfants scolarisés âgés de plus de 6 ans"
     ],
     "explanation": "Quand l'école a une cantine, tous les enfants scolarisés qui le souhaitent peuvent y manger. On ne peut pas refuser un enfant à cause de sa situation ou de celle de sa famille.",
     "group": "cantine",
