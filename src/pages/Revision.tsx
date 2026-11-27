@@ -9,7 +9,7 @@ import { questionsForTitle, type ListedQuestion, type Question } from '@/lib/exa
 import { OFFICIAL_THEMES } from '@/lib/exam-review'
 import { loadQuestionsToReview, parseReviewIds } from '@/lib/review-queue'
 import { loadRevisionView, saveRevisionView } from '@/lib/revision-memory'
-import { DEFAULT_TITLE, loadTargetTitle, TARGET_TITLE_LABELS, type TitleKey } from '@/lib/target-title'
+import { DEFAULT_TITLE, isTitleKey, loadTargetTitle, TARGET_TITLE_LABELS, type TitleKey } from '@/lib/target-title'
 import { useDocumentTitle } from '@/lib/use-document-title'
 import { themeLabel } from '@/lib/themes'
 import { TITLE_COUNTS } from '@/lib/title-counts'
@@ -71,8 +71,14 @@ function RevisionHead({ title }: { title: TitleKey }) {
 /** Revision: loads the questions of the chosen title (one pack, at once), then shows them. */
 export default function Revision() {
   useDocumentTitle('Révision')
-  // Chosen title; the questions come with its pack (maquettes Lt1 and Lt2 while it loads or if it fails)
-  const [title] = useState(() => loadTargetTitle() ?? DEFAULT_TITLE)
+  const location = useLocation()
+  // Title of the visit: the one of the exam that sent us here (an exam of another title than the chosen one is
+  // reviewed with its own questions, the chosen title is left untouched), else the chosen title.
+  // The questions come with its pack (maquettes Lt1 and Lt2 while it loads or if it fails)
+  const [title] = useState(() => {
+    const fromExam = (location.state as { title?: unknown } | null)?.title
+    return isTitleKey(fromExam) ? fromExam : (loadTargetTitle() ?? DEFAULT_TITLE)
+  })
   const pack = useQuestionPack(title)
   if (pack.status !== 'ready') {
     return (

@@ -539,3 +539,47 @@ describe('Revision — retour en haut des cartes quand on change la liste', () =
     scrollTo.mockRestore()
   })
 })
+
+describe("Revision — examen d'un autre titre que le titre choisi", () => {
+  const residentOnly = allQuestions.filter((q) => q.lists.includes('resident') && !q.lists.includes('pluriannuelle'))
+  const residentQuestions = allQuestions.filter((q) => q.lists.includes('resident'))
+  const ids = [5, residentOnly[0].id, residentOnly[1].id]
+
+  it("affiche toutes les questions de l'examen, sous le titre de l'examen", () => {
+    localStorageMock.setItem('target-title', 'pluriannuelle')
+    renderRevision({ reviewIds: ids, title: 'resident' })
+    expect(pill('Cet examen (3)')).toHaveAttribute('aria-pressed', 'true')
+    expect(shownCards()).toHaveLength(3)
+    expect(screen.getByText(/Carte de résident ·/)).toBeInTheDocument()
+    // The chosen title is untouched
+    expect(localStorageMock.getItem('target-title')).toBe('pluriannuelle')
+  })
+
+  it("garde les autres filtres sur le titre de l'examen et sa mémoire de session", () => {
+    localStorageMock.setItem('target-title', 'pluriannuelle')
+    renderRevision({ reviewIds: ids, title: 'resident' })
+    fireEvent.click(pill('Tous les thèmes'))
+    expect(shownCards()).toHaveLength(residentQuestions.length)
+    expect(JSON.parse(sessionStorage.getItem('revision-view:resident')!).filter).toEqual({ kind: 'all' })
+    expect(sessionStorage.getItem('revision-view:pluriannuelle')).toBeNull()
+  })
+
+  it('même titre : inchangé', () => {
+    localStorageMock.setItem('target-title', 'resident')
+    renderRevision({ reviewIds: ids, title: 'resident' })
+    expect(shownCards()).toHaveLength(3)
+  })
+
+  it('état sans titre : questions du titre choisi seulement', () => {
+    localStorageMock.setItem('target-title', 'pluriannuelle')
+    renderRevision({ reviewIds: ids })
+    expect(pill('Cet examen (1)')).toBeInTheDocument()
+    expect(shownCards()).toHaveLength(1)
+  })
+
+  it('titre inconnu dans l\'état : ignoré', () => {
+    localStorageMock.setItem('target-title', 'pluriannuelle')
+    renderRevision({ reviewIds: ids, title: 'bidon' })
+    expect(pill('Cet examen (1)')).toBeInTheDocument()
+  })
+})
