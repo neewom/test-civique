@@ -435,14 +435,14 @@
     ],
     "question": "Quel est l’un des rôles des associations ?",
     "distractors": [
-      "Remplacer les services publics de l'État pour assurer la sécurité des habitants du quartier",
+      "Partager entre leurs membres les bénéfices de leurs activités, comme une entreprise",
       "Élire les représentants politiques locaux pour gérer les affaires de la commune",
       "Rédiger les projets de loi soumis au Parlement pour défendre l'intérêt général",
       "Gérer le budget des collectivités territoriales pour financer les services publics locaux",
       "Contrôler le travail des fonctionnaires pour vérifier que la loi est bien appliquée",
       "Fixer le montant des impôts locaux pour financer les actions de la commune",
-      "Nommer les maires des petites communes pour remplacer les élus qui ont démissionné",
-      "Voter les lois relatives à la vie associative pour protéger les droits des adhérents"
+      "Obliger les habitants d'un quartier à adhérer pour financer les activités communes",
+      "Rendre la justice entre leurs membres pour régler les conflits sans aller au tribunal"
     ],
     "explanation": "Les associations (loi de 1901) permettent aux citoyens de se regrouper librement pour défendre une cause, pratiquer une activité sportive ou culturelle, ou mener des actions humanitaires. Elles jouent un rôle essentiel dans la démocratie et la vie sociale française.",
     "answers": [
@@ -920,9 +920,9 @@
     "crNumber": 30,
     "question": "Quel droit est garanti par la laïcité ?",
     "distractors": [
-      "La liberté religieuse : le droit d'imposer sa religion aux autres",
+      "La liberté d'imposer : le droit d'obliger ses voisins à suivre sa religion",
       "La liberté d'éducation : le droit d'imposer ses croyances à ses enfants à l'école",
-      "La liberté de culte : le droit de refuser de travailler les jours de fête religieuse",
+      "La liberté de chômer : le droit de refuser de travailler les jours de fête religieuse",
       "La liberté de jugement : le droit de refuser d'être jugé par un tribunal civil",
       "La liberté d'influence : le droit d'une religion de financer un parti politique",
       "La liberté de tenue : le droit des fonctionnaires de porter des signes religieux en service",
@@ -1094,14 +1094,14 @@
     "crNumber": 67,
     "question": "Le Parlement est composé :",
     "distractors": [
-      "Du Conseil d'État (200 membres) et du Conseil constitutionnel (9 membres)",
-      "De l'Assemblée nationale (577 députés) et du Conseil économique et social (175 membres)",
-      "Du Sénat (348 sénateurs) et de la Cour de cassation (200 magistrats)",
-      "Du gouvernement (35 ministres) et de l'Assemblée nationale (577 députés)",
-      "Des préfets (101 préfets) et des présidents de région (18 présidents)",
-      "Du Conseil d'État (200 membres), de la Cour des comptes et du Sénat (348 sénateurs)",
-      "De la Cour des comptes (700 magistrats) et du Conseil d'État (200 membres)",
-      "Du Président de la République (1 élu) et du Premier ministre (1 nommé)"
+      "Du Conseil d'État (juges administratifs) et du Conseil constitutionnel (9 membres)",
+      "De l'Assemblée nationale (577 députés) et du Conseil économique, social et environnemental (175 membres)",
+      "Du Sénat (348 sénateurs) et de la Cour de cassation (juges judiciaires)",
+      "Du gouvernement (Premier ministre et ministres) et de l'Assemblée nationale (577 députés)",
+      "Des préfets (représentants de l'État) et des conseils régionaux (élus des régions)",
+      "Du Conseil d'État (juges administratifs), de la Cour des comptes et du Sénat (348 sénateurs)",
+      "De la Cour des comptes (magistrats financiers) et du Conseil d'État (juges administratifs)",
+      "Du Président de la République (élu pour 5 ans) et du Premier ministre (nommé par lui)"
     ],
     "explanation": "Le Parlement français est composé de deux chambres : l'Assemblée nationale (577 députés, élus pour 5 ans au suffrage universel direct) et le Sénat (348 sénateurs, élus pour 6 ans au suffrage indirect). Ensemble, ils votent les lois et contrôlent le gouvernement.",
     "answers": [
@@ -1568,9 +1568,9 @@
     "question": "Pour combien de temps sont élus les sénateurs ?",
     "distractors": [
       "3 ans (renouvelés en totalité à chaque élection)",
-      "4 ans (renouvelés par tiers tous les 2 ans)",
+      "4 ans (renouvelés par moitié tous les 2 ans)",
       "5 ans (élus en même temps que les députés)",
-      "7 ans (renouvelés par moitié tous les 3 ans)",
+      "9 ans (renouvelés par tiers tous les 3 ans)",
       "8 ans (renouvelés par quart tous les 2 ans)",
       "2 ans (renouvelables à chaque élection municipale)",
       "10 ans (renouvelés par moitié tous les 5 ans)",
@@ -1831,8 +1831,8 @@
       "La victime du vol (la personne lésée), qui peut punir elle-même",
       "Le maire de la commune (l'élu local), qui fixe l'amende",
       "Le préfet du département (l'État), qui prononce la sanction",
-      "L'employeur (le chef d'entreprise), si le vol a lieu au travail",
-      "La famille de l'auteur (ses proches), qui doit réparer le vol",
+      "Le commerçant volé (le magasin), qui fixe lui-même la peine",
+      "La famille de l'auteur (ses proches), qui décide de sa punition",
       "Le voisinage (la communauté locale), qui juge les habitants",
       "L'État (le gouvernement), qui punit directement sans tribunal"
     ],
@@ -2060,13 +2060,13 @@
     "crNumber": 62,
     "question": "Qui est le préfet ?",
     "distractors": [
-      "L'élu local qui dirige le conseil départemental, élu par les habitants",
-      "Le directeur de la police nationale dans le département, nommé par le maire",
-      "Le magistrat qui préside le tribunal judiciaire, nommé par les avocats",
-      "Le responsable de l'éducation nationale dans la région, nommé par le recteur",
-      "Le chef des services fiscaux dans le département, nommé par le maire",
-      "L'ambassadeur de la région auprès du gouvernement, élu par les conseillers régionaux",
-      "Le coordinateur des services hospitaliers publics, nommé par le président du département"
+      "L'élu qui préside le conseil départemental, élu par les conseillers départementaux",
+      "Le chef de la police nationale dans le département, qui dirige les commissariats",
+      "Le magistrat qui préside le tribunal judiciaire, nommé par décret du Président de la République",
+      "Le recteur, responsable de l'éducation nationale dans l'académie, nommé en conseil des ministres",
+      "Le chef des services fiscaux dans le département, qui dirige les centres des impôts",
+      "Le maire de la ville chef-lieu du département, élu par le conseil municipal",
+      "Le président du conseil régional, élu par les conseillers régionaux"
     ],
     "explanation": "Le préfet est le haut fonctionnaire représentant l'État dans le département. Nommé en conseil des ministres, il veille à l'application des lois, coordonne les services de l'État et peut prendre des mesures de police administrative pour maintenir l'ordre public.",
     "answers": [
@@ -2123,7 +2123,7 @@
       "Une fédération, instaurée en 1945",
       "Une démocratie directe, instaurée en 2002",
       "La IIIe République, instaurée en 1870",
-      "Un régime présidentiel, instauré en 1962",
+      "Un Empire, instauré en 1852",
       "Une oligarchie, instaurée en 1981"
     ],
     "explanation": "La France est en Ve République depuis la Constitution du 4 octobre 1958, proposée par le général de Gaulle et adoptée par référendum. Ce régime donne un pouvoir exécutif fort au Président de la République, qui partage l'exécutif avec un Premier ministre ; le Gouvernement est responsable devant l'Assemblée nationale.",
@@ -2496,12 +2496,12 @@
     ],
     "question": "Lequel de ces droits est un droit fondamental ?",
     "distractors": [
-      "La liberté d'ignorer les lois (que l'on n'approuve pas)",
+      "La gratuité des transports publics (pour tous les habitants)",
       "La liberté de porter des armes (pour se défendre)",
       "La liberté de ne pas payer ses impôts (si on désapprouve l'usage)",
       "La gratuité des musées nationaux (pour tous les visiteurs)",
-      "La liberté de conduire sans permis (si l'on est prudent)",
-      "La liberté de ne pas déclarer ses revenus (à l'administration)",
+      "Le droit à une voiture de fonction (pour tous les salariés)",
+      "Le droit au permis de conduire gratuit (dès 18 ans)",
       "Le droit d'imposer ses croyances (à ses enfants à l'école)",
       "Le droit de refuser l'autorité de l'État (sur soi)"
     ],
@@ -2833,12 +2833,12 @@
     "distractors": [
       "Non, c'est une obligation réservée aux entreprises et aux administrations",
       "Non, la gestion des déchets relève de l'État, qui s'en charge à notre place",
-      "Oui, c'est un devoir moral, mais la loi ne prévoit ni sanction ni obligation",
+      "Non, c'est un choix personnel, et la loi ne s'occupe pas des déchets des ménages",
       "Oui, mais seulement pour les déchets industriels et non les déchets ménagers",
       "Non, le tri sélectif est facultatif et la loi ne le rend pas obligatoire",
       "Oui, c'est un devoir réservé aux habitants des grandes villes de plus de 100 000 habitants",
       "Non, cette obligation concerne les communes frontalières, pas les autres habitants",
-      "Oui, c'est un devoir écologique inscrit dans le Code civil, qui impose une amende aux producteurs"
+      "Oui, c'est un devoir écologique, mais seulement pour les foyers qui ont un jardin"
     ],
     "explanation": "Réduire ses déchets est un devoir civique et écologique. La loi française (notamment la loi anti-gaspillage de 2020) encourage le tri, le recyclage, le compostage et la réduction à la source. Jeter ses déchets sauvagement dans la nature est une infraction passible d'amende.",
     "answers": [
