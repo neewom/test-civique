@@ -5470,9 +5470,9 @@
     ],
     "question": "Un incendie se déclare dans votre appartement. Quelle est la bonne réaction ?",
     "distractors": [
-      "Prendre l'ascenseur pour descendre le plus vite possible",
-      "Rester dans son appartement et attendre les secours",
-      "Ouvrir toutes les portes pour faciliter l'évacuation des autres"
+      "Prendre l'ascenseur pour descendre vite, laisser la porte ouverte, puis appeler le 17",
+      "Rester dans l'appartement, ouvrir les fenêtres en grand, puis appeler le 15",
+      "Ouvrir toutes les portes pour aérer, récupérer ses affaires, puis appeler le 17"
     ],
     "explanation": "Si le feu est chez vous, sortez en fermant la porte derrière vous (sans la verrouiller) pour ralentir les flammes et les fumées, ne prenez pas l'ascenseur, puis appelez le 18 (ou le 112) une fois en sécurité. Si le feu est ailleurs dans l'immeuble et que la fumée envahit le couloir, il vaut mieux rester chez soi, porte fermée.",
     "answers": [
@@ -5637,9 +5637,9 @@
     ],
     "question": "Votre employeur vous propose d'être payé en liquide sans déclaration. Qu'est-ce que vous risquez en acceptant ?",
     "distractors": [
-      "Rien, le travail non déclaré est toléré pour les petits montants",
-      "Uniquement une amende mineure et remboursable",
-      "Rien si le montant est inférieur à 1 000 € par mois"
+      "Le retrait de votre permis de conduire : suspension, perte de points",
+      "Le blocage de votre compte bancaire : gel des avoirs, fermeture du compte",
+      "Une taxe spéciale sur le salaire reçu : majoration, intérêts de retard"
     ],
     "explanation": "Le travail non déclaré est interdit. Le salarié non déclaré ne cotise ni pour le chômage ni pour sa retraite, n'est pas couvert par la Sécurité sociale en cas de maladie ou d'accident du travail et n'a pas de congés payés. S'il touche des aides sociales, il risque de devoir les rembourser ou de payer une amende. L'employeur encourt jusqu'à 3 ans de prison et 45 000 € d'amende.",
     "answers": [
@@ -5668,7 +5668,7 @@
     ],
     "explanation": "Le Conseil de prud'hommes est la juridiction compétente pour les litiges entre salariés et employeurs. Le non-paiement du salaire est une faute grave. Des associations et syndicats peuvent également aider dans ces démarches.",
     "answers": [
-      "Saisir le Conseil de prud'hommes"
+      "Saisir le Conseil de prud'hommes pour réclamer votre salaire"
     ],
     "group": "prudhommes",
     "source": {
@@ -5810,9 +5810,9 @@
     ],
     "question": "Vous êtes impliqué dans un accident de voiture sans blessé. Que devez-vous faire avec l'autre conducteur ?",
     "distractors": [
-      "Partir si vous estimez ne pas être en tort",
-      "Appeler la police obligatoirement même sans blessé",
-      "Régler l'affaire en liquide entre vous sans passer par les assurances"
+      "Partir si vous estimez ne pas être en tort, sans attendre 5 jours",
+      "Appeler la police obligatoirement même sans blessé et attendre sur place 2 heures",
+      "Régler l'affaire en liquide entre vous sans passer par les assurances sous 48 heures"
     ],
     "explanation": "En cas d'accident sans blessé, les conducteurs doivent remplir un constat amiable et l'envoyer à leurs assurances respectives. Quitter les lieux sans constater est un délit de fuite, même sans blessé.",
     "answers": [
@@ -5883,9 +5883,9 @@
     ],
     "question": "Vous entendez une dispute violente chez votre voisin avec des cris de douleur. Que faites-vous ?",
     "distractors": [
-      "Ne pas intervenir, c'est une affaire privée",
-      "Frapper à la porte pour intervenir physiquement",
-      "Attendre le lendemain pour en parler au voisin concerné"
+      "Appeler le 115 (hébergement d'urgence) et attendre le lendemain",
+      "Ne pas intervenir (affaire privée) et ne pas appeler le 17",
+      "Frapper à la porte (pour intervenir) sans appeler le 17 ni le 15"
     ],
     "explanation": "Ne pas porter secours à une personne en danger est un délit (non-assistance à personne en danger). Appeler le 17 ou le 15 est le geste approprié. Intervenir soi-même physiquement peut s'avérer dangereux.",
     "answers": [
@@ -5908,9 +5908,9 @@
     ],
     "question": "Votre employeur vous demande de travailler 50 heures par semaine sans compensation. Quelle est votre situation ?",
     "distractors": [
-      "L'employeur peut imposer les heures qu'il souhaite",
-      "Le travail supplémentaire est obligatoire sans compensation si le contrat le prévoit",
-      "Il n'existe pas de durée légale du travail en France"
+      "La durée légale est de 50 heures ; l'employeur peut imposer les heures qu'il souhaite",
+      "La durée légale est de 39 heures ; le travail supplémentaire n'est jamais payé",
+      "Il n'existe pas de durée légale ; l'employeur fixe les heures sans limite"
     ],
     "explanation": "La durée légale du travail est de 35 heures par semaine. Au-delà, les heures supplémentaires doivent être payées (avec une majoration) ou compensées par du repos. Il existe aussi une durée maximale : 48 heures sur une même semaine et 44 heures en moyenne sur 12 semaines. Travailler 50 heures dans la semaine dépasse donc la limite légale.",
     "answers": [
@@ -5933,9 +5933,9 @@
     ],
     "question": "Vous êtes victime de violences conjugales. Que devez-vous faire ?",
     "distractors": [
-      "Garder cela privé, c'est une affaire de famille",
-      "Demander à votre conjoint de promettre par écrit de ne plus recommencer",
-      "Attendre que la situation s'améliore d'elle-même"
+      "Garder cela privé, c'est une affaire de famille, et ne pas appeler le 17",
+      "Demander à votre conjoint une promesse écrite, sans appeler le 17 ni le 3919",
+      "Attendre que la situation s'améliore d'elle-même et ne pas appeler le 3919"
     ],
     "explanation": "Les violences conjugales sont interdites et punies par la loi (délit, voire crime). La victime peut porter plainte dans un commissariat ou une gendarmerie, appeler le 17 en cas de danger immédiat et le 3919 (Violences Femmes Info), numéro d'écoute gratuit et anonyme disponible 24h/24. Des associations l'accompagnent gratuitement.",
     "answers": [
@@ -6031,9 +6031,9 @@
     ],
     "question": "Votre enfant de 15 ans souhaite arrêter l'école pour travailler. Est-ce légalement possible ?",
     "distractors": [
-      "Oui, si les parents donnent leur accord écrit",
-      "Oui, à partir de 14 ans avec une dérogation préfectorale",
-      "Oui, si un employeur accepte de l'embaucher"
+      "Non, sauf si le directeur de l'école donne son accord",
+      "Oui, si les parents donnent leur accord écrit dès 15 ans",
+      "Oui, car l'instruction n'est obligatoire que jusqu'à 14 ans"
     ],
     "explanation": "L'instruction est obligatoire jusqu'à 16 ans en France. Un jeune de 15 ans peut entrer en apprentissage sous certaines conditions strictes, mais ne peut pas simplement quitter l'école pour travailler.",
     "answers": [
@@ -6251,9 +6251,9 @@
     ],
     "question": "Vous louez une voiture et causez un accident. L'assurance du loueur couvre-t-elle automatiquement les dommages ?",
     "distractors": [
-      "Oui, totalement, l'assurance du loueur couvre tout sans exception",
-      "Non, vous êtes toujours entièrement responsable sans aucune couverture",
-      "Oui, mais uniquement si vous êtes en France métropolitaine"
+      "Non : elle ne couvre pas les dommages causés aux autres conducteurs",
+      "Oui : aucune somme ne reste à votre charge, même avec franchise",
+      "Oui : mais seulement si l'accident a lieu en France"
     ],
     "explanation": "Le loueur doit assurer le véhicule avec la responsabilité civile obligatoire, incluse dans le prix : elle couvre les dommages causés aux autres (conducteurs, piétons, biens). Elle ne couvre pas les dégâts au véhicule loué, le vol ni vos propres blessures : pour ceux-ci, une franchise prévue au contrat peut rester à votre charge, sauf si vous avez souscrit une assurance complémentaire (rachat de franchise).",
     "answers": [
@@ -6275,13 +6275,13 @@
     ],
     "question": "Vous constatez qu'une entreprise déverse des déchets illégalement dans une rivière. Que pouvez-vous faire ?",
     "distractors": [
-      "Rien, cela concerne uniquement les entreprises et l'État",
-      "Filmer et publier sur les réseaux sociaux, c'est suffisant",
-      "Intervenir vous-même pour stopper le déversement"
+      "Ne rien faire, car cela concerne uniquement les entreprises et les services de l'État",
+      "Filmer les faits et les publier sur les réseaux sociaux, ce qui est suffisant",
+      "Intervenir vous-même sur place pour stopper le déversement et bloquer l'entreprise"
     ],
     "explanation": "La pollution de l'environnement est un délit. Tout citoyen peut signaler des faits à la gendarmerie, à la mairie ou à l'Office français de la biodiversité. Des associations de protection de l'environnement peuvent également intervenir.",
     "answers": [
-      "Signaler les faits à la gendarmerie, à la mairie ou à l'Office français de la biodiversité (OFB)"
+      "Signaler les faits à la gendarmerie, à la mairie ou à l'Office français de la biodiversité"
     ],
     "source": {
       "url": "https://www.ecologie.gouv.fr/politiques-publiques/police-leau-nature",
@@ -6323,13 +6323,13 @@
     ],
     "question": "Votre voisin vous dit que certains métiers doivent être réservés aux hommes. Qu'en est-il en France ?",
     "distractors": [
-      "Vrai, certains métiers physiques restent légalement réservés aux hommes",
-      "Vrai, mais uniquement dans le secteur privé",
+      "Certains métiers physiques restent légalement réservés aux hommes",
+      "Certains métiers sont réservés aux hommes dans le secteur privé seulement",
       "Cela dépend du secteur d'activité et des accords de branche"
     ],
     "explanation": "Le Code du travail interdit de réserver un emploi à un sexe, dans l'offre d'emploi comme à l'embauche. Les seules exceptions sont des emplois où le sexe est déterminant par nature : acteur qui joue un rôle féminin ou masculin, mannequin, modèle.",
     "answers": [
-      "Faux, les métiers sont ouverts aux femmes comme aux hommes"
+      "Les métiers sont ouverts aux femmes comme aux hommes en France"
     ],
     "source": {
       "url": "https://code.travail.gouv.fr/code-du-travail/r1142-1",
@@ -6347,13 +6347,13 @@
     ],
     "question": "Un enseignant du public porte un signe religieux ostensible en classe. Est-ce autorisé ?",
     "distractors": [
-      "Oui, la liberté religieuse s'applique à tous",
-      "Oui, si les parents d'élèves ne s'y opposent pas",
-      "Cela dépend de la religion concernée"
+      "Oui, la liberté religieuse s'applique à tous les agents comme aux élèves",
+      "Oui, tant que les parents d'élèves de la classe ne s'y opposent pas",
+      "Non, sauf si l'enseignant le demande par écrit à son directeur"
     ],
     "explanation": "La laïcité impose aux agents du service public une stricte neutralité : un enseignant de l'école publique ne peut porter aucun signe religieux dans l'exercice de ses fonctions, même discret. Les élèves ne sont pas tenus à cette neutralité, mais la loi du 15 mars 2004 leur interdit les signes religieux ostensibles dans les écoles, collèges et lycées publics.",
     "answers": [
-      "Non, les agents du service public sont soumis au principe de neutralité religieuse"
+      "Non, les agents du service public doivent rester neutres en matière religieuse"
     ],
     "group": "laicite-ecole",
     "source": {
@@ -6372,13 +6372,13 @@
     ],
     "question": "Des parents d'élèves refusent que leur enfant suive certains cours d'éducation civique pour des raisons religieuses. L'école peut-elle accepter ?",
     "distractors": [
-      "Oui, si les parents en font la demande écrite",
-      "Oui, si la religion de l'élève est reconnue par l'État",
-      "Cela dépend du directeur de l'établissement"
+      "Oui, si les parents en font la demande écrite, avec un motif religieux",
+      "Oui, à condition que la religion de l'élève soit reconnue par l'État",
+      "Non, sauf si le directeur de l'établissement donne son accord écrit"
     ],
     "explanation": "L'école publique est laïque et ses programmes s'imposent à tous : les convictions religieuses ne permettent pas de refuser une matière inscrite à l'emploi du temps. L'instruction en famille n'est possible que sur autorisation, pour des motifs limités fixés par la loi (santé, handicap, activité sportive ou artistique intensive, itinérance, éloignement, situation propre à l'enfant).",
     "answers": [
-      "Non, les programmes scolaires s'imposent à tous les élèves quelles que soient leurs convictions"
+      "Non, les programmes s'imposent à tous les élèves, quelles que soient leurs convictions"
     ],
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/principes-et-valeurs-de-la-republique/laicite/la-laicite-a-ecole-1/",
@@ -6397,8 +6397,8 @@
     "question": "Lors d'une réunion publique, un orateur tient des propos appelant à la haine contre un groupe religieux. Est-ce protégé par la liberté d'expression ?",
     "distractors": [
       "Oui, la liberté d'expression est absolue dans les réunions publiques",
-      "Oui, si les propos ne visent pas une personne nommément",
-      "Cela dépend du contexte et du lieu de la réunion"
+      "Non, sauf si l'orateur est un élu ou un responsable politique",
+      "Oui, si les propos ne visent pas une personne nommément"
     ],
     "explanation": "La liberté d'expression a des limites fixées par la loi. Les propos incitant à la haine, à la discrimination ou à la violence envers une personne ou un groupe en raison de sa religion, son origine, son sexe ou son orientation sexuelle constituent un délit.",
     "answers": [
@@ -6420,9 +6420,9 @@
     ],
     "question": "Votre enfant souhaite changer de religion. Quel est son droit en France ?",
     "distractors": [
-      "Il doit attendre sa majorité (18 ans) pour en avoir le droit",
-      "Un seul de ses parents peut décider de sa religion, sans l'autre",
-      "Ce droit n'existe pas, la religion est déterminée par la famille"
+      "Il est libre de sa religion, mais seulement à partir de 18 ans, avec l'accord de ses parents",
+      "Il est libre de sa religion, mais un seul de ses parents décide de son éducation, sans l'autre",
+      "Il n'est pas libre de sa religion, car elle est déterminée par la famille de l'enfant"
     ],
     "explanation": "La liberté de conscience et de religion est garantie à toute personne, enfants compris. Tant que l'enfant est mineur, son éducation religieuse est un acte important de l'autorité parentale : elle demande l'accord de ses deux parents, qui doivent l'associer aux décisions selon son âge et sa maturité.",
     "group": "autorite-parentale",
@@ -6447,7 +6447,7 @@
     "distractors": [
       "Oui, les partis politiques sont libres de choisir leurs candidats",
       "Oui, si cela vise à corriger des inégalités historiques",
-      "Cela dépend des statuts internes du parti"
+      "Non, sauf si les statuts internes du parti le prévoient"
     ],
     "explanation": "Le principe d'égalité interdit toute discrimination fondée sur l'origine ethnique, y compris dans la sélection de candidats politiques. En France, les partis politiques doivent respecter le cadre légal anti-discrimination.",
     "answers": [
@@ -6471,7 +6471,7 @@
     "distractors": [
       "Oui, les régions ont une large autonomie législative",
       "Oui, depuis la décentralisation de 1982",
-      "Cela dépend des domaines : fédérale pour certains, unitaire pour d'autres"
+      "Non, mais les régions votent leurs propres lois comme dans un État fédéral"
     ],
     "explanation": "Selon l'article 1er de la Constitution, « La France est une République indivisible ». Contrairement aux États fédéraux (comme l'Allemagne ou les États-Unis), les régions françaises n'ont pas de pouvoir législatif propre.",
     "answers": [
@@ -6494,12 +6494,12 @@
     "question": "Votre employeur vous remet un contrat de travail et un règlement intérieur rédigés uniquement en anglais. Est-ce légal ?",
     "distractors": [
       "Oui, l'employeur est libre de choisir la langue de ses documents",
-      "Oui, si l'entreprise est une multinationale",
+      "Non, sauf si l'entreprise est une multinationale ou une société étrangère",
       "Cela dépend de ce que prévoit le contrat de travail"
     ],
     "explanation": "La loi Toubon de 1994 et le Code du travail imposent le français pour le contrat de travail, le règlement intérieur et tout document qui comporte des obligations pour le salarié ; une traduction peut y être jointe. En revanche, la loi ne règle pas la langue parlée entre collègues.",
     "answers": [
-      "Non, ces documents doivent être rédigés en français"
+      "Non, le contrat et le règlement intérieur doivent être rédigés en français"
     ],
     "group": "textes-travail",
     "source": {
@@ -6566,9 +6566,9 @@
     ],
     "question": "Un candidat à une élection vous propose de l'argent pour voter pour lui. Que devez-vous faire ?",
     "distractors": [
-      "Accepter, le vote reste secret et personnel",
-      "Prendre l'argent et voter selon votre conscience",
-      "Ne rien faire, cela ne vous concerne pas directement"
+      "Accepter l'argent, puisque le vote reste secret et que personne ne le saura",
+      "Prendre l'argent et voter selon votre conscience, ce n'est qu'un cadeau",
+      "Ne rien faire, ce n'est pas votre rôle de signaler ce genre de faits"
     ],
     "explanation": "L'achat de votes est un délit électoral grave. L'accepter est également punissable. Les citoyens peuvent signaler ces faits au procureur de la République. Le vote doit rester libre et indépendant de toute pression ou avantage matériel.",
     "answers": [
@@ -6638,9 +6638,9 @@
     ],
     "question": "Vous souhaitez contester une loi votée par le Parlement car vous la trouvez inconstitutionnelle. Quel recours existe ?",
     "distractors": [
-      "Adresser une pétition directement au président de la République",
-      "Saisir la Cour européenne des droits de l'homme directement",
-      "Organiser un référendum d'initiative citoyenne"
+      "Saisir directement le Conseil constitutionnel (Conseil des sages) par courrier",
+      "Saisir directement la Cour européenne des droits de l'homme (CEDH)",
+      "Organiser un référendum d'initiative citoyenne (RIC) pour abroger la loi"
     ],
     "explanation": "La QPC (question prioritaire de constitutionnalité) permet, au cours d'un procès, de soutenir qu'une loi appliquée à son affaire porte atteinte aux droits et libertés garantis par la Constitution. Le juge la transmet au Conseil d'État ou à la Cour de cassation, qui peut saisir le Conseil constitutionnel ; on ne peut pas saisir directement le Conseil constitutionnel.",
     "answers": [
@@ -6735,13 +6735,13 @@
     ],
     "question": "Vous entendez parler d'une dissolution de l'Assemblée nationale. Qui a ce pouvoir ?",
     "distractors": [
-      "Le Premier ministre, avec l'accord du Sénat",
-      "Le Conseil constitutionnel en cas de crise grave",
-      "Le président de l'Assemblée nationale lui-même"
+      "Le Premier ministre, qui doit d'abord obtenir l'accord du Sénat",
+      "Le Conseil constitutionnel, en cas de crise institutionnelle grave",
+      "Le président de l'Assemblée nationale, qui peut dissoudre sa propre assemblée"
     ],
     "explanation": "Selon l'article 12 de la Constitution, le président de la République peut dissoudre l'Assemblée nationale. Il doit au préalable consulter le Premier ministre et les présidents des deux assemblées. Cette mesure entraîne l'organisation de nouvelles élections législatives.",
     "answers": [
-      "Le président de la République"
+      "Le président de la République, qui consulte d'abord le Premier ministre"
     ],
     "source": {
       "url": "https://www.conseil-constitutionnel.fr/le-bloc-de-constitutionnalite/texte-integral-de-la-constitution-du-4-octobre-1958-en-vigueur",
@@ -6790,7 +6790,7 @@
     ],
     "explanation": "Le maire est le représentant de la commune et gère les services de proximité. C'est l'interlocuteur naturel pour les questions liées à la vie quotidienne locale. Le conseil municipal vote le budget et les grandes décisions communales.",
     "answers": [
-      "Le maire et le conseil municipal, élus de la commune"
+      "Le maire et le conseil municipal"
     ],
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/systeme-institutionnel-et-politique/organisation-de-la-republique-fran%C3%A7aise/le-decoupage-administratif-de-la-france-1/",
@@ -6809,7 +6809,7 @@
     "question": "Votre région souhaite adopter une loi propre à son territoire, différente de la loi nationale. Est-ce possible ?",
     "distractors": [
       "Oui, les régions ont une large autonomie législative depuis 2003",
-      "Oui, dans certains domaines comme le tourisme et la culture",
+      "Non, sauf dans certains domaines comme le tourisme et la culture",
       "Oui, si le conseil régional la vote à l'unanimité"
     ],
     "explanation": "La France est un État unitaire. Les régions ont des compétences administratives (formation, transports, développement économique) mais ne peuvent pas créer leurs propres lois. Seul le Parlement national vote les lois applicables sur tout le territoire.",
@@ -6832,13 +6832,13 @@
     ],
     "question": "Vous entendez parler du « 49-3 ». À quoi cela correspond-il ?",
     "distractors": [
-      "Un article autorisant le président à gouverner par décrets",
-      "Une procédure d'urgence pour convoquer des élections anticipées",
-      "Un article permettant au Sénat de bloquer définitivement une loi"
+      "Un article autorisant le président de la République à gouverner seul par décrets pendant un an",
+      "Une procédure d'urgence permettant au président de convoquer des élections anticipées",
+      "Un article permettant au Sénat de bloquer définitivement n'importe quelle loi de l'Assemblée"
     ],
     "explanation": "L'article 49, alinéa 3, de la Constitution permet au Premier ministre d'engager la responsabilité du Gouvernement sur un texte : le budget de l'État, celui de la Sécurité sociale, ou un autre texte par session. Le texte est alors considéré comme adopté sans vote, sauf si une motion de censure, déposée dans les 24 heures, est votée par la majorité des députés : le Gouvernement est alors renversé.",
     "answers": [
-      "Une procédure permettant au gouvernement de faire passer un texte sans vote de l'Assemblée nationale"
+      "Une procédure permettant au gouvernement de faire adopter un texte sans vote de l'Assemblée"
     ],
     "source": {
       "url": "https://www.conseil-constitutionnel.fr/le-bloc-de-constitutionnalite/texte-integral-de-la-constitution-du-4-octobre-1958-en-vigueur",
@@ -6911,7 +6911,7 @@
     ],
     "explanation": "La Déclaration des droits de l'homme et du citoyen a été adoptée le 26 août 1789 par l'Assemblée nationale constituante, pendant la Révolution française. Elle proclame les droits fondamentaux et fait toujours partie du bloc de constitutionnalité français.",
     "answers": [
-      "En 1789"
+      "En 1789, peu après la prise de la Bastille"
     ],
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/histoire-geographie-et-culture/les-regimes-politiques-depuis-1789/la-fin-de-la-monarchie-absolue-et-le-debut-de-la-iere-republique-1789-1792/",
@@ -7030,12 +7030,12 @@
     "question": "Votre enfant vous demande pourquoi le 8 mai est un jour férié en France. Que lui répondez-vous ?",
     "distractors": [
       "Il commémore la fin de la Première Guerre mondiale en 1918",
-      "Il célèbre la fondation de l'Union européenne",
-      "Il marque l'anniversaire de la Déclaration des droits de l'homme"
+      "Il célèbre la naissance de l'Union européenne et de l'euro en 1999",
+      "Il marque l'anniversaire de la Déclaration des droits de l'homme en 1789"
     ],
     "explanation": "Le 8 mai 1945 marque la capitulation de l'Allemagne nazie et la fin de la Seconde Guerre mondiale en Europe. C'est la fête de la Victoire. Le 11 novembre commémore quant à lui l'armistice de 1918 qui a mis fin à la Première Guerre mondiale.",
     "answers": [
-      "Il commémore la capitulation de l'Allemagne nazie et la victoire des Alliés en Europe en 1945"
+      "Il commémore la capitulation de l'Allemagne nazie en Europe en 1945"
     ],
     "group": "8-mai",
     "source": {
@@ -7276,7 +7276,7 @@
     "distractors": [
       "Oui, l'employeur peut modifier le contrat librement",
       "Oui, s'il vous prévient simplement par oral la veille",
-      "Oui, s'il en informe d'abord l'inspection du travail"
+      "Non, sauf si l'employeur est une grande entreprise de plus de 50 salariés"
     ],
     "explanation": "Le salaire et la durée du travail sont des éléments essentiels du contrat : l'employeur peut seulement proposer de les modifier, et le salarié doit donner son accord. S'il refuse, l'employeur renonce ou engage un licenciement. Pour un motif économique, le salarié a un mois pour refuser ; passé ce délai, son silence vaut acceptation. Un simple changement des conditions de travail (tâches, certains horaires) peut en revanche être imposé.",
     "answers": [
@@ -7322,9 +7322,9 @@
     ],
     "question": "Vous recevez un courrier d'une administration vous réclamant un document que vous avez déjà envoyé. Que pouvez-vous invoquer ?",
     "distractors": [
-      "Rien, il faut renvoyer le document à chaque demande",
-      "La prescription administrative de 5 ans",
-      "Votre droit au silence administratif"
+      "Le principe « Un dossier, un guichet »",
+      "Le principe « Pas de papier sans tampon »",
+      "Le principe « Un justificatif par an »"
     ],
     "explanation": "Selon le principe « Dites-le-nous une fois » (article L113-12 du code des relations entre le public et l'administration), l'administration ne peut pas vous obliger à fournir des informations qu'elle détient déjà ou qu'elle peut obtenir directement auprès d'une autre administration. Vous pouvez le lui signaler plutôt que de renvoyer le document.",
     "answers": [
@@ -7370,9 +7370,9 @@
     ],
     "question": "Vous souhaitez faire garder votre enfant de 2 ans. Quels modes de garde sont possibles en France ?",
     "distractors": [
-      "Uniquement les crèches municipales gérées par la mairie",
-      "Seules les nounous non agréées sont autorisées avant 3 ans",
-      "L'école maternelle publique à partir de 2 ans dans tous les cas"
+      "Colonie de vacances, centre de loisirs, garderie de l'école primaire ou classe de CP",
+      "Classe de CP, classe de CE1, classe de CM2 ou internat du collège",
+      "Garderie de l'école primaire, centre de loisirs, colonie de vacances ou club sportif"
     ],
     "explanation": "Plusieurs modes de garde existent pour les enfants de moins de 3 ans : crèche collective ou familiale, assistante maternelle agréée, garde à domicile, microcrèche. Des aides financières (CMG, PAJE) de la CAF peuvent compléter le financement.",
     "answers": [
@@ -7442,9 +7442,9 @@
     ],
     "question": "Votre enfant de 12 ans commet un délit. Peut-il être poursuivi pénalement ?",
     "distractors": [
-      "Non, la responsabilité pénale commence à 18 ans",
-      "Non, seuls les parents sont responsables et poursuivis",
-      "Oui, il peut être jugé comme un adulte dès 13 ans"
+      "Seulement s'il a plus de 10 ans, et sans aucune mesure éducative avant 13 ans",
+      "Seulement si ses parents l'acceptent, et sans possibilité de jugement avant 18 ans",
+      "Seulement si le délit est grave, et avec les mêmes peines qu'un adulte dès 13 ans"
     ],
     "explanation": "Depuis le Code de la justice pénale des mineurs (2021), un mineur de moins de 13 ans est présumé ne pas avoir de discernement : en principe, il ne peut pas être poursuivi. S'il est établi qu'il comprenait ses actes, il peut l'être devant la justice des mineurs, mais il n'encourt aucune peine : seules des mesures éducatives sont possibles. À partir de 13 ans, une peine adaptée à son âge peut être prononcée. Les parents restent responsables des dommages causés par leur enfant.",
     "answers": [
@@ -7490,9 +7490,9 @@
     ],
     "question": "Un commerçant refuse d'accepter vos pièces de monnaie en euros comme paiement. A-t-il le droit ?",
     "distractors": [
-      "Oui, les commerçants peuvent refuser les pièces de monnaie",
-      "Oui, s'il affiche un panneau l'indiquant à l'entrée",
-      "Oui, pour les pièces de moins de 1 euro uniquement"
+      "Oui, les commerçants peuvent refuser les pièces de monnaie quand ils le souhaitent",
+      "Non, sauf si le commerçant est un artisan ou un petit commerce de proximité",
+      "Oui, pour les pièces de moins de 1 euro uniquement, quel que soit le montant"
     ],
     "explanation": "Les billets et pièces en euros ont cours légal : un commerçant ne peut pas refuser d'être payé en espèces, sous peine d'amende. Il existe des exceptions : il peut refuser plus de 50 pièces pour un même paiement, des espèces fausses ou en mauvais état, et il peut exiger que vous fassiez l'appoint.",
     "answers": [
@@ -7514,9 +7514,9 @@
     ],
     "question": "Vous découvrez par hasard une information confidentielle de votre employeur. Pouvez-vous la divulguer à la presse ?",
     "distractors": [
-      "Oui, la liberté d'expression prime toujours sur le secret professionnel",
-      "Oui, si votre employeur ne vous a pas demandé explicitement de le taire",
-      "Non, dans tous les cas et sans aucune exception"
+      "En principe oui, sauf si votre employeur vous l'a interdit par écrit",
+      "En principe non, sauf si vous avez quitté l'entreprise depuis plus d'un an",
+      "En principe oui, sauf pour les secrets de fabrication de l'entreprise"
     ],
     "explanation": "Un salarié doit respecter la confidentialité des informations de son entreprise. La loi protège toutefois les lanceurs d'alerte, qui signalent de bonne foi et sans contrepartie financière directe un crime, un délit ou une menace pour l'intérêt général. Le signalement se fait d'abord à l'employeur ou à une autorité (par exemple le Défenseur des droits). La divulgation publique, à la presse, n'est protégée que dans certains cas : signalement resté sans suite, danger grave et imminent, risque de représailles…",
     "answers": [
@@ -7563,9 +7563,9 @@
     ],
     "question": "Vous êtes arrêté en état d'ivresse au volant. Quelles sont les conséquences possibles ?",
     "distractors": [
-      "Uniquement une amende si c'est la première fois",
-      "Seulement un avertissement si le taux est légèrement dépassé",
-      "Aucune conséquence si vous n'avez pas causé d'accident"
+      "Amende de 35 euros, retrait d'un seul point et simple rappel à la loi sur place",
+      "Interdiction de quitter le département, amende de 1 500 euros et prison de 10 ans",
+      "Convocation devant un tribunal civil, versement de dommages et blocage du compte bancaire"
     ],
     "explanation": "Il est interdit de conduire avec 0,5 g d'alcool par litre de sang ou plus (0,2 g/L en permis probatoire). Jusqu'à 0,8 g/L, c'est une contravention : amende (135 € en général), retrait de 6 points, suspension possible du permis. À partir de 0,8 g/L, c'est un délit : jusqu'à 3 ans de prison et 9 000 € d'amende, 6 points retirés, suspension ou annulation du permis. Ces sanctions s'appliquent même sans accident.",
     "answers": [
@@ -7587,13 +7587,13 @@
     ],
     "question": "Vous recevez un email vous demandant vos coordonnées bancaires au nom d'un organisme officiel. Que faites-vous ?",
     "distractors": [
-      "Répondre si l'email semble officiel et professionnel",
-      "Appeler le numéro indiqué dans l'email pour vérifier",
-      "Cliquer sur le lien pour vérifier que le site est sécurisé"
+      "Répondre si l'email semble officiel, puis vérifier que le site est sécurisé",
+      "Appeler le numéro indiqué dans l'email, puis donner vos coordonnées pour vérifier",
+      "Cliquer sur le lien, vérifier que le site est sécurisé et saisir vos coordonnées"
     ],
     "explanation": "Il s'agit d'un hameçonnage (phishing), un délit : des escrocs se font passer pour une banque ou une administration pour voler vos données. Un organisme officiel ne vous demande pas vos coordonnées bancaires par courriel. Ne répondez pas, ne cliquez sur aucun lien et signalez le message, par exemple sur Signal Spam. Si vous avez déjà donné vos coordonnées, prévenez votre banque pour faire opposition ; vous pouvez aussi porter plainte et vous faire aider par 17Cyber.",
     "answers": [
-      "Ne pas répondre, ne pas cliquer et signaler le message (par exemple sur Signal Spam)"
+      "Ne pas répondre, ne pas cliquer et signaler le message, par exemple sur Signal Spam"
     ],
     "source": {
       "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F34800",
@@ -7631,9 +7631,9 @@
     ],
     "question": "Votre enfant est victime de harcèlement à l'école. Que devez-vous faire ?",
     "distractors": [
-      "Ignorer la situation, les enfants règlent leurs conflits seuls",
-      "Contacter directement le harceleur et sa famille sans impliquer l'école",
-      "Porter plainte immédiatement à la police sans en informer l'école"
+      "Ignorer la situation, les enfants règlent leurs conflits seuls, sans appeler le 3018",
+      "Contacter directement le harceleur et sa famille avant d'appeler le 17",
+      "Porter plainte tout de suite à la police, sans prévenir l'école ni appeler le 3018"
     ],
     "explanation": "Face au harcèlement scolaire, il faut d'abord alerter l'établissement. Le 3018 est le numéro national, gratuit et anonyme, contre le harcèlement à l'école et le cyberharcèlement. En cas de faits graves, une plainte peut aussi être déposée.",
     "answers": [
@@ -7729,12 +7729,12 @@
     "question": "Dans un service public, un agent vous refuse l'accès à un dossier vous concernant. Avez-vous un recours ?",
     "distractors": [
       "Non, l'administration est souveraine dans ses décisions internes",
-      "Oui, mais uniquement devant le Conseil d'État",
+      "Oui, mais uniquement en saisissant le Conseil d'État directement",
       "Non, les dossiers administratifs sont toujours confidentiels"
     ],
     "explanation": "Toute personne a le droit d'accéder aux documents administratifs la concernant. En cas de refus, la CADA peut être saisie gratuitement. Elle émet un avis sur la communicabilité du document, et en cas de maintien du refus, le tribunal administratif peut être saisi.",
     "answers": [
-      "Oui, vous pouvez saisir la CADA (Commission d'accès aux documents administratifs)"
+      "Oui, vous pouvez saisir la Commission d'accès aux documents administratifs"
     ],
     "source": {
       "url": "https://www.cada.fr/particulier/quand-et-comment-saisir-la-cada",
@@ -7753,12 +7753,12 @@
     "question": "Votre employeur souhaite connaître vos opinions politiques lors d'un entretien d'embauche. A-t-il le droit de vous poser cette question ?",
     "distractors": [
       "Oui, l'employeur a le droit de connaître les valeurs de ses futurs employés",
-      "Oui, si le poste concerne des fonctions sensibles ou publiques",
-      "Cela dépend de la convention collective applicable"
+      "Non, sauf si le candidat est étranger et doit prouver son intégration",
+      "Oui, si le poste concerne des fonctions sensibles ou publiques"
     ],
     "explanation": "Les questions relatives aux opinions politiques, religieuses ou syndicales sont interdites lors d'un entretien d'embauche car elles relèvent de la vie privée et pourraient conduire à des discriminations. L'employeur ne peut poser que des questions en lien direct avec le poste.",
     "answers": [
-      "Non, les opinions politiques font partie de la vie privée et ne peuvent pas être demandées à l'embauche"
+      "Non, les opinions politiques relèvent de la vie privée et ne peuvent pas être demandées"
     ],
     "group": "discriminations",
     "source": {
@@ -7777,13 +7777,13 @@
     ],
     "question": "Vous entendez parler du Conseil économique, social et environnemental (CESE). Quel est son rôle ?",
     "distractors": [
-      "C'est la troisième chambre du Parlement qui vote les lois sociales",
-      "C'est le tribunal compétent pour les litiges environnementaux",
-      "C'est l'organisme qui gère le budget de l'État avec le Parlement"
+      "C'est une chambre du Parlement qui vote les lois sociales avec les députés",
+      "C'est le tribunal compétent pour les litiges environnementaux entre entreprises et citoyens",
+      "C'est l'organisme qui gère le budget de l'État et le contrôle avec les parlementaires"
     ],
     "explanation": "Le Conseil économique, social et environnemental (CESE) est la troisième assemblée constitutionnelle française. Il a un rôle consultatif : il rend des avis sur les politiques économiques, sociales et environnementales à la demande du gouvernement ou du Parlement, et peut être saisi par voie de pétition citoyenne.",
     "answers": [
-      "C'est une assemblée consultative qui représente la société civile et conseille le gouvernement et le Parlement"
+      "C'est une assemblée consultative qui représente la société civile auprès des pouvoirs publics"
     ],
     "source": {
       "url": "https://www.conseil-constitutionnel.fr/le-bloc-de-constitutionnalite/texte-integral-de-la-constitution-du-4-octobre-1958-en-vigueur",
@@ -7826,9 +7826,9 @@
     ],
     "question": "Vous êtes témoin d'un acte raciste dans le bus. Quelle est la bonne attitude ?",
     "distractors": [
-      "Ne pas intervenir pour ne pas aggraver la situation",
-      "Filmer uniquement pour servir de preuve plus tard",
-      "Changer de place et faire comme si vous n'aviez rien vu"
+      "Ne pas intervenir pour ne pas aggraver les choses, et ne pas appeler le 17",
+      "Filmer uniquement pour servir de preuve, sans appeler le 17 ni soutenir la victime",
+      "Changer de place, faire comme si vous n'aviez rien vu et appeler le 15"
     ],
     "explanation": "Témoin d'un acte raciste, vous devez agir sans vous mettre en danger : alerter le conducteur ou un agent, appeler le 17 si la situation l'exige, écouter et soutenir la victime, et l'orienter vers de l'aide. Vous pourrez ensuite témoigner auprès de la police si elle porte plainte. Ne pas porter secours à une personne en danger est un délit.",
     "answers": [
