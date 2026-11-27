@@ -7,14 +7,18 @@ export type AnswerResult = 'correct' | 'wrong'
 interface AnswerCardProps {
   /** Letter shown in the round badge: A, B, C or D */
   letter: string
-  /** Radio group name, shared by the 4 cards of a question */
-  name: string
-  value: string
-  checked: boolean
-  onSelect: (value: string) => void
-  /** After validation: the card shows whether it was the right answer or the user's wrong answer */
+  /** Radio group name, shared by the 4 cards of a question (selectable card only) */
+  name?: string
+  value?: string
+  checked?: boolean
+  onSelect?: (value: string) => void
+  /**
+   * Correction: the card shows whether it was the right answer or the user's wrong answer.
+   * It is then plain content (no radio): « Bonne réponse » / « Votre réponse » says it all,
+   * where a disabled radio read « not checked » on the right answer.
+   */
   result?: AnswerResult
-  /** Locked once the answer is validated */
+  /** Locked (selectable card) */
   disabled?: boolean
   children: ReactNode
 }
@@ -33,8 +37,8 @@ const RESULT_LABEL: Record<AnswerResult, string> = {
 export function AnswerCard({
   letter,
   name,
-  value,
-  checked,
+  value = '',
+  checked = false,
   onSelect,
   result,
   disabled = false,
@@ -43,8 +47,10 @@ export function AnswerCard({
   const selected = checked && !result
   const ResultIcon = result === 'correct' ? Check : X
 
+  const Root = result ? 'div' : 'label'
+
   return (
-    <label
+    <Root
       data-state={result ?? (checked ? 'selected' : 'idle')}
       className={cn(
         // 3px border on every state (transparent but on « wrong ») so that validating never
@@ -54,26 +60,30 @@ export function AnswerCard({
         disabled ? 'cursor-default' : 'cursor-pointer',
         !result && !checked && 'bg-card text-card-foreground',
         !result && !checked && !disabled && 'hover:bg-muted',
-        selected && 'bg-primary text-primary-foreground',
+        // Forced colours (Windows high contrast) drop the background: the chosen card shows as the system highlight
+        selected &&
+          'bg-primary text-primary-foreground forced-colors:bg-[Highlight] forced-colors:text-[HighlightText] forced-colors:[forced-color-adjust:none]',
         result === 'correct' && 'bg-success text-success-foreground',
         result === 'wrong' && 'border-coral bg-card text-card-foreground',
       )}
     >
-      <input
-        type="radio"
-        className="sr-only"
-        name={name}
-        value={value}
-        checked={checked}
-        disabled={disabled}
-        onChange={() => onSelect(value)}
-      />
+      {!result && (
+        <input
+          type="radio"
+          className="sr-only"
+          name={name}
+          value={value}
+          checked={checked}
+          disabled={disabled}
+          onChange={() => onSelect?.(value)}
+        />
+      )}
       <span
         aria-hidden="true"
         className={cn(
           'flex size-9 shrink-0 items-center justify-center rounded-full font-bold',
           selected
-            ? 'bg-action text-action-foreground'
+            ? 'bg-action text-action-foreground forced-colors:bg-[HighlightText] forced-colors:text-[Highlight]'
             : result
               ? 'bg-foreground text-background'
               : 'border-2 border-current',
@@ -85,6 +95,6 @@ export function AnswerCard({
         {result && <span className="text-[0.8125rem] font-bold">{RESULT_LABEL[result]}</span>}
         <span>{children}</span>
       </span>
-    </label>
+    </Root>
   )
 }

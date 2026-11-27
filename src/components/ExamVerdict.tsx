@@ -1,4 +1,5 @@
 import { isPassed, passThreshold } from '@/lib/exam'
+import { Fraction } from '@/components/Fraction'
 import { Verdict } from '@/components/Verdict'
 import { cn } from '@/lib/utils'
 
@@ -23,7 +24,9 @@ export function ExamVerdict({ score, total, variant = 'full' }: ExamVerdictProps
       <Verdict tone={passed ? 'success' : 'pending'} size={compact ? 'default' : 'lg'}>
         {label}
         {' · '}
-        <span className="inline-block">seuil {thresholdLabel}</span>
+        <span className="inline-block">
+          seuil <Fraction value={threshold} total={total} />
+        </span>
       </Verdict>
       {!compact && !passed && (
         <p className="text-base">

@@ -1,7 +1,8 @@
 import { useId, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { AnswerBox } from '@/components/AnswerBox'
-import { AppHeader } from '@/components/AppHeader'
+import { Fraction } from '@/components/Fraction'
+import { PageFrame } from '@/components/PageFrame'
 import { BackLink } from '@/components/BackLink'
 import { SourceLink } from '@/components/SourceLink'
 import { ExamVerdict } from '@/components/ExamVerdict'
@@ -46,7 +47,10 @@ const toggleClass = (pressed: boolean) =>
   cn(
     'inline-flex min-h-11 items-center rounded-[1.375rem] px-4 py-1.5 text-[0.9375rem] font-bold transition-colors',
     'focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ring focus-visible:outline-solid',
-    pressed ? 'bg-primary text-primary-foreground' : 'bg-card text-card-foreground hover:bg-muted',
+    // Forced colours (Windows high contrast) drop the backgrounds: the pressed filter shows as the system highlight
+    pressed
+      ? 'bg-primary text-primary-foreground forced-colors:bg-[Highlight] forced-colors:text-[HighlightText] forced-colors:[forced-color-adjust:none]'
+      : 'bg-card text-card-foreground hover:bg-muted forced-colors:border forced-colors:border-[ButtonText]',
   )
 
 function QuestionReview({ answer, number, question }: Reviewed) {
@@ -110,8 +114,7 @@ export default function ExamenDetail() {
 
   if (!record) {
     return (
-      <main className="flex min-h-svh flex-col bg-background text-foreground">
-        <AppHeader />
+      <PageFrame>
         <div className="mx-auto flex w-full max-w-[30rem] flex-col gap-4 px-5 pt-0 pb-7 md:max-w-[36rem] md:px-8 md:pb-10">
           <BackLink />
           <h1 className="mt-4 text-[1.875rem] leading-none font-bold tracking-[-0.03em] md:text-[2.5rem]">Examen introuvable</h1>
@@ -122,7 +125,7 @@ export default function ExamenDetail() {
             Retour à mon parcours
           </PillLink>
         </div>
-      </main>
+      </PageFrame>
     )
   }
 
@@ -157,8 +160,7 @@ export default function ExamenDetail() {
   )
 
   return (
-    <main className="flex min-h-svh flex-col bg-background text-foreground">
-      <AppHeader />
+    <PageFrame>
       <div className="mx-auto flex w-full max-w-[30rem] grow flex-col gap-3.5 px-5 pt-0 pb-7 md:max-w-[36rem] md:px-8 lg:grid lg:max-w-[62rem] lg:grid-cols-[22rem_minmax(0,1fr)] lg:items-start lg:gap-x-14 lg:px-10">
         {/* From 1024 px: score, filters, scores per theme and actions in a sticky side column (side padding: room for the focus rings) */}
         <div className="flex flex-col gap-3.5 lg:sticky lg:top-0 lg:-mx-2 lg:max-h-svh lg:overflow-y-auto lg:px-2 lg:py-8">
@@ -168,9 +170,9 @@ export default function ExamenDetail() {
             <div className="flex flex-col gap-0.5">
               <h1
                 className="text-[1.875rem] leading-none font-bold tracking-[-0.03em] tabular-nums md:text-[3rem]"
-                aria-label={`Score : ${record.score} sur ${record.total}`}
               >
-                {record.score}/{record.total}
+                <span className="sr-only">Examen du {dateStr} : </span>
+                <Fraction value={record.score} total={record.total} />
               </h1>
               <p className="text-[0.9375rem]">{dateStr}</p>
             </div>
@@ -225,7 +227,7 @@ export default function ExamenDetail() {
                       <span
                         className={cn('shrink-0 rounded-full px-2 tabular-nums', weak && 'bg-coral text-coral-foreground')}
                       >
-                        {s.correct}/{s.total}
+                        <Fraction value={s.correct} total={s.total} />
                       </span>
                     </li>
                   )
@@ -250,6 +252,6 @@ export default function ExamenDetail() {
 
         {!wide && actions}
       </div>
-    </main>
+    </PageFrame>
   )
 }

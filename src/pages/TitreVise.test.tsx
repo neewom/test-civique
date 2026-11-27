@@ -250,6 +250,15 @@ describe('Première visite : aucun titre présélectionné', () => {
   })
 })
 
+describe('Première visite : cercle des titres non choisis', () => {
+  it('a un contour d\'au moins 3:1 (muted-foreground à 70 % au moins, pas 40 %)', () => {
+    renderTitre()
+    const ring = within(screen.getByRole('button', { name: /Carte de résident/ })).getByText('', { selector: 'span[aria-hidden=true]' })
+    expect(ring.className).toMatch(/border-muted-foreground\/(7|8|9)0|border-muted-foreground(?!\/)/)
+    expect(ring.className).not.toContain('border-muted-foreground/40')
+  })
+})
+
 describe('Sélection gardée pendant un aller-retour vers une fiche', () => {
   function Fiche() {
     const navigate = useNavigate()

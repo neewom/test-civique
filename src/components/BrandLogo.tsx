@@ -37,10 +37,11 @@ export function BrandSymbol({ large = false, className }: { large?: boolean; cla
  */
 export function BrandLogo() {
   return (
-    <span className="inline-flex items-center gap-[0.4em]">
+    <span className="inline-flex min-w-0 items-center gap-[0.4em]">
       <BrandSymbol />
-      {/* Left-aligned so a wrapped name (enlarged text) stacks beside the symbol */}
-      <span className="text-left">
+      {/* Left-aligned so a wrapped name (enlarged text) stacks beside the symbol; it shrinks with the
+          room left by « Affichage » and breaks the word only as a last resort (320 px, text at 200 %) */}
+      <span className="min-w-0 text-left [overflow-wrap:anywhere]">
         <span className="text-[#3a7a2c] dark:text-[#8ed462]">Futur</span>{' '}
         <span className="text-[#2c2e2a] dark:text-[#f1eee4]">Citoyen</span>
       </span>

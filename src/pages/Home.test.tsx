@@ -125,7 +125,7 @@ describe('Accueil — en-tête et parcours', () => {
   it('affiche la mention non officielle avec le lien vers le site officiel', () => {
     renderHome()
     expect(screen.getByText(/Site indépendant, non officiel/)).toBeInTheDocument()
-    expect(screen.getByRole('link', { name: 'formation-civique.interieur.gouv.fr' })).toHaveAttribute('href', OFFICIAL_SITE_URL)
+    expect(screen.getByRole('link', { name: 'formation-civique.interieur.gouv.fr (nouvel onglet)' })).toHaveAttribute('href', OFFICIAL_SITE_URL)
   })
 
   it('mène à la page des mentions légales depuis le pied de page', () => {

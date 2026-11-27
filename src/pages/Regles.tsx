@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { AppHeader } from '@/components/AppHeader'
+import { PageFrame } from '@/components/PageFrame'
 import { BackLink } from '@/components/BackLink'
 import { ExamRules } from '@/components/ExamRules'
 import { OrganicBackground } from '@/components/OrganicBackground'
@@ -15,9 +15,7 @@ export default function Regles() {
   const [hasExamInProgress] = useState(() => loadProgressForTitle(loadTargetTitle() ?? DEFAULT_TITLE) !== null)
 
   return (
-    <main className="relative flex min-h-svh flex-col overflow-hidden bg-background text-foreground">
-      <OrganicBackground shape="info" />
-      <AppHeader />
+    <PageFrame className="relative overflow-hidden" background={<OrganicBackground shape="info" />}>
       <div className="relative mx-auto flex w-full max-w-[30rem] flex-col gap-3.5 px-[22px] pt-0 pb-7 md:max-w-[36rem] md:px-8 md:pb-10">
         <BackLink />
         <h1 className="mt-4 max-w-[19rem] text-[2.125rem] leading-none font-bold tracking-[-0.04em] text-balance md:max-w-none md:text-[3rem]">
@@ -30,6 +28,6 @@ export default function Regles() {
           M'entraîner maintenant
         </PillLink>
       </div>
-    </main>
+    </PageFrame>
   )
 }

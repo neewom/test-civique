@@ -70,7 +70,10 @@ describe('ExamenDetail', () => {
   it('affiche le score global', () => {
     seedHistory(RECORD)
     renderDetail(RECORD_ID)
-    expect(screen.getByLabelText(/Score : 1 sur 40/i)).toBeInTheDocument()
+    // Le titre se lit « Examen du <date> : 1 sur 40 » (le « 1/40 » visible est masqué aux lecteurs d'écran)
+    const title = screen.getByRole('heading', { level: 1 })
+    expect(title).toHaveAccessibleName(/^Examen du .+ : 1 sur 40$/)
+    expect(within(title).getByText('1/40')).toHaveAttribute('aria-hidden', 'true')
   })
 
   it('affiche la date de l\'examen', () => {
@@ -107,9 +110,22 @@ describe('ExamenDetail', () => {
 })
 
 // La pastille de verdict mêle plusieurs nœuds de texte : on compare son texte complet
-function verdict(text: string) {
-  return screen.getByText((_, el) => el?.tagName === 'P' && el.textContent?.replace(/\s+/g, ' ') === text)
+// Texte visible de la pastille : la forme lue (« 32 sur 40 », masquée) est écartée
+function visibleText(el: Element): string {
+  const copy = el.cloneNode(true) as Element
+  copy.querySelectorAll('.sr-only').forEach((n) => n.remove())
+  return (copy.textContent ?? '').replace(/\s+/g, ' ')
 }
+
+function verdict(text: string) {
+  return screen.getByText((_, el) => el?.tagName === 'P' && visibleText(el) === text)
+}
+
+it('la pastille du verdict lit le seuil « 32 sur 40 »', () => {
+  seedHistory(RECORD)
+  renderDetail(RECORD_ID)
+  expect(screen.getByText('32 sur 40')).toHaveClass('sr-only')
+})
 
 describe('ExamenDetail — verdict', () => {
   beforeEach(() => localStorage.clear())
@@ -194,7 +210,7 @@ describe('ExamenDetail — revoir ses erreurs', () => {
     renderDetail(RECORD_ID)
     const section = screen.getByRole('region', { name: 'Par thème' })
     const rows = within(section).getAllByRole('listitem')
-    const total = rows.reduce((n, r) => n + Number(r.textContent!.match(/(\d+)\/(\d+)$/)![2]), 0)
+    const total = rows.reduce((n, r) => n + Number(within(r).getByText(/^\d+\/\d+$/).textContent!.split('/')[1]), 0)
     expect(total).toBe(4)
     expect(within(section).getAllByText('(thème le plus faible)').length).toBeGreaterThan(0)
   })

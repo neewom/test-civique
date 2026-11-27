@@ -443,6 +443,18 @@ describe('Revision — filtres retrouvés au retour (session)', () => {
     expect(stored().filter.theme).toBe(theme0)
   })
 
+  it('signale à la coque de page qu\'une position mémorisée sera remise (le focus ne va pas sur le titre)', () => {
+    sessionStorage.setItem(KEY, JSON.stringify({ filter: { kind: 'all' }, excludeSituational: false, scrollY: 1234 }))
+    renderRevision()
+    expect(document.querySelector('[data-restores-scroll]')).not.toBeNull()
+  })
+
+  it('première entrée (aucune position mémorisée) : pas de signal, le focus peut aller au titre', () => {
+    sessionStorage.setItem(KEY, JSON.stringify({ filter: { kind: 'all' }, excludeSituational: false, scrollY: 0 }))
+    renderRevision()
+    expect(document.querySelector('[data-restores-scroll]')).toBeNull()
+  })
+
   it('remet la position de défilement mémorisée', () => {
     sessionStorage.setItem(KEY, JSON.stringify({ filter: { kind: 'all' }, excludeSituational: false, scrollY: 1234 }))
     const scrollTo = vi.spyOn(window, 'scrollTo').mockImplementation(() => {})

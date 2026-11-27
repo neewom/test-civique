@@ -3,7 +3,7 @@ import { useLocation } from 'react-router-dom'
 import { AnswerBox } from '@/components/AnswerBox'
 import { BackLink } from '@/components/BackLink'
 import { SourceLink } from '@/components/SourceLink'
-import { AppHeader } from '@/components/AppHeader'
+import { PageFrame } from '@/components/PageFrame'
 import { questionsForTitle, type Question } from '@/lib/exam'
 import { OFFICIAL_THEMES } from '@/lib/exam-review'
 import { loadQuestionsToReview, parseReviewIds } from '@/lib/review-queue'
@@ -30,11 +30,14 @@ const pillClass = (pressed: boolean, tone: 'surface' | 'coral' = 'surface') =>
     // From 1024 px: one full-width pill per line in the side column, long themes wrap
     'lg:w-full lg:rounded-[1.375rem] lg:text-left lg:whitespace-normal',
     'focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ring focus-visible:outline-solid',
+    // Forced colours (Windows high contrast) drop the backgrounds: the pressed filter shows as the system
+    // highlight, the others keep an outline
     pressed
-      ? 'bg-primary text-primary-foreground'
+      ? 'bg-primary text-primary-foreground forced-colors:bg-[Highlight] forced-colors:text-[HighlightText] forced-colors:[forced-color-adjust:none]'
       : tone === 'coral'
         ? 'bg-coral text-coral-foreground hover:bg-coral/85'
         : 'bg-card text-card-foreground hover:bg-muted',
+    !pressed && 'forced-colors:border forced-colors:border-[ButtonText]',
   )
 
 function QuestionCard({ question }: { question: Question }) {
@@ -168,9 +171,10 @@ export default function Revision() {
     filter.kind === f.kind && (f.kind !== 'theme' || (filter.kind === 'theme' && filter.theme === f.theme))
 
   return (
-    <main className="flex min-h-svh flex-col bg-background text-foreground">
-      <AppHeader />
-      <div className="mx-auto flex w-full max-w-[30rem] flex-col gap-3.5 px-5 pt-0 pb-7 md:max-w-[36rem] md:px-8 lg:grid lg:max-w-[62rem] lg:grid-cols-[17rem_minmax(0,1fr)] lg:items-start lg:gap-x-14 lg:px-10">
+    <PageFrame>
+      {/* data-restores-scroll: the page puts the remembered position back shortly after arriving; the page shell
+          then leaves the focus alone (a title focus would make the next Tab jump away from that position) */}
+      <div data-restores-scroll={(restored?.scrollY ?? 0) > 0 ? '' : undefined} className="mx-auto flex w-full max-w-[30rem] flex-col gap-3.5 px-5 pt-0 pb-7 md:max-w-[36rem] md:px-8 lg:grid lg:max-w-[62rem] lg:grid-cols-[17rem_minmax(0,1fr)] lg:items-start lg:gap-x-14 lg:px-10">
         {/* From 1024 px: a sticky side column with the header and the filters (side padding: room for the focus rings).
             Below: `contents` lets the pill band be a child of the page column, so that it can stay stuck at the top
             all along the cards (a sticky element only sticks inside its parent; no overflow-hidden above it either). */}
@@ -285,6 +289,6 @@ export default function Revision() {
           )}
         </div>
       </div>
-    </main>
+    </PageFrame>
   )
 }

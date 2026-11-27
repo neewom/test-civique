@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowRight } from 'lucide-react'
-import { AppHeader } from '@/components/AppHeader'
+import { PageFrame } from '@/components/PageFrame'
 import { ExamVerdict } from '@/components/ExamVerdict'
 import { OrganicBackground } from '@/components/OrganicBackground'
 import { PillButton, PillLink } from '@/components/PillButton'
@@ -46,10 +46,7 @@ export function ExamResult({ outcome, themeOf, onRestart }: ExamResultProps) {
   const weakest = weakestThemesLabel(weakestThemes(themeScores(answers, themeOf)).map(themeLabel))
 
   return (
-    <main className="relative flex min-h-svh flex-col overflow-hidden bg-background text-foreground">
-      <OrganicBackground shape="crest" />
-
-      <AppHeader />
+    <PageFrame className="relative overflow-hidden" background={<OrganicBackground shape="crest" />}>
       <div className="relative mx-auto flex grow w-full max-w-[30rem] flex-col gap-3 px-[22px] pt-0 pb-6 md:max-w-[44rem] md:px-8 md:pb-10">
         <h1 ref={headingRef} tabIndex={-1} className="min-h-11 content-center self-start rounded-sm text-[0.9375rem] font-bold outline-none">
           Examen blanc terminé
@@ -62,12 +59,10 @@ export function ExamResult({ outcome, themeOf, onRestart }: ExamResultProps) {
           </p>
         )}
 
-        <p
-          className="mt-[clamp(1rem,4svh,2.5rem)] flex md:mt-12 flex-wrap items-baseline gap-x-1.5 font-bold"
-          aria-label={`Score : ${score} sur ${total}`}
-        >
-          <span className="text-[6rem] leading-[0.9] tracking-[-0.04em] tabular-nums md:text-[8rem]">{score}</span>
-          <span className="text-[2rem] md:text-[2.75rem]">/{total}</span>
+        <p className="mt-[clamp(1rem,4svh,2.5rem)] flex md:mt-12 flex-wrap items-baseline gap-x-1.5 font-bold">
+          <span aria-hidden="true" className="text-[6rem] leading-[0.9] tracking-[-0.04em] tabular-nums md:text-[8rem]">{score}</span>
+          <span aria-hidden="true" className="text-[2rem] md:text-[2.75rem]">/{total}</span>
+          <span className="sr-only">Score : {score} sur {total}</span>
         </p>
 
         <ExamVerdict score={score} total={total} />
@@ -108,6 +103,6 @@ export function ExamResult({ outcome, themeOf, onRestart }: ExamResultProps) {
           </Link>
         </div>
       </div>
-    </main>
+    </PageFrame>
   )
 }

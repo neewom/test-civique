@@ -2,6 +2,7 @@ import { useRef, useState } from 'react'
 import { ArrowRight, Check, CircleAlert } from 'lucide-react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { AppHeader } from '@/components/AppHeader'
+import { PageFrame } from '@/components/PageFrame'
 import { BrandSymbol } from '@/components/BrandLogo'
 import { BackLink } from '@/components/BackLink'
 import { OrganicBackground } from '@/components/OrganicBackground'
@@ -86,7 +87,7 @@ function TitleChoices({
                     'flex size-10 shrink-0 items-center justify-center rounded-full',
                     on
                       ? 'bg-primary text-primary-mark'
-                      : 'border-[3px] border-muted-foreground/40',
+                      : 'border-[3px] border-muted-foreground/70',
                   )}
                 >
                   {on && <Check className="size-[1.125em]" strokeWidth={2.8} />}
@@ -145,13 +146,17 @@ function MeadowLines() {
  * (the page shows the logo large).
  */
 function FirstVisit({ selected, onSelect, onContinue, showError, groupRef }: ChoiceProps) {
-  // <main> clips (overflow-clip) rather than hides: hidden would make it the scroll container and break the sticky bar.
+  // The frame clips (overflow-clip) rather than hides: hidden would make it the scroll container and break the sticky bar.
   // The scroll margin keeps a focused link or button clear of the sticky bar (WCAG 2.4.11)
+  // The header comes before <main> (landmark), the green field starts at the very top of the page: it is
+  // pulled up behind the header (negative margin = the header's height, 4.25rem, 4.5rem from 768 px) and given the same padding back
   return (
-    <main className="relative flex min-h-svh flex-col overflow-clip bg-background text-foreground [&_a]:scroll-mb-36 [&_button]:scroll-mb-36">
-      <div className="relative bg-earth text-earth-foreground">
+    <PageFrame
+      className="relative overflow-clip [&_a]:scroll-mb-36 [&_button]:scroll-mb-36"
+      header={<AppHeader hideBrand />}
+    >
+      <div className="relative -mt-[4.25rem] bg-earth pt-[4.25rem] text-earth-foreground md:-mt-[4.5rem] md:pt-[4.5rem]">
         <MeadowLines />
-        <AppHeader hideBrand />
         <div className="relative mx-auto flex w-full max-w-[30rem] flex-col items-start gap-3 px-[22px] pt-0 pb-4 md:max-w-[34rem] md:px-8">
           <BrandSymbol large className="size-[4.25rem] shrink-0" />
           <p className="text-xl font-bold">
@@ -203,7 +208,7 @@ function FirstVisit({ selected, onSelect, onContinue, showError, groupRef }: Cho
           </PillButton>
         </div>
       </div>
-    </main>
+    </PageFrame>
   )
 }
 
@@ -267,9 +272,7 @@ export default function TitreVise() {
   }
 
   return (
-    <main className="relative flex min-h-svh flex-col overflow-hidden bg-background text-foreground">
-      <OrganicBackground shape="goal" />
-      <AppHeader />
+    <PageFrame className="relative overflow-hidden" background={<OrganicBackground shape="goal" />}>
       <div className="relative mx-auto flex grow w-full max-w-[30rem] flex-col gap-3.5 px-[22px] pt-0 pb-6 md:max-w-[34rem] md:px-8 md:pb-10">
         <BackLink />
         <h1 className="mt-[3.75rem] max-w-[16.25rem] text-[2.25rem] leading-none font-bold tracking-[-0.04em] text-balance md:max-w-none md:text-[3rem]">
@@ -283,6 +286,6 @@ export default function TitreVise() {
           Continuer
         </PillButton>
       </div>
-    </main>
+    </PageFrame>
   )
 }

@@ -234,6 +234,11 @@
     outline: 3px solid var(--ring);
     outline-offset: 2px;
   }
+  /* A title that receives the focus by script (new page, new question) shows no ring: nothing to operate */
+  h1[tabindex='-1']:focus-visible,
+  main[tabindex='-1']:focus-visible {
+    outline: none;
+  }
   ::selection {
     background: var(--action);
     color: var(--action-foreground);
@@ -256,7 +261,7 @@
 :root.page-transition #page-wrap {
   view-transition-name: page-content;
 }
-:root.page-transition main > svg[data-slot='organic-background'] {
+:root.page-transition [data-page-frame] > svg[data-slot='organic-background'] {
   view-transition-name: page-bg;
 }
 :root.page-transition [data-app-header] {
@@ -266,7 +271,7 @@
 :root.page-transition [data-exam-bar] {
   view-transition-name: exam-bar;
 }
-:root.page-transition main {
+:root.page-transition [data-page-frame] {
   background: transparent;
 }
 

@@ -21,6 +21,7 @@ import { DEFAULT_TITLE, loadTargetTitle, type TitleKey } from '@/lib/target-titl
 import { themeLabel } from '@/lib/themes'
 import { journeyMessage, passedInARow, UNSAVED_MESSAGE } from '@/lib/readiness'
 import { AppHeader } from '@/components/AppHeader'
+import { PageFrame } from '@/components/PageFrame'
 import { PillButton } from '@/components/PillButton'
 import { SourceLink } from '@/components/SourceLink'
 import { Verdict } from '@/components/Verdict'
@@ -135,8 +136,10 @@ function ExamSession({ restarted, onRestart }: ExamSessionProps) {
   const finishedRef = useRef(false)
   const questionHeadingRef = useRef<HTMLHeadingElement>(null)
   const verdictRef = useRef<HTMLParagraphElement>(null)
-  // Focus goes to the new question only after « Question suivante », not on arrival
-  const focusQuestionRef = useRef(false)
+  // Focus goes to the new question after « Question suivante » and after « Nouvel examen blanc »
+  // (the session is remounted: the button that had the focus is gone); on a first arrival the
+  // page shell moves it to the title
+  const focusQuestionRef = useRef(restarted)
   const questionId = useId()
 
   // A newly drawn exam (from the home page, « Nouvel examen blanc », or no stored
@@ -315,6 +318,8 @@ function ExamSession({ restarted, onRestart }: ExamSessionProps) {
   const timerPct = Math.min(100, Math.max(0, (globalTimeLeft / GLOBAL_EXAM_TIME) * 100))
   const minutes = minutesLeft(globalTimeLeft)
   const lowTime = globalTimeLeft < ALERT_SECONDS
+  // Read first when the title takes the focus (the visible counter is not part of it)
+  const questionNumber = `Question ${index + 1} sur ${questions.length} : `
 
   // ── Écran résultat (maquettes Pa6 / Pd6) ─────────────────────────────────────
   if (phase === 'result' && outcome) {
@@ -357,8 +362,7 @@ function ExamSession({ restarted, onRestart }: ExamSessionProps) {
       </DialogContent>
     </Dialog>
 
-    <main className="flex min-h-svh flex-col bg-background text-foreground">
-      <AppHeader thin onLogoClick={() => setShowQuitDialog(true)} />
+    <PageFrame header={<AppHeader thin onLogoClick={() => setShowQuitDialog(true)} />}>
       <header data-exam-bar className="rounded-b-[2rem] bg-earth">
         <div className="mx-auto flex w-full max-w-[30rem] flex-col gap-3 px-5 pt-4 pb-5 md:max-w-[44rem] md:px-8 md:pt-6 md:pb-7">
           <div className="flex flex-wrap items-center justify-between gap-x-4">
@@ -377,7 +381,8 @@ function ExamSession({ restarted, onRestart }: ExamSessionProps) {
           </div>
           <div className="flex items-center gap-2.5">
             <span aria-hidden="true" className="text-sm font-bold whitespace-nowrap">Temps</span>
-            <div className="h-3 grow overflow-hidden rounded-full bg-foreground/18">
+            {/* Forced colours (Windows high contrast) drop the backgrounds: an outline for the track, the text colour for the fill */}
+            <div className="h-3 grow overflow-hidden rounded-full bg-foreground/18 forced-colors:border forced-colors:border-[CanvasText]">
               <div
                 role="progressbar"
                 aria-label="Temps restant"
@@ -385,7 +390,7 @@ function ExamSession({ restarted, onRestart }: ExamSessionProps) {
                 aria-valuemin={0}
                 aria-valuemax={GLOBAL_EXAM_TIME}
                 aria-valuetext={`${plural(minutes, 'minute')} sur ${EXAM_MINUTES}${inCorrection ? ', en pause' : ''}`}
-                className={cn('h-full', lowTime ? 'bg-coral' : 'bg-foreground')}
+                className={cn('h-full forced-colors:bg-[CanvasText]', lowTime ? 'bg-coral' : 'bg-foreground')}
                 style={{ width: `${timerPct}%` }}
               />
             </div>
@@ -396,7 +401,7 @@ function ExamSession({ restarted, onRestart }: ExamSessionProps) {
             </span>
           </div>
           {lowTime && (
-            <p className="mt-1.5 inline-flex min-h-8 items-center gap-2 self-start rounded-full bg-coral px-3.5 text-sm font-bold text-coral-foreground">
+            <p className="mt-1.5 inline-flex min-h-8 items-center gap-2 self-start rounded-full bg-coral px-3.5 text-sm font-bold text-coral-foreground forced-colors:border forced-colors:border-[CanvasText]">
               <Clock aria-hidden="true" className="size-4 shrink-0" strokeWidth={2.4} />
               Moins de 5 minutes
             </p>
@@ -423,29 +428,14 @@ function ExamSession({ restarted, onRestart }: ExamSessionProps) {
               tabIndex={-1}
               className="text-[1.3125rem] leading-[1.3] font-bold outline-none md:text-[1.75rem] md:leading-[1.25]"
             >
+              <span className="sr-only">{questionNumber}</span>
               {current.question}
             </h1>
-            <AnswerCard
-              letter={LETTERS[current.choices.indexOf(current.answer)]}
-              name={`correction-${index}`}
-              value={current.answer}
-              checked={isCorrect}
-              onSelect={() => {}}
-              result="correct"
-              disabled
-            >
+            <AnswerCard letter={LETTERS[current.choices.indexOf(current.answer)]} result="correct">
               {current.answer}
             </AnswerCard>
             {!isCorrect && selected && (
-              <AnswerCard
-                letter={LETTERS[current.choices.indexOf(selected)]}
-                name={`correction-${index}`}
-                value={selected}
-                checked
-                onSelect={() => {}}
-                result="wrong"
-                disabled
-              >
+              <AnswerCard letter={LETTERS[current.choices.indexOf(selected)]} result="wrong">
                 {selected}
               </AnswerCard>
             )}
@@ -462,12 +452,12 @@ function ExamSession({ restarted, onRestart }: ExamSessionProps) {
           <div className="flex flex-col gap-3 pt-6 md:pt-10">
             <p className={eyebrow}>{themeLabel(current.theme)}</p>
             <h1
-              id={questionId}
               ref={questionHeadingRef}
               tabIndex={-1}
               className="mb-2 text-[1.4375rem] leading-[1.3] font-bold outline-none md:text-[1.75rem] md:leading-[1.25]"
             >
-              {current.question}
+              <span className="sr-only">{questionNumber}</span>
+              <span id={questionId}>{current.question}</span>
             </h1>
             <div role="radiogroup" aria-labelledby={questionId} className="flex flex-col gap-3">
               {current.choices.map((choice, i) => (
@@ -501,7 +491,7 @@ function ExamSession({ restarted, onRestart }: ExamSessionProps) {
           )}
         </div>
       </div>
-    </main>
+    </PageFrame>
     </>
   )
 }
