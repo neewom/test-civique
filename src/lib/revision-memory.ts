@@ -1,9 +1,12 @@
+import { loadQuestionsToReview } from '@/lib/review-queue'
 import type { TitleKey } from '@/lib/target-title'
+import { THEME_COLORS, themeLabel } from '@/lib/themes'
 
-// What the revision page remembers for the length of the tab session (sessionStorage, never
-// localStorage): the filter, the « Sans les mises en situation » box and the scroll position,
-// so that coming back to the revision (back button, or home → « Réviser les thèmes ») finds it as left.
-// One key per title; this module is the only reader and writer.
+// What the revision page remembers on this device (localStorage, kept after the browser is closed):
+// the filter, the « Sans les mises en situation » box and the scroll position, so that coming back
+// to the revision (back button, home → « Réviser les thèmes » or « Continuer où j'en étais »)
+// finds it as left. One key per title; this module is the only reader and writer.
+// A value that an older version wrote in sessionStorage is ignored (no migration).
 export const REVISION_VIEW_KEY_PREFIX = 'revision-view:'
 
 /** Filters worth remembering: « Cet examen » comes from navigation state, not from memory. */
@@ -28,7 +31,7 @@ export function loadRevisionView(
   hasReviewQuestions: boolean,
 ): RevisionView | null {
   try {
-    const raw = sessionStorage.getItem(keyOf(title))
+    const raw = localStorage.getItem(keyOf(title))
     if (raw === null) return null
     const data: unknown = JSON.parse(raw)
     if (typeof data !== 'object' || data === null) return null
@@ -54,8 +57,21 @@ export function loadRevisionView(
 /** Remembers the view; a blocked or full storage is ignored. */
 export function saveRevisionView(title: TitleKey, view: RevisionView): void {
   try {
-    sessionStorage.setItem(keyOf(title), JSON.stringify(view))
+    localStorage.setItem(keyOf(title), JSON.stringify(view))
   } catch {
     // The memory is a convenience
   }
+}
+
+/**
+ * Label of the filter for the home shortcut « Continuer où j'en étais », or null when there is
+ * nothing to continue (no remembered view, or a position still at the top). The label is the one
+ * the revision page will show: a theme that is no longer known, or « À revoir » with nothing
+ * left to review, fall back to « Tous les thèmes » as in `loadRevisionView`.
+ */
+export function revisionResumeLabel(title: TitleKey): string | null {
+  const view = loadRevisionView(title, Object.keys(THEME_COLORS), loadQuestionsToReview(title).length > 0)
+  if (view === null || view.scrollY <= 0) return null
+  if (view.filter.kind === 'theme') return themeLabel(view.filter.theme)
+  return view.filter.kind === 'review' ? 'À revoir' : 'Tous les thèmes'
 }

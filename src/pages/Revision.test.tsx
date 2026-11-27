@@ -23,7 +23,7 @@ const localStorageMock = makeLocalStorageMock()
 beforeEach(() => {
   vi.stubGlobal('localStorage', localStorageMock)
   localStorageMock.clear()
-  // The page remembers its view for the tab session: each test starts clean
+  // An old value of the previous (session) memory must not matter: each test starts clean
   sessionStorage.clear()
 })
 
@@ -364,18 +364,17 @@ describe('Revision — naturalisation', () => {
   })
 })
 
-describe('Revision — filtres retrouvés au retour (session)', () => {
+describe('Revision — filtres retrouvés au retour (appareil)', () => {
   const KEY = 'revision-view:pluriannuelle'
-  const stored = () => JSON.parse(sessionStorage.getItem(KEY) ?? 'null')
+  const stored = () => JSON.parse(localStorageMock.getItem(KEY) ?? 'null')
   const theme0 = themes[0]
 
-  it('mémorise le filtre et la case dans sessionStorage, jamais dans localStorage', () => {
+  it('mémorise le filtre et la case dans localStorage, jamais dans sessionStorage', () => {
     renderRevision()
     fireEvent.click(pill(theme0))
     fireEvent.click(screen.getByLabelText('Sans les mises en situation'))
     expect(stored()).toMatchObject({ filter: { kind: 'theme', theme: theme0 }, excludeSituational: true })
-    expect(localStorageMock.getItem(KEY)).toBeNull()
-    expect(Object.keys(sessionStorage)).toEqual([KEY])
+    expect(Object.keys(sessionStorage)).toEqual([])
   })
 
   it('aller-retour : le thème et la case sont retrouvés', () => {
@@ -394,19 +393,19 @@ describe('Revision — filtres retrouvés au retour (session)', () => {
 
   it('retrouve « À revoir » quand il reste des questions à revoir', () => {
     setHistory([{ questionId: official[0].id, correct: false }])
-    sessionStorage.setItem(KEY, JSON.stringify({ filter: { kind: 'review' }, excludeSituational: false, scrollY: 0 }))
+    localStorageMock.setItem(KEY, JSON.stringify({ filter: { kind: 'review' }, excludeSituational: false, scrollY: 0 }))
     renderRevision()
     expect(screen.getByRole('button', { name: /À revoir/ })).toHaveAttribute('aria-pressed', 'true')
   })
 
   it('« À revoir » devenu vide retombe sur « Tous les thèmes »', () => {
-    sessionStorage.setItem(KEY, JSON.stringify({ filter: { kind: 'review' }, excludeSituational: false, scrollY: 0 }))
+    localStorageMock.setItem(KEY, JSON.stringify({ filter: { kind: 'review' }, excludeSituational: false, scrollY: 0 }))
     renderRevision()
     expect(screen.getByRole('button', { name: 'Tous les thèmes' })).toHaveAttribute('aria-pressed', 'true')
   })
 
   it('un thème inconnu retombe sur « Tous les thèmes »', () => {
-    sessionStorage.setItem(KEY, JSON.stringify({ filter: { kind: 'theme', theme: 'Inconnu' }, excludeSituational: true, scrollY: 0 }))
+    localStorageMock.setItem(KEY, JSON.stringify({ filter: { kind: 'theme', theme: 'Inconnu' }, excludeSituational: true, scrollY: 0 }))
     renderRevision()
     expect(screen.getByRole('button', { name: 'Tous les thèmes' })).toHaveAttribute('aria-pressed', 'true')
   })
@@ -414,7 +413,7 @@ describe('Revision — filtres retrouvés au retour (session)', () => {
   it.each(['pas du json{', 'null', '42', '{"filter":"all"}', '{"filter":{"kind":"autre"}}'])(
     'valeur illisible ignorée (%s)',
     (raw) => {
-      sessionStorage.setItem(KEY, raw)
+      localStorageMock.setItem(KEY, raw)
       renderRevision()
       expect(screen.getByRole('button', { name: 'Tous les thèmes' })).toHaveAttribute('aria-pressed', 'true')
       expect(screen.getByLabelText('Sans les mises en situation')).not.toBeChecked()
@@ -422,7 +421,7 @@ describe('Revision — filtres retrouvés au retour (session)', () => {
   )
 
   it("l'arrivée par « Réviser ces n questions » prime : rien n'est restauré", () => {
-    sessionStorage.setItem(KEY, JSON.stringify({ filter: { kind: 'theme', theme: theme0 }, excludeSituational: true, scrollY: 800 }))
+    localStorageMock.setItem(KEY, JSON.stringify({ filter: { kind: 'theme', theme: theme0 }, excludeSituational: true, scrollY: 800 }))
     const scrollTo = vi.spyOn(window, 'scrollTo').mockImplementation(() => {})
     vi.useFakeTimers()
     const state: ReviewState = { reviewIds: [official[0].id] }
@@ -437,31 +436,38 @@ describe('Revision — filtres retrouvés au retour (session)', () => {
     scrollTo.mockRestore()
   })
 
+  it("une ancienne valeur de sessionStorage est ignorée (pas de migration)", () => {
+    sessionStorage.setItem(KEY, JSON.stringify({ filter: { kind: 'theme', theme: theme0 }, excludeSituational: true, scrollY: 500 }))
+    renderRevision()
+    expect(screen.getByRole('button', { name: 'Tous les thèmes' })).toHaveAttribute('aria-pressed', 'true')
+    expect(screen.getByLabelText('Sans les mises en situation')).not.toBeChecked()
+  })
+
   it('une clé par titre', () => {
     localStorageMock.setItem('target-title', 'resident')
-    sessionStorage.setItem(KEY, JSON.stringify({ filter: { kind: 'theme', theme: theme0 }, excludeSituational: true, scrollY: 0 }))
+    localStorageMock.setItem(KEY, JSON.stringify({ filter: { kind: 'theme', theme: theme0 }, excludeSituational: true, scrollY: 0 }))
     renderRevision()
     expect(screen.getByRole('button', { name: 'Tous les thèmes' })).toHaveAttribute('aria-pressed', 'true')
     fireEvent.click(screen.getByLabelText('Sans les mises en situation'))
-    expect(JSON.parse(sessionStorage.getItem('revision-view:resident')!).excludeSituational).toBe(true)
+    expect(JSON.parse(localStorageMock.getItem('revision-view:resident')!).excludeSituational).toBe(true)
     expect(stored().excludeSituational).toBe(true)
     expect(stored().filter.theme).toBe(theme0)
   })
 
   it('signale à la coque de page qu\'une position mémorisée sera remise (le focus ne va pas sur le titre)', () => {
-    sessionStorage.setItem(KEY, JSON.stringify({ filter: { kind: 'all' }, excludeSituational: false, scrollY: 1234 }))
+    localStorageMock.setItem(KEY, JSON.stringify({ filter: { kind: 'all' }, excludeSituational: false, scrollY: 1234 }))
     renderRevision()
     expect(document.querySelector('[data-restores-scroll]')).not.toBeNull()
   })
 
   it('première entrée (aucune position mémorisée) : pas de signal, le focus peut aller au titre', () => {
-    sessionStorage.setItem(KEY, JSON.stringify({ filter: { kind: 'all' }, excludeSituational: false, scrollY: 0 }))
+    localStorageMock.setItem(KEY, JSON.stringify({ filter: { kind: 'all' }, excludeSituational: false, scrollY: 0 }))
     renderRevision()
     expect(document.querySelector('[data-restores-scroll]')).toBeNull()
   })
 
   it('remet la position de défilement mémorisée', () => {
-    sessionStorage.setItem(KEY, JSON.stringify({ filter: { kind: 'all' }, excludeSituational: false, scrollY: 1234 }))
+    localStorageMock.setItem(KEY, JSON.stringify({ filter: { kind: 'all' }, excludeSituational: false, scrollY: 1234 }))
     const scrollTo = vi.spyOn(window, 'scrollTo').mockImplementation(() => {})
     vi.useFakeTimers()
     renderRevision()
@@ -471,8 +477,8 @@ describe('Revision — filtres retrouvés au retour (session)', () => {
     scrollTo.mockRestore()
   })
 
-  it('un stockage de session bloqué ne casse pas la page', () => {
-    vi.stubGlobal('sessionStorage', {
+  it('un stockage local bloqué ne casse pas la page', () => {
+    vi.stubGlobal('localStorage', {
       getItem: () => { throw new Error('blocked') },
       setItem: () => { throw new Error('blocked') },
     })
@@ -525,7 +531,7 @@ describe('Revision — retour en haut des cartes quand on change la liste', () =
   })
 
   it('jamais au montage ni à la restauration', () => {
-    sessionStorage.setItem(
+    localStorageMock.setItem(
       'revision-view:pluriannuelle',
       JSON.stringify({ filter: { kind: 'theme', theme: theme0 }, excludeSituational: true, scrollY: 900 }),
     )
@@ -555,13 +561,13 @@ describe("Revision — examen d'un autre titre que le titre choisi", () => {
     expect(localStorageMock.getItem('target-title')).toBe('pluriannuelle')
   })
 
-  it("garde les autres filtres sur le titre de l'examen et sa mémoire de session", () => {
+  it("garde les autres filtres sur le titre de l'examen et sa mémoire", () => {
     localStorageMock.setItem('target-title', 'pluriannuelle')
     renderRevision({ reviewIds: ids, title: 'resident' })
     fireEvent.click(pill('Tous les thèmes'))
     expect(shownCards()).toHaveLength(residentQuestions.length)
-    expect(JSON.parse(sessionStorage.getItem('revision-view:resident')!).filter).toEqual({ kind: 'all' })
-    expect(sessionStorage.getItem('revision-view:pluriannuelle')).toBeNull()
+    expect(JSON.parse(localStorageMock.getItem('revision-view:resident')!).filter).toEqual({ kind: 'all' })
+    expect(localStorageMock.getItem('revision-view:pluriannuelle')).toBeNull()
   })
 
   it('même titre : inchangé', () => {
