@@ -16,9 +16,9 @@ export default function Regles() {
 
   return (
     <PageFrame className="relative overflow-hidden" background={<OrganicBackground shape="info" />}>
-      <div className="relative mx-auto flex w-full max-w-[30rem] flex-col gap-3.5 px-[22px] pt-0 pb-7">
+      <div className="relative mx-auto flex w-full max-w-[30rem] flex-col gap-3.5 px-[22px] pt-0 pb-7 md:max-w-[36rem] md:px-8 md:pb-10">
         <BackLink />
-        <h1 className="mt-4 max-w-[19rem] text-[2.125rem] leading-none font-bold tracking-[-0.04em] text-balance">
+        <h1 className="mt-4 max-w-[19rem] text-[2.125rem] leading-none font-bold tracking-[-0.04em] text-balance md:max-w-none md:text-[3rem]">
           Comment se passe l'examen
         </h1>
         <div className="mt-[3.75rem]">
