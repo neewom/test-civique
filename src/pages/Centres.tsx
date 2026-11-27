@@ -10,12 +10,12 @@ import {
   OFFICIAL_ORGANISMES_URL,
   ORGANISMES,
 } from '@/lib/centres'
-import { useDocumentTitle } from '@/lib/use-document-title'
+import { useRouteTitle } from '@/lib/use-document-title'
 import { cn } from '@/lib/utils'
 
 /** « Trouver un centre d'examen » (maquettes Tc2 to Tc4): links to the two approved organisms, step 3 of the journey. */
 export default function Centres() {
-  useDocumentTitle("Trouver un centre d'examen")
+  useRouteTitle('/centres')
 
   return (
     <PageFrame className="relative overflow-hidden" background={<OrganicBackground shape="info" />}>

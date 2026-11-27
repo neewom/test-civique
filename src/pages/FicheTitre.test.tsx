@@ -48,7 +48,7 @@ describe('Fiche d\'un titre', () => {
   it('carte de séjour pluriannuelle : contenu clé, titre d\'onglet, examen commun', () => {
     renderFiche('/titres/carte-de-sejour-pluriannuelle')
     expect(screen.getByRole('heading', { level: 1, name: 'Carte de séjour pluriannuelle' })).toBeInTheDocument()
-    expect(document.title).toBe('Carte de séjour pluriannuelle · Futur Citoyen')
+    expect(document.title).toBe('Carte de séjour pluriannuelle et examen civique · Futur Citoyen')
     expect(screen.getByText('Elle dure en général 4 ans.')).toBeInTheDocument()
     expect(screen.getByText(/niveau A2/)).toBeInTheDocument()
     expect(screen.getByText(/plus de 65 ans/)).toBeInTheDocument()

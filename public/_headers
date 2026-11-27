@@ -14,3 +14,6 @@
 # The service worker file is never kept by the browser or the CDN: an update must be seen at once
 /sw.js
   Cache-Control: no-cache
+# /examen/<id> (the detail of an exam) is the app page without a file of its own: kept out of the index
+/examen/*
+  X-Robots-Tag: noindex

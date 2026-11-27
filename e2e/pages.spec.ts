@@ -8,35 +8,35 @@ test('page « Comment se passe l\'examen »', async ({ page }) => {
   await page.goto('/regles')
   await expect(page.getByRole('heading', { level: 1, name: "Comment se passe l'examen" })).toBeVisible()
   await expect(page.getByRole('link', { name: "M'entraîner maintenant" })).toBeVisible()
-  await expectPage(page, "Comment se passe l'examen")
+  await expectPage(page, "L'examen civique 2026 : format et préparation · Futur Citoyen")
 })
 
 test('page « Trouver un centre d\'examen », liens externes non suivis', async ({ page }) => {
   await page.goto('/centres')
   await expect(page.getByRole('heading', { level: 1, name: "Trouver un centre d'examen" })).toBeVisible()
   await expect(page.getByRole('link', { name: /Voir la carte des centres/ })).toHaveAttribute('target', '_blank')
-  await expectPage(page, "Trouver un centre d'examen")
+  await expectPage(page, "Où passer l'examen civique · Futur Citoyen")
   await page.getByRole('link', { name: /Mon parcours/ }).click()
   await expect(page).toHaveURL(/\/$/)
 })
 
 test('« En savoir plus » de l\'accueil mène à la section « Vos données »', async ({ page }) => {
   await page.goto('/')
-  await expectPage(page, 'Accueil')
+  await expectPage(page, 'Examen civique : entraînement gratuit · Futur Citoyen')
   const official = page.getByRole('link', { name: 'formation-civique.interieur.gouv.fr' })
   await expect(official).toHaveAttribute('href', 'https://formation-civique.interieur.gouv.fr')
 
   await page.getByRole('link', { name: 'En savoir plus' }).click()
   await expect(page).toHaveURL(/\/mentions-legales#vos-donnees$/)
   await expect(page.getByRole('heading', { level: 2, name: 'Vos données' })).toBeInViewport()
-  await expectPage(page, 'Mentions légales et confidentialité')
+  await expectPage(page, 'Mentions légales et confidentialité · Futur Citoyen')
 })
 
 test('adresse directe /mentions-legales#vos-donnees', async ({ page }) => {
   await page.goto('/mentions-legales#vos-donnees')
   await expect(page.getByRole('heading', { level: 1, name: 'Mentions légales et confidentialité' })).toBeAttached()
   await expect(page.getByRole('heading', { level: 2, name: 'Vos données' })).toBeInViewport()
-  await expectPage(page, 'Mentions légales et confidentialité')
+  await expectPage(page, 'Mentions légales et confidentialité · Futur Citoyen')
 })
 
 test('le thème sombre reste après un rechargement', async ({ page }) => {
@@ -53,12 +53,12 @@ test('le thème sombre reste après un rechargement', async ({ page }) => {
   await page.getByRole('button', { name: 'Affichage' }).click()
   await expect(page.getByRole('button', { name: 'Sombre', exact: true })).toHaveAttribute('aria-pressed', 'true')
   expect(await page.evaluate(() => localStorage.getItem('theme'))).toBe('dark')
-  await expectPage(page, 'Accueil')
+  await expectPage(page, 'Examen civique : entraînement gratuit · Futur Citoyen')
 })
 
 test('une adresse inconnue renvoie à l\'accueil', async ({ page }) => {
   await page.goto('/nimporte-quoi')
   await expect(page).toHaveURL(/\/$/)
   await expect(page.getByRole('heading', { level: 1, name: 'Votre chemin vers le jour J' })).toBeVisible()
-  await expectPage(page, 'Accueil')
+  await expectPage(page, 'Examen civique : entraînement gratuit · Futur Citoyen')
 })

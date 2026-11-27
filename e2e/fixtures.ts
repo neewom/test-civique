@@ -124,7 +124,8 @@ export const test = base.extend<{ guard: Guard }>({
 
 /** Checks of every visited page: tab title, and no horizontal overflow on a phone. */
 export async function expectPage(page: Page, title: string) {
-  await expect(page).toHaveTitle(`${title} · ${APP_NAME}`)
+  // A title already ending with the app name is the full title (pages with their own title, src/lib/seo.ts)
+  await expect(page).toHaveTitle(title.endsWith(` · ${APP_NAME}`) ? title : `${title} · ${APP_NAME}`)
   const width = page.viewportSize()?.width ?? 0
   if (width <= 390) {
     const sizes = await page.evaluate(() => ({

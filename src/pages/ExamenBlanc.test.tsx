@@ -49,7 +49,7 @@ describe('/examen-blanc', () => {
 
   it("a un titre d'onglet distinct de celui de l'examen", () => {
     renderPage()
-    expect(document.title).toBe("Avant l'examen blanc · Futur Citoyen")
+    expect(document.title).toBe("Examen blanc de l'examen civique · Futur Citoyen")
   })
 
   it('affiche le titre visé, les repères du jour J et ce qui change', () => {

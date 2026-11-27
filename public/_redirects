@@ -7,5 +7,23 @@ http://test-civique.netlify.app/* https://futurcitoyen.fr/:splat 301!
 # rule without ! never shadows a file
 /assets/* /404.html 404
 
-# SPA fallback
-/* /index.html 200
+# Public pages and noindex pages: the HTML generated at build for each (vite-seo.ts, from
+# src/lib/seo.ts) carries its own title, description and canonical. Keep in step with seo.ts
+# (checked by src/lib/seo.test.ts)
+/examen-blanc /examen-blanc.html 200
+/revision /revision.html 200
+/regles /regles.html 200
+/centres /centres.html 200
+/titres/carte-de-sejour-pluriannuelle /titres/carte-de-sejour-pluriannuelle.html 200
+/titres/carte-de-resident /titres/carte-de-resident.html 200
+/titres/naturalisation /titres/naturalisation.html 200
+/mentions-legales /mentions-legales.html 200
+/examen /examen.html 200
+/titre /titre.html 200
+
+# /examen/<id>: no file per id, the app page (noindex by X-Robots-Tag, public/_headers)
+/examen/* /index.html 200
+
+# Any other address: the real 404 page. The routes above and the files of dist/ (assets, icons,
+# robots.txt, sitemap.xml...) are served before this rule
+/* /404.html 404

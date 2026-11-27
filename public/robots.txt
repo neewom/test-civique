@@ -1,0 +1,6 @@
+# Everything is open to crawlers. The pages that must not be indexed (/examen, /examen/<id>, /titre)
+# are not blocked here: a blocked page cannot be read, so its noindex would never be seen.
+User-agent: *
+Allow: /
+
+Sitemap: https://futurcitoyen.fr/sitemap.xml
