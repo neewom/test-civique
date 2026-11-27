@@ -7,8 +7,9 @@ import { configDefaults, defineConfig } from 'vitest/config'
 export default defineConfig({
   plugins: [react(), tailwindcss()],
   server: {
-    // Accès depuis le réseau Tailscale (tailscale serve, voir AGENTS.md)
-    allowedHosts: ['mac-mini-de-vichith.tail5a5a34.ts.net'],
+    // Accès depuis le réseau Tailscale (tailscale serve, voir AGENTS.md) ; le nom exact de la
+    // machine reste hors du dépôt public (TAILSCALE_HOST dans .env), d'où le suffixe seul
+    allowedHosts: ['.ts.net'],
   },
   resolve: {
     alias: {
