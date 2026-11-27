@@ -70,7 +70,10 @@ describe('ExamenDetail', () => {
   it('affiche le score global', () => {
     seedHistory(RECORD)
     renderDetail(RECORD_ID)
-    expect(screen.getByLabelText(/Score : 1 sur 40/i)).toBeInTheDocument()
+    // Le titre se lit « Examen du <date> : 1 sur 40 » (le « 1/40 » visible est masqué aux lecteurs d'écran)
+    const title = screen.getByRole('heading', { level: 1 })
+    expect(title).toHaveAccessibleName(/^Examen du .+ : 1 sur 40$/)
+    expect(within(title).getByText('1/40')).toHaveAttribute('aria-hidden', 'true')
   })
 
   it('affiche la date de l\'examen', () => {
@@ -194,7 +197,7 @@ describe('ExamenDetail — revoir ses erreurs', () => {
     renderDetail(RECORD_ID)
     const section = screen.getByRole('region', { name: 'Par thème' })
     const rows = within(section).getAllByRole('listitem')
-    const total = rows.reduce((n, r) => n + Number(r.textContent!.match(/(\d+)\/(\d+)$/)![2]), 0)
+    const total = rows.reduce((n, r) => n + Number(within(r).getByText(/^\d+\/\d+$/).textContent!.split('/')[1]), 0)
     expect(total).toBe(4)
     expect(within(section).getAllByText('(thème le plus faible)').length).toBeGreaterThan(0)
   })

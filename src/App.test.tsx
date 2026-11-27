@@ -75,8 +75,13 @@ describe('App routing', () => {
       expect(screen.getAllByRole('button', { name: 'Affichage' })).toHaveLength(1)
       expect(screen.queryByRole('switch')).not.toBeInTheDocument()
       expect(document.querySelectorAll('[data-app-header]')).toHaveLength(1)
-      // Un seul repère « banner » explicite (le <header> du bandeau d'examen n'en est pas un)
-      expect(document.querySelectorAll('[role=banner]')).toHaveLength(1)
+      // En-tête de premier niveau : avant <main>, pas dedans, donc un repère « banner » valide
+      // (le <header> du bandeau d'examen, lui, est dans <main> et n'en est pas un)
+      const header = document.querySelector('[data-app-header]')!
+      expect(header.tagName).toBe('HEADER')
+      expect(header.closest('main')).toBeNull()
+      expect(screen.getByRole('main')).not.toContainElement(header as HTMLElement)
+      expect(document.querySelectorAll('[role=banner]')).toHaveLength(0)
     },
   )
 

@@ -62,6 +62,22 @@ export function PageShell({ children }: { children: (location: Location) => Reac
     }
   }, [animate, location, navigationType, shown])
 
+  // A new page was swapped in: the focus goes to its title, so that the change is announced
+  // and the keyboard goes on from the top of the page (not on the first load). A page that put
+  // the focus somewhere itself (the result screen) keeps it.
+  const shownPath = useRef(shown.pathname)
+  useEffect(() => {
+    if (shownPath.current === shown.pathname) return
+    shownPath.current = shown.pathname
+    const wrap = document.getElementById('page-wrap')
+    const active = document.activeElement
+    if (active && active !== document.body && wrap?.contains(active)) return
+    const target = wrap?.querySelector<HTMLElement>('h1') ?? wrap?.querySelector<HTMLElement>('main')
+    if (!target) return
+    if (!target.hasAttribute('tabindex')) target.setAttribute('tabindex', '-1')
+    target.focus({ preventScroll: true })
+  }, [shown.pathname])
+
   return (
     <>
       <ScrollToTop location={shown} />

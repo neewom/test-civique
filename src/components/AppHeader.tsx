@@ -34,8 +34,9 @@ function Setting({
             className={cn(
               'min-h-11 flex-auto rounded-full px-3 text-[0.9375rem] font-bold whitespace-nowrap transition-colors',
               value === i
-                ? 'bg-earth text-earth-foreground'
-                : 'text-muted-foreground hover:text-foreground',
+                ? // Forced colours (Windows high contrast) drop the background: the choice stays visible
+                  'bg-earth text-earth-foreground forced-colors:bg-[Highlight] forced-colors:text-[HighlightText] forced-colors:[forced-color-adjust:none]'
+                : 'text-muted-foreground hover:text-foreground forced-colors:border forced-colors:border-[ButtonText]',
             )}
           >
             {option}
@@ -128,7 +129,7 @@ function DisplayMenu({ compact = false }: { compact?: boolean }) {
           id={panelId}
           role="group"
           aria-label="Affichage"
-          className="absolute top-[calc(100%+0.5rem)] right-0 z-50 flex w-[min(17.5rem,calc(100vw-2.75rem))] flex-col gap-4 rounded-[1.5rem] bg-card p-4 text-card-foreground shadow-[0_6px_28px_rgba(44,46,42,0.18)] ring-1 ring-border dark:shadow-[0_6px_28px_rgba(0,0,0,0.5)]"
+          className="absolute top-[calc(100%+0.5rem)] right-0 z-50 flex w-[min(17.5rem,calc(100vw-2.75rem))] flex-col gap-4 rounded-[1.5rem] bg-card p-4 text-card-foreground shadow-[0_6px_28px_rgba(44,46,42,0.18)] ring-1 ring-border dark:shadow-[0_6px_28px_rgba(0,0,0,0.5)] forced-colors:border forced-colors:border-[CanvasText]"
         >
           <DisplaySettings />
         </div>
@@ -147,8 +148,8 @@ interface AppHeaderProps {
 }
 
 /**
- * Permanent header, on every page, first child of <main> (outside the page's column):
- * same maximum width, gutters and position everywhere, whatever the page grid, so the
+ * Permanent header, on every page, rendered by `PageFrame` before <main> (outside the page's
+ * column): same maximum width, gutters and position everywhere, whatever the page grid, so the
  * logo and the « Affichage » button never move from one page to the next. Holds the
  * logo (a link to the home page) and the « Affichage » button (theme, animations).
  */
@@ -165,8 +166,6 @@ export function AppHeader({ thin = false, hideBrand = false, onLogoClick }: AppH
       )}
     >
       <header
-        // Explicit landmark: the header sits inside <main>, where <header> alone has no banner role
-        role="banner"
         data-app-header
         className={cn('flex w-full items-center gap-3', hideBrand ? 'justify-end' : 'justify-between')}
       >

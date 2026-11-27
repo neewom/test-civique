@@ -1,6 +1,6 @@
 import { Component, useEffect, useRef, type ReactNode } from 'react'
 import { useLocation } from 'react-router-dom'
-import { AppHeader } from '@/components/AppHeader'
+import { PageFrame } from '@/components/PageFrame'
 import { OrganicBackground } from '@/components/OrganicBackground'
 import { buttonVariants } from '@/components/ui/button'
 import { useDocumentTitle } from '@/lib/use-document-title'
@@ -15,9 +15,7 @@ function ErrorPage() {
   }, [])
 
   return (
-    <main className="relative flex min-h-svh flex-col overflow-hidden bg-background text-foreground">
-      <OrganicBackground shape="info" />
-      <AppHeader />
+    <PageFrame className="relative overflow-hidden" background={<OrganicBackground shape="info" />}>
       <div className="relative mx-auto flex w-full max-w-[30rem] flex-col gap-3.5 px-[22px] pt-0 pb-8 md:max-w-[36rem] md:px-8 md:pb-10">
         <h1
           ref={titleRef}
@@ -37,7 +35,7 @@ function ErrorPage() {
           Retour à l'accueil
         </a>
       </div>
-    </main>
+    </PageFrame>
   )
 }
 

@@ -58,6 +58,14 @@ describe('AppHeader', () => {
     expect(screen.getByRole('button', { name: 'Activées' })).toHaveAttribute('aria-pressed', 'true')
   })
 
+  it('contraste forcé : le réglage choisi garde un fond système, les autres un contour', () => {
+    renderHeader()
+    fireEvent.click(screen.getByRole('button', { name: 'Affichage' }))
+    expect(screen.getByRole('button', { name: 'Clair' })).toHaveClass('forced-colors:bg-[Highlight]', 'forced-colors:text-[HighlightText]')
+    expect(screen.getByRole('button', { name: 'Sombre' })).toHaveClass('forced-colors:border-[ButtonText]')
+    expect(screen.getByRole('button', { name: 'Sombre' })).not.toHaveClass('forced-colors:bg-[Highlight]')
+  })
+
   it('Échap ferme le panneau et rend le focus au bouton', () => {
     renderHeader()
     const button = screen.getByRole('button', { name: 'Affichage' })

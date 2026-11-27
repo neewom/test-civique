@@ -42,7 +42,8 @@ test('examen blanc complet, reprise après rechargement, résultat et détail', 
       await expect.poll(timeLeft, { timeout: 5_000 }).toBeLessThan(after)
     }
 
-    const text = (await page.getByRole('heading', { level: 1 }).textContent())?.trim() ?? ''
+    // The title starts with a hidden « Question n sur 40 : » read by screen readers
+    const text = ((await page.getByRole('heading', { level: 1 }).textContent()) ?? '').replace(/^Question \d+ sur \d+ : /, '').trim()
     const choices = await page.getByRole('radio').evaluateAll((inputs) =>
       inputs.map((input) => (input as HTMLInputElement).value),
     )
@@ -61,9 +62,11 @@ test('examen blanc complet, reprise après rechargement, résultat et détail', 
 
     // Correction: verdict, right answer marked, explanation, source when the question has one
     await expect(page.getByText(isAnsweredWrong(i) ? 'Pas tout à fait' : 'Bien joué', { exact: true })).toBeVisible()
-    const marked = page.getByRole('radio', { name: /^Bonne réponse/ })
+    // The correction cards are content, not radios (a disabled radio read « not checked » on the right answer)
+    await expect(page.getByRole('radio')).toHaveCount(0)
+    const marked = page.locator('[data-state="correct"]')
     await expect(marked).toHaveCount(1)
-    await expect(marked).toHaveAccessibleName(new RegExp(`${escapeRegExp(right)}$`))
+    await expect(marked).toHaveText(new RegExp(`^Bonne réponse${escapeRegExp(right)}$`))
     const why = page.getByRole('region', { name: 'Pourquoi' })
     await expect(why.getByRole('paragraph').first()).not.toBeEmpty()
     const source = why.getByRole('link', { name: /^Source : / })
@@ -80,7 +83,7 @@ test('examen blanc complet, reprise après rechargement, résultat et détail', 
   // Result screen
   await expect(page.getByRole('heading', { level: 1, name: 'Examen blanc terminé' })).toBeVisible()
   await expectPage(page, 'Résultat')
-  await expect(page.getByLabel(`Score : ${EXPECTED_SCORE} sur ${EXAM_SIZE}`)).toBeVisible()
+  await expect(page.getByText(`Score : ${EXPECTED_SCORE} sur ${EXAM_SIZE}`, { exact: true })).toBeAttached()
   const passed = EXPECTED_SCORE >= PASS_THRESHOLD
   await expect(
     page.getByText(`${passed ? 'Réussi' : 'Pas encore réussi'} · seuil ${PASS_THRESHOLD}/${EXAM_SIZE}`, { exact: true }),
@@ -102,7 +105,7 @@ test('examen blanc complet, reprise après rechargement, résultat et détail', 
   await recent.getByRole('link').click()
   await expect(page).toHaveURL(/\/examen\/[^/]+$/)
   await expectPage(page, "Détail de l'examen")
-  await expect(page.getByRole('heading', { level: 1, name: `Score : ${EXPECTED_SCORE} sur ${EXAM_SIZE}` })).toBeVisible()
+  await expect(page.getByRole('heading', { level: 1, name: new RegExp(`^Examen du .+ : ${EXPECTED_SCORE} sur ${EXAM_SIZE}$`) })).toBeVisible()
   await expect(page.getByRole('heading', { name: 'Par thème' })).toBeVisible()
   const wrong = EXAM_SIZE - EXPECTED_SCORE
   await expect(page.getByRole('region', { name: 'Questions à revoir' }).getByRole('heading', { level: 3 })).toHaveCount(wrong)

@@ -64,7 +64,7 @@ describe('focus kept when the screen crosses 1024 px', () => {
       /Reprendre l'examen en cours/,
       "Supprimer l'examen en cours",
       "Comment se passe l'examen ?",
-      /36\/40/,
+      /36 sur 40/,
       'En savoir plus',
       /formation-civique/,
       'Mentions légales et confidentialité',

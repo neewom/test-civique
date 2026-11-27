@@ -1,6 +1,7 @@
 import { Check, CircleDot, ExternalLink, Info, ListChecks, Target, Timer } from 'lucide-react'
 import { Navigate, useLocation, useNavigate, useParams } from 'react-router-dom'
-import { AppHeader } from '@/components/AppHeader'
+import { Fraction } from '@/components/Fraction'
+import { PageFrame } from '@/components/PageFrame'
 import { BackLink } from '@/components/BackLink'
 import { markInAppBack } from '@/lib/page-transition'
 import { OrganicBackground } from '@/components/OrganicBackground'
@@ -41,15 +42,13 @@ function Fiche({ titleKey }: { titleKey: TitleKey }) {
     { icon: ListChecks, value: String(EXAM_SIZE), label: 'questions' },
     { icon: Timer, value: `${EXAM_MINUTES} min`, label: 'au maximum' },
     { icon: CircleDot, value: '4 choix', label: 'une seule bonne réponse' },
-    { icon: Target, value: `${passThreshold(EXAM_SIZE)}/${EXAM_SIZE}`, label: 'pour réussir', highlight: true },
+    { icon: Target, value: <Fraction value={passThreshold(EXAM_SIZE)} total={EXAM_SIZE} />, label: 'pour réussir', highlight: true },
   ]
   const h2 = 'text-[1.0625rem] font-bold'
   const body = 'text-[0.9375rem] leading-snug md:text-base md:leading-normal'
 
   return (
-    <main className="relative flex min-h-svh flex-col overflow-hidden bg-background text-foreground">
-      <OrganicBackground shape="goal" />
-      <AppHeader />
+    <PageFrame className="relative overflow-hidden" background={<OrganicBackground shape="goal" />}>
       <div className="relative mx-auto flex w-full max-w-[30rem] flex-col gap-3 px-[22px] pt-0 pb-8 md:max-w-[36rem] md:gap-3.5 md:px-8 md:pb-10">
         <BackLink
           onClick={(e) => {
@@ -182,6 +181,6 @@ function Fiche({ titleKey }: { titleKey: TitleKey }) {
           Les conditions dépendent de votre situation. Vérifiez sur service-public.gouv.fr.
         </p>
       </div>
-    </main>
+    </PageFrame>
   )
 }

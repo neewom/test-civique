@@ -101,7 +101,7 @@ describe('Examen — statistiques de visite', () => {
       Array.from(el.closest('label')?.querySelectorAll('span') ?? []).some((span) => span.textContent === answer),
     )!
     await answerAndContinue(right)
-    expect(screen.getByLabelText(`Score : ${EXAM_SIZE} sur ${EXAM_SIZE}`)).toBeInTheDocument()
+    expect(screen.getByText(`Score : ${EXAM_SIZE} sur ${EXAM_SIZE}`)).toBeInTheDocument()
     await act(async () => { vi.advanceTimersByTime(GLOBAL_EXAM_TIME * 1000) })
     expect(events()).toEqual([EXAM_FINISHED_PASSED])
   })

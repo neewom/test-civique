@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react'
 import { ArrowUpRight } from 'lucide-react'
-import { AppHeader } from '@/components/AppHeader'
+import { PageFrame } from '@/components/PageFrame'
 import { BackLink } from '@/components/BackLink'
 import { OrganicBackground } from '@/components/OrganicBackground'
 import { useDocumentTitle } from '@/lib/use-document-title'
@@ -48,9 +48,7 @@ export default function MentionsLegales() {
   useDocumentTitle('Mentions légales et confidentialité')
 
   return (
-    <main className="relative flex min-h-svh flex-col overflow-hidden bg-background text-foreground">
-      <OrganicBackground shape="crest" />
-      <AppHeader />
+    <PageFrame className="relative overflow-hidden" background={<OrganicBackground shape="crest" />}>
       <div className="relative mx-auto flex w-full max-w-[30rem] flex-col gap-3.5 px-[22px] pt-0 pb-8">
         <BackLink />
         <h1 className="mt-4 max-w-[20rem] text-[2.125rem] leading-none font-bold tracking-[-0.04em] text-balance hyphens-auto">
@@ -147,6 +145,6 @@ export default function MentionsLegales() {
 
         <p className="mt-1.5 text-sm text-muted-foreground">Dernière mise à jour : {LAST_UPDATED}</p>
       </div>
-    </main>
+    </PageFrame>
   )
 }
