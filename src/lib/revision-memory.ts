@@ -3,7 +3,7 @@ import type { TitleKey } from '@/lib/target-title'
 import { THEME_COLORS, themeLabel } from '@/lib/themes'
 
 // What the revision page remembers on this device (localStorage, kept after the browser is closed):
-// the filter, the « Sans les mises en situation » box and the scroll position, so that coming back
+// the filter, the « Sans les mises en situation » and « Masquer les réponses » boxes and the scroll position, so that coming back
 // to the revision (back button, home → « Réviser les thèmes » or « Continuer où j'en étais »)
 // finds it as left. One key per title; this module is the only reader and writer.
 // A value that an older version wrote in sessionStorage is ignored (no migration).
@@ -15,7 +15,16 @@ export type StoredFilter = { kind: 'review' } | { kind: 'all' } | { kind: 'theme
 export interface RevisionView {
   filter: StoredFilter
   excludeSituational: boolean
+  /** « Masquer les réponses » box; optional in storage (absent = unchecked), always set here */
+  hideAnswers: boolean
   scrollY: number
+  /**
+   * Landmark of the position: id of the first question card under the sticky band and its distance below the band
+   * (optional in storage). The page puts it back on that card when it is still listed, since the cards differ in
+   * height (revealed or not) from one visit to the other; else `scrollY` is used.
+   */
+  anchorId?: number
+  anchorOffset?: number
 }
 
 const keyOf = (title: TitleKey) => `${REVISION_VIEW_KEY_PREFIX}${title}`
@@ -35,7 +44,7 @@ export function loadRevisionView(
     if (raw === null) return null
     const data: unknown = JSON.parse(raw)
     if (typeof data !== 'object' || data === null) return null
-    const { filter: f, excludeSituational, scrollY } = data as Record<string, unknown>
+    const { filter: f, excludeSituational, hideAnswers, scrollY, anchorId, anchorOffset } = data as Record<string, unknown>
     if (typeof f !== 'object' || f === null) return null
     const { kind, theme } = f as Record<string, unknown>
     let filter: StoredFilter
@@ -47,7 +56,11 @@ export function loadRevisionView(
     return {
       filter,
       excludeSituational: excludeSituational === true,
+      hideAnswers: hideAnswers === true,
       scrollY: typeof scrollY === 'number' && Number.isFinite(scrollY) && scrollY > 0 ? scrollY : 0,
+      ...(typeof anchorId === 'number' && Number.isInteger(anchorId)
+        ? { anchorId, anchorOffset: typeof anchorOffset === 'number' && Number.isFinite(anchorOffset) ? anchorOffset : 0 }
+        : {}),
     }
   } catch {
     return null

@@ -589,3 +589,238 @@ describe("Revision — examen d'un autre titre que le titre choisi", () => {
     expect(pill('Cet examen (1)')).toBeInTheDocument()
   })
 })
+
+describe('Revision — masquer les réponses', () => {
+  const KEY = 'revision-view:pluriannuelle'
+  const stored = () => JSON.parse(localStorageMock.getItem(KEY) ?? 'null')
+  const hideBox = () => screen.getByLabelText('Masquer les réponses')
+  const revealButtons = () => screen.queryAllByRole('button', { name: /^Afficher la réponse/ })
+  const firstQuestion = () => within(screen.getAllByRole('listitem')[0])
+
+  it('la case existe, décochée par défaut : toutes les réponses sont affichées', () => {
+    renderRevision()
+    expect(hideBox()).not.toBeChecked()
+    expect(revealButtons()).toHaveLength(0)
+    expect(shownCards()).toHaveLength(questions.length)
+  })
+
+  it('cochée : seul l’énoncé et « Afficher la réponse » restent, sans bonne réponse ni explication dans la page', () => {
+    renderRevision()
+    fireEvent.click(hideBox())
+    expect(shownCards()).toHaveLength(0)
+    expect(revealButtons()).toHaveLength(questions.length)
+    expect(screen.queryByText(questions[0].explanation)).not.toBeInTheDocument()
+    expect(screen.queryByText(questions[0].answers[0])).not.toBeInTheDocument()
+    expect(screen.getByText(questions[0].question)).toBeInTheDocument()
+    expect(screen.getByText(`${questions.length} questions affichées`)).toBeInTheDocument()
+  })
+
+  it('le bouton a un nom clair, qui reprend la question', () => {
+    renderRevision()
+    fireEvent.click(hideBox())
+    expect(revealButtons()[0]).toHaveAccessibleName(`Afficher la réponse à la question : ${questions[0].question}`)
+  })
+
+  it('révèle la réponse, l’explication et la source de cette carte seulement', () => {
+    renderRevision()
+    fireEvent.click(hideBox())
+    fireEvent.click(revealButtons()[0])
+    expect(shownCards()).toHaveLength(1)
+    expect(firstQuestion().getByText('Bonne réponse')).toBeInTheDocument()
+    expect(firstQuestion().getByText(questions[0].answers[0])).toBeInTheDocument()
+    expect(firstQuestion().getByText(questions[0].explanation)).toBeInTheDocument()
+    expect(revealButtons()).toHaveLength(questions.length - 1)
+  })
+
+  it('met le focus sur le bloc révélé (le bouton a disparu)', () => {
+    renderRevision()
+    fireEvent.click(hideBox())
+    fireEvent.click(revealButtons()[0])
+    expect(firstQuestion().getByRole('group', { name: questions[0].question })).toHaveFocus()
+  })
+
+  it('une carte révélée le reste quand on change de filtre', () => {
+    renderRevision()
+    fireEvent.click(hideBox())
+    fireEvent.click(revealButtons()[0])
+    fireEvent.click(pill(questions[0].theme))
+    fireEvent.click(pill('Tous les thèmes'))
+    expect(shownCards()).toHaveLength(1)
+  })
+
+  it('décocher réaffiche tout ; recocher masque tout de nouveau', () => {
+    renderRevision()
+    fireEvent.click(hideBox())
+    fireEvent.click(revealButtons()[0])
+    fireEvent.click(hideBox())
+    expect(shownCards()).toHaveLength(questions.length)
+    expect(revealButtons()).toHaveLength(0)
+    fireEvent.click(hideBox())
+    expect(shownCards()).toHaveLength(0)
+  })
+
+  it('le réglage est gardé avec la mémoire de la révision, pas les cartes révélées', () => {
+    const first = render(
+      <MemoryRouter initialEntries={['/revision']}>
+        <Revision />
+      </MemoryRouter>,
+    )
+    fireEvent.click(hideBox())
+    fireEvent.click(revealButtons()[0])
+    expect(stored()).toMatchObject({ hideAnswers: true })
+    expect(JSON.stringify(stored())).not.toContain(String(questions[0].id) + ',')
+    first.unmount()
+    renderRevision()
+    expect(hideBox()).toBeChecked()
+    expect(revealButtons()).toHaveLength(questions.length)
+  })
+
+  it('une valeur gardée sans le champ (version précédente) compte pour décoché, le reste est inchangé', () => {
+    localStorageMock.setItem(KEY, JSON.stringify({ filter: { kind: 'theme', theme: themes[0] }, excludeSituational: true, scrollY: 0 }))
+    renderRevision()
+    expect(hideBox()).not.toBeChecked()
+    expect(pill(themes[0])).toHaveAttribute('aria-pressed', 'true')
+    expect(screen.getByLabelText('Sans les mises en situation')).toBeChecked()
+    expect(revealButtons()).toHaveLength(0)
+  })
+
+  it('une valeur illisible pour le champ compte pour décoché', () => {
+    localStorageMock.setItem(KEY, JSON.stringify({ filter: { kind: 'all' }, excludeSituational: false, hideAnswers: 'oui', scrollY: 0 }))
+    renderRevision()
+    expect(hideBox()).not.toBeChecked()
+  })
+
+  it('l’arrivée par « Réviser ces n questions » applique le réglage gardé du titre', () => {
+    localStorageMock.setItem(KEY, JSON.stringify({ filter: { kind: 'theme', theme: themes[0] }, excludeSituational: false, hideAnswers: true, scrollY: 900 }))
+    renderRevision({ reviewIds: [5, 250] })
+    expect(hideBox()).toBeChecked()
+    expect(revealButtons()).toHaveLength(2)
+    expect(stored().filter).toEqual({ kind: 'theme', theme: themes[0] })
+  })
+
+  it('depuis un examen, le réglage change dans la mémoire sans écraser le filtre gardé ni la position', () => {
+    localStorageMock.setItem(KEY, JSON.stringify({ filter: { kind: 'theme', theme: themes[0] }, excludeSituational: true, scrollY: 900 }))
+    renderRevision({ reviewIds: [5] })
+    fireEvent.click(hideBox())
+    expect(stored()).toEqual({ filter: { kind: 'theme', theme: themes[0] }, excludeSituational: true, hideAnswers: true, scrollY: 900 })
+  })
+
+  it('compte les questions masquées comme affichées (le filtre « sans mises en situation » reste actif)', () => {
+    renderRevision()
+    fireEvent.click(screen.getByLabelText('Sans les mises en situation'))
+    fireEvent.click(hideBox())
+    expect(revealButtons()).toHaveLength(official.length)
+  })
+})
+
+describe('Revision — masquer les réponses : position et mémoire', () => {
+  const KEY = 'revision-view:pluriannuelle'
+  const stored = () => JSON.parse(localStorageMock.getItem(KEY) ?? 'null')
+  const target = questions[30]
+
+  afterEach(() => {
+    window.history.pushState({}, '', '/')
+    vi.restoreAllMocks()
+    vi.useRealTimers()
+    // @ts-expect-error restore the jsdom default (own property removed)
+    delete window.scrollY
+  })
+
+  // Card `target` sits 700 px below the top of the window; every other element answers 0 (jsdom has no layout)
+  function mockLayout(scrollY = 0) {
+    Object.defineProperty(window, 'scrollY', { configurable: true, value: scrollY })
+    vi.spyOn(Element.prototype, 'getBoundingClientRect').mockImplementation(function (this: Element) {
+      const id = (this as HTMLElement).dataset?.questionId
+      const top = id === String(target.id) ? 700 : 0
+      return { top, bottom: top + 100, height: 100, left: 0, right: 0, width: 0, x: 0, y: top, toJSON: () => ({}) } as DOMRect
+    })
+    return vi.spyOn(window, 'scrollTo').mockImplementation(() => {})
+  }
+
+  it('retrouve la même carte quand elle est encore dans la liste, pas la position de défilement', () => {
+    localStorageMock.setItem(
+      KEY,
+      JSON.stringify({ filter: { kind: 'all' }, excludeSituational: false, hideAnswers: true, scrollY: 30000, anchorId: target.id, anchorOffset: 20 }),
+    )
+    const scrollTo = mockLayout(100)
+    vi.useFakeTimers()
+    renderRevision()
+    vi.advanceTimersByTime(100)
+    // top of the card (700) + page position (100) - what covers the page (0) - remembered distance (20)
+    expect(scrollTo).toHaveBeenCalledWith(0, 780)
+  })
+
+  it('repère absent de la liste affichée : retour à la position de défilement', () => {
+    localStorageMock.setItem(
+      KEY,
+      JSON.stringify({ filter: { kind: 'all' }, excludeSituational: false, scrollY: 1234, anchorId: 999999, anchorOffset: 20 }),
+    )
+    const scrollTo = mockLayout()
+    vi.useFakeTimers()
+    renderRevision()
+    vi.advanceTimersByTime(100)
+    expect(scrollTo).toHaveBeenCalledWith(0, 1234)
+  })
+
+  it('un repère illisible est ignoré', () => {
+    localStorageMock.setItem(
+      KEY,
+      JSON.stringify({ filter: { kind: 'all' }, excludeSituational: false, scrollY: 1234, anchorId: 'x', anchorOffset: 'y' }),
+    )
+    const scrollTo = mockLayout()
+    vi.useFakeTimers()
+    renderRevision()
+    vi.advanceTimersByTime(100)
+    expect(scrollTo).toHaveBeenCalledWith(0, 1234)
+  })
+
+  it('enregistre la première carte visible au défilement, avec les cartes révélées', async () => {
+    mockLayout()
+    // The page only remembers while the address is its own (the router of the test does not change it)
+    window.history.pushState({}, '', '/revision')
+    vi.useFakeTimers({ toFake: ['setTimeout', 'requestAnimationFrame', 'cancelAnimationFrame'] })
+    renderRevision()
+    fireEvent.click(screen.getByLabelText('Masquer les réponses'))
+    fireEvent.click(screen.getAllByRole('button', { name: /^Afficher la réponse/ })[0])
+    vi.advanceTimersByTime(100)
+    fireEvent.scroll(window)
+    vi.advanceTimersByTime(50)
+    // The first card ends below the top (bottom 100 > 0): it is the landmark
+    expect(stored()).toMatchObject({ hideAnswers: true, anchorId: Number(screen.getAllByRole('listitem')[0].dataset.questionId), anchorOffset: 0 })
+  })
+
+  it('le repère est la première carte dont le haut est sous le haut de page, pas une carte haute à demi visible', () => {
+    // First card: top above the page (-300) but its bottom is still visible; the second one starts at 40
+    mockLayout()
+    window.history.pushState({}, '', '/revision')
+    vi.useFakeTimers({ toFake: ['setTimeout', 'requestAnimationFrame', 'cancelAnimationFrame'] })
+    renderRevision()
+    const items = screen.getAllByRole('listitem')
+    vi.spyOn(Element.prototype, 'getBoundingClientRect').mockImplementation(function (this: Element) {
+      const i = items.indexOf(this as HTMLLIElement)
+      const top = i < 0 ? 0 : (i - 1) * 340 + 40
+      return { top, bottom: top + 300, height: 300, left: 0, right: 0, width: 0, x: 0, y: top, toJSON: () => ({}) } as DOMRect
+    })
+    vi.advanceTimersByTime(100)
+    fireEvent.scroll(window)
+    vi.advanceTimersByTime(50)
+    expect(stored()).toMatchObject({ anchorId: Number(items[1].dataset.questionId), anchorOffset: 40 })
+  })
+
+  it('depuis un examen, cocher la case relit la mémoire du moment (pas celle du montage)', () => {
+    localStorageMock.setItem(KEY, JSON.stringify({ filter: { kind: 'theme', theme: themes[0] }, excludeSituational: false, scrollY: 1234 }))
+    renderRevision({ reviewIds: [1, 2, 3, 4, 5] })
+    // Another tab (or a choice made earlier) changed the memory after the mount
+    localStorageMock.setItem(KEY, JSON.stringify({ filter: { kind: 'all' }, excludeSituational: true, scrollY: 3000 }))
+    fireEvent.click(screen.getByLabelText('Masquer les réponses'))
+    expect(stored()).toEqual({ filter: { kind: 'all' }, excludeSituational: true, hideAnswers: true, scrollY: 3000 })
+  })
+
+  it('cocher ou décocher la case depuis le bas ne remonte pas en haut des cartes', () => {
+    const scrollTo = mockLayout(20000)
+    renderRevision()
+    fireEvent.click(screen.getByLabelText('Masquer les réponses'))
+    fireEvent.click(screen.getByLabelText('Masquer les réponses'))
+    expect(scrollTo).not.toHaveBeenCalled()
+  })
+})

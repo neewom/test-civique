@@ -66,7 +66,7 @@ export default function MentionsLegales() {
         <InfoCard title="Ce qui reste sur votre appareil" level={3}>
           <p>Le site ne demande ni compte, ni nom, ni adresse e-mail.</p>
           <p>
-            Vos examens, votre progression, votre dernière position en révision, le titre que vous préparez, le thème clair ou sombre et votre choix d'animations
+            Vos examens, votre progression, vos réglages et votre dernière position en révision, le titre que vous préparez, le thème clair ou sombre et votre choix d'animations
             (activées ou désactivées) sont enregistrés seulement dans votre navigateur. Ils ne nous sont jamais envoyés.
           </p>
           <p>

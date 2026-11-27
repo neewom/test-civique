@@ -51,9 +51,9 @@ describe('Page « Mentions légales et confidentialité »', () => {
     expect(screen.getByText(`Dernière mise à jour : ${LAST_UPDATED}`)).toBeInTheDocument()
   })
 
-  it('cite la dernière position en révision parmi les données gardées', () => {
+  it('cite les réglages et la dernière position en révision parmi les données gardées', () => {
     renderPage()
-    expect(screen.getByText(/votre dernière position en révision/)).toBeInTheDocument()
+    expect(screen.getByText(/vos réglages et votre dernière position en révision/)).toBeInTheDocument()
   })
 
   it('précise que les données restent sur cet appareil et ce navigateur', () => {
