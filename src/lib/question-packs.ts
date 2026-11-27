@@ -72,12 +72,16 @@ const FALLBACK_DELAY_MS = 1500
  * timer) and swallows a failure, which is kept: the page that needs the pack then shows the
  * failure screen at once, and its « Réessayer » reloads the page (a new import() of the same URL
  * would not even be attempted by the browser).
+ * `onSettled` is called once the pack is in memory or has failed (not when cancelled before the start).
  * Returns the function that cancels it.
  */
-export function preloadQuestionPack(title: TitleKey): () => void {
+export function preloadQuestionPack(title: TitleKey, onSettled?: () => void): () => void {
   if (loaded.has(title)) return () => {}
   const run = () => {
-    loadQuestionPack(title).catch(() => {})
+    loadQuestionPack(title).then(
+      () => onSettled?.(),
+      () => onSettled?.(),
+    )
   }
   const w = window as IdleWindow
   if (typeof w.requestIdleCallback === 'function') {

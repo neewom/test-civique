@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import type { ListedQuestion } from '@/lib/exam'
-import { getLoadedPack, hasPackFailed, loadQuestionPack } from '@/lib/question-packs'
+import { getLoadedPack, hasPackFailed, loadQuestionPack, preloadQuestionPack } from '@/lib/question-packs'
 import type { TitleKey } from '@/lib/target-title'
 
 export type QuestionPack =
@@ -42,4 +42,20 @@ export function useQuestionPack(title: TitleKey | null): QuestionPack {
   if (questions) return { status: 'ready', questions }
   if (hasPackFailed(title)) return { status: 'error', retry }
   return { status: 'loading' }
+}
+
+/**
+ * The questions of a title for a screen that can do without them (the home page): the pack is
+ * preloaded quietly when the browser is idle, never requested at once. Undefined until it is in
+ * memory, and for good if its load fails: no loading state, no error, the screen simply goes without.
+ */
+export function useIdleQuestionPack(title: TitleKey | null): ListedQuestion[] | undefined {
+  const [, setSettled] = useState(0)
+
+  useEffect(() => {
+    if (!title || getLoadedPack(title) || hasPackFailed(title)) return
+    return preloadQuestionPack(title, () => setSettled((n) => n + 1))
+  }, [title])
+
+  return title ? getLoadedPack(title) : undefined
 }

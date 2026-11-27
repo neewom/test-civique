@@ -313,8 +313,7 @@ describe('Accueil : préchargement discret du paquet du titre choisi', () => {
     vi.unstubAllGlobals()
   })
 
-  it('sans titre choisi (même avec un historique), aucun préchargement', async () => {
-    localStorage.setItem('quiz-history', JSON.stringify([{ date: '2026-11-20T10:00:00.000Z', score: 30, total: 40 }]))
+  it('première visite (sans titre ni historique, renvoyée vers /titre), aucun préchargement', async () => {
     const loaders = spyLoaders()
     const idle = vi.fn((cb: () => void) => (cb(), 1))
     vi.stubGlobal('requestIdleCallback', idle)
@@ -322,6 +321,17 @@ describe('Accueil : préchargement discret du paquet du titre choisi', () => {
     await flush()
     expect(idle).not.toHaveBeenCalled()
     for (const title of TITLE_KEYS) expect(loaders[title]).not.toHaveBeenCalled()
+    vi.unstubAllGlobals()
+  })
+
+  it('sans titre enregistré mais avec un historique (compté pluriannuelle), préchargement de ce titre', async () => {
+    localStorage.setItem('quiz-history', JSON.stringify([{ date: '2026-11-20T10:00:00.000Z', score: 30, total: 40 }]))
+    const loaders = spyLoaders()
+    vi.stubGlobal('requestIdleCallback', (cb: () => void) => (cb(), 1))
+    renderHome()
+    await flush()
+    expect(loaders.pluriannuelle).toHaveBeenCalledTimes(1)
+    expect(loaders.resident).not.toHaveBeenCalled()
     vi.unstubAllGlobals()
   })
 })
