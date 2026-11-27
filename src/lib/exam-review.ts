@@ -1,4 +1,4 @@
-import type { AnswerRecord } from '@/lib/exam-types'
+import { isAnswerRecord, type AnswerRecord } from '@/lib/exam-types'
 import { PASS_RATIO } from '@/lib/exam'
 import type { HistoryEntry } from '@/lib/history'
 import { THEME_COLORS } from '@/lib/themes'
@@ -90,10 +90,14 @@ export function recentThemeProgress(
   history: ReadonlyArray<HistoryEntry>,
   themeOf: (questionId: number) => string | undefined,
 ): ThemeProgressSummary | null {
-  const readable = history.filter((e) => e.answers && e.answers.length > 0).slice(-THEME_PROGRESS_EXAMS)
+  // Damaged storage: only readable answers count, and an exam keeping none is not one of the « n derniers »
+  const readable = history
+    .map((e) => (Array.isArray(e.answers) ? e.answers.filter(isAnswerRecord) : []))
+    .filter((answers) => answers.length > 0)
+    .slice(-THEME_PROGRESS_EXAMS)
   if (readable.length === 0) return null
   const scores = themeScores(
-    readable.flatMap((e) => e.answers ?? []),
+    readable.flat(),
     themeOf,
   ).filter((s) => OFFICIAL_THEMES.includes(s.theme))
   if (scores.length === 0) return null

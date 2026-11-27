@@ -25,7 +25,7 @@ export function ThemeProgressCard({ summary, className }: { summary: ThemeProgre
         {summary.themes.map((t) => (
           <li key={t.theme} className="flex flex-col gap-1.5">
             <div className="flex items-baseline justify-between gap-3">
-              <span className={cn('min-w-0 leading-snug', t.toWork && 'font-bold')}>{themeLabel(t.theme)}</span>
+              <span className={cn('min-w-0 leading-snug break-words hyphens-auto', t.toWork && 'font-bold')}>{themeLabel(t.theme)}</span>
               <span className="shrink-0 font-bold tabular-nums">{t.percent}&nbsp;%</span>
             </div>
             <div aria-hidden="true" className="h-2.5 overflow-hidden rounded-full bg-muted">

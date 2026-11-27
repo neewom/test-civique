@@ -72,6 +72,15 @@ describe('focus kept when the screen crosses 1024 px', () => {
     const find = (name: string | RegExp) =>
       (screen.queryAllByRole('link', { name }).concat(screen.queryAllByRole('button', { name })))[0]
     for (const name of names) {
+      if (name === "Comment se passe l'examen ?") {
+        // Accepted (retour de relecture #149): its place in the DOM follows `wide` so that Tab follows the
+        // visual order; crossing 1024 px while it has the focus may lose the focus. It must still exist.
+        setWide(true)
+        expect(find(name), String(name)).toBeDefined()
+        setWide(false)
+        expect(find(name), String(name)).toBeDefined()
+        continue
+      }
       const before = find(name)
       expect(before, String(name)).toBeDefined()
       before.focus()

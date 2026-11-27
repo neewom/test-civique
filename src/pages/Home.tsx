@@ -123,8 +123,9 @@ export default function Home() {
   // Once the home page is shown and the browser idle, the pack of the title downloads quietly (never
   // at once, and never in the initial JavaScript), so that the exam and the revision open at once.
   // « Vos thèmes » reads the theme of each question from it: shown when it is there, nothing otherwise.
-  // Nothing is fetched without a chosen title (existing test: no preload then), so no themes either.
-  const pack = useIdleQuestionPack(storedTitle)
+  // The effective title (the multi-year permit for someone with exams but no stored choice) is used;
+  // nothing is fetched on a first visit, which is sent to the title screen.
+  const pack = useIdleQuestionPack(mustChooseTitle ? null : targetTitle)
   const themeSummary = useMemo(() => {
     if (!pack) return null
     const themes = new Map(pack.map((q) => [q.id, q.theme]))
@@ -283,15 +284,16 @@ export default function Home() {
         inProgress
           ? '-mt-0.5 lg:mt-0'
           : 'mt-auto min-h-[4.75rem] pt-8 lg:mt-0 lg:min-h-11 lg:pt-0',
-        'lg:order-4',
       )}
     >
       Comment se passe l'examen ?
     </Link>
   )
 
+  const themeCard = themeSummary && <ThemeProgressCard summary={themeSummary} className="mt-6 lg:mt-0" />
+
   const recentExams = recent.length > 0 && (
-    <section aria-labelledby="recent-exams" className="mt-4 flex flex-col gap-2.5 lg:order-3 lg:mt-0">
+    <section aria-labelledby="recent-exams" className="mt-4 flex flex-col gap-2.5 lg:mt-0">
       <h2 id="recent-exams" className="text-[1.0625rem] font-bold">
         Derniers examens
       </h2>
@@ -387,8 +389,11 @@ export default function Home() {
             DOM order = the phone order (what screen readers and the Tab key follow). On a phone the
             groups and the footer are `contents` (every block is a direct child of the column). From
             1024 px: the journey on the left (resume moved under the title with `order`, never face
-            to face with step 2), « Où vous en êtes » on the right (last exams before the rules),
-            the mentions at the bottom. */}
+            to face with step 2), « Où vous en êtes » on the right, the mentions at the bottom.
+            On the right the DOM order follows `wide` (« Où vous en êtes », « Vos thèmes », last
+            exams, rules) so that Tab goes down the column as the eye does; on a phone: rules, last
+            exams, « Vos thèmes ». Crossing 1024 px while the rules link has the focus loses it (rare,
+            accepted). */}
         <div className="contents lg:grid lg:grid-cols-[minmax(0,1fr)_minmax(0,23rem)] lg:items-start lg:gap-x-16">
           <div className="contents lg:flex lg:flex-col lg:gap-3">
             {titlePill}
@@ -408,7 +413,7 @@ export default function Home() {
           >
             {wide &&
               (recent.length > 0 ? (
-                <div className="flex flex-col gap-1 lg:order-1">
+                <div className="flex flex-col gap-1 ">
                   <h2 id="progress" className="text-[1.0625rem] font-bold">
                     Où vous en êtes
                   </h2>
@@ -422,7 +427,7 @@ export default function Home() {
                   </p>
                 </div>
               ) : (
-                <div className="flex flex-col gap-4 lg:order-1">
+                <div className="flex flex-col gap-4">
                   <h2 id="progress" className="text-[1.0625rem] font-bold">
                     Où vous en êtes
                   </h2>
@@ -432,9 +437,11 @@ export default function Home() {
                   </p>
                 </div>
               ))}
-            {rulesLink}
+            {wide && themeCard}
+            {!wide && rulesLink}
             {recentExams}
-            {themeSummary && <ThemeProgressCard summary={themeSummary} className="mt-6 lg:order-2 lg:mt-0" />}
+            {!wide && themeCard}
+            {wide && rulesLink}
           </section>
         </div>
 

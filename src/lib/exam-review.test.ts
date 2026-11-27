@@ -132,6 +132,14 @@ describe('recentThemeProgress (« Vos thèmes »)', () => {
     expect(recentThemeProgress([entry], of)!.themes[0].percent).toBe(25)
   })
 
+  it('un historique abîmé ne plante pas : réponses illisibles ignorées, examen sans réponse lisible hors des « n derniers »', () => {
+    const damaged = { date: 'd', score: 30, total: 40, answers: [null, 3, { questionId: 'x' }] } as unknown as HistoryEntry
+    const half = examOn({ 0: 10 }, { answers: [null as never, ...(examOn({ 0: 10 }).answers ?? [])] })
+    const r = recentThemeProgress([examOn({ 0: 0 }), examOn({ 0: 10 }), examOn({ 0: 10 }), half, damaged], of)!
+    expect(r.examCount).toBe(3)
+    expect(r.themes).toEqual([{ theme: PRINCIPES, percent: 100, toWork: false }])
+  })
+
   it('ignore les thèmes non officiels et les questions inconnues', () => {
     const entry: HistoryEntry = { date: 'd', score: 0, total: 40, answers: [a(100, true), a(9999, true), a(5, false)] }
     const r = recentThemeProgress([entry], (id) => (id === 5 ? 'Autre thème' : T[id]))!
