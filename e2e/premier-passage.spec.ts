@@ -1,4 +1,4 @@
-import { test, expect, expectPage, RESIDENT_QUESTIONS, NATURALISATION_QUESTIONS, EXAM_SIZE } from './fixtures'
+import { test, expect, expectPage, RESIDENT_QUESTIONS, NATURALISATION_QUESTIONS, EXAM_SIZE, SITUATION_COUNT } from './fixtures'
 
 test('premier passage : choix du titre, accueil, choix gardé au rechargement', async ({ page }) => {
   await page.goto('/')
@@ -44,7 +44,9 @@ test('premier passage : choix de la carte de résident, accueil et révision sur
   expect(await page.evaluate(() => localStorage.getItem('target-title'))).toBe('resident')
 
   await page.goto('/revision')
-  await expect(page.getByText(`Carte de résident · ${RESIDENT_QUESTIONS.length} questions`)).toBeVisible()
+  await expect(page.getByText(
+      `Carte de résident · ${RESIDENT_QUESTIONS.length - SITUATION_COUNT} questions + ${SITUATION_COUNT} mises en situation`,
+    )).toBeVisible()
   // The title screen reopens on the chosen title
   await page.goto('/titre')
   await expect(page.getByRole('button', { name: /Carte de résident/ })).toHaveAttribute('aria-pressed', 'true')
@@ -65,7 +67,9 @@ test('premier passage : choix de la naturalisation, accueil, révision et examen
   expect(await page.evaluate(() => localStorage.getItem('target-title'))).toBe('naturalisation')
 
   await page.goto('/revision')
-  await expect(page.getByText(`Naturalisation · ${NATURALISATION_QUESTIONS.length} questions`)).toBeVisible()
+  await expect(page.getByText(
+      `Naturalisation · ${NATURALISATION_QUESTIONS.length - SITUATION_COUNT} questions + ${SITUATION_COUNT} mises en situation`,
+    )).toBeVisible()
   // The title screen reopens on the chosen title
   await page.goto('/titre')
   await expect(page.getByRole('button', { name: /Naturalisation/ })).toHaveAttribute('aria-pressed', 'true')
