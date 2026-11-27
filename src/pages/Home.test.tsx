@@ -1,4 +1,4 @@
-import { render, screen, fireEvent, act, within, cleanup } from '@testing-library/react'
+import { render, screen, fireEvent, act, within, cleanup, waitFor } from '@testing-library/react'
 import { MemoryRouter, Route, Routes, useLocation } from 'react-router-dom'
 import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest'
 import Home, { OFFICIAL_SITE_URL } from './Home'
@@ -171,7 +171,7 @@ describe('Accueil — compteur « n sur 3 »', () => {
 
   it('affiche 0 sur 3 sans historique', () => {
     renderHome()
-    expect(counter()).toHaveTextContent('2 · Réussir 3 examens blancs, 0 sur 3')
+    expect(counter()).toHaveTextContent("2 · Réussir 3 examens blancs d'affilée, 0 sur 3")
   })
 
   it('compte les réussites d\'affilée depuis l\'examen le plus récent', () => {
@@ -323,8 +323,92 @@ describe('Accueil — reprise de l\'examen en cours', () => {
     await act(async () => {
       fireEvent.click(screen.getByRole('button', { name: "Supprimer l'examen en cours" }))
     })
+    await act(async () => {
+      fireEvent.click(within(screen.getByRole('dialog')).getByRole('button', { name: "Supprimer l'examen" }))
+    })
     expect(screen.queryByRole('region', { name: 'Examen en cours' })).toBeNull()
     expect(localStorage.getItem('exam-in-progress')).toBeNull()
+  })
+})
+
+describe('Accueil — confirmation avant de supprimer l\'examen en cours', () => {
+  const deleteLink = () => screen.getByRole('button', { name: "Supprimer l'examen en cours" })
+
+  function progress(title?: string, index = 4) {
+    const questions = Array.from({ length: 40 }, (_, i) => ({
+      id: i + 1, theme: 'Test', question: `Question ${i + 1}`, answer: 'A', choices: ['A', 'B', 'C', 'D'], explanation: '',
+    }))
+    return { questions, index, answers: [], timeLeft: 1800, startedAt: '2026-11-23T10:00:00.000Z', ...(title ? { title } : {}) }
+  }
+
+  function seed() {
+    localStorageMock.setItem('exam-in-progress', JSON.stringify(progress(undefined, 9)))
+    localStorageMock.setItem('exam-in-progress-resident', JSON.stringify(progress('resident')))
+  }
+
+  it('ouvre la boîte sans rien supprimer', async () => {
+    seed()
+    renderHome()
+    await act(async () => {
+      fireEvent.click(deleteLink())
+    })
+    const dialog = screen.getByRole('dialog')
+    expect(within(dialog).getByText("Supprimer l'examen en cours ?")).toBeInTheDocument()
+    expect(within(dialog).getByText("L'examen en cours sera abandonné.")).toBeInTheDocument()
+    const names = within(dialog).getAllByRole('button').map((b) => b.textContent)
+    expect(names).toEqual(['Annuler', "Supprimer l'examen"])
+    expect(localStorageMock.getItem('exam-in-progress')).not.toBeNull()
+  })
+
+  it('« Annuler » ne supprime rien et rend le focus au lien', async () => {
+    seed()
+    renderHome()
+    deleteLink().focus()
+    await act(async () => {
+      fireEvent.click(deleteLink())
+    })
+    await act(async () => {
+      fireEvent.click(within(screen.getByRole('dialog')).getByRole('button', { name: 'Annuler' }))
+    })
+    await waitFor(() => expect(screen.queryByRole('dialog')).toBeNull())
+    expect(localStorageMock.getItem('exam-in-progress')).not.toBeNull()
+    expect(screen.getByRole('region', { name: 'Examen en cours' })).toBeInTheDocument()
+    await waitFor(() => expect(deleteLink()).toHaveFocus())
+  })
+
+  it('Échap ne supprime rien et rend le focus au lien', async () => {
+    seed()
+    renderHome()
+    deleteLink().focus()
+    await act(async () => {
+      fireEvent.click(deleteLink())
+    })
+    await act(async () => {
+      fireEvent.keyDown(screen.getByRole('dialog'), { key: 'Escape' })
+    })
+    await waitFor(() => expect(screen.queryByRole('dialog')).toBeNull())
+    expect(localStorageMock.getItem('exam-in-progress')).not.toBeNull()
+    await waitFor(() => expect(deleteLink()).toHaveFocus())
+  })
+
+  it('« Supprimer l\'examen » supprime celui du titre choisi seulement et met le focus sur l\'étape 2', async () => {
+    seed()
+    localStorageMock.setItem('target-title', 'resident')
+    renderHome()
+    deleteLink().focus()
+    await act(async () => {
+      fireEvent.click(deleteLink())
+    })
+    await act(async () => {
+      fireEvent.click(within(screen.getByRole('dialog')).getByRole('button', { name: "Supprimer l'examen" }))
+    })
+    await waitFor(() => expect(screen.queryByRole('dialog')).toBeNull())
+    expect(localStorageMock.getItem('exam-in-progress-resident')).toBeNull()
+    expect(localStorageMock.getItem('exam-in-progress')).not.toBeNull()
+    expect(screen.queryByRole('region', { name: 'Examen en cours' })).toBeNull()
+    await waitFor(() =>
+      expect(screen.getByRole('button', { name: /2 · Réussir 3 examens blancs d'affilée/ })).toHaveFocus(),
+    )
   })
 })
 
@@ -593,6 +677,9 @@ describe('Accueil — carte de résident', () => {
     await act(async () => {
       fireEvent.click(screen.getByRole('button', { name: "Supprimer l'examen en cours" }))
     })
+    await act(async () => {
+      fireEvent.click(within(screen.getByRole('dialog')).getByRole('button', { name: "Supprimer l'examen" }))
+    })
     expect(localStorageMock.getItem('exam-in-progress-resident')).toBeNull()
     expect(localStorageMock.getItem('exam-in-progress')).toBe(other)
   })
@@ -660,6 +747,9 @@ describe('Accueil — naturalisation', () => {
     renderHome()
     await act(async () => {
       fireEvent.click(screen.getByRole('button', { name: "Supprimer l'examen en cours" }))
+    })
+    await act(async () => {
+      fireEvent.click(within(screen.getByRole('dialog')).getByRole('button', { name: "Supprimer l'examen" }))
     })
     expect(localStorageMock.getItem('exam-in-progress-naturalisation')).toBeNull()
     expect(localStorageMock.getItem('exam-in-progress')).toBe(a)

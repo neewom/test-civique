@@ -52,6 +52,9 @@ describe('App routing', () => {
     expect(window.location.pathname).toBe('/titre')
     expect(screen.getByRole('heading', { level: 1, name: "Préparez l'examen civique" })).toBeInTheDocument()
     await act(async () => {
+      fireEvent.click(screen.getByRole('button', { name: /Carte de séjour pluriannuelle/ }))
+    })
+    await act(async () => {
       fireEvent.click(screen.getByRole('button', { name: 'Continuer' }))
     })
     expect(window.location.pathname).toBe('/')
@@ -84,6 +87,9 @@ describe('App routing', () => {
     vi.stubGlobal('localStorage', storage)
     renderAt('/')
     expect(window.location.pathname).toBe('/titre')
+    await act(async () => {
+      fireEvent.click(screen.getByRole('button', { name: /Carte de séjour pluriannuelle/ }))
+    })
     await act(async () => {
       fireEvent.click(screen.getByRole('button', { name: 'Continuer' }))
     })

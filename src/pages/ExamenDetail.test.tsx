@@ -202,7 +202,8 @@ describe('ExamenDetail — revoir ses erreurs', () => {
   it('« Réviser ces n questions » transmet les identifiants des erreurs à la révision', () => {
     seedHistory(record)
     renderWithState(RECORD_ID)
-    fireEvent.click(screen.getByRole('link', { name: 'Réviser ces 2 questions' }))
+    // Phone layout: the link is also under the verdict (v1.26.0), same state; take the first
+    fireEvent.click(screen.getAllByRole('link', { name: 'Réviser ces 2 questions' })[0])
     expect(JSON.parse(screen.getByTestId('state').textContent!)).toEqual({ reviewIds: [QS[1].id, QS[3].id] })
   })
 
@@ -265,7 +266,8 @@ describe('ExamenDetail — placement des actions', () => {
   afterEach(() => vi.unstubAllGlobals())
 
   function order() {
-    const review = screen.getByRole('link', { name: 'Réviser cette question' })
+    // On a phone the link appears twice (under the verdict and after the questions): the last one is the bottom one
+    const review = screen.getAllByRole('link', { name: 'Réviser cette question' }).at(-1)!
     const back = screen.getAllByRole('link', { name: 'Retour à mon parcours' })
     // The questions are the only ordered list of the page
     const list = document.querySelector('ol')!
@@ -361,5 +363,37 @@ describe('ExamenDetail — bonne réponse proposée', () => {
     const before = localStorage.getItem('quiz-history')
     renderDetail(RECORD_ID)
     expect(localStorage.getItem('quiz-history')).toBe(before)
+  })
+})
+
+describe('ExamenDetail — « Réviser » sous le verdict', () => {
+  beforeEach(() => localStorage.clear())
+  afterEach(() => vi.unstubAllGlobals())
+
+  const reviewName = 'Réviser cette question'
+
+  it('téléphone : le lien est aussi sous le verdict, avant les questions, même état', () => {
+    stubWideScreen(false)
+    seedHistory(RECORD)
+    renderWithState(RECORD_ID)
+    const links = screen.getAllByRole('link', { name: reviewName })
+    expect(links).toHaveLength(2)
+    expect(links[0].compareDocumentPosition(document.querySelector('ol')!) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy()
+    fireEvent.click(links[0])
+    expect(JSON.parse(screen.getByTestId('state').textContent!)).toEqual({ reviewIds: [(allQuestions as { id: number }[])[1].id] })
+  })
+
+  it('grand écran : un seul lien (colonne latérale)', () => {
+    stubWideScreen()
+    seedHistory(RECORD)
+    renderDetail(RECORD_ID)
+    expect(screen.getAllByRole('link', { name: reviewName })).toHaveLength(1)
+  })
+
+  it('aucune erreur : aucun lien', () => {
+    stubWideScreen(false)
+    seedHistory({ ...RECORD, score: 1, total: 1, answers: [RECORD.answers[0]] })
+    renderDetail(RECORD_ID)
+    expect(screen.queryByRole('link', { name: /Réviser/ })).not.toBeInTheDocument()
   })
 })

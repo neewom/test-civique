@@ -61,6 +61,7 @@ describe('/examen-blanc', () => {
     expect(marks.getByText('4 choix')).toBeInTheDocument()
     expect(marks.getByText('32/40')).toBeInTheDocument()
     expect(screen.getByText(/correction et l'explication après chaque question/)).toBeInTheDocument()
+    expect(screen.getByText("Le chrono s'arrête pendant la correction.")).toBeInTheDocument()
     expect(screen.getByText(/erreurs vont dans « À revoir »/)).toBeInTheDocument()
     expect(screen.getByRole('link', { name: "Tout savoir sur l'examen" })).toHaveAttribute('href', '/regles')
     expect(screen.getByRole('link', { name: 'Retour' })).toHaveAttribute('href', '/')

@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import { ArrowRight, Check } from 'lucide-react'
+import { useRef, useState } from 'react'
+import { ArrowRight, Check, CircleAlert } from 'lucide-react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { AppHeader } from '@/components/AppHeader'
 import { BrandSymbol } from '@/components/BrandLogo'
@@ -41,13 +41,16 @@ function TitleChoices({
   selected,
   onSelect,
   firstVisit,
+  groupRef,
 }: {
-  selected: TargetTitle
+  selected: TargetTitle | null
   onSelect: (t: TargetTitle) => void
   firstVisit: boolean
+  groupRef?: React.RefObject<HTMLDivElement | null>
 }) {
   return (
     <div
+      ref={groupRef}
       role="group"
       aria-label="Titre visé"
       className={cn('flex flex-col', firstVisit ? 'gap-2.5' : 'mt-[clamp(2rem,16svh,8.75rem)] gap-3 md:mt-8')}
@@ -141,9 +144,11 @@ function MeadowLines() {
  * big green field. No « Retour » (nothing to go back to) and no name in the header
  * (the page shows the logo large).
  */
-function FirstVisit({ selected, onSelect, onContinue }: ChoiceProps) {
+function FirstVisit({ selected, onSelect, onContinue, showError, groupRef }: ChoiceProps) {
+  // <main> clips (overflow-clip) rather than hides: hidden would make it the scroll container and break the sticky bar.
+  // The scroll margin keeps a focused link or button clear of the sticky bar (WCAG 2.4.11)
   return (
-    <main className="relative flex min-h-svh flex-col overflow-hidden bg-background text-foreground">
+    <main className="relative flex min-h-svh flex-col overflow-clip bg-background text-foreground [&_a]:scroll-mb-36 [&_button]:scroll-mb-36">
       <div className="relative bg-earth text-[#2c2e2a] dark:text-[#f1eee4]">
         <MeadowLines />
         <AppHeader hideBrand />
@@ -176,20 +181,38 @@ function FirstVisit({ selected, onSelect, onContinue }: ChoiceProps) {
 
       <div className="mx-auto flex w-full max-w-[30rem] grow flex-col gap-3 px-[22px] pt-4 pb-6 md:max-w-[34rem] md:px-8 md:pt-2 md:pb-4">
         <h2 className="text-[1.0625rem] font-bold">Quel titre préparez-vous ?</h2>
-        <TitleChoices selected={selected} onSelect={onSelect} firstVisit />
+        <TitleChoices selected={selected} onSelect={onSelect} firstVisit groupRef={groupRef} />
         <p className="text-sm text-muted-foreground">Vous pourrez changer plus tard.</p>
-        <PillButton size="lg" onClick={onContinue} className="mt-auto w-full justify-center text-center">
-          Continuer
-        </PillButton>
+      </div>
+      {/* Action bar: « Continuer » stays on screen whatever the height (maquettes Lp1 / Lp2) */}
+      <div
+        data-testid="continue-bar"
+        className="sticky bottom-0 z-10 border-t border-border bg-background pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))]"
+      >
+        <div className="mx-auto w-full max-w-[30rem] px-[22px] md:max-w-[34rem] md:px-8">
+          <div role="alert">
+            {showError && (
+              <p className="mb-2.5 flex items-start gap-2 text-[0.9375rem] leading-snug font-bold text-destructive">
+                <CircleAlert aria-hidden="true" className="mt-0.5 size-5 shrink-0" strokeWidth={2.4} />
+                Choisissez d'abord le titre que vous préparez.
+              </p>
+            )}
+          </div>
+          <PillButton size="lg" onClick={onContinue} className="w-full justify-center text-center">
+            Continuer
+          </PillButton>
+        </div>
       </div>
     </main>
   )
 }
 
 interface ChoiceProps {
-  selected: TargetTitle
+  selected: TargetTitle | null
   onSelect: (t: TargetTitle) => void
   onContinue: () => void
+  showError: boolean
+  groupRef: React.RefObject<HTMLDivElement | null>
 }
 
 /**
@@ -205,23 +228,43 @@ export default function TitreVise() {
   const location = useLocation()
   // The unsaved selection is kept in the history entry, so a round trip to a sheet
   // (« En savoir plus », then back) does not lose it
-  const [selected, setSelected] = useState<TargetTitle>(() => {
+  // First visit: nothing is preselected, the visitor chooses
+  const [selected, setSelected] = useState<TargetTitle | null>(() => {
     const kept = (location.state as { selected?: unknown } | null)?.selected
     if (typeof kept === 'string' && (TARGET_TITLES as readonly string[]).includes(kept)) return kept as TargetTitle
-    return loadTargetTitle() ?? 'pluriannuelle'
+    return firstVisit ? null : (loadTargetTitle() ?? 'pluriannuelle')
   })
+  const [showError, setShowError] = useState(false)
+  const groupRef = useRef<HTMLDivElement>(null)
   function handleSelect(t: TargetTitle) {
+    setShowError(false)
     setSelected(t)
     navigate('.', { replace: true, state: { selected: t } })
   }
 
   function handleContinue() {
+    if (selected === null) {
+      // Nothing chosen: say so, stay here, and put the focus on the first title
+      setShowError(true)
+      groupRef.current?.querySelector('button')?.focus()
+      return
+    }
     saveTargetTitle(selected)
     // The first visit is not a page to come back to
     navigate('/', { replace: firstVisit })
   }
 
-  if (firstVisit) return <FirstVisit selected={selected} onSelect={handleSelect} onContinue={handleContinue} />
+  if (firstVisit) {
+    return (
+      <FirstVisit
+        selected={selected}
+        onSelect={handleSelect}
+        onContinue={handleContinue}
+        showError={showError}
+        groupRef={groupRef}
+      />
+    )
+  }
 
   return (
     <main className="relative flex min-h-svh flex-col overflow-hidden bg-background text-foreground">

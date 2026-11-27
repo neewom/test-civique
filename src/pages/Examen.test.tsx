@@ -187,11 +187,11 @@ describe('Examen', () => {
     expect(screen.getByText(`Question 1 sur ${EXAM_SIZE}`)).toBeInTheDocument()
   })
 
-  it('affiche le temps global à "45 min" au démarrage', () => {
+  it('affiche le temps global à "45:00" au démarrage', () => {
     renderExamen()
     expect(GLOBAL_EXAM_TIME).toBe(45 * 60)
     expect(timeLeft()).toBe(2700)
-    expect(screen.getByText('45 min')).toBeInTheDocument()
+    expect(screen.getByText('45:00')).toBeInTheDocument()
   })
 
   it('le timer global décrémente', async () => {
@@ -340,6 +340,8 @@ describe('Examen', () => {
     renderExamen()
     await act(async () => { fireEvent.click(getChoices()[0]) })
     await act(async () => { fireEvent.click(screen.getByRole('button', { name: 'Valider ma réponse' })) })
+    // The timer is paused during the correction: move on to the next question before it runs out
+    await act(async () => { fireEvent.click(screen.getByRole('button', { name: 'Question suivante' })) })
     await act(async () => { vi.advanceTimersByTime(GLOBAL_EXAM_TIME * 1000) })
     const [record] = JSON.parse(localStorage.getItem('quiz-history') ?? '[]')
     expect(record.answers).toHaveLength(EXAM_SIZE)
@@ -626,6 +628,11 @@ describe('Examen — écrans de question et de correction', () => {
     vi.useRealTimers()
   })
 
+  it('affiche les minutes sans zéro devant et les secondes sur deux chiffres sous 10 minutes', () => {
+    renderResumed(makeResume(262, 0))
+    expect(screen.getByText('4:22')).toBeInTheDocument()
+  })
+
   it('regroupe les 4 cartes dans un groupe radio nommé par la question', () => {
     const resume = makeResume(1500, 0)
     renderResumed(resume)
@@ -633,9 +640,9 @@ describe('Examen — écrans de question et de correction', () => {
     expect(within(group).getAllByRole('radio')).toHaveLength(4)
   })
 
-  it('affiche le temps en minutes, arrondi au supérieur, avec une barre nommée', () => {
+  it('affiche le temps en minutes et secondes, avec une barre nommée en minutes arrondies au supérieur', () => {
     renderResumed(makeResume(31 * 60 - 20, 0))
-    expect(screen.getByText('31 min')).toBeInTheDocument()
+    expect(screen.getByText('30:40')).toBeInTheDocument()
     expect(screen.getByRole('progressbar', { name: 'Temps restant' })).toHaveAttribute('aria-valuetext', '31 minutes sur 45')
   })
 
@@ -714,6 +721,54 @@ describe('Examen — écrans de question et de correction', () => {
     expect(live).toHaveTextContent('Il reste moins de 5 minutes.')
     await act(async () => { vi.advanceTimersByTime(4 * 60 * 1000) })
     expect(live).toHaveTextContent("Il reste moins d'une minute.")
+  })
+
+  it('le chrono est arrêté pendant la correction et repart à la question suivante', async () => {
+    renderResumed(makeResume(1500, 0))
+    await act(async () => { vi.advanceTimersByTime(3000) })
+    await answer(true)
+    const atCorrection = timeLeft()
+    expect(atCorrection).toBe(1497)
+    await act(async () => { vi.advanceTimersByTime(60 * 1000) })
+    expect(timeLeft()).toBe(atCorrection)
+    expect(loadProgress('pluriannuelle')!.timeLeft).toBe(atCorrection)
+    await act(async () => { fireEvent.click(screen.getByRole('button', { name: 'Question suivante' })) })
+    await act(async () => { vi.advanceTimersByTime(2000) })
+    expect(timeLeft()).toBe(atCorrection - 2)
+  })
+
+  it('affiche le picto pause à côté du temps pendant la correction seulement', async () => {
+    renderResumed(makeResume(1500, 0))
+    expect(screen.queryByTestId('timer-paused')).not.toBeInTheDocument()
+    await answer(true)
+    expect(screen.getByTestId('timer-paused')).toBeInTheDocument()
+    expect(screen.getByRole('progressbar', { name: 'Temps restant' })).toHaveAttribute('aria-valuetext', '25 minutes sur 45, en pause')
+    await act(async () => { fireEvent.click(screen.getByRole('button', { name: 'Question suivante' })) })
+    expect(screen.queryByTestId('timer-paused')).not.toBeInTheDocument()
+  })
+
+  it('le temps expiré pendant la réponse termine toujours l\'examen', async () => {
+    renderResumed(makeResume(2, 0))
+    await act(async () => { vi.advanceTimersByTime(2000) })
+    expect(screen.getByText(/sans réponse/)).toBeInTheDocument()
+  })
+
+  it('pastille « Moins de 5 minutes » et barre corail : absentes à 300 s, présentes à 299 s', async () => {
+    renderResumed(makeResume(300, 0))
+    expect(screen.queryByText('Moins de 5 minutes')).not.toBeInTheDocument()
+    expect(screen.getByRole('progressbar', { name: 'Temps restant' }).className).not.toMatch(/bg-coral/)
+    await act(async () => { vi.advanceTimersByTime(1000) })
+    expect(timeLeft()).toBe(299)
+    expect(screen.getByText('Moins de 5 minutes')).toBeInTheDocument()
+    expect(screen.getByRole('progressbar', { name: 'Temps restant' }).className).toMatch(/bg-coral/)
+  })
+
+  it('annonce « moins de 5 minutes » dès la reprise d\'un examen déjà sous les 5 minutes', async () => {
+    renderResumed(makeResume(262, 27))
+    const live = document.querySelector('[aria-live="polite"]')!
+    await act(async () => { await Promise.resolve() })
+    expect(live).toHaveTextContent('Il reste moins de 5 minutes.')
+    expect(screen.getByText('Moins de 5 minutes')).toBeInTheDocument()
   })
 
   it('à la fin du temps, le résultat indique le nombre de questions sans réponse', async () => {

@@ -8,6 +8,13 @@ test('premier passage : choix du titre, accueil, choix gardé au rechargement', 
   await expect(page.getByRole('link', { name: 'Retour' })).toHaveCount(0)
   await expectPage(page, "Préparez l'examen civique")
 
+  // Nothing is preselected: « Continuer » is visible and, without a choice, says so
+  await expect(page.getByRole('button', { name: 'Continuer' })).toBeInViewport()
+  await expect(page.locator('[aria-pressed="true"]')).toHaveCount(0)
+  await page.getByRole('button', { name: 'Continuer' }).click()
+  await expect(page.getByRole('alert')).toHaveText("Choisissez d'abord le titre que vous préparez.")
+  await expect(page).toHaveURL(/\/titre$/)
+
   await page.getByRole('button', { name: /Carte de séjour pluriannuelle/ }).click()
   await page.getByRole('button', { name: 'Continuer' }).click()
 
