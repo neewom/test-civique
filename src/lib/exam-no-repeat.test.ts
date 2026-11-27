@@ -1,5 +1,6 @@
 import { describe, it, expect, beforeEach } from 'vitest'
-import { buildExam, previousExamQuestionIds, questionsForTitle, EXAM_BLUEPRINT, EXAM_SIZE, type Question } from './exam'
+import { buildExam, previousExamQuestionIds, EXAM_BLUEPRINT, EXAM_SIZE, type Question } from './exam'
+import { questionsForTitle } from '@/test/questions'
 import type { TitleKey } from './target-title'
 
 const DRAWS = 300

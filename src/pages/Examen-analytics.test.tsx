@@ -8,7 +8,8 @@ import type { ExamInProgress } from '@/lib/exam-types'
 import { saveProgress, loadProgressForTitle } from '@/lib/exam-types'
 import { saveTargetTitle } from '@/lib/target-title'
 import type { TitleKey } from '@/lib/target-title'
-import { buildExam, questionsForTitle, EXAM_SIZE } from '@/lib/exam'
+import { buildExam, EXAM_SIZE } from '@/lib/exam'
+import { questionsForTitle } from '@/test/questions'
 import {
   resetAnalyticsForTests,
   EXAM_STARTED,

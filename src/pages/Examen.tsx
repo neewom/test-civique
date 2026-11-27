@@ -13,7 +13,9 @@ import { cn } from '@/lib/utils'
 import { useDocumentTitle } from '@/lib/use-document-title'
 import type { AnswerRecord, ExamQuestion, ExamInProgress } from '@/lib/exam-types'
 import { saveProgress, clearProgress, loadProgressForTitle, resumeIndex } from '@/lib/exam-types'
-import { buildExam, EXAM_MINUTES, GLOBAL_EXAM_TIME, previousExamQuestionIds, questionsForTitle, saveResult, isPassed } from '@/lib/exam'
+import { buildExam, EXAM_MINUTES, GLOBAL_EXAM_TIME, previousExamQuestionIds, questionsForTitle, saveResult, isPassed, type ListedQuestion } from '@/lib/exam'
+import { useQuestionPack } from '@/lib/use-question-pack'
+import { QuestionPackStatus } from '@/components/QuestionPackStatus'
 import { AnswerCard } from '@/components/AnswerCard'
 import { ExamResult, type ExamOutcome } from '@/components/ExamResult'
 import { findExamRecord, loadHistoryForTitle } from '@/lib/history'
@@ -51,15 +53,16 @@ type ExamSetup = {
 }
 
 // The stored progress of the chosen title always wins, except when a new exam is
-// explicitly requested. A new exam is drawn from the questions of that title.
-function setupExam(startNew: boolean, title: TitleKey): ExamSetup {
+// explicitly requested. A new exam is drawn from the questions of that title (its pack,
+// loaded on demand: `pack` is null only when a stored progress is to be resumed).
+function setupExam(startNew: boolean, title: TitleKey, pack: ListedQuestion[] | null): ExamSetup {
   if (!startNew) {
     const saved = loadProgressForTitle(title)
     if (saved) return { questions: saved.questions, resume: saved }
   }
   clearProgress(title)
   const avoid = previousExamQuestionIds(loadHistoryForTitle(title))
-  return { questions: buildExam(questionsForTitle(title), { avoid }), resume: null }
+  return { questions: buildExam(questionsForTitle(title, pack ?? []), { avoid }), resume: null }
 }
 
 const LETTERS = ['A', 'B', 'C', 'D']
@@ -107,14 +110,47 @@ type ExamSessionProps = {
   onRestart: () => void
 }
 
+/**
+ * Waits for the questions of the title when a new exam is to be drawn. Resuming a stored
+ * exam loads nothing (its questions are in the progress), and the session starts at once.
+ * The 45 minutes only start with the session, after the loading.
+ */
 function ExamSession({ restarted, onRestart }: ExamSessionProps) {
+  const location = useLocation()
+  const startNew = restarted || (location.state as LocationState)?.start === 'new'
+  // Title chosen on the title screen; exams stored before it existed count for the multi-year permit
+  const [title] = useState<TitleKey>(() => loadTargetTitle() ?? DEFAULT_TITLE)
+  const [resuming] = useState(() => !startNew && loadProgressForTitle(title) !== null)
+  const pack = useQuestionPack(resuming ? null : title)
+
+  if (resuming) return <ExamRun title={title} restarted={restarted} onRestart={onRestart} pack={null} />
+  if (pack.status !== 'ready') {
+    return (
+      <PageFrame header={<AppHeader thin />}>
+        <div className="mx-auto flex w-full max-w-[30rem] flex-col gap-6 px-5 pt-4 pb-7 md:max-w-[44rem] md:px-8">
+          <h1 className="text-[0.8125rem] font-bold tracking-[0.06em] uppercase dark:text-muted-foreground">
+            Examen blanc
+          </h1>
+          <QuestionPackStatus pack={pack} />
+        </div>
+      </PageFrame>
+    )
+  }
+  return <ExamRun title={title} restarted={restarted} onRestart={onRestart} pack={pack.questions} />
+}
+
+type ExamRunProps = ExamSessionProps & {
+  title: TitleKey
+  /** Questions of the title to draw from; null when a stored exam is resumed */
+  pack: ListedQuestion[] | null
+}
+
+function ExamRun({ restarted, onRestart, title, pack }: ExamRunProps) {
   const navigate = useNavigate()
   const location = useLocation()
   const locationState = location.state as LocationState
 
-  // Title chosen on the title screen; exams stored before it existed count for the multi-year permit
-  const [title] = useState<TitleKey>(() => loadTargetTitle() ?? DEFAULT_TITLE)
-  const [setup] = useState<ExamSetup>(() => setupExam(restarted || locationState?.start === 'new', title))
+  const [setup] = useState<ExamSetup>(() => setupExam(restarted || locationState?.start === 'new', title, pack))
   const { questions, resume } = setup
   const startIndex = resume ? resumeIndex(resume) : 0
 

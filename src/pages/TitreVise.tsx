@@ -8,15 +8,15 @@ import { BackLink } from '@/components/BackLink'
 import { OrganicBackground } from '@/components/OrganicBackground'
 import { PillButton } from '@/components/PillButton'
 import { ficheUrl, FICHE_LABELS } from '@/lib/fiches'
-import { questionsForTitle } from '@/lib/exam'
 import { hasProgress } from '@/lib/exam-types'
 import { loadHistory } from '@/lib/history'
 import { loadTargetTitle, saveTargetTitle, TARGET_TITLE_LABELS, TARGET_TITLES, type TargetTitle, type TitleKey } from '@/lib/target-title'
+import { TITLE_COUNTS } from '@/lib/title-counts'
 import { useDocumentTitle } from '@/lib/use-document-title'
 import { cn } from '@/lib/utils'
 
 // Official (non situational) questions of each title's list
-const officialCount = (t: TargetTitle) => questionsForTitle(t).filter((q) => q.notion !== 'mise-en-situation').length
+const officialCount = (t: TargetTitle) => TITLE_COUNTS[t].official
 
 // Own link under each option (a separate target: it never changes the selection)
 function MoreLink({ title }: { title: TitleKey }) {

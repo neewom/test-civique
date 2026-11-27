@@ -9,8 +9,10 @@ import { ExamVerdict } from '@/components/ExamVerdict'
 import { PillLink } from '@/components/PillButton'
 import { findExamRecord } from '@/lib/history'
 import { themeScores, weakestThemes } from '@/lib/exam-review'
-import type { AnswerRecord, QuestionSource } from '@/lib/exam-types'
-import allQuestions from '@/data/questions.json'
+import type { AnswerRecord, ExamRecord, QuestionSource } from '@/lib/exam-types'
+import { QuestionPackStatus } from '@/components/QuestionPackStatus'
+import { titleOf } from '@/lib/target-title'
+import { useQuestionPack } from '@/lib/use-question-pack'
 import { useDocumentTitle } from '@/lib/use-document-title'
 import { useWideScreen } from '@/lib/use-wide-screen'
 import { themeLabel } from '@/lib/themes'
@@ -24,8 +26,6 @@ interface Question {
   explanation: string
   source?: QuestionSource
 }
-
-const QUESTIONS = new Map((allQuestions as Question[]).map((q) => [q.id, q]))
 
 /**
  * Navigation state given to the revision page by « Réviser ces n questions »: the ids
@@ -93,16 +93,36 @@ function QuestionReview({ answer, number, question }: Reviewed) {
   )
 }
 
-/** Detail of a past exam: mistakes first, score per theme (maquette Pa7). */
+/**
+ * Detail of a past exam: mistakes first, score per theme (maquette Pa7). The questions come
+ * from the pack of the title of THAT exam (which may differ from the chosen title; an exam
+ * stored without a title counts for the multi-year permit), loaded on demand.
+ */
 export default function ExamenDetail() {
   useDocumentTitle("Détail de l'examen")
   const { id } = useParams<{ id: string }>()
   const record = id ? findExamRecord(id) : null
+  const pack = useQuestionPack(record ? titleOf(record) : null)
+  if (record && pack.status !== 'ready') {
+    return (
+      <PageFrame>
+        <div className="mx-auto flex w-full max-w-[30rem] flex-col gap-6 px-5 pt-0 pb-7">
+          <BackLink />
+          <QuestionPackStatus pack={pack} />
+        </div>
+      </PageFrame>
+    )
+  }
+  return <ExamenDetailContent record={record} questions={pack.status === 'ready' ? pack.questions : []} />
+}
+
+function ExamenDetailContent({ record, questions }: { record: ExamRecord | null; questions: Question[] }) {
+  const byId = new Map(questions.map((q) => [q.id, q]))
 
   // Exam order is kept; the number is the place of the question in the exam.
   // Questions removed from the data since the exam are skipped.
   const reviewed: Reviewed[] = (record?.answers ?? []).flatMap((answer, i) => {
-    const question = QUESTIONS.get(answer.questionId)
+    const question = byId.get(answer.questionId)
     return question ? [{ answer, number: i + 1, question }] : []
   })
   const errors = reviewed.filter((r) => !r.answer.correct)
@@ -132,7 +152,7 @@ export default function ExamenDetail() {
   const shown = filter === 'mistakes' ? errors : reviewed
   const scores = themeScores(
     reviewed.map((r) => r.answer),
-    (qid) => QUESTIONS.get(qid)?.theme,
+    (qid) => byId.get(qid)?.theme,
   )
   const weakest = new Set(weakestThemes(scores))
   const dateStr = new Date(record.date).toLocaleDateString('fr-FR', {
