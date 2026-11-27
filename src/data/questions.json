@@ -956,7 +956,7 @@
       "Pour empêcher les parents de transmettre leur religion à leurs enfants, même à la maison",
       "Pour que les élèves étrangers abandonnent leur culture d'origine, dès leur arrivée à l'école",
       "Pour interdire aux professeurs de mentionner les religions en cours, même en histoire",
-      "Pour que seule la religion catholique soit enseignée en histoire, comme avant 1905"
+      "Pour que seule la religion catholique soit enseignée en histoire, à l'exclusion des autres religions"
     ],
     "explanation": "La laïcité à l'école garantit un espace neutre, égal et bienveillant pour tous les élèves, quelles que soient leurs convictions religieuses ou philosophiques. Elle permet à chacun d'apprendre dans un environnement commun, respectueux des différences.",
     "answers": [
@@ -4257,7 +4257,7 @@
     "question": "Qui était Simone de Beauvoir ?",
     "distractors": [
       "Une reine de France, exécutée pendant la Révolution",
-      "Une résistante française, active pendant la Seconde Guerre mondiale",
+      "Une chanteuse française, figure de la chanson réaliste",
       "Une scientifique française, double lauréate du prix Nobel",
       "Une pionnière du cinéma française, active au début du XXe siècle",
       "Une femme politique française, auteure de la loi sur l'IVG",
@@ -4370,7 +4370,7 @@
     "question": "Qui était Joséphine Baker ?",
     "distractors": [
       "Une reine de France, exécutée pendant la Révolution",
-      "Une aviatrice française, pionnière du début du XXe siècle",
+      "Une navigatrice française, connue pour ses courses en solitaire",
       "Une peintre française, modèle puis artiste du mouvement impressionniste",
       "Une infirmière américaine, fondatrice de la Croix-Rouge",
       "Une romancière française, élue à l'Académie française",
@@ -5066,7 +5066,7 @@
       "Hospitaliser les patients en urgence, décider seul des soins et superviser les infirmiers",
       "Contrôler les arrêts de travail, informer l'employeur et sanctionner les salariés",
       "Effectuer des opérations chirurgicales lourdes, anesthésier et opérer au bloc",
-      "Gérer les dossiers d'admission, orienter vers les maisons de retraite et placer les personnes âgées"
+      "Gérer les maisons de retraite, fixer leurs tarifs et choisir leurs résidents"
     ],
     "explanation": "Le médecin traitant joue un rôle central dans le système de santé français. Il assure le suivi médical global de ses patients, prescrit les traitements, effectue les actes médicaux courants, oriente vers les spécialistes appropriés et coordonne le parcours de soins pour garantir une prise en charge cohérente.",
     "answers": [
@@ -8676,7 +8676,7 @@
       "Un système où le président décide seul des lois, sans passer par le Parlement",
       "Un système où seuls les citoyens français doivent respecter la loi, les étrangers en étant exemptés",
       "Un système où l'armée contrôle les décisions du Gouvernement, y compris celles des ministres",
-      "Un système où les ministres sont au-dessus des lois, comme le Président",
+      "Un système où les ministres sont au-dessus des lois, pendant toute la durée de leurs fonctions",
       "Un système où chaque région fixe ses propres lois, sans contrôle national"
     ],
     "explanation": "Dans un État de droit, la loi s'impose à tous : aux citoyens, mais aussi à l'État et à ses représentants. Le droit est supérieur aux pouvoirs politiques, et les autorités publiques agissent toujours en respectant la loi. C'est le contraire d'un État arbitraire.",
@@ -11754,7 +11754,7 @@
     ],
     "distractors": [
       "À la préfecture du département de naissance",
-      "À la caisse d'allocations familiales, dans les jours suivant la naissance",
+      "Au bureau de poste du lieu de naissance, dans les jours suivant la naissance",
       "Au commissariat de police le plus proche du lieu de naissance",
       "Au tribunal judiciaire du lieu de naissance"
     ],
