@@ -2,6 +2,7 @@ import { describe, it, expect } from 'vitest'
 import { FICHES, FICHE_LABELS, FICHE_SLUGS, ficheUrl, titleOfSlug } from '@/lib/fiches'
 import { TITLE_KEYS } from '@/lib/target-title'
 import { questionsForTitle } from '@/lib/exam'
+import { ORGANISMES } from '@/lib/centres'
 
 // Domaine officiel accepté (comme `src/data/sources.test.ts`) : gouv.fr et ses sous-domaines
 const isOfficial = (host: string) => host === 'gouv.fr' || host.endsWith('.gouv.fr')
@@ -55,6 +56,16 @@ describe('fiches des titres', () => {
     for (const key of TITLE_KEYS) {
       const text = JSON.stringify(FICHES[key])
       expect(text).not.toMatch(/\b(prix|tarif|coût de l'examen)\b/i)
+    }
+  })
+
+  it("nomme les organismes agréés comme la page /centres (nom du ministère)", () => {
+    const ccip = ORGANISMES[0].name
+    expect(ccip).toBe("Chambre de commerce et d'industrie de Paris (CCIP)")
+    for (const key of TITLE_KEYS) {
+      const text = JSON.stringify(FICHES[key])
+      expect(text).toContain(ccip)
+      expect(text).not.toContain('Île-de-France')
     }
   })
 })

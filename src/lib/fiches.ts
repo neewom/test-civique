@@ -54,7 +54,7 @@ export const FICHES: Record<TitleKey, Fiche> = {
       "Le français et l'examen sont demandés depuis le 1er janvier 2026, pour une première carte pluriannuelle. Si vous avez plus de 65 ans, vous n'avez pas besoin de l'examen ni du test de français.",
     examQuestions: officialCount('pluriannuelle'),
     examParas: [
-      'Vous passez l’examen sur ordinateur ou tablette, dans un centre agréé (CCI Paris Île-de-France ou France Éducation international).',
+      "Vous passez l’examen sur ordinateur ou tablette, dans un centre agréé par la Chambre de commerce et d'industrie de Paris (CCIP) ou par France Éducation international.",
       "Passez l'examen avant de déposer votre demande : on vous demande l'attestation de réussite.",
     ],
     goodToKnow: [
@@ -84,7 +84,7 @@ export const FICHES: Record<TitleKey, Fiche> = {
     examQuestions: officialCount('resident'),
     examParas: [
       "Les questions ne sont pas tout à fait les mêmes que pour la carte pluriannuelle. Si vous réussissez l'examen « carte de résident », il compte aussi pour une carte pluriannuelle.",
-      "Vous passez l'examen dans un centre agréé (CCI Paris Île-de-France ou France Éducation international), avant de déposer votre demande.",
+      "Vous passez l'examen dans un centre agréé par la Chambre de commerce et d'industrie de Paris (CCIP) ou par France Éducation international, avant de déposer votre demande.",
     ],
     goodToKnow: [
       'Toutes les cartes de résident ne sont pas concernées.',
@@ -112,7 +112,7 @@ export const FICHES: Record<TitleKey, Fiche> = {
     examQuestions: officialCount('naturalisation'),
     examParas: [
       `La liste officielle compte ${officialCount('naturalisation')} questions de connaissance. Les mises en situation ne sont pas publiées.`,
-      "Vous passez l'examen dans un centre agréé par la CCI Paris Île-de-France ou par France Éducation international. Si vous vivez à l'étranger, adressez-vous à un institut français, une alliance française ou au consulat.",
+      "Vous passez l'examen dans un centre agréé par la Chambre de commerce et d'industrie de Paris (CCIP) ou par France Éducation international. Si vous vivez à l'étranger, adressez-vous à un institut français, une alliance française ou au consulat.",
     ],
     goodToKnow: [
       "Il n'y a pas de dispense d'examen liée à l'âge. Une dispense est possible seulement pour raison de santé ou de handicap, avec un certificat médical.",
