@@ -50,9 +50,13 @@ export function weakestThemes(scores: ReadonlyArray<ThemeScore>): string[] {
   return withMistakes.filter((s) => ratio(s) === lowest).map((s) => s.theme)
 }
 
-/** « À travailler : … » line under « Voir mes erreurs »; null with no clear weakest theme. */
+/** Themes shown in the « À travailler » line: one or two; null with no clear weakest theme. */
+export function weakestThemesToShow(themes: ReadonlyArray<string>): string[] | null {
+  return themes.length === 1 || themes.length === 2 ? [...themes] : null
+}
+
+/** « À travailler : X » or « À travailler : X | Y » (plain text); null with no clear weakest theme. */
 export function weakestThemesLabel(themes: ReadonlyArray<string>): string | null {
-  if (themes.length === 1) return `À travailler : ${themes[0]}`
-  if (themes.length === 2) return `À travailler : ${themes[0]} et ${themes[1]}`
-  return null
+  const shown = weakestThemesToShow(themes)
+  return shown ? `À travailler : ${shown.join(' | ')}` : null
 }

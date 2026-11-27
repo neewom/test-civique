@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { mistakes, OFFICIAL_THEMES, themeScores, weakestThemes, weakestThemesLabel } from '@/lib/exam-review'
+import { mistakes, OFFICIAL_THEMES, themeScores, weakestThemes, weakestThemesLabel, weakestThemesToShow } from '@/lib/exam-review'
 import type { AnswerRecord } from '@/lib/exam-types'
 
 const [PRINCIPES, SYSTEME, DROITS, HISTOIRE, VIE] = OFFICIAL_THEMES
@@ -59,8 +59,16 @@ describe('weakestThemes', () => {
 describe('weakestThemesLabel', () => {
   it('nomme un ou deux thèmes, rien au-delà', () => {
     expect(weakestThemesLabel([HISTOIRE])).toBe(`À travailler : ${HISTOIRE}`)
-    expect(weakestThemesLabel([PRINCIPES, HISTOIRE])).toBe(`À travailler : ${PRINCIPES} et ${HISTOIRE}`)
+    expect(weakestThemesLabel([PRINCIPES, HISTOIRE])).toBe(`À travailler : ${PRINCIPES} | ${HISTOIRE}`)
     expect(weakestThemesLabel([PRINCIPES, HISTOIRE, VIE])).toBeNull()
     expect(weakestThemesLabel([])).toBeNull()
+  })
+})
+
+describe('weakestThemesToShow', () => {
+  it('garde un ou deux thèmes, rien au-delà', () => {
+    expect(weakestThemesToShow([PRINCIPES, HISTOIRE])).toEqual([PRINCIPES, HISTOIRE])
+    expect(weakestThemesToShow([PRINCIPES, HISTOIRE, VIE])).toBeNull()
+    expect(weakestThemesToShow([])).toBeNull()
   })
 })
