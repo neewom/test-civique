@@ -1,7 +1,7 @@
 import { act, cleanup, fireEvent, render, screen, waitFor } from '@testing-library/react'
 import { MemoryRouter, Route, Routes } from 'react-router-dom'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
-import TitreVise, { OFFLINE_NOTICE, OFFLINE_TITLE_NOTE } from './TitreVise'
+import TitreVise, { OFFLINE_NONE_NOTICE, OFFLINE_NOTICE, OFFLINE_TITLE_NOTE } from './TitreVise'
 import { resetQuestionPacksForTests } from '@/lib/question-packs'
 import { loadTargetTitle } from '@/lib/target-title'
 
@@ -147,5 +147,14 @@ describe('Changement de titre hors ligne', () => {
     renderTitre()
     await waitFor(() => expect(option(/résident/)).toHaveAttribute('aria-disabled', 'true'))
     expect(option(/pluriannuelle/)).not.toHaveAttribute('aria-disabled')
+  })
+
+  it('hors ligne sans aucun titre sur l\'appareil, la phrase dit de se reconnecter', async () => {
+    online = false
+    cachedTitles = []
+    renderTitre()
+    await waitFor(() => expect(screen.getByText(OFFLINE_NONE_NOTICE)).toBeInTheDocument())
+    expect(screen.queryByText(OFFLINE_NOTICE)).not.toBeInTheDocument()
+    expect(screen.getAllByText(OFFLINE_TITLE_NOTE)).toHaveLength(3)
   })
 })

@@ -1,5 +1,5 @@
 import { afterEach, describe, expect, it, vi } from 'vitest'
-import { cachedPackTitles, isTitleAvailable, keepPackOffline } from '@/lib/offline'
+import { cachedPackTitles, isTitleAvailable, isWorkerHost, keepPackOffline } from '@/lib/offline'
 
 afterEach(() => vi.unstubAllGlobals())
 
@@ -44,5 +44,24 @@ describe('dialogue avec le service worker', () => {
     await vi.advanceTimersByTimeAsync(2100)
     await expect(result).resolves.toEqual([])
     vi.useRealTimers()
+  })
+})
+
+describe('hôtes où le service worker est enregistré', () => {
+  it.each(['futurcitoyen.fr', 'deploy-preview-158--test-civique.netlify.app', 'localhost', '127.0.0.1'])('%s : oui', (host) => {
+    expect(isWorkerHost(host)).toBe(true)
+  })
+  it.each([
+    'test-civique.netlify.app',
+    'main--test-civique.netlify.app',
+    'deploy-preview-abc--test-civique.netlify.app',
+    'deploy-preview-1--other.netlify.app',
+    'machine.tail1234.ts.net',
+    'evilfuturcitoyen.fr',
+    'futurcitoyen.fr.evil.com',
+    'www.futurcitoyen.fr',
+    '192.168.1.20',
+  ])('%s : non', (host) => {
+    expect(isWorkerHost(host)).toBe(false)
   })
 })

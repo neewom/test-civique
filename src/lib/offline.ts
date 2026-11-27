@@ -11,9 +11,17 @@ function supported(): boolean {
   return typeof navigator !== 'undefined' && 'serviceWorker' in navigator
 }
 
-/** Registers the service worker, once the page has loaded. Production builds only. */
+// Where the worker is registered: the site, its deploy previews, and the local machine. Never the
+// Tailscale host or any other server that may serve other builds from the same origin.
+const WORKER_HOSTS = [/^futurcitoyen\.fr$/, /^deploy-preview-\d+--test-civique\.netlify\.app$/, /^localhost$/, /^127\.0\.0\.1$/]
+
+export function isWorkerHost(hostname: string): boolean {
+  return WORKER_HOSTS.some((re) => re.test(hostname))
+}
+
+/** Registers the service worker, once the page has loaded. Production builds on the hosts above only. */
 export function registerServiceWorker(): void {
-  if (!import.meta.env.PROD || !supported()) return
+  if (!import.meta.env.PROD || !supported() || !isWorkerHost(location.hostname)) return
   const register = () => {
     // A failure (private window, blocked storage) only means no offline mode
     navigator.serviceWorker.register('/sw.js').catch(() => {})

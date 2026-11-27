@@ -7,7 +7,13 @@
 // - caches a pack of questions (one per title, see vite-question-packs.ts) the first time it is
 //   asked for, or when the page asks for it for the title in use (message `warm-pack`);
 //   the other titles are never fetched in the background;
-// - serves index.html for every page address (the SPA fallback of public/_redirects);
+// - pages (index.html for every page address, the SPA fallback of public/_redirects) and the
+//   precached files that are not hashed (theme-init.js, icons, manifest) go network first, then the
+//   cache after NETWORK_TIMEOUT_MS or on a failure: a deploy that no longer ships this worker (a
+//   rollback, another server on the same origin) is seen at the first online load, never an old
+//   version for ever. Hashed files (/assets/) and the packs go cache first: their name is their version.
+//   The cache is never refreshed from a network answer: index.html and what it loads stay a pair,
+//   written together by the install of one version;
 // - a new version installs in the background and takes over at once (skipWaiting + claim) but
 //   never reloads an open page: the page in front of the user keeps running as it was, the next
 //   page load gets the new version. Old caches are deleted when the new version activates.
@@ -20,6 +26,7 @@ const PACKS_CACHE = 'packs'
 // The title -> pack address mapping of the version that last installed, kept in the packs cache
 const META_URL = '/__sw-packs.json'
 const INDEX_URL = '/index.html'
+const NETWORK_TIMEOUT_MS = 3000
 
 const precached = new Set(MANIFEST.precache)
 const packUrls = new Set(Object.values(MANIFEST.packs))
@@ -59,11 +66,14 @@ self.addEventListener('fetch', (event) => {
   if (url.origin !== self.location.origin) return
   if (request.mode === 'navigate') {
     // A page address, not a file (a path with an extension goes to the network as usual)
-    if (!/\.[a-z0-9]+$/i.test(url.pathname)) event.respondWith(fromShell(INDEX_URL, request))
+    if (!/\.[a-z0-9]+$/i.test(url.pathname)) event.respondWith(networkFirst(INDEX_URL, request))
     return
   }
   if (packUrls.has(url.pathname)) event.respondWith(packResponse(url.pathname, request))
-  else if (precached.has(url.pathname)) event.respondWith(fromShell(url.pathname, request))
+  else if (precached.has(url.pathname)) {
+    // A hashed file never changes under its name: cache first. The others: network first
+    event.respondWith(url.pathname.startsWith('/assets/') ? cacheFirst(url.pathname, request) : networkFirst(url.pathname, request))
+  }
 })
 
 self.addEventListener('message', (event) => {
@@ -77,9 +87,38 @@ self.addEventListener('message', (event) => {
   }
 })
 
-async function fromShell(path, request) {
+async function cacheFirst(path, request) {
   const shell = await caches.open(SHELL_CACHE)
   return (await shell.match(path)) ?? fetch(request)
+}
+
+function withTimeout(promise, ms) {
+  return new Promise((resolve, reject) => {
+    const timer = setTimeout(() => reject(new Error('timeout')), ms)
+    promise.then(
+      (value) => {
+        clearTimeout(timer)
+        resolve(value)
+      },
+      (error) => {
+        clearTimeout(timer)
+        reject(error)
+      },
+    )
+  })
+}
+
+async function networkFirst(path, request) {
+  let answer = null
+  try {
+    answer = await withTimeout(fetch(request), NETWORK_TIMEOUT_MS)
+    // A redirect (the old Netlify address) is passed on as it is
+    if (answer.ok || answer.type === 'opaqueredirect') return answer
+  } catch {
+    // Offline, failing or too slow: the cache answers
+  }
+  const shell = await caches.open(SHELL_CACHE)
+  return (await shell.match(path)) ?? answer ?? fetch(request)
 }
 
 async function packResponse(path, request) {
@@ -112,14 +151,20 @@ async function cachedTitles() {
 }
 
 // A pack already on the device whose file changed with this version is replaced (online, since
-// an update installs from the network), so the title in use stays available offline
+// an update installs from the network), so the title in use stays available offline. If one
+// cannot be fetched, the whole install fails: the previous version stays in charge with its own
+// packs (nothing is deleted before the activation) and the next page load tries again.
 async function refreshCachedPacks() {
   const packs = await caches.open(PACKS_CACHE)
   const metaResponse = await packs.match(META_URL)
   const previous = metaResponse ? await metaResponse.json().catch(() => ({})) : {}
   for (const [title, path] of Object.entries(MANIFEST.packs)) {
     const before = previous[title]
-    if (before && before !== path && (await packs.match(before))) await warmPack(path)
+    if (before && before !== path && (await packs.match(before)) && !(await packs.match(path))) {
+      const response = await fetch(path)
+      if (!response.ok) throw new Error('pack ' + path + ' not available')
+      await packs.put(path, response)
+    }
   }
   await packs.put(META_URL, new Response(JSON.stringify(MANIFEST.packs), { headers: { 'Content-Type': 'application/json' } }))
 }

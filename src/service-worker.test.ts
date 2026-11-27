@@ -3,7 +3,7 @@ import { mkdirSync, mkdtempSync, readFileSync, writeFileSync } from 'node:fs'
 import { tmpdir } from 'node:os'
 import path from 'node:path'
 import vm from 'node:vm'
-import { describe, expect, it } from 'vitest'
+import { describe, expect, it, vi } from 'vitest'
 import { buildManifest, type SwManifest } from '../vite-service-worker'
 
 const TEMPLATE = readFileSync(path.resolve(process.cwd(), 'sw/service-worker.template.js'), 'utf8')
@@ -85,7 +85,9 @@ function makeCaches() {
   }
 }
 
-function loadWorker(manifest: SwManifest, caches = makeCaches(), network: Record<string, string> = {}) {
+type Network = Record<string, string | (() => Promise<Response>)>
+
+function loadWorker(manifest: SwManifest, caches = makeCaches(), network: Network = {}) {
   const listeners: Record<string, Listener> = {}
   const fetched: string[] = []
   const self = {
@@ -97,7 +99,9 @@ function loadWorker(manifest: SwManifest, caches = makeCaches(), network: Record
   const fetchStub = async (r: Request | string) => {
     const p = new URL(typeof r === 'string' ? r : r.url, 'https://app.test').pathname
     fetched.push(p)
-    return p in network ? new Response(network[p]) : new Response('missing', { status: 404 })
+    const answer = network[p]
+    if (typeof answer === 'function') return answer()
+    return answer !== undefined ? new Response(answer) : new Response('missing', { status: 404 })
   }
   const code = TEMPLATE.replace("'__SW_MANIFEST__'", JSON.stringify(manifest))
   // In a worker, a relative URL resolves against the worker's own address
@@ -106,7 +110,7 @@ function loadWorker(manifest: SwManifest, caches = makeCaches(), network: Record
       super(typeof input === 'string' ? new URL(input, 'https://app.test').href : input, init)
     }
   }
-  vm.runInNewContext(code, { self, caches: caches.api, fetch: fetchStub, Request: WorkerRequest, Response, URL, Object, JSON, Promise })
+  vm.runInNewContext(code, { self, caches: caches.api, fetch: fetchStub, Request: WorkerRequest, Response, URL, Object, JSON, Promise, setTimeout, clearTimeout })
   const run = async (type: string, event: Record<string, unknown> = {}) => {
     let waited: Promise<unknown> = Promise.resolve()
     listeners[type]({ waitUntil: (p: Promise<unknown>) => (waited = p), ...event })
@@ -135,14 +139,66 @@ describe('service worker : comportement', () => {
     expect(w.fetched).toEqual([])
   })
 
-  it('toute adresse de page sert index.html du cache, hors ligne comme en ligne', async () => {
-    const w = loadWorker(MANIFEST)
-    await w.run('install')
+  it('une page se sert du réseau d\'abord, du cache si le réseau échoue ou si la réponse est une erreur', async () => {
+    const online = loadWorker(MANIFEST, undefined, { '/revision': 'from network' })
+    await online.run('install')
+    expect(await (await online.fetchEvent(online.request('/revision', 'navigate')))!.text()).toBe('from network')
+
+    const down = loadWorker(MANIFEST, undefined, { '/revision': () => Promise.reject(new TypeError('offline')) })
+    await down.run('install')
     for (const p of ['/', '/revision', '/examen/123']) {
-      const res = await w.fetchEvent(w.request(p, 'navigate'))
+      const res = await down.fetchEvent(down.request(p, 'navigate'))
       expect(await res!.text()).toBe('cached:/index.html')
     }
-    expect(w.fetched).toEqual([])
+    // An error answer (the network says 404 or 500): the cached page
+    const broken = loadWorker(MANIFEST, undefined, { '/': () => Promise.resolve(new Response('x', { status: 500 })) })
+    await broken.run('install')
+    expect(await (await broken.fetchEvent(broken.request('/', 'navigate')))!.text()).toBe('cached:/index.html')
+  })
+
+  it('un réseau trop lent (plus de 3 s) cède la place au cache', async () => {
+    vi.useFakeTimers()
+    try {
+      const w = loadWorker(MANIFEST, undefined, { '/': () => new Promise<Response>(() => {}) })
+      await w.run('install')
+      const pending = w.fetchEvent(w.request('/', 'navigate'))
+      await vi.advanceTimersByTimeAsync(3100)
+      expect(await (await pending)!.text()).toBe('cached:/index.html')
+    } finally {
+      vi.useRealTimers()
+    }
+  })
+
+  it('un déploiement sans worker (retour en arrière) s\'affiche dès le premier chargement en ligne', async () => {
+    // The server answers every address with the page of the other build, /sw.js included
+    const w = loadWorker(MANIFEST, undefined, { '/': 'NEW BUILD' })
+    await w.run('install')
+    expect(await (await w.fetchEvent(w.request('/', 'navigate')))!.text()).toBe('NEW BUILD')
+  })
+
+  it('une redirection du réseau est transmise telle quelle', async () => {
+    const redirect = { type: 'opaqueredirect', ok: false, status: 0 } as unknown as Response
+    const w = loadWorker(MANIFEST, undefined, { '/': () => Promise.resolve(redirect) })
+    await w.run('install')
+    expect(await w.fetchEvent(w.request('/', 'navigate'))).toBe(redirect)
+  })
+
+  it('les fichiers précachés non hachés vont réseau d\'abord, les fichiers hachés de /assets/ cache d\'abord', async () => {
+    const manifest = { ...MANIFEST, precache: ['/index.html', '/assets/app.js', '/theme-init.js'] }
+    const w = loadWorker(manifest, undefined, { '/theme-init.js': 'fresh', '/assets/app.js': 'network app' })
+    await w.run('install')
+    expect(await (await w.fetchEvent(w.request('/theme-init.js')))!.text()).toBe('fresh')
+    expect(await (await w.fetchEvent(w.request('/assets/app.js')))!.text()).toBe('cached:/assets/app.js')
+    const down = loadWorker(manifest, undefined, { '/theme-init.js': () => Promise.reject(new TypeError('offline')) })
+    await down.run('install')
+    expect(await (await down.fetchEvent(down.request('/theme-init.js')))!.text()).toBe('cached:/theme-init.js')
+  })
+
+  it('la réponse du réseau ne remplace jamais index.html en cache (il reste le pendant des fichiers précachés)', async () => {
+    const w = loadWorker(MANIFEST, undefined, { '/': 'NEW' })
+    await w.run('install')
+    await w.fetchEvent(w.request('/', 'navigate'))
+    expect(await w.caches.stores.get('shell-v1')!.get('/index.html')!.text()).toBe('cached:/index.html')
   })
 
   it('laisse passer ce qu\'elle ne connaît pas (autre origine, POST, fichier inconnu, navigation vers un fichier)', async () => {
@@ -179,6 +235,24 @@ describe('service worker : comportement', () => {
     const replies: unknown[] = []
     await w.run('message', { data: { type: 'cached-packs' }, ports: [{ postMessage: (m: unknown) => replies.push(m) }] })
     expect(replies).toEqual([['pluriannuelle']])
+  })
+
+  it('si le nouveau paquet d\'un titre en cache ne peut pas être récupéré, l\'installation échoue et rien n\'est perdu', async () => {
+    const caches = makeCaches()
+    const v1 = loadWorker(MANIFEST, caches, { [PACKS.pluriannuelle]: 'pack1' })
+    await v1.run('install')
+    await v1.run('activate')
+    await v1.run('message', { data: { type: 'warm-pack', title: 'pluriannuelle' } })
+    const v2 = loadWorker(
+      { version: 'v2', precache: ['/index.html'], packs: { ...PACKS, pluriannuelle: '/assets/pluri-NEW.js' } },
+      caches,
+      { '/assets/pluri-NEW.js': () => Promise.reject(new TypeError('network lost')) },
+    )
+    await expect(v2.run('install')).rejects.toThrow()
+    // The ancien pack and the record of the previous version are still there
+    expect(caches.stores.get('packs')!.has(PACKS.pluriannuelle)).toBe(true)
+    expect(JSON.parse(await caches.stores.get('packs')!.get('/__sw-packs.json')!.text())).toEqual(PACKS)
+    expect(caches.stores.has('shell-v1')).toBe(true)
   })
 
   it('une nouvelle version remplace les anciens caches et les paquets périmés, sans toucher à ceux qui restent', async () => {

@@ -1,5 +1,5 @@
 import { LAUNCH_FREE_DETAIL, LAUNCH_FREE_HEADLINE } from '@/lib/launch-message'
-import { useRef, useState } from 'react'
+import { useRef, useState, type ReactNode } from 'react'
 import { ArrowRight, Check, CircleAlert, WifiOff } from 'lucide-react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { AppHeader } from '@/components/AppHeader'
@@ -37,14 +37,16 @@ const optionClass =
   'flex min-h-16 w-full items-center justify-between gap-3 rounded-[2rem] py-2 pr-2.5 pl-5 text-left'
 
 export const OFFLINE_NOTICE = 'Vous êtes hors ligne : seul le titre dont les questions sont sur cet appareil peut être choisi.'
+export const OFFLINE_NONE_NOTICE = 'Vous êtes hors ligne : reconnectez-vous pour choisir votre titre.'
 export const OFFLINE_TITLE_NOTE = 'Disponible avec une connexion Internet'
 
 // Shown under the intro while the device has no network (maquettes Hl1 / Hl2)
-function OfflineNotice() {
+// (when no title at all is on the device, there is nothing to choose: the sentence says so)
+export function OfflineNotice({ none = false }: { none?: boolean }) {
   return (
     <p role="status" className="flex max-w-[19rem] items-start gap-2.5 text-base leading-snug font-bold md:max-w-none">
       <WifiOff aria-hidden="true" className="mt-0.5 size-5 shrink-0" strokeWidth={2.4} />
-      {OFFLINE_NOTICE}
+      {none ? OFFLINE_NONE_NOTICE : OFFLINE_NOTICE}
     </p>
   )
 }
@@ -99,8 +101,8 @@ function TitleChoices({
               <span className="flex min-w-0 flex-col hyphens-auto">
                 <span className="text-[1.0625rem] leading-snug font-bold">{TARGET_TITLE_LABELS[key]}</span>
                 {unavailable ? (
-                  <span className="flex items-center gap-1.5 text-[0.8125rem] font-bold">
-                    <WifiOff aria-hidden="true" className="size-4 shrink-0" strokeWidth={2.4} />
+                  <span className="flex items-start gap-1.5 text-[0.8125rem] font-bold">
+                    <WifiOff aria-hidden="true" className="mt-px size-4 shrink-0" strokeWidth={2.4} />
                     {OFFLINE_TITLE_NOTE}
                   </span>
                 ) : (
@@ -175,7 +177,7 @@ function MeadowLines() {
  * big green field. No « Retour » (nothing to go back to) and no name in the header
  * (the page shows the logo large).
  */
-function FirstVisit({ selected, onSelect, onContinue, showError, groupRef, offline }: ChoiceProps) {
+function FirstVisit({ selected, onSelect, onContinue, showError, groupRef, notice }: ChoiceProps) {
   // The frame clips (overflow-clip) rather than hides: hidden would make it the scroll container and break the sticky bar.
   // The scroll margin keeps a focused link or button clear of the sticky bar (WCAG 2.4.11)
   // The header comes before <main> (landmark), the green field starts at the very top of the page: it is
@@ -219,7 +221,7 @@ function FirstVisit({ selected, onSelect, onContinue, showError, groupRef, offli
 
       <div className="mx-auto flex w-full max-w-[30rem] grow flex-col gap-3 px-[22px] pt-4 pb-6 md:max-w-[34rem] md:px-8 md:pt-2 md:pb-4">
         <h2 className="text-[1.0625rem] font-bold">Quel titre préparez-vous ?</h2>
-        {offline && <OfflineNotice />}
+        {notice}
         <TitleChoices selected={selected} onSelect={onSelect} firstVisit groupRef={groupRef} />
         <p className="text-sm text-muted-foreground">Vous pourrez changer plus tard.</p>
       </div>
@@ -252,7 +254,7 @@ interface ChoiceProps {
   onContinue: () => void
   showError: boolean
   groupRef: React.RefObject<HTMLDivElement | null>
-  offline: boolean
+  notice: ReactNode
 }
 
 /**
@@ -276,6 +278,7 @@ export default function TitreVise() {
   })
   const [showError, setShowError] = useState(false)
   const { offline, isAvailable } = useTitleAvailability()
+  const notice = offline ? <OfflineNotice none={TARGET_TITLES.every((t) => !isAvailable(t))} /> : null
   const groupRef = useRef<HTMLDivElement>(null)
   function handleSelect(t: TargetTitle) {
     setShowError(false)
@@ -305,7 +308,7 @@ export default function TitreVise() {
         onContinue={handleContinue}
         showError={showError}
         groupRef={groupRef}
-        offline={offline}
+        notice={notice}
       />
     )
   }
@@ -320,7 +323,7 @@ export default function TitreVise() {
         <p className="max-w-[19rem] text-base leading-[1.45] md:max-w-none md:text-[1.0625rem]">
           Les questions officielles ne sont pas les mêmes selon le titre. Vous pourrez changer plus tard.
         </p>
-        {offline && <OfflineNotice />}
+        {notice}
         <TitleChoices selected={selected} onSelect={handleSelect} firstVisit={false} />
         <PillButton size="lg" onClick={handleContinue} className="mt-auto w-full justify-center text-center">
           Continuer
