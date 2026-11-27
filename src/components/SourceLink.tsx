@@ -9,10 +9,10 @@ export function SourceLink({ source }: { source?: QuestionSource }) {
       href={source.url}
       target="_blank"
       rel="noopener noreferrer"
-      className="inline-flex min-h-11 items-center gap-1.5 self-start rounded-[1.375rem] bg-background px-3 py-1.5 text-sm font-bold no-underline hover:underline hover:underline-offset-4"
+      className="inline-flex max-w-full items-start gap-1.5 self-start rounded-[1.375rem] bg-background px-3 py-3 text-sm font-bold no-underline hover:underline hover:underline-offset-4"
     >
-      <ExternalLink aria-hidden="true" className="size-3.5 shrink-0" strokeWidth={2.2} />
-      <span>
+      <ExternalLink aria-hidden="true" className="mt-[0.1875rem] size-3.5 shrink-0" strokeWidth={2.2} />
+      <span className="min-w-0 [overflow-wrap:anywhere]">
         Source : {source.label}
         <span className="sr-only"> (nouvel onglet)</span>
       </span>
