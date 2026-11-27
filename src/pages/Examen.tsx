@@ -386,8 +386,8 @@ function ExamSession({ restarted, onRestart }: ExamSessionProps) {
             <span aria-hidden="true" className="text-sm font-bold whitespace-nowrap">{minutes} min</span>
           </div>
           {lowTime && (
-            <p className="inline-flex min-h-10 items-center gap-2 self-start rounded-full bg-coral px-4 text-[0.9375rem] font-bold text-coral-foreground">
-              <Clock aria-hidden="true" className="size-5 shrink-0" strokeWidth={2.4} />
+            <p className="mt-1.5 inline-flex min-h-8 items-center gap-2 self-start rounded-full bg-coral px-3.5 text-sm font-bold text-coral-foreground">
+              <Clock aria-hidden="true" className="size-4 shrink-0" strokeWidth={2.4} />
               Moins de 5 minutes
             </p>
           )}
