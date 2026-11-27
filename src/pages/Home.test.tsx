@@ -763,3 +763,85 @@ describe('Accueil — naturalisation', () => {
     expect(screen.queryByTestId('location')).toBeNull()
   })
 })
+
+describe("Accueil — « Continuer où j'en étais » (révision)", () => {
+  const shortcut = () => screen.queryByRole('link', { name: /Continuer où j'en étais/ })
+  const view = (filter: unknown, scrollY: number, excludeSituational = false) =>
+    JSON.stringify({ filter, excludeSituational, scrollY })
+
+  it('sans vue gardée : pas de lien', () => {
+    renderHome()
+    expect(shortcut()).toBeNull()
+  })
+
+  it('position à 0 : pas de lien', () => {
+    localStorageMock.setItem('revision-view:pluriannuelle', view({ kind: 'all' }, 0))
+    renderHome()
+    expect(shortcut()).toBeNull()
+  })
+
+  it('position gardée : lien vers /revision, sous l\'étape 1, avec « Tous les thèmes »', () => {
+    localStorageMock.setItem('revision-view:pluriannuelle', view({ kind: 'all' }, 900))
+    renderHome()
+    const link = shortcut()!
+    expect(link).toHaveTextContent("Continuer où j'en étais : Tous les thèmes")
+    expect(link).toHaveAttribute('href', '/revision')
+    const step1 = screen.getByRole('navigation', { name: 'Votre parcours' }).querySelector('li')!
+    expect(step1).toContainElement(link)
+  })
+
+  it("affiche le libellé d'affichage du thème", () => {
+    localStorageMock.setItem('revision-view:pluriannuelle', view({ kind: 'theme', theme: 'Vie en société' }, 300))
+    renderHome()
+    expect(shortcut()).toHaveTextContent("Continuer où j'en étais : Vivre dans la société française")
+  })
+
+  it('« À revoir » quand il reste des questions à revoir', () => {
+    seedHistory([{ ...exam(30, 'a'), answers: [{ questionId: 1, correct: false }] }])
+    localStorageMock.setItem('revision-view:pluriannuelle', view({ kind: 'review' }, 300))
+    renderHome()
+    expect(shortcut()).toHaveTextContent("Continuer où j'en étais : À revoir")
+  })
+
+  it('« À revoir » devenu vide ou thème inconnu : « Tous les thèmes »', () => {
+    localStorageMock.setItem('revision-view:pluriannuelle', view({ kind: 'review' }, 300))
+    renderHome()
+    expect(shortcut()).toHaveTextContent('Tous les thèmes')
+    cleanup()
+    localStorageMock.setItem('revision-view:pluriannuelle', view({ kind: 'theme', theme: 'Inconnu' }, 300))
+    renderHome()
+    expect(shortcut()).toHaveTextContent('Tous les thèmes')
+  })
+
+  it('titre choisi seulement', () => {
+    localStorageMock.setItem('revision-view:resident', view({ kind: 'all' }, 900))
+    renderHome()
+    expect(shortcut()).toBeNull()
+    cleanup()
+    localStorageMock.setItem('target-title', 'resident')
+    renderHome()
+    expect(shortcut()).not.toBeNull()
+  })
+
+  it.each(['pas du json{', 'null', '42', '{"filter":"all","scrollY":9}'])('valeur illisible ignorée (%s)', (raw) => {
+    localStorageMock.setItem('revision-view:pluriannuelle', raw)
+    renderHome()
+    expect(shortcut()).toBeNull()
+  })
+
+  it('une ancienne valeur de sessionStorage est ignorée', () => {
+    sessionStorage.setItem('revision-view:pluriannuelle', view({ kind: 'all' }, 900))
+    renderHome()
+    expect(shortcut()).toBeNull()
+    sessionStorage.clear()
+  })
+
+  it('un stockage bloqué ne casse pas l\'accueil', () => {
+    vi.stubGlobal('localStorage', {
+      getItem: (key: string) => (key === 'revision-view:pluriannuelle' ? (() => { throw new Error('blocked') })() : null),
+      setItem: () => {},
+    })
+    renderHome()
+    expect(shortcut()).toBeNull()
+  })
+})

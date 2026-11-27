@@ -11,7 +11,7 @@ export type QuestionPack =
 
 // « Réessayer » reloads the page: a browser does not try a failed import() of the same URL again
 // until then (and after a deployment the page may ask for files that no longer exist). What must
-// survive does: the address, the revision filters (sessionStorage), the « new exam » marker (history state).
+// survive does: the address, the revision filters (localStorage), the « new exam » marker (history state).
 function retry() {
   window.location.reload()
 }

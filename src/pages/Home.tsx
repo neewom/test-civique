@@ -6,6 +6,7 @@ import { hasProgress, loadProgressForTitle, clearProgress, resumeIndex } from '@
 import type { ExamInProgress } from '@/lib/exam-types'
 import { loadHistory, loadHistoryForTitle, type HistoryEntry } from '@/lib/history'
 import { passedInARow, READY_GOAL } from '@/lib/readiness'
+import { revisionResumeLabel } from '@/lib/revision-memory'
 import { ficheUrl } from '@/lib/fiches'
 import { preloadQuestionPack } from '@/lib/question-packs'
 import { DEFAULT_TITLE, loadTargetTitle, TARGET_TITLE_LABELS } from '@/lib/target-title'
@@ -102,6 +103,8 @@ export default function Home() {
   // Counter, last exams and resume: exams of the chosen title only
   const [history] = useState(() => loadHistoryForTitle(targetTitle))
   const [inProgress, setInProgress] = useState<ExamInProgress | null>(() => loadProgressForTitle(targetTitle))
+  // Shortcut under step 1: only with a remembered revision position for the chosen title
+  const [revisionLabel] = useState(() => revisionResumeLabel(targetTitle))
   const [confirmDelete, setConfirmDelete] = useState(false)
   const deleteButtonRef = useRef<HTMLButtonElement>(null)
   const stepTwoRef = useRef<HTMLButtonElement>(null)
@@ -171,10 +174,19 @@ export default function Home() {
   const journey = (
     <nav aria-label="Votre parcours" className="mt-[clamp(1.5rem,6svh,3.25rem)] lg:order-2 lg:mt-10">
       <ol className="flex flex-col items-start gap-3 md:gap-3.5">
-        <li className="max-w-full">
+        <li className="flex max-w-full flex-col items-start">
           <PillLink to="/revision" tone="surface" end={<ArrowRight strokeWidth={2.6} />}>
             1 · Réviser les thèmes
           </PillLink>
+          {revisionLabel && (
+            <Link
+              to="/revision"
+              className="mt-1 inline-flex min-h-11 items-center gap-1 rounded-sm px-1 text-[0.9375rem] font-bold underline underline-offset-4"
+            >
+              Continuer où j'en étais : {revisionLabel}
+              <ArrowRight aria-hidden="true" className="size-[1em] shrink-0" strokeWidth={2.6} />
+            </Link>
+          )}
         </li>
 
         <li className="flex w-full flex-col items-start">
