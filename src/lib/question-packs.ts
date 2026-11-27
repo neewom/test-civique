@@ -1,4 +1,5 @@
 import type { ListedQuestion } from '@/lib/exam'
+import { keepPackOffline } from '@/lib/offline'
 import type { TitleKey } from '@/lib/target-title'
 
 // The questions live in one pack per title (virtual modules cut at build time from
@@ -44,6 +45,8 @@ export function loadQuestionPack(title: TitleKey): Promise<ListedQuestion[]> {
     promise = loaders[title]().then(
       (module) => {
         loaded.set(title, module.default)
+        // The service worker keeps it for offline use (a no-op without one)
+        keepPackOffline(title)
         pending.delete(title)
         return module.default
       },

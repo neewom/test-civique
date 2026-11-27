@@ -1,6 +1,6 @@
 import { LAUNCH_FREE_DETAIL, LAUNCH_FREE_HEADLINE } from '@/lib/launch-message'
 import { useRef, useState } from 'react'
-import { ArrowRight, Check, CircleAlert } from 'lucide-react'
+import { ArrowRight, Check, CircleAlert, WifiOff } from 'lucide-react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { AppHeader } from '@/components/AppHeader'
 import { PageFrame } from '@/components/PageFrame'
@@ -14,6 +14,7 @@ import { loadHistory } from '@/lib/history'
 import { loadTargetTitle, saveTargetTitle, TARGET_TITLE_LABELS, TARGET_TITLES, type TargetTitle, type TitleKey } from '@/lib/target-title'
 import { TITLE_COUNTS } from '@/lib/title-counts'
 import { useDocumentTitle } from '@/lib/use-document-title'
+import { useTitleAvailability } from '@/lib/use-title-availability'
 import { cn } from '@/lib/utils'
 
 // Official (non situational) questions of each title's list
@@ -35,6 +36,19 @@ function MoreLink({ title }: { title: TitleKey }) {
 const optionClass =
   'flex min-h-16 w-full items-center justify-between gap-3 rounded-[2rem] py-2 pr-2.5 pl-5 text-left'
 
+export const OFFLINE_NOTICE = 'Vous êtes hors ligne : seul le titre dont les questions sont sur cet appareil peut être choisi.'
+export const OFFLINE_TITLE_NOTE = 'Disponible avec une connexion Internet'
+
+// Shown under the intro while the device has no network (maquettes Hl1 / Hl2)
+function OfflineNotice() {
+  return (
+    <p role="status" className="flex max-w-[19rem] items-start gap-2.5 text-base leading-snug font-bold md:max-w-none">
+      <WifiOff aria-hidden="true" className="mt-0.5 size-5 shrink-0" strokeWidth={2.4} />
+      {OFFLINE_NOTICE}
+    </p>
+  )
+}
+
 /**
  * The titles to pick from (first visit and change of title share them), each with its
  * question count.
@@ -50,6 +64,7 @@ function TitleChoices({
   firstVisit: boolean
   groupRef?: React.RefObject<HTMLDivElement | null>
 }) {
+  const { isAvailable } = useTitleAvailability()
   return (
     <div
       ref={groupRef}
@@ -59,15 +74,22 @@ function TitleChoices({
     >
       {TARGET_TITLES.map((key) => {
         const on = selected === key
+        // Offline, a title whose questions are not on the device cannot be chosen
+        const unavailable = !isAvailable(key)
         return (
           <div key={key} className="flex flex-col">
             <button
               type="button"
               aria-pressed={on}
-              onClick={() => onSelect(key)}
+              aria-disabled={unavailable || undefined}
+              onClick={() => {
+                if (!unavailable) onSelect(key)
+              }}
               className={cn(
                 optionClass,
-                on
+                unavailable
+                  ? 'bg-card/50 text-muted-foreground'
+                  : on
                   ? firstVisit
                     ? 'bg-earth text-earth-foreground'
                     : 'bg-primary text-primary-foreground'
@@ -76,11 +98,18 @@ function TitleChoices({
             >
               <span className="flex min-w-0 flex-col hyphens-auto">
                 <span className="text-[1.0625rem] leading-snug font-bold">{TARGET_TITLE_LABELS[key]}</span>
-                <span className={cn('text-[0.8125rem]', on ? (firstVisit ? '' : 'opacity-90') : 'text-muted-foreground')}>
-                  {officialCount(key)} questions officielles
-                </span>
+                {unavailable ? (
+                  <span className="flex items-center gap-1.5 text-[0.8125rem] font-bold">
+                    <WifiOff aria-hidden="true" className="size-4 shrink-0" strokeWidth={2.4} />
+                    {OFFLINE_TITLE_NOTE}
+                  </span>
+                ) : (
+                  <span className={cn('text-[0.8125rem]', on ? (firstVisit ? '' : 'opacity-90') : 'text-muted-foreground')}>
+                    {officialCount(key)} questions officielles
+                  </span>
+                )}
               </span>
-              {firstVisit ? (
+              {unavailable ? null : firstVisit ? (
                 // Same round mark on every option: a ring at rest, the check once chosen
                 <span
                   aria-hidden="true"
@@ -146,7 +175,7 @@ function MeadowLines() {
  * big green field. No « Retour » (nothing to go back to) and no name in the header
  * (the page shows the logo large).
  */
-function FirstVisit({ selected, onSelect, onContinue, showError, groupRef }: ChoiceProps) {
+function FirstVisit({ selected, onSelect, onContinue, showError, groupRef, offline }: ChoiceProps) {
   // The frame clips (overflow-clip) rather than hides: hidden would make it the scroll container and break the sticky bar.
   // The scroll margin keeps a focused link or button clear of the sticky bar (WCAG 2.4.11)
   // The header comes before <main> (landmark), the green field starts at the very top of the page: it is
@@ -190,6 +219,7 @@ function FirstVisit({ selected, onSelect, onContinue, showError, groupRef }: Cho
 
       <div className="mx-auto flex w-full max-w-[30rem] grow flex-col gap-3 px-[22px] pt-4 pb-6 md:max-w-[34rem] md:px-8 md:pt-2 md:pb-4">
         <h2 className="text-[1.0625rem] font-bold">Quel titre préparez-vous ?</h2>
+        {offline && <OfflineNotice />}
         <TitleChoices selected={selected} onSelect={onSelect} firstVisit groupRef={groupRef} />
         <p className="text-sm text-muted-foreground">Vous pourrez changer plus tard.</p>
       </div>
@@ -222,6 +252,7 @@ interface ChoiceProps {
   onContinue: () => void
   showError: boolean
   groupRef: React.RefObject<HTMLDivElement | null>
+  offline: boolean
 }
 
 /**
@@ -244,6 +275,7 @@ export default function TitreVise() {
     return firstVisit ? null : (loadTargetTitle() ?? 'pluriannuelle')
   })
   const [showError, setShowError] = useState(false)
+  const { offline, isAvailable } = useTitleAvailability()
   const groupRef = useRef<HTMLDivElement>(null)
   function handleSelect(t: TargetTitle) {
     setShowError(false)
@@ -258,6 +290,8 @@ export default function TitreVise() {
       groupRef.current?.querySelector('button')?.focus()
       return
     }
+    // Offline, a title whose questions are not on the device is not saved (the one already saved is)
+    if (selected !== loadTargetTitle() && !isAvailable(selected)) return
     saveTargetTitle(selected)
     // The first visit is not a page to come back to
     navigate('/', { replace: firstVisit })
@@ -271,6 +305,7 @@ export default function TitreVise() {
         onContinue={handleContinue}
         showError={showError}
         groupRef={groupRef}
+        offline={offline}
       />
     )
   }
@@ -285,6 +320,7 @@ export default function TitreVise() {
         <p className="max-w-[19rem] text-base leading-[1.45] md:max-w-none md:text-[1.0625rem]">
           Les questions officielles ne sont pas les mêmes selon le titre. Vous pourrez changer plus tard.
         </p>
+        {offline && <OfflineNotice />}
         <TitleChoices selected={selected} onSelect={handleSelect} firstVisit={false} />
         <PillButton size="lg" onClick={handleContinue} className="mt-auto w-full justify-center text-center">
           Continuer

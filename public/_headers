@@ -11,3 +11,6 @@
   Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), serial=(), bluetooth=(), hid=(), midi=(), magnetometer=(), gyroscope=(), accelerometer=(), browsing-topics=(), interest-cohort=()
 /site.webmanifest
   Content-Type: application/manifest+json
+# The service worker file is never kept by the browser or the CDN: an update must be seen at once
+/sw.js
+  Cache-Control: no-cache

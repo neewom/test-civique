@@ -76,3 +76,19 @@ describe('index.html', () => {
     expect(inlineScripts).toHaveLength(0)
   })
 })
+
+describe('public/_headers : service worker', () => {
+  it('le fichier du service worker n\'est jamais gardé par le navigateur ni le CDN', () => {
+    const lines = headersFile.split('\n').map((l) => l.trim())
+    const start = lines.indexOf('/sw.js')
+    expect(start).toBeGreaterThan(-1)
+    expect(lines[start + 1]).toBe('Cache-Control: no-cache')
+  })
+
+  it('la CSP laisse le worker se charger depuis le site seulement (worker-src retombe sur script-src \'self\')', () => {
+    const csp = cspDirectives()
+    expect(csp.has('worker-src')).toBe(false)
+    expect(csp.has('child-src')).toBe(false)
+    expect(csp.get('script-src')).toBe("'self'")
+  })
+})
