@@ -90,7 +90,7 @@ describe('Revision — nombre de questions par titre', () => {
 describe('Revision — structure', () => {
   it('donne le titre "Révision · Futur Citoyen" à l\'onglet', () => {
     renderRevision()
-    expect(document.title).toBe('Révision · Futur Citoyen')
+    expect(document.title).toBe("Questions de l'examen civique à réviser · Futur Citoyen")
   })
 
   it('affiche le titre « Réviser », le titre visé et le nombre de questions', () => {

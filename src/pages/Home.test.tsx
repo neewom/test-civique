@@ -93,7 +93,7 @@ describe('Accueil — en-tête et parcours', () => {
 
   it('donne le titre "Accueil · Futur Citoyen" à l\'onglet', () => {
     renderHome()
-    expect(document.title).toBe('Accueil · Futur Citoyen')
+    expect(document.title).toBe('Examen civique : entraînement gratuit · Futur Citoyen')
   })
 
   it('a un conteneur principal', () => {

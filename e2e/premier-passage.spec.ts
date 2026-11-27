@@ -26,7 +26,7 @@ test('premier passage : choix du titre, accueil, choix gardé au rechargement', 
   await expect(journey.getByRole('button', { name: /2 · Réussir 3 examens blancs/ })).toBeVisible()
   await expect(journey.getByText(/3 · Trouver un centre d'examen/)).toBeVisible()
   await expect(journey.getByText('4 · Le jour J')).toBeVisible()
-  await expectPage(page, 'Accueil')
+  await expectPage(page, 'Examen civique : entraînement gratuit · Futur Citoyen')
 
   await page.reload()
   await expect(page).toHaveURL(/\/$/)
@@ -105,7 +105,7 @@ test('premier passage : « En savoir plus » sur la naturalisation, puis « M\'e
   await page.getByRole('link', { name: /En savoir plus sur : Naturalisation/ }).click()
   await expect(page).toHaveURL(/\/titres\/naturalisation$/)
   await expect(page.getByRole('heading', { level: 1, name: 'Naturalisation' })).toBeVisible()
-  await expectPage(page, 'Naturalisation')
+  await expectPage(page, 'Naturalisation et examen civique · Futur Citoyen')
   await expect(page.getByText(/Entraînement bientôt disponible/)).toHaveCount(0)
   expect(await page.evaluate(() => localStorage.getItem('target-title'))).toBeNull()
   await page.getByRole('button', { name: "M'entraîner pour ce titre" }).click()
@@ -123,7 +123,7 @@ test('premier passage : « En savoir plus » sur la carte de résident, puis « 
 
   await expect(page).toHaveURL(/\/titres\/carte-de-resident$/)
   await expect(page.getByRole('heading', { level: 1, name: 'Carte de résident' })).toBeVisible()
-  await expectPage(page, 'Carte de résident')
+  await expectPage(page, 'Carte de résident et examen civique · Futur Citoyen')
   // Opening a sheet chooses nothing
   expect(await page.evaluate(() => localStorage.getItem('target-title'))).toBeNull()
 
@@ -139,7 +139,11 @@ test('premier passage : « En savoir plus » sur la carte de résident, puis « 
   await expect(page.getByRole('button', { name: 'Continuer mon entraînement' })).toBeVisible()
 })
 
-test('fiche : adresse inconnue renvoie vers l\'accueil', async ({ page }) => {
+test('fiche : adresse inconnue renvoie vers l\'accueil (appli déjà installée, service worker)', async ({ page, guard }) => {
+  // Without the worker Netlify answers a real 404 page (e2e/pages.spec.ts); the app itself still sends an unknown fiche home
+  guard.allowedErrors.push('/titres/inconnu')
+  await page.goto('/')
+  await page.waitForFunction(() => navigator.serviceWorker.controller !== null)
   await page.goto('/titres/inconnu')
   await expect(page).toHaveURL(/\/titre$/)
 })

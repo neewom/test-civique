@@ -3,7 +3,7 @@ import { ArrowUpRight } from 'lucide-react'
 import { PageFrame } from '@/components/PageFrame'
 import { BackLink } from '@/components/BackLink'
 import { OrganicBackground } from '@/components/OrganicBackground'
-import { useDocumentTitle } from '@/lib/use-document-title'
+import { useRouteTitle } from '@/lib/use-document-title'
 
 // To keep up to date whenever the data collected by the site changes (ads, payment, new events)
 export const LAST_UPDATED = '27 novembre 2026'
@@ -45,7 +45,7 @@ function ContactLink() {
 
 /** « Mentions légales et confidentialité » (maquette Ml2), opened from the home page footer. */
 export default function MentionsLegales() {
-  useDocumentTitle('Mentions légales et confidentialité')
+  useRouteTitle('/mentions-legales')
 
   return (
     <PageFrame className="relative overflow-hidden" background={<OrganicBackground shape="crest" />}>

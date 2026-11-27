@@ -22,7 +22,7 @@ describe('Page « Trouver un centre d\'examen »', () => {
   it('a son titre de page et d\'onglet, et revient au parcours', () => {
     renderCentres()
     expect(screen.getByRole('heading', { level: 1, name: "Trouver un centre d'examen" })).toBeInTheDocument()
-    expect(document.title).toBe("Trouver un centre d'examen · Futur Citoyen")
+    expect(document.title).toBe("Où passer l'examen civique · Futur Citoyen")
     expect(screen.getByRole('link', { name: 'Mon parcours' })).toHaveAttribute('href', '/')
   })
 

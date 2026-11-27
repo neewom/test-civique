@@ -10,10 +10,11 @@ import type { Plugin } from 'vite'
 const PACK_PREFIX = '\0virtual:question-pack/'
 const PLACEHOLDER = "'__SW_MANIFEST__'"
 
-// Never precached: the worker itself, Netlify's files, the social image and the big icons (only
+// Never precached: the worker itself, Netlify's files, the per-address HTML copies and the 404 page
+// (everything .html but index.html: offline, index.html answers every address), robots.txt, sitemap.xml, the social image and the big icons (only
 // crawlers and installs fetch them),
 // source maps, and the .woff fallbacks (a browser that loads the .woff2 never asks for them)
-const SKIPPED = [/^sw\.js$/, /^_headers$/, /^_redirects$/, /^og-image\.png$/, /^icon-512\.png$/, /^apple-touch-icon\.png$/, /\.map$/, /\.woff$/]
+const SKIPPED = [/^sw\.js$/, /^_headers$/, /^_redirects$/, /^(?!index\.html$).+\.html$/, /^robots\.txt$/, /^sitemap\.xml$/, /^og-image\.png$/, /^icon-512\.png$/, /^apple-touch-icon\.png$/, /\.map$/, /\.woff$/]
 
 export interface SwManifest {
   version: string
