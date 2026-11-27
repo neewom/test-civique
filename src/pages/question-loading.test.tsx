@@ -1,5 +1,5 @@
 import { act, fireEvent, render, screen, waitFor } from '@testing-library/react'
-import { MemoryRouter, Route, Routes } from 'react-router-dom'
+import { MemoryRouter, Route, Routes, useLocation } from 'react-router-dom'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import Examen from './Examen'
 import ExamenDetail from './ExamenDetail'
@@ -56,6 +56,20 @@ afterEach(() => {
   resetQuestionPacksForTests()
 })
 
+// « Réessayer » reloads the page (see use-question-pack.ts): the reload is replaced by a spy
+function stubReload() {
+  const reload = vi.fn()
+  vi.stubGlobal('location', { ...window.location, reload })
+  return reload
+}
+afterEach(() => {
+  vi.unstubAllGlobals()
+})
+
+function LocationState() {
+  return <p data-testid="state">{JSON.stringify(useLocation().state)}</p>
+}
+
 const flush = () => act(async () => {})
 
 describe('Révision : chargement des questions', () => {
@@ -92,17 +106,29 @@ describe('Révision : chargement des questions', () => {
     expect(loaders.pluriannuelle).not.toHaveBeenCalled()
   })
 
-  it('échec : message et « Réessayer », jamais un écran blanc ; « Réessayer » recharge', async () => {
+  it('échec : message et « Réessayer », jamais un écran blanc ; « Réessayer » recharge la page', async () => {
     const loaders = spyLoaders()
     loaders.pluriannuelle.mockRejectedValueOnce(new Error('réseau'))
+    const reload = stubReload()
     renderRevision()
     expect(await screen.findByRole('alert')).toHaveTextContent("Les questions n'ont pas pu être chargées.")
     expect(screen.getByRole('heading', { level: 1, name: 'Réviser' })).toBeInTheDocument()
     expect(screen.getByRole('link', { name: 'Mon parcours' })).toBeInTheDocument()
+    expect(reload).not.toHaveBeenCalled()
     fireEvent.click(screen.getByRole('button', { name: 'Réessayer' }))
-    expect(await screen.findByRole('group', { name: 'Questions à afficher' })).toBeInTheDocument()
-    expect(screen.queryByRole('alert')).not.toBeInTheDocument()
-    expect(loaders.pluriannuelle).toHaveBeenCalledTimes(2)
+    expect(reload).toHaveBeenCalledTimes(1)
+    // No new import in memory: the browser would not try it again, only the reload does
+    expect(loaders.pluriannuelle).toHaveBeenCalledTimes(1)
+  })
+
+  it('un préchargement raté : la révision montre l’échec tout de suite, sans nouvel import', async () => {
+    const loaders = spyLoaders()
+    loaders.pluriannuelle.mockRejectedValueOnce(new Error('réseau'))
+    await expect(loadQuestionPack('pluriannuelle')).rejects.toThrow()
+    renderRevision()
+    expect(screen.getByRole('alert')).toBeInTheDocument()
+    expect(screen.queryByRole('status')).not.toBeInTheDocument()
+    expect(loaders.pluriannuelle).toHaveBeenCalledTimes(1)
   })
 
   it('un paquet déjà en mémoire (préchargé) s’affiche sans passer par le chargement', async () => {
@@ -134,13 +160,21 @@ describe('Examen : chargement des questions', () => {
     expect(screen.getAllByRole('progressbar').length).toBeGreaterThan(0)
   })
 
-  it('échec puis « Réessayer » : l’examen se tire', async () => {
+  it('échec : « Réessayer » recharge la page, le marqueur « nouvel examen » de l’historique est gardé', async () => {
     const loaders = spyLoaders()
     loaders.pluriannuelle.mockRejectedValueOnce(new Error('réseau'))
-    renderExamen()
+    const reload = stubReload()
+    render(
+      <MemoryRouter initialEntries={[{ pathname: '/examen', state: { start: 'new' } }]}>
+        <Routes>
+          <Route path="/examen" element={<><Examen /><LocationState /></>} />
+        </Routes>
+      </MemoryRouter>,
+    )
     expect(await screen.findByRole('alert')).toBeInTheDocument()
+    expect(screen.getByTestId('state')).toHaveTextContent('{"start":"new"}')
     fireEvent.click(screen.getByRole('button', { name: 'Réessayer' }))
-    expect(await screen.findAllByRole('radio')).toHaveLength(4)
+    expect(reload).toHaveBeenCalledTimes(1)
   })
 
   it('la reprise d’un examen ne charge aucun paquet', async () => {
@@ -199,14 +233,26 @@ describe('Détail d’un examen : paquet du titre de l’examen', () => {
     expect(loaders.resident).not.toHaveBeenCalled()
   })
 
-  it('échec : message et « Réessayer » ; un examen introuvable ne charge rien', async () => {
+  it('pendant le chargement et l’échec, le titre h1 de l’examen est déjà là', async () => {
     localStorage.setItem('quiz-history', JSON.stringify([record('resident')]))
     const loaders = spyLoaders()
     loaders.resident.mockRejectedValueOnce(new Error('réseau'))
     renderDetail()
+    expect(screen.getByRole('status')).toBeInTheDocument()
+    expect(screen.getByRole('heading', { level: 1, name: /Examen du 15 janvier 2026 : 0 sur 40/ })).toBeInTheDocument()
+    expect(await screen.findByRole('alert')).toBeInTheDocument()
+    expect(screen.getByRole('heading', { level: 1 })).toBeInTheDocument()
+  })
+
+  it('échec : « Réessayer » recharge la page ; un examen introuvable ne charge rien', async () => {
+    localStorage.setItem('quiz-history', JSON.stringify([record('resident')]))
+    const loaders = spyLoaders()
+    loaders.resident.mockRejectedValueOnce(new Error('réseau'))
+    const reload = stubReload()
+    renderDetail()
     expect(await screen.findByRole('alert')).toBeInTheDocument()
     fireEvent.click(screen.getByRole('button', { name: 'Réessayer' }))
-    expect(await screen.findByText(q.question)).toBeInTheDocument()
+    expect(reload).toHaveBeenCalledTimes(1)
 
     localStorage.clear()
     resetQuestionPacksForTests()

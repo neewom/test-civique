@@ -4,6 +4,7 @@ import path from 'node:path'
 import { ALL_QUESTIONS } from '@/test/questions'
 import {
   getLoadedPack,
+  hasPackFailed,
   loadQuestionPack,
   preloadQuestionPack,
   resetQuestionPacksForTests,
@@ -79,15 +80,18 @@ describe('loadQuestionPack', () => {
     expect(getLoadedPack('resident')).toBeUndefined()
   })
 
-  it('un échec est transmis, puis oublié : un nouvel appel réessaie', async () => {
+  it('un échec est transmis puis gardé pour cette page : plus d’import (le navigateur ne le retenterait pas), seul un rechargement en sort', async () => {
     resetQuestionPacksForTests()
     const loader = vi.fn<() => Promise<{ default: never[] }>>()
     loader.mockRejectedValueOnce(new Error('réseau')).mockResolvedValueOnce({ default: [] })
     setQuestionPackLoaderForTests('pluriannuelle', loader)
+    expect(hasPackFailed('pluriannuelle')).toBe(false)
     await expect(loadQuestionPack('pluriannuelle')).rejects.toThrow('réseau')
+    expect(hasPackFailed('pluriannuelle')).toBe(true)
     expect(getLoadedPack('pluriannuelle')).toBeUndefined()
-    await expect(loadQuestionPack('pluriannuelle')).resolves.toEqual([])
-    expect(loader).toHaveBeenCalledTimes(2)
+    await expect(loadQuestionPack('pluriannuelle')).rejects.toThrow('réseau')
+    expect(loader).toHaveBeenCalledTimes(1)
+    expect(hasPackFailed('resident')).toBe(false)
   })
 })
 
@@ -136,18 +140,19 @@ describe('preloadQuestionPack', () => {
     expect(loader).not.toHaveBeenCalled()
   })
 
-  it('avale un échec : aucune erreur non gérée, le paquet est redemandé plus tard', async () => {
+  it('avale un échec, qui reste connu : la page qui a besoin du paquet montre l’échec tout de suite', async () => {
     vi.useFakeTimers()
     vi.stubGlobal('requestIdleCallback', undefined)
     const loader = vi.fn<() => Promise<{ default: never[] }>>()
-    loader.mockRejectedValueOnce(new Error('réseau')).mockResolvedValueOnce({ default: [] })
+    loader.mockRejectedValue(new Error('réseau'))
     setQuestionPackLoaderForTests('naturalisation', loader)
     preloadQuestionPack('naturalisation')
     vi.runAllTimers()
     await vi.advanceTimersByTimeAsync(0)
     expect(getLoadedPack('naturalisation')).toBeUndefined()
+    expect(hasPackFailed('naturalisation')).toBe(true)
     vi.useRealTimers()
-    await loadQuestionPack('naturalisation')
-    expect(getLoadedPack('naturalisation')).toEqual([])
+    await expect(loadQuestionPack('naturalisation')).rejects.toThrow('réseau')
+    expect(loader).toHaveBeenCalledTimes(1)
   })
 })

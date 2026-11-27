@@ -16,6 +16,15 @@ const DEFAULT_LOADERS: Record<TitleKey, PackLoader> = {
 let loaders: Record<TitleKey, PackLoader> = { ...DEFAULT_LOADERS }
 const loaded = new Map<TitleKey, ListedQuestion[]>()
 const pending = new Map<TitleKey, Promise<ListedQuestion[]>>()
+// Titles whose import failed. A browser remembers a failed dynamic import() of a URL until the page is
+// reloaded (Chromium: no new request, whatever the network), so trying again in memory is useless:
+// a failure sticks for this page load and only a reload (« Réessayer ») gets out of it.
+const failed = new Map<TitleKey, unknown>()
+
+/** True if the pack of a title failed to load in this page load (a reload is then the only way out). */
+export function hasPackFailed(title: TitleKey): boolean {
+  return failed.has(title)
+}
 
 /** The pack of a title if it is already in memory, else undefined (nothing is fetched). */
 export function getLoadedPack(title: TitleKey): ListedQuestion[] | undefined {
@@ -23,12 +32,13 @@ export function getLoadedPack(title: TitleKey): ListedQuestion[] | undefined {
 }
 
 /**
- * Loads the pack of a title (once: later calls share the same download). A failed load is
- * forgotten, so that calling again tries again.
+ * Loads the pack of a title (once: later calls share the same download). A failure is kept
+ * for this page load: later calls fail at once, without a new import (see `failed`).
  */
 export function loadQuestionPack(title: TitleKey): Promise<ListedQuestion[]> {
   const ready = loaded.get(title)
   if (ready) return Promise.resolve(ready)
+  if (failed.has(title)) return Promise.reject(failed.get(title))
   let promise = pending.get(title)
   if (!promise) {
     promise = loaders[title]().then(
@@ -39,6 +49,7 @@ export function loadQuestionPack(title: TitleKey): Promise<ListedQuestion[]> {
       },
       (error: unknown) => {
         pending.delete(title)
+        failed.set(title, error)
         throw error
       },
     )
@@ -58,7 +69,9 @@ const FALLBACK_DELAY_MS = 1500
 
 /**
  * Discreet preload of a pack: starts when the browser is idle (`requestIdleCallback`, else a
- * timer) and swallows a failure (the page that needs the pack tries again and shows the error).
+ * timer) and swallows a failure, which is kept: the page that needs the pack then shows the
+ * failure screen at once, and its « Réessayer » reloads the page (a new import() of the same URL
+ * would not even be attempted by the browser).
  * Returns the function that cancels it.
  */
 export function preloadQuestionPack(title: TitleKey): () => void {
@@ -84,4 +97,5 @@ export function resetQuestionPacksForTests(): void {
   loaders = { ...DEFAULT_LOADERS }
   loaded.clear()
   pending.clear()
+  failed.clear()
 }

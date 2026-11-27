@@ -93,6 +93,9 @@ function QuestionReview({ answer, number, question }: Reviewed) {
   )
 }
 
+const formatDate = (iso: string) =>
+  new Date(iso).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' })
+
 /**
  * Detail of a past exam: mistakes first, score per theme (maquette Pa7). The questions come
  * from the pack of the title of THAT exam (which may differ from the chosen title; an exam
@@ -108,6 +111,14 @@ export default function ExamenDetail() {
       <PageFrame>
         <div className="mx-auto flex w-full max-w-[30rem] flex-col gap-6 px-5 pt-0 pb-7">
           <BackLink />
+          {/* Same title as once loaded (it needs no question) */}
+          <div className="flex flex-col gap-0.5">
+            <h1 className="text-[1.875rem] leading-none font-bold tracking-[-0.03em] tabular-nums">
+              <span className="sr-only">Examen du {formatDate(record.date)} : </span>
+              <Fraction value={record.score} total={record.total} />
+            </h1>
+            <p className="text-[0.9375rem]">{formatDate(record.date)}</p>
+          </div>
           <QuestionPackStatus pack={pack} />
         </div>
       </PageFrame>
@@ -155,11 +166,7 @@ function ExamenDetailContent({ record, questions }: { record: ExamRecord | null;
     (qid) => byId.get(qid)?.theme,
   )
   const weakest = new Set(weakestThemes(scores))
-  const dateStr = new Date(record.date).toLocaleDateString('fr-FR', {
-    day: 'numeric',
-    month: 'long',
-    year: 'numeric',
-  })
+  const dateStr = formatDate(record.date)
   const reviewState: ReviewState = { reviewIds: errors.map((r) => r.answer.questionId) }
 
   // Same link and same state at the bottom of the page and, on a phone or tablet, under the verdict
