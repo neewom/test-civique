@@ -196,6 +196,11 @@
     @apply font-sans;
     accent-color: var(--primary);
   }
+  /* Tailwind 4 gives buttons the default cursor: every enabled button shows the pointer, as links do */
+  button:not(:disabled),
+  [role='button']:not([aria-disabled='true']) {
+    cursor: pointer;
+  }
   body {
     @apply m-0 bg-background text-foreground;
     /* A long word never pushes out of its box when the text is enlarged */
