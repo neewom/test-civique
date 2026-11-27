@@ -166,19 +166,21 @@ async function cachedTitles() {
 }
 
 // A pack already on the device whose file changed with this version is replaced (online, since
-// an update installs from the network), so the title in use stays available offline. If one
-// cannot be fetched, the whole install fails: the previous version stays in charge with its own
-// packs (nothing is deleted before the activation) and the next page load tries again.
+// an update installs from the network), so the title in use stays available offline. Unlike the
+// rest of the worker, this must NOT swallow a Cache API failure (quota full, blocked storage) nor
+// a network one: the whole install fails, the previous version stays in charge with its own packs
+// (nothing is deleted before the activation) and the next page load tries again.
 async function refreshCachedPacks() {
-  const meta = await cachedAnswer(PACKS_CACHE, META_URL)
-  const previous = meta ? await meta.json().catch(() => ({})) : {}
+  const packs = await caches.open(PACKS_CACHE)
+  const metaResponse = await packs.match(META_URL)
+  const previous = metaResponse ? await metaResponse.json().catch(() => ({})) : {}
   for (const [title, path] of Object.entries(MANIFEST.packs)) {
     const before = previous[title]
-    if (before && before !== path && (await cachedAnswer(PACKS_CACHE, before)) && !(await cachedAnswer(PACKS_CACHE, path))) {
+    if (before && before !== path && (await packs.match(before)) && !(await packs.match(path))) {
       const response = await fetch(path)
       if (!response.ok) throw new Error('pack ' + path + ' not available')
-      await safePut(PACKS_CACHE, path, response)
+      await packs.put(path, response)
     }
   }
-  await safePut(PACKS_CACHE, META_URL, new Response(JSON.stringify(MANIFEST.packs), { headers: { 'Content-Type': 'application/json' } }))
+  await packs.put(META_URL, new Response(JSON.stringify(MANIFEST.packs), { headers: { 'Content-Type': 'application/json' } }))
 }

@@ -73,7 +73,7 @@ function makeCaches() {
   }
   const faults = { put: false, open: false, match: false }
   // What the network answers (set by loadWorker): addAll goes through it, like the real one
-  const net = { serve: async (_path: string): Promise<Response> => new Response('', { status: 404 }) }
+  const net: { serve: (path: string) => Promise<Response> } = { serve: async () => new Response('', { status: 404 }) }
   const cacheApi = (store: Map<string, Response>) => ({
     match: async (r: Request | string) => {
       if (faults.match) throw new Error('match failed')
@@ -350,6 +350,21 @@ describe('service worker : comportement', () => {
     expect(caches.stores.get('packs')!.has(PACKS.pluriannuelle)).toBe(true)
     expect(JSON.parse(await caches.stores.get('packs')!.get('/__sw-packs.json')!.text())).toEqual(PACKS)
     expect(caches.stores.has('shell-v1')).toBe(true)
+  })
+
+  it('un put qui lève pendant le rafraîchissement des paquets (quota plein) fait échouer l\'installation, l\'ancien paquet est conservé', async () => {
+    const caches = makeCaches()
+    const network = { [PACKS.pluriannuelle]: 'pack1', '/assets/pluri-NEW.js': 'pack1-new' }
+    const v1 = loadWorker(MANIFEST, caches, network)
+    await v1.run('install')
+    await v1.run('activate')
+    await v1.run('message', { data: { type: 'warm-pack', title: 'pluriannuelle' } })
+    const v2 = loadWorker({ version: 'v2', precache: ['/index.html'], packs: { ...PACKS, pluriannuelle: '/assets/pluri-NEW.js' } }, caches, network)
+    caches.faults.put = true
+    await expect(v2.run('install')).rejects.toThrow(/quota/)
+    caches.faults.put = false
+    expect(caches.stores.get('packs')!.has(PACKS.pluriannuelle)).toBe(true)
+    expect(JSON.parse(await caches.stores.get('packs')!.get('/__sw-packs.json')!.text())).toEqual(PACKS)
   })
 
   it('une nouvelle version remplace les anciens caches et les paquets périmés, sans toucher à ceux qui restent', async () => {
