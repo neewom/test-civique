@@ -69,12 +69,15 @@ const KNOWN_PATHS: ReadonlySet<string> = new Set([
   '/centres',
   '/titre',
   '/mentions-legales',
-  ...(Object.keys(FICHE_SLUGS) as TitleKey[]).map(ficheUrl),
 ])
+// Fiches are counted only for the exact address (the page compares the slug case-sensitively)
+const FICHE_PATHS: ReadonlySet<string> = new Set((Object.keys(FICHE_SLUGS) as TitleKey[]).map(ficheUrl))
 
-/** Path sent to GoatCounter for an address: known routes as they are, `/examen/:id` as `/examen/detail`, anything else as `/adresse-inconnue`. Case and trailing slash do not matter (the router ignores them). */
+/** Path sent to GoatCounter for an address: known routes as they are, `/examen/:id` as `/examen/detail`, anything else as `/adresse-inconnue`. Trailing slash never matters; case does not matter either (the router ignores it), except for the fiches, which must match exactly. */
 export function countedPath(pathname: string): string {
-  const path = pathname.toLowerCase().replace(/\/+$/, '') || '/'
+  const exact = pathname.replace(/\/+$/, '') || '/'
+  if (FICHE_PATHS.has(exact)) return exact
+  const path = exact.toLowerCase()
   if (KNOWN_PATHS.has(path)) return path
   if (/^\/examen\/[^/]+$/.test(path)) return EXAM_DETAIL_PATH
   return UNKNOWN_PATH
