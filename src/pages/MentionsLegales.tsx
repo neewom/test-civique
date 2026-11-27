@@ -92,12 +92,13 @@ export default function MentionsLegales() {
         <InfoCard title="Statistiques de visite" level={3}>
           <p>
             Pour savoir combien de personnes utilisent le site, nous comptons les pages vues et deux actions : examen
-            commencé, examen terminé (réussi ou pas encore). Pour chaque page vue, la page consultée (les adresses
+            commencé, examen terminé (réussi ou pas encore). Le nom de ces actions indique le titre que vous préparez. Pour chaque page vue, la page consultée (les adresses
             d'examen sont regroupées, sans identifiant d'examen) et la largeur de votre écran sont transmises ; à la
             première page de la visite, le site d'où vous arrivez l'est aussi.
           </p>
           <p>
             Ce comptage passe par GoatCounter : sans cookie, sans identifiant, sans suivi d'une visite à l'autre.
+            GoatCounter en déduit aussi votre navigateur, votre système et votre pays, sans les relier à vous.
             Votre adresse IP sert seulement, pendant 8 heures au plus, à ne pas compter deux fois la même visite ;
             elle n'est jamais enregistrée. Seuls des totaux sont conservés, hébergés dans l'Union européenne.
           </p>
