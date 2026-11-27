@@ -1,3 +1,4 @@
+import { LAUNCH_FREE_DETAIL, LAUNCH_FREE_HEADLINE } from '@/lib/launch-message'
 import { useRef, useState } from 'react'
 import { ArrowRight, Check, CircleAlert } from 'lucide-react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
@@ -170,6 +171,9 @@ function FirstVisit({ selected, onSelect, onContinue, showError, groupRef }: Cho
           </p>
           <p className="rounded-full bg-background/80 px-3 py-0.5 text-xs text-foreground">
             Site indépendant, non officiel
+          </p>
+          <p data-testid="launch-notice" className="max-w-[19rem] text-sm leading-snug md:max-w-[22rem]">
+            <strong className="font-bold">{LAUNCH_FREE_HEADLINE}</strong> {LAUNCH_FREE_DETAIL}
           </p>
         </div>
       </div>
