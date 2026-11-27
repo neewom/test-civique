@@ -105,6 +105,11 @@ export default function Home() {
   const [inProgress, setInProgress] = useState<ExamInProgress | null>(() => loadProgressForTitle(targetTitle))
   // Shortcut under step 1: only with a remembered revision position for the chosen title
   const [revisionLabel] = useState(() => revisionResumeLabel(targetTitle))
+  // The arrow sticks to the last word of the label when it wraps
+  const fullLabel = revisionLabel ? `Continuer où j'en étais : ${revisionLabel}` : ''
+  const lastSpace = fullLabel.lastIndexOf(' ')
+  const revisionLabelHead = fullLabel.slice(0, Math.max(lastSpace, 0))
+  const revisionLabelLast = fullLabel.slice(lastSpace + 1)
   const [confirmDelete, setConfirmDelete] = useState(false)
   const deleteButtonRef = useRef<HTMLButtonElement>(null)
   const stepTwoRef = useRef<HTMLButtonElement>(null)
@@ -181,10 +186,14 @@ export default function Home() {
           {revisionLabel && (
             <Link
               to="/revision"
-              className="mt-1 inline-flex min-h-11 items-center gap-1 rounded-sm px-1 text-[0.9375rem] font-bold underline underline-offset-4"
+              className="mt-1 inline-block min-h-11 rounded-sm px-1 py-[0.6875rem] text-[0.9375rem] leading-snug font-bold underline underline-offset-4"
             >
-              Continuer où j'en étais : {revisionLabel}
-              <ArrowRight aria-hidden="true" className="size-[1em] shrink-0" strokeWidth={2.6} />
+              {revisionLabelHead}
+              {revisionLabelHead ? ' ' : ''}
+              <span className="whitespace-nowrap">
+                {revisionLabelLast}
+                <ArrowRight aria-hidden="true" className="ml-1 inline-block size-[1em] align-[-0.125em]" strokeWidth={2.6} />
+              </span>
             </Link>
           )}
         </li>

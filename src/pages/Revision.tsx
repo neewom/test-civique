@@ -104,7 +104,7 @@ function RevisionContent({ title, pack }: { title: TitleKey; pack: ListedQuestio
   const [examIds] = useState(() => parseReviewIds(location.state, poolIds))
   // Only questions of the pool: an id removed since the exam would count without a card
   const [reviewIds] = useState(() => loadQuestionsToReview(title).filter((id) => poolIds.has(id)))
-  // Coming from an exam detail wins over the memory of the session: nothing is restored then
+  // Coming from an exam detail wins over the remembered view: nothing is restored then
   const [restored] = useState(() => (examIds.length > 0 ? null : loadRevisionView(title, themes, reviewIds.length > 0)))
   const [filter, setFilterState] = useState<Filter>(() =>
     examIds.length > 0 ? { kind: 'exam' } : (restored?.filter ?? { kind: 'all' }),
@@ -126,7 +126,7 @@ function RevisionContent({ title, pack }: { title: TitleKey; pack: ListedQuestio
   // False until the saved position is back: the jump to the top of a new page must not overwrite it
   const tracking = useRef(false)
 
-  // Remember filter, box and position for this tab session (not when the exam filter is on)
+  // Remember filter, box and position on this device (not when the exam filter is on)
   useEffect(() => {
     if (filter.kind === 'exam') return
     saveRevisionView(title, { filter, excludeSituational, scrollY: scrollY.current })
