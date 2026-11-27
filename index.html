@@ -29,7 +29,33 @@
     <script src="/theme-init.js"></script>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <!-- Start screen: page background and header drawn before the JavaScript runs (React replaces
+           it on mount). Same classes, sizes and positions as AppHeader / BrandLogo, so nothing moves
+           at mount. Inert and hidden from screen readers. On a first visit (data-first-visit, set
+           by theme-init.js on / and /titre) the page has no name in its header: only the button stays. -->
+      <div aria-hidden="true" class="flex min-h-svh flex-col bg-background text-foreground">
+        <div class="mx-auto w-full max-w-[62rem] px-[22px] pt-3 pb-3 md:px-8 md:pt-4 lg:px-10">
+          <div class="flex w-full items-center justify-between gap-3">
+            <span class="inline-flex min-h-11 min-w-0 items-center text-xl font-bold [html[data-first-visit]_&]:hidden">
+              <span class="inline-flex min-w-0 items-center gap-[0.4em]">
+                <svg viewBox="0 0 64 64" fill="none" focusable="false" class="size-[1.25em] shrink-0">
+                  <path d="M32 60 V30" class="stroke-[#2c2e2a] dark:stroke-[#f1eee4]" stroke-width="7" stroke-linecap="round" />
+                  <path d="M32 35 C 31 21, 20 13, 6 14 C 6 29, 18 37, 32 35 Z" class="fill-[#8ed462] stroke-[#2c2e2a] dark:stroke-[#f1eee4]" stroke-width="4.5" stroke-linejoin="round" />
+                  <path d="M32 28 C 33 14, 44 6, 58 7 C 58 22, 46 30, 32 28 Z" class="fill-[#f5e211] dark:fill-[#f2de2e] stroke-[#2c2e2a] dark:stroke-[#f1eee4]" stroke-width="4.5" stroke-linejoin="round" />
+                </svg>
+                <span class="min-w-0 text-left [overflow-wrap:anywhere]"><span class="text-[#3a7a2c] dark:text-[#8ed462]">Futur</span> <span class="text-[#2c2e2a] dark:text-[#f1eee4]">Citoyen</span></span>
+              </span>
+            </span>
+            <span class="ml-auto flex size-11 shrink-0 items-center justify-center rounded-full bg-card text-card-foreground">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" focusable="false" class="size-5">
+                <path d="M10 5H3" /><path d="M12 19H3" /><path d="M14 3v4" /><path d="M16 17v4" /><path d="M21 12h-9" /><path d="M21 19h-5" /><path d="M21 5h-7" /><path d="M8 10v4" /><path d="M8 12H3" />
+              </svg>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
