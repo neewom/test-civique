@@ -51,6 +51,7 @@ const pillClass = (pressed: boolean, tone: 'surface' | 'coral' = 'surface') =>
  */
 function QuestionCard({ question, hidden, onReveal }: { question: Question; hidden: boolean; onReveal: () => void }) {
   const answerRef = useRef<HTMLDivElement>(null)
+  const questionId = useId()
   const revealedByUser = useRef(false)
   useEffect(() => {
     if (!hidden && revealedByUser.current) {
@@ -59,8 +60,8 @@ function QuestionCard({ question, hidden, onReveal }: { question: Question; hidd
     }
   }, [hidden])
   return (
-    <li className="flex flex-col gap-2.5 rounded-2xl bg-card p-4 text-left text-card-foreground">
-      <h3 className="text-lg leading-[1.35] font-bold">{question.question}</h3>
+    <li data-question-id={question.id} className="flex flex-col gap-2.5 rounded-2xl bg-card p-4 text-left text-card-foreground">
+      <h3 id={questionId} className="text-lg leading-[1.35] font-bold">{question.question}</h3>
       {hidden ? (
         <button
           type="button"
@@ -68,9 +69,9 @@ function QuestionCard({ question, hidden, onReveal }: { question: Question; hidd
             revealedByUser.current = true
             onReveal()
           }}
-          className="inline-flex min-h-11 max-w-full items-center gap-2 self-start rounded-[1.375rem] bg-muted px-4 py-2 text-[0.9375rem] font-bold text-foreground transition-colors hover:bg-muted/70 focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ring focus-visible:outline-solid forced-colors:border forced-colors:border-[ButtonText]"
+          className="inline-flex min-h-11 max-w-full items-center gap-[6px] self-start rounded-[1.375rem] bg-muted px-[14px] py-2 text-left text-[0.9375rem] font-bold text-foreground transition-colors hover:bg-muted/70 focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ring focus-visible:outline-solid forced-colors:border forced-colors:border-[ButtonText]"
         >
-          <Eye aria-hidden="true" className="size-5 shrink-0" strokeWidth={2.2} />
+          <Eye aria-hidden="true" className="size-[1em] shrink-0" strokeWidth={2.2} />
           <span>
             Afficher la réponse<span className="sr-only"> à la question : {question.question}</span>
           </span>
@@ -80,8 +81,8 @@ function QuestionCard({ question, hidden, onReveal }: { question: Question; hidd
           ref={answerRef}
           tabIndex={-1}
           role="group"
-          aria-label="Réponse"
-          className="flex flex-col gap-2.5 rounded-xl focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ring focus-visible:outline-solid"
+          aria-labelledby={questionId}
+          className="-m-2 flex flex-col gap-2.5 rounded-2xl p-2 focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ring focus-visible:outline-solid"
         >
           <AnswerBox tone="right" label="Bonne réponse">{question.answers[0]}</AnswerBox>
           <p className="text-[0.9375rem] leading-normal">{question.explanation}</p>
@@ -182,26 +183,56 @@ function RevisionContent({ title, pack }: { title: TitleKey; pack: ListedQuestio
     setExcludeSituationalState(next)
   }
   const setHideAnswers = (next: boolean) => {
-    userChanged.current = true
+    // Not `userChanged`: the list of questions stays the same, the page keeps its place
     setHideAnswersState(next)
     // Unchecking shows everything; checking again hides everything again
     setRevealed(new Set())
     // The exam filter is never remembered, but the box is: keep the rest of the remembered view as it was
     if (filter.kind === 'exam') {
-      const base: RevisionView = remembered ?? { filter: { kind: 'all' }, excludeSituational: false, hideAnswers: false, scrollY: 0 }
+      // Read the memory now (it may have changed since the mount, e.g. a filter chosen before the exam filter)
+      const base: RevisionView = loadRevisionView(title, themes, reviewIds.length > 0) ?? {
+        filter: { kind: 'all' },
+        excludeSituational: false,
+        hideAnswers: false,
+        scrollY: 0,
+      }
       saveRevisionView(title, { ...base, hideAnswers: next })
     }
   }
   const bandRef = useRef<HTMLDivElement>(null)
   const cardsRef = useRef<HTMLDivElement>(null)
   const scrollY = useRef(restored?.scrollY ?? 0)
+  const anchor = useRef<{ id: number; offset: number } | null>(
+    restored?.anchorId !== undefined ? { id: restored.anchorId, offset: restored.anchorOffset ?? 0 } : null,
+  )
+  const withAnchor = () => (anchor.current ? { anchorId: anchor.current.id, anchorOffset: anchor.current.offset } : {})
+  // Height of what covers the top of the page once scrolled: the stuck band on a phone (its height, not its
+  // position: it is not stuck yet when the page is back at the top), nothing elsewhere
+  const coveredHeight = () => {
+    const band = bandRef.current
+    return band && getComputedStyle(band).position === 'sticky' ? band.getBoundingClientRect().height : 0
+  }
+  // The first card whose bottom is below the covered area, and where its top sits relative to it
+  const measureAnchor = () => {
+    const covered = coveredHeight()
+    for (const li of cardsRef.current?.querySelectorAll<HTMLElement>('li[data-question-id]') ?? []) {
+      const rect = li.getBoundingClientRect()
+      if (rect.bottom > covered) return { id: Number(li.dataset.questionId), offset: rect.top - covered }
+    }
+    return null
+  }
   // False until the saved position is back: the jump to the top of a new page must not overwrite it
   const tracking = useRef(false)
 
   // Remember filter, box and position on this device (not when the exam filter is on)
   useEffect(() => {
     if (filter.kind === 'exam') return
-    saveRevisionView(title, { filter, excludeSituational, hideAnswers, scrollY: scrollY.current })
+    // Revealing cards changes heights: when the box is the cause, the position is measured again on the new layout
+    if (tracking.current) {
+      scrollY.current = window.scrollY
+      anchor.current = measureAnchor()
+    }
+    saveRevisionView(title, { filter, excludeSituational, hideAnswers, scrollY: scrollY.current, ...withAnchor() })
   }, [title, filter, excludeSituational, hideAnswers])
 
   // A new list starts at its top: from further down, go back to the top of the cards column (under the stuck band)
@@ -214,7 +245,7 @@ function RevisionContent({ title, pack }: { title: TitleKey; pack: ListedQuestio
     const bandHeight = band && getComputedStyle(band).position === 'sticky' ? band.getBoundingClientRect().height : 0
     const top = column.getBoundingClientRect().top + window.scrollY - bandHeight
     if (window.scrollY > top) window.scrollTo(0, Math.max(0, top))
-  }, [filter, excludeSituational, hideAnswers])
+  }, [filter, excludeSituational])
 
   const latest = useRef({ filter, excludeSituational, hideAnswers })
   useEffect(() => {
@@ -229,14 +260,21 @@ function RevisionContent({ title, pack }: { title: TitleKey; pack: ListedQuestio
       // Leaving pushes the new address before the router scrolls the next page to the top
       if (!tracking.current || window.location.pathname !== pathname || f.kind === 'exam') return
       scrollY.current = window.scrollY
-      saveRevisionView(title, { filter: f, excludeSituational: ex, hideAnswers: hide, scrollY: scrollY.current })
+      anchor.current = measureAnchor()
+      saveRevisionView(title, { filter: f, excludeSituational: ex, hideAnswers: hide, scrollY: scrollY.current, ...withAnchor() })
     }
     const onScroll = () => {
       if (!frame) frame = requestAnimationFrame(remember)
     }
     // Wait for the page scroll reset of the router, then put the saved position back
     const timer = window.setTimeout(() => {
-      if (scrollY.current > 0) window.scrollTo(0, scrollY.current)
+      // Back on the same card when it is still listed (the heights of the cards may differ from the last visit)
+      const card = anchor.current
+        ? cardsRef.current?.querySelector<HTMLElement>(`li[data-question-id="${anchor.current.id}"]`)
+        : null
+      if (card && anchor.current) {
+        window.scrollTo(0, Math.max(0, card.getBoundingClientRect().top + window.scrollY - coveredHeight() - anchor.current.offset))
+      } else if (scrollY.current > 0) window.scrollTo(0, scrollY.current)
       // The restored pill may be out of sight in the sideways band: bring it in without moving the page
       const band = bandRef.current
       const pressed = band?.querySelector<HTMLElement>('[aria-pressed="true"]')
@@ -334,7 +372,7 @@ function RevisionContent({ title, pack }: { title: TitleKey; pack: ListedQuestio
             </div>
           </div>
 
-          <div className="flex flex-col">
+          <div className="flex flex-col gap-3.5">
             <CheckOption checked={excludeSituational} onChange={setExcludeSituational}>
               Sans les mises en situation
             </CheckOption>

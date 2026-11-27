@@ -18,6 +18,13 @@ export interface RevisionView {
   /** « Masquer les réponses » box; optional in storage (absent = unchecked), always set here */
   hideAnswers: boolean
   scrollY: number
+  /**
+   * Landmark of the position: id of the first question card under the sticky band and its distance below the band
+   * (optional in storage). The page puts it back on that card when it is still listed, since the cards differ in
+   * height (revealed or not) from one visit to the other; else `scrollY` is used.
+   */
+  anchorId?: number
+  anchorOffset?: number
 }
 
 const keyOf = (title: TitleKey) => `${REVISION_VIEW_KEY_PREFIX}${title}`
@@ -37,7 +44,7 @@ export function loadRevisionView(
     if (raw === null) return null
     const data: unknown = JSON.parse(raw)
     if (typeof data !== 'object' || data === null) return null
-    const { filter: f, excludeSituational, hideAnswers, scrollY } = data as Record<string, unknown>
+    const { filter: f, excludeSituational, hideAnswers, scrollY, anchorId, anchorOffset } = data as Record<string, unknown>
     if (typeof f !== 'object' || f === null) return null
     const { kind, theme } = f as Record<string, unknown>
     let filter: StoredFilter
@@ -51,6 +58,9 @@ export function loadRevisionView(
       excludeSituational: excludeSituational === true,
       hideAnswers: hideAnswers === true,
       scrollY: typeof scrollY === 'number' && Number.isFinite(scrollY) && scrollY > 0 ? scrollY : 0,
+      ...(typeof anchorId === 'number' && Number.isInteger(anchorId)
+        ? { anchorId, anchorOffset: typeof anchorOffset === 'number' && Number.isFinite(anchorOffset) ? anchorOffset : 0 }
+        : {}),
     }
   } catch {
     return null

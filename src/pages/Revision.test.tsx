@@ -636,7 +636,7 @@ describe('Revision — masquer les réponses', () => {
     renderRevision()
     fireEvent.click(hideBox())
     fireEvent.click(revealButtons()[0])
-    expect(firstQuestion().getByRole('group', { name: 'Réponse' })).toHaveFocus()
+    expect(firstQuestion().getByRole('group', { name: questions[0].question })).toHaveFocus()
   })
 
   it('une carte révélée le reste quand on change de filtre', () => {
@@ -710,5 +710,99 @@ describe('Revision — masquer les réponses', () => {
     fireEvent.click(screen.getByLabelText('Sans les mises en situation'))
     fireEvent.click(hideBox())
     expect(revealButtons()).toHaveLength(official.length)
+  })
+})
+
+describe('Revision — masquer les réponses : position et mémoire', () => {
+  const KEY = 'revision-view:pluriannuelle'
+  const stored = () => JSON.parse(localStorageMock.getItem(KEY) ?? 'null')
+  const target = questions[30]
+
+  afterEach(() => {
+    window.history.pushState({}, '', '/')
+    vi.restoreAllMocks()
+    vi.useRealTimers()
+    // @ts-expect-error restore the jsdom default (own property removed)
+    delete window.scrollY
+  })
+
+  // Card `target` sits 700 px below the top of the window; every other element answers 0 (jsdom has no layout)
+  function mockLayout(scrollY = 0) {
+    Object.defineProperty(window, 'scrollY', { configurable: true, value: scrollY })
+    vi.spyOn(Element.prototype, 'getBoundingClientRect').mockImplementation(function (this: Element) {
+      const id = (this as HTMLElement).dataset?.questionId
+      const top = id === String(target.id) ? 700 : 0
+      return { top, bottom: top + 100, height: 100, left: 0, right: 0, width: 0, x: 0, y: top, toJSON: () => ({}) } as DOMRect
+    })
+    return vi.spyOn(window, 'scrollTo').mockImplementation(() => {})
+  }
+
+  it('retrouve la même carte quand elle est encore dans la liste, pas la position de défilement', () => {
+    localStorageMock.setItem(
+      KEY,
+      JSON.stringify({ filter: { kind: 'all' }, excludeSituational: false, hideAnswers: true, scrollY: 30000, anchorId: target.id, anchorOffset: 20 }),
+    )
+    const scrollTo = mockLayout(100)
+    vi.useFakeTimers()
+    renderRevision()
+    vi.advanceTimersByTime(100)
+    // top of the card (700) + page position (100) - what covers the page (0) - remembered distance (20)
+    expect(scrollTo).toHaveBeenCalledWith(0, 780)
+  })
+
+  it('repère absent de la liste affichée : retour à la position de défilement', () => {
+    localStorageMock.setItem(
+      KEY,
+      JSON.stringify({ filter: { kind: 'all' }, excludeSituational: false, scrollY: 1234, anchorId: 999999, anchorOffset: 20 }),
+    )
+    const scrollTo = mockLayout()
+    vi.useFakeTimers()
+    renderRevision()
+    vi.advanceTimersByTime(100)
+    expect(scrollTo).toHaveBeenCalledWith(0, 1234)
+  })
+
+  it('un repère illisible est ignoré', () => {
+    localStorageMock.setItem(
+      KEY,
+      JSON.stringify({ filter: { kind: 'all' }, excludeSituational: false, scrollY: 1234, anchorId: 'x', anchorOffset: 'y' }),
+    )
+    const scrollTo = mockLayout()
+    vi.useFakeTimers()
+    renderRevision()
+    vi.advanceTimersByTime(100)
+    expect(scrollTo).toHaveBeenCalledWith(0, 1234)
+  })
+
+  it('enregistre la première carte visible au défilement, avec les cartes révélées', async () => {
+    mockLayout()
+    // The page only remembers while the address is its own (the router of the test does not change it)
+    window.history.pushState({}, '', '/revision')
+    vi.useFakeTimers({ toFake: ['setTimeout', 'requestAnimationFrame', 'cancelAnimationFrame'] })
+    renderRevision()
+    fireEvent.click(screen.getByLabelText('Masquer les réponses'))
+    fireEvent.click(screen.getAllByRole('button', { name: /^Afficher la réponse/ })[0])
+    vi.advanceTimersByTime(100)
+    fireEvent.scroll(window)
+    vi.advanceTimersByTime(50)
+    // The first card ends below the top (bottom 100 > 0): it is the landmark
+    expect(stored()).toMatchObject({ hideAnswers: true, anchorId: Number(screen.getAllByRole('listitem')[0].dataset.questionId), anchorOffset: 0 })
+  })
+
+  it('depuis un examen, cocher la case relit la mémoire du moment (pas celle du montage)', () => {
+    localStorageMock.setItem(KEY, JSON.stringify({ filter: { kind: 'theme', theme: themes[0] }, excludeSituational: false, scrollY: 1234 }))
+    renderRevision({ reviewIds: [1, 2, 3, 4, 5] })
+    // Another tab (or a choice made earlier) changed the memory after the mount
+    localStorageMock.setItem(KEY, JSON.stringify({ filter: { kind: 'all' }, excludeSituational: true, scrollY: 3000 }))
+    fireEvent.click(screen.getByLabelText('Masquer les réponses'))
+    expect(stored()).toEqual({ filter: { kind: 'all' }, excludeSituational: true, hideAnswers: true, scrollY: 3000 })
+  })
+
+  it('cocher ou décocher la case depuis le bas ne remonte pas en haut des cartes', () => {
+    const scrollTo = mockLayout(20000)
+    renderRevision()
+    fireEvent.click(screen.getByLabelText('Masquer les réponses'))
+    fireEvent.click(screen.getByLabelText('Masquer les réponses'))
+    expect(scrollTo).not.toHaveBeenCalled()
   })
 })
