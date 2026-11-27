@@ -230,13 +230,18 @@ describe('analytics — chemins regroupés (countedPath)', () => {
   it('ignore la casse et le slash final, comme le routeur', () => {
     trackPageView('/Regles/')
     trackPageView('/examen/')
-    trackPageView('/Titres/Naturalisation')
     trackPageView('/Examen/ABC/')
+    expect(sentUrls().map((u) => u.searchParams.get('p'))).toEqual(['/regles', '/examen', '/examen/detail'])
+  })
+
+  it('ne compte une fiche que si l\'adresse correspond exactement (casse comprise, slash final toléré)', () => {
+    trackPageView('/titres/naturalisation/')
+    trackPageView('/Titres/Naturalisation')
+    trackPageView('/titres/Carte-de-Resident')
     expect(sentUrls().map((u) => u.searchParams.get('p'))).toEqual([
-      '/regles',
-      '/examen',
       '/titres/naturalisation',
-      '/examen/detail',
+      '/adresse-inconnue',
+      '/adresse-inconnue',
     ])
   })
 
