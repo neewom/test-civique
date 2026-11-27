@@ -1,4 +1,4 @@
-import { Component, useEffect, useRef, type ErrorInfo, type ReactNode } from 'react'
+import { Component, useEffect, useRef, type ReactNode } from 'react'
 import { useLocation } from 'react-router-dom'
 import { AppHeader } from '@/components/AppHeader'
 import { OrganicBackground } from '@/components/OrganicBackground'
@@ -52,10 +52,6 @@ class Boundary extends Component<BoundaryProps, { failed: boolean }> {
 
   static getDerivedStateFromError() {
     return { failed: true }
-  }
-
-  componentDidCatch(error: Error, info: ErrorInfo) {
-    console.error(error, info.componentStack)
   }
 
   componentDidUpdate(prev: BoundaryProps) {
