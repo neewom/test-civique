@@ -2859,14 +2859,12 @@
     ],
     "question": "Jeter une bouteille dans la rue est :",
     "distractors": [
-      "Toléré si personne ne regarde et que c'est accidentel",
-      "Autorisé dans les zones commerciales très fréquentées",
-      "Un droit garanti par la liberté individuelle de chacun",
-      "Interdit seulement entre 20h et 8h du matin",
-      "Autorisé pour les petits déchets biodégradables",
-      "Puni seulement en cas de récidive déclarée au tribunal",
-      "Interdit mais jamais sanctionné dans les grandes villes",
-      "Autorisé si une poubelle publique n'est pas à moins de 100 mètres"
+      "Toléré, c'est une simple impolitesse sans amende entre 8 h et 20 h en ville",
+      "Autorisé, c'est un droit dans les zones commerciales très fréquentées de 8 h à 20 h",
+      "Autorisé, c'est un droit garanti par la liberté individuelle, y compris après 22 h",
+      "Puni, c'est une sanction réservée aux récidivistes déclarés devant un tribunal, à la 3e fois",
+      "Autorisé, c'est permis pour les petits déchets biodégradables sur les trottoirs de 7 h à 9 h",
+      "Autorisé, c'est permis si la poubelle publique la plus proche est trop éloignée, à 100 mètres"
     ],
     "explanation": "Jeter ou abandonner un déchet sur la voie publique est interdit et puni d'une amende forfaitaire de 135 € (375 € si elle est payée après 45 jours). En cas de contestation ou de non-paiement, le juge peut fixer l'amende jusqu'à 750 €. Chacun est responsable de la propreté de l'espace public.",
     "answers": [
@@ -2915,14 +2913,12 @@
     ],
     "question": "Que doit faire une personne en cas d’accident ?",
     "distractors": [
-      "Continuer sa route si elle n'est pas en tort",
-      "Appeler uniquement son assurance avant de faire quoi que ce soit",
-      "Partir rapidement pour ne pas gêner la circulation",
-      "Attendre passivement que les autres appellent les secours",
-      "Prendre des photos et partir pour envoyer le dossier à son assureur",
-      "Appeler un avocat avant d'appeler les secours",
-      "Secourir les victimes uniquement si elles le demandent",
-      "Laisser les autres s'en occuper si on est trop choqué"
+      "Continuer sa route, prévenir son assurance (sous 5 jours) et envoyer le constat plus tard",
+      "Prendre des photos, partir sans attendre (avant 10 minutes) et appeler un avocat",
+      "Attendre, laisser les autres appeler les secours (15, 18 ou 112) et ne pas rester sur les lieux",
+      "Appeler un avocat, contacter son assureur (dans les 2 heures) puis seulement les secours",
+      "Secourir les victimes si elles le demandent, repartir (dans les 10 minutes) et prévenir un proche",
+      "Laisser les autres s'en occuper, noter la plaque (avant 1 heure) et continuer son chemin"
     ],
     "explanation": "En cas d'accident, toute personne est légalement obligée de s'arrêter et de porter assistance aux victimes (obligation de porter secours, Code pénal). Il faut appeler le 15 (SAMU), le 18 (pompiers) ou le 112 (urgences européennes), sécuriser les lieux et rester jusqu'à l'arrivée des secours.",
     "answers": [
@@ -2942,14 +2938,12 @@
     ],
     "question": "Que permet la citoyenneté française ?",
     "distractors": [
-      "Uniquement de voyager librement sans passeport en Europe",
-      "De ne jamais être jugé par un tribunal français",
-      "D'accéder gratuitement à tous les services publics sans cotisation",
-      "De ne pas payer d'impôts si on est né en France",
-      "D'obtenir automatiquement la nationalité de tous les pays de l'UE",
-      "De bénéficier d'un logement social sans condition d'ancienneté",
-      "D'être exempté du service militaire en cas de guerre",
-      "De pouvoir travailler sans aucune restriction dans le monde entier"
+      "De ne jamais être jugé, d'échapper à l'impôt, de refuser les lois et de ne dépendre d'aucun tribunal",
+      "D'accéder gratuitement aux services publics, de recevoir un logement, d'avoir un emploi et de ne pas cotiser",
+      "D'obtenir la nationalité de tous les pays de l'UE, d'y voter et de ne pas payer d'impôts",
+      "De ne pas payer d'impôts, d'être dispensé des lois, de refuser les contrôles et de vivre à l'étranger",
+      "D'être exempté du service militaire, de ne pas être contrôlé, de refuser les lois et de choisir ses juges",
+      "De travailler sans restriction, de voyager sans passeport, de ne pas payer de visa et de vivre partout dans le monde"
     ],
     "explanation": "La citoyenneté française donne le droit de voter et d'être élu à toutes les élections nationales et locales, d'exercer des fonctions publiques, et de bénéficier de la pleine protection diplomatique de la France à l'étranger. Elle s'accompagne aussi de devoirs civiques.",
     "answers": [
@@ -2969,14 +2963,12 @@
     ],
     "question": "Que risque une personne qui ne respecte pas la loi ?",
     "distractors": [
-      "Rien, si c'est la première fois et que personne ne se plaint",
-      "Seulement une réprimande verbale de la police",
-      "Une expulsion du territoire si c'est un étranger uniquement",
-      "Une interdiction d'exercer ses droits civiques pendant 6 mois",
-      "Uniquement une amende, jamais de prison en France",
-      "Un simple avertissement inscrit dans un fichier national",
-      "Des sanctions uniquement si elle est récidiviste",
-      "Une obligation de suivre une formation civique de 3 jours"
+      "Une simple convocation : lettre d'avertissement, rappel à l'ordre, suite décidée par la mairie",
+      "Des sanctions religieuses : excuses publiques, jeûne, exclusion de la communauté selon la coutume",
+      "Une sanction administrative : retrait de la carte Vitale, suspension du téléphone selon le préfet",
+      "Une sanction familiale : retrait de l'autorité des parents, exil, changement de nom selon la famille",
+      "Des sanctions sportives : suspension, disqualification, match à huis clos selon la fédération",
+      "Une sanction scolaire : exclusion, devoirs supplémentaires, convocation des parents selon le directeur"
     ],
     "explanation": "Toute personne qui ne respecte pas la loi s'expose à des sanctions pénales proportionnelles à la gravité de l'infraction : une amende pour les contraventions, des peines d'emprisonnement et/ou d'amendes pour les délits, et des peines d'emprisonnement pouvant aller jusqu'à la réclusion à perpétuité pour les crimes.",
     "answers": [
@@ -3054,14 +3046,12 @@
     ],
     "question": "Qu'est-ce qu'une infraction ?",
     "distractors": [
-      "Un désaccord contractuel entre deux parties",
-      "Un manquement aux règles de politesse en société",
-      "Une erreur administrative commise par un fonctionnaire",
-      "Un non-paiement d'impôts par oubli",
-      "Un acte contraire au règlement intérieur d'une entreprise",
-      "Un comportement jugé immoral mais non interdit par la loi",
-      "Une violation des clauses d'un contrat commercial",
-      "Un manquement à une obligation purement morale"
+      "Un désaccord entre deux personnes, réglé par un contrat ou un accord écrit selon l'usage",
+      "Un manquement aux règles de politesse, jugé par l'entourage ou la famille selon le contexte",
+      "Une erreur administrative, commise par un fonctionnaire et corrigée par sa hiérarchie selon le cas",
+      "Un acte contraire au règlement intérieur, sanctionné par l'employeur ou le directeur selon la faute",
+      "Un comportement jugé immoral, mais autorisé par la loi et sanctionné par l'opinion publique",
+      "Une violation des clauses d'un contrat, réglée devant un juge civil selon le montant"
     ],
     "explanation": "Une infraction est un acte contraire à la loi pénale. Il en existe trois catégories par ordre de gravité : la contravention (ex : stationnement interdit), le délit (ex : vol, agression), et le crime (ex : meurtre, viol). Chaque catégorie est sanctionnée par des peines différentes.",
     "answers": [
@@ -3166,13 +3156,12 @@
     "crNumber": 117,
     "question": "Que doit faire une victime de violences ?",
     "distractors": [
-      "Attendre que la situation s'améliore d'elle-même",
-      "Garder le silence pour ne pas créer de problèmes",
-      "Attendre d'avoir des preuves écrites avant de demander de l'aide",
-      "Fuir à l'étranger pour échapper à l'agresseur",
-      "Appeler uniquement son assurance habitation",
-      "Saisir le préfet par courrier recommandé",
-      "Écrire une pétition en ligne pour témoigner"
+      "Garder le silence, appeler le 115 et éviter de voir un médecin",
+      "Fuir à l'étranger, appeler le 114 et éviter de porter plainte",
+      "Écrire une pétition, appeler le 196 et attendre une année",
+      "Appeler son assurance habitation, composer le 9999 et rester seule chez soi",
+      "Saisir le préfet par courrier, appeler le 8888 et garder le silence",
+      "Attendre des preuves écrites, appeler le 7777 et ne pas consulter de médecin"
     ],
     "explanation": "Une victime de violences ne doit pas rester seule. Elle peut porter plainte dans n'importe quel commissariat ou gendarmerie (ou écrire au procureur de la République), appeler le 17 en cas de danger immédiat, le 3919 (violences conjugales, gratuit 24h/24), faire constater ses blessures par un médecin et se faire accompagner gratuitement par une association. En cas de violences conjugales, elle peut aussi demander une ordonnance de protection au juge.",
     "answers": [
@@ -3197,14 +3186,12 @@
     "natNumber": 128,
     "question": "Quelle est l'infraction la plus grave ?",
     "distractors": [
-      "La contravention de 5e classe",
-      "Le délit correctionnel aggravé",
-      "La récidive de délit",
-      "La faute civile intentionnelle grave",
-      "La violation d'une ordonnance de protection",
-      "Le délit financier commis par un élu",
-      "La fraude électorale",
-      "L'outrage à magistrat en audience"
+      "La contravention (stationnement interdit, excès de vitesse léger…)",
+      "Le délit (vol, harcèlement, escroquerie…)",
+      "La faute civile (dette impayée, loyer en retard…)",
+      "L'incivilité (bruit, tag, déchets au sol…)",
+      "La contravention de 5e classe (tapage, vitesse excessive…)",
+      "Le délit routier (conduite sans assurance, téléphone au volant…)"
     ],
     "explanation": "En droit français, il y a trois catégories d'infractions par ordre de gravité croissante : la contravention (la moins grave, amende), le délit (vol, harcèlement…) et le crime (la plus grave : meurtre, viol, terrorisme…). Les crimes sont jugés par la cour d'assises ou la cour criminelle départementale et peuvent être punis de la réclusion criminelle à perpétuité.",
     "answers": [
@@ -3888,14 +3875,13 @@
     ],
     "question": "Qu'est-ce que Paris ?",
     "distractors": [
-      "Une région administrative du nord de la France",
-      "La deuxième ville de France après Lyon",
-      "Un département d'outre-mer français dans la Caraïbe",
+      "Une région du nord de la France",
+      "La deuxième ville de France",
+      "Un département d'outre-mer",
       "Le siège de l'Union européenne",
-      "Le nom de la région Île-de-France uniquement",
-      "Une commune de la banlieue de Lyon",
-      "Le chef-lieu de la région Normandie",
-      "Une ville-État autonome comme Monaco"
+      "Une commune près de Lyon",
+      "Le chef-lieu de la Normandie",
+      "Une ville-État comme Monaco"
     ],
     "explanation": "Paris est la capitale de la France. C'est le siège des grandes institutions de la République : présidence (Élysée), Premier ministre (Matignon), Assemblée nationale, Sénat… La région Île-de-France, autour de Paris, compte environ 12,4 millions d'habitants : c'est la région la plus peuplée du pays.",
     "answers": [
@@ -4628,17 +4614,17 @@
     ],
     "question": "Après avoir obtenu le permis de conduire, que faut-il faire pour pouvoir conduire sa voiture ?",
     "distractors": [
-      "Payer une taxe annuelle spéciale à la préfecture",
-      "Déclarer son permis à la mairie de sa commune",
-      "Passer un contrôle médical annuel obligatoire",
-      "Faire enregistrer son permis au ministère des Transports",
-      "Obtenir un certificat de bonne conduite de la police",
-      "Payer une redevance annuelle pour utiliser les routes",
+      "Payer une taxe annuelle à la préfecture",
+      "Déclarer son permis à la mairie",
+      "Passer un contrôle médical chaque année",
+      "Faire enregistrer son permis au ministère",
+      "Obtenir un certificat de bonne conduite",
+      "Payer une redevance pour utiliser les routes",
       "Faire certifier son permis par un notaire"
     ],
     "explanation": "Pour conduire légalement un véhicule en France, il faut au minimum souscrire une assurance de responsabilité civile (garantie obligatoire, couvrant les dommages causés aux tiers). Sans assurance, conduire est illégal et passible de lourdes sanctions. D'autres assurances complémentaires sont facultatives.",
     "answers": [
-      "Assurer son véhicule"
+      "Souscrire une assurance pour son véhicule"
     ],
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/demarches-administratives/les-demarches-du-quotidien-comme-le-permis-de-conduire-1/",
@@ -4852,14 +4838,12 @@
     ],
     "question": "Qui est aidé par France Travail ?",
     "distractors": [
-      "Uniquement les personnes de moins de 25 ans sans emploi",
-      "Seulement les cadres et les ingénieurs au chômage",
-      "Les retraités qui cherchent un emploi à temps partiel",
-      "Uniquement les personnes licenciées par de grandes entreprises",
-      "Seulement les personnes ayant travaillé plus de 10 ans",
-      "Uniquement les résidents en zone rurale en difficulté",
-      "Les entrepreneurs qui ont fait faillite uniquement",
-      "Seulement les fonctionnaires en reconversion professionnelle"
+      "Les jeunes de moins de 16 ans, pour l'orientation scolaire et les bourses d'études",
+      "Les propriétaires de logements, pour la gestion de leurs loyers et le paiement de leurs impôts",
+      "Les personnes hospitalisées, pour le remboursement des soins et les arrêts maladie",
+      "Les chefs d'entreprise en difficulté, pour la gestion des faillites et les aides au logement",
+      "Les familles de trois enfants ou plus, pour les allocations familiales et les places en crèche",
+      "Les élèves du lycée, pour l'inscription au baccalauréat et les bourses de lycée"
     ],
     "explanation": "France Travail accompagne toute personne à la recherche d'un emploi : aide à la rédaction de CV et lettres de motivation, accès aux offres d'emploi, formations, et versement des allocations chômage (ARE) aux personnes ayant cotisé suffisamment et ayant perdu involontairement leur emploi.",
     "answers": [
@@ -4882,14 +4866,14 @@
     "natNumber": 242,
     "question": "Une personne étrangère en situation régulière peut créer son entreprise :",
     "distractors": [
-      "Seulement si elle a la nationalité française",
-      "Uniquement dans les secteurs non réservés aux Français",
-      "Seulement après 10 ans de résidence légale en France",
-      "Uniquement dans les zones franches urbaines désignées",
-      "Avec une caution bancaire obligatoire de 10 000 euros",
-      "Seulement si son conjoint ou sa conjointe est français",
-      "Uniquement si elle est ressortissante d'un pays de l'UE",
-      "Après avoir obtenu un agrément spécial de la préfecture"
+      "Avec une autorisation spéciale de la préfecture",
+      "Après dix ans de résidence légale en France",
+      "Avec un associé de nationalité française",
+      "Avec une caution bancaire de 10 000 euros",
+      "Dans des conditions plus strictes que celles d'un Français",
+      "Dans les zones franches urbaines désignées par l'État",
+      "Seulement si elle est ressortissante d'un pays de l'UE",
+      "Uniquement dans les secteurs non réservés aux Français"
     ],
     "explanation": "Toute personne étrangère résidant légalement en France peut créer son entreprise dans les mêmes conditions qu'un Français. La liberté d'entreprendre est garantie par la loi indépendamment de la nationalité, à condition d'être en situation régulière sur le territoire.",
     "answers": [
@@ -4996,14 +4980,12 @@
     ],
     "question": "Qu’est-ce qu’un numéro d’urgence ?",
     "distractors": [
-      "Un numéro permettant d'appeler le gouvernement en cas de problème",
-      "Un numéro réservé aux médecins pour contacter les hôpitaux",
-      "Un numéro payant pour accéder à des services prioritaires",
-      "Un numéro permettant de signaler des infractions fiscales",
-      "Un numéro pour contacter les ambassades en cas de problème",
-      "Un numéro pour accéder aux services sociaux d'urgence uniquement",
-      "Un numéro pour signaler des pannes d'électricité ou de gaz",
-      "Un numéro permettant de contacter les autorités à l'étranger"
+      "Un numéro de téléphone réservé aux médecins pour contacter les hôpitaux de leur région",
+      "Un numéro de téléphone payant permettant d'accéder à des services prioritaires en ville",
+      "Un numéro de téléphone permettant de signaler des infractions fiscales à l'administration",
+      "Un numéro de téléphone pour contacter les ambassades de France en cas de problème à l'étranger",
+      "Un numéro de téléphone pour signaler des pannes d'électricité ou de gaz dans son logement",
+      "Un numéro de téléphone permettant de contacter le gouvernement en cas de problème administratif"
     ],
     "explanation": "Un numéro d'urgence est un numéro court, gratuit et joignable 24 h/24 et 7 j/7, qui permet d'appeler rapidement les secours (SAMU, police, pompiers) en cas de danger. Le 112 est le numéro d'urgence européen ; le 114 est réservé aux personnes sourdes ou malentendantes.",
     "answers": [
@@ -5025,14 +5007,12 @@
     "crNumber": 187,
     "question": "Concernant l'accès aux soins, quelle proposition est correcte ?",
     "distractors": [
-      "Seuls les citoyens français ont droit aux soins remboursés",
-      "Les soins ne sont remboursés que pour les personnes qui travaillent",
-      "Les étrangers doivent payer tous leurs soins sans remboursement",
-      "Les soins ne sont gratuits que dans les hôpitaux publics d'urgence",
-      "Seules les personnes cotisant depuis plus de 5 ans ont droit aux remboursements",
-      "Les soins ne sont couverts que pour les maladies graves et hospitalisations",
-      "Les remboursements sont réservés aux personnes ayant une mutuelle",
-      "Seuls les résidents en zones urbaines ont accès aux soins remboursés"
+      "Seuls les citoyens français sont couverts (carte Vitale, ou carte d'identité)",
+      "Il n'y a de remboursement que pour les personnes qui travaillent (salariés, ou fonctionnaires)",
+      "Pour les étrangers, tous les soins sont à payer (sans remboursement, ou avec une mutuelle)",
+      "Il faut cotiser depuis 5 ans pour être remboursé (salariés, ou indépendants)",
+      "Les soins couverts sont ceux des maladies graves (hospitalisations, ou opérations)",
+      "Une mutuelle est nécessaire pour être remboursé (contrat privé, ou entreprise)"
     ],
     "explanation": "La protection universelle maladie (PUMa) prend en charge les frais de santé de toute personne qui travaille ou réside en France de manière stable et régulière. Les étrangers en situation irrégulière qui vivent en France depuis plus de 3 mois peuvent, sous conditions de ressources, bénéficier de l'aide médicale de l'État (AME). La Complémentaire santé solidaire (C2S) aide les personnes aux revenus modestes.",
     "answers": [
@@ -5053,18 +5033,17 @@
     ],
     "question": "En cas de problème de santé non urgent, à qui faut-il s’adresser en premier ?",
     "distractors": [
-      "Directement aux urgences de l'hôpital le plus proche",
-      "À un spécialiste de son choix sans ordonnance",
-      "À la pharmacie uniquement pour un diagnostic",
-      "Au SAMU pour un avis téléphonique gratuit",
-      "Au médecin du travail de son entreprise",
-      "À l'infirmière scolaire ou de l'entreprise",
-      "À un cabinet de télémédecine sans médecin traitant",
-      "Au service hospitalier d'un CHU directement"
+      "Directement aux urgences",
+      "À un spécialiste de son choix",
+      "À la pharmacie pour un diagnostic",
+      "Au SAMU pour un avis téléphonique",
+      "Au médecin du travail de l'entreprise",
+      "À un service de télémédecine",
+      "Au service d'un CHU"
     ],
     "explanation": "Le médecin traitant est le premier interlocuteur à consulter pour un problème de santé courant. On le choisit et on le déclare. Il coordonne le parcours de soins et oriente vers des spécialistes si nécessaire. Sans passer par lui (sauf urgence ou spécialistes en accès direct), les consultations sont moins bien remboursées.",
     "answers": [
-      "À son médecin traitant"
+      "À son médecin traitant déclaré"
     ],
     "group": "parcours-de-soins",
     "source": {
@@ -5195,14 +5174,14 @@
     "natNumber": 233,
     "question": "À quoi sert une mutuelle santé ?",
     "distractors": [
-      "À remplacer entièrement la Sécurité sociale",
-      "À payer uniquement les médicaments non remboursés",
-      "À financer exclusivement les hospitalisations d'urgence",
-      "À obtenir des soins entièrement gratuits à l'étranger",
-      "À couvrir uniquement les accidents du travail",
+      "À remplacer la Sécurité sociale pour les salariés",
+      "À payer les impôts à la place du salarié",
+      "À financer les hospitalisations d'urgence à la place de l'hôpital",
+      "À obtenir des soins gratuits à l'étranger",
+      "À couvrir les accidents du travail à la place de l'employeur",
       "À remplacer la carte Vitale en cas de perte",
-      "À financer uniquement les cures thermales",
-      "À accéder aux soins sans passer par un médecin traitant"
+      "À financer les cures thermales de ses adhérents",
+      "À payer uniquement les frais de transport en ambulance"
     ],
     "explanation": "La mutuelle (ou complémentaire santé) complète la prise en charge de base de l'Assurance maladie : elle rembourse tout ou partie de ce qui reste à payer (soins, médicaments, dentaire, optique…), selon la formule choisie. Elle n'est pas obligatoire mais recommandée. Tout employeur du secteur privé doit en proposer une à ses salariés.",
     "answers": [
@@ -5280,14 +5259,12 @@
     ],
     "question": "Pour qui l'école est-elle obligatoire ?",
     "distractors": [
-      "Uniquement pour les enfants de nationalité française",
-      "Seulement pour les enfants dont les parents travaillent",
-      "Uniquement dans les grandes villes",
-      "Pour les enfants français et européens uniquement",
-      "Seulement pour les enfants nés sur le territoire",
-      "Pour les enfants en situation régulière uniquement",
-      "Uniquement dans l'enseignement public",
-      "Seulement à partir de 6 ans pour les enfants étrangers"
+      "Pour les enfants français de 6 à 16 ans, nés ou non sur le territoire",
+      "Pour les enfants de 3 à 16 ans dont les parents travaillent, quelle que soit leur nationalité",
+      "Pour les enfants de 6 à 16 ans des grandes villes, quelle que soit leur nationalité",
+      "Pour les enfants français et européens de 3 à 16 ans, nés ici ou non",
+      "Pour les enfants de 3 à 16 ans en situation régulière, français ou étrangers",
+      "Pour les enfants de 3 à 16 ans inscrits dans l'enseignement public, français ou étrangers"
     ],
     "explanation": "L'école est obligatoire pour TOUS les enfants qui vivent en France, de 3 à 16 ans, sans distinction de nationalité ni de situation administrative des parents. C'est à la fois un droit et une obligation. Les enfants vont dans une école publique ou privée ; l'instruction en famille n'est possible qu'à titre exceptionnel, avec une autorisation.",
     "answers": [
@@ -5312,14 +5289,14 @@
       "Le CAP (Certificat d'aptitude professionnelle)",
       "La licence universitaire (Bac+3)",
       "Le BTS (Brevet de technicien supérieur)",
-      "Le certificat d'études primaires",
+      "Le certificat d'études primaires (CEP)",
       "Le BEPC (Brevet d'études du premier cycle)",
       "Le DUT (Diplôme universitaire de technologie)",
-      "Le diplôme de maturité scolaire"
+      "Le diplôme de maturité (DM)"
     ],
     "explanation": "Le baccalauréat (le 'bac') sanctionne la fin des études secondaires en classe de Terminale (lycée). Créé par Napoléon en 1808, il permet d'accéder à l'enseignement supérieur : université, BTS, IUT, classes préparatoires aux grandes écoles, et écoles spécialisées.",
     "answers": [
-      "Le baccalauréat"
+      "Le baccalauréat (bac) de fin de lycée"
     ],
     "group": "cursus-scolaire",
     "source": {
@@ -5336,14 +5313,12 @@
     ],
     "question": "Dans quels établissements scolaires vont les élèves après l'école élémentaire ?",
     "distractors": [
-      "Directement au lycée professionnel dès 11 ans",
-      "À l'université après validation du primaire",
-      "En centre de formation professionnelle (CFA) dès 12 ans",
-      "Au lycée polyvalent dès l'âge de 11 ans",
-      "En école de métiers à partir de 12 ans",
-      "Dans des internats d'excellence sélectifs uniquement",
-      "En école primaire supérieure jusqu'à 15 ans",
-      "En lycée agricole pour les enfants des zones rurales"
+      "À l'école primaire supérieure (CM3 à 3e, 11-14 ans), puis à l'université (Licence, 14-17 ans)",
+      "Au lycée (2nde à Terminale, 11-14 ans), puis au collège (6e à 3e, 14-17 ans)",
+      "En centre de formation (CFA, 12-14 ans), puis en école de métiers (2 ans, 14-16 ans)",
+      "Au lycée professionnel (CAP, 11-14 ans), puis en internat spécialisé (3 ans, 14-17 ans)",
+      "À l'université (Licence, 11-14 ans), puis au collège (6e à 3e, 14-18 ans)",
+      "En école de métiers (apprentissage, 12-15 ans), puis au lycée (2nde à Terminale, 15-18 ans)"
     ],
     "explanation": "Après l'école élémentaire (CP à CM2, 6-11 ans), les élèves vont au collège (6e à 3e, 11-15 ans, sanctionné par le brevet des collèges), puis au lycée (2nde à Terminale, 15-18 ans, sanctionné par le baccalauréat). Il existe des lycées généraux, technologiques et professionnels.",
     "answers": [
@@ -5364,14 +5339,13 @@
     ],
     "question": "Pour qui l'école est-elle obligatoire ? (question complémentaire)",
     "distractors": [
-      "Seulement pour les enfants français de naissance",
-      "Uniquement pour les enfants dont les parents paient des impôts",
-      "Seulement pour les familles installées en France depuis plus de 2 ans",
-      "Uniquement dans les communes de plus de 5 000 habitants",
-      "Seulement pour les enfants de parents mariés ou en PACS",
-      "Uniquement pour les enfants inscrits par leurs parents dans une école publique",
-      "Seulement à partir de 6 ans pour les enfants non francophones",
-      "Uniquement pour les enfants qui n'ont pas de problème de santé"
+      "Pour les enfants de nationalité française, et pour eux seulement",
+      "Pour les enfants dont les parents paient des impôts, qu'ils soient français ou étrangers",
+      "Pour les familles installées en France depuis plus de 2 ans, y compris les étrangers",
+      "Pour les enfants des communes de plus de 5 000 habitants, français ou étrangers",
+      "Pour les enfants de parents mariés ou en PACS, y compris les enfants étrangers",
+      "Pour les enfants inscrits par leurs parents dans une école publique, français ou étrangers",
+      "Pour les enfants en bonne santé, qu'ils soient français ou étrangers"
     ],
     "explanation": "L'obligation scolaire s'applique à TOUS les enfants résidant en France, y compris ceux de familles étrangères quelle que soit leur situation administrative. C'est un droit fondamental. Les enfants sans papiers ont le même droit à l'éducation que les enfants français.",
     "answers": [
@@ -5429,7 +5403,7 @@
     ],
     "explanation": "Les enfants allophones (qui parlent peu ou pas le français) vont à l'école comme les autres. À leur arrivée, un test de positionnement évalue leur niveau et peut les orienter vers une UPE2A (Unité pédagogique pour élèves allophones arrivants), où ils suivent des cours adaptés. Une fois le français maîtrisé, ils suivent les mêmes cours que les autres élèves.",
     "answers": [
-      "Peuvent suivre des cours adaptés (UPE2A) pour apprendre le français"
+      "Peuvent suivre des cours adaptés pour apprendre la langue"
     ],
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/parentalite/l-ecole-pour-les-enfants-allophones/",
@@ -7903,11 +7877,12 @@
       "Le droit d'exprimer ses opinions librement, dans le respect des limites fixées par la loi"
     ],
     "distractors": [
-      "Le droit de mentir sur une personne si c'est pour une bonne cause",
+      "Le droit de s'exprimer librement, sans aucune limite fixée par la loi",
       "Le droit de s'exprimer librement, mais seulement pour les journalistes et les artistes",
-      "Le droit d'insulter une personne au nom de ses opinions",
-      "Le droit de tenir des propos racistes, à condition de dire que c'est son opinion personnelle",
-      "Le droit d'appeler à la violence contre une religion"
+      "Le droit d'exprimer ses opinions, dans le respect des décisions du Gouvernement",
+      "Le droit d'exprimer ses opinions librement, dans le respect de la religion majoritaire",
+      "Le droit de s'exprimer librement, dans le respect des limites fixées par chaque employeur",
+      "Le droit d'exprimer ses opinions, dans le respect des limites fixées par les médias"
     ],
     "explanation": "La liberté d'expression est garantie par la Déclaration des droits de l'homme et du citoyen de 1789 : chacun peut avoir ses opinions, même religieuses, et peut parler, écrire et publier librement. Elle a des limites fixées par la loi : les insultes ou propos haineux envers des personnes, l'incitation à la haine, à la violence ou à la discrimination et la négation de la Shoah sont punis.",
     "group": "liberte-expression",
@@ -8591,12 +8566,12 @@
       "Oui, la liberté de conscience permet de changer de religion"
     ],
     "distractors": [
-      "Non, on garde la religion déclarée à la naissance",
-      "Oui, mais une seule fois dans sa vie",
-      "Non, sauf avec une autorisation de la préfecture",
-      "Oui, mais il faut en informer la mairie",
-      "Oui, mais uniquement pour une religion reconnue par l'État",
-      "Oui, mais avec un acte signé chez un notaire"
+      "Non, on garde la religion déclarée à la naissance et on ne peut pas en changer",
+      "Non, il faut une autorisation de la préfecture pour changer de religion",
+      "Oui, mais on ne peut changer de religion qu'une seule fois dans sa vie",
+      "Oui, mais il faut informer la mairie de son changement de religion",
+      "Oui, en signant chez un notaire l'acte de changement de religion",
+      "Oui, mais uniquement pour une religion reconnue par l'État"
     ],
     "explanation": "La laïcité garantit la liberté de conscience : chaque personne est libre d'avoir ou de ne pas avoir de religion, d'en changer ou de ne plus en avoir. Aucune autorisation ni déclaration n'est nécessaire, et personne ne peut être obligé de suivre les règles d'une religion.",
     "group": "laicite",
@@ -9011,11 +8986,12 @@
       "Conduire la politique de la nation et diriger l'administration"
     ],
     "distractors": [
-      "Voter les lois et contrôler le président",
-      "Rendre la justice dans toute la France",
-      "Nommer les maires des communes",
-      "Élire les sénateurs",
-      "Contrôler l'application de la Constitution"
+      "Voter les lois et contrôler l'action du président",
+      "Rendre la justice et contrôler l'application des peines",
+      "Nommer les maires des communes et diriger les conseils municipaux",
+      "Élire les sénateurs et contrôler le budget de la nation",
+      "Contrôler l'application de la Constitution et diriger le Parlement",
+      "Juger les crimes et diriger les tribunaux de commerce"
     ],
     "explanation": "Le Gouvernement, composé du Premier ministre et des ministres, conduit la politique nationale, intérieure et extérieure. Avec le président de la République, il dirige l'administration et applique les lois votées par le Parlement.",
     "group": "pouvoir-executif",
@@ -9576,11 +9552,12 @@
       "L'intérêt général, l'ordre public et les libertés des autres"
     ],
     "distractors": [
-      "L'intérêt du Gouvernement, la volonté du président et celle de sa majorité",
-      "Les traditions religieuses, les coutumes locales et les croyances de chacun",
-      "L'intérêt économique de l'État et des entreprises",
-      "La décision personnelle de chaque maire",
-      "La volonté de la majorité des habitants"
+      "L'intérêt des entreprises, l'ordre économique et la liberté du commerce",
+      "L'intérêt de la majorité, la tradition nationale et les libertés des élus",
+      "L'intérêt de l'État, la sécurité des élus et les libertés des administrations",
+      "L'intérêt des partis, l'ordre moral et les libertés de la presse",
+      "La volonté des maires, les usages locaux et les libertés des habitants",
+      "L'intérêt des familles, l'ordre religieux et les libertés des parents"
     ],
     "explanation": "Les droits et libertés ont des limites pour protéger la vie en société : ils sont limités par l'intérêt général, par les libertés des autres, par la défense de l'ordre public (sécurité, tranquillité, salubrité) et par le respect de la dignité humaine.",
     "group": "limites-libertes",
@@ -9653,11 +9630,12 @@
       "Oui, c'est un droit pour toute femme, dans un cadre réglementé"
     ],
     "distractors": [
-      "Non, l'avortement est interdit en France",
-      "Oui, mais seulement avec l'accord du conjoint",
-      "Oui, mais seulement pour les femmes majeures",
-      "Oui, mais seulement avec l'autorisation des parents pour les mineures",
-      "Oui, mais il n'est jamais remboursé"
+      "Non, c'est interdit en France, comme dans la plupart des pays",
+      "Non, c'est une infraction, punie par la loi",
+      "Oui, c'est un droit pour toute femme majeure, avec l'accord du conjoint",
+      "Oui, c'est un droit pour toute femme, avec l'autorisation d'un juge",
+      "Oui, c'est un droit pour toute femme, mais il n'est jamais remboursé",
+      "Non, c'est une faute, passible d'une amende"
     ],
     "explanation": "Chaque femme peut avoir recours à l'IVG (interruption volontaire de grossesse) dans un cadre réglementé. L'avortement n'est plus puni par la loi depuis la loi Veil du 17 janvier 1975, et le droit d'y recourir est inscrit dans la Constitution depuis le 4 mars 2024.",
     "group": "ivg",
@@ -9931,13 +9909,15 @@
     "crNumber": 108,
     "question": "Qui peut demander à avorter ?",
     "answers": [
-      "Toute femme, sans condition d'âge"
+      "Toute femme, sans condition d'âge ni accord du conjoint"
     ],
     "distractors": [
-      "Seulement les femmes majeures",
-      "Seulement les femmes mariées",
-      "Seulement les femmes qui ont l'accord de leur conjoint",
-      "Seulement les mineures accompagnées de leurs parents"
+      "Toute femme majeure, avec l'accord écrit de son conjoint",
+      "Seulement les femmes majeures, sur avis d'un juge",
+      "Toute femme mariée, avec l'accord de son mari",
+      "Les femmes de plus de 16 ans, avec l'accord des parents",
+      "Seulement les mineures, accompagnées de leurs deux parents",
+      "Les femmes de plus de 18 ans, avec une ordonnance du médecin"
     ],
     "explanation": "Toute femme peut demander une IVG, sans condition d'âge. Les mineures n'ont pas besoin d'une autorisation parentale mais doivent être accompagnées d'une personne majeure de leur choix. L'accord du partenaire n'est pas nécessaire.",
     "group": "ivg",
@@ -10211,10 +10191,11 @@
       "La limitation des déplacements pendant l'état d'urgence sanitaire de 2020"
     ],
     "distractors": [
-      "L'interdiction pour les citoyens de critiquer le Gouvernement pendant une crise",
-      "L'obligation de pratiquer une religion pour préserver l'ordre public",
-      "L'interdiction de se déplacer selon son origine",
-      "La fermeture d'un journal par le Gouvernement"
+      "La limitation du droit de critiquer le Gouvernement pendant la crise de 2020",
+      "L'obligation de pratiquer une religion pour préserver l'ordre public en 2015",
+      "La limitation des déplacements selon l'origine des personnes, décidée en 2018",
+      "La limitation de la presse par la fermeture d'un journal décidée en 2016",
+      "La limitation du droit de vote des femmes pendant l'état d'urgence de 2015"
     ],
     "explanation": "Les libertés peuvent être limitées par l'intérêt général. Par exemple, l'état d'urgence sanitaire mis en place contre le Covid-19 en mars 2020 a limité la liberté d'aller et venir, la liberté d'entreprendre et la liberté de réunion.",
     "group": "limites-libertes",
@@ -12253,10 +12234,11 @@
       "Tous les enfants scolarisés qui le souhaitent"
     ],
     "distractors": [
-      "Les enfants dont les deux parents travaillent",
-      "Les enfants de nationalité française",
-      "Les enfants de familles à faibles revenus",
-      "Les enfants qui habitent loin de l'école"
+      "Seuls les enfants scolarisés dont les deux parents travaillent",
+      "Les enfants scolarisés de nationalité française",
+      "Tous les enfants scolarisés de familles à faibles revenus",
+      "Tous les enfants scolarisés qui habitent loin de l'école",
+      "Les enfants scolarisés dont les parents ont un emploi"
     ],
     "explanation": "Quand l'école a une cantine, tous les enfants scolarisés qui le souhaitent peuvent y manger. On ne peut pas refuser un enfant à cause de sa situation ou de celle de sa famille.",
     "group": "cantine",
