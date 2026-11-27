@@ -55,11 +55,14 @@ export function progressKey(title: TitleKey): string {
 }
 
 // Saved in the key of its own title
-export function saveProgress(state: ExamInProgress): void {
+// Returns false when the write failed (storage unavailable or full)
+export function saveProgress(state: ExamInProgress): boolean {
   try {
     localStorage.setItem(progressKey(titleOf(state)), JSON.stringify(state))
+    return true
   } catch {
     // localStorage unavailable
+    return false
   }
 }
 

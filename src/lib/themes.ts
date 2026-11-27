@@ -6,6 +6,16 @@ export const THEME_COLORS: Record<string, string> = {
   'Vie en société': 'bg-pink-100 text-pink-800 dark:bg-pink-900/30 dark:text-pink-300',
 }
 
+// Display name of a theme: the stored value « Vie en société » is shown as the official
+// « Vivre dans la société française ». Display only: data and storage keep the stored value.
+const THEME_LABELS: Record<string, string> = {
+  'Vie en société': 'Vivre dans la société française',
+}
+
+export function themeLabel(theme: string): string {
+  return THEME_LABELS[theme] ?? theme
+}
+
 const DEFAULT_THEME_COLOR = 'bg-gray-100 text-gray-700 dark:bg-gray-800/40 dark:text-gray-300'
 
 export function themeColor(theme: string) {

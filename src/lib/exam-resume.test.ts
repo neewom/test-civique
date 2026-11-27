@@ -62,6 +62,13 @@ function makeProgress(overrides: Partial<ExamInProgress> = {}): ExamInProgress {
 // ── Tests ─────────────────────────────────────────────────────────────────────
 
 describe('saveProgress', () => {
+  it('renvoie true quand l\'écriture a réussi, false quand elle échoue', () => {
+    expect(saveProgress(makeProgress())).toBe(true)
+    const spy = vi.spyOn(localStorageMock, 'setItem').mockImplementation(() => { throw new Error('quota') })
+    expect(saveProgress(makeProgress())).toBe(false)
+    spy.mockRestore()
+  })
+
   it('écrit la clé exam-in-progress dans localStorage', () => {
     const state = makeProgress()
     saveProgress(state)

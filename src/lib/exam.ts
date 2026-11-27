@@ -53,8 +53,8 @@ export interface BlueprintLine {
 
 /**
  * Official breakdown of the 40 questions of an exam (arrêté du 10 octobre 2025),
- * with the theme labels of questions.json (« Vie en société » is shown as
- * « Vivre dans la société française » on the rules page).
+ * with the theme values of questions.json (« Vie en société » is displayed as
+ * « Vivre dans la société française » everywhere, through `themeLabel` of themes.ts).
  */
 export const EXAM_BLUEPRINT: readonly BlueprintLine[] = [
   { theme: 'Principes et valeurs de la République', notion: 'devise-symboles', count: 3 },
