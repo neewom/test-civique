@@ -43,6 +43,12 @@ describe('ExamenDetail', () => {
     expect(screen.getByText(/Examen introuvable/i)).toBeInTheDocument()
   })
 
+  it("ne plante pas sur un historique abîmé (answers: [null])", () => {
+    localStorage.setItem('quiz-history', JSON.stringify([{ ...RECORD, answers: [null, 3, { questionId: 'x' }] }]))
+    expect(() => renderDetail(RECORD_ID)).not.toThrow()
+    expect(screen.getByRole('main')).toBeInTheDocument()
+  })
+
   it('affiche "Examen introuvable" si l\'historique n\'est pas du JSON', () => {
     localStorage.setItem('quiz-history', 'pas du json{')
     renderDetail(RECORD_ID)

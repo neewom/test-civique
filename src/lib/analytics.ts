@@ -4,6 +4,7 @@
 // flags requests from data-centre IP ranges as bots, so proxied hits were hidden.
 // Parameters follow GoatCounter's count.js (arp242/goatcounter, public/count.js).
 
+import { FICHE_SLUGS, ficheUrl } from '@/lib/fiches'
 import type { TitleKey } from '@/lib/target-title'
 
 // Only the production domain counts: nothing locally, on worktrees, on Netlify
@@ -55,6 +56,30 @@ export function examEvent(step: keyof typeof EXAM_EVENTS, title: TitleKey): Anal
   return EXAM_EVENTS[step][title]
 }
 
+// Only the routes of App.tsx are sent as they are; the exam detail is grouped (the address holds
+// the exam's timestamp) and any other address (unknown address, unknown fiche) is grouped too
+export const EXAM_DETAIL_PATH = '/examen/detail'
+export const UNKNOWN_PATH = '/adresse-inconnue'
+const KNOWN_PATHS: ReadonlySet<string> = new Set([
+  '/',
+  '/examen-blanc',
+  '/examen',
+  '/revision',
+  '/regles',
+  '/centres',
+  '/titre',
+  '/mentions-legales',
+  ...(Object.keys(FICHE_SLUGS) as TitleKey[]).map(ficheUrl),
+])
+
+/** Path sent to GoatCounter for an address: known routes as they are, `/examen/:id` as `/examen/detail`, anything else as `/adresse-inconnue`. Case and trailing slash do not matter (the router ignores them). */
+export function countedPath(pathname: string): string {
+  const path = pathname.toLowerCase().replace(/\/+$/, '') || '/'
+  if (KNOWN_PATHS.has(path)) return path
+  if (/^\/examen\/[^/]+$/.test(path)) return EXAM_DETAIL_PATH
+  return UNKNOWN_PATH
+}
+
 // The external referrer only makes sense for the first page view: after a SPA
 // navigation, document.referrer still names the page the visitor came from
 let firstPageView = true
@@ -89,12 +114,12 @@ function send(params: Record<string, string>): void {
   }
 }
 
-// Page view for a pathname (no search string: nothing personal is sent).
+// Page view for a pathname (no search string: nothing personal is sent; the path is grouped by `countedPath`).
 // Repeated calls with the same pathname are ignored.
 export function trackPageView(pathname: string): void {
   if (pathname === lastPath) return
   lastPath = pathname
-  const params: Record<string, string> = { p: pathname }
+  const params: Record<string, string> = { p: countedPath(pathname) }
   if (firstPageView) {
     firstPageView = false
     try {

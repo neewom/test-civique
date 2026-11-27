@@ -6,7 +6,7 @@ import { OrganicBackground } from '@/components/OrganicBackground'
 import { useDocumentTitle } from '@/lib/use-document-title'
 
 // To keep up to date whenever the data collected by the site changes (ads, payment, new events)
-export const LAST_UPDATED = '26 novembre 2026'
+export const LAST_UPDATED = '27 novembre 2026'
 export const CONTACT_EMAIL = 'contact@futurcitoyen.fr'
 export const CNIL_URL = 'https://www.cnil.fr'
 
@@ -92,7 +92,9 @@ export default function MentionsLegales() {
         <InfoCard title="Statistiques de visite" level={3}>
           <p>
             Pour savoir combien de personnes utilisent le site, nous comptons les pages vues et deux actions : examen
-            commencé, examen terminé (réussi ou pas encore).
+            commencé, examen terminé (réussi ou pas encore). Pour chaque page vue, la page consultée (les adresses
+            d'examen sont regroupées, sans identifiant d'examen) et la largeur de votre écran sont transmises ; à la
+            première page de la visite, le site d'où vous arrivez l'est aussi.
           </p>
           <p>
             Ce comptage passe par GoatCounter : sans cookie, sans identifiant, sans suivi d'une visite à l'autre.

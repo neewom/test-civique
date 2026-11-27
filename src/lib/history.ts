@@ -1,4 +1,4 @@
-import type { AnswerRecord, ExamRecord } from '@/lib/exam-types'
+import { isAnswerRecord, type AnswerRecord, type ExamRecord } from '@/lib/exam-types'
 import { isTitleKey, titleOf, type TitleKey } from '@/lib/target-title'
 
 // Single place that reads and writes the exam history in localStorage.
@@ -66,9 +66,10 @@ export function findExamRecord(id: string): ExamRecord | null {
   if (!entry || entry.id === undefined || entry.answers === undefined) return null
   // A stored title is kept only when known (no default added: the record reads as stored)
   const { title, ...rest } = entry
-  // An unreadable `answer` (not a string) is ignored in memory, never rewritten in storage
-  const answers = entry.answers.map((a) => {
-    if (typeof a !== 'object' || a === null || a.answer === undefined || typeof a.answer === 'string') return a
+  // Unreadable answers (not objects, wrong types) are skipped, and an unreadable `answer` (not a
+  // string) is ignored: in memory only, never rewritten in storage
+  const answers = entry.answers.filter(isAnswerRecord).map((a) => {
+    if (a.answer === undefined || typeof a.answer === 'string') return a
     const { answer, ...others } = a
     void answer
     return others

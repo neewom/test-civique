@@ -89,10 +89,11 @@ function isExamQuestion(value: unknown): value is ExamQuestion {
   )
 }
 
-function isAnswerRecord(value: unknown): value is AnswerRecord {
+export function isAnswerRecord(value: unknown): value is AnswerRecord {
   return (
     isRecord(value) &&
     typeof value.questionId === 'number' &&
+    Number.isFinite(value.questionId) &&
     (value.chosen === null || typeof value.chosen === 'string') &&
     typeof value.correct === 'boolean'
   )
