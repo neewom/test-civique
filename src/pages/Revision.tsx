@@ -155,8 +155,8 @@ export default function Revision() {
           </div>
 
           {/* Pills scroll sideways on a phone and wrap on a wider screen; the vertical padding keeps the focus ring visible.
-              Stuck at the top below 1024 px (page background, thin rule under it) while the cards scroll. */}
-          <div className="sticky top-0 z-10 -mx-5 overflow-x-auto border-b border-border bg-background px-5 py-1.5 [scrollbar-width:none] sm:overflow-visible md:-mx-8 md:px-8 lg:static lg:mx-0 lg:border-b-0 lg:bg-transparent lg:px-0">
+              Stuck at the top on a phone (below 640 px: page background, thin rule under it) while the cards scroll; the wrapped pills of a tablet would take a quarter of the screen. */}
+          <div className="sticky top-0 z-10 -mx-5 overflow-x-auto border-b border-border bg-background px-5 py-1.5 [scrollbar-width:none] sm:static sm:overflow-visible sm:border-b-0 md:-mx-8 md:px-8 lg:mx-0 lg:bg-transparent lg:px-0">
             <div role="group" aria-label="Questions à afficher" className="flex w-max gap-2 sm:w-auto sm:flex-wrap lg:flex-col lg:items-stretch">
               {examIds.length > 0 && (
                 <button
