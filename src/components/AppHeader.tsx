@@ -70,7 +70,7 @@ function DisplaySettings() {
 }
 
 /** « Affichage » button and its small panel. */
-function DisplayMenu() {
+function DisplayMenu({ compact = false }: { compact?: boolean }) {
   const [open, setOpen] = useState(false)
   const wrapRef = useRef<HTMLDivElement>(null)
   const buttonRef = useRef<HTMLButtonElement>(null)
@@ -115,11 +115,13 @@ function DisplayMenu() {
         aria-controls={panelId}
         onClick={() => setOpen((o) => !o)}
         className={cn(
-          'flex size-11 shrink-0 items-center justify-center rounded-full text-card-foreground transition-colors hover:bg-muted',
+          'flex shrink-0 items-center justify-center rounded-full text-card-foreground transition-colors hover:bg-muted',
+          // Compact (exam): 36 px drawn, the touch area stays 44 px through the pseudo-element
+          compact ? "relative size-9 after:absolute after:-inset-1 after:content-['']" : 'size-11',
           open ? 'bg-muted' : 'bg-card',
         )}
       >
-        <SlidersHorizontal aria-hidden="true" className="size-5" strokeWidth={2.2} />
+        <SlidersHorizontal aria-hidden="true" className={compact ? 'size-4' : 'size-5'} strokeWidth={2.2} />
       </button>
       {open && (
         <div
@@ -152,14 +154,15 @@ interface AppHeaderProps {
  */
 export function AppHeader({ thin = false, hideBrand = false, onLogoClick }: AppHeaderProps) {
   const logoClass = cn(
-    'inline-flex min-h-11 min-w-0 items-center rounded-sm font-bold no-underline',
-    thin ? 'text-base' : 'text-xl',
+    'inline-flex min-w-0 items-center rounded-sm font-bold no-underline',
+    // Thin (exam): smaller logo, the touch area stays 44 px high through the pseudo-element
+    thin ? "relative min-h-9 text-sm after:absolute after:inset-x-0 after:-inset-y-1 after:content-['']" : 'min-h-11 text-xl',
   )
   return (
     <div
       className={cn(
         'relative z-40 mx-auto w-full max-w-[62rem] px-[22px] md:px-8 lg:px-10',
-        thin ? 'pt-1' : 'pt-3 pb-3 md:pt-4',
+        thin ? 'py-1.5' : 'pt-3 pb-3 md:pt-4',
       )}
     >
       <header
@@ -182,7 +185,7 @@ export function AppHeader({ thin = false, hideBrand = false, onLogoClick }: AppH
             <BrandLogo />
           </Link>
         )}
-        <DisplayMenu />
+        <DisplayMenu compact={thin} />
       </header>
     </div>
   )
