@@ -77,7 +77,8 @@ const hasAbsolute = (s) => words(s).some((w) => ABSOLUTE_WORDS.includes(w))
 
 // Restriction markers ("Oui, mais seulement si ..."): the correct answer
 // being the only option without one is the "unqualified answer" giveaway.
-const RESTRICTION = /\b(mais|sauf|seulement|uniquement|si|s'il|s'ils|à condition|tant que|à moins)\b/i
+// Letter boundaries instead of \b, which does not work next to accented letters (« à condition »)
+const RESTRICTION = /(?<!\p{L})(mais|sauf|seulement|uniquement|si|s'il|s'ils|à condition|tant que|à moins)(?!\p{L})/iu
 const hasRestriction = (s) => RESTRICTION.test(normalize(s))
 
 // Binary traits: the correct answer has it and none of the 3 distractors do.
@@ -191,12 +192,23 @@ function main() {
   const opts = Object.fromEntries(
     args.filter((a) => a.startsWith('--')).map((a) => a.slice(2).split('=')),
   )
-  const [path, from = '1', to = 'Infinity'] = args.filter((a) => !a.startsWith('--'))
+  const positional = args.filter((a) => !a.startsWith('--'))
+  const [path, from = '1', to = 'Infinity'] = positional
+  // Refuse what would otherwise be silently ignored (« --min-share 0.3 » without « = », unknown options)
+  const badOption = args.find((a) => a.startsWith('--') && !/^--min-share=[^=]+$/.test(a))
+  if (badOption || positional.length > 3) {
+    console.error(`Unexpected argument: ${badOption ?? positional[3]}`)
+    process.exit(2)
+  }
   if (!path) {
     console.error('Usage: detect-shape-giveaways.mjs <questions.json> [fromId] [toId] [--min-share=0.5]')
     process.exit(1)
   }
   const minShare = Number(opts['min-share'] ?? 0.5)
+  if (!Number.isFinite(minShare) || minShare <= 0 || minShare > 1) {
+    console.error('--min-share must be a number in (0, 1], written --min-share=0.5')
+    process.exit(2)
+  }
   const questions = JSON.parse(readFileSync(path, 'utf8'))
   const out = questions
     .filter((q) => q.id >= Number(from) && q.id <= Number(to))
