@@ -19,37 +19,38 @@ export interface Organisme {
 }
 
 export const CENTRES_INTRO =
-  "L'examen civique se passe dans un centre agréé. Deux organismes l'organisent, en métropole et en outre-mer : choisissez un centre près de chez vous sur leur site, puis inscrivez-vous en ligne."
+  "L'examen civique se passe dans un centre agréé. Deux organismes, agréés par le ministère de l'Intérieur, ont chacun leur réseau de centres. L'examen est le même partout : choisissez simplement un centre près de chez vous, dans l'un ou l'autre réseau. C'est ce centre qui vous donne la date et le tarif."
 
 export const ORGANISMES: Organisme[] = [
   {
+    name: "Chambre de commerce et d'industrie de Paris (CCIP)",
+    description:
+      'Malgré son nom, ce réseau a des centres dans toute la France. Cherchez une session par ville, puis inscrivez-vous directement auprès du centre.',
+    links: [
+      {
+        label: 'Trouver une session',
+        url: 'https://francais.cci-paris-idf.fr/candidat?produit=21',
+        primary: true,
+      },
+    ],
+  },
+  {
     name: 'France Éducation International',
     description:
-      "Établissement public du ministère de l'Éducation nationale. Plus de 230 centres en France, à chercher par adresse ou code postal sur sa carte.",
+      'Trouvez un centre sur la carte, puis faites la pré-inscription en ligne, obligatoire dans ce réseau. Le centre vous contacte ensuite pour la date et le paiement.',
     links: [
       {
         label: 'Voir la carte des centres',
         url: 'https://www.france-education-international.fr/centres-d-examen/carte?type-centre=examen_civique',
         primary: true,
       },
-      { label: "S'inscrire à l'examen", url: 'https://test-civique.fr/inscription' },
-    ],
-  },
-  {
-    name: 'CCI Paris Île-de-France',
-    description: 'Réseau « Le français des affaires ». Des centres dans toute la France.',
-    links: [
-      {
-        label: "Trouver un centre et s'inscrire",
-        url: 'https://francais.cci-paris-idf.fr/candidat?produit=21',
-        primary: true,
-      },
+      { label: 'Se pré-inscrire', url: 'https://test-civique.fr/inscription' },
     ],
   },
 ]
 
 export const CENTRES_FOOTER =
-  "Dates, tarifs et pièces à fournir : chaque organisme les indique sur son site. Futur Citoyen n'est lié à aucun d'eux."
+  "Les pièces à fournir sont indiquées sur le site de chaque organisme. Futur Citoyen n'est lié à aucun d'eux."
 
 export const OFFICIAL_ORGANISMES_LABEL = 'Liste officielle des organismes'
 export const OFFICIAL_ORGANISMES_URL =
