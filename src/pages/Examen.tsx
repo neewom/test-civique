@@ -195,7 +195,7 @@ function ExamSession({ restarted, onRestart }: ExamSessionProps) {
     const allAnswers = [...answersRef.current]
     // Questions non répondues (timer expiré avant d'y arriver)
     for (let i = allAnswers.length; i < questions.length; i++) {
-      allAnswers.push({ questionId: questions[i].id, chosen: null, correct: false })
+      allAnswers.push({ questionId: questions[i].id, chosen: null, correct: false, answer: questions[i].answer })
     }
     // Journey counter before and after this exam (no new stored data)
     const history = loadHistoryForTitle(title)
@@ -234,6 +234,7 @@ function ExamSession({ restarted, onRestart }: ExamSessionProps) {
       questionId: questions[index].id,
       chosen: selected,
       correct: isCorrect,
+      answer: questions[index].answer,
     })
     saveProgress({
       questions,
