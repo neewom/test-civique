@@ -86,7 +86,8 @@ test('examen blanc complet, reprise après rechargement, résultat et détail', 
   await expect(page.getByText(`Score : ${EXPECTED_SCORE} sur ${EXAM_SIZE}`, { exact: true })).toBeAttached()
   const passed = EXPECTED_SCORE >= PASS_THRESHOLD
   await expect(
-    page.getByText(`${passed ? 'Réussi' : 'Pas encore réussi'} · seuil ${PASS_THRESHOLD}/${EXAM_SIZE}`, { exact: true }),
+    // The threshold is also given in its spoken form (« 32 sur 40 »): the visible node reads « seuil 32/40 » then the hidden one
+    page.getByRole('status').filter({ hasText: `${passed ? 'Réussi' : 'Pas encore réussi'} · seuil ${PASS_THRESHOLD}/${EXAM_SIZE}` }),
   ).toBeVisible()
 
   // Back home: the exam is listed and the counter follows

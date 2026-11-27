@@ -204,7 +204,9 @@ function RevisionContent({ title, pack }: { title: TitleKey; pack: ListedQuestio
 
   return (
     <PageFrame>
-      <div className="mx-auto flex w-full max-w-[30rem] flex-col gap-3.5 px-5 pt-0 pb-7 md:max-w-[36rem] md:px-8 lg:grid lg:max-w-[62rem] lg:grid-cols-[17rem_minmax(0,1fr)] lg:items-start lg:gap-x-14 lg:px-10">
+      {/* data-restores-scroll: the page puts the remembered position back shortly after arriving; the page shell
+          then leaves the focus alone (a title focus would make the next Tab jump away from that position) */}
+      <div data-restores-scroll={(restored?.scrollY ?? 0) > 0 ? '' : undefined} className="mx-auto flex w-full max-w-[30rem] flex-col gap-3.5 px-5 pt-0 pb-7 md:max-w-[36rem] md:px-8 lg:grid lg:max-w-[62rem] lg:grid-cols-[17rem_minmax(0,1fr)] lg:items-start lg:gap-x-14 lg:px-10">
         {/* From 1024 px: a sticky side column with the header and the filters (side padding: room for the focus rings).
             Below: `contents` lets the pill band be a child of the page column, so that it can stay stuck at the top
             all along the cards (a sticky element only sticks inside its parent; no overflow-hidden above it either). */}

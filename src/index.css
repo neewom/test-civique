@@ -261,7 +261,7 @@
 :root.page-transition #page-wrap {
   view-transition-name: page-content;
 }
-:root.page-transition main > svg[data-slot='organic-background'] {
+:root.page-transition [data-page-frame] > svg[data-slot='organic-background'] {
   view-transition-name: page-bg;
 }
 :root.page-transition [data-app-header] {
@@ -271,7 +271,7 @@
 :root.page-transition [data-exam-bar] {
   view-transition-name: exam-bar;
 }
-:root.page-transition main {
+:root.page-transition [data-page-frame] {
   background: transparent;
 }
 
