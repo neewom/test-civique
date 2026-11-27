@@ -69,7 +69,16 @@ function QuestionReview({ answer, number, question }: Reviewed) {
             <AnswerBox tone="wrong" label="Votre réponse">{answer.chosen}</AnswerBox>
           )}
           <AnswerBox tone="right" label={several ? 'Bonnes réponses acceptées' : 'Bonne réponse'}>
-            {proposed ?? (several ? question.answers.join(', ') : question.answers[0])}
+            {several ? (
+              // One answer per line: some answers contain commas. role="list" keeps the list for screen readers without bullets.
+              <ul role="list" className="flex flex-col gap-1">
+                {question.answers.map((a) => (
+                  <li key={a}>{a}</li>
+                ))}
+              </ul>
+            ) : (
+              (proposed ?? question.answers[0])
+            )}
           </AnswerBox>
         </>
       )}

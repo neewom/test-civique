@@ -303,6 +303,14 @@ describe('ExamenDetail — bonne réponse proposée', () => {
     }
   }
 
+  // Décision de l'utilisateur (2026-11-27) : une bonne réponse par ligne, dans une vraie liste
+  // (certaines réponses contiennent des virgules)
+  function expectAcceptedList() {
+    expect(screen.getByText('Bonnes réponses acceptées')).toBeInTheDocument()
+    const items = within(screen.getByText('Bonnes réponses acceptées').closest('div')!).getAllByRole('listitem')
+    expect(items.map((li) => li.textContent)).toEqual(multi.answers)
+  }
+
   it('affiche la réponse proposée à l\'examen, même si ce n\'est pas la première', () => {
     const proposed = multi.answers[1]
     seedHistory(recordWith({ questionId: multi.id, answer: proposed }))
@@ -322,8 +330,7 @@ describe('ExamenDetail — bonne réponse proposée', () => {
   it('ancien examen, plusieurs bonnes réponses : toutes listées', () => {
     seedHistory(recordWith({ questionId: multi.id }))
     renderDetail(RECORD_ID)
-    expect(screen.getByText('Bonnes réponses acceptées')).toBeInTheDocument()
-    expect(screen.getByText(multi.answers.join(', '))).toBeInTheDocument()
+    expectAcceptedList()
   })
 
   it.each([
@@ -333,8 +340,7 @@ describe('ExamenDetail — bonne réponse proposée', () => {
   ])('answer %s : repli sur la liste, l\'examen reste lu', (_label, bad) => {
     seedHistory(recordWith({ questionId: multi.id, answer: bad }))
     renderDetail(RECORD_ID)
-    expect(screen.getByText('Bonnes réponses acceptées')).toBeInTheDocument()
-    expect(screen.getByText(multi.answers.join(', '))).toBeInTheDocument()
+    expectAcceptedList()
   })
 
   it('une réponse juste reste inchangée', () => {

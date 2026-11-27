@@ -1,10 +1,11 @@
 import { Check, X } from 'lucide-react'
+import type { ReactNode } from 'react'
 import { cn } from '@/lib/utils'
 
 export type AnswerBoxTone = 'right' | 'wrong' | 'none'
 
 /** Answer shown after the fact (exam detail, revision): label with icon, then the answer. */
-export function AnswerBox({ tone, label, children }: { tone: AnswerBoxTone; label: string; children: string }) {
+export function AnswerBox({ tone, label, children }: { tone: AnswerBoxTone; label: string; children: ReactNode }) {
   const Icon = tone === 'right' ? Check : X
   return (
     <div
@@ -20,7 +21,7 @@ export function AnswerBox({ tone, label, children }: { tone: AnswerBoxTone; labe
         <Icon aria-hidden="true" className="size-[1.1em] shrink-0" strokeWidth={2.8} />
         {label}
       </span>
-      <span className={cn('text-base', tone === 'none' && 'italic')}>{children}</span>
+      <div className={cn('text-base', tone === 'none' && 'italic')}>{children}</div>
     </div>
   )
 }
