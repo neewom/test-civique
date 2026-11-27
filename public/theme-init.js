@@ -27,6 +27,8 @@
   // its header, as that screen does. Any storage error: not a first visit (the usual header).
   try {
     var path = location.pathname
+    // The exam has the thin header (AppHeader thin): the start screen takes its sizes
+    if (path === '/examen') document.documentElement.setAttribute('data-thin', '')
     if (path === '/' || path === '/titre') {
       var history = localStorage.getItem('quiz-history')
       var empty =

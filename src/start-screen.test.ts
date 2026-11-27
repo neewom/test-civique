@@ -45,6 +45,16 @@ describe('écran de démarrage (index.html)', () => {
   })
 })
 
+describe('écran de démarrage : en-tête fin de l\'examen', () => {
+  it('reprend les tailles de AppHeader thin (pt-1, logo text-base, bouton 36 px)', () => {
+    const header = read('src/components/AppHeader.tsx')
+    for (const token of ['pt-1', 'text-base', 'size-9', 'size-4']) {
+      expect(indexHtml, token).toContain(`[html[data-thin]_&]:${token}`)
+      expect(header, token).toContain(token)
+    }
+  })
+})
+
 describe('theme-init.js : première visite', () => {
   function run(path: string, store: Record<string, string>) {
     document.documentElement.removeAttribute('data-first-visit')
@@ -74,5 +84,17 @@ describe('theme-init.js : première visite', () => {
     expect(run('/', { 'exam-in-progress-resident': '{}' })).toBe(false)
     expect(run('/', { 'exam-in-progress': '{}' })).toBe(false)
     expect(run('/', { 'exam-in-progress-naturalisation': '{}' })).toBe(false)
+  })
+
+  it('pose data-thin sur /examen exactement', () => {
+    const thin = (path: string) => {
+      document.documentElement.removeAttribute('data-thin')
+      run(path, {})
+      return document.documentElement.hasAttribute('data-thin')
+    }
+    expect(thin('/examen')).toBe(true)
+    expect(thin('/examen-blanc')).toBe(false)
+    expect(thin('/examen/abc')).toBe(false)
+    expect(thin('/')).toBe(false)
   })
 })

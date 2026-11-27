@@ -33,11 +33,11 @@
       <!-- Start screen: page background and header drawn before the JavaScript runs (React replaces
            it on mount). Same classes, sizes and positions as AppHeader / BrandLogo, so nothing moves
            at mount. Inert and hidden from screen readers. On a first visit (data-first-visit, set
-           by theme-init.js on / and /titre) the page has no name in its header: only the button stays. -->
+           by theme-init.js on / and /titre) the page has no name in its header: only the button stays. On /examen (data-thin) the header is the thin one of the exam. -->
       <div aria-hidden="true" class="flex min-h-svh flex-col bg-background text-foreground">
-        <div class="mx-auto w-full max-w-[62rem] px-[22px] pt-3 pb-3 md:px-8 md:pt-4 lg:px-10">
+        <div class="mx-auto w-full max-w-[62rem] px-[22px] pt-3 pb-3 md:px-8 md:pt-4 lg:px-10 [html[data-thin]_&]:pt-1 [html[data-thin]_&]:pb-0 md:[html[data-thin]_&]:pt-1">
           <div class="flex w-full items-center justify-between gap-3">
-            <span class="inline-flex min-h-11 min-w-0 items-center text-xl font-bold [html[data-first-visit]_&]:hidden">
+            <span class="inline-flex min-h-11 min-w-0 items-center text-xl font-bold [html[data-thin]_&]:text-base [html[data-first-visit]_&]:hidden">
               <span class="inline-flex min-w-0 items-center gap-[0.4em]">
                 <svg viewBox="0 0 64 64" fill="none" focusable="false" class="size-[1.25em] shrink-0">
                   <path d="M32 60 V30" class="stroke-[#2c2e2a] dark:stroke-[#f1eee4]" stroke-width="7" stroke-linecap="round" />
@@ -47,8 +47,8 @@
                 <span class="min-w-0 text-left [overflow-wrap:anywhere]"><span class="text-[#3a7a2c] dark:text-[#8ed462]">Futur</span> <span class="text-[#2c2e2a] dark:text-[#f1eee4]">Citoyen</span></span>
               </span>
             </span>
-            <span class="ml-auto flex size-11 shrink-0 items-center justify-center rounded-full bg-card text-card-foreground">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" focusable="false" class="size-5">
+            <span class="ml-auto flex size-11 [html[data-thin]_&]:size-9 shrink-0 items-center justify-center rounded-full bg-card text-card-foreground">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" focusable="false" class="size-5 [html[data-thin]_&]:size-4">
                 <path d="M10 5H3" /><path d="M12 19H3" /><path d="M14 3v4" /><path d="M16 17v4" /><path d="M21 12h-9" /><path d="M21 19h-5" /><path d="M21 5h-7" /><path d="M8 10v4" /><path d="M8 12H3" />
               </svg>
             </span>
