@@ -187,11 +187,11 @@ describe('Examen', () => {
     expect(screen.getByText(`Question 1 sur ${EXAM_SIZE}`)).toBeInTheDocument()
   })
 
-  it('affiche le temps global à "45 min" au démarrage', () => {
+  it('affiche le temps global à "45:00" au démarrage', () => {
     renderExamen()
     expect(GLOBAL_EXAM_TIME).toBe(45 * 60)
     expect(timeLeft()).toBe(2700)
-    expect(screen.getByText('45 min')).toBeInTheDocument()
+    expect(screen.getByText('45:00')).toBeInTheDocument()
   })
 
   it('le timer global décrémente', async () => {
@@ -628,6 +628,11 @@ describe('Examen — écrans de question et de correction', () => {
     vi.useRealTimers()
   })
 
+  it('affiche les minutes sans zéro devant et les secondes sur deux chiffres sous 10 minutes', () => {
+    renderResumed(makeResume(262, 0))
+    expect(screen.getByText('4:22')).toBeInTheDocument()
+  })
+
   it('regroupe les 4 cartes dans un groupe radio nommé par la question', () => {
     const resume = makeResume(1500, 0)
     renderResumed(resume)
@@ -635,9 +640,9 @@ describe('Examen — écrans de question et de correction', () => {
     expect(within(group).getAllByRole('radio')).toHaveLength(4)
   })
 
-  it('affiche le temps en minutes, arrondi au supérieur, avec une barre nommée', () => {
+  it('affiche le temps en minutes et secondes, avec une barre nommée en minutes arrondies au supérieur', () => {
     renderResumed(makeResume(31 * 60 - 20, 0))
-    expect(screen.getByText('31 min')).toBeInTheDocument()
+    expect(screen.getByText('30:40')).toBeInTheDocument()
     expect(screen.getByRole('progressbar', { name: 'Temps restant' })).toHaveAttribute('aria-valuetext', '31 minutes sur 45')
   })
 

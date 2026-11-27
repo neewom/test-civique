@@ -72,6 +72,12 @@ function plural(n: number, word: string): string {
   return `${n} ${word}${n > 1 ? 's' : ''}`
 }
 
+// Time left shown as « 44:12 », « 4:22 » (minutes unpadded, seconds on two digits)
+function clockLabel(seconds: number): string {
+  const s = Math.max(0, seconds)
+  return `${Math.floor(s / 60)}:${String(s % 60).padStart(2, '0')}`
+}
+
 // Below this many seconds the timer bar turns coral and the pill shows (same threshold as the announcement)
 const ALERT_SECONDS = 5 * 60
 
@@ -383,7 +389,9 @@ function ExamSession({ restarted, onRestart }: ExamSessionProps) {
                 style={{ width: `${timerPct}%` }}
               />
             </div>
-            <span aria-hidden="true" className="text-sm font-bold whitespace-nowrap">{minutes} min</span>
+            <span aria-hidden="true" className="text-sm font-bold whitespace-nowrap tabular-nums">
+              {clockLabel(globalTimeLeft)}
+            </span>
           </div>
           {lowTime && (
             <p className="mt-1.5 inline-flex min-h-8 items-center gap-2 self-start rounded-full bg-coral px-3.5 text-sm font-bold text-coral-foreground">
