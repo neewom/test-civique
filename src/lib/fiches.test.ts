@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest'
 import { FICHES, FICHE_LABELS, FICHE_SLUGS, ficheUrl, titleOfSlug } from '@/lib/fiches'
 import { TITLE_KEYS } from '@/lib/target-title'
-import { questionsForTitle } from '@/lib/exam'
+import { questionsForTitle } from '@/test/questions'
 import { ORGANISMES } from '@/lib/centres'
 
 // Domaine officiel accepté (comme `src/data/sources.test.ts`) : gouv.fr et ses sous-domaines

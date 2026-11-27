@@ -19,6 +19,12 @@ describe('public/_redirects — domaine futurcitoyen.fr', () => {
     expect(rules).toContain(SPA_RULE)
   })
 
+  it('un fichier de /assets/ introuvable répond 404 (avant la règle SPA), sans « ! » qui masquerait les fichiers existants', () => {
+    const rule = '/assets/* /404.html 404'
+    expect(rules).toContain(rule)
+    expect(rules.indexOf(rule)).toBeLessThan(rules.indexOf(SPA_RULE))
+  })
+
   it.each(OLD_HOST_RULES)('redirige l’ancienne adresse avant la règle SPA : %s', (rule) => {
     expect(rules).toContain(rule)
     expect(rules.indexOf(rule)).toBeLessThan(rules.indexOf(SPA_RULE))

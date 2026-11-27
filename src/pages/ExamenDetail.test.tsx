@@ -4,6 +4,7 @@ import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest'
 import ExamenDetail from './ExamenDetail'
 import type { ExamRecord } from '@/lib/exam-types'
 import allQuestions from '@/data/questions.json'
+import { getLoadedPack } from '@/lib/question-packs'
 import { stubWideScreen } from '@/test/wide-screen'
 
 const RECORD_ID = '1700000000000'
@@ -241,13 +242,17 @@ describe('ExamenDetail — revoir ses erreurs', () => {
 })
 
 describe('ExamenDetail — lien source', () => {
-  const all = allQuestions as { id: number; explanation: string; source?: { url: string; label: string } }[]
-  const first = all[0]
-  // Real sources are set aside so each test controls which question has one.
-  const realSources = new Map(all.filter((q) => q.source).map((q) => [q, q.source]))
+  type WithSource = { id: number; explanation: string; source?: { url: string; label: string } }
+  // The page reads the questions of the pack of the title, in memory since the test setup: edit those objects
+  let first: WithSource
+  let realSources: Map<WithSource, WithSource['source']>
 
   beforeEach(() => {
     localStorage.clear()
+    const all = getLoadedPack('pluriannuelle') as WithSource[]
+    first = all[0]
+    // Real sources are set aside so each test controls which question has one.
+    realSources = new Map(all.filter((q) => q.source).map((q) => [q, q.source]))
     realSources.forEach((_, q) => delete q.source)
   })
   afterEach(() => {

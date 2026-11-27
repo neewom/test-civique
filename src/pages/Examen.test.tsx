@@ -8,14 +8,8 @@ import { UNSAVED_MESSAGE } from '@/lib/readiness'
 import type { ExamInProgress } from '@/lib/exam-types'
 import { saveProgress, loadProgress, EXAM_PROGRESS_KEY } from '@/lib/exam-types'
 import allQuestions from '@/data/questions.json'
-import {
-  buildExam,
-  questionsForTitle,
-  saveResult,
-  shuffle,
-  formatTime,
-  EXAM_SIZE,
-} from '@/lib/exam'
+import { buildExam, saveResult, shuffle, formatTime, EXAM_SIZE } from '@/lib/exam'
+import { questionsForTitle } from '@/test/questions'
 
 function renderExamen() {
   return render(

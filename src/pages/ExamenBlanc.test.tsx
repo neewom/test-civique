@@ -6,7 +6,8 @@ import Examen from './Examen'
 import { ThemeProvider } from '@/components/ThemeProvider'
 import { saveProgress, loadProgress } from '@/lib/exam-types'
 import type { ExamInProgress } from '@/lib/exam-types'
-import { buildExam, questionsForTitle, EXAM_SIZE } from '@/lib/exam'
+import { buildExam, EXAM_SIZE } from '@/lib/exam'
+import { questionsForTitle } from '@/test/questions'
 import type { TitleKey } from '@/lib/target-title'
 
 function makeProgress(title: TitleKey, answered: number): ExamInProgress {

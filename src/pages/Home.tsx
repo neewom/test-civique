@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Link, Navigate, useNavigate } from 'react-router-dom'
 import { ArrowRight, Check, ChevronDown, ChevronRight, MonitorSmartphone } from 'lucide-react'
 import { isPassed } from '@/lib/exam'
@@ -7,6 +7,7 @@ import type { ExamInProgress } from '@/lib/exam-types'
 import { loadHistory, loadHistoryForTitle, type HistoryEntry } from '@/lib/history'
 import { passedInARow, READY_GOAL } from '@/lib/readiness'
 import { ficheUrl } from '@/lib/fiches'
+import { preloadQuestionPack } from '@/lib/question-packs'
 import { DEFAULT_TITLE, loadTargetTitle, TARGET_TITLE_LABELS } from '@/lib/target-title'
 import { Fraction } from '@/components/Fraction'
 import { PageFrame } from '@/components/PageFrame'
@@ -108,6 +109,13 @@ export default function Home() {
   const [mustChooseTitle] = useState(
     () => storedTitle === null && loadHistory().length === 0 && !hasProgress(),
   )
+
+  // Once the home page is shown and the browser idle, the pack of the chosen title downloads quietly,
+  // so that the exam and the revision open at once. Nothing is fetched without a chosen title.
+  useEffect(() => {
+    if (storedTitle === null) return
+    return preloadQuestionPack(storedTitle)
+  }, [storedTitle])
 
   if (mustChooseTitle) return <Navigate to="/titre" replace />
 

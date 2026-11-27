@@ -1,10 +1,15 @@
 import '@testing-library/jest-dom'
 import { beforeEach } from 'vitest'
-import { resetTargetTitleForTests } from '@/lib/target-title'
+import { loadQuestionPack } from '@/lib/question-packs'
+import { resetTargetTitleForTests, TITLE_KEYS } from '@/lib/target-title'
 
 // The target title chosen during a visit is kept in memory: each test starts without it
-beforeEach(() => {
+beforeEach(async () => {
   resetTargetTitleForTests()
+  // The questions load on demand in the app; here every pack is in memory before each test, so that
+  // a page renders its questions at once. A test of the loading itself resets them first
+  // (resetQuestionPacksForTests) and the next test gets them back.
+  await Promise.all(TITLE_KEYS.map((title) => loadQuestionPack(title)))
 })
 
 // @base-ui/react uses PointerEvent internally; JSDOM doesn't provide it

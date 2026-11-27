@@ -1,6 +1,7 @@
 import { describe, it, expect } from 'vitest'
 import allQuestions from '@/data/questions.json'
-import { buildExam, questionsForTitle, EXAM_BLUEPRINT, EXAM_SIZE, type Question } from './exam'
+import { buildExam, EXAM_BLUEPRINT, EXAM_SIZE, type Question } from './exam'
+import { questionsForTitle } from '@/test/questions'
 
 // Draws go through the pluriannuelle pool, as the app does (ids 292+ belong to the resident card)
 const POOL = allQuestions as Question[]

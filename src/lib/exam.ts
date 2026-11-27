@@ -1,4 +1,3 @@
-import allQuestions from '@/data/questions.json'
 import type { AnswerRecord, ExamQuestion, QuestionSource } from '@/lib/exam-types'
 import { addExamRecord } from '@/lib/history'
 import { DEFAULT_TITLE, type TitleKey } from '@/lib/target-title'
@@ -98,11 +97,12 @@ export interface ListedQuestion extends Question {
   natNumber?: number
 }
 
-/** Questions of a title: those whose `lists` holds it. */
-export function questionsForTitle(
-  title: TitleKey,
-  pool: ListedQuestion[] = allQuestions as ListedQuestion[],
-): ListedQuestion[] {
+/**
+ * Questions of a title: those of `pool` whose `lists` holds it. The pool is given (the pack of
+ * the title, or all the questions in a test): this module never imports the questions, so that
+ * the first screen does not carry them (src/lib/question-packs.ts).
+ */
+export function questionsForTitle(title: TitleKey, pool: ListedQuestion[]): ListedQuestion[] {
   return pool.filter((q) => q.lists.includes(title))
 }
 
@@ -127,7 +127,7 @@ export function shuffle<T>(arr: T[]): T[] {
  * filled without them, and never at the expense of the blueprint counts or the group rule.
  */
 export function buildExam(
-  pool: Question[] = allQuestions as Question[],
+  pool: Question[],
   { avoid = [] }: { avoid?: Iterable<number> } = {},
 ): ExamQuestion[] {
   const avoided = new Set(avoid)
