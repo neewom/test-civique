@@ -55,6 +55,8 @@ function isDeployPreview(url: string): boolean {
 export interface Guard {
   /** GoatCounter requests stopped by the route (none expected outside production) */
   blocked: string[]
+  /** Parts of an address whose HTTP error is expected by the test (the real 404 page) */
+  allowedErrors: string[]
 }
 
 /**
@@ -70,6 +72,7 @@ export const test = base.extend<{ guard: Guard }>({
       const seen: string[] = []
       const leaks: string[] = []
       const problems: string[] = []
+      const allowedErrors: string[] = []
 
       await context.route(
         (url) => GOATCOUNTER.test(url.hostname),
@@ -99,6 +102,8 @@ export const test = base.extend<{ guard: Guard }>({
         // Deploy previews only: the div Netlify inserts carries style="position:fixed", which
         // our CSP blocks; the production run still catches any inline style of the app itself
         if (isDeployPreview(m.location().url) && m.text().startsWith('Applying inline style violates')) return
+        // The browser logs an expected HTTP error (the real 404 page) as a console error too
+        if (m.text().startsWith('Failed to load resource') && allowedErrors.some((part) => m.location().url.includes(part))) return
         problems.push(`console: ${m.text()} (${m.location().url})`)
       })
       page.on('pageerror', (e) => problems.push(`exception: ${e.message}`))
@@ -106,10 +111,10 @@ export const test = base.extend<{ guard: Guard }>({
         if (!isGoatCounter(r.url())) problems.push(`request failed: ${r.url()} ${r.failure()?.errorText}`)
       })
       page.on('response', (r) => {
-        if (r.status() >= 400 && !isGoatCounter(r.url())) problems.push(`HTTP ${r.status()}: ${r.url()}`)
+        if (r.status() >= 400 && !isGoatCounter(r.url()) && !allowedErrors.some((part) => r.url().includes(part))) problems.push(`HTTP ${r.status()}: ${r.url()}`)
       })
 
-      await use({ blocked })
+      await use({ blocked, allowedErrors })
 
       expect(leaks, 'GoatCounter request that reached the network').toEqual([])
       expect(

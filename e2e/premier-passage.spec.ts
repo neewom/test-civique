@@ -139,7 +139,11 @@ test('premier passage : « En savoir plus » sur la carte de résident, puis « 
   await expect(page.getByRole('button', { name: 'Continuer mon entraînement' })).toBeVisible()
 })
 
-test('fiche : adresse inconnue renvoie vers l\'accueil', async ({ page }) => {
+test('fiche : adresse inconnue renvoie vers l\'accueil (appli déjà installée, service worker)', async ({ page, guard }) => {
+  // Without the worker Netlify answers a real 404 page (e2e/pages.spec.ts); the app itself still sends an unknown fiche home
+  guard.allowedErrors.push('/titres/inconnu')
+  await page.goto('/')
+  await page.waitForFunction(() => navigator.serviceWorker.controller !== null)
   await page.goto('/titres/inconnu')
   await expect(page).toHaveURL(/\/titre$/)
 })
