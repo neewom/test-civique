@@ -143,7 +143,7 @@ describe('analytics — production (futurcitoyen.fr)', () => {
 })
 
 describe('analytics — hors production', () => {
-  it.each(['localhost', '127.0.0.1', 'mac-mini-de-vichith.tail5a5a34.ts.net', 'deploy-preview-62--test-civique.netlify.app', 'test-civique.netlify.app', 'www.futurcitoyen.fr'])(
+  it.each(['localhost', '127.0.0.1', 'machine.tail0000.ts.net', 'deploy-preview-62--test-civique.netlify.app', 'test-civique.netlify.app', 'www.futurcitoyen.fr'])(
     "n'envoie rien sur %s",
     (hostname) => {
       setHostname(hostname)
