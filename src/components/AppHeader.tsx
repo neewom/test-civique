@@ -70,7 +70,7 @@ function DisplaySettings() {
 }
 
 /** « Affichage » button and its small panel. */
-function DisplayMenu() {
+function DisplayMenu({ compact = false }: { compact?: boolean }) {
   const [open, setOpen] = useState(false)
   const wrapRef = useRef<HTMLDivElement>(null)
   const buttonRef = useRef<HTMLButtonElement>(null)
@@ -115,11 +115,13 @@ function DisplayMenu() {
         aria-controls={panelId}
         onClick={() => setOpen((o) => !o)}
         className={cn(
-          'flex size-11 shrink-0 items-center justify-center rounded-full text-card-foreground transition-colors hover:bg-muted',
+          'flex shrink-0 items-center justify-center rounded-full text-card-foreground transition-colors hover:bg-muted',
+          // Compact (exam): 36 px drawn, the touch area stays 44 px through the pseudo-element
+          compact ? "relative size-9 after:absolute after:-inset-1 after:content-['']" : 'size-11',
           open ? 'bg-muted' : 'bg-card',
         )}
       >
-        <SlidersHorizontal aria-hidden="true" className="size-5" strokeWidth={2.2} />
+        <SlidersHorizontal aria-hidden="true" className={compact ? 'size-4' : 'size-5'} strokeWidth={2.2} />
       </button>
       {open && (
         <div
@@ -182,7 +184,7 @@ export function AppHeader({ thin = false, hideBrand = false, onLogoClick }: AppH
             <BrandLogo />
           </Link>
         )}
-        <DisplayMenu />
+        <DisplayMenu compact={thin} />
       </header>
     </div>
   )
