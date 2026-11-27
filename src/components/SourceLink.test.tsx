@@ -11,6 +11,19 @@ describe('SourceLink', () => {
     expect(link).toHaveAttribute('rel', 'noopener noreferrer')
   })
 
+  it('reste dans la largeur de sa colonne et coupe un libellé long (texte agrandi)', () => {
+    render(
+      <SourceLink
+        source={{ url: 'https://www.statistiques.developpement-durable.gouv.fr/x', label: 'statistiques.developpement-durable.gouv.fr' }}
+      />,
+    )
+    const link = screen.getByRole('link')
+    expect(link).toHaveClass('max-w-full')
+    const label = screen.getByText(/Source : statistiques/)
+    expect(label).toHaveClass('min-w-0')
+    expect(label.className).toContain('[overflow-wrap:anywhere]')
+  })
+
   it('ne rend rien sans source', () => {
     const { container } = render(<SourceLink />)
     expect(container).toBeEmptyDOMElement()

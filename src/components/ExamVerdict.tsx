@@ -23,7 +23,7 @@ export function ExamVerdict({ score, total, variant = 'full' }: ExamVerdictProps
       <Verdict tone={passed ? 'success' : 'pending'} size={compact ? 'default' : 'lg'}>
         {label}
         {' · '}
-        <span className="whitespace-nowrap">seuil {thresholdLabel}</span>
+        <span className="inline-block">seuil {thresholdLabel}</span>
       </Verdict>
       {!compact && !passed && (
         <p className="text-base">
