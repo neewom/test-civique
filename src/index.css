@@ -349,3 +349,11 @@
 ::view-transition-new(exam-bar) {
   animation-name: page-fade-in;
 }
+
+/* Revision page, phone: the filter band is stuck at the top (pill 2.75rem + padding + rule); keep focused elements
+   and jumps below it. In rem so that it follows the enlarged text. */
+@media (max-width: 639px) {
+  html:has([data-sticky-band]) {
+    scroll-padding-top: 4.25rem;
+  }
+}

@@ -22,6 +22,8 @@ const localStorageMock = makeLocalStorageMock()
 beforeEach(() => {
   vi.stubGlobal('localStorage', localStorageMock)
   localStorageMock.clear()
+  // The page remembers its view for the tab session: each test starts clean
+  sessionStorage.clear()
 })
 
 afterEach(() => {
@@ -354,5 +356,169 @@ describe('Revision — naturalisation', () => {
     fireEvent.click(screen.getByRole('checkbox', { name: /mises en situation/ }))
     const official = natQuestions.filter((q) => q.notion !== 'mise-en-situation')
     expect(screen.getByText(`Naturalisation · ${official.length} questions + 100 mises en situation`)).toBeInTheDocument()
+  })
+})
+
+describe('Revision — filtres retrouvés au retour (session)', () => {
+  const KEY = 'revision-view:pluriannuelle'
+  const stored = () => JSON.parse(sessionStorage.getItem(KEY) ?? 'null')
+  const theme0 = themes[0]
+
+  it('mémorise le filtre et la case dans sessionStorage, jamais dans localStorage', () => {
+    renderRevision()
+    fireEvent.click(pill(theme0))
+    fireEvent.click(screen.getByLabelText('Sans les mises en situation'))
+    expect(stored()).toMatchObject({ filter: { kind: 'theme', theme: theme0 }, excludeSituational: true })
+    expect(localStorageMock.getItem(KEY)).toBeNull()
+    expect(Object.keys(sessionStorage)).toEqual([KEY])
+  })
+
+  it('aller-retour : le thème et la case sont retrouvés', () => {
+    const first = render(
+      <MemoryRouter initialEntries={['/revision']}>
+        <Revision />
+      </MemoryRouter>,
+    )
+    fireEvent.click(pill(theme0))
+    fireEvent.click(screen.getByLabelText('Sans les mises en situation'))
+    first.unmount()
+    renderRevision()
+    expect(pill(theme0)).toHaveAttribute('aria-pressed', 'true')
+    expect(screen.getByLabelText('Sans les mises en situation')).toBeChecked()
+  })
+
+  it('retrouve « À revoir » quand il reste des questions à revoir', () => {
+    setHistory([{ questionId: official[0].id, correct: false }])
+    sessionStorage.setItem(KEY, JSON.stringify({ filter: { kind: 'review' }, excludeSituational: false, scrollY: 0 }))
+    renderRevision()
+    expect(screen.getByRole('button', { name: /À revoir/ })).toHaveAttribute('aria-pressed', 'true')
+  })
+
+  it('« À revoir » devenu vide retombe sur « Tous les thèmes »', () => {
+    sessionStorage.setItem(KEY, JSON.stringify({ filter: { kind: 'review' }, excludeSituational: false, scrollY: 0 }))
+    renderRevision()
+    expect(screen.getByRole('button', { name: 'Tous les thèmes' })).toHaveAttribute('aria-pressed', 'true')
+  })
+
+  it('un thème inconnu retombe sur « Tous les thèmes »', () => {
+    sessionStorage.setItem(KEY, JSON.stringify({ filter: { kind: 'theme', theme: 'Inconnu' }, excludeSituational: true, scrollY: 0 }))
+    renderRevision()
+    expect(screen.getByRole('button', { name: 'Tous les thèmes' })).toHaveAttribute('aria-pressed', 'true')
+  })
+
+  it.each(['pas du json{', 'null', '42', '{"filter":"all"}', '{"filter":{"kind":"autre"}}'])(
+    'valeur illisible ignorée (%s)',
+    (raw) => {
+      sessionStorage.setItem(KEY, raw)
+      renderRevision()
+      expect(screen.getByRole('button', { name: 'Tous les thèmes' })).toHaveAttribute('aria-pressed', 'true')
+      expect(screen.getByLabelText('Sans les mises en situation')).not.toBeChecked()
+    },
+  )
+
+  it("l'arrivée par « Réviser ces n questions » prime : rien n'est restauré", () => {
+    sessionStorage.setItem(KEY, JSON.stringify({ filter: { kind: 'theme', theme: theme0 }, excludeSituational: true, scrollY: 800 }))
+    const scrollTo = vi.spyOn(window, 'scrollTo').mockImplementation(() => {})
+    vi.useFakeTimers()
+    const state: ReviewState = { reviewIds: [official[0].id] }
+    renderRevision(state)
+    vi.advanceTimersByTime(100)
+    expect(screen.getByRole('button', { name: /Cet examen/ })).toHaveAttribute('aria-pressed', 'true')
+    expect(screen.getByLabelText('Sans les mises en situation')).not.toBeChecked()
+    expect(scrollTo).not.toHaveBeenCalled()
+    // And the exam filter is never written over the memory
+    expect(stored().filter).toEqual({ kind: 'theme', theme: theme0 })
+    vi.useRealTimers()
+    scrollTo.mockRestore()
+  })
+
+  it('une clé par titre', () => {
+    localStorageMock.setItem('target-title', 'resident')
+    sessionStorage.setItem(KEY, JSON.stringify({ filter: { kind: 'theme', theme: theme0 }, excludeSituational: true, scrollY: 0 }))
+    renderRevision()
+    expect(screen.getByRole('button', { name: 'Tous les thèmes' })).toHaveAttribute('aria-pressed', 'true')
+    fireEvent.click(screen.getByLabelText('Sans les mises en situation'))
+    expect(JSON.parse(sessionStorage.getItem('revision-view:resident')!).excludeSituational).toBe(true)
+    expect(stored().excludeSituational).toBe(true)
+    expect(stored().filter.theme).toBe(theme0)
+  })
+
+  it('remet la position de défilement mémorisée', () => {
+    sessionStorage.setItem(KEY, JSON.stringify({ filter: { kind: 'all' }, excludeSituational: false, scrollY: 1234 }))
+    const scrollTo = vi.spyOn(window, 'scrollTo').mockImplementation(() => {})
+    vi.useFakeTimers()
+    renderRevision()
+    vi.advanceTimersByTime(100)
+    expect(scrollTo).toHaveBeenCalledWith(0, 1234)
+    vi.useRealTimers()
+    scrollTo.mockRestore()
+  })
+
+  it('un stockage de session bloqué ne casse pas la page', () => {
+    vi.stubGlobal('sessionStorage', {
+      getItem: () => { throw new Error('blocked') },
+      setItem: () => { throw new Error('blocked') },
+    })
+    renderRevision()
+    fireEvent.click(pill(theme0))
+    expect(pill(theme0)).toHaveAttribute('aria-pressed', 'true')
+  })
+})
+
+describe('Revision — retour en haut des cartes quand on change la liste', () => {
+  const theme0 = themes[0]
+  afterEach(() => {
+    vi.restoreAllMocks()
+    // @ts-expect-error restore the jsdom default (own property removed)
+    delete window.scrollY
+  })
+
+  function setup(scrollY: number) {
+    const scrollTo = vi.spyOn(window, 'scrollTo').mockImplementation(() => {})
+    Object.defineProperty(window, 'scrollY', { configurable: true, value: scrollY })
+    // Cards column 300 px below the top of the page (jsdom has no layout)
+    vi.spyOn(Element.prototype, 'getBoundingClientRect').mockImplementation(
+      () => ({ top: 300 - scrollY, height: 0, bottom: 0, left: 0, right: 0, width: 0, x: 0, y: 0, toJSON: () => ({}) }) as DOMRect,
+    )
+    return scrollTo
+  }
+
+  it("un filtre choisi depuis le bas de la liste remonte au haut des cartes", () => {
+    const scrollTo = setup(20000)
+    renderRevision()
+    fireEvent.click(pill(theme0))
+    expect(scrollTo).toHaveBeenCalledWith(0, 300)
+    scrollTo.mockRestore()
+  })
+
+  it('cocher la case depuis le bas remonte aussi', () => {
+    const scrollTo = setup(20000)
+    renderRevision()
+    fireEvent.click(screen.getByLabelText('Sans les mises en situation'))
+    expect(scrollTo).toHaveBeenCalledWith(0, 300)
+    scrollTo.mockRestore()
+  })
+
+  it('déjà en haut : la page ne bouge pas', () => {
+    const scrollTo = setup(0)
+    renderRevision()
+    fireEvent.click(pill(theme0))
+    expect(scrollTo).not.toHaveBeenCalled()
+    scrollTo.mockRestore()
+  })
+
+  it('jamais au montage ni à la restauration', () => {
+    sessionStorage.setItem(
+      'revision-view:pluriannuelle',
+      JSON.stringify({ filter: { kind: 'theme', theme: theme0 }, excludeSituational: true, scrollY: 900 }),
+    )
+    const scrollTo = setup(20000)
+    vi.useFakeTimers()
+    renderRevision()
+    vi.advanceTimersByTime(100)
+    expect(scrollTo).toHaveBeenCalledTimes(1)
+    expect(scrollTo).toHaveBeenCalledWith(0, 900)
+    vi.useRealTimers()
+    scrollTo.mockRestore()
   })
 })

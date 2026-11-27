@@ -1,4 +1,4 @@
-import { useId, useState } from 'react'
+import { useEffect, useId, useRef, useState } from 'react'
 import { useLocation } from 'react-router-dom'
 import { AnswerBox } from '@/components/AnswerBox'
 import { BackLink } from '@/components/BackLink'
@@ -7,6 +7,7 @@ import { AppHeader } from '@/components/AppHeader'
 import { questionsForTitle, type Question } from '@/lib/exam'
 import { OFFICIAL_THEMES } from '@/lib/exam-review'
 import { loadQuestionsToReview, parseReviewIds } from '@/lib/review-queue'
+import { loadRevisionView, saveRevisionView } from '@/lib/revision-memory'
 import { DEFAULT_TITLE, loadTargetTitle, TARGET_TITLE_LABELS } from '@/lib/target-title'
 import { useDocumentTitle } from '@/lib/use-document-title'
 import { themeLabel } from '@/lib/themes'
@@ -51,6 +52,7 @@ function QuestionCard({ question }: { question: Question }) {
 export default function Revision() {
   useDocumentTitle('Révision')
   const location = useLocation()
+  const pathname = location.pathname
   // Questions of the chosen title (`lists` of questions.json)
   const [title] = useState(() => loadTargetTitle() ?? DEFAULT_TITLE)
   const [{ titlePool, poolIds, themes }] = useState(() => {
@@ -60,8 +62,83 @@ export default function Revision() {
   const [examIds] = useState(() => parseReviewIds(location.state, poolIds))
   // Only questions of the pool: an id removed since the exam would count without a card
   const [reviewIds] = useState(() => loadQuestionsToReview(title).filter((id) => poolIds.has(id)))
-  const [filter, setFilter] = useState<Filter>(() => (examIds.length > 0 ? { kind: 'exam' } : { kind: 'all' }))
-  const [excludeSituational, setExcludeSituational] = useState(false)
+  // Coming from an exam detail wins over the memory of the session: nothing is restored then
+  const [restored] = useState(() => (examIds.length > 0 ? null : loadRevisionView(title, themes, reviewIds.length > 0)))
+  const [filter, setFilterState] = useState<Filter>(() =>
+    examIds.length > 0 ? { kind: 'exam' } : (restored?.filter ?? { kind: 'all' }),
+  )
+  const [excludeSituational, setExcludeSituationalState] = useState(restored?.excludeSituational ?? false)
+  // Set when the user (not the mount, not the restoration) changes the list: see the effect below
+  const userChanged = useRef(false)
+  const setFilter = (next: Filter) => {
+    userChanged.current = true
+    setFilterState(next)
+  }
+  const setExcludeSituational = (next: boolean) => {
+    userChanged.current = true
+    setExcludeSituationalState(next)
+  }
+  const bandRef = useRef<HTMLDivElement>(null)
+  const cardsRef = useRef<HTMLDivElement>(null)
+  const scrollY = useRef(restored?.scrollY ?? 0)
+  // False until the saved position is back: the jump to the top of a new page must not overwrite it
+  const tracking = useRef(false)
+
+  // Remember filter, box and position for this tab session (not when the exam filter is on)
+  useEffect(() => {
+    if (filter.kind === 'exam') return
+    saveRevisionView(title, { filter, excludeSituational, scrollY: scrollY.current })
+  }, [title, filter, excludeSituational])
+
+  // A new list starts at its top: from further down, go back to the top of the cards column (under the stuck band)
+  useEffect(() => {
+    if (!userChanged.current) return
+    userChanged.current = false
+    const column = cardsRef.current
+    if (!column) return
+    const band = bandRef.current
+    const bandHeight = band && getComputedStyle(band).position === 'sticky' ? band.getBoundingClientRect().height : 0
+    const top = column.getBoundingClientRect().top + window.scrollY - bandHeight
+    if (window.scrollY > top) window.scrollTo(0, Math.max(0, top))
+  }, [filter, excludeSituational])
+
+  const latest = useRef({ filter, excludeSituational })
+  useEffect(() => {
+    latest.current = { filter, excludeSituational }
+  })
+
+  useEffect(() => {
+    let frame = 0
+    const remember = () => {
+      frame = 0
+      const { filter: f, excludeSituational: ex } = latest.current
+      // Leaving pushes the new address before the router scrolls the next page to the top
+      if (!tracking.current || window.location.pathname !== pathname || f.kind === 'exam') return
+      scrollY.current = window.scrollY
+      saveRevisionView(title, { filter: f, excludeSituational: ex, scrollY: scrollY.current })
+    }
+    const onScroll = () => {
+      if (!frame) frame = requestAnimationFrame(remember)
+    }
+    // Wait for the page scroll reset of the router, then put the saved position back
+    const timer = window.setTimeout(() => {
+      if (scrollY.current > 0) window.scrollTo(0, scrollY.current)
+      // The restored pill may be out of sight in the sideways band: bring it in without moving the page
+      const band = bandRef.current
+      const pressed = band?.querySelector<HTMLElement>('[aria-pressed="true"]')
+      if (band && pressed && band.scrollWidth > band.clientWidth) {
+        band.scrollLeft = pressed.offsetLeft - (band.clientWidth - pressed.offsetWidth) / 2
+      }
+      tracking.current = true
+    }, 50)
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => {
+      window.clearTimeout(timer)
+      cancelAnimationFrame(frame)
+      window.removeEventListener('scroll', onScroll)
+      tracking.current = false
+    }
+  }, [title, pathname])
   const checkboxId = useId()
 
   const titleLabel = TARGET_TITLE_LABELS[title]
@@ -94,8 +171,10 @@ export default function Revision() {
     <main className="flex min-h-svh flex-col bg-background text-foreground">
       <AppHeader />
       <div className="mx-auto flex w-full max-w-[30rem] flex-col gap-3.5 px-5 pt-0 pb-7 md:max-w-[36rem] md:px-8 lg:grid lg:max-w-[62rem] lg:grid-cols-[17rem_minmax(0,1fr)] lg:items-start lg:gap-x-14 lg:px-10">
-        {/* From 1024 px: a sticky side column with the header and the filters (side padding: room for the focus rings) */}
-        <div className="flex flex-col gap-3.5 lg:sticky lg:top-0 lg:-mx-2 lg:max-h-svh lg:overflow-y-auto lg:px-2 lg:py-8">
+        {/* From 1024 px: a sticky side column with the header and the filters (side padding: room for the focus rings).
+            Below: `contents` lets the pill band be a child of the page column, so that it can stay stuck at the top
+            all along the cards (a sticky element only sticks inside its parent; no overflow-hidden above it either). */}
+        <div className="contents lg:flex lg:flex-col lg:gap-3.5 lg:sticky lg:top-0 lg:-mx-2 lg:max-h-svh lg:overflow-y-auto lg:px-2 lg:py-8">
           <div className="flex flex-col gap-2.5">
             <BackLink>Mon parcours</BackLink>
             <h1 className="text-[2.125rem] leading-none font-bold tracking-[-0.04em] md:text-[3rem]">Réviser</h1>
@@ -105,8 +184,9 @@ export default function Revision() {
             </p>
           </div>
 
-          {/* Pills scroll sideways on a phone and wrap on a wider screen; the vertical padding keeps the focus ring visible */}
-          <div className="-mx-5 overflow-x-auto px-5 py-1.5 [scrollbar-width:none] sm:overflow-visible lg:mx-0 lg:px-0">
+          {/* Pills scroll sideways on a phone and wrap on a wider screen; the vertical padding keeps the focus ring visible.
+              Stuck at the top on a phone (below 640 px: page background, thin rule under it) while the cards scroll; the wrapped pills of a tablet would take a quarter of the screen. */}
+          <div ref={bandRef} data-sticky-band className="sticky top-0 z-10 -mx-5 overflow-x-auto border-b border-border bg-background px-5 py-1.5 [scrollbar-width:none] sm:static sm:overflow-visible sm:border-b-0 md:-mx-8 md:px-8 lg:mx-0 lg:bg-transparent lg:px-0">
             <div role="group" aria-label="Questions à afficher" className="flex w-max gap-2 sm:w-auto sm:flex-wrap lg:flex-col lg:items-stretch">
               {examIds.length > 0 && (
                 <button
@@ -164,7 +244,7 @@ export default function Revision() {
         </div>
 
         {/* Cards on one reading column */}
-        <div className="flex flex-col gap-3.5 lg:max-w-[40rem] lg:pt-[7.25rem]">
+        <div ref={cardsRef} className="flex flex-col gap-3.5 lg:max-w-[40rem] lg:pt-[7.25rem]">
           <p aria-live="polite" className="sr-only">
             {shown.length} question{shown.length > 1 ? 's' : ''} affichée{shown.length > 1 ? 's' : ''}
           </p>
