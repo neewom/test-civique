@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import { Link, Navigate, useNavigate } from 'react-router-dom'
 import { ArrowRight, Check, ChevronDown, ChevronRight, MonitorSmartphone } from 'lucide-react'
 import { isPassed } from '@/lib/exam'
@@ -11,6 +11,14 @@ import { DEFAULT_TITLE, loadTargetTitle, TARGET_TITLE_LABELS } from '@/lib/targe
 import { AppHeader } from '@/components/AppHeader'
 import { OrganicBackground } from '@/components/OrganicBackground'
 import { PillButton, PillLink } from '@/components/PillButton'
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+} from '@/components/ui/dialog'
 import { useDocumentTitle } from '@/lib/use-document-title'
 import { useWideScreen } from '@/lib/use-wide-screen'
 import { cn } from '@/lib/utils'
@@ -92,6 +100,9 @@ export default function Home() {
   // Counter, last exams and resume: exams of the chosen title only
   const [history] = useState(() => loadHistoryForTitle(targetTitle))
   const [inProgress, setInProgress] = useState<ExamInProgress | null>(() => loadProgressForTitle(targetTitle))
+  const [confirmDelete, setConfirmDelete] = useState(false)
+  const deleteButtonRef = useRef<HTMLButtonElement>(null)
+  const stepTwoRef = useRef<HTMLButtonElement>(null)
   const wide = useWideScreen()
   const [mustChooseTitle] = useState(
     () => storedTitle === null && loadHistory().length === 0 && !hasProgress(),
@@ -110,6 +121,7 @@ export default function Home() {
   function handleDeleteProgress() {
     clearProgress(targetTitle)
     setInProgress(null)
+    setConfirmDelete(false)
   }
 
   // Resumes the exam in progress of the chosen title (never erased silently);
@@ -159,6 +171,7 @@ export default function Home() {
         <li className="flex w-full flex-col items-start">
           <PillButton
             size="lg"
+            ref={stepTwoRef}
             onClick={startExam}
             end={`${streak} sur ${READY_GOAL}`}
             endIsText
@@ -166,7 +179,7 @@ export default function Home() {
             // that basis no longer fits, does the counter go below instead of overflowing
             className="max-w-full flex-wrap [&>span:first-child]:grow [&>span:first-child]:basis-36"
           >
-            2 · Réussir {READY_GOAL} examens blancs
+            2 · Réussir {READY_GOAL} examens blancs d'affilée
           </PillButton>
         </li>
 
@@ -199,7 +212,8 @@ export default function Home() {
       </PillLink>
       <button
         type="button"
-        onClick={handleDeleteProgress}
+        ref={deleteButtonRef}
+        onClick={() => setConfirmDelete(true)}
         className="min-h-11 rounded-sm px-1 text-left text-[0.875rem] underline underline-offset-4"
       >
         Supprimer l'examen en cours
@@ -276,6 +290,32 @@ export default function Home() {
 
   return (
     <main className="relative flex min-h-svh flex-col overflow-hidden bg-background text-foreground">
+      <Dialog open={confirmDelete} onOpenChange={setConfirmDelete}>
+        <DialogContent
+          showCloseButton={false}
+          // Cancel or Escape: back on the link that opened the box; after the deletion that
+          // link is gone, the focus goes to step 2 (the exam can be started from there)
+          finalFocus={() => deleteButtonRef.current ?? stepTwoRef.current}
+          className="max-h-[calc(100svh-2rem)] gap-5 overflow-y-auto rounded-2xl p-5 data-closed:animate-none data-open:animate-none"
+        >
+          <DialogHeader>
+            <DialogTitle className="text-lg leading-snug font-bold">Supprimer l'examen en cours ?</DialogTitle>
+            <DialogDescription className="text-base text-popover-foreground">
+              L'examen en cours sera abandonné.
+            </DialogDescription>
+          </DialogHeader>
+          {/* « Annuler » first, also on mobile (the default footer reverses the order) */}
+          <DialogFooter className="-mx-5 -mb-5 flex-col p-5 sm:flex-row">
+            <PillButton tone="action" onClick={() => setConfirmDelete(false)} className="justify-center text-center">
+              Annuler
+            </PillButton>
+            <PillButton tone="ink" onClick={handleDeleteProgress} className="justify-center text-center">
+              Supprimer l'examen
+            </PillButton>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
+
       <OrganicBackground shape="journey" className="lg:w-[calc(50%+1.5rem)]" />
 
       <AppHeader />
