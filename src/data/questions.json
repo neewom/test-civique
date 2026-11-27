@@ -5612,7 +5612,7 @@
     ],
     "question": "Votre employeur vous propose d'être payé en liquide sans déclaration. Qu'est-ce que vous risquez en acceptant ?",
     "distractors": [
-      "Le retrait de votre permis de conduire : suspension, perte de points",
+      "Une simple amende forfaitaire : 135 €, sans conséquence sur vos droits",
       "Le blocage de votre compte bancaire : gel des avoirs, fermeture du compte",
       "Une taxe spéciale sur le salaire reçu : majoration, intérêts de retard"
     ],
@@ -5785,13 +5785,13 @@
     ],
     "question": "Vous êtes impliqué dans un accident de voiture sans blessé. Que devez-vous faire avec l'autre conducteur ?",
     "distractors": [
-      "Partir si vous estimez ne pas être en tort, sans attendre 5 jours",
-      "Appeler la police obligatoirement même sans blessé et attendre sur place 2 heures",
-      "Régler l'affaire en liquide entre vous sans passer par les assurances sous 48 heures"
+      "Partir si vous estimez ne pas être en tort",
+      "Appeler la police obligatoirement même sans blessé",
+      "Régler l'affaire en liquide entre vous sans passer par les assurances"
     ],
-    "explanation": "En cas d'accident sans blessé, les conducteurs doivent remplir un constat amiable et l'envoyer à leurs assurances respectives. Quitter les lieux sans constater est un délit de fuite, même sans blessé.",
+    "explanation": "En cas d'accident sans blessé, les conducteurs remplissent ensemble un constat amiable, que chacun envoie à son assurance, en général dans les 5 jours ouvrés. Sans blessé, appeler la police n'est pas obligatoire : vous pouvez le faire si l'autre conducteur refuse de remplir le constat ou prend la fuite. Quitter les lieux sans constater est un délit de fuite, même sans blessé.",
     "answers": [
-      "Remplir un constat amiable et l'envoyer à votre assurance dans les 5 jours ouvrés"
+      "Remplir ensemble un constat amiable et l'envoyer à votre assurance"
     ],
     "source": {
       "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F2149",
@@ -5859,8 +5859,8 @@
     "question": "Vous entendez une dispute violente chez votre voisin avec des cris de douleur. Que faites-vous ?",
     "distractors": [
       "Appeler le 115 (hébergement d'urgence) et attendre le lendemain",
-      "Ne pas intervenir (affaire privée) et ne pas appeler le 17",
-      "Frapper à la porte (pour intervenir) sans appeler le 17 ni le 15"
+      "Ne pas intervenir (affaire privée) et en parler au voisin le lendemain",
+      "Frapper à la porte (pour intervenir) et séparer vous-même les personnes"
     ],
     "explanation": "Ne pas porter secours à une personne en danger est un délit (non-assistance à personne en danger). Appeler le 17 ou le 15 est le geste approprié. Intervenir soi-même physiquement peut s'avérer dangereux.",
     "answers": [
@@ -5908,9 +5908,9 @@
     ],
     "question": "Vous êtes victime de violences conjugales. Que devez-vous faire ?",
     "distractors": [
-      "Garder cela privé, c'est une affaire de famille, et ne pas appeler le 17",
-      "Demander à votre conjoint une promesse écrite, sans appeler le 17 ni le 3919",
-      "Attendre que la situation s'améliore d'elle-même et ne pas appeler le 3919"
+      "Garder cela privé, c'est une affaire de famille, et en parler à un proche",
+      "Demander à votre conjoint une promesse écrite de ne plus recommencer",
+      "Attendre 6 mois que la situation s'améliore avant de faire quoi que ce soit"
     ],
     "explanation": "Les violences conjugales sont interdites et punies par la loi (délit, voire crime). La victime peut porter plainte dans un commissariat ou une gendarmerie, appeler le 17 en cas de danger immédiat et le 3919 (Violences Femmes Info), numéro d'écoute gratuit et anonyme disponible 24h/24. Des associations l'accompagnent gratuitement.",
     "answers": [
@@ -6006,7 +6006,7 @@
     ],
     "question": "Votre enfant de 15 ans souhaite arrêter l'école pour travailler. Est-ce légalement possible ?",
     "distractors": [
-      "Non, sauf si le directeur de l'école donne son accord",
+      "Non, car il doit d'abord obtenir son baccalauréat",
       "Oui, si les parents donnent leur accord écrit dès 15 ans",
       "Oui, car l'instruction n'est obligatoire que jusqu'à 14 ans"
     ],
@@ -6324,7 +6324,7 @@
     "distractors": [
       "Oui, la liberté religieuse s'applique à tous les agents comme aux élèves",
       "Oui, tant que les parents d'élèves de la classe ne s'y opposent pas",
-      "Non, sauf si l'enseignant le demande par écrit à son directeur"
+      "Non, car les signes religieux sont interdits dans la rue et les transports"
     ],
     "explanation": "La laïcité impose aux agents du service public une stricte neutralité : un enseignant de l'école publique ne peut porter aucun signe religieux dans l'exercice de ses fonctions, même discret. Les élèves ne sont pas tenus à cette neutralité, mais la loi du 15 mars 2004 leur interdit les signes religieux ostensibles dans les écoles, collèges et lycées publics.",
     "answers": [
@@ -6349,7 +6349,7 @@
     "distractors": [
       "Oui, si les parents en font la demande écrite, avec un motif religieux",
       "Oui, à condition que la religion de l'élève soit reconnue par l'État",
-      "Non, sauf si le directeur de l'établissement donne son accord écrit"
+      "Non, car l'éducation civique est la seule matière obligatoire à l'école"
     ],
     "explanation": "L'école publique est laïque et ses programmes s'imposent à tous : les convictions religieuses ne permettent pas de refuser une matière inscrite à l'emploi du temps. L'instruction en famille n'est possible que sur autorisation, pour des motifs limités fixés par la loi (santé, handicap, activité sportive ou artistique intensive, itinérance, éloignement, situation propre à l'enfant).",
     "answers": [
@@ -6372,7 +6372,7 @@
     "question": "Lors d'une réunion publique, un orateur tient des propos appelant à la haine contre un groupe religieux. Est-ce protégé par la liberté d'expression ?",
     "distractors": [
       "Oui, la liberté d'expression est absolue dans les réunions publiques",
-      "Non, sauf si l'orateur est un élu ou un responsable politique",
+      "Non, car critiquer une religion est un délit en France",
       "Oui, si les propos ne visent pas une personne nommément"
     ],
     "explanation": "La liberté d'expression a des limites fixées par la loi. Les propos incitant à la haine, à la discrimination ou à la violence envers une personne ou un groupe en raison de sa religion, son origine, son sexe ou son orientation sexuelle constituent un délit.",
@@ -6422,7 +6422,7 @@
     "distractors": [
       "Oui, les partis politiques sont libres de choisir leurs candidats",
       "Oui, si cela vise à corriger des inégalités historiques",
-      "Non, sauf si les statuts internes du parti le prévoient"
+      "Non, car un parti doit présenter des candidats de plusieurs religions"
     ],
     "explanation": "Le principe d'égalité interdit toute discrimination fondée sur l'origine ethnique, y compris dans la sélection de candidats politiques. En France, les partis politiques doivent respecter le cadre légal anti-discrimination.",
     "answers": [
@@ -6469,7 +6469,7 @@
     "question": "Votre employeur vous remet un contrat de travail et un règlement intérieur rédigés uniquement en anglais. Est-ce légal ?",
     "distractors": [
       "Oui, l'employeur est libre de choisir la langue de ses documents",
-      "Non, sauf si l'entreprise est une multinationale ou une société étrangère",
+      "Non, car ils doivent être rédigés à la fois en français et en anglais",
       "Cela dépend de ce que prévoit le contrat de travail"
     ],
     "explanation": "La loi Toubon de 1994 et le Code du travail imposent le français pour le contrat de travail, le règlement intérieur et tout document qui comporte des obligations pour le salarié ; une traduction peut y être jointe. En revanche, la loi ne règle pas la langue parlée entre collègues.",
@@ -6716,7 +6716,7 @@
     ],
     "explanation": "Selon l'article 12 de la Constitution, le président de la République peut dissoudre l'Assemblée nationale. Il doit au préalable consulter le Premier ministre et les présidents des deux assemblées. Cette mesure entraîne l'organisation de nouvelles élections législatives.",
     "answers": [
-      "Le président de la République, qui consulte d'abord le Premier ministre"
+      "Le président de la République, après des consultations obligatoires"
     ],
     "source": {
       "url": "https://www.conseil-constitutionnel.fr/le-bloc-de-constitutionnalite/texte-integral-de-la-constitution-du-4-octobre-1958-en-vigueur",
@@ -6784,7 +6784,7 @@
     "question": "Votre région souhaite adopter une loi propre à son territoire, différente de la loi nationale. Est-ce possible ?",
     "distractors": [
       "Oui, les régions ont une large autonomie législative depuis 2003",
-      "Non, sauf dans certains domaines comme le tourisme et la culture",
+      "Non, car ce sont les départements qui votent les lois locales",
       "Oui, si le conseil régional la vote à l'unanimité"
     ],
     "explanation": "La France est un État unitaire. Les régions ont des compétences administratives (formation, transports, développement économique) mais ne peuvent pas créer leurs propres lois. Seul le Parlement national vote les lois applicables sur tout le territoire.",
@@ -7251,7 +7251,7 @@
     "distractors": [
       "Oui, l'employeur peut modifier le contrat librement",
       "Oui, s'il vous prévient simplement par oral la veille",
-      "Non, sauf si l'employeur est une grande entreprise de plus de 50 salariés"
+      "Non, car ces éléments sont fixés une fois pour toutes à la signature"
     ],
     "explanation": "Le salaire et la durée du travail sont des éléments essentiels du contrat : l'employeur peut seulement proposer de les modifier, et le salarié doit donner son accord. S'il refuse, l'employeur renonce ou engage un licenciement. Pour un motif économique, le salarié a un mois pour refuser ; passé ce délai, son silence vaut acceptation. Un simple changement des conditions de travail (tâches, certains horaires) peut en revanche être imposé.",
     "answers": [
@@ -7297,9 +7297,9 @@
     ],
     "question": "Vous recevez un courrier d'une administration vous réclamant un document que vous avez déjà envoyé. Que pouvez-vous invoquer ?",
     "distractors": [
-      "Le principe « Un dossier, un guichet »",
-      "Le principe « Pas de papier sans tampon »",
-      "Le principe « Un justificatif par an »"
+      "Le principe « Silence vaut acceptation »",
+      "Le principe « Nul n'est censé ignorer la loi »",
+      "Le principe « Un dossier, un guichet »"
     ],
     "explanation": "Selon le principe « Dites-le-nous une fois » (article L113-12 du code des relations entre le public et l'administration), l'administration ne peut pas vous obliger à fournir des informations qu'elle détient déjà ou qu'elle peut obtenir directement auprès d'une autre administration. Vous pouvez le lui signaler plutôt que de renvoyer le document.",
     "answers": [
@@ -7345,13 +7345,13 @@
     ],
     "question": "Vous souhaitez faire garder votre enfant de 2 ans. Quels modes de garde sont possibles en France ?",
     "distractors": [
-      "Colonie de vacances, centre de loisirs, garderie de l'école primaire ou classe de CP",
-      "Classe de CP, classe de CE1, classe de CM2 ou internat du collège",
-      "Garderie de l'école primaire, centre de loisirs, colonie de vacances ou club sportif"
+      "Crèche collective, microcrèche ou halte-garderie, car la garde à domicile est interdite",
+      "Crèche collective ou école maternelle, obligatoire pour tous les enfants dès 2 ans",
+      "Assistante maternelle ou garde à domicile, car la crèche n'accueille les enfants qu'à 3 ans"
     ],
     "explanation": "Plusieurs modes de garde existent pour les enfants de moins de 3 ans : crèche collective ou familiale, assistante maternelle agréée, garde à domicile, microcrèche. Des aides financières (CMG, PAJE) de la CAF peuvent compléter le financement.",
     "answers": [
-      "Crèche collective, assistante maternelle agréée, garde à domicile ou microcrèche"
+      "Crèche, microcrèche, assistante maternelle agréée ou garde à domicile, avec des aides possibles"
     ],
     "source": {
       "url": "https://formation-civique.interieur.gouv.fr/fiches-par-thematiques/vivre-dans-la-societe-fran%C3%A7aise/parentalite/les-modes-de-garde-des-enfants-de-moins-de-3-ans/",
@@ -7466,7 +7466,7 @@
     "question": "Un commerçant refuse d'accepter vos pièces de monnaie en euros comme paiement. A-t-il le droit ?",
     "distractors": [
       "Oui, les commerçants peuvent refuser les pièces de monnaie quand ils le souhaitent",
-      "Non, sauf si le commerçant est un artisan ou un petit commerce de proximité",
+      "Non, car un commerçant doit accepter les pièces sans limite de nombre",
       "Oui, pour les pièces de moins de 1 euro uniquement, quel que soit le montant"
     ],
     "explanation": "Les billets et pièces en euros ont cours légal : un commerçant ne peut pas refuser d'être payé en espèces, sous peine d'amende. Il existe des exceptions : il peut refuser plus de 50 pièces pour un même paiement, des espèces fausses ou en mauvais état, et il peut exiger que vous fassiez l'appoint.",
@@ -7539,8 +7539,8 @@
     "question": "Vous êtes arrêté en état d'ivresse au volant. Quelles sont les conséquences possibles ?",
     "distractors": [
       "Amende de 35 euros, retrait d'un seul point et simple rappel à la loi sur place",
-      "Interdiction de quitter le département, amende de 1 500 euros et prison de 10 ans",
-      "Convocation devant un tribunal civil, versement de dommages et blocage du compte bancaire"
+      "Simple avertissement, sans retrait de points ni amende, quand il n'y a pas eu d'accident",
+      "Retrait de 3 points, sans amende ni suspension possible du permis"
     ],
     "explanation": "Il est interdit de conduire avec 0,5 g d'alcool par litre de sang ou plus (0,2 g/L en permis probatoire). Jusqu'à 0,8 g/L, c'est une contravention : amende (135 € en général), retrait de 6 points, suspension possible du permis. À partir de 0,8 g/L, c'est un délit : jusqu'à 3 ans de prison et 9 000 € d'amende, 6 points retirés, suspension ou annulation du permis. Ces sanctions s'appliquent même sans accident.",
     "answers": [
@@ -7606,9 +7606,9 @@
     ],
     "question": "Votre enfant est victime de harcèlement à l'école. Que devez-vous faire ?",
     "distractors": [
-      "Ignorer la situation, les enfants règlent leurs conflits seuls, sans appeler le 3018",
-      "Contacter directement le harceleur et sa famille avant d'appeler le 17",
-      "Porter plainte tout de suite à la police, sans prévenir l'école ni appeler le 3018"
+      "Ignorer la situation, les enfants règlent leurs conflits seuls",
+      "Contacter directement le harceleur et sa famille pour régler cela vous-même",
+      "Attendre 2 ou 3 mois que cela passe, puis changer votre enfant d'école"
     ],
     "explanation": "Face au harcèlement scolaire, il faut d'abord alerter l'établissement. Le 3018 est le numéro national, gratuit et anonyme, contre le harcèlement à l'école et le cyberharcèlement. En cas de faits graves, une plainte peut aussi être déposée.",
     "answers": [
@@ -7728,7 +7728,7 @@
     "question": "Votre employeur souhaite connaître vos opinions politiques lors d'un entretien d'embauche. A-t-il le droit de vous poser cette question ?",
     "distractors": [
       "Oui, l'employeur a le droit de connaître les valeurs de ses futurs employés",
-      "Non, sauf si le candidat est étranger et doit prouver son intégration",
+      "Non, car cette question ne peut lui être posée que par écrit",
       "Oui, si le poste concerne des fonctions sensibles ou publiques"
     ],
     "explanation": "Les questions relatives aux opinions politiques, religieuses ou syndicales sont interdites lors d'un entretien d'embauche car elles relèvent de la vie privée et pourraient conduire à des discriminations. L'employeur ne peut poser que des questions en lien direct avec le poste.",
@@ -7801,9 +7801,9 @@
     ],
     "question": "Vous êtes témoin d'un acte raciste dans le bus. Quelle est la bonne attitude ?",
     "distractors": [
-      "Ne pas intervenir pour ne pas aggraver les choses, et ne pas appeler le 17",
-      "Filmer uniquement pour servir de preuve, sans appeler le 17 ni soutenir la victime",
-      "Changer de place, faire comme si vous n'aviez rien vu et appeler le 15"
+      "Ne pas intervenir, attendre 2 ou 3 arrêts, et descendre discrètement du bus",
+      "Filmer la scène, la publier sur les réseaux sociaux, et attendre que cela cesse",
+      "S'interposer physiquement, pousser l'auteur hors du bus, et partir aussitôt"
     ],
     "explanation": "Témoin d'un acte raciste, vous devez agir sans vous mettre en danger : alerter le conducteur ou un agent, appeler le 17 si la situation l'exige, écouter et soutenir la victime, et l'orienter vers de l'aide. Vous pourrez ensuite témoigner auprès de la police si elle porte plainte. Ne pas porter secours à une personne en danger est un délit.",
     "answers": [
