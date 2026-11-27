@@ -1,4 +1,6 @@
 import type { AnswerRecord } from '@/lib/exam-types'
+import { PASS_RATIO } from '@/lib/exam'
+import type { HistoryEntry } from '@/lib/history'
 import { THEME_COLORS } from '@/lib/themes'
 
 // The 5 official themes, in the order of the programme
@@ -59,4 +61,48 @@ export function weakestThemesToShow(themes: ReadonlyArray<string>): string[] | n
 export function weakestThemesLabel(themes: ReadonlyArray<string>): string | null {
   const shown = weakestThemesToShow(themes)
   return shown ? `À travailler : ${shown.join(' | ')}` : null
+}
+
+// « Vos thèmes » on the home page: the last practice exams that can be read
+export const THEME_PROGRESS_EXAMS = 3
+
+export interface ThemeProgress {
+  theme: string
+  /** Rounded share of right answers, 0 to 100 */
+  percent: number
+  /** Below the pass ratio (80 %), as displayed */
+  toWork: boolean
+}
+
+export interface ThemeProgressSummary {
+  /** Exams the figures come from (1 to 3) */
+  examCount: number
+  /** The official themes present in those exams, weakest first (programme order on ties) */
+  themes: ThemeProgress[]
+}
+
+/**
+ * Right answers per official theme over the last 3 exams that kept their answers (history is
+ * stored oldest first, already limited to one title). Unanswered questions count as wrong (they
+ * are stored as such). Exams without `answers` are ignored; null when no exam can be read.
+ */
+export function recentThemeProgress(
+  history: ReadonlyArray<HistoryEntry>,
+  themeOf: (questionId: number) => string | undefined,
+): ThemeProgressSummary | null {
+  const readable = history.filter((e) => e.answers && e.answers.length > 0).slice(-THEME_PROGRESS_EXAMS)
+  if (readable.length === 0) return null
+  const scores = themeScores(
+    readable.flatMap((e) => e.answers ?? []),
+    themeOf,
+  ).filter((s) => OFFICIAL_THEMES.includes(s.theme))
+  if (scores.length === 0) return null
+  const themes = scores
+    .map((s) => {
+      const percent = Math.round((s.correct / s.total) * 100)
+      return { theme: s.theme, percent, toWork: percent < PASS_RATIO * 100, ratio: s.correct / s.total }
+    })
+    .sort((a, b) => a.ratio - b.ratio)
+    .map(({ theme, percent, toWork }) => ({ theme, percent, toWork }))
+  return { examCount: readable.length, themes }
 }

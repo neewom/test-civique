@@ -4,6 +4,7 @@ import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest'
 import Home, { OFFICIAL_SITE_URL } from './Home'
 import { ThemeProvider } from '@/components/ThemeProvider'
 import { stubWideScreen } from '@/test/wide-screen'
+import { loadQuestionPack, resetQuestionPacksForTests, setQuestionPackLoaderForTests } from '@/lib/question-packs'
 
 // localStorage mock (jsdom dans ce projet ne fournit pas une implémentation complète)
 function makeLocalStorageMock() {
@@ -843,5 +844,131 @@ describe("Accueil — « Continuer où j'en étais » (révision)", () => {
     })
     renderHome()
     expect(shortcut()).toBeNull()
+  })
+})
+
+describe('Accueil — jour J et « Vos thèmes »', () => {
+  const THEME_IDS = [
+    ['Principes et valeurs de la République', 10],
+    ['Système institutionnel et politique', 20],
+    ['Droits et devoirs', 30],
+    ['Histoire, géographie et culture', 40],
+    ['Vie en société', 50],
+  ] as const
+  const fakePack = THEME_IDS.flatMap(([theme, base]) =>
+    Array.from({ length: 10 }, (_, n) => ({ id: base + n, theme })),
+  )
+
+  // An exam passed (or not), with answers: `right` of the 10 questions of each theme
+  function examWith(right: number[], passed: boolean, id: string, day: number) {
+    const answers = THEME_IDS.flatMap(([, base], i) =>
+      Array.from({ length: 10 }, (_, n) => ({ questionId: base + n, chosen: 'x', correct: n < right[i] })),
+    )
+    return { id, date: `2026-11-${day}T10:00:00.000Z`, score: passed ? 33 : 20, total: 40, answers }
+  }
+  const passedExam = (id: string, day: number, right = [10, 10, 10, 10, 10]) => examWith(right, true, id, day)
+
+  async function withPack() {
+    setQuestionPackLoaderForTests('pluriannuelle', async () => ({ default: fakePack as never }))
+    await loadQuestionPack('pluriannuelle')
+  }
+
+  beforeEach(() => resetQuestionPacksForTests())
+  afterEach(() => resetQuestionPacksForTests())
+
+  it('étape 4 : cochée avec la phrase à 3 réussites d\'affilée', () => {
+    seedHistory([passedExam('a', 1), passedExam('b', 2), passedExam('c', 3)])
+    renderHome()
+    expect(screen.getByText("Le jour J est à votre portée : 3 examens blancs réussis d'affilée.")).toBeInTheDocument()
+    expect(document.querySelector('nav li:nth-child(4) svg')).not.toBeNull()
+  })
+
+  it('étape 4 : inchangée avec 2 réussites, ou après un échec récent', () => {
+    seedHistory([passedExam('a', 1), passedExam('b', 2)])
+    renderHome()
+    expect(screen.queryByText(/à votre portée/)).toBeNull()
+    expect(document.querySelector('nav li:nth-child(4) svg')).toBeNull()
+    cleanup()
+    seedHistory([passedExam('a', 1), passedExam('b', 2), passedExam('c', 3), examWith([1, 1, 1, 1, 1], false, 'd', 4)])
+    renderHome()
+    expect(screen.queryByText(/à votre portée/)).toBeNull()
+  })
+
+  it('étape 4 : le titre choisi seulement', () => {
+    localStorageMock.setItem('target-title', 'resident')
+    seedHistory([
+      { ...passedExam('a', 1), title: 'pluriannuelle' },
+      { ...passedExam('b', 2), title: 'pluriannuelle' },
+      { ...passedExam('c', 3), title: 'pluriannuelle' },
+    ])
+    renderHome()
+    expect(screen.queryByText(/à votre portée/)).toBeNull()
+  })
+
+  it('« Vos thèmes » : pourcentages, tri du plus faible au plus fort, « À travailler » sous 80 %', async () => {
+    await withPack()
+    seedHistory([passedExam('a', 1, [9, 7, 10, 8, 6])])
+    renderHome()
+    const card = screen.getByRole('region', { name: 'Vos thèmes' })
+    expect(within(card).getByText('Bonnes réponses sur votre dernier examen blanc')).toBeInTheDocument()
+    const rows = within(card).getAllByRole('listitem').map((li) => li.textContent?.replace(/\u00a0/g, ' '))
+    expect(rows).toEqual([
+      'Vivre dans la société française60 %À travailler',
+      'Système institutionnel et politique70 %À travailler',
+      'Histoire, géographie et culture80 %',
+      'Principes et valeurs de la République90 %',
+      'Droits et devoirs100 %',
+    ])
+  })
+
+  it('« Vos thèmes » : sous-titre selon le nombre d\'examens lus (2, puis 3 sur les derniers)', async () => {
+    await withPack()
+    seedHistory([passedExam('a', 1), passedExam('b', 2)])
+    renderHome()
+    expect(screen.getByText('Bonnes réponses sur vos 2 derniers examens blancs')).toBeInTheDocument()
+    cleanup()
+    seedHistory([passedExam('z', 1, [0, 0, 0, 0, 0]), passedExam('a', 2), passedExam('b', 3), passedExam('c', 4)])
+    renderHome()
+    expect(screen.getByText('Bonnes réponses sur vos 3 derniers examens blancs')).toBeInTheDocument()
+    expect(screen.queryByText('À travailler')).toBeNull()
+  })
+
+  it('« Vos thèmes » : absent sans examen exploitable (sans réponses) ou sans examen du titre choisi', async () => {
+    await withPack()
+    seedHistory([exam(35, 'a'), exam(35)])
+    renderHome()
+    expect(screen.queryByRole('region', { name: 'Vos thèmes' })).toBeNull()
+    cleanup()
+    seedHistory([{ ...passedExam('a', 1), title: 'resident' }])
+    renderHome()
+    expect(screen.queryByRole('region', { name: 'Vos thèmes' })).toBeNull()
+  })
+
+  it('« Vos thèmes » : absent tant que le paquet n\'est pas là, sans le charger tout de suite', () => {
+    const loader = vi.fn(async () => ({ default: fakePack as never }))
+    setQuestionPackLoaderForTests('pluriannuelle', loader)
+    seedHistory([passedExam('a', 1)])
+    renderHome()
+    expect(screen.queryByRole('region', { name: 'Vos thèmes' })).toBeNull()
+    expect(loader).not.toHaveBeenCalled()
+  })
+
+  it('« Vos thèmes » : rien si le chargement échoue, l\'accueil reste utilisable', async () => {
+    setQuestionPackLoaderForTests('pluriannuelle', async () => {
+      throw new Error('réseau')
+    })
+    await loadQuestionPack('pluriannuelle').catch(() => {})
+    seedHistory([passedExam('a', 1)])
+    renderHome()
+    expect(screen.queryByRole('region', { name: 'Vos thèmes' })).toBeNull()
+    expect(screen.getByRole('link', { name: /1 · Réviser les thèmes/ })).toBeInTheDocument()
+  })
+
+  it('« Vos thèmes » apparaît quand le préchargement au repos se termine', async () => {
+    setQuestionPackLoaderForTests('pluriannuelle', async () => ({ default: fakePack as never }))
+    seedHistory([passedExam('a', 1)])
+    renderHome()
+    expect(screen.queryByRole('region', { name: 'Vos thèmes' })).toBeNull()
+    expect(await screen.findByRole('region', { name: 'Vos thèmes' }, { timeout: 4000 })).toBeInTheDocument()
   })
 })
