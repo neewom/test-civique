@@ -340,6 +340,8 @@ describe('Examen', () => {
     renderExamen()
     await act(async () => { fireEvent.click(getChoices()[0]) })
     await act(async () => { fireEvent.click(screen.getByRole('button', { name: 'Valider ma réponse' })) })
+    // The timer is paused during the correction: move on to the next question before it runs out
+    await act(async () => { fireEvent.click(screen.getByRole('button', { name: 'Question suivante' })) })
     await act(async () => { vi.advanceTimersByTime(GLOBAL_EXAM_TIME * 1000) })
     const [record] = JSON.parse(localStorage.getItem('quiz-history') ?? '[]')
     expect(record.answers).toHaveLength(EXAM_SIZE)
@@ -714,6 +716,44 @@ describe('Examen — écrans de question et de correction', () => {
     expect(live).toHaveTextContent('Il reste moins de 5 minutes.')
     await act(async () => { vi.advanceTimersByTime(4 * 60 * 1000) })
     expect(live).toHaveTextContent("Il reste moins d'une minute.")
+  })
+
+  it('le chrono est arrêté pendant la correction et repart à la question suivante', async () => {
+    renderResumed(makeResume(1500, 0))
+    await act(async () => { vi.advanceTimersByTime(3000) })
+    await answer(true)
+    const atCorrection = timeLeft()
+    expect(atCorrection).toBe(1497)
+    await act(async () => { vi.advanceTimersByTime(60 * 1000) })
+    expect(timeLeft()).toBe(atCorrection)
+    expect(loadProgress('pluriannuelle')!.timeLeft).toBe(atCorrection)
+    await act(async () => { fireEvent.click(screen.getByRole('button', { name: 'Question suivante' })) })
+    await act(async () => { vi.advanceTimersByTime(2000) })
+    expect(timeLeft()).toBe(atCorrection - 2)
+  })
+
+  it('le temps expiré pendant la réponse termine toujours l\'examen', async () => {
+    renderResumed(makeResume(2, 0))
+    await act(async () => { vi.advanceTimersByTime(2000) })
+    expect(screen.getByText(/sans réponse/)).toBeInTheDocument()
+  })
+
+  it('pastille « Moins de 5 minutes » et barre corail : absentes à 300 s, présentes à 299 s', async () => {
+    renderResumed(makeResume(300, 0))
+    expect(screen.queryByText('Moins de 5 minutes')).not.toBeInTheDocument()
+    expect(screen.getByRole('progressbar', { name: 'Temps restant' }).className).not.toMatch(/bg-coral/)
+    await act(async () => { vi.advanceTimersByTime(1000) })
+    expect(timeLeft()).toBe(299)
+    expect(screen.getByText('Moins de 5 minutes')).toBeInTheDocument()
+    expect(screen.getByRole('progressbar', { name: 'Temps restant' }).className).toMatch(/bg-coral/)
+  })
+
+  it('annonce « moins de 5 minutes » dès la reprise d\'un examen déjà sous les 5 minutes', async () => {
+    renderResumed(makeResume(262, 27))
+    const live = document.querySelector('[aria-live="polite"]')!
+    await act(async () => { await Promise.resolve() })
+    expect(live).toHaveTextContent('Il reste moins de 5 minutes.')
+    expect(screen.getByText('Moins de 5 minutes')).toBeInTheDocument()
   })
 
   it('à la fin du temps, le résultat indique le nombre de questions sans réponse', async () => {

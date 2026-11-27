@@ -1,6 +1,6 @@
 import { useEffect, useId, useRef, useState } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
-import { ArrowLeft } from 'lucide-react'
+import { ArrowLeft, Clock } from 'lucide-react'
 import {
   Dialog,
   DialogContent,
@@ -9,6 +9,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from '@/components/ui/dialog'
+import { cn } from '@/lib/utils'
 import { useDocumentTitle } from '@/lib/use-document-title'
 import type { AnswerRecord, ExamQuestion, ExamInProgress } from '@/lib/exam-types'
 import { saveProgress, clearProgress, loadProgressForTitle, resumeIndex } from '@/lib/exam-types'
@@ -71,11 +72,14 @@ function plural(n: number, word: string): string {
   return `${n} ${word}${n > 1 ? 's' : ''}`
 }
 
+// Below this many seconds the timer bar turns coral and the pill shows (same threshold as the announcement)
+const ALERT_SECONDS = 5 * 60
+
 // Polite announcement once 5 minutes, then 1 minute, are left (screen readers)
 function timeAnnouncement(seconds: number): string {
   if (seconds <= 0) return ''
   if (seconds < 60) return "Il reste moins d'une minute."
-  if (seconds < 5 * 60) return 'Il reste moins de 5 minutes.'
+  if (seconds < ALERT_SECONDS) return 'Il reste moins de 5 minutes.'
   return ''
 }
 
@@ -154,17 +158,27 @@ function ExamSession({ restarted, onRestart }: ExamSessionProps) {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  // Timer global — démarre une fois au montage et tourne jusqu'à la fin
+  // Timer global : tourne pendant les phases question et pending, s'arrête pendant
+  // la correction (le temps de lire « Pourquoi » n'est pas décompté) et repart à la
+  // question suivante. Le bool ne change pas entre question et pending : pas de reset
+  const ticking = phase === 'question' || phase === 'pending'
   useEffect(() => {
     // A resumed exam already complete is finished on mount: no timer to start
-    if (finishedRef.current) return
+    if (finishedRef.current || !ticking) return
     timerRef.current = setInterval(() => {
       setGlobalTimeLeft((t) => (t > 0 ? t - 1 : 0))
     }, 1000)
     return () => {
       if (timerRef.current) clearInterval(timerRef.current)
     }
-  }, [])
+  }, [ticking])
+
+  // Announcement kept in state and set after mount, so that a resumed exam already
+  // under 5 minutes is announced too (a live region filled at mount stays silent)
+  const [announcement, setAnnouncement] = useState('')
+  useEffect(() => {
+    setAnnouncement(timeAnnouncement(globalTimeLeft))
+  }, [globalTimeLeft])
 
   // Sauvegarde de la progression à chaque tick du timer
   useEffect(() => {
@@ -294,6 +308,7 @@ function ExamSession({ restarted, onRestart }: ExamSessionProps) {
   // Borné à [0, 100] : un examen repris peut porter un timeLeft d'une autre durée
   const timerPct = Math.min(100, Math.max(0, (globalTimeLeft / GLOBAL_EXAM_TIME) * 100))
   const minutes = minutesLeft(globalTimeLeft)
+  const lowTime = globalTimeLeft < ALERT_SECONDS
 
   // ── Écran résultat (maquettes Pa6 / Pd6) ─────────────────────────────────────
   if (phase === 'result' && outcome) {
@@ -364,17 +379,23 @@ function ExamSession({ restarted, onRestart }: ExamSessionProps) {
                 aria-valuemin={0}
                 aria-valuemax={GLOBAL_EXAM_TIME}
                 aria-valuetext={`${plural(minutes, 'minute')} sur ${EXAM_MINUTES}`}
-                className="h-full bg-foreground"
+                className={cn('h-full', lowTime ? 'bg-coral' : 'bg-foreground')}
                 style={{ width: `${timerPct}%` }}
               />
             </div>
             <span aria-hidden="true" className="text-sm font-bold whitespace-nowrap">{minutes} min</span>
           </div>
+          {lowTime && (
+            <p className="inline-flex min-h-10 items-center gap-2 self-start rounded-full bg-coral px-4 text-[0.9375rem] font-bold text-coral-foreground">
+              <Clock aria-hidden="true" className="size-5 shrink-0" strokeWidth={2.4} />
+              Moins de 5 minutes
+            </p>
+          )}
         </div>
       </header>
 
       {/* Announced once at 5 minutes, then at 1 minute */}
-      <p aria-live="polite" className="sr-only">{timeAnnouncement(globalTimeLeft)}</p>
+      <p aria-live="polite" className="sr-only">{announcement}</p>
 
       <div className="mx-auto flex w-full max-w-[30rem] grow flex-col px-5 md:max-w-[44rem] md:px-8">
         {inCorrection ? (

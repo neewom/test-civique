@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { CircleDot, ListChecks, Target, Timer, RotateCcw, Eye } from 'lucide-react'
+import { CircleDot, ListChecks, Target, Timer, RotateCcw, Eye, CirclePause } from 'lucide-react'
 import { Link, useNavigate } from 'react-router-dom'
 import { AppHeader } from '@/components/AppHeader'
 import { BackLink } from '@/components/BackLink'
@@ -125,6 +125,10 @@ export default function ExamenBlanc() {
                   Vous voyez la correction et l'explication après chaque question. Le jour J, il n'y a aucune
                   correction : l'examen se passe sur ordinateur, dans un centre agréé.
                 </span>
+              </p>
+              <p className="flex items-start gap-3 text-[0.9375rem] leading-snug md:text-base md:leading-normal">
+                <CirclePause aria-hidden="true" className="mt-0.5 size-5 shrink-0" strokeWidth={2.2} />
+                <span>Le chrono s'arrête pendant la correction.</span>
               </p>
               <p className="flex items-start gap-3 text-[0.9375rem] leading-snug md:text-base md:leading-normal">
                 <RotateCcw aria-hidden="true" className="mt-0.5 size-5 shrink-0" strokeWidth={2.2} />
