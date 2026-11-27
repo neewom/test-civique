@@ -11,7 +11,7 @@ import { OFFICIAL_THEMES } from '@/lib/exam-review'
 import { loadQuestionsToReview, parseReviewIds } from '@/lib/review-queue'
 import { loadRevisionView, saveRevisionView, type RevisionView } from '@/lib/revision-memory'
 import { DEFAULT_TITLE, isTitleKey, loadTargetTitle, TARGET_TITLE_LABELS, type TitleKey } from '@/lib/target-title'
-import { useDocumentTitle } from '@/lib/use-document-title'
+import { useRouteTitle } from '@/lib/use-document-title'
 import { themeLabel } from '@/lib/themes'
 import { TITLE_COUNTS } from '@/lib/title-counts'
 import { useQuestionPack } from '@/lib/use-question-pack'
@@ -149,7 +149,7 @@ function RevisionHead({ title }: { title: TitleKey }) {
 
 /** Revision: loads the questions of the chosen title (one pack, at once), then shows them. */
 export default function Revision() {
-  useDocumentTitle('Révision')
+  useRouteTitle('/revision')
   const location = useLocation()
   // Title of the visit: the one of the exam that sent us here (an exam of another title than the chosen one is
   // reviewed with its own questions, the chosen title is left untouched), else the chosen title.

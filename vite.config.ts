@@ -3,11 +3,16 @@ import tailwindcss from '@tailwindcss/vite'
 import react from '@vitejs/plugin-react'
 import { configDefaults, defineConfig } from 'vitest/config'
 import { questionPacks } from './vite-question-packs.ts'
+import { seo } from './vite-seo.ts'
 import { serviceWorker } from './vite-service-worker.ts'
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react(), tailwindcss(), questionPacks(), serviceWorker()],
+  plugins: [react(), tailwindcss(), questionPacks(), seo(), serviceWorker()],
+  build: {
+    // 404.html: the page of an unknown address (public/_redirects), built with the app's stylesheet
+    rollupOptions: { input: { main: 'index.html', 'not-found': '404.html' } },
+  },
   server: {
     // Accès depuis le réseau Tailscale (tailscale serve, voir AGENTS.md) ; le nom exact de la
     // machine reste hors du dépôt public (TAILSCALE_HOST dans .env), d'où le suffixe seul

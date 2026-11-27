@@ -22,7 +22,7 @@ test('hors ligne : accueil, révision et titres grisés après une première vis
   await context.setOffline(true)
   await page.goto('/revision')
   await expect(page.getByRole('heading', { level: 1, name: 'Réviser' })).toBeVisible()
-  await expectPage(page, 'Révision')
+  await expectPage(page, "Questions de l'examen civique à réviser · Futur Citoyen")
   await expect(page.getByText(/Carte de séjour pluriannuelle · \d+ questions/)).toBeVisible()
 
   await page.goto('/titre')

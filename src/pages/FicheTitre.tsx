@@ -7,11 +7,11 @@ import { markInAppBack } from '@/lib/page-transition'
 import { OrganicBackground } from '@/components/OrganicBackground'
 import { PillButton } from '@/components/PillButton'
 import { EXAM_MINUTES, EXAM_SIZE, passThreshold } from '@/lib/exam'
-import { FICHES, FICHE_LABELS, titleOfSlug } from '@/lib/fiches'
+import { FICHES, FICHE_LABELS, ficheUrl, titleOfSlug } from '@/lib/fiches'
 import { hasProgress } from '@/lib/exam-types'
 import { loadHistory } from '@/lib/history'
 import { DEFAULT_TITLE, loadTargetTitle, saveTargetTitle, type TargetTitle, type TitleKey } from '@/lib/target-title'
-import { useDocumentTitle } from '@/lib/use-document-title'
+import { useRouteTitle } from '@/lib/use-document-title'
 import { useTitleAvailability } from '@/lib/use-title-availability'
 import { OFFLINE_TITLE_NOTE } from '@/pages/TitreVise'
 import { cn } from '@/lib/utils'
@@ -27,7 +27,7 @@ export default function FicheTitre() {
 function Fiche({ titleKey }: { titleKey: TitleKey }) {
   const fiche = FICHES[titleKey]
   const label = FICHE_LABELS[titleKey]
-  useDocumentTitle(label)
+  useRouteTitle(ficheUrl(titleKey))
   const navigate = useNavigate()
   const location = useLocation()
   // Offline, the title whose questions are not on the device cannot be chosen from here either

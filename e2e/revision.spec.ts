@@ -8,7 +8,7 @@ test.beforeEach(async ({ page }) => {
 test('révision : nombre de questions et case « Sans les mises en situation »', async ({ page }) => {
   await page.goto('/revision')
   await expect(page.getByRole('heading', { level: 1, name: 'Réviser' })).toBeVisible()
-  await expectPage(page, 'Révision')
+  await expectPage(page, "Questions de l'examen civique à réviser · Futur Citoyen")
   // The count names both parts and stays the same when the situations are hidden
   const count = `Carte de séjour pluriannuelle · ${QUESTIONS.length - SITUATION_COUNT} questions + ${SITUATION_COUNT} mises en situation`
   await expect(page.getByText(count)).toBeVisible()
@@ -41,5 +41,5 @@ test('révision : filtre par thème et sources', async ({ page }) => {
       expect(href).toMatch(/^https:\/\//)
     }
   }
-  await expectPage(page, 'Révision')
+  await expectPage(page, "Questions de l'examen civique à réviser · Futur Citoyen")
 })

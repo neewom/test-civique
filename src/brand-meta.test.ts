@@ -1,9 +1,13 @@
 import { describe, it, expect } from 'vitest'
-import html from '../index.html?raw'
+import sourceHtml from '../index.html?raw'
+import { HOME_META, renderSeoBlock } from '@/lib/seo'
 import manifestRaw from '../public/site.webmanifest?raw'
 import headers from '../public/_headers?raw'
 
 const manifest = JSON.parse(manifestRaw)
+
+// Title, description and og tags of the home page are written at build from src/lib/seo.ts (vite-seo.ts): index.html as built
+const html = sourceHtml.replace('<!-- seo -->', renderSeoBlock(HOME_META))
 
 // Files present in public/ (keys only: nothing is loaded)
 const publicFiles = new Set(
@@ -15,8 +19,8 @@ function localAsset(path: string) {
 }
 
 describe('index.html — marque Futur Citoyen', () => {
-  it('a le titre par défaut "Futur Citoyen · Préparez l\'examen civique"', () => {
-    expect(html).toContain("<title>Futur Citoyen · Préparez l'examen civique</title>")
+  it('a le titre par défaut de l\'accueil (src/lib/seo.ts)', () => {
+    expect(html).toContain('<title>Examen civique : entraînement gratuit · Futur Citoyen</title>')
   })
 
   it.each([
@@ -25,7 +29,7 @@ describe('index.html — marque Futur Citoyen', () => {
     ['apple-touch-icon', /<link rel="apple-touch-icon" sizes="180x180" href="\/apple-touch-icon.png"/],
     ['manifest', /<link rel="manifest" href="\/site.webmanifest"/],
     ['theme-color', /<meta name="theme-color" content="#8ed462"/],
-    ['og:title', /<meta property="og:title" content="Futur Citoyen/],
+    ['og:title', /<meta property="og:title" content="Examen civique : entraînement gratuit · Futur Citoyen"/],
     ['og:description', /<meta property="og:description" content="/],
     ['og:image', /<meta property="og:image" content="https:\/\/[^"]+\/og-image.png"/],
     ['twitter:card', /<meta name="twitter:card" content="summary_large_image"/],

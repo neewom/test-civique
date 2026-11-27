@@ -16,7 +16,7 @@ test('examen blanc complet, reprise après rechargement, résultat et détail', 
   await page.getByRole('button', { name: /2 · Réussir 3 examens blancs/ }).click()
   // Page before the exam, then the exam itself
   await expect(page).toHaveURL(/\/examen-blanc$/)
-  await expectPage(page, "Avant l'examen blanc")
+  await expectPage(page, "Examen blanc de l'examen civique · Futur Citoyen")
   await expect(page.getByRole('heading', { level: 1, name: 'Examen blanc' })).toBeVisible()
   const dayJ = page.getByRole('region', { name: 'Comme le jour J' })
   await expect(dayJ).toContainText(`${PASS_THRESHOLD}/${EXAM_SIZE}`)
@@ -93,7 +93,7 @@ test('examen blanc complet, reprise après rechargement, résultat et détail', 
   // Back home: the exam is listed and the counter follows
   await page.getByRole('link', { name: 'Retour à mon parcours' }).click()
   await expect(page).toHaveURL(/\/$/)
-  await expectPage(page, 'Accueil')
+  await expectPage(page, 'Examen civique : entraînement gratuit · Futur Citoyen')
   const recent = page.getByRole('region', { name: 'Derniers examens' })
   await expect(recent.getByRole('listitem')).toHaveCount(1)
   await expect(recent.getByRole('link')).toContainText(`${EXPECTED_SCORE}/${EXAM_SIZE}`)

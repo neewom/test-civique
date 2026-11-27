@@ -252,3 +252,25 @@ describe('analytics — chemins regroupés (countedPath)', () => {
     expect(sentUrls()[0].searchParams.get('r')).toBe('https://www.google.com/')
   })
 })
+
+describe('analytics — page 404 (src/not-found.ts)', () => {
+  it('envoie une page vue /adresse-inconnue sur futurcitoyen.fr seulement, et charge la feuille de style', async () => {
+    vi.resetModules()
+    vi.stubGlobal('location', { ...window.location, hostname: 'futurcitoyen.fr' })
+    const beacon = vi.fn(() => true)
+    vi.stubGlobal('navigator', { ...navigator, sendBeacon: beacon })
+    await import('../not-found')
+    expect(beacon).toHaveBeenCalledTimes(1)
+    const url = new URL((beacon.mock.calls[0] as unknown as [string])[0])
+    expect(url.origin + url.pathname).toBe('https://futurcitoyen.goatcounter.com/count')
+    expect(url.searchParams.get('p')).toBe('/adresse-inconnue')
+    expect(url.searchParams.get('e')).toBeNull()
+
+    vi.resetModules()
+    beacon.mockClear()
+    vi.stubGlobal('location', { ...window.location, hostname: 'deploy-preview-1--test-civique.netlify.app' })
+    await import('../not-found')
+    expect(beacon).not.toHaveBeenCalled()
+    vi.unstubAllGlobals()
+  })
+})

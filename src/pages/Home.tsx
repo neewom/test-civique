@@ -25,7 +25,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from '@/components/ui/dialog'
-import { useDocumentTitle } from '@/lib/use-document-title'
+import { useRouteTitle } from '@/lib/use-document-title'
 import { useWideScreen } from '@/lib/use-wide-screen'
 import { cn } from '@/lib/utils'
 
@@ -95,7 +95,7 @@ function RecentExam({ entry }: { entry: HistoryEntry }) {
 }
 
 export default function Home() {
-  useDocumentTitle('Accueil')
+  useRouteTitle('/')
   const navigate = useNavigate()
 
   // First launch: no title chosen yet. Someone who already has exams (history or an

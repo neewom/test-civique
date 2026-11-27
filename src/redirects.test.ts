@@ -1,6 +1,10 @@
 import { describe, it, expect } from 'vitest'
 import redirects from '../public/_redirects?raw'
-import html from '../index.html?raw'
+import sourceHtml from '../index.html?raw'
+import { HOME_META, renderSeoBlock } from '@/lib/seo'
+
+// og:url, title, description come from src/lib/seo.ts at build (vite-seo.ts): index.html as built
+const html = sourceHtml.replace('<!-- seo -->', renderSeoBlock(HOME_META))
 
 // Active rules only (comments and blank lines ignored, spaces normalised)
 const rules = redirects
@@ -8,26 +12,30 @@ const rules = redirects
   .map((line) => line.trim().replace(/\s+/g, ' '))
   .filter((line) => line !== '' && !line.startsWith('#'))
 
-const SPA_RULE = '/* /index.html 200'
+// Since the SEO card (v1.33.0) the catch-all is no longer the SPA fallback: known pages have their own
+// rules, /examen/<id> serves the app, and any other address gets the real 404 page
+const SPA_RULE = '/examen/* /index.html 200'
+const NOT_FOUND_RULE = '/* /404.html 404'
 const OLD_HOST_RULES = [
   'https://test-civique.netlify.app/* https://futurcitoyen.fr/:splat 301!',
   'http://test-civique.netlify.app/* https://futurcitoyen.fr/:splat 301!',
 ]
 
 describe('public/_redirects — domaine futurcitoyen.fr', () => {
-  it('garde la règle SPA', () => {
+  it('garde le repli SPA de /examen/<id> et finit par la vraie 404', () => {
     expect(rules).toContain(SPA_RULE)
+    expect(rules[rules.length - 1]).toBe(NOT_FOUND_RULE)
   })
 
-  it('un fichier de /assets/ introuvable répond 404 (avant la règle SPA), sans « ! » qui masquerait les fichiers existants', () => {
+  it('un fichier de /assets/ introuvable répond 404 (avant la règle 404 finale), sans « ! » qui masquerait les fichiers existants', () => {
     const rule = '/assets/* /404.html 404'
     expect(rules).toContain(rule)
-    expect(rules.indexOf(rule)).toBeLessThan(rules.indexOf(SPA_RULE))
+    expect(rules.indexOf(rule)).toBeLessThan(rules.indexOf(NOT_FOUND_RULE))
   })
 
-  it.each(OLD_HOST_RULES)('redirige l’ancienne adresse avant la règle SPA : %s', (rule) => {
+  it.each(OLD_HOST_RULES)('redirige l’ancienne adresse avant la règle 404 : %s', (rule) => {
     expect(rules).toContain(rule)
-    expect(rules.indexOf(rule)).toBeLessThan(rules.indexOf(SPA_RULE))
+    expect(rules.indexOf(rule)).toBeLessThan(rules.indexOf(NOT_FOUND_RULE))
   })
 
   it('ne redirige que l’hôte exact (aperçus deploy-preview épargnés)', () => {
@@ -48,8 +56,8 @@ describe('index.html — domaine futurcitoyen.fr', () => {
     expect(html).toContain('<meta property="og:image" content="https://futurcitoyen.fr/og-image.png" />')
   })
 
-  it("n'a pas de canonique fixe (un seul index.html sert toutes les routes)", () => {
-    expect(html).not.toContain('rel="canonical"')
+  it("n'a pas de canonique en dur dans la source (elle vient de src/lib/seo.ts, une par page)", () => {
+    expect(sourceHtml).not.toContain('rel="canonical"')
   })
 
   it('ne référence plus l’ancienne adresse Netlify', () => {

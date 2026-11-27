@@ -17,7 +17,7 @@ describe('Page « Comment se passe l\'examen »', () => {
   it('a son titre de page et d\'onglet', () => {
     renderRegles()
     expect(screen.getByRole('heading', { level: 1, name: "Comment se passe l'examen" })).toBeInTheDocument()
-    expect(document.title).toBe("Comment se passe l'examen · Futur Citoyen")
+    expect(document.title).toBe("L'examen civique 2026 : format et préparation · Futur Citoyen")
   })
 
   it('reprend les règles officielles : 40 questions, 45 minutes, 32/40', () => {

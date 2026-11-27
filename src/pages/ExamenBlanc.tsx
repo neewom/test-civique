@@ -17,7 +17,7 @@ import {
 import { EXAM_MINUTES, EXAM_SIZE, passThreshold } from '@/lib/exam'
 import { loadProgressForTitle, resumeIndex } from '@/lib/exam-types'
 import { loadTargetTitle, DEFAULT_TITLE, TARGET_TITLE_LABELS } from '@/lib/target-title'
-import { useDocumentTitle } from '@/lib/use-document-title'
+import { useRouteTitle } from '@/lib/use-document-title'
 import { cn } from '@/lib/utils'
 
 /**
@@ -26,7 +26,7 @@ import { cn } from '@/lib/utils'
  * Arriving here with an exam in progress (by the address) offers to resume it first.
  */
 export default function ExamenBlanc() {
-  useDocumentTitle("Avant l'examen blanc")
+  useRouteTitle('/examen-blanc')
   const navigate = useNavigate()
   const [title] = useState(() => loadTargetTitle() ?? DEFAULT_TITLE)
   const [inProgress] = useState(() => loadProgressForTitle(title))
