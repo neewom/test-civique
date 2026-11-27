@@ -162,7 +162,7 @@ describe('Page de première visite', () => {
 
   it('propose les trois titres, la naturalisation comprise, sans « Bientôt »', () => {
     renderTitre()
-    expect(screen.getByRole('button', { name: /Carte de séjour pluriannuelle/ })).toHaveAttribute('aria-pressed', 'true')
+    expect(screen.getByRole('button', { name: /Carte de séjour pluriannuelle/ })).toHaveAttribute('aria-pressed', 'false')
     expect(screen.getByRole('button', { name: /Carte de résident/ })).toHaveTextContent('209 questions officielles')
     const nat = screen.getByRole('button', { name: /Naturalisation/ })
     expect(nat).toBeEnabled()
@@ -207,6 +207,46 @@ describe('Page de première visite', () => {
     }))
     renderTitre()
     expect(screen.getByRole('link', { name: 'Retour' })).toBeInTheDocument()
+  })
+})
+
+describe('Première visite : aucun titre présélectionné', () => {
+  const titles = () => screen.getAllByRole('button', { name: /questions officielles/ })
+
+  it('aucun titre n\'est coché au départ', () => {
+    renderTitre()
+    expect(titles()).toHaveLength(3)
+    for (const b of titles()) expect(b).toHaveAttribute('aria-pressed', 'false')
+  })
+
+  it('« Continuer » sans choix : message annoncé, pas de navigation, rien d\'écrit, focus sur le premier titre', () => {
+    renderTitre()
+    expect(screen.getByRole('alert')).toBeEmptyDOMElement()
+    const continuer = screen.getByRole('button', { name: 'Continuer' })
+    expect(continuer).toBeEnabled()
+    fireEvent.click(continuer)
+    expect(screen.getByRole('alert')).toHaveTextContent("Choisissez d'abord le titre que vous préparez.")
+    expect(screen.queryByText('Accueil')).toBeNull()
+    expect(localStorageMock.getItem('target-title')).toBeNull()
+    expect(titles()[0]).toHaveFocus()
+  })
+
+  it('le message disparaît dès qu\'un titre est choisi, puis « Continuer » enregistre', () => {
+    renderTitre()
+    fireEvent.click(screen.getByRole('button', { name: 'Continuer' }))
+    fireEvent.click(screen.getByRole('button', { name: /Carte de résident/ }))
+    expect(screen.getByRole('alert')).toBeEmptyDOMElement()
+    fireEvent.click(screen.getByRole('button', { name: 'Continuer' }))
+    expect(localStorageMock.getItem('target-title')).toBe('resident')
+    expect(screen.getByText('Accueil')).toBeInTheDocument()
+  })
+
+  it('le changement de titre ne montre ni message ni barre d\'erreur et garde le titre actuel coché', () => {
+    localStorageMock.setItem('quiz-history', EXISTING_USER_HISTORY)
+    localStorageMock.setItem('target-title', 'naturalisation')
+    renderTitre()
+    expect(screen.getByRole('button', { name: /Naturalisation/ })).toHaveAttribute('aria-pressed', 'true')
+    expect(screen.queryByRole('alert')).toBeNull()
   })
 })
 
@@ -264,6 +304,9 @@ describe('Sélection gardée pendant un aller-retour vers une fiche', () => {
         </Routes>
       </MemoryRouter>,
     )
-    expect(screen.getByRole('button', { name: /Carte de séjour pluriannuelle/ })).toHaveAttribute('aria-pressed', 'true')
+    // First visit: nothing is preselected, and an unknown state does not choose either
+    for (const b of screen.getAllByRole('button', { name: /questions officielles/ })) {
+      expect(b).toHaveAttribute('aria-pressed', 'false')
+    }
   })
 })
