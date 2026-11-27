@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useMemo, useRef, useState } from 'react'
 import { Link, Navigate, useNavigate } from 'react-router-dom'
 import { ArrowRight, Check, ChevronDown, ChevronRight, MonitorSmartphone } from 'lucide-react'
 import { isPassed } from '@/lib/exam'
@@ -8,8 +8,10 @@ import { loadHistory, loadHistoryForTitle, type HistoryEntry } from '@/lib/histo
 import { passedInARow, READY_GOAL } from '@/lib/readiness'
 import { revisionResumeLabel } from '@/lib/revision-memory'
 import { ficheUrl } from '@/lib/fiches'
-import { preloadQuestionPack } from '@/lib/question-packs'
+import { recentThemeProgress } from '@/lib/exam-review'
+import { useIdleQuestionPack } from '@/lib/use-question-pack'
 import { DEFAULT_TITLE, loadTargetTitle, TARGET_TITLE_LABELS } from '@/lib/target-title'
+import { ThemeProgressCard } from '@/components/ThemeProgressCard'
 import { Fraction } from '@/components/Fraction'
 import { PageFrame } from '@/components/PageFrame'
 import { OrganicBackground } from '@/components/OrganicBackground'
@@ -118,12 +120,17 @@ export default function Home() {
     () => storedTitle === null && loadHistory().length === 0 && !hasProgress(),
   )
 
-  // Once the home page is shown and the browser idle, the pack of the chosen title downloads quietly,
-  // so that the exam and the revision open at once. Nothing is fetched without a chosen title.
-  useEffect(() => {
-    if (storedTitle === null) return
-    return preloadQuestionPack(storedTitle)
-  }, [storedTitle])
+  // Once the home page is shown and the browser idle, the pack of the title downloads quietly (never
+  // at once, and never in the initial JavaScript), so that the exam and the revision open at once.
+  // « Vos thèmes » reads the theme of each question from it: shown when it is there, nothing otherwise.
+  // The effective title (the multi-year permit for someone with exams but no stored choice) is used;
+  // nothing is fetched on a first visit, which is sent to the title screen.
+  const pack = useIdleQuestionPack(mustChooseTitle ? null : targetTitle)
+  const themeSummary = useMemo(() => {
+    if (!pack) return null
+    const themes = new Map(pack.map((q) => [q.id, q.theme]))
+    return recentThemeProgress(history, (id) => themes.get(id))
+  }, [pack, history])
 
   if (mustChooseTitle) return <Navigate to="/titre" replace />
 
@@ -219,8 +226,25 @@ export default function Home() {
           </PillLink>
         </li>
 
-        <li className="max-w-full">
-          <span className={cn(staticStepClass, 'bg-goal text-goal-foreground')}>4 · Le jour J</span>
+        <li className="flex max-w-full flex-col items-start">
+          {streak >= READY_GOAL ? (
+            <>
+              <span className={cn(staticStepClass, 'bg-goal text-goal-foreground')}>
+                4 · Le jour J
+                <span
+                  aria-hidden="true"
+                  className="flex min-h-10 min-w-10 shrink-0 items-center justify-center rounded-full bg-action-foreground text-action"
+                >
+                  <Check className="size-[1.125em]" strokeWidth={3} />
+                </span>
+              </span>
+              <p className="mt-1.5 max-w-[20rem] px-1 text-[0.9375rem] leading-snug font-bold">
+                Le jour J est à votre portée : {READY_GOAL} examens blancs réussis d'affilée.
+              </p>
+            </>
+          ) : (
+            <span className={cn(staticStepClass, 'bg-goal text-goal-foreground')}>4 · Le jour J</span>
+          )}
         </li>
       </ol>
     </nav>
@@ -260,12 +284,13 @@ export default function Home() {
         inProgress
           ? '-mt-0.5 lg:mt-0'
           : 'mt-auto min-h-[4.75rem] pt-8 lg:mt-0 lg:min-h-11 lg:pt-0',
-        'lg:order-1',
       )}
     >
       Comment se passe l'examen ?
     </Link>
   )
+
+  const themeCard = themeSummary && <ThemeProgressCard summary={themeSummary} className="mt-6 lg:mt-0" />
 
   const recentExams = recent.length > 0 && (
     <section aria-labelledby="recent-exams" className="mt-4 flex flex-col gap-2.5 lg:mt-0">
@@ -364,8 +389,11 @@ export default function Home() {
             DOM order = the phone order (what screen readers and the Tab key follow). On a phone the
             groups and the footer are `contents` (every block is a direct child of the column). From
             1024 px: the journey on the left (resume moved under the title with `order`, never face
-            to face with step 2), « Où vous en êtes » on the right (last exams before the rules),
-            the mentions at the bottom. */}
+            to face with step 2), « Où vous en êtes » on the right, the mentions at the bottom.
+            On the right the DOM order follows `wide` (« Où vous en êtes », « Vos thèmes », last
+            exams, rules) so that Tab goes down the column as the eye does; on a phone: rules, last
+            exams, « Vos thèmes ». Crossing 1024 px while the rules link has the focus loses it (rare,
+            accepted). */}
         <div className="contents lg:grid lg:grid-cols-[minmax(0,1fr)_minmax(0,23rem)] lg:items-start lg:gap-x-16">
           <div className="contents lg:flex lg:flex-col lg:gap-3">
             {titlePill}
@@ -385,7 +413,7 @@ export default function Home() {
           >
             {wide &&
               (recent.length > 0 ? (
-                <div className="flex flex-col gap-1">
+                <div className="flex flex-col gap-1 ">
                   <h2 id="progress" className="text-[1.0625rem] font-bold">
                     Où vous en êtes
                   </h2>
@@ -399,7 +427,7 @@ export default function Home() {
                   </p>
                 </div>
               ) : (
-                <>
+                <div className="flex flex-col gap-4">
                   <h2 id="progress" className="text-[1.0625rem] font-bold">
                     Où vous en êtes
                   </h2>
@@ -407,10 +435,13 @@ export default function Home() {
                     Vos examens blancs s'afficheront ici, avec votre progression vers les {READY_GOAL} réussites
                     d'affilée.
                   </p>
-                </>
+                </div>
               ))}
-            {rulesLink}
+            {wide && themeCard}
+            {!wide && rulesLink}
             {recentExams}
+            {!wide && themeCard}
+            {wide && rulesLink}
           </section>
         </div>
 

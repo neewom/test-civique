@@ -1,6 +1,7 @@
 import { describe, it, expect } from 'vitest'
-import { mistakes, OFFICIAL_THEMES, themeScores, weakestThemes, weakestThemesLabel, weakestThemesToShow } from '@/lib/exam-review'
+import { mistakes, OFFICIAL_THEMES, recentThemeProgress, themeScores, weakestThemes, weakestThemesLabel, weakestThemesToShow } from '@/lib/exam-review'
 import type { AnswerRecord } from '@/lib/exam-types'
+import type { HistoryEntry } from '@/lib/history'
 
 const [PRINCIPES, SYSTEME, DROITS, HISTOIRE, VIE] = OFFICIAL_THEMES
 
@@ -70,5 +71,79 @@ describe('weakestThemesToShow', () => {
     expect(weakestThemesToShow([PRINCIPES, HISTOIRE])).toEqual([PRINCIPES, HISTOIRE])
     expect(weakestThemesToShow([PRINCIPES, HISTOIRE, VIE])).toBeNull()
     expect(weakestThemesToShow([])).toBeNull()
+  })
+})
+
+describe('recentThemeProgress (« Vos thèmes »)', () => {
+  const T: Record<number, string> = {}
+  // 10 questions per official theme: ids 100+, 200+, ...
+  OFFICIAL_THEMES.forEach((theme, i) => {
+    for (let n = 0; n < 10; n++) T[(i + 1) * 100 + n] = theme
+  })
+  const of = (id: number) => T[id]
+  // An exam answering `right` of the 10 questions of each given theme (index in OFFICIAL_THEMES)
+  const examOn = (rightByTheme: Record<number, number>, extra: Partial<HistoryEntry> = {}): HistoryEntry => ({
+    date: '2026-11-20T10:00:00.000Z',
+    score: 0,
+    total: 40,
+    answers: Object.entries(rightByTheme).flatMap(([i, right]) =>
+      Array.from({ length: 10 }, (_, n) => a((Number(i) + 1) * 100 + n, n < right)),
+    ),
+    ...extra,
+  })
+
+  it('null sans examen, ou si aucun examen n\'a ses réponses', () => {
+    expect(recentThemeProgress([], of)).toBeNull()
+    expect(recentThemeProgress([{ date: 'd', score: 30, total: 40 }, { date: 'd', score: 30, total: 40, answers: [] }], of)).toBeNull()
+  })
+
+  it('calcule le pourcentage arrondi par thème, du plus faible au plus fort', () => {
+    const r = recentThemeProgress([examOn({ 0: 9, 1: 7, 2: 10, 3: 8, 4: 6 })], of)!
+    expect(r.examCount).toBe(1)
+    expect(r.themes.map((t) => [t.theme, t.percent])).toEqual([
+      [VIE, 60],
+      [SYSTEME, 70],
+      [HISTOIRE, 80],
+      [PRINCIPES, 90],
+      [DROITS, 100],
+    ])
+  })
+
+  it('« À travailler » sous 80 % seulement (80 % pile n\'en est pas)', () => {
+    const r = recentThemeProgress([examOn({ 0: 8, 1: 7 })], of)!
+    expect(r.themes.map((t) => [t.theme, t.toWork])).toEqual([[SYSTEME, true], [PRINCIPES, false]])
+  })
+
+  it('cumule les 3 derniers examens lisibles, ignore les examens sans réponses et les plus anciens', () => {
+    const old = examOn({ 0: 0 })
+    const unreadable: HistoryEntry = { date: 'd', score: 40, total: 40 }
+    const r = recentThemeProgress([old, examOn({ 0: 10 }), unreadable, examOn({ 0: 5 }), examOn({ 0: 6 })], of)!
+    expect(r.examCount).toBe(3)
+    expect(r.themes).toEqual([{ theme: PRINCIPES, percent: 70, toWork: true }])
+  })
+
+  it('compte une question sans réponse (chrono expiré) comme fausse', () => {
+    const entry: HistoryEntry = {
+      date: 'd',
+      score: 1,
+      total: 40,
+      answers: [a(100, true), a(101, false, null), a(102, false, null), a(103, false, null)],
+    }
+    expect(recentThemeProgress([entry], of)!.themes[0].percent).toBe(25)
+  })
+
+  it('un historique abîmé ne plante pas : réponses illisibles ignorées, examen sans réponse lisible hors des « n derniers »', () => {
+    const damaged = { date: 'd', score: 30, total: 40, answers: [null, 3, { questionId: 'x' }] } as unknown as HistoryEntry
+    const half = examOn({ 0: 10 }, { answers: [null as never, ...(examOn({ 0: 10 }).answers ?? [])] })
+    const r = recentThemeProgress([examOn({ 0: 0 }), examOn({ 0: 10 }), examOn({ 0: 10 }), half, damaged], of)!
+    expect(r.examCount).toBe(3)
+    expect(r.themes).toEqual([{ theme: PRINCIPES, percent: 100, toWork: false }])
+  })
+
+  it('ignore les thèmes non officiels et les questions inconnues', () => {
+    const entry: HistoryEntry = { date: 'd', score: 0, total: 40, answers: [a(100, true), a(9999, true), a(5, false)] }
+    const r = recentThemeProgress([entry], (id) => (id === 5 ? 'Autre thème' : T[id]))!
+    expect(r.themes).toEqual([{ theme: PRINCIPES, percent: 100, toWork: false }])
+    expect(recentThemeProgress([{ date: 'd', score: 0, total: 40, answers: [a(9999, true)] }], of)).toBeNull()
   })
 })
