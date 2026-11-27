@@ -81,6 +81,37 @@ describe('loadHistory', () => {
 })
 
 describe('findExamRecord', () => {
+  it('ignore les réponses illisibles sans planter, et ne réécrit pas le stockage', () => {
+    const good = { questionId: 1, chosen: 'a', correct: true }
+    const stored = [
+      {
+        ...RECORD,
+        answers: [
+          null,
+          good,
+          'texte',
+          42,
+          [],
+          {},
+          { questionId: '1', chosen: 'a', correct: true },
+          { questionId: null, chosen: 'a', correct: true },
+          { questionId: 2, chosen: 3, correct: true },
+          { questionId: 2, chosen: 'a', correct: 'oui' },
+          { questionId: 2, chosen: null },
+        ],
+      },
+    ]
+    store(stored)
+    const before = localStorageMock.getItem(HISTORY_KEY)
+    expect(findExamRecord(RECORD.id)?.answers).toEqual([good])
+    expect(localStorageMock.getItem(HISTORY_KEY)).toBe(before)
+  })
+
+  it('garde un examen dont toutes les réponses sont illisibles, avec une liste vide', () => {
+    store([{ ...RECORD, answers: [null] }])
+    expect(findExamRecord(RECORD.id)?.answers).toEqual([])
+  })
+
   it('trouve un examen par id', () => {
     store([LEGACY, RECORD])
     expect(findExamRecord(RECORD.id)).toEqual(RECORD)

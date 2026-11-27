@@ -6,17 +6,29 @@ import { OrganicBackground } from '@/components/OrganicBackground'
 import { useDocumentTitle } from '@/lib/use-document-title'
 
 // To keep up to date whenever the data collected by the site changes (ads, payment, new events)
-export const LAST_UPDATED = '26 novembre 2026'
+export const LAST_UPDATED = '27 novembre 2026'
 export const CONTACT_EMAIL = 'contact@futurcitoyen.fr'
 export const CNIL_URL = 'https://www.cnil.fr'
 
 const linkClass = 'rounded-sm font-bold break-words underline underline-offset-4'
 
 /** White card of the page (DESIGN.md « card »), titled by an h2 or an h3. */
-function InfoCard({ title, level, children }: { title: string; level: 2 | 3; children: ReactNode }) {
+function InfoCard({
+  title,
+  level,
+  className = '',
+  children,
+}: {
+  title: string
+  level: 2 | 3
+  className?: string
+  children: ReactNode
+}) {
   const Heading = level === 2 ? 'h2' : 'h3'
   return (
-    <section className="flex flex-col gap-2 rounded-xl bg-card p-4 text-[0.9375rem] leading-[1.45] text-card-foreground">
+    <section
+      className={`flex flex-col gap-2 rounded-xl bg-card p-4 text-[0.9375rem] leading-[1.45] text-card-foreground ${className}`}
+    >
       <Heading className="text-[1.0625rem] leading-snug font-bold">{title}</Heading>
       {children}
     </section>
@@ -49,29 +61,6 @@ export default function MentionsLegales() {
           l'État.
         </p>
 
-        <InfoCard title="Éditeur du site" level={2}>
-          <div className="flex flex-col gap-1.5 break-words">
-            <p>CHITHDA, EURL au capital de 1 000 €</p>
-            <p>9 Grande Allée de la Faisanderie, 77185 Lognes</p>
-            <p>RCS Meaux 994 815 553 · SIRET 994 815 553 00015</p>
-            <p>TVA intracommunautaire : FR44994815553</p>
-            <p>Directeur de la publication : V. Boulom</p>
-            <p>
-              Téléphone :{' '}
-              <a href="tel:+33164611183" className={`${linkClass} whitespace-nowrap`}>
-                01 64 61 11 83
-              </a>
-            </p>
-            <p>
-              Contact : <ContactLink />
-            </p>
-          </div>
-        </InfoCard>
-
-        <InfoCard title="Hébergement" level={2}>
-          <p>Netlify, Inc., 101 2nd Street, San Francisco, CA 94105, États-Unis</p>
-        </InfoCard>
-
         <h2 id="vos-donnees" className="mt-[1.125rem] scroll-mt-6 text-2xl leading-[1.1] font-bold tracking-[-0.02em]">
           Vos données
         </h2>
@@ -92,10 +81,13 @@ export default function MentionsLegales() {
         <InfoCard title="Statistiques de visite" level={3}>
           <p>
             Pour savoir combien de personnes utilisent le site, nous comptons les pages vues et deux actions : examen
-            commencé, examen terminé (réussi ou pas encore).
+            commencé, examen terminé (réussi ou pas encore). Le nom de ces actions indique le titre que vous préparez. Pour chaque page vue, la page consultée (les adresses
+            d'examen sont regroupées, sans identifiant d'examen) et la largeur de votre écran sont transmises ; à la
+            première page de la visite, le site d'où vous arrivez l'est aussi.
           </p>
           <p>
             Ce comptage passe par GoatCounter : sans cookie, sans identifiant, sans suivi d'une visite à l'autre.
+            GoatCounter en déduit aussi votre navigateur, votre système et votre pays, sans les relier à vous.
             Votre adresse IP sert seulement, pendant 8 heures au plus, à ne pas compter deux fois la même visite ;
             elle n'est jamais enregistrée. Seuls des totaux sont conservés, hébergés dans l'Union européenne.
           </p>
@@ -128,6 +120,29 @@ export default function MentionsLegales() {
               <span className="sr-only">(nouvel onglet)</span>
             </a>
           </p>
+        </InfoCard>
+
+        <InfoCard title="Éditeur du site" level={2} className="mt-[1.125rem]">
+          <div className="flex flex-col gap-1.5 break-words">
+            <p>CHITHDA, EURL au capital de 1 000 €</p>
+            <p>9 Grande Allée de la Faisanderie, 77185 Lognes</p>
+            <p>RCS Meaux 994 815 553 · SIRET 994 815 553 00015</p>
+            <p>TVA intracommunautaire : FR44994815553</p>
+            <p>Directeur de la publication : V. Boulom</p>
+            <p>
+              Téléphone :{' '}
+              <a href="tel:+33164611183" className={`${linkClass} whitespace-nowrap`}>
+                01 64 61 11 83
+              </a>
+            </p>
+            <p>
+              Contact : <ContactLink />
+            </p>
+          </div>
+        </InfoCard>
+
+        <InfoCard title="Hébergement" level={2}>
+          <p>Netlify, Inc., 101 2nd Street, San Francisco, CA 94105, États-Unis</p>
         </InfoCard>
 
         <p className="mt-1.5 text-sm text-muted-foreground">Dernière mise à jour : {LAST_UPDATED}</p>

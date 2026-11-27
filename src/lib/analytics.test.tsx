@@ -191,3 +191,64 @@ describe('PageViewTracker', () => {
     expect(sentUrls()[0].searchParams.get('p')).toBe('/revision')
   })
 })
+
+describe('analytics — chemins regroupés (countedPath)', () => {
+  const sentPath = () => sentUrls()[0].searchParams.get('p')
+
+  it.each([
+    '/',
+    '/examen-blanc',
+    '/examen',
+    '/revision',
+    '/regles',
+    '/centres',
+    '/titre',
+    '/mentions-legales',
+    '/titres/carte-de-sejour-pluriannuelle',
+    '/titres/carte-de-resident',
+    '/titres/naturalisation',
+  ])('envoie %s tel quel', (path) => {
+    trackPageView(path)
+    expect(sentPath()).toBe(path)
+  })
+
+  it("regroupe le détail d'un examen sous /examen/detail, sans son identifiant", () => {
+    trackPageView('/examen/1764230400000')
+    expect(sentPath()).toBe('/examen/detail')
+    expect(sentUrls()[0].toString()).not.toContain('1764230400000')
+  })
+
+  it.each(['/n-importe-quoi', '/titres/inconnu', '/titres', '/examen/a/b', '/admin.php', '/revision/secret'])(
+    'envoie une adresse hors liste (%s) comme /adresse-inconnue',
+    (path) => {
+      trackPageView(path)
+      expect(sentPath()).toBe('/adresse-inconnue')
+      expect(sentUrls()[0].toString()).not.toContain(encodeURIComponent(path.slice(1)))
+    },
+  )
+
+  it('ignore la casse et le slash final, comme le routeur', () => {
+    trackPageView('/Regles/')
+    trackPageView('/examen/')
+    trackPageView('/Examen/ABC/')
+    expect(sentUrls().map((u) => u.searchParams.get('p'))).toEqual(['/regles', '/examen', '/examen/detail'])
+  })
+
+  it('ne compte une fiche que si l\'adresse correspond exactement (casse comprise, slash final toléré)', () => {
+    trackPageView('/titres/naturalisation/')
+    trackPageView('/Titres/Naturalisation')
+    trackPageView('/titres/Carte-de-Resident')
+    expect(sentUrls().map((u) => u.searchParams.get('p'))).toEqual([
+      '/titres/naturalisation',
+      '/adresse-inconnue',
+      '/adresse-inconnue',
+    ])
+  })
+
+  it('garde le référent de la première page vue, même regroupée', () => {
+    vi.spyOn(document, 'referrer', 'get').mockReturnValue('https://www.google.com/')
+    trackPageView('/page-inconnue')
+    expect(sentPath()).toBe('/adresse-inconnue')
+    expect(sentUrls()[0].searchParams.get('r')).toBe('https://www.google.com/')
+  })
+})
