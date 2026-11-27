@@ -23,7 +23,7 @@ interface PageFrameProps {
  */
 export function PageFrame({ className, background, header, mainClassName, footer, children }: PageFrameProps) {
   return (
-    <div className={cn('flex min-h-svh flex-col bg-background text-foreground', className)}>
+    <div data-page-frame className={cn('flex min-h-svh flex-col bg-background text-foreground', className)}>
       {background}
       {header ?? <AppHeader />}
       <main className={cn('flex grow flex-col', mainClassName)}>{children}</main>

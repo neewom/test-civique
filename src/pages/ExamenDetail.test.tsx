@@ -110,9 +110,22 @@ describe('ExamenDetail', () => {
 })
 
 // La pastille de verdict mêle plusieurs nœuds de texte : on compare son texte complet
-function verdict(text: string) {
-  return screen.getByText((_, el) => el?.tagName === 'P' && el.textContent?.replace(/\s+/g, ' ') === text)
+// Texte visible de la pastille : la forme lue (« 32 sur 40 », masquée) est écartée
+function visibleText(el: Element): string {
+  const copy = el.cloneNode(true) as Element
+  copy.querySelectorAll('.sr-only').forEach((n) => n.remove())
+  return (copy.textContent ?? '').replace(/\s+/g, ' ')
 }
+
+function verdict(text: string) {
+  return screen.getByText((_, el) => el?.tagName === 'P' && visibleText(el) === text)
+}
+
+it('la pastille du verdict lit le seuil « 32 sur 40 »', () => {
+  seedHistory(RECORD)
+  renderDetail(RECORD_ID)
+  expect(screen.getByText('32 sur 40')).toHaveClass('sr-only')
+})
 
 describe('ExamenDetail — verdict', () => {
   beforeEach(() => localStorage.clear())

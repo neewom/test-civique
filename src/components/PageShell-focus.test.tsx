@@ -1,5 +1,5 @@
 import { render, screen, fireEvent, act } from '@testing-library/react'
-import { MemoryRouter, Routes, Route, Link } from 'react-router-dom'
+import { MemoryRouter, Routes, Route, Link, Navigate } from 'react-router-dom'
 import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest'
 import { PageShell } from './PageShell'
 
@@ -21,6 +21,7 @@ function HomePage() {
       <Link to="/resultat">vers résultat</Link>
       <Link to="/sans-titre">vers sans titre</Link>
       <Link to="/" state={{ a: 1 }}>accueil encore</Link>
+      <Link to="/ancre#vos-donnees">vers ancre</Link>
     </main>
   )
 }
@@ -48,6 +49,8 @@ function renderShell(startAt = '/') {
             <Route path="/revision" element={<RevisionPage />} />
             <Route path="/resultat" element={<Result />} />
             <Route path="/sans-titre" element={<NoTitlePage />} />
+            <Route path="/ancien" element={<Navigate to="/revision" replace />} />
+            <Route path="/ancre" element={<RevisionPage />} />
           </Routes>
         )}
       </PageShell>
@@ -141,5 +144,27 @@ describe('PageShell — focus après navigation', () => {
     link.focus()
     fireEvent.click(link)
     expect(link).toHaveFocus()
+  })
+
+  it('redirection au premier chargement (nouveau visiteur, adresse inconnue) : le focus reste sur body', () => {
+    renderShell('/ancien')
+    expect(screen.getByRole('heading', { level: 1, name: 'Réviser' })).toBeInTheDocument()
+    expect(document.body).toHaveFocus()
+  })
+
+  it('une adresse avec ancre : le focus ne bouge pas (la page défile vers l\'ancre)', () => {
+    renderShell()
+    fireEvent.click(screen.getByRole('link', { name: 'vers ancre' }))
+    expect(screen.getByRole('heading', { level: 1, name: 'Réviser' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { level: 1, name: 'Réviser' })).not.toHaveFocus()
+  })
+
+  it('une page qui garde un défilement restauré : le focus ne bouge pas', () => {
+    renderShell()
+    const link = screen.getByRole('link', { name: 'vers révision' })
+    Object.defineProperty(window, 'scrollY', { value: 300, configurable: true })
+    fireEvent.click(link)
+    expect(screen.getByRole('heading', { level: 1, name: 'Réviser' })).not.toHaveFocus()
+    Object.defineProperty(window, 'scrollY', { value: 0, configurable: true })
   })
 })

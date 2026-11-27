@@ -38,7 +38,13 @@ function timeLeft(): number {
 
 // The verdict pill mixes several text nodes: its full text is compared
 function verdictPill(text: string) {
-  return screen.getByText((_, el) => el?.getAttribute('role') === 'status' && el.textContent?.replace(/\s+/g, ' ') === text)
+  // The spoken form of the threshold (« 32 sur 40 », sr-only) is not part of the visible text
+  const visible = (el: Element) => {
+    const copy = el.cloneNode(true) as Element
+    copy.querySelectorAll('.sr-only').forEach((n) => n.remove())
+    return (copy.textContent ?? '').replace(/\s+/g, ' ')
+  }
+  return screen.getByText((_, el) => el?.getAttribute('role') === 'status' && visible(el) === text)
 }
 
 // ─── Fonctions utilitaires ────────────────────────────────────────────────────

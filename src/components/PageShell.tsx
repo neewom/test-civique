@@ -62,13 +62,24 @@ export function PageShell({ children }: { children: (location: Location) => Reac
     }
   }, [animate, location, navigationType, shown])
 
-  // A new page was swapped in: the focus goes to its title, so that the change is announced
-  // and the keyboard goes on from the top of the page (not on the first load). A page that put
-  // the focus somewhere itself (the result screen) keeps it.
+  // A new page was swapped in after the visitor acted (click, key): the focus goes to its title, so
+  // that the change is announced and the keyboard goes on from the top of the page. Not on the first
+  // load (a redirection, an unknown address) nor when the page keeps a scroll position or an anchor
+  // (the keyboard user would lose their place). A page that put the focus itself (result) keeps it.
   const shownPath = useRef(shown.pathname)
+  const acted = useRef(false)
+  useEffect(() => {
+    const mark = () => {
+      acted.current = true
+    }
+    const events = ['pointerdown', 'keydown', 'click'] as const
+    events.forEach((e) => document.addEventListener(e, mark, true))
+    return () => events.forEach((e) => document.removeEventListener(e, mark, true))
+  }, [])
   useEffect(() => {
     if (shownPath.current === shown.pathname) return
     shownPath.current = shown.pathname
+    if (!acted.current || shown.hash || window.scrollY > 0) return
     const wrap = document.getElementById('page-wrap')
     const active = document.activeElement
     if (active && active !== document.body && wrap?.contains(active)) return
@@ -76,7 +87,7 @@ export function PageShell({ children }: { children: (location: Location) => Reac
     if (!target) return
     if (!target.hasAttribute('tabindex')) target.setAttribute('tabindex', '-1')
     target.focus({ preventScroll: true })
-  }, [shown.pathname])
+  }, [shown.pathname, shown.hash])
 
   return (
     <>
