@@ -2,7 +2,7 @@ import type { ReactNode } from 'react'
 import { Check, X } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
-export type AnswerResult = 'correct' | 'wrong'
+export type AnswerResult = 'correct' | 'wrong' | 'other'
 
 interface AnswerCardProps {
   /** Letter shown in the round badge: A, B, C or D */
@@ -14,18 +14,21 @@ interface AnswerCardProps {
   onSelect?: (value: string) => void
   /**
    * Correction: the card shows whether it was the right answer or the user's wrong answer.
-   * It is then plain content (no radio): « Bonne réponse » / « Votre réponse » says it all,
-   * where a disabled radio read « not checked » on the right answer.
+   * It is then plain content (no radio): the tag says it all, where a disabled radio read
+   * « not checked » on the right answer. `other`: one of the two cards that are neither the
+   * right answer nor the user's (stays in place, set back).
    */
   result?: AnswerResult
+  /** Correction, right answer only: the user chose it (« Votre réponse · bonne réponse ») */
+  chosen?: boolean
   /** Locked (selectable card) */
   disabled?: boolean
   children: ReactNode
 }
 
-const RESULT_LABEL: Record<AnswerResult, string> = {
-  correct: 'Bonne réponse',
-  wrong: 'Votre réponse',
+function resultLabel(result: 'correct' | 'wrong', chosen: boolean): string {
+  if (result === 'wrong') return 'Votre réponse'
+  return chosen ? 'Votre réponse · bonne réponse' : 'Bonne réponse'
 }
 
 /**
@@ -41,11 +44,13 @@ export function AnswerCard({
   checked = false,
   onSelect,
   result,
+  chosen = false,
   disabled = false,
   children,
 }: AnswerCardProps) {
   const selected = checked && !result
   const ResultIcon = result === 'correct' ? Check : X
+  const marked = result === 'correct' || result === 'wrong'
 
   const Root = result ? 'div' : 'label'
 
@@ -55,15 +60,20 @@ export function AnswerCard({
       className={cn(
         // 3px border on every state (transparent but on « wrong ») so that validating never
         // moves the content; the padding is reduced by as much (box of the maquette: 10 / 16 / 10 / 10)
-        'flex min-h-15 items-center gap-3 rounded-xl border-3 border-transparent py-[7px] pr-[13px] pl-[7px] text-left text-base leading-[1.4]',
+        'relative flex min-h-15 items-center gap-3 rounded-xl border-3 border-transparent py-[7px] pr-[13px] pl-[7px] text-left text-base leading-[1.4]',
         'has-[:focus-visible]:outline-3 has-[:focus-visible]:outline-offset-2 has-[:focus-visible]:outline-ring has-[:focus-visible]:outline-solid',
+        // Press: the card sinks slightly, then fills in softly (animations on only)
+        'transition-[transform,background-color,color,opacity] duration-150 ease-out',
+        !result && !disabled && '[:root[data-motion=on]_&]:active:scale-[0.98]',
         disabled ? 'cursor-default' : 'cursor-pointer',
-        !result && !checked && 'bg-card text-card-foreground',
+        (!result || result === 'other') && !checked && 'bg-card text-card-foreground',
+        result === 'other' && 'opacity-45',
         !result && !checked && !disabled && 'hover:bg-muted',
         // Forced colours (Windows high contrast) drop the background: the chosen card shows as the system highlight
         selected &&
           'bg-primary text-primary-foreground forced-colors:bg-[Highlight] forced-colors:text-[HighlightText] forced-colors:[forced-color-adjust:none]',
-        result === 'correct' && 'bg-success text-success-foreground',
+        result === 'correct' && 'answer-correct-in bg-success text-success-foreground',
+        result === 'correct' && chosen && 'answer-glow',
         result === 'wrong' && 'border-coral bg-card text-card-foreground',
       )}
     >
@@ -78,23 +88,32 @@ export function AnswerCard({
           onChange={() => onSelect?.(value)}
         />
       )}
+      {marked && (
+        <span
+          className={cn(
+            // Tag laid on the top edge, out of the flow: the card never changes height
+            'absolute -top-[11px] right-3.5 rounded-full px-2.5 py-1 text-xs leading-none font-bold whitespace-nowrap',
+            result === 'correct' ? 'bg-foreground text-background' : 'bg-coral text-coral-foreground',
+          )}
+        >
+          {resultLabel(result, chosen)}
+        </span>
+      )}
       <span
         aria-hidden="true"
         className={cn(
           'flex size-9 shrink-0 items-center justify-center rounded-full font-bold',
           selected
             ? 'bg-action text-action-foreground forced-colors:bg-[HighlightText] forced-colors:text-[Highlight]'
-            : result
+            : marked
               ? 'bg-foreground text-background'
               : 'border-2 border-current',
+          result === 'correct' && 'answer-mark-pop',
         )}
       >
-        {result ? <ResultIcon className="size-[1.125em]" strokeWidth={2.6} /> : letter}
+        {marked ? <ResultIcon className="size-[1.125em]" strokeWidth={2.6} /> : letter}
       </span>
-      <span className="flex min-w-0 flex-col gap-0.5">
-        {result && <span className="text-[0.8125rem] font-bold">{RESULT_LABEL[result]}</span>}
-        <span>{children}</span>
-      </span>
+      <span className="min-w-0">{children}</span>
     </Root>
   )
 }

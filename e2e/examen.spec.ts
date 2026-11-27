@@ -61,12 +61,15 @@ test('examen blanc complet, reprise après rechargement, résultat et détail', 
     await page.getByRole('button', { name: 'Valider ma réponse' }).click()
 
     // Correction: verdict, right answer marked, explanation, source when the question has one
-    await expect(page.getByText(isAnsweredWrong(i) ? 'Pas tout à fait' : 'Bien joué', { exact: true })).toBeVisible()
+    // The verdict is a stamp (fixed, aria-hidden, gone after about 1.5 s) and a status region for screen readers
+    await expect(page.getByRole('status').filter({ hasText: /^(Bonne réponse|Pas tout à fait)$/ })).toHaveText(
+      isAnsweredWrong(i) ? 'Pas tout à fait' : 'Bonne réponse',
+    )
     // The correction cards are content, not radios (a disabled radio read « not checked » on the right answer)
     await expect(page.getByRole('radio')).toHaveCount(0)
     const marked = page.locator('[data-state="correct"]')
     await expect(marked).toHaveCount(1)
-    await expect(marked).toHaveText(new RegExp(`^Bonne réponse${escapeRegExp(right)}$`))
+    await expect(marked).toHaveText(new RegExp(`^(Votre réponse · bonne réponse|Bonne réponse)${escapeRegExp(right)}$`))
     const why = page.getByRole('region', { name: 'Pourquoi' })
     await expect(why.getByRole('paragraph').first()).not.toBeEmpty()
     const source = why.getByRole('link', { name: /^Source : / })

@@ -3,8 +3,10 @@ import { Link } from 'react-router-dom'
 import { ArrowRight } from 'lucide-react'
 import { PageFrame } from '@/components/PageFrame'
 import { ExamVerdict } from '@/components/ExamVerdict'
+import { LeafCelebration } from '@/components/LeafCelebration'
 import { OrganicBackground } from '@/components/OrganicBackground'
 import { PillButton, PillLink } from '@/components/PillButton'
+import { isPassed } from '@/lib/exam'
 import { themeLabel } from '@/lib/themes'
 import type { AnswerRecord } from '@/lib/exam-types'
 import { mistakes, themeScores, weakestThemes, weakestThemesToShow } from '@/lib/exam-review'
@@ -48,6 +50,8 @@ export function ExamResult({ outcome, themeOf, onRestart }: ExamResultProps) {
   return (
     <PageFrame className="relative overflow-hidden" background={<OrganicBackground shape="crest" />}>
       <div className="relative mx-auto flex grow w-full max-w-[30rem] flex-col gap-3 px-[22px] pt-0 pb-6 md:max-w-[44rem] md:px-8 md:pb-10">
+        {/* Only for an exam just finished (this screen is never shown again for an old one) */}
+        {isPassed(score, total) && <LeafCelebration />}
         <h1 ref={headingRef} tabIndex={-1} className="min-h-11 content-center self-start rounded-sm text-[0.9375rem] font-bold outline-none">
           Examen blanc terminé
         </h1>
