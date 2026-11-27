@@ -4,6 +4,8 @@ export interface AnswerRecord {
   questionId: number
   chosen: string | null  // null si le timer a expiré sans réponse
   correct: boolean
+  /** Right answer offered in the exam (`ExamQuestion.answer`); missing on answers stored before the fix */
+  answer?: string
 }
 
 export interface ExamRecord {

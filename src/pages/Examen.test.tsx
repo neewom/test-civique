@@ -317,6 +317,39 @@ describe('Examen', () => {
     expect(history[0].total).toBe(EXAM_SIZE)
   })
 
+  it('enregistre la bonne réponse proposée pour chaque question d\'un examen terminé', async () => {
+    renderExamen()
+    for (let i = 0; i < EXAM_SIZE; i++) {
+      await act(async () => { fireEvent.click(getChoices()[0]) })
+      await act(async () => { fireEvent.click(screen.getByRole('button', { name: 'Valider ma réponse' })) })
+      const nextBtn =
+        screen.queryByRole('button', { name: 'Question suivante' }) ??
+        screen.getByRole('button', { name: 'Voir les résultats' })
+      await act(async () => { fireEvent.click(nextBtn) })
+    }
+    const [record] = JSON.parse(localStorage.getItem('quiz-history') ?? '[]')
+    expect(record.answers).toHaveLength(EXAM_SIZE)
+    for (const a of record.answers) {
+      const q = (allQuestions as { id: number; answers: string[] }[]).find((x) => x.id === a.questionId)!
+      expect(q.answers).toContain(a.answer)
+    }
+  })
+
+  it('enregistre aussi la bonne réponse proposée des questions sans réponse quand le chrono expire', async () => {
+    renderExamen()
+    await act(async () => { fireEvent.click(getChoices()[0]) })
+    await act(async () => { fireEvent.click(screen.getByRole('button', { name: 'Valider ma réponse' })) })
+    await act(async () => { vi.advanceTimersByTime(GLOBAL_EXAM_TIME * 1000) })
+    const [record] = JSON.parse(localStorage.getItem('quiz-history') ?? '[]')
+    expect(record.answers).toHaveLength(EXAM_SIZE)
+    const unanswered = record.answers.filter((a: { chosen: string | null }) => a.chosen === null)
+    expect(unanswered).toHaveLength(EXAM_SIZE - 1)
+    for (const a of record.answers) {
+      const q = (allQuestions as { id: number; answers: string[] }[]).find((x) => x.id === a.questionId)!
+      expect(q.answers).toContain(a.answer)
+    }
+  })
+
   it('le bouton "← Quitter" est visible pendant l\'examen', () => {
     renderExamen()
     expect(screen.getByRole('button', { name: 'Quitter l\'examen' })).toBeInTheDocument()

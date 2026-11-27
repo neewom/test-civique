@@ -49,6 +49,10 @@ const toggleClass = (pressed: boolean) =>
   )
 
 function QuestionReview({ answer, number, question }: Reviewed) {
+  // The answer offered in the exam wins when the current data still accepts it; otherwise
+  // (old exam, answer removed since) one answer stays as is, several are all listed.
+  const proposed = typeof answer.answer === 'string' && question.answers.includes(answer.answer) ? answer.answer : null
+  const several = proposed === null && question.answers.length > 1
   return (
     <li className="flex flex-col gap-2.5 rounded-2xl bg-card p-4 text-card-foreground">
       <p className="text-[0.8125rem] font-bold tracking-[0.06em] uppercase dark:text-muted-foreground">
@@ -64,7 +68,9 @@ function QuestionReview({ answer, number, question }: Reviewed) {
           ) : (
             <AnswerBox tone="wrong" label="Votre réponse">{answer.chosen}</AnswerBox>
           )}
-          <AnswerBox tone="right" label="Bonne réponse">{question.answers[0]}</AnswerBox>
+          <AnswerBox tone="right" label={several ? 'Bonnes réponses acceptées' : 'Bonne réponse'}>
+            {proposed ?? (several ? question.answers.join(', ') : question.answers[0])}
+          </AnswerBox>
         </>
       )}
       <p className="text-[0.9375rem] leading-normal">{question.explanation}</p>
