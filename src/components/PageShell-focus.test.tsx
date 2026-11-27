@@ -22,6 +22,7 @@ function HomePage() {
       <Link to="/sans-titre">vers sans titre</Link>
       <Link to="/" state={{ a: 1 }}>accueil encore</Link>
       <Link to="/ancre#vos-donnees">vers ancre</Link>
+      <Link to="/restaure">vers restaure</Link>
     </main>
   )
 }
@@ -31,6 +32,15 @@ function RevisionPage() {
     <main>
       <h1>Réviser</h1>
       <Link to="/">retour</Link>
+    </main>
+  )
+}
+
+function RestoringPage() {
+  return (
+    <main>
+      <h1>Position mémorisée</h1>
+      <div data-restores-scroll />
     </main>
   )
 }
@@ -49,6 +59,7 @@ function renderShell(startAt = '/') {
             <Route path="/revision" element={<RevisionPage />} />
             <Route path="/resultat" element={<Result />} />
             <Route path="/sans-titre" element={<NoTitlePage />} />
+            <Route path="/restaure" element={<RestoringPage />} />
             <Route path="/ancien" element={<Navigate to="/revision" replace />} />
             <Route path="/ancre" element={<RevisionPage />} />
           </Routes>
@@ -166,5 +177,11 @@ describe('PageShell — focus après navigation', () => {
     fireEvent.click(link)
     expect(screen.getByRole('heading', { level: 1, name: 'Réviser' })).not.toHaveFocus()
     Object.defineProperty(window, 'scrollY', { value: 0, configurable: true })
+  })
+
+  it('une page qui remet elle-même une position mémorisée (data-restores-scroll) : le focus ne bouge pas', () => {
+    renderShell()
+    fireEvent.click(screen.getByRole('link', { name: 'vers restaure' }))
+    expect(screen.getByRole('heading', { level: 1, name: 'Position mémorisée' })).not.toHaveFocus()
   })
 })

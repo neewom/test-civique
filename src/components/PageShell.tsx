@@ -81,6 +81,8 @@ export function PageShell({ children }: { children: (location: Location) => Reac
     shownPath.current = shown.pathname
     if (!acted.current || shown.hash || window.scrollY > 0) return
     const wrap = document.getElementById('page-wrap')
+    // The page restores a remembered scroll position itself (revision): keep the keyboard user's place
+    if (wrap?.querySelector('[data-restores-scroll]')) return
     const active = document.activeElement
     if (active && active !== document.body && wrap?.contains(active)) return
     const target = wrap?.querySelector<HTMLElement>('h1') ?? wrap?.querySelector<HTMLElement>('main')
