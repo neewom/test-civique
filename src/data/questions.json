@@ -8,14 +8,14 @@
     ],
     "question": "À quoi correspond la date du 14 juillet ?",
     "distractors": [
-      "C'est l'anniversaire de la mort de Napoléon Bonaparte",
-      "C'est le jour de la signature de la Constitution de 1958",
-      "C'est la commémoration de la fin de la Première Guerre mondiale",
-      "C'est la date de proclamation de la Ve République",
-      "C'est la date de la libération de Paris en 1944",
-      "C'est l'anniversaire de la Déclaration des droits de l'homme",
-      "C'est le jour du couronnement de Napoléon Ier",
-      "C'est la date de l'abolition de l'esclavage en 1848"
+      "C'est l'anniversaire de la mort de Napoléon Bonaparte, survenue à Sainte-Hélène",
+      "C'est le jour de la signature de la Constitution de 1958, qui fonde la Ve République",
+      "C'est la commémoration de l'armistice, qui a mis fin à la Première Guerre mondiale",
+      "C'est la date de naissance de la Ve République, proclamée en 1958",
+      "C'est la date de la libération de Paris, qui a eu lieu en 1944",
+      "C'est l'anniversaire de la Déclaration des droits de l'homme, adoptée en 1789",
+      "C'est le jour du couronnement de Napoléon Ier, qui a eu lieu en 1804",
+      "C'est la date de l'abolition de l'esclavage, décidée en 1848"
     ],
     "explanation": "Le 14 juillet est la fête nationale depuis 1880. Elle commémore la prise de la Bastille le 14 juillet 1789, début de la Révolution française, et la fête de la Fédération du 14 juillet 1790. Un défilé militaire a lieu sur les Champs-Élysées, en présence du président de la République.",
     "answers": [
@@ -777,13 +777,13 @@
     "question": "Qui est Marianne ?",
     "distractors": [
       "La patronne des soldats et des armées françaises",
-      "La déesse romaine de la Justice",
-      "La reine de France sous la Révolution française",
-      "La première femme élue à l'Assemblée nationale",
+      "Le nom de la déesse romaine de la Justice",
+      "Le surnom d'une reine de France sous la Révolution",
+      "Le surnom de la première femme élue à l'Assemblée nationale",
       "La sainte patronne de la France",
+      "Le symbole féminin de la monarchie française",
       "La fondatrice de la Croix-Rouge française",
-      "La femme de Napoléon Bonaparte, impératrice",
-      "La première présidente du Sénat français"
+      "Le titre donné à la femme de Napoléon Bonaparte"
     ],
     "explanation": "Marianne est l'allégorie féminine de la République française, incarnant les valeurs de Liberté, Égalité, Fraternité. Son buste figure dans toutes les mairies. Elle est représentée coiffée du bonnet phrygien, symbole de la liberté.",
     "answers": [
@@ -949,14 +949,14 @@
     "crNumber": 27,
     "question": "Pourquoi le principe de laïcité doit-il être respecté à l'école ?",
     "distractors": [
-      "Pour interdire aux élèves de parler de religion entre eux",
-      "Pour obliger les enfants à être athées pendant leur scolarité",
-      "Pour que l'État puisse surveiller les pratiques religieuses des familles",
-      "Pour permettre aux enseignants d'imposer leurs valeurs religieuses",
-      "Pour empêcher les parents de transmettre leur religion à leurs enfants",
-      "Pour que les élèves étrangers abandonnent leur culture d'origine",
-      "Pour interdire aux professeurs de mentionner les religions en cours",
-      "Pour que seule la religion catholique soit enseignée en histoire"
+      "Pour interdire aux élèves de parler de religion entre eux, même en récréation",
+      "Pour obliger les enfants à être athées pendant leur scolarité, même contre l'avis des parents",
+      "Pour que l'État puisse surveiller les pratiques religieuses des familles, par l'intermédiaire de l'école",
+      "Pour permettre aux enseignants d'imposer leurs valeurs religieuses, y compris aux élèves",
+      "Pour empêcher les parents de transmettre leur religion à leurs enfants, même à la maison",
+      "Pour que les élèves étrangers abandonnent leur culture d'origine, dès leur arrivée à l'école",
+      "Pour interdire aux professeurs de mentionner les religions en cours, même en histoire",
+      "Pour que seule la religion catholique soit enseignée en histoire, comme avant 1905"
     ],
     "explanation": "La laïcité à l'école garantit un espace neutre, égal et bienveillant pour tous les élèves, quelles que soient leurs convictions religieuses ou philosophiques. Elle permet à chacun d'apprendre dans un environnement commun, respectueux des différences.",
     "answers": [
@@ -1233,14 +1233,14 @@
     ],
     "question": "Quel est le rôle de l'autorité judiciaire ?",
     "distractors": [
-      "Voter les lois et contrôler le gouvernement",
-      "Gouverner le pays et appliquer les décisions politiques",
-      "Contrôler la constitutionnalité des lois adoptées",
-      "Gérer les finances publiques et les impôts",
-      "Nommer les ministres et les hauts fonctionnaires",
-      "Superviser les élections nationales et locales",
-      "Négocier les traités et accords internationaux",
-      "Diriger l'armée et assurer la défense nationale"
+      "Faire les lois : voter les textes et contrôler le gouvernement",
+      "Gouverner : appliquer les décisions politiques et diriger l'administration",
+      "Contrôler la constitutionnalité : examiner les lois adoptées par le Parlement",
+      "Gérer les finances : fixer les impôts et répartir le budget de l'État",
+      "Nommer : choisir les ministres et les hauts fonctionnaires",
+      "Superviser les élections : organiser les scrutins nationaux et locaux",
+      "Négocier les traités : conclure les accords avec les autres pays",
+      "Diriger l'armée : assurer la défense nationale et les opérations"
     ],
     "explanation": "L'autorité judiciaire est le troisième pouvoir de l'État (après l'exécutif et le législatif). Elle a pour rôle de rendre la justice, de juger les affaires civiles et pénales, et de protéger les droits et libertés individuelles des citoyens.",
     "answers": [
@@ -1287,13 +1287,13 @@
     ],
     "question": "L'autorité judiciaire est exercée par :",
     "distractors": [
-      "Le Président de la République et ses conseillers",
-      "Le ministre de la Justice et ses représentants",
-      "La police et la gendarmerie nationale",
-      "Le Premier ministre en conseil des ministres",
-      "Le Parlement en session extraordinaire",
-      "Les préfets dans chaque département",
-      "Les maires dans chaque commune"
+      "Le Président de la République, aidé de ses conseillers",
+      "Le ministre de la Justice, assisté de ses représentants",
+      "La police et la gendarmerie, sous l'autorité du ministre de l'Intérieur",
+      "Le Premier ministre, réuni en conseil des ministres",
+      "Le Parlement, réuni en session extraordinaire",
+      "Les préfets, nommés dans chaque département",
+      "Les maires, élus dans chaque commune"
     ],
     "explanation": "L'autorité judiciaire est exercée par les juges et les tribunaux, qui sont indépendants du pouvoir exécutif et législatif. Cette indépendance est garantie par la Constitution et par le Conseil supérieur de la magistrature (CSM) qui veille à l'impartialité de la justice.",
     "answers": [
@@ -1315,13 +1315,13 @@
     "crNumber": 56,
     "question": "Que se passe-t-il si un ministre ne respecte pas la loi ?",
     "distractors": [
-      "Il bénéficie d'une immunité totale pendant ses fonctions",
-      "Il est simplement révoqué par le Président sans procès",
-      "Il est jugé uniquement par ses collègues parlementaires",
-      "Il est automatiquement amnistié à la fin de son mandat",
-      "Il ne peut pas être poursuivi pendant 5 ans après ses fonctions",
-      "Il est seulement soumis à une sanction administrative interne",
-      "Il bénéficie d'une immunité à vie pour ses actes ministériels"
+      "Il bénéficie d'une immunité totale, y compris pour ses actes personnels",
+      "Il est simplement révoqué par le Président, sans aucun procès",
+      "Il est jugé uniquement par ses collègues parlementaires, sans magistrat",
+      "Il est automatiquement amnistié, dès la fin de son mandat",
+      "Il ne peut pas être poursuivi, pendant 5 ans après ses fonctions",
+      "Il est seulement soumis à une sanction administrative, décidée en interne",
+      "Il bénéficie d'une immunité à vie, pour tous ses actes ministériels"
     ],
     "explanation": "Nul n'est au-dessus des lois en France, y compris les membres du gouvernement : un ministre qui commet une infraction peut être poursuivi et jugé. Pour les crimes et délits commis dans l'exercice de ses fonctions, il est jugé par la Cour de justice de la République ; pour les autres, par les tribunaux ordinaires, comme tout citoyen.",
     "answers": [
@@ -1737,14 +1737,14 @@
     ],
     "question": "Quel est le rôle des députés ?",
     "distractors": [
-      "Nommer les ministres et le Premier ministre",
-      "Juger les affaires civiles et pénales",
-      "Gouverner les départements et les régions",
-      "Nommer les préfets et hauts fonctionnaires",
-      "Gérer les relations diplomatiques avec l'étranger",
-      "Superviser les élections et valider les résultats",
-      "Contrôler les médias et garantir la liberté de la presse",
-      "Définir la politique étrangère de la France"
+      "Nommer le Premier ministre, les ministres et les ambassadeurs",
+      "Juger les affaires civiles, trancher les litiges et prononcer les peines",
+      "Gouverner les départements, gérer les régions et appliquer les lois locales",
+      "Nommer les préfets, nommer les hauts fonctionnaires et diriger l'administration",
+      "Gérer les relations diplomatiques, signer les traités et nommer les ambassadeurs",
+      "Superviser les élections, valider les résultats et proclamer le vainqueur",
+      "Contrôler les médias, garantir la liberté de la presse et attribuer les fréquences",
+      "Définir la politique étrangère, diriger la diplomatie et représenter la France"
     ],
     "explanation": "Les 577 députés de l'Assemblée nationale ont trois rôles principaux : voter les lois (pouvoir législatif), voter le budget de l'État, et contrôler l'action du gouvernement (questions au gouvernement, commissions d'enquête, motion de censure).",
     "answers": [
@@ -1855,13 +1855,13 @@
     ],
     "question": "Qui élit les députés ?",
     "distractors": [
-      "Les sénateurs par vote indirect",
-      "Le Président de la République",
-      "Les conseils municipaux des circonscriptions",
-      "Les partis politiques représentés au Parlement",
-      "Les préfets après consultation des élus locaux",
-      "Les électeurs uniquement dans les grandes villes",
-      "Les grands électeurs comme pour les sénateurs",
+      "Les sénateurs, par vote indirect",
+      "Le Président de la République, par nomination directe",
+      "Les conseils municipaux, dans chaque circonscription",
+      "Les partis politiques, représentés au Parlement",
+      "Les préfets, après consultation des élus locaux",
+      "Les électeurs, uniquement dans les grandes villes",
+      "Les grands électeurs, comme pour les sénateurs",
       "Les membres du Conseil économique, social et environnemental"
     ],
     "explanation": "Les 577 députés sont élus directement par les citoyens français, au scrutin uninominal à deux tours dans 577 circonscriptions. Les élections législatives ont lieu tous les 5 ans, sauf si le Président de la République dissout l'Assemblée nationale avant la fin du mandat.",
@@ -1972,14 +1972,14 @@
     "natNumber": 75,
     "question": "Qui représente l'État dans un département ?",
     "distractors": [
-      "Le maire du chef-lieu",
-      "Le président du conseil départemental",
-      "Le député de la principale circonscription",
-      "Le président du tribunal judiciaire",
-      "Le directeur de l'Agence régionale de santé",
-      "Le recteur d'académie",
-      "Le procureur de la République",
-      "Le président du conseil régional"
+      "Le maire du chef-lieu, élu par le conseil municipal",
+      "Le président du conseil départemental, élu par les conseillers",
+      "Le député de la principale circonscription, élu au suffrage universel",
+      "Le président du tribunal judiciaire, nommé par décret",
+      "Le directeur de l'Agence régionale de santé, chargé de la santé publique",
+      "Le recteur d'académie, chargé de l'éducation",
+      "Le procureur de la République, chargé des poursuites",
+      "Le président du conseil régional, élu par les conseillers"
     ],
     "explanation": "Le préfet est le représentant de l'État dans le département. Nommé par le Président de la République en conseil des ministres, il est chargé de faire appliquer les lois et les décisions du gouvernement sur le territoire départemental.",
     "answers": [
@@ -2002,14 +2002,14 @@
     "crNumber": 64,
     "question": "Qui dirige la commune ?",
     "distractors": [
-      "Le préfet nommé par le gouvernement",
-      "Le président du conseil départemental",
-      "Le sous-préfet de l'arrondissement",
-      "Le député élu dans la circonscription",
-      "Un administrateur nommé par l'État",
-      "Le conseiller régional le plus ancien",
-      "Le directeur général des services communaux",
-      "Le président de la communauté de communes"
+      "Le préfet, nommé par le gouvernement",
+      "Le président du conseil départemental, élu par les conseillers",
+      "Le sous-préfet, nommé pour l'arrondissement",
+      "Le député, élu dans la circonscription",
+      "Un administrateur, nommé par l'État",
+      "Le conseiller régional, le plus ancien du conseil",
+      "Le directeur général des services, recruté par la mairie",
+      "Le président de la communauté de communes, élu par les délégués"
     ],
     "explanation": "Le maire est élu par les conseillers municipaux, eux-mêmes élus par les électeurs de la commune. Il dirige la commune et son administration, avec le conseil municipal.",
     "answers": [
@@ -2088,14 +2088,14 @@
     ],
     "question": "Quel est le rôle du Parlement ?",
     "distractors": [
-      "Gouverner le pays et nommer les ministres",
-      "Juger les affaires civiles et pénales importantes",
-      "Diriger les collectivités territoriales",
-      "Définir la politique étrangère de la France",
-      "Nommer les ambassadeurs et hauts fonctionnaires",
-      "Superviser les forces armées et la défense nationale",
-      "Gérer les finances des régions et des départements",
-      "Vérifier la constitutionnalité des lois après leur adoption"
+      "Gouverner le pays, nommer les ministres et diriger l'administration",
+      "Juger les affaires civiles et pénales, y compris les plus importantes",
+      "Diriger les collectivités territoriales, nommer les préfets et gérer les services locaux",
+      "Définir la politique étrangère, signer les traités et diriger la diplomatie",
+      "Nommer les ambassadeurs, nommer les hauts fonctionnaires et gérer la fonction publique",
+      "Superviser les forces armées, assurer la défense et commander les opérations",
+      "Gérer les finances des régions, répartir les dotations et contrôler les départements",
+      "Vérifier la constitutionnalité, examiner les lois après leur adoption et les annuler"
     ],
     "explanation": "Le Parlement (Assemblée nationale + Sénat) a trois missions principales : voter les lois, voter le budget annuel de l'État, et contrôler l'action du gouvernement (questions, commissions d'enquête, motion de censure pour renverser le gouvernement).",
     "answers": [
@@ -2330,14 +2330,14 @@
     "natNumber": 94,
     "question": "Qui élit les députés européens ?",
     "distractors": [
-      "Les Parlements nationaux de chaque État membre",
-      "Les chefs d'État et de gouvernement des pays membres",
-      "Les membres de la Commission européenne",
+      "Les Parlements nationaux de chaque État membre, par désignation",
+      "Les chefs d'État et de gouvernement, réunis en Conseil européen",
+      "Les membres de la Commission européenne, par un vote interne",
       "Les citoyens de chaque pays, mais seulement les ressortissants nationaux",
-      "Le Conseil de l'Europe par vote indirect",
-      "Les partis politiques européens entre eux",
-      "Les présidents des assemblées nationales de l'UE",
-      "Le Parlement européen par cooptation interne"
+      "Le Conseil de l'Europe, par vote indirect",
+      "Les partis politiques européens, entre eux",
+      "Les présidents des assemblées nationales, réunis à Bruxelles",
+      "Le Parlement européen, par cooptation interne"
     ],
     "explanation": "Les députés européens (ou eurodéputés) sont élus directement par les citoyens de chaque État membre de l'Union européenne, au suffrage universel direct, tous les 5 ans. Le Parlement européen compte 720 membres depuis les élections de juin 2024.",
     "answers": [
@@ -2415,12 +2415,13 @@
     ],
     "question": "Comment s'appelle le texte qui énonce les droits et devoirs des personnes résidant en France ?",
     "distractors": [
-      "Le traité de Rome fondateur de l'Europe",
+      "Le texte du traité de Rome fondateur de l'Europe",
       "La Déclaration d'indépendance des États-Unis de 1776",
       "La Grande Charte (Magna Carta) anglaise de 1215",
       "La Charte des Nations unies de 1945",
       "La Charte constitutionnelle de 1814",
-      "Le Code de la route"
+      "Le Code du travail, qui énonce les droits des salariés",
+      "Le Code de la route, texte sur la circulation"
     ],
     "explanation": "La Déclaration des droits de l'homme et du citoyen de 1789 est le texte fondateur qui énonce les droits naturels et imprescriptibles (liberté, propriété, sûreté, résistance à l'oppression). Elle a valeur constitutionnelle en France car elle est intégrée au préambule de la Constitution.",
     "answers": [
@@ -2886,14 +2887,14 @@
     ],
     "question": "Pourquoi les libertés individuelles peuvent-elles être limitées ?",
     "distractors": [
-      "Pour permettre à l'État de mieux contrôler les citoyens",
-      "Pour empêcher toute forme de critique envers le gouvernement",
-      "Pour favoriser les personnes riches et influentes de la société",
-      "Pour protéger les seuls intérêts économiques de l'État",
-      "Pour réduire les dépenses publiques liées à la justice",
-      "Pour préserver les traditions culturelles nationales uniquement",
-      "Pour empêcher les étrangers d'accéder aux mêmes droits",
-      "Pour maintenir la séparation stricte entre les classes sociales"
+      "Pour permettre à l'État de contrôler les citoyens, de les surveiller et de les ficher",
+      "Pour empêcher toute critique envers le gouvernement, les médias ou la justice",
+      "Pour favoriser les personnes riches, les plus influentes et les élus",
+      "Pour protéger les seuls intérêts économiques, les budgets et les entreprises de l'État",
+      "Pour réduire les dépenses publiques, les coûts de la justice et les prisons",
+      "Pour préserver uniquement les traditions culturelles, les usages locaux et les coutumes",
+      "Pour empêcher les étrangers d'accéder aux mêmes droits, aux mêmes services et aux mêmes aides",
+      "Pour maintenir la séparation stricte entre les classes, les métiers et les quartiers"
     ],
     "explanation": "Selon l'article 4 de la DDHC de 1789, « la liberté consiste à pouvoir faire tout ce qui ne nuit pas à autrui » et ses bornes ne peuvent être déterminées que par la loi. La loi peut ainsi limiter les libertés individuelles pour protéger les droits des autres, l'intérêt général, l'ordre public (sécurité, tranquillité, salubrité) et la dignité humaine. Exemple : l'état d'urgence sanitaire de 2020 a limité la liberté d'aller et venir.",
     "answers": [
@@ -2988,14 +2989,14 @@
     ],
     "question": "Quel est le rôle de la gendarmerie ?",
     "distractors": [
-      "Uniquement protéger les frontières nationales",
-      "Surveiller les prisons et les établissements pénitentiaires",
-      "Gérer les élections et les bureaux de vote",
-      "Contrôler les impôts et lutter contre la fraude fiscale",
-      "Superviser les autorisations de séjour des étrangers",
-      "Réguler la circulation aérienne sur le territoire",
-      "Gérer les documents d'identité et les passeports",
-      "Protéger uniquement les bâtiments gouvernementaux"
+      "Uniquement protéger les frontières nationales, les ports et les aéroports",
+      "Surveiller les prisons, les détenus et les établissements pénitentiaires",
+      "Gérer les élections, les bureaux de vote et le dépouillement des bulletins",
+      "Contrôler les impôts, lutter contre la fraude fiscale et recouvrer les taxes",
+      "Superviser les autorisations de séjour des étrangers, surtout en préfecture",
+      "Réguler la circulation aérienne, surtout au-dessus du territoire",
+      "Gérer les documents d'identité, notamment les passeports",
+      "Protéger uniquement les bâtiments gouvernementaux, surtout à Paris"
     ],
     "explanation": "La gendarmerie nationale est une force armée chargée des missions de sécurité publique principalement en zone rurale et périurbaine (tandis que la police nationale intervient en zone urbaine). Elle maintient l'ordre, protège les personnes et les biens, constate les infractions et mène des enquêtes judiciaires.",
     "answers": [
@@ -3072,14 +3073,14 @@
     ],
     "question": "Comment peut-on réduire ses déchets ?",
     "distractors": [
-      "En jetant tout dans la même poubelle sans distinction",
-      "En brûlant ses déchets dans son jardin",
-      "En enterrant ses déchets dans son terrain privé",
-      "En jetant les déchets organiques dans les toilettes",
-      "En laissant déborder sa poubelle pour que les services collectent plus vite",
-      "En achetant plus pour stimuler l'économie du recyclage",
-      "En donnant tous ses déchets à ses voisins",
-      "En stockant ses déchets indéfiniment dans sa cave"
+      "En jetant tout dans la même poubelle, en ne triant rien et en laissant les déchets s'accumuler",
+      "En brûlant ses déchets dans son jardin, en plein air et sans aucune précaution",
+      "En enterrant ses déchets dans son terrain privé, en les recouvrant de terre et de pierres",
+      "En jetant les déchets organiques dans les toilettes, en tirant la chasse et en laissant faire l'eau",
+      "En laissant déborder sa poubelle, pour que les services collectent plus vite et plus souvent",
+      "En achetant plus de produits, pour stimuler l'économie du recyclage et en multipliant les emballages",
+      "En donnant tous ses déchets à ses voisins, en les déposant devant leur porte ou dans leur jardin",
+      "En stockant ses déchets indéfiniment dans sa cave, en les entassant et en attendant la collecte"
     ],
     "explanation": "Pour réduire ses déchets, on peut trier pour recycler (verre, plastique, carton, métal), composter les déchets organiques, éviter les suremballages, réparer plutôt que jeter, acheter d'occasion, et utiliser des produits réutilisables (sacs, bouteilles, etc.).",
     "answers": [
@@ -3100,13 +3101,13 @@
     ],
     "question": "Déposer une machine à laver cassée sur le trottoir est :",
     "distractors": [
-      "Toléré si c'est pour permettre à d'autres de la récupérer",
-      "Autorisé si c'est devant chez soi, sans autre démarche",
-      "Légal si on le fait la nuit pour ne pas gêner la circulation",
-      "Permis car la commune est obligée de ramasser tout ce qui est sur le trottoir",
-      "Autorisé si l'appareil pèse moins de 50 kilos",
-      "Toléré dans les zones industrielles et commerciales",
-      "Autorisé tant que l'objet est encore fonctionnel"
+      "Toléré : c'est un don, il permet à d'autres de la récupérer sans rien payer",
+      "Autorisé devant chez soi : c'est un geste simple, sans autre démarche à faire",
+      "Légal la nuit : on ne gêne pas la circulation, donc aucune amende n'est prévue",
+      "Permis : la commune est obligée de ramasser tout ce qui se trouve sur le trottoir",
+      "Autorisé si l'appareil pèse moins de 50 kilos : c'est considéré comme un petit objet",
+      "Toléré dans les zones industrielles et commerciales : elles sont réservées aux déchets",
+      "Autorisé tant que l'objet est encore fonctionnel : c'est alors un don, pas un déchet"
     ],
     "explanation": "Déposer un encombrant (électroménager, meuble…) sur le trottoir en dehors de la collecte prévue par la commune est un dépôt sauvage : amende forfaitaire de 135 € (375 € après 45 jours), jusqu'à 750 € devant le juge, voire 1 500 € si un véhicule a servi à le transporter. Il faut se renseigner auprès de la mairie (collecte des encombrants, souvent sur rendez-vous) ou déposer l'objet en déchetterie ; un appareil électrique peut aussi être repris par le vendeur lors d'un achat neuf.",
     "answers": [
@@ -3697,14 +3698,14 @@
     ],
     "question": "Que célèbre-t-on le 14 juillet ?",
     "distractors": [
-      "La victoire de Napoléon à la bataille d'Austerlitz",
-      "La libération de Paris par les Alliés en 1944",
-      "La proclamation de la Ve République par de Gaulle",
-      "L'abolition de la monarchie en France",
-      "La signature de la Constitution de 1958",
-      "La fin de la Première Guerre mondiale",
-      "L'entrée de la France dans l'Union européenne",
-      "La naissance de Napoléon Bonaparte"
+      "La victoire de Napoléon, à la bataille d'Austerlitz",
+      "La libération de Paris, par les Alliés en 1944",
+      "La proclamation de la Ve République, par de Gaulle",
+      "L'abolition de la monarchie, proclamée en 1792",
+      "La signature de la Constitution, en 1958",
+      "La fin de la Première Guerre mondiale, en 1918",
+      "La création de l'Union européenne, par le traité de Maastricht",
+      "La naissance de Napoléon Bonaparte, en Corse"
     ],
     "explanation": "Le 14 juillet est la fête nationale depuis 1880. Elle commémore la prise de la Bastille du 14 juillet 1789, qui marque le début de la Révolution française, et la fête de la Fédération du 14 juillet 1790. Elle est célébrée par un défilé militaire sur les Champs-Élysées, des feux d'artifice et des bals populaires.",
     "answers": [
@@ -4255,14 +4256,14 @@
     "natNumber": 185,
     "question": "Qui était Simone de Beauvoir ?",
     "distractors": [
-      "Une reine de France exécutée pendant la Révolution",
-      "Une résistante française de la Seconde Guerre mondiale",
-      "Une scientifique française double lauréate du prix Nobel",
-      "Une pionnière du cinéma française du début du XXe siècle",
-      "Une femme politique française auteure de la loi sur l'IVG",
-      "Une peintre française proche du mouvement cubiste",
-      "Une militante anarchiste française de la Commune de Paris",
-      "Une philosophe et mystique française du XXe siècle"
+      "Une reine de France, exécutée pendant la Révolution",
+      "Une résistante française, active pendant la Seconde Guerre mondiale",
+      "Une scientifique française, double lauréate du prix Nobel",
+      "Une pionnière du cinéma française, active au début du XXe siècle",
+      "Une femme politique française, auteure de la loi sur l'IVG",
+      "Une peintre française, proche du mouvement cubiste",
+      "Une militante anarchiste française, engagée dans la Commune de Paris",
+      "Une philosophe et mystique française, figure de la pensée spirituelle"
     ],
     "explanation": "Simone de Beauvoir (1908-1986) était une philosophe existentialiste, romancière et féministe française. Son œuvre maîtresse, Le Deuxième Sexe (1949), analyse la condition des femmes dans la société et a profondément influencé le féminisme mondial. Elle était la compagne de Jean-Paul Sartre.",
     "answers": [
@@ -4368,13 +4369,13 @@
     ],
     "question": "Qui était Joséphine Baker ?",
     "distractors": [
-      "Une reine de France exécutée pendant la Révolution",
-      "Une aviatrice française pionnière du début du XXe siècle",
-      "Une peintre française modèle puis artiste du mouvement impressionniste",
-      "Une infirmière américaine fondatrice de la Croix-Rouge",
-      "Une romancière française du XXe siècle élue à l'Académie française",
-      "Une scientifique française double lauréate du prix Nobel",
-      "Une danseuse italienne fondatrice du ballet romantique"
+      "Une reine de France, exécutée pendant la Révolution",
+      "Une aviatrice française, pionnière du début du XXe siècle",
+      "Une peintre française, modèle puis artiste du mouvement impressionniste",
+      "Une infirmière américaine, fondatrice de la Croix-Rouge",
+      "Une romancière française, élue à l'Académie française",
+      "Une scientifique française, double lauréate du prix Nobel",
+      "Une danseuse italienne, fondatrice du ballet romantique"
     ],
     "explanation": "Joséphine Baker (1906-1975), née aux États-Unis, s'installe à Paris en 1925, où elle devient une vedette du music-hall, puis se lance dans la chanson et le cinéma. Naturalisée française en 1937, elle rejoint la Résistance pendant la Seconde Guerre mondiale et lutte contre le racisme. Elle est entrée au Panthéon le 30 novembre 2021.",
     "answers": [
@@ -4420,14 +4421,14 @@
     ],
     "question": "Qu'est-ce que le Louvre ?",
     "distractors": [
-      "Le palais présidentiel de la République française",
-      "L'ancien parlement royal du Royaume de France",
-      "La résidence officielle du Premier ministre",
-      "Le principal opéra parisien de renommée mondiale",
-      "Le siège du gouvernement et des ministères",
-      "La plus grande bibliothèque nationale d'Europe",
-      "L'académie nationale des beaux-arts française",
-      "Le principal palais de justice historique de Paris"
+      "Un palais présidentiel, siège de la République française",
+      "Un ancien parlement royal, siège du Royaume de France",
+      "Une résidence officielle, celle du Premier ministre",
+      "Un opéra national, l'un des plus connus au monde",
+      "Un siège du gouvernement, celui des ministères",
+      "Une bibliothèque nationale, la plus grande d'Europe",
+      "Une académie nationale, celle des beaux-arts",
+      "Un palais de justice, le principal de Paris"
     ],
     "explanation": "Le Louvre, à Paris, est un ancien palais royal devenu musée pendant la Révolution française. C'est l'un des musées les plus prestigieux et les plus visités au monde ; il abrite notamment la Joconde de Léonard de Vinci.",
     "answers": [
@@ -4639,14 +4640,14 @@
     ],
     "question": "À quelles conditions un mariage est-il reconnu juridiquement ?",
     "distractors": [
-      "Une simple cérémonie religieuse devant un prêtre ou imam suffit",
-      "Il faut obligatoirement combiner un mariage civil et religieux",
-      "Une union libre de 3 ans a la même valeur légale qu'un mariage",
-      "Un mariage contracté à l'étranger n'est jamais reconnu en France",
-      "Il suffit de déposer une déclaration conjointe en préfecture",
-      "Un PACS équivaut entièrement à un mariage civil",
-      "Il suffit d'un accord officiel signé devant un notaire",
-      "Il faut l'accord formel et écrit des deux familles"
+      "Une simple cérémonie religieuse suffit : un prêtre ou un imam peut marier légalement",
+      "Il faut obligatoirement combiner mariage civil et religieux : l'un sans l'autre est nul",
+      "Une union libre de 3 ans suffit : elle a la même valeur légale qu'un mariage",
+      "Un mariage contracté à l'étranger n'est pas reconnu en France : il faut se remarier",
+      "Il suffit de déposer une déclaration conjointe : la préfecture enregistre l'union",
+      "Un PACS équivaut entièrement à un mariage civil : les droits sont les mêmes",
+      "Il suffit d'un accord officiel signé devant un notaire : il vaut mariage",
+      "Il faut l'accord formel et écrit des deux familles : sans lui, le mariage est nul"
     ],
     "explanation": "En France, seul le mariage civil célébré devant l'officier d'état civil (le maire ou un adjoint) a une valeur juridique. Le mariage religieux n'a aucune valeur légale. Le mariage civil peut précéder ou suivre une cérémonie religieuse, mais il est indispensable.",
     "answers": [
@@ -4693,14 +4694,14 @@
     ],
     "question": "Le travail non déclaré est :",
     "distractors": [
-      "Toléré pour les petits travaux ponctuels entre particuliers",
-      "Autorisé si le montant est inférieur à 500 euros par mois",
-      "Légal si les deux parties signent un accord écrit",
-      "Autorisé uniquement pour les travaux ménagers à domicile",
-      "Toléré pour les étudiants qui gardent des enfants",
-      "Légal si le travailleur est étranger non déclaré en France",
-      "Autorisé pour les récoltes agricoles saisonnières",
-      "Légal uniquement entre membres d'une même famille"
+      "Toléré pour les petits travaux ponctuels : c'est courant entre particuliers",
+      "Autorisé si le montant est inférieur à 500 euros par mois : c'est sous le seuil",
+      "Légal si les deux parties signent un accord écrit : le contrat protège chacun",
+      "Autorisé uniquement pour les travaux ménagers : c'est une exception à domicile",
+      "Toléré pour les étudiants qui gardent des enfants : cela reste un petit job",
+      "Légal si le travailleur est étranger : la loi française ne s'applique pas à lui",
+      "Autorisé pour les récoltes saisonnières : c'est une exception agricole",
+      "Légal uniquement entre membres d'une même famille : c'est une aide privée"
     ],
     "explanation": "Le travail non déclaré est illégal quelle que soit la situation. Pour le salarié : aucun droit ouvert (pas d'assurance maladie, pas de retraite, pas d'indemnités chômage). Pour l'employeur : redressements URSSAF, amendes et poursuites pénales pouvant aller jusqu'à 3 ans d'emprisonnement et 45 000€ d'amende.",
     "answers": [
@@ -4749,14 +4750,15 @@
     "natNumber": 238,
     "question": "Qu'est-ce que le SMIC ?",
     "distractors": [
-      "Un syndicat national des travailleurs du commerce",
-      "Une aide sociale versée aux chômeurs de longue durée",
-      "Un contrat de travail spécial réservé aux jeunes",
-      "Une prime versée aux travailleurs les plus méritants",
-      "Un dispositif d'exonération de charges pour les petites entreprises",
-      "Un indice boursier mesurant l'évolution du coût du travail",
-      "Une taxe prélevée sur les salaires des cadres dirigeants",
-      "Un dispositif de retraite complémentaire obligatoire"
+      "Un syndicat national des travailleurs du commerce : il défend les salariés des magasins",
+      "Une aide sociale versée aux chômeurs : elle s'adresse aux chômeurs de longue durée",
+      "Un contrat de travail spécial : il est réservé aux jeunes de moins de 26 ans",
+      "Une prime versée aux travailleurs : elle récompense les salariés les plus méritants",
+      "Un dispositif d'exonération de charges : il concerne les petites entreprises",
+      "Un indice boursier : il mesure l'évolution du coût du travail en France",
+      "Une taxe prélevée sur les salaires : elle concerne les cadres dirigeants",
+      "Le Salaire Moyen Interprofessionnel de Croissance : le salaire moyen versé en France",
+      "Le Système Minimum d'Indemnisation du Chômage : l'aide versée aux chômeurs de longue durée"
     ],
     "explanation": "Le SMIC est le Salaire Minimum Interprofessionnel de Croissance, le salaire horaire minimum légal en France. Aucun employeur ne peut rémunérer un salarié en dessous de ce seuil. Il est revalorisé chaque année au 1er janvier, et aussi en cours d'année si les prix augmentent d'au moins 2 %.",
     "answers": [
@@ -5057,14 +5059,14 @@
     ],
     "question": "Quel est le rôle du médecin traitant ?",
     "distractors": [
-      "Uniquement rédiger des ordonnances pour les médicaments",
-      "Gérer les hospitalisations uniquement",
-      "Servir uniquement de relais administratif pour les remboursements",
-      "Remplacer les spécialistes quand ils ne sont pas disponibles",
-      "Décider seul si le patient a besoin d'être hospitalisé d'urgence",
-      "Contrôler les arrêts de travail pour le compte de l'employeur",
-      "Effectuer toutes les opérations chirurgicales mineures",
-      "Gérer les dossiers d'admission dans les maisons de retraite"
+      "Rédiger des ordonnances, délivrer les médicaments et gérer la pharmacie du quartier",
+      "Gérer les hospitalisations, organiser les lits et diriger les services d'un hôpital",
+      "Servir de relais administratif, rembourser les consultations et gérer les cartes Vitale",
+      "Remplacer les spécialistes, opérer les patients et prescrire des traitements lourds",
+      "Hospitaliser les patients en urgence, décider seul des soins et superviser les infirmiers",
+      "Contrôler les arrêts de travail, informer l'employeur et sanctionner les salariés",
+      "Effectuer des opérations chirurgicales lourdes, anesthésier et opérer au bloc",
+      "Gérer les dossiers d'admission, orienter vers les maisons de retraite et placer les personnes âgées"
     ],
     "explanation": "Le médecin traitant joue un rôle central dans le système de santé français. Il assure le suivi médical global de ses patients, prescrit les traitements, effectue les actes médicaux courants, oriente vers les spécialistes appropriés et coordonne le parcours de soins pour garantir une prise en charge cohérente.",
     "answers": [
@@ -5229,14 +5231,14 @@
     ],
     "question": "L'autorité parentale prévoit l'obligation :",
     "distractors": [
-      "D'inscrire son enfant dans une école religieuse",
-      "D'interdire à son enfant tout contact avec d'autres religions",
-      "De décider seul des soins médicaux de son enfant, sans avis médical",
-      "D'imposer à son enfant le métier qu'il exercera plus tard",
-      "D'empêcher son enfant de participer aux activités sportives scolaires",
-      "De gérer les biens de son enfant à sa place jusqu'à ses 21 ans",
-      "De choisir les amis de son enfant pour le protéger",
-      "D'autoriser les enseignants à punir physiquement son enfant"
+      "D'inscrire son enfant dans une école religieuse, de le faire baptiser ou circoncire",
+      "D'interdire à son enfant tout contact avec d'autres religions, ou avec d'autres cultures",
+      "De décider seul des soins médicaux de son enfant, sans avis médical ni contrôle",
+      "D'imposer à son enfant le métier qu'il exercera plus tard, et de le lui choisir",
+      "D'empêcher son enfant de participer aux activités sportives scolaires, ou aux sorties",
+      "De gérer les biens de son enfant à sa place, jusqu'à ses 21 ans",
+      "De choisir les amis de son enfant, pour le protéger de tout danger",
+      "D'autoriser les enseignants à punir physiquement son enfant, en cas de faute"
     ],
     "explanation": "L'autorité parentale est l'ensemble des droits et devoirs des parents envers leur enfant mineur. Elle prévoit l'obligation de subvenir à ses besoins (nourriture, logement, santé), de le scolariser, de l'éduquer dans le respect des lois et des autres, et de protéger sa sécurité physique et morale.",
     "answers": [
@@ -5361,14 +5363,14 @@
     ],
     "question": "Un enfant inscrit à l'école :",
     "distractors": [
-      "Peut s'absenter quand ses parents le décident, sans justification",
-      "N'est obligé d'assister qu'aux cours qu'il choisit librement",
-      "Peut rester à la maison si l'enseignant ne lui convient pas",
-      "N'est pas obligé d'assister aux cours s'il est bien noté",
-      "Peut s'absenter librement pendant le ramadan ou d'autres fêtes religieuses",
-      "Doit assister aux cours uniquement le matin, l'après-midi est libre",
-      "Peut décider lui-même à partir de 12 ans de ne plus aller à l'école",
-      "N'est pas obligé d'assister aux cours de sport ou d'arts plastiques"
+      "Peut s'absenter quand ses parents le décident ; aucune justification n'est demandée",
+      "N'est obligé d'assister qu'aux cours qu'il choisit ; les autres sont facultatifs",
+      "Peut rester à la maison si l'enseignant ne lui convient pas ; l'école doit s'adapter",
+      "N'est pas obligé d'assister aux cours s'il est bien noté ; seules les notes comptent",
+      "Peut s'absenter librement pendant le ramadan ou d'autres fêtes religieuses ; l'école doit l'accepter",
+      "Doit assister aux cours uniquement le matin ; l'après-midi est libre",
+      "Peut décider lui-même à partir de 12 ans de ne plus aller à l'école ; c'est son droit",
+      "N'est pas obligé d'assister aux cours de sport ou d'arts plastiques ; ils sont facultatifs"
     ],
     "explanation": "Une fois inscrit à l'école, l'enfant est obligé d'y assister régulièrement. Les absences doivent être justifiées par les parents (maladie, etc.). Des absences injustifiées répétées exposent les parents à un signalement aux autorités et, en cas de persistance, à des sanctions pénales (obligation scolaire).",
     "answers": [
@@ -5682,9 +5684,9 @@
     ],
     "question": "Vous déposez vos sacs poubelle devant l'immeuble de votre voisin car votre conteneur est plein. Quel est le problème ?",
     "distractors": [
-      "C'est toléré si c'est exceptionnel",
-      "C'est autorisé si les sacs sont bien fermés et non odorants",
-      "C'est acceptable la veille du jour de collecte"
+      "C'est toléré, à condition que ce soit exceptionnel",
+      "C'est autorisé, si les sacs sont bien fermés et non odorants",
+      "C'est acceptable, la veille du jour de collecte"
     ],
     "explanation": "Le dépôt sauvage de déchets est une infraction. Chacun est responsable de ses déchets et doit les déposer dans les conteneurs prévus à cet effet. Des amendes peuvent être appliquées par les agents municipaux.",
     "answers": [
@@ -5707,9 +5709,9 @@
     ],
     "question": "Vous n'avez pas encore de médecin traitant en France. Que devez-vous faire ?",
     "distractors": [
-      "Aller aux urgences à chaque besoin médical",
-      "Attendre d'avoir la nationalité française pour accéder aux soins",
-      "Acheter des médicaments en pharmacie sans ordonnance à chaque fois"
+      "Aller aux urgences de l'hôpital à chaque fois sans consulter de médecin",
+      "Attendre d'avoir la nationalité française pour pouvoir voir un médecin",
+      "Acheter des médicaments en pharmacie sans ordonnance, plutôt que de voir un médecin"
     ],
     "explanation": "Déclarer un médecin traitant n'est pas obligatoire, mais c'est vivement conseillé : sans médecin traitant déclaré, les consultations sont moins bien remboursées (sauf pour les enfants de moins de 16 ans). On choisit un médecin, souvent un généraliste, et la déclaration se fait au cabinet ou en ligne.",
     "answers": [
@@ -5804,9 +5806,9 @@
     ],
     "question": "Vous souhaitez voter aux prochaines élections municipales. Quelle condition devez-vous remplir ?",
     "distractors": [
-      "Il suffit de résider en France depuis plus de 5 ans",
-      "Être majeur et résider en France, quelle que soit la nationalité",
-      "Être titulaire d'une carte de résident (10 ans)"
+      "Résider en France depuis plus de 5 ans, même sans inscription électorale",
+      "Être majeur et résider en France, quelle que soit la nationalité, aux municipales",
+      "Être titulaire d'une carte de résident (10 ans), même pour les municipales"
     ],
     "explanation": "Pour voter en France, il faut être inscrit sur les listes électorales et être de nationalité française. Les citoyens de l'Union européenne peuvent voter aux élections municipales et européennes, mais pas aux présidentielles ni aux législatives.",
     "answers": [
@@ -5829,9 +5831,9 @@
     ],
     "question": "Votre propriétaire n'effectue pas les réparations nécessaires dans votre logement malgré vos demandes. Que pouvez-vous faire ?",
     "distractors": [
-      "Cesser de payer votre loyer immédiatement",
-      "Effectuer les réparations vous-même et déduire le montant du loyer sans accord préalable",
-      "Quitter le logement sans préavis"
+      "Cesser de payer votre loyer immédiatement, puis attendre que le propriétaire réagisse",
+      "Effectuer les réparations vous-même, puis déduire le montant du loyer sans accord préalable",
+      "Quitter le logement sans préavis, puis ne plus payer de loyer ni de charges"
     ],
     "explanation": "Le propriétaire doit assurer les grosses réparations et l'entretien du logement. Le locataire le met d'abord en demeure par lettre recommandée avec avis de réception ; sans accord 2 mois après, il peut saisir la commission départementale de conciliation ou un conciliateur de justice, puis le juge. Le loyer reste dû pendant ce temps : arrêter de le payer expose à une expulsion.",
     "answers": [
@@ -5928,9 +5930,9 @@
     ],
     "question": "Quelqu'un vous insulte publiquement en raison de votre origine. De quoi s'agit-il juridiquement ?",
     "distractors": [
-      "D'un simple manque de politesse sans conséquence légale",
-      "D'un exercice de la liberté d'expression protégée",
-      "D'une infraction uniquement si cela se passe sur Internet"
+      "D'un simple manque de politesse, sans conséquence légale pour son auteur",
+      "D'un exercice de la liberté d'expression, protégée par la Constitution",
+      "D'une infraction, uniquement si cela se passe sur Internet"
     ],
     "explanation": "L'injure à caractère raciste est un délit pénal en France. La liberté d'expression ne protège pas les propos discriminatoires ou haineux visant une personne en raison de son origine, sa religion, son sexe ou son orientation sexuelle.",
     "answers": [
@@ -5952,9 +5954,9 @@
     ],
     "question": "Vous recevez une convocation du tribunal. Que devez-vous faire ?",
     "distractors": [
-      "L'ignorer si vous vous estimez innocent",
-      "Envoyer un ami à votre place",
-      "Contacter la mairie pour annuler la convocation"
+      "L'ignorer, si vous vous estimez innocent des faits reprochés",
+      "Envoyer un ami à votre place, muni d'une lettre d'explication",
+      "Contacter la mairie, pour annuler la convocation"
     ],
     "explanation": "Une convocation devant un tribunal doit être respectée. Si la personne poursuivie ne vient pas, elle peut être amenée de force par la police ou jugée en son absence, sans pouvoir se défendre ; un témoin absent sans excuse valable peut aussi être contraint de venir. Toute personne peut être assistée d'un avocat, et l'aide juridictionnelle existe pour ceux qui ne peuvent pas en payer un.",
     "group": "aide-juridictionnelle",
@@ -6099,9 +6101,9 @@
     ],
     "question": "La police vous contrôle dans la rue et vous demande de justifier de votre identité. Que devez-vous faire ?",
     "distractors": [
-      "Refuser le contrôle car il est illégal sans motif précis",
-      "Ne rien dire et partir immédiatement",
-      "Exiger d'être assisté d'un avocat dès le contrôle d'identité"
+      "Refuser le contrôle, car il est illégal sans motif précis",
+      "Ne rien dire, puis partir immédiatement sans vous retourner",
+      "Exiger d'être assisté d'un avocat, dès le début du contrôle d'identité"
     ],
     "explanation": "Lors d'un contrôle d'identité, vous devez justifier de votre identité. Un document avec photo (carte d'identité, passeport, titre de séjour) est le plus simple, mais tout moyen est admis : autre document, témoignage d'une personne qui vous accompagne. Si vous ne pouvez pas, la police peut vous retenir le temps de vérifier, 4 heures au maximum. Une personne étrangère peut aussi être invitée à présenter son titre de séjour. Le contrôle doit être justifié ; s'il vous semble illégal, vous pouvez le signaler ensuite. L'avocat n'intervient qu'en cas de garde à vue.",
     "answers": [
@@ -6269,9 +6271,9 @@
     ],
     "question": "Dans votre entreprise, un responsable impose des horaires différents aux femmes et aux hommes pour les mêmes postes. Que représente cette situation ?",
     "distractors": [
-      "Une organisation interne légale et à la discrétion de l'employeur",
-      "Une pratique normale pour tenir compte des différences biologiques",
-      "Un arrangement acceptable si les salaires sont identiques"
+      "Une organisation interne légale, laissée à la discrétion de l'employeur",
+      "Une pratique normale, pour tenir compte des différences biologiques",
+      "Un arrangement acceptable, si les salaires sont identiques"
     ],
     "explanation": "Le principe d'égalité entre les femmes et les hommes est garanti par la Constitution. Toute discrimination fondée sur le sexe en matière de conditions de travail est illégale et peut être sanctionnée.",
     "answers": [
@@ -7095,9 +7097,9 @@
     ],
     "question": "Un ami affirme que l'esclavage a été aboli une seule fois en France. Est-ce exact ?",
     "distractors": [
-      "Oui, il a été aboli définitivement en 1794 lors de la Révolution",
-      "Oui, il a été aboli une seule fois en 1848 sous la IIe République",
-      "Non, il a été aboli trois fois, la dernière en 1905"
+      "Oui, il a été aboli définitivement en 1794 : lors de la Révolution française",
+      "Oui, il a été aboli une seule fois : en 1848, sous la IIe République",
+      "Non, il a été aboli trois fois : la dernière en 1905"
     ],
     "explanation": "L'esclavage a d'abord été aboli en 1794 pendant la Révolution française, puis rétabli par Napoléon en 1802. Victor Schoelcher a obtenu son abolition définitive en 1848, sous la IIe République.",
     "answers": [
@@ -7169,9 +7171,9 @@
     ],
     "question": "Vous visitez le Louvre à Paris. Qu'est-ce que c'est principalement aujourd'hui ?",
     "distractors": [
-      "La résidence officielle du président de la République",
-      "Le siège du Parlement français",
-      "Un palais royal toujours en activité pour les cérémonies d'État"
+      "La résidence du président de la République, à Paris",
+      "Le siège du Parlement, composé de députés et de sénateurs",
+      "Un palais royal, toujours en activité pour les cérémonies d'État"
     ],
     "explanation": "Le Louvre, à Paris, est un ancien palais royal devenu musée en 1793, pendant la Révolution française. C'est l'un des musées les plus prestigieux au monde ; il abrite notamment la Joconde de Léonard de Vinci.",
     "answers": [
@@ -8052,11 +8054,11 @@
       "Chacun est libre de pratiquer la religion de son choix, sans troubler l'ordre public"
     ],
     "distractors": [
-      "Chacun doit déclarer sa religion à la mairie de sa commune",
-      "Seules les religions reconnues par l'État peuvent être pratiquées",
-      "Les personnes étrangères ne peuvent pas pratiquer leur religion en France",
-      "Il faut une autorisation de la préfecture pour prier chez soi",
-      "Chacun doit pratiquer la religion de ses parents"
+      "Chacun doit déclarer sa religion à la mairie de sa commune, lors de son arrivée",
+      "Seules les religions reconnues par l'État peuvent être pratiquées, les autres sont interdites",
+      "Les personnes étrangères ne peuvent pas pratiquer leur religion en France, sauf autorisation",
+      "Il faut une autorisation de la préfecture pour prier chez soi, même seul",
+      "Chacun doit pratiquer la religion de ses parents, jusqu'à sa majorité"
     ],
     "explanation": "La laïcité garantit la liberté de conscience : chaque personne est libre d'avoir ou de ne pas avoir de religion, d'en changer ou de ne plus en avoir. Elle peut pratiquer sa religion, dans le respect des autres et sans troubler l'ordre public. L'État est neutre : il ne reconnaît aucune religion et ne participe pas au fonctionnement des organisations religieuses.",
     "group": "laicite",
@@ -8399,10 +8401,11 @@
     ],
     "distractors": [
       "Les élèves, s'ils ont l'accord de leurs parents",
-      "Les élèves du lycée, mais pas ceux de l'école primaire",
-      "Les enseignants, s'ils ne parlent pas de religion en classe",
-      "Les élèves, pendant les récréations",
-      "Les enseignants et les élèves majeurs"
+      "Les élèves du lycée, pas ceux de l'école primaire",
+      "Tous les enseignants, s'ils ne parlent pas de religion en classe",
+      "Aucun élève mais tous les personnels de l'école",
+      "Les enseignants et les élèves majeurs",
+      "Personne hormis les élèves pendant les récréations"
     ],
     "explanation": "Dans les écoles, collèges et lycées publics, il est interdit aux élèves de porter un signe ou une tenue qui montre de manière visible (ostensible) leur appartenance religieuse : c'est une loi de 2004. Les enseignants et les autres personnels ont un devoir de stricte neutralité : ils ne doivent pas montrer leurs convictions religieuses. Cette neutralité permet à chaque élève de penser librement.",
     "group": "laicite-ecole",
@@ -8454,11 +8457,11 @@
       "Porter un signe religieux, en respectant les règles du service"
     ],
     "distractors": [
-      "Exiger d'être reçu par un agent du même sexe",
-      "Demander un guichet réservé aux personnes de sa religion",
-      "Distribuer des tracts religieux aux autres usagers",
-      "Garder le visage caché pendant la vérification de son identité",
-      "Exiger que les horaires s'adaptent à sa religion"
+      "Exiger d'être reçu par un agent du même sexe, dans ce service",
+      "Demander un guichet réservé aux personnes de sa religion, dans le service",
+      "Distribuer des tracts religieux aux autres usagers, dans la salle d'attente",
+      "Garder le visage caché, pendant la vérification de son identité",
+      "Exiger que les horaires du service s'adaptent à sa religion, chaque semaine"
     ],
     "explanation": "La neutralité religieuse s'impose aux personnes qui travaillent dans les services publics, pas aux usagers. Un usager peut donc porter un signe religieux dans une mairie. Il doit respecter les règles de fonctionnement du service : pas de prosélytisme, respect des consignes de sécurité, visage découvert pour la vérification de son identité. Il ne peut pas demander une adaptation du service public au nom d'une religion.",
     "group": "neutralite-agents-publics",
@@ -8670,11 +8673,11 @@
       "Un système où la loi est la même pour tous, y compris pour l'État"
     ],
     "distractors": [
-      "Un système où le président de la République décide seul des lois",
-      "Un système où seuls les citoyens français doivent respecter la loi",
-      "Un système où l'armée contrôle les décisions du Gouvernement",
-      "Un système où les ministres sont au-dessus des lois",
-      "Un système où chaque région fixe ses propres lois"
+      "Un système où le président décide seul des lois, sans passer par le Parlement",
+      "Un système où seuls les citoyens français doivent respecter la loi, les étrangers en étant exemptés",
+      "Un système où l'armée contrôle les décisions du Gouvernement, y compris celles des ministres",
+      "Un système où les ministres sont au-dessus des lois, comme le Président",
+      "Un système où chaque région fixe ses propres lois, sans contrôle national"
     ],
     "explanation": "Dans un État de droit, la loi s'impose à tous : aux citoyens, mais aussi à l'État et à ses représentants. Le droit est supérieur aux pouvoirs politiques, et les autorités publiques agissent toujours en respectant la loi. C'est le contraire d'un État arbitraire.",
     "group": "etat-de-droit",
@@ -8772,10 +8775,10 @@
       "Le respect des droits fondamentaux et de la démocratie"
     ],
     "distractors": [
-      "Le maintien du même gouvernement pendant tout un mandat",
+      "Le droit de l'État de garder le même gouvernement pendant tout un mandat",
       "L'absence totale de conflits entre les citoyens",
-      "La suppression des tribunaux administratifs",
-      "Le pouvoir du Parlement sur les juges",
+      "La suppression du droit de saisir les tribunaux administratifs",
+      "Le droit du Parlement de contrôler les juges",
       "L'égalité des revenus de tous les habitants"
     ],
     "explanation": "L'État de droit garantit le respect des droits fondamentaux et de la démocratie. Par exemple, le droit à la sûreté protège chacun contre les arrestations et les emprisonnements arbitraires. Des juges indépendants contrôlent les autorités publiques.",
@@ -9574,10 +9577,10 @@
       "Chacun est libre de choisir son conjoint, quel que soit son sexe"
     ],
     "distractors": [
-      "Le mariage est obligatoire pour vivre en couple",
-      "Les parents peuvent choisir le conjoint de leur enfant",
-      "Le consentement d'un seul des deux époux suffit",
-      "On ne peut se marier qu'avec une personne de sexe différent"
+      "Le mariage est obligatoire, pour pouvoir vivre en couple",
+      "Les parents peuvent choisir le conjoint de leur enfant, s'ils sont d'accord",
+      "Le consentement d'un seul des deux époux suffit, si l'autre est absent",
+      "On ne peut se marier qu'avec une personne de sexe différent, selon la loi"
     ],
     "explanation": "En France, chacun est libre de choisir son conjoint, quel que soit son sexe, et libre de se marier ou de ne pas le faire. Le consentement libre est une condition essentielle de la validité du mariage (article 146 du Code civil).",
     "group": "libertes-couple",
@@ -9729,11 +9732,11 @@
       "Que chaque personne mérite le respect, simplement parce qu'elle est un être humain"
     ],
     "distractors": [
-      "Que le respect se mérite par ses actes, son travail et sa réussite",
-      "Que seuls les citoyens français ont droit au respect",
-      "Que le respect dû à une personne dépend de sa religion",
-      "Que chacun peut agir comme il veut sans rendre de comptes à personne",
-      "Que le respect dû à une personne dépend de son état de santé"
+      "Que la dignité humaine se mérite, par ses actes, son travail et sa réussite",
+      "Que seuls les citoyens français ont droit au respect, et non les autres êtres humains",
+      "Que la dignité d'un être humain dépend de sa religion, de ses origines",
+      "Que chacun peut agir comme il veut, sans rendre de comptes à personne",
+      "Que le respect dû à une personne dépend de son état de santé, de son âge"
     ],
     "explanation": "La dignité humaine, c'est le fait que chaque personne a de la valeur et mérite un respect inconditionnel, quels que soient son âge, son sexe, son état de santé, sa condition sociale, sa religion ou son origine. Un être humain ne doit jamais être traité comme un objet.",
     "source": {
@@ -9754,8 +9757,8 @@
       "La liberté de se rassembler à plusieurs pour défendre ses idées ou ses intérêts"
     ],
     "distractors": [
-      "Le droit de bloquer la circulation sans prévenir les autorités",
-      "Le droit d'entrer dans n'importe quel bâtiment public",
+      "La liberté de bloquer la circulation et les routes sans prévenir les autorités",
+      "La liberté d'entrer dans n'importe quel bâtiment public pour y défendre ses idées",
       "Le droit de s'exprimer uniquement à titre individuel",
       "Le droit de ne jamais être contrôlé par la police"
     ],
@@ -10490,10 +10493,10 @@
       "Pour comprendre les conséquences de la haine, du racisme et de l'antisémitisme"
     ],
     "distractors": [
-      "Pour connaître les grandes batailles de la Seconde Guerre mondiale",
-      "Pour célébrer la victoire des Alliés sur l'Allemagne en 1945",
-      "Pour étudier l'économie de l'Allemagne avant la guerre",
-      "Pour apprendre les techniques militaires de l'époque"
+      "Pour connaître les grandes batailles, les stratégies et les armées de la Seconde Guerre mondiale",
+      "Pour célébrer la victoire des Alliés, la fin de la guerre et le retour de la paix en 1945",
+      "Pour étudier l'économie de l'Allemagne, ses usines et son industrie avant la guerre",
+      "Pour apprendre les techniques militaires, les armes et les tactiques de l'époque"
     ],
     "explanation": "La Shoah est le génocide des Juifs organisé par l'Allemagne nazie : environ 6 millions de Juifs ont été assassinés. On l'étudie aujourd'hui à l'école pour comprendre les conséquences de la haine, du racisme et de l'antisémitisme, et pour rappeler l'importance du devoir de mémoire.",
     "group": "shoah",
@@ -11179,10 +11182,10 @@
       "Dans les grandes villes, les métropoles"
     ],
     "distractors": [
-      "Dans les villages de montagne",
-      "Dans les zones rurales isolées",
-      "Dans les petites communes agricoles",
-      "Dans les territoires d'outre-mer"
+      "Dans les villages de montagne, loin des villes",
+      "Dans les zones rurales isolées, loin des routes",
+      "Dans les petites communes agricoles, au milieu des champs",
+      "Dans les territoires d'outre-mer, sur les îles"
     ],
     "explanation": "En France, la population, les principales activités économiques, les emplois, les richesses et les services sont concentrés dans les métropoles, de grandes villes à la tête d'une vaste aire urbaine. Ce phénomène s'appelle la métropolisation.",
     "group": "villes-metropoles",
@@ -11522,8 +11525,8 @@
     "distractors": [
       "La cathédrale de Reims",
       "La cathédrale de Chartres",
-      "La cathédrale de Strasbourg",
-      "La cathédrale d'Amiens"
+      "Notre-Dame de Strasbourg",
+      "Notre-Dame d'Amiens"
     ],
     "explanation": "Un incendie touche la cathédrale Notre-Dame de Paris en 2019. Plus de 840 millions d'euros ont été récoltés par des dons privés pour la reconstruire, ce qui montre l'attachement des Français à ce patrimoine.",
     "source": {
@@ -11750,10 +11753,10 @@
       "À la mairie du lieu de naissance"
     ],
     "distractors": [
-      "À la préfecture du département",
-      "À la caisse d'allocations familiales",
-      "Au commissariat de police",
-      "Au tribunal judiciaire"
+      "À la préfecture du département de naissance",
+      "À la caisse d'allocations familiales, dans les jours suivant la naissance",
+      "Au commissariat de police le plus proche du lieu de naissance",
+      "Au tribunal judiciaire du lieu de naissance"
     ],
     "explanation": "La déclaration de naissance est obligatoire. Elle se fait à la mairie du lieu de naissance, dans les 5 jours qui suivent la naissance. L'officier d'état civil établit alors l'acte de naissance de l'enfant.",
     "group": "declaration-naissance",
@@ -11775,10 +11778,10 @@
       "Être résident en France"
     ],
     "distractors": [
-      "Avoir la nationalité française",
+      "Être de nationalité française",
       "Avoir déjà acheté une voiture",
-      "Avoir un contrat de travail en cours",
-      "Avoir 21 ans minimum"
+      "Être titulaire d'un contrat de travail en cours",
+      "Être âgé de 21 ans minimum"
     ],
     "explanation": "Pour passer l'examen du permis de conduire, il faut résider en France. On peut ensuite passer le permis en auto-école ou en candidat libre. Il comprend un examen du Code de la route et une épreuve pratique de conduite.",
     "source": {
@@ -11875,9 +11878,9 @@
       "À toute personne, majeure ou mineure"
     ],
     "distractors": [
-      "Aux personnes mariées, avec l'accord de leur conjoint",
+      "À toute personne mariée, avec l'accord de son conjoint",
       "Aux majeurs, avec une ordonnance obligatoire",
-      "Aux Français, sur présentation d'une carte d'identité",
+      "À tout Français, sur présentation d'une carte d'identité",
       "Aux mineurs, avec l'accord de leurs parents"
     ],
     "explanation": "La contraception est accessible à toute personne, sans autorisation du partenaire. Pour les mineurs, les consultations et les prescriptions peuvent être anonymes et gratuites. La contraception d'urgence est délivrée en pharmacie sans ordonnance.",
