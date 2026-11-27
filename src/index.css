@@ -62,6 +62,12 @@
   --goal: #ebc1ff;
   --goal-foreground: #2c2e2a;
 
+  /* Text on the earth green (ink), and the marks drawn on it */
+  --earth-foreground: #2c2e2a;
+  --wordmark: #1f4f15;
+  --primary-mark: #f5e211;
+  --meadow-line: #f5e211;
+
   --chart-1: #8ed462;
   --chart-2: #2ba0ff;
   --chart-3: #f5e211;
@@ -117,6 +123,14 @@
   --goal: #cba6e8;
   --goal-foreground: #121814;
 
+  --earth-foreground: #f1eee4;
+  --wordmark: #8ed462;
+  --primary-mark: #121814;
+  --meadow-line: #a89a1c;
+  /* Muted organic shapes (the light ones reuse goal and info) */
+  --lilac-shape-night: #463858;
+  --sky-shape-night: #24496b;
+
   --chart-1: #2f6b2c;
   --chart-2: #5db8ff;
   --chart-3: #f2de2e;
@@ -170,6 +184,12 @@
   --color-action: var(--action);
   --color-action-foreground: var(--action-foreground);
   --color-earth: var(--earth);
+  --color-earth-foreground: var(--earth-foreground);
+  --color-wordmark: var(--wordmark);
+  --color-primary-mark: var(--primary-mark);
+  --color-meadow-line: var(--meadow-line);
+  --color-lilac-shape-night: var(--lilac-shape-night);
+  --color-sky-shape-night: var(--sky-shape-night);
   --color-success: var(--success);
   --color-success-foreground: var(--success-foreground);
   --color-coral: var(--coral);

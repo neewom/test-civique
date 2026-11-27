@@ -40,6 +40,12 @@ typography:
     fontWeight: 700
     lineHeight: 0.98
     letterSpacing: "-0.04em"
+  display-sm:
+    fontFamily: "'Atkinson Hyperlegible', system-ui, sans-serif"
+    fontSize: "2.25rem"
+    fontWeight: 700
+    lineHeight: 1
+    letterSpacing: "-0.04em"
   display-md:
     fontFamily: "'Atkinson Hyperlegible', system-ui, sans-serif"
     fontSize: "3rem"
@@ -58,6 +64,12 @@ typography:
     fontWeight: 700
     lineHeight: 1
     letterSpacing: "-0.04em"
+  headline-sm:
+    fontFamily: "'Atkinson Hyperlegible', system-ui, sans-serif"
+    fontSize: "1.875rem"
+    fontWeight: 700
+    lineHeight: 1
+    letterSpacing: "-0.03em"
   score:
     fontFamily: "'Atkinson Hyperlegible', system-ui, sans-serif"
     fontSize: "6rem"
@@ -72,9 +84,28 @@ typography:
     lineHeight: 0.9
     letterSpacing: "-0.04em"
     fontFeature: "'tnum'"
+  score-unit:
+    fontFamily: "'Atkinson Hyperlegible', system-ui, sans-serif"
+    fontSize: "2rem"
+    fontWeight: 700
+    lineHeight: 0.9
+    letterSpacing: "-0.04em"
+    fontFeature: "'tnum'"
+  score-unit-lg:
+    fontFamily: "'Atkinson Hyperlegible', system-ui, sans-serif"
+    fontSize: "2.75rem"
+    fontWeight: 700
+    lineHeight: 0.9
+    letterSpacing: "-0.04em"
+    fontFeature: "'tnum'"
   question:
     fontFamily: "'Atkinson Hyperlegible', system-ui, sans-serif"
     fontSize: "1.4375rem"
+    fontWeight: 700
+    lineHeight: 1.3
+  question-done:
+    fontFamily: "'Atkinson Hyperlegible', system-ui, sans-serif"
+    fontSize: "1.3125rem"
     fontWeight: 700
     lineHeight: 1.3
   question-lg:
@@ -308,6 +339,7 @@ Une palette de carte illustrée : un papier crème, une encre presque noire, et 
 ### Secondary
 - **Vert Prairie** (`meadow-green`) : la terre de la carte (forme organique, bandeau du chrono de l'examen) et le succès (bonne réponse, chiffre clé mis en avant sur la page des règles). En sombre, ces deux rôles se séparent : terre `earth-night`, succès `success-night`, avec un texte `cream-text`.
 - **Vert Forêt** (`forest-green`) : uniquement le mot « Futur » du logo en clair ; en sombre, ce mot prend `meadow-green`.
+- **Jetons de l'écran du titre visé** (`src/index.css`, plus aucune couleur en dur dans les composants) : `earth-foreground` (texte et traits sur la terre : encre en clair, crème en sombre), `wordmark` (« Futur » sur la terre de la première visite : `#1f4f15` en clair, `meadow-green` en sombre), `primary-mark` (coche sur la pastille encre : jaune en clair, `night-moss` en sombre), `meadow-line` (trait jaune de la prairie : jaune en clair, `#a89a1c` en sombre), `lilac-shape-night` et `sky-shape-night` (formes organiques lilas et bleue en sombre ; en clair elles reprennent `goal` et `info`).
 
 ### Tertiary
 - **Corail** (`coral`, sombre `coral-night`) : l'erreur à revoir, en contour de la réponse fausse, en fond du verdict « Pas tout à fait », du filtre « À revoir », du thème faible dans le détail d'un examen et de la pastille « Voir mes erreurs ».
@@ -338,10 +370,10 @@ Une palette de carte illustrée : un papier crème, une encre presque noire, et 
 **Character:** Une police conçue pour la lisibilité des lecteurs malvoyants, auto-hébergée en 400, 400 italique et 700. Les titres en 700 très serrés lui donnent une voix d'affiche ; le corps en 400 reste ouvert et posé.
 
 ### Hierarchy
-- **Display** (`display`) : le titre de l'accueil, « Votre chemin vers le jour J ». L'écran du titre visé utilise une variante un cran plus petite (2.25rem, interligne 1). Il passe à 3rem à partir de 768 px (`display-md`) et à 3,5rem à partir de 1024 px (`display-lg`) ; le chiffre « n sur 3 » du panneau « Où vous en êtes » reprend `display-lg`.
-- **Headline** (`headline`) : titres des pages secondaires (« Réviser », « Comment se passe l'examen »). Le détail d'un examen descend à 1.875rem avec un interlettrage de -0.03em. À partir de 768 px, « Réviser » et le score du détail passent à 3rem.
-- **Score** (`score`) : le score de l'écran de résultat, suivi de « /40 » à 2rem ; à partir de 768 px, 8rem (`score-lg`) suivi de « /40 » à 2,75rem.
-- **Question** (`question`) : l'énoncé d'une question d'examen avant validation ; il passe à 1.3125rem une fois la réponse validée, pour laisser la place à la correction. À partir de 768 px, l'énoncé reste à 1,75rem (`question-lg`, interligne 1.25) avant et après validation.
+- **Display** (`display`) : le titre de l'accueil, « Votre chemin vers le jour J ». L'écran du titre visé utilise une variante un cran plus petite (`display-sm`, 2.25rem, interligne 1). Il passe à 3rem à partir de 768 px (`display-md`) et à 3,5rem à partir de 1024 px (`display-lg`) ; le chiffre « n sur 3 » du panneau « Où vous en êtes » reprend `display-lg`.
+- **Headline** (`headline`) : titres des pages secondaires (« Réviser », « Comment se passe l'examen »). Le détail d'un examen descend à `headline-sm` (1.875rem, interlettrage -0.03em). À partir de 768 px, « Réviser » et le score du détail passent à 3rem.
+- **Score** (`score`) : le score de l'écran de résultat, suivi de « /40 » en `score-unit` (2rem) ; à partir de 768 px, 8rem (`score-lg`) suivi de « /40 » en `score-unit-lg` (2,75rem).
+- **Question** (`question`) : l'énoncé d'une question d'examen avant validation ; il passe à `question-done` (1.3125rem) une fois la réponse validée, pour laisser la place à la correction. À partir de 768 px, l'énoncé reste à 1,75rem (`question-lg`, interligne 1.25) avant et après validation.
 - **Title** (`title`) : énoncé d'une question dans la révision et le détail d'un examen ; taille du texte des pastilles « lg ».
 - **Title small** (`title-sm`) : titres de section (« Derniers examens », « Répartition des 40 questions ») et titres des options du titre visé.
 - **Stat** (`stat`, `stat-lg` dès 768 px) et **Stat label** (`stat-label`) : valeur et intitulé des repères de la fiche d'un titre (« 40 », « 45 min », « 32/40 ») et chiffre du compteur « questions dans la liste officielle » (`stat`).
