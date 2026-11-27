@@ -154,15 +154,14 @@ interface AppHeaderProps {
  */
 export function AppHeader({ thin = false, hideBrand = false, onLogoClick }: AppHeaderProps) {
   const logoClass = cn(
-    'inline-flex min-w-0 items-center rounded-sm font-bold no-underline',
-    // Thin (exam): smaller logo, the touch area stays 44 px high through the pseudo-element
-    thin ? "relative min-h-9 text-sm after:absolute after:inset-x-0 after:-inset-y-1 after:content-['']" : 'min-h-11 text-xl',
+    'inline-flex min-h-11 min-w-0 items-center rounded-sm font-bold no-underline',
+    thin ? 'text-base' : 'text-xl',
   )
   return (
     <div
       className={cn(
         'relative z-40 mx-auto w-full max-w-[62rem] px-[22px] md:px-8 lg:px-10',
-        thin ? 'py-1.5' : 'pt-3 pb-3 md:pt-4',
+        thin ? 'pt-1' : 'pt-3 pb-3 md:pt-4',
       )}
     >
       <header
