@@ -112,9 +112,9 @@ export default function ExamenDetail() {
     return (
       <main className="flex min-h-svh flex-col bg-background text-foreground">
         <AppHeader />
-        <div className="mx-auto flex w-full max-w-[30rem] flex-col gap-4 px-5 pt-0 pb-7">
+        <div className="mx-auto flex w-full max-w-[30rem] flex-col gap-4 px-5 pt-0 pb-7 md:max-w-[36rem] md:px-8 md:pb-10">
           <BackLink />
-          <h1 className="mt-4 text-[1.875rem] leading-none font-bold tracking-[-0.03em]">Examen introuvable</h1>
+          <h1 className="mt-4 text-[1.875rem] leading-none font-bold tracking-[-0.03em] md:text-[2.5rem]">Examen introuvable</h1>
           <p className="text-base">
             Cet examen n'est pas dans l'historique de ce navigateur, ou son détail n'a pas été enregistré.
           </p>
