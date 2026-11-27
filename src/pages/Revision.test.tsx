@@ -789,6 +789,24 @@ describe('Revision — masquer les réponses : position et mémoire', () => {
     expect(stored()).toMatchObject({ hideAnswers: true, anchorId: Number(screen.getAllByRole('listitem')[0].dataset.questionId), anchorOffset: 0 })
   })
 
+  it('le repère est la première carte dont le haut est sous le haut de page, pas une carte haute à demi visible', () => {
+    // First card: top above the page (-300) but its bottom is still visible; the second one starts at 40
+    mockLayout()
+    window.history.pushState({}, '', '/revision')
+    vi.useFakeTimers({ toFake: ['setTimeout', 'requestAnimationFrame', 'cancelAnimationFrame'] })
+    renderRevision()
+    const items = screen.getAllByRole('listitem')
+    vi.spyOn(Element.prototype, 'getBoundingClientRect').mockImplementation(function (this: Element) {
+      const i = items.indexOf(this as HTMLLIElement)
+      const top = i < 0 ? 0 : (i - 1) * 340 + 40
+      return { top, bottom: top + 300, height: 300, left: 0, right: 0, width: 0, x: 0, y: top, toJSON: () => ({}) } as DOMRect
+    })
+    vi.advanceTimersByTime(100)
+    fireEvent.scroll(window)
+    vi.advanceTimersByTime(50)
+    expect(stored()).toMatchObject({ anchorId: Number(items[1].dataset.questionId), anchorOffset: 40 })
+  })
+
   it('depuis un examen, cocher la case relit la mémoire du moment (pas celle du montage)', () => {
     localStorageMock.setItem(KEY, JSON.stringify({ filter: { kind: 'theme', theme: themes[0] }, excludeSituational: false, scrollY: 1234 }))
     renderRevision({ reviewIds: [1, 2, 3, 4, 5] })

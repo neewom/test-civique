@@ -111,6 +111,28 @@ function CheckOption({ checked, onChange, children }: { checked: boolean; onChan
   )
 }
 
+/**
+ * Height of what covers the top of the page once scrolled: the stuck band on a phone (its height, not its
+ * position: it is not stuck yet when the page is back at the top), nothing elsewhere.
+ */
+function coveredHeight(band: HTMLElement | null): number {
+  return band && getComputedStyle(band).position === 'sticky' ? band.getBoundingClientRect().height : 0
+}
+
+/**
+ * Landmark of the scroll position: the first card whose top is not under the covered area (offset >= 0), and where
+ * that top sits. Not the first card whose bottom is visible: that one may be a tall revealed card, which is
+ * shorter (or masked) on the next visit, and its large negative offset would then overshoot.
+ */
+function measureAnchor(band: HTMLElement | null, cards: HTMLElement | null): { id: number; offset: number } | null {
+  const covered = coveredHeight(band)
+  for (const li of cards?.querySelectorAll<HTMLElement>('li[data-question-id]') ?? []) {
+    const top = li.getBoundingClientRect().top
+    if (top >= covered - 0.5) return { id: Number(li.dataset.questionId), offset: Math.max(0, top - covered) }
+  }
+  return null
+}
+
 /** Back link, title and counts (from TITLE_COUNTS: shown before the questions are there). */
 function RevisionHead({ title }: { title: TitleKey }) {
   return (
@@ -206,21 +228,6 @@ function RevisionContent({ title, pack }: { title: TitleKey; pack: ListedQuestio
     restored?.anchorId !== undefined ? { id: restored.anchorId, offset: restored.anchorOffset ?? 0 } : null,
   )
   const withAnchor = () => (anchor.current ? { anchorId: anchor.current.id, anchorOffset: anchor.current.offset } : {})
-  // Height of what covers the top of the page once scrolled: the stuck band on a phone (its height, not its
-  // position: it is not stuck yet when the page is back at the top), nothing elsewhere
-  const coveredHeight = () => {
-    const band = bandRef.current
-    return band && getComputedStyle(band).position === 'sticky' ? band.getBoundingClientRect().height : 0
-  }
-  // The first card whose bottom is below the covered area, and where its top sits relative to it
-  const measureAnchor = () => {
-    const covered = coveredHeight()
-    for (const li of cardsRef.current?.querySelectorAll<HTMLElement>('li[data-question-id]') ?? []) {
-      const rect = li.getBoundingClientRect()
-      if (rect.bottom > covered) return { id: Number(li.dataset.questionId), offset: rect.top - covered }
-    }
-    return null
-  }
   // False until the saved position is back: the jump to the top of a new page must not overwrite it
   const tracking = useRef(false)
 
@@ -230,7 +237,7 @@ function RevisionContent({ title, pack }: { title: TitleKey; pack: ListedQuestio
     // Revealing cards changes heights: when the box is the cause, the position is measured again on the new layout
     if (tracking.current) {
       scrollY.current = window.scrollY
-      anchor.current = measureAnchor()
+      anchor.current = measureAnchor(bandRef.current, cardsRef.current)
     }
     saveRevisionView(title, { filter, excludeSituational, hideAnswers, scrollY: scrollY.current, ...withAnchor() })
   }, [title, filter, excludeSituational, hideAnswers])
@@ -260,7 +267,7 @@ function RevisionContent({ title, pack }: { title: TitleKey; pack: ListedQuestio
       // Leaving pushes the new address before the router scrolls the next page to the top
       if (!tracking.current || window.location.pathname !== pathname || f.kind === 'exam') return
       scrollY.current = window.scrollY
-      anchor.current = measureAnchor()
+      anchor.current = measureAnchor(bandRef.current, cardsRef.current)
       saveRevisionView(title, { filter: f, excludeSituational: ex, hideAnswers: hide, scrollY: scrollY.current, ...withAnchor() })
     }
     const onScroll = () => {
@@ -273,7 +280,7 @@ function RevisionContent({ title, pack }: { title: TitleKey; pack: ListedQuestio
         ? cardsRef.current?.querySelector<HTMLElement>(`li[data-question-id="${anchor.current.id}"]`)
         : null
       if (card && anchor.current) {
-        window.scrollTo(0, Math.max(0, card.getBoundingClientRect().top + window.scrollY - coveredHeight() - anchor.current.offset))
+        window.scrollTo(0, Math.max(0, card.getBoundingClientRect().top + window.scrollY - coveredHeight(bandRef.current) - anchor.current.offset))
       } else if (scrollY.current > 0) window.scrollTo(0, scrollY.current)
       // The restored pill may be out of sight in the sideways band: bring it in without moving the page
       const band = bandRef.current
