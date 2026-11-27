@@ -12,6 +12,7 @@ import type { AnswerRecord, QuestionSource } from '@/lib/exam-types'
 import allQuestions from '@/data/questions.json'
 import { useDocumentTitle } from '@/lib/use-document-title'
 import { useWideScreen } from '@/lib/use-wide-screen'
+import { themeLabel } from '@/lib/themes'
 import { cn } from '@/lib/utils'
 
 interface Question {
@@ -56,7 +57,7 @@ function QuestionReview({ answer, number, question }: Reviewed) {
   return (
     <li className="flex flex-col gap-2.5 rounded-2xl bg-card p-4 text-card-foreground">
       <p className="text-[0.8125rem] font-bold tracking-[0.06em] uppercase dark:text-muted-foreground">
-        Question {number} · {question.theme}
+        Question {number} · {themeLabel(question.theme)}
       </p>
       <h3 className="text-lg leading-[1.35] font-bold">{question.question}</h3>
       {answer.correct ? (
@@ -212,7 +213,7 @@ export default function ExamenDetail() {
                       className={cn('flex flex-wrap items-start justify-between gap-x-3 text-[0.9375rem]', weak && 'font-bold')}
                     >
                       <span>
-                        {s.theme}
+                        {themeLabel(s.theme)}
                         {weak && <span className="sr-only"> (thème le plus faible)</span>}
                       </span>
                       <span

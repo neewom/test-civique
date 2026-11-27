@@ -17,6 +17,7 @@ import { AnswerCard } from '@/components/AnswerCard'
 import { ExamResult, type ExamOutcome } from '@/components/ExamResult'
 import { findExamRecord, loadHistoryForTitle } from '@/lib/history'
 import { DEFAULT_TITLE, loadTargetTitle, type TitleKey } from '@/lib/target-title'
+import { themeLabel } from '@/lib/themes'
 import { journeyMessage, passedInARow, UNSAVED_MESSAGE } from '@/lib/readiness'
 import { AppHeader } from '@/components/AppHeader'
 import { PillButton } from '@/components/PillButton'
@@ -107,6 +108,8 @@ function ExamSession({ restarted, onRestart }: ExamSessionProps) {
   const startIndex = resume ? resumeIndex(resume) : 0
 
   const [index, setIndex] = useState(startIndex)
+  // True when the latest progress save failed: leaving the exam would then lose it
+  const [saveFailed, setSaveFailed] = useState(false)
   const [globalTimeLeft, setGlobalTimeLeft] = useState(resume?.timeLeft ?? GLOBAL_EXAM_TIME)
   const [selected, setSelected] = useState<string | null>(null)
   const [phase, setPhase] = useState<Phase>('question')
@@ -166,14 +169,14 @@ function ExamSession({ restarted, onRestart }: ExamSessionProps) {
   // Sauvegarde de la progression à chaque tick du timer
   useEffect(() => {
     if (phase === 'result' || finishedRef.current) return
-    saveProgress({
+    setSaveFailed(!saveProgress({
       questions,
       index,
       answers: answersRef.current,
       timeLeft: globalTimeLeft,
       startedAt: startedAtRef.current,
       title,
-    })
+    }))
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [globalTimeLeft, index])
 
@@ -236,28 +239,28 @@ function ExamSession({ restarted, onRestart }: ExamSessionProps) {
       correct: isCorrect,
       answer: questions[index].answer,
     })
-    saveProgress({
+    setSaveFailed(!saveProgress({
       questions,
       index,
       answers: answersRef.current,
       timeLeft: globalTimeLeft,
       startedAt: startedAtRef.current,
       title,
-    })
+    }))
     setPhase('correction')
   }
 
   function handleNext() {
     if (index < questions.length - 1) {
       const newIndex = index + 1
-      saveProgress({
+      setSaveFailed(!saveProgress({
         questions,
         index: newIndex,
         answers: answersRef.current,
         timeLeft: globalTimeLeft,
         startedAt: startedAtRef.current,
         title,
-      })
+      }))
       focusQuestionRef.current = true
       setIndex(newIndex)
       setSelected(null)
@@ -316,7 +319,9 @@ function ExamSession({ restarted, onRestart }: ExamSessionProps) {
         <DialogHeader>
           <DialogTitle className="text-lg leading-snug font-bold">Quitter l'examen ?</DialogTitle>
           <DialogDescription className="text-base text-popover-foreground">
-            Votre progression est sauvegardée. Vous pourrez reprendre depuis la page d'accueil.
+            {saveFailed
+              ? "Votre progression n'a pas pu être enregistrée sur cet appareil : si vous quittez, cet examen sera perdu."
+              : "Votre progression est sauvegardée. Vous pourrez reprendre depuis la page d'accueil."}
           </DialogDescription>
         </DialogHeader>
         {/* « Annuler » first, also on mobile (the default footer reverses the order) */}
@@ -424,7 +429,7 @@ function ExamSession({ restarted, onRestart }: ExamSessionProps) {
           </div>
         ) : (
           <div className="flex flex-col gap-3 pt-6 md:pt-10">
-            <p className={eyebrow}>{current.theme}</p>
+            <p className={eyebrow}>{themeLabel(current.theme)}</p>
             <h1
               id={questionId}
               ref={questionHeadingRef}

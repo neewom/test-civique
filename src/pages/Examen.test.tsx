@@ -1,3 +1,4 @@
+import { themeLabel } from '@/lib/themes'
 import { render, screen, fireEvent, act } from '@testing-library/react'
 import { MemoryRouter, Route, Routes, useLocation, useNavigate } from 'react-router-dom'
 import { within } from '@testing-library/react'
@@ -728,6 +729,33 @@ describe('Examen — écrans de question et de correction', () => {
     expect(screen.queryByText(/Temps écoulé/)).not.toBeInTheDocument()
   })
 
+  it('boîte « Quitter » : promet la sauvegarde quand elle a réussi', async () => {
+    renderResumed(makeResume(1500, 0))
+    await act(async () => { fireEvent.click(screen.getByRole('button', { name: 'Quitter l\'examen' })) })
+    expect(screen.getByText(/Votre progression est sauvegardée/)).toBeInTheDocument()
+    expect(screen.queryByText(/n'a pas pu être enregistrée/)).not.toBeInTheDocument()
+  })
+
+  it('boîte « Quitter » : prévient que l\'examen sera perdu quand l\'enregistrement a échoué', async () => {
+    renderResumed(makeResume(1500, 0))
+    const spy = vi.spyOn(Storage.prototype, 'setItem').mockImplementation(() => { throw new Error('quota') })
+    await act(async () => { vi.advanceTimersByTime(2000) })
+    await act(async () => { fireEvent.click(screen.getByRole('button', { name: 'Quitter l\'examen' })) })
+    spy.mockRestore()
+    expect(screen.getByText("Votre progression n'a pas pu être enregistrée sur cet appareil : si vous quittez, cet examen sera perdu.")).toBeInTheDocument()
+    expect(screen.queryByText(/Votre progression est sauvegardée/)).not.toBeInTheDocument()
+  })
+
+  it('boîte « Quitter » : le dernier enregistrement décide (réussi après un échec)', async () => {
+    renderResumed(makeResume(1500, 0))
+    const spy = vi.spyOn(Storage.prototype, 'setItem').mockImplementation(() => { throw new Error('quota') })
+    await act(async () => { vi.advanceTimersByTime(2000) })
+    spy.mockRestore()
+    await act(async () => { vi.advanceTimersByTime(2000) })
+    await act(async () => { fireEvent.click(screen.getByRole('button', { name: 'Quitter l\'examen' })) })
+    expect(screen.getByText(/Votre progression est sauvegardée/)).toBeInTheDocument()
+  })
+
   it('le dialogue « Quitter » place « Annuler » avant « Quitter »', async () => {
     renderResumed(makeResume(1500, 0))
     await act(async () => { fireEvent.click(screen.getByRole('button', { name: 'Quitter l\'examen' })) })
@@ -808,10 +836,10 @@ describe('Examen — écran de résultat', () => {
     expect(screen.getByText(/^Le compteur repart à 0 sur 3/)).toBeInTheDocument()
   })
 
-  it('« Voir mes n erreurs » mène au détail de l\'examen enregistré', async () => {
+  it('« Voir les n questions à revoir » mène au détail de l\'examen enregistré', async () => {
     await finishWith(34)
     const history = JSON.parse(localStorage.getItem('quiz-history')!)
-    const link = screen.getByRole('link', { name: /Voir mes 6 erreurs/ })
+    const link = screen.getByRole('link', { name: /Voir les 6 questions à revoir/ })
     expect(link).toHaveAttribute('href', `/examen/${history[0].id}`)
   })
 
@@ -820,7 +848,21 @@ describe('Examen — écran de résultat', () => {
     renderResumed(resume)
     await act(async () => { vi.advanceTimersByTime(3000) })
     const theme = resume.questions[39].theme
-    expect(screen.getByRole('link', { name: new RegExp(`Voir mon erreur.*Surtout ${theme}`) })).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: new RegExp(`Voir la question à revoir.*Surtout ${themeLabel(theme)}`) })).toBeInTheDocument()
+  })
+
+  it('un seul résultat à revoir : « Voir la question à revoir »', async () => {
+    const resume = makeResume(2, 39)
+    renderResumed(resume)
+    await act(async () => { vi.advanceTimersByTime(3000) })
+    expect(screen.getByRole('link', { name: /^Voir la question à revoir/ })).toBeInTheDocument()
+  })
+
+  it('les questions sans réponse comptent parmi les questions à revoir', async () => {
+    // 30 answered right, the 10 left unanswered when the timer runs out
+    renderResumed(makeResume(2, 30))
+    await act(async () => { vi.advanceTimersByTime(3000) })
+    expect(screen.getByRole('link', { name: /^Voir les 10 questions à revoir/ })).toBeInTheDocument()
   })
 
   it('40/40 : « Revoir l\'examen », sans erreur', async () => {
@@ -839,7 +881,7 @@ describe('Examen — écran de résultat', () => {
     })
     await finishWith(10)
     spy.mockRestore()
-    expect(screen.queryByRole('link', { name: /Voir mes/ })).not.toBeInTheDocument()
+    expect(screen.queryByRole('link', { name: /questions? à revoir/ })).not.toBeInTheDocument()
     expect(screen.getByRole('button', { name: 'Nouvel examen blanc' })).toBeInTheDocument()
     expect(screen.getByRole('link', { name: 'Retour à mon parcours' })).toHaveAttribute('href', '/')
   })
@@ -883,7 +925,7 @@ describe('Examen — écran de résultat', () => {
 
   it('retour arrière après « Voir mes erreurs » : pas de nouvel examen tiré', async () => {
     await finishInJourney(34)
-    await act(async () => { fireEvent.click(screen.getByRole('link', { name: /Voir mes 6 erreurs/ })) })
+    await act(async () => { fireEvent.click(screen.getByRole('link', { name: /Voir les 6 questions à revoir/ })) })
     await act(async () => { fireEvent.click(screen.getByRole('button', { name: 'Retour arrière' })) })
     expect(screen.getByText("Page d'accueil")).toBeInTheDocument()
     expect(localStorage.getItem(EXAM_PROGRESS_KEY)).toBeNull()

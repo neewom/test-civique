@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest'
 import allQuestions from '@/data/questions.json'
-import { THEME_COLORS, themeColor } from './themes'
+import { THEME_COLORS, themeColor, themeLabel } from './themes'
 
 interface Question {
   id: number
@@ -54,5 +54,18 @@ describe('THEME_COLORS', () => {
 
   it('falls back to gray for an unknown theme', () => {
     expect(themeColor('Inconnu')).toContain('gray')
+  })
+})
+
+describe('themeLabel', () => {
+  it('shows « Vie en société » as « Vivre dans la société française », other themes unchanged', () => {
+    expect(themeLabel('Vie en société')).toBe('Vivre dans la société française')
+    expect(themeLabel('Droits et devoirs')).toBe('Droits et devoirs')
+    expect(themeLabel('Thème inconnu')).toBe('Thème inconnu')
+  })
+
+  it('leaves the stored value untouched: the data still says « Vie en société »', () => {
+    expect(questions.some((q) => q.theme === 'Vie en société')).toBe(true)
+    expect(questions.some((q) => q.theme === 'Vivre dans la société française')).toBe(false)
   })
 })

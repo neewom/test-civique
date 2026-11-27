@@ -5,6 +5,7 @@ import { AppHeader } from '@/components/AppHeader'
 import { ExamVerdict } from '@/components/ExamVerdict'
 import { OrganicBackground } from '@/components/OrganicBackground'
 import { PillButton, PillLink } from '@/components/PillButton'
+import { themeLabel } from '@/lib/themes'
 import type { AnswerRecord } from '@/lib/exam-types'
 import { mistakes, themeScores, weakestThemes, weakestThemesLabel } from '@/lib/exam-review'
 
@@ -42,7 +43,7 @@ export function ExamResult({ outcome, themeOf, onRestart }: ExamResultProps) {
   }, [])
 
   const errorCount = mistakes(answers).length
-  const weakest = weakestThemesLabel(weakestThemes(themeScores(answers, themeOf)))
+  const weakest = weakestThemesLabel(weakestThemes(themeScores(answers, themeOf)).map(themeLabel))
 
   return (
     <main className="relative flex min-h-svh flex-col overflow-hidden bg-background text-foreground">
@@ -85,7 +86,7 @@ export function ExamResult({ outcome, themeOf, onRestart }: ExamResultProps) {
             >
               <span className="flex flex-col">
                 <span className="text-[1.0625rem]">
-                  {errorCount === 0 ? "Revoir l'examen" : errorCount === 1 ? 'Voir mon erreur' : `Voir mes ${errorCount} erreurs`}
+                  {errorCount === 0 ? "Revoir l'examen" : errorCount === 1 ? 'Voir la question à revoir' : `Voir les ${errorCount} questions à revoir`}
                 </span>
                 {(errorCount === 0 || weakest) && (
                   <span className="text-[0.8125rem] font-normal text-muted-foreground">

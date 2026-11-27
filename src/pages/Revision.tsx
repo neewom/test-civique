@@ -9,6 +9,7 @@ import { OFFICIAL_THEMES } from '@/lib/exam-review'
 import { loadQuestionsToReview, parseReviewIds } from '@/lib/review-queue'
 import { DEFAULT_TITLE, loadTargetTitle, TARGET_TITLE_LABELS } from '@/lib/target-title'
 import { useDocumentTitle } from '@/lib/use-document-title'
+import { themeLabel } from '@/lib/themes'
 import { cn } from '@/lib/utils'
 
 // Official themes in the order of the programme, then any other theme of the pool
@@ -99,7 +100,8 @@ export default function Revision() {
             <BackLink>Mon parcours</BackLink>
             <h1 className="text-[2.125rem] leading-none font-bold tracking-[-0.04em] md:text-[3rem]">Réviser</h1>
             <p className="text-[0.9375rem] dark:text-muted-foreground">
-              {titleLabel} · {pool.length} questions
+              {titleLabel} · {titlePool.filter((q) => q.notion !== 'mise-en-situation').length} questions +{' '}
+              {titlePool.filter((q) => q.notion === 'mise-en-situation').length} mises en situation
             </p>
           </div>
 
@@ -140,7 +142,7 @@ export default function Revision() {
                   onClick={() => setFilter({ kind: 'theme', theme })}
                   className={pillClass(isPressed({ kind: 'theme', theme }))}
                 >
-                  {theme}
+                  {themeLabel(theme)}
                 </button>
               ))}
             </div>
@@ -189,9 +191,9 @@ export default function Revision() {
             </div>
           ) : (
             sections.map(({ theme, items }) => (
-              <section key={theme} aria-label={`Thème : ${theme}`} className="flex flex-col gap-3 pt-2">
+              <section key={theme} aria-label={`Thème : ${themeLabel(theme)}`} className="flex flex-col gap-3 pt-2">
                 <h2 className="text-base font-bold">
-                  {theme} <span className="font-normal tabular-nums">({items.length})</span>
+                  {themeLabel(theme)} <span className="font-normal tabular-nums">({items.length})</span>
                 </h2>
                 <ul className="flex flex-col gap-3">
                   {items.map((q) => (

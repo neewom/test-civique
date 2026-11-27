@@ -1,3 +1,4 @@
+import { themeLabel } from '@/lib/themes'
 import { render, screen, fireEvent, within } from '@testing-library/react'
 import { MemoryRouter } from 'react-router-dom'
 import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest'
@@ -32,6 +33,8 @@ const questions = allQuestions.filter((q) => q.lists.includes('pluriannuelle'))
 const official = questions.filter((q) => q.notion !== 'mise-en-situation')
 const situational = questions.filter((q) => q.notion === 'mise-en-situation')
 const themes = [...new Set(questions.map((q) => q.theme))]
+// Stored theme values; what the page shows goes through themeLabel
+const shownTheme = themeLabel
 
 function renderRevision(state?: unknown) {
   render(
@@ -56,8 +59,30 @@ function setHistory(...exams: { questionId: number; correct: boolean }[][]) {
   )
 }
 
-const pill = (name: string | RegExp) => screen.getByRole('button', { name })
+const pill = (name: string | RegExp) => screen.getByRole('button', { name: typeof name === 'string' ? shownTheme(name) : name })
 const shownCards = () => screen.queryAllByText('Bonne réponse')
+
+describe('Revision — nombre de questions par titre', () => {
+  it.each([
+    ['pluriannuelle', 'Carte de séjour pluriannuelle'],
+    ['resident', 'Carte de résident'],
+    ['naturalisation', 'Naturalisation'],
+  ])('%s : questions classiques + mises en situation calculées', (key, label) => {
+    localStorageMock.setItem('target-title', key)
+    const pool = allQuestions.filter((q) => (q.lists as string[]).includes(key))
+    const classic = pool.filter((q) => q.notion !== 'mise-en-situation').length
+    const situ = pool.filter((q) => q.notion === 'mise-en-situation').length
+    renderRevision()
+    expect(screen.getByText(`${label} · ${classic} questions + ${situ} mises en situation`)).toBeInTheDocument()
+    expect(situ).toBe(100)
+  })
+
+  it('« Vie en société » est affiché « Vivre dans la société française »', () => {
+    renderRevision()
+    expect(screen.getByRole('button', { name: 'Vivre dans la société française' })).toBeInTheDocument()
+    expect(screen.queryByText(/Vie en société/)).not.toBeInTheDocument()
+  })
+})
 
 describe('Revision — structure', () => {
   it('donne le titre "Révision · Futur Citoyen" à l\'onglet', () => {
@@ -68,7 +93,7 @@ describe('Revision — structure', () => {
   it('affiche le titre « Réviser », le titre visé et le nombre de questions', () => {
     renderRevision()
     expect(screen.getByRole('heading', { level: 1, name: 'Réviser' })).toBeInTheDocument()
-    expect(screen.getByText(`Carte de séjour pluriannuelle · ${questions.length} questions`)).toBeInTheDocument()
+    expect(screen.getByText(`Carte de séjour pluriannuelle · ${official.length} questions + ${situational.length} mises en situation`)).toBeInTheDocument()
   })
 
   it('affiche toutes les questions avec leur bonne réponse', () => {
@@ -83,7 +108,7 @@ describe('Revision — structure', () => {
   it('regroupe les questions par thème', () => {
     renderRevision()
     themes.forEach((theme) => {
-      const section = screen.getByRole('region', { name: `Thème : ${theme}` })
+      const section = screen.getByRole('region', { name: `Thème : ${shownTheme(theme)}` })
       expect(within(section).getAllByRole('listitem')).toHaveLength(questions.filter((q) => q.theme === theme).length)
     })
   })
@@ -119,12 +144,12 @@ describe('Revision — filtres par thème', () => {
 })
 
 describe('Revision — sans les mises en situation', () => {
-  it('retire les mises en situation et met le compte à jour', () => {
+  it('retire les mises en situation ; le décompte du titre ne change pas', () => {
     renderRevision()
     fireEvent.click(screen.getByRole('checkbox', { name: 'Sans les mises en situation' }))
     expect(shownCards()).toHaveLength(official.length)
     expect(screen.queryByText(situational[0].question)).not.toBeInTheDocument()
-    expect(screen.getByText(`Carte de séjour pluriannuelle · ${official.length} questions`)).toBeInTheDocument()
+    expect(screen.getByText(`Carte de séjour pluriannuelle · ${official.length} questions + ${situational.length} mises en situation`)).toBeInTheDocument()
   })
 
   it('garde le thème choisi quand on coche ou décoche la case', () => {
@@ -299,7 +324,7 @@ describe('Revision — carte de résident', () => {
     localStorageMock.setItem('target-title', 'resident')
     renderRevision()
     expect(residentQuestions.filter((q) => q.notion !== 'mise-en-situation')).toHaveLength(209)
-    expect(screen.getByText(`Carte de résident · ${residentQuestions.length} questions`)).toBeInTheDocument()
+    expect(screen.getByText(`Carte de résident · 209 questions + 100 mises en situation`)).toBeInTheDocument()
     expect(screen.queryByText(/Carte de séjour pluriannuelle/)).toBeNull()
   })
 
@@ -308,7 +333,7 @@ describe('Revision — carte de résident', () => {
     renderRevision()
     fireEvent.click(screen.getByRole('checkbox', { name: /mises en situation/ }))
     const official = residentQuestions.filter((q) => q.notion !== 'mise-en-situation')
-    expect(screen.getByText(`Carte de résident · ${official.length} questions`)).toBeInTheDocument()
+    expect(screen.getByText(`Carte de résident · ${official.length} questions + 100 mises en situation`)).toBeInTheDocument()
   })
 })
 
@@ -319,7 +344,7 @@ describe('Revision — naturalisation', () => {
     localStorageMock.setItem('target-title', 'naturalisation')
     renderRevision()
     expect(natQuestions.filter((q) => q.notion !== 'mise-en-situation')).toHaveLength(258)
-    expect(screen.getByText(`Naturalisation · ${natQuestions.length} questions`)).toBeInTheDocument()
+    expect(screen.getByText(`Naturalisation · 258 questions + 100 mises en situation`)).toBeInTheDocument()
     expect(screen.queryByText(/Carte de séjour pluriannuelle/)).toBeNull()
   })
 
@@ -328,6 +353,6 @@ describe('Revision — naturalisation', () => {
     renderRevision()
     fireEvent.click(screen.getByRole('checkbox', { name: /mises en situation/ }))
     const official = natQuestions.filter((q) => q.notion !== 'mise-en-situation')
-    expect(screen.getByText(`Naturalisation · ${official.length} questions`)).toBeInTheDocument()
+    expect(screen.getByText(`Naturalisation · ${official.length} questions + 100 mises en situation`)).toBeInTheDocument()
   })
 })
