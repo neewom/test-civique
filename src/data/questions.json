@@ -1007,12 +1007,13 @@
     ],
     "question": "Un enfant peut-il refuser d’aller à l’école pour une raison religieuse ?",
     "distractors": [
-      "Oui, dès 12 ans, si ses parents le justifient par écrit auprès de la direction",
-      "Oui, à partir de 14 ans, à condition d'être suivi par un précepteur agréé",
+      "Oui, l'instruction devient facultative dès 12 ans pour les enfants d'une famille croyante",
+      "Oui, dès 14 ans, avec l'accord écrit d'un précepteur agréé par la mairie",
       "Oui, dès 6 ans, si la famille pratique une religion officiellement reconnue",
-      "Oui, dès 8 ans, si le chef de la communauté religieuse l'autorise",
+      "Oui, dès 8 ans, quand le chef de la communauté religieuse l'autorise",
       "L'instruction est obligatoire de 6 à 14 ans, avec des dispenses selon les convictions",
-      "L'instruction est facultative après 10 ans, si les convictions de la famille l'exigent"
+      "L'instruction est facultative après 10 ans, si les convictions de la famille l'exigent",
+      "L'instruction est obligatoire de 3 à 12 ans, puis chaque famille choisit selon ses convictions"
     ],
     "explanation": "L'instruction est obligatoire de 3 à 16 ans pour tous les enfants qui vivent en France, sans exception religieuse. Les convictions religieuses ne permettent ni de refuser l'école ni de refuser une matière : seules des autorisations d'absence ponctuelles peuvent être accordées pour les grandes fêtes religieuses.",
     "answers": [
