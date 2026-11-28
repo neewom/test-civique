@@ -120,7 +120,7 @@ export default function ExamenCivique() {
         <p className={body}>{INTRO_MORE}</p>
         <p className="text-[0.8125rem] font-bold text-muted-foreground">{INDEPENDENT_NOTE}</p>
 
-        <ul className="mt-3 grid grid-cols-2 gap-2 md:grid-cols-4" aria-label="L'examen en bref">
+        <ul className="mt-3 grid grid-cols-[repeat(auto-fit,minmax(min(100%,max(8rem,calc(50%_-_6px))),1fr))] gap-2 md:grid-cols-[repeat(auto-fit,minmax(min(100%,max(8rem,calc(25%_-_8px))),1fr))]" aria-label="L'examen en bref">
           {MARKS.map((m) => {
             const Icon = MARK_ICONS[m.icon]
             return (
@@ -240,7 +240,7 @@ export default function ExamenCivique() {
           <div className="flex flex-col gap-2">
             {FAQ.map(([q, a], i) => (
               <details key={q} open={i === 0} className="group rounded-2xl bg-card text-card-foreground">
-                <summary className="flex min-h-14 cursor-pointer list-none items-center justify-between gap-3 px-4 py-3 text-[0.9375rem] leading-snug font-bold md:text-base">
+                <summary className="flex min-h-14 cursor-pointer list-none items-center [&::-webkit-details-marker]:hidden justify-between gap-3 px-4 py-3 text-[0.9375rem] leading-snug font-bold md:text-base">
                   {q}
                   <ChevronDown aria-hidden="true" className="size-5 shrink-0 transition-transform group-open:rotate-180" strokeWidth={2.4} />
                 </summary>

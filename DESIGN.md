@@ -343,7 +343,7 @@ Une palette de carte illustrée : un papier crème, une encre presque noire, et 
 
 ### Tertiary
 - **Corail** (`coral`, sombre `coral-night`) : l'erreur à revoir, en contour de la réponse fausse, en fond du verdict « Pas tout à fait », du filtre « À revoir », du thème faible dans le détail d'un examen et de la pastille « Voir mes erreurs ».
-- **Bleu Ciel** (`sky-blue`, sombre `sky-blue-night`) : l'information, en forme organique de la page « Comment se passe l'examen » ; forme sombre `sky-shape-night`.
+- **Bleu Ciel** (`sky-blue`, sombre `sky-blue-night`) : l'information, en forme organique de la page « L'examen civique » ; forme sombre `sky-shape-night`.
 - **Lilas** (`lilac`, sombre `lilac-night`) : le but, étape 4 « Le jour J » et forme organique de l'écran du titre visé ; forme sombre `lilac-shape-night`.
 
 ### Neutral
@@ -371,7 +371,7 @@ Une palette de carte illustrée : un papier crème, une encre presque noire, et 
 
 ### Hierarchy
 - **Display** (`display`) : le titre de l'accueil, « Votre chemin vers le jour J ». L'écran du titre visé utilise une variante un cran plus petite (`display-sm`, 2.25rem, interligne 1). Il passe à 3rem à partir de 768 px (`display-md`) et à 3,5rem à partir de 1024 px (`display-lg`) ; le chiffre « n sur 3 » du panneau « Où vous en êtes » reprend `display-lg`.
-- **Headline** (`headline`) : titres des pages secondaires (« Réviser », « Comment se passe l'examen »). Le détail d'un examen descend à `headline-sm` (1.875rem, interlettrage -0.03em). À partir de 768 px, « Réviser » et le score du détail passent à 3rem.
+- **Headline** (`headline`) : titres des pages secondaires (« Réviser »). La page « L'examen civique » (v1.35.0), page de lecture longue, a sa propre échelle : titre 2.375rem (3.25rem à partir de 768 px), intertitres 1.375rem (1.625rem), introduction 1.0625rem (1.1875rem). Le détail d'un examen descend à `headline-sm` (1.875rem, interlettrage -0.03em). À partir de 768 px, « Réviser » et le score du détail passent à 3rem.
 - **Score** (`score`) : le score de l'écran de résultat, suivi de « /40 » en `score-unit` (2rem) ; à partir de 768 px, 8rem (`score-lg`) suivi de « /40 » en `score-unit-lg` (2,75rem).
 - **Question** (`question`) : l'énoncé d'une question d'examen avant validation ; il passe à `question-done` (1.3125rem) une fois la réponse validée, pour laisser la place à la correction. À partir de 768 px, l'énoncé reste à 1,75rem (`question-lg`, interligne 1.25) avant et après validation.
 - **Title** (`title`) : énoncé d'une question dans la révision et le détail d'un examen ; taille du texte des pastilles « lg ».
