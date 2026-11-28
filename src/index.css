@@ -254,6 +254,23 @@
   transition: none !important;
 }
 
+/* Parallaxe des formes de fond : elles défilent un peu moins vite que le contenu (15 % de leur
+   hauteur sur la première hauteur d'écran, puis elles suivent le contenu). Animation liée au
+   défilement de la page, sans JavaScript ; navigateurs sans prise en charge : formes inchangées.
+   Coupé par `data-motion='off'` (règle ci-dessus : `animation: none !important`), comme la respiration. */
+@supports (animation-timeline: scroll()) {
+  @keyframes organic-parallax {
+    to {
+      transform: translateY(15%);
+    }
+  }
+  svg[data-slot='organic-background'] {
+    animation: organic-parallax linear both;
+    animation-timeline: scroll(root block);
+    animation-range: 0 100svh;
+  }
+}
+
 /* Transitions entre pages (API View Transitions, variante B), 320 ms. Les noms n'existent que
    pendant une transition (classe `page-transition` posée sur <html> par PageShell) : le contenu
    de la page glisse, les formes de fond se fondent sur place, l'en-tête reste fixe, la couleur
