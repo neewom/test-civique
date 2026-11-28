@@ -2,7 +2,7 @@ import { render, screen, fireEvent } from '@testing-library/react'
 import { MemoryRouter, Route, Routes } from 'react-router-dom'
 import { describe, it, expect, beforeEach } from 'vitest'
 import Home from './Home'
-import Regles from './Regles'
+import ExamenCivique from './ExamenCivique'
 import ExamenBlanc from './ExamenBlanc'
 import Examen, { GLOBAL_EXAM_TIME } from './Examen'
 import { ThemeProvider } from '@/components/ThemeProvider'
@@ -12,7 +12,7 @@ import { buildExam, EXAM_SIZE } from '@/lib/exam'
 import { questionsForTitle } from '@/test/questions'
 import type { TitleKey } from '@/lib/target-title'
 
-// Home step 2 and « M'entraîner maintenant » on /regles must resume the exam in progress
+// Home step 2 and « M'entraîner maintenant » on /examen-civique must resume the exam in progress
 // of the chosen title instead of erasing it, and draw a new exam only when there is none.
 
 function makeProgress(title: TitleKey, answered: number, timeLeft: number): ExamInProgress {
@@ -33,7 +33,7 @@ function renderAt(path: string) {
       <MemoryRouter initialEntries={[path]}>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/regles" element={<Regles />} />
+          <Route path="/examen-civique" element={<ExamenCivique />} />
           <Route path="/examen-blanc" element={<ExamenBlanc />} />
           <Route path="/examen" element={<Examen />} />
         </Routes>
@@ -49,9 +49,9 @@ const entries: { name: string; path: string; click: () => void }[] = [
     click: () => fireEvent.click(screen.getByRole('button', { name: /2 · Réussir 3 examens blancs/ })),
   },
   {
-    name: '« M\'entraîner maintenant » sur /regles',
-    path: '/regles',
-    click: () => fireEvent.click(screen.getByRole('link', { name: "M'entraîner maintenant" })),
+    name: '« M\'entraîner maintenant » sur /examen-civique',
+    path: '/examen-civique',
+    click: () => fireEvent.click(screen.getAllByRole('link', { name: "M'entraîner maintenant" })[0]),
   },
 ]
 

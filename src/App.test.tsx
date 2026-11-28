@@ -62,13 +62,19 @@ describe('App routing', () => {
     expect(screen.getByRole('heading', { level: 1, name: 'Votre chemin vers le jour J' })).toBeInTheDocument()
   })
 
-  it('sert la page « Comment se passe l\'examen » sur /regles', () => {
+  it("sert la page « L'examen civique » sur /examen-civique", () => {
+    renderAt('/examen-civique')
+    expect(screen.getByRole('heading', { level: 1, name: "L'examen civique\u00a0: ce qu'il faut savoir" })).toBeInTheDocument()
+  })
+
+  it("redirige l'ancienne adresse /regles vers /examen-civique", () => {
     renderAt('/regles')
-    expect(screen.getByRole('heading', { level: 1, name: "Comment se passe l'examen" })).toBeInTheDocument()
+    expect(window.location.pathname).toBe('/examen-civique')
+    expect(screen.getByRole('heading', { level: 1, name: "L'examen civique\u00a0: ce qu'il faut savoir" })).toBeInTheDocument()
   })
 
   // Le bouton « Affichage » remplace l'interrupteur de thème fixe
-  it.each(['/', '/examen', '/revision', '/regles', '/titre', '/mentions-legales', '/examen/inconnu'])(
+  it.each(['/', '/examen', '/revision', '/examen-civique', '/titre', '/mentions-legales', '/examen/inconnu'])(
     'affiche un seul en-tête (logo et bouton « Affichage ») sur %s, sans interrupteur de thème',
     (path) => {
       renderAt(path)

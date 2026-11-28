@@ -4,11 +4,17 @@ test.beforeEach(async ({ page }) => {
   await withTitleChosen(page)
 })
 
-test('page « Comment se passe l\'examen »', async ({ page }) => {
-  await page.goto('/regles')
-  await expect(page.getByRole('heading', { level: 1, name: "Comment se passe l'examen" })).toBeVisible()
-  await expect(page.getByRole('link', { name: "M'entraîner maintenant" })).toBeVisible()
+test('page « L\'examen civique »', async ({ page }) => {
+  await page.goto('/examen-civique')
+  await expect(page.getByRole('heading', { level: 1, name: "L'examen civique\u00a0: ce qu'il faut savoir" })).toBeVisible()
+  await expect(page.getByRole('link', { name: "M'entraîner maintenant" }).first()).toBeVisible()
   await expectPage(page, "L'examen civique 2026 : format et préparation · Futur Citoyen")
+})
+
+test('l\'ancienne adresse /regles redirige vers /examen-civique', async ({ page }) => {
+  await page.goto('/regles')
+  await expect(page).toHaveURL(/\/examen-civique$/)
+  await expect(page.getByRole('heading', { level: 1, name: "L'examen civique\u00a0: ce qu'il faut savoir" })).toBeVisible()
 })
 
 test('page « Trouver un centre d\'examen », liens externes non suivis', async ({ page }) => {
@@ -82,6 +88,13 @@ test('une adresse inconnue renvoie à l\'accueil quand l\'appli est déjà insta
   await expectPage(page, 'Examen civique : entraînement gratuit · Futur Citoyen')
 })
 
+test('/regles : redirection 301 vers /examen-civique chez Netlify', async ({ page }) => {
+  test.skip(isLocal, 'only Netlify answers with the code 301')
+  const response = await page.request.get('/regles', { maxRedirects: 0 })
+  expect(response.status()).toBe(301)
+  expect(response.headers()['location']).toMatch(/\/examen-civique$/)
+})
+
 test('fichier introuvable de /assets/ : 404, jamais l\'appli', async ({ page }) => {
   test.skip(isLocal, 'only Netlify answers with the code 404')
   expect((await page.request.get('/assets/inexistant.js')).status()).toBe(404)
@@ -108,6 +121,7 @@ test('chaque page publique annonce son titre, sa description et son canonical da
     ['/revision', "Questions de l'examen civique à réviser · Futur Citoyen", 'https://futurcitoyen.fr/revision'],
     ['/titres/carte-de-resident', 'Carte de résident et examen civique · Futur Citoyen', 'https://futurcitoyen.fr/titres/carte-de-resident'],
     ['/centres', "Où passer l'examen civique · Futur Citoyen", 'https://futurcitoyen.fr/centres'],
+    ['/examen-civique', "L'examen civique 2026 : format et préparation · Futur Citoyen", 'https://futurcitoyen.fr/examen-civique'],
   ]) {
     const html = await (await page.request.get(path)).text()
     expect(html, path).toContain(`<title>${title}</title>`)

@@ -65,7 +65,7 @@ const KNOWN_PATHS: ReadonlySet<string> = new Set([
   '/examen-blanc',
   '/examen',
   '/revision',
-  '/regles',
+  '/examen-civique',
   '/centres',
   '/titre',
   '/mentions-legales',
@@ -84,6 +84,8 @@ export function countedPath(pathname: string): string {
   if (/^\/examen\/[^/]+$/.test(path)) return EXAM_DETAIL_PATH
   return UNKNOWN_PATH
 }
+
+const REDIRECTED_PATHS: ReadonlySet<string> = new Set(['/regles'])
 
 // The external referrer only makes sense for the first page view: after a SPA
 // navigation, document.referrer still names the page the visitor came from
@@ -122,6 +124,8 @@ function send(params: Record<string, string>): void {
 // Page view for a pathname (no search string: nothing personal is sent; the path is grouped by `countedPath`).
 // Repeated calls with the same pathname are ignored.
 export function trackPageView(pathname: string): void {
+  // Old address of /examen-civique: the app redirects at once, the page view is the one of the new address
+  if (REDIRECTED_PATHS.has(pathname.replace(/\/+$/, '').toLowerCase())) return
   if (pathname === lastPath) return
   lastPath = pathname
   const params: Record<string, string> = { p: countedPath(pathname) }

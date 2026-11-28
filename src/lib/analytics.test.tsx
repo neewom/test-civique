@@ -57,7 +57,7 @@ describe('analytics — production (futurcitoyen.fr)', () => {
   it("n'envoie le référent qu'à la première page vue", () => {
     vi.spyOn(document, 'referrer', 'get').mockReturnValue('https://www.google.com/')
     trackPageView('/')
-    trackPageView('/regles')
+    trackPageView('/examen-civique')
     const [first, second] = sentUrls()
     expect(first.searchParams.get('r')).toBe('https://www.google.com/')
     expect(second.searchParams.has('r')).toBe(false)
@@ -200,7 +200,7 @@ describe('analytics — chemins regroupés (countedPath)', () => {
     '/examen-blanc',
     '/examen',
     '/revision',
-    '/regles',
+    '/examen-civique',
     '/centres',
     '/titre',
     '/mentions-legales',
@@ -227,11 +227,19 @@ describe('analytics — chemins regroupés (countedPath)', () => {
     },
   )
 
-  it('ignore la casse et le slash final, comme le routeur', () => {
+  it("ne compte pas l'ancienne adresse /regles : la redirection compte /examen-civique", () => {
+    trackPageView('/regles')
     trackPageView('/Regles/')
+    expect(sentUrls()).toHaveLength(0)
+    trackPageView('/examen-civique')
+    expect(sentUrls().map((u) => u.searchParams.get('p'))).toEqual(['/examen-civique'])
+  })
+
+  it('ignore la casse et le slash final, comme le routeur', () => {
+    trackPageView('/Examen-Civique/')
     trackPageView('/examen/')
     trackPageView('/Examen/ABC/')
-    expect(sentUrls().map((u) => u.searchParams.get('p'))).toEqual(['/regles', '/examen', '/examen/detail'])
+    expect(sentUrls().map((u) => u.searchParams.get('p'))).toEqual(['/examen-civique', '/examen', '/examen/detail'])
   })
 
   it('ne compte une fiche que si l\'adresse correspond exactement (casse comprise, slash final toléré)', () => {

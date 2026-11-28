@@ -118,6 +118,15 @@ describe('Accueil — en-tête et parcours', () => {
     expect(steps[3]).toHaveTextContent('4 · Le jour J')
   })
 
+  it('l\'étape 4 « Le jour J » est un lien vers /examen-civique, avec une flèche sans les 3 réussites', () => {
+    renderHome()
+    const link = screen.getByRole('link', { name: /4 · Le jour J/ })
+    expect(link).toHaveAttribute('href', '/examen-civique')
+    expect(link.className).toContain('bg-goal')
+    expect(link.querySelector('svg')).not.toBeNull()
+    expect(screen.queryByText(/Le jour J est à votre portée/)).toBeNull()
+  })
+
   it('l\'étape 1 mène au mode révision', () => {
     renderHome()
     expect(screen.getByRole('link', { name: /Réviser les thèmes/ })).toHaveAttribute('href', '/revision')
@@ -131,7 +140,7 @@ describe('Accueil — en-tête et parcours', () => {
 
   it('mène à la page « Comment se passe l\'examen »', () => {
     renderHome()
-    expect(screen.getByRole('link', { name: "Comment se passe l'examen ?" })).toHaveAttribute('href', '/regles')
+    expect(screen.getByRole('link', { name: "Comment se passe l'examen ?" })).toHaveAttribute('href', '/examen-civique')
   })
 
   it('affiche la mention non officielle avec le lien vers le site officiel', () => {
@@ -466,7 +475,7 @@ describe('Accueil — grand écran (1024 px et plus)', () => {
     expect(card).toHaveTextContent(
       "Vos examens blancs s'afficheront ici, avec votre progression vers les 3 réussites d'affilée.",
     )
-    expect(within(card).getByRole('link', { name: "Comment se passe l'examen ?" })).toHaveAttribute('href', '/regles')
+    expect(within(card).getByRole('link', { name: "Comment se passe l'examen ?" })).toHaveAttribute('href', '/examen-civique')
   })
 
   it('avec historique : « Où vous en êtes », le compteur, les derniers examens et les règles', () => {
@@ -891,14 +900,18 @@ describe('Accueil — jour J et « Vos thèmes »', () => {
     seedHistory([passedExam('a', 1), passedExam('b', 2), passedExam('c', 3)])
     renderHome()
     expect(screen.getByText("Le jour J est à votre portée : 3 examens blancs réussis d'affilée.")).toBeInTheDocument()
-    expect(document.querySelector('nav li:nth-child(4) svg')).not.toBeNull()
+    expect(document.querySelector('nav li:nth-child(4) svg.lucide-check')).not.toBeNull()
+    // The whole pastille stays a link, the check taking the place of the arrow
+    const link = screen.getByRole('link', { name: /4 · Le jour J/ })
+    expect(link).toHaveAttribute('href', '/examen-civique')
+    expect(link.querySelector('svg')).not.toBeNull()
   })
 
   it('étape 4 : inchangée avec 2 réussites, ou après un échec récent', () => {
     seedHistory([passedExam('a', 1), passedExam('b', 2)])
     renderHome()
     expect(screen.queryByText(/à votre portée/)).toBeNull()
-    expect(document.querySelector('nav li:nth-child(4) svg')).toBeNull()
+    expect(document.querySelector('nav li:nth-child(4) svg.lucide-check')).toBeNull()
     cleanup()
     seedHistory([passedExam('a', 1), passedExam('b', 2), passedExam('c', 3), examWith([1, 1, 1, 1, 1], false, 'd', 4)])
     renderHome()

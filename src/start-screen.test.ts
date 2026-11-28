@@ -76,7 +76,7 @@ describe('theme-init.js : première visite', () => {
   })
   it('ne le pose pas sur une autre page', () => {
     expect(run('/revision', {})).toBe(false)
-    expect(run('/regles', {})).toBe(false)
+    expect(run('/examen-civique', {})).toBe(false)
   })
   it('ne le pose pas si un titre, un historique ou un examen en cours existe', () => {
     expect(run('/', { 'target-title': 'resident' })).toBe(false)

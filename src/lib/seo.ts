@@ -38,7 +38,7 @@ export const PUBLIC_ROUTES = [
       'Toutes les questions officielles de votre titre, par thème, avec la bonne réponse, une explication simple et la source officielle.',
   },
   {
-    path: '/regles',
+    path: '/examen-civique',
     title: `L'examen civique 2026 : format et préparation${SUFFIX}`,
     description:
       "Qui doit passer l'examen civique, comment il se déroule (40 questions, 45 minutes, 32 bonnes réponses) et comment s'y préparer.",
