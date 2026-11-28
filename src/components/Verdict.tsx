@@ -7,8 +7,10 @@ export type VerdictTone = 'success' | 'error' | 'pending'
 interface VerdictProps {
   /** success: passed / right answer · error: wrong answer · pending: not passed yet (reassuring, not an error) */
   tone: VerdictTone
-  /** default: answer feedback (40px) · lg: exam result (44px) */
-  size?: 'default' | 'lg'
+  /** default: answer feedback (40px) · lg: exam result (44px) · stamp: stamped answer verdict (56px) */
+  size?: 'default' | 'lg' | 'stamp'
+  /** Purely visual copy (the announcement is made elsewhere): no status role */
+  decorative?: boolean
   className?: string
   /** Lets a screen move the focus to the verdict (with tabIndex -1) once an answer is validated */
   ref?: Ref<HTMLParagraphElement>
@@ -24,20 +26,25 @@ const TONE: Record<VerdictTone, { pill: string; icon: string; Icon: typeof Check
 }
 
 /** Verdict pill: always text + icon + colour, announced as a status. */
-export function Verdict({ tone, size = 'default', className, ref, tabIndex, children }: VerdictProps) {
+export function Verdict({ tone, size = 'default', decorative = false, className, ref, tabIndex, children }: VerdictProps) {
   const { pill, icon, Icon } = TONE[tone]
   const large = size === 'lg'
+  const stamp = size === 'stamp'
 
   return (
     <p
       ref={ref}
       tabIndex={tabIndex}
-      role="status"
+      role={decorative ? undefined : 'status'}
       data-tone={tone}
       className={cn(
         // Radius = half the minimum height: a pill on one line, a rounded block when wrapped
         'inline-flex max-w-full items-center gap-2 py-1.5 pl-2 font-bold',
-        large ? 'min-h-11 rounded-[1.375rem] pr-[1.125rem] text-lg' : 'min-h-10 rounded-[1.25rem] pr-4 text-base',
+        stamp
+          ? 'min-h-14 rounded-[1.75rem] py-2.5 pr-[1.375rem] pl-2.5 text-[1.3125rem]'
+          : large
+            ? 'min-h-11 rounded-[1.375rem] pr-[1.125rem] text-lg'
+            : 'min-h-10 rounded-[1.25rem] pr-4 text-base',
         pill,
         className,
       )}
@@ -46,7 +53,7 @@ export function Verdict({ tone, size = 'default', className, ref, tabIndex, chil
         aria-hidden="true"
         className={cn(
           'flex shrink-0 items-center justify-center rounded-full',
-          large ? 'size-[1.875rem]' : 'size-7',
+          stamp ? 'size-10' : large ? 'size-[1.875rem]' : 'size-7',
           icon,
         )}
       >

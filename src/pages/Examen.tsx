@@ -26,7 +26,7 @@ import { AppHeader } from '@/components/AppHeader'
 import { PageFrame } from '@/components/PageFrame'
 import { PillButton } from '@/components/PillButton'
 import { SourceLink } from '@/components/SourceLink'
-import { Verdict } from '@/components/Verdict'
+import { VerdictStamp } from '@/components/VerdictStamp'
 import { trackEvent, examEvent } from '@/lib/analytics'
 
 // Re-exported: the duration lives in lib/exam, next to EXAM_SIZE
@@ -171,7 +171,6 @@ function ExamRun({ restarted, onRestart, title, pack }: ExamRunProps) {
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null)
   const finishedRef = useRef(false)
   const questionHeadingRef = useRef<HTMLHeadingElement>(null)
-  const verdictRef = useRef<HTMLParagraphElement>(null)
   // Focus goes to the new question after « Question suivante » and after « Nouvel examen blanc »
   // (the session is remounted: the button that had the focus is gone); on a first arrival the
   // page shell moves it to the title
@@ -329,10 +328,11 @@ function ExamRun({ restarted, onRestart, title, pack }: ExamRunProps) {
     }
   }
 
-  // Focus: on the verdict once the answer is validated, then on the next question
+  // Focus: on the title of the corrected question once the answer is validated (the verdict
+  // is a stamp, announced by a status region), then on the next question
   useEffect(() => {
     if (phase === 'correction') {
-      verdictRef.current?.focus()
+      questionHeadingRef.current?.focus({ preventScroll: true })
     } else if (phase === 'question' && focusQuestionRef.current) {
       focusQuestionRef.current = false
       questionHeadingRef.current?.focus()
@@ -366,7 +366,7 @@ function ExamRun({ restarted, onRestart, title, pack }: ExamRunProps) {
   if (!current) return null
 
   // ── Écran question / correction (maquettes Pa4 / Pa5, Pd4 / Pd5) ─────────────
-  // No animation and no organic shape on these screens
+  // No organic shape on these screens; the only movements are the press of a card, the correction and the verdict stamp
   const inCorrection = phase === 'correction'
   const isCorrect = inCorrection && selected === current.answer
   const eyebrow = 'text-[0.8125rem] font-bold tracking-[0.06em] uppercase dark:text-muted-foreground'
@@ -445,57 +445,46 @@ function ExamRun({ restarted, onRestart, title, pack }: ExamRunProps) {
         </div>
       </header>
 
+      {/* Verdict of the correction: stamped over the screen (visual only), announced here */}
+      {inCorrection && <VerdictStamp key={index} right={isCorrect} />}
+      <p role="status" className="sr-only">
+        {inCorrection ? (isCorrect ? 'Bonne réponse' : 'Pas tout à fait') : ''}
+      </p>
+
       {/* Announced once at 5 minutes, then at 1 minute */}
       <p aria-live="polite" className="sr-only">{announcement}</p>
 
       <div className="mx-auto flex w-full max-w-[30rem] grow flex-col px-5 md:max-w-[44rem] md:px-8">
-        {inCorrection ? (
-          <div className="flex flex-col gap-3 pt-5 md:pt-10">
-            <Verdict
-              ref={verdictRef}
-              tabIndex={-1}
-              tone={isCorrect ? 'success' : 'error'}
-              className="self-start outline-none"
-            >
-              {isCorrect ? 'Bien joué' : 'Pas tout à fait'}
-            </Verdict>
-            <h1
-              ref={questionHeadingRef}
-              tabIndex={-1}
-              className="text-[1.3125rem] leading-[1.3] font-bold outline-none md:text-[1.75rem] md:leading-[1.25]"
-            >
-              <span className="sr-only">{questionNumber}</span>
-              {current.question}
-            </h1>
-            <AnswerCard letter={LETTERS[current.choices.indexOf(current.answer)]} result="correct">
-              {current.answer}
-            </AnswerCard>
-            {!isCorrect && selected && (
-              <AnswerCard letter={LETTERS[current.choices.indexOf(selected)]} result="wrong">
-                {selected}
-              </AnswerCard>
-            )}
-            <section
-              aria-labelledby={`${questionId}-why`}
-              className="flex flex-col gap-2 rounded-xl bg-card p-3.5 text-card-foreground"
-            >
-              <h2 id={`${questionId}-why`} className={eyebrow}>Pourquoi</h2>
-              <p className="text-base leading-normal">{current.explanation}</p>
-              <SourceLink source={current.source} />
-            </section>
-          </div>
-        ) : (
-          <div className="flex flex-col gap-3 pt-6 md:pt-10">
-            <p className={eyebrow}>{themeLabel(current.theme)}</p>
-            <h1
-              ref={questionHeadingRef}
-              tabIndex={-1}
-              className="mb-2 text-[1.4375rem] leading-[1.3] font-bold outline-none md:text-[1.75rem] md:leading-[1.25]"
-            >
-              <span className="sr-only">{questionNumber}</span>
-              <span id={questionId}>{current.question}</span>
-            </h1>
-            <div role="radiogroup" aria-labelledby={questionId} className="flex flex-col gap-3">
+        {/* Same layout for the question and its correction: theme, title and the 4 answers stay in
+            place (the cards keep their height), the verdict is stamped over the screen */}
+        <div className="flex flex-col gap-3 pt-6 md:pt-10">
+          <p className={eyebrow}>{themeLabel(current.theme)}</p>
+          <h1
+            ref={questionHeadingRef}
+            tabIndex={-1}
+            className="mb-2 text-[1.4375rem] leading-[1.3] font-bold outline-none md:text-[1.75rem] md:leading-[1.25]"
+          >
+            <span className="sr-only">{questionNumber}</span>
+            <span id={questionId}>{current.question}</span>
+          </h1>
+          {inCorrection ? (
+            <div aria-labelledby={questionId} role="group" className="flex flex-col gap-4">
+              {current.choices.map((choice, i) => {
+                const right = choice === current.answer
+                return (
+                  <AnswerCard
+                    key={choice}
+                    letter={LETTERS[i]}
+                    result={right ? 'correct' : choice === selected ? 'wrong' : 'other'}
+                    chosen={right && selected === choice}
+                  >
+                    {choice}
+                  </AnswerCard>
+                )
+              })}
+            </div>
+          ) : (
+            <div role="radiogroup" aria-labelledby={questionId} className="flex flex-col gap-4">
               {current.choices.map((choice, i) => (
                 <AnswerCard
                   key={choice}
@@ -509,8 +498,18 @@ function ExamRun({ restarted, onRestart, title, pack }: ExamRunProps) {
                 </AnswerCard>
               ))}
             </div>
-          </div>
-        )}
+          )}
+          {inCorrection && (
+            <section
+              aria-labelledby={`${questionId}-why`}
+              className="answer-rise flex flex-col gap-2 rounded-xl bg-card p-3.5 text-card-foreground"
+            >
+              <h2 id={`${questionId}-why`} className={eyebrow}>Pourquoi</h2>
+              <p className="text-base leading-normal">{current.explanation}</p>
+              <SourceLink source={current.source} />
+            </section>
+          )}
+        </div>
 
         {/* From 768 px the button sits right under the answers, in a slot reserved for it
             (padding + margin + large pill + padding = 8rem): nothing moves when it appears */}

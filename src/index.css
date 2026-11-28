@@ -399,3 +399,36 @@
     scroll-padding-top: 4.25rem;
   }
 }
+
+/* ── Animations de l'examen blanc (correction, tampon du verdict, célébration) ─────────────
+   Bloc à part. Rien ne bouge si « Animations : Désactivées » : la règle `data-motion='off'`
+   plus haut coupe toutes ces animations. Chaque animation dure moins de 350 ms, sauf le tampon. */
+@keyframes answer-mark-pop {
+  0% { transform: scale(0.4); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+@keyframes answer-correct-in {
+  0% { background-color: var(--card); }
+}
+@keyframes answer-glow {
+  0% { filter: brightness(1.25); }
+  100% { filter: none; }
+}
+@keyframes answer-rise {
+  0% { transform: translateY(8px); opacity: 0; }
+  100% { transform: none; opacity: 1; }
+}
+@keyframes verdict-stamp-in {
+  0% { transform: rotate(-14deg) scale(1.8); opacity: 0; }
+  100% { transform: rotate(-6deg) scale(1); opacity: 1; }
+}
+@keyframes verdict-stamp-out {
+  0% { opacity: 1; }
+  100% { opacity: 0; transform: translateY(-6px) rotate(-6deg) scale(0.96); }
+}
+.answer-mark-pop { animation: answer-mark-pop 0.28s cubic-bezier(0.3, 1.6, 0.5, 1) both; }
+.answer-correct-in { animation: answer-correct-in 0.3s ease-out both; }
+.answer-correct-in.answer-glow { animation: answer-correct-in 0.3s ease-out both, answer-glow 0.3s ease-out both; }
+.answer-rise { animation: answer-rise 0.24s ease-out both; }
+.verdict-stamp-in { animation: verdict-stamp-in 0.32s cubic-bezier(0.2, 1.4, 0.4, 1) both; }
+.verdict-stamp-out { animation: verdict-stamp-out 0.35s ease-in both; }

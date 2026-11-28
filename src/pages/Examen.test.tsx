@@ -237,7 +237,7 @@ describe('Examen', () => {
     await act(async () => { fireEvent.click(screen.getByRole('button', { name: 'Valider ma réponse' })) })
     // La correction n'est plus un groupe de boutons radio : les cartes sont du contenu
     expect(screen.queryByRole('radio')).not.toBeInTheDocument()
-    expect(screen.getByText('Bonne réponse')).toBeInTheDocument()
+    expect(document.querySelector('[data-state="correct"]')).toBeInTheDocument()
     expect(screen.getByText('Pourquoi')).toBeInTheDocument()
   })
 
@@ -680,29 +680,77 @@ describe('Examen — écrans de question et de correction', () => {
     expect(screen.getByRole('progressbar', { name: 'Temps restant' })).toHaveAttribute('aria-valuetext', '31 minutes sur 45')
   })
 
-  it('bonne réponse : verdict « Bien joué » annoncé et focalisé, sans carte « Votre réponse »', async () => {
+  it('bonne réponse : « Bonne réponse » annoncé, focus sur l\'intitulé de la question, une seule étiquette « Votre réponse · bonne réponse »', async () => {
     renderResumed(makeResume(1500, 0))
     await answer(true)
-    const verdict = screen.getByRole('status')
-    expect(verdict).toHaveTextContent('Bien joué')
-    expect(verdict).toHaveFocus()
-    expect(screen.getByText('Bonne réponse')).toBeInTheDocument()
-    expect(screen.queryByText('Votre réponse')).not.toBeInTheDocument()
+    expect(screen.getByRole('status')).toHaveTextContent('Bonne réponse')
+    expect(screen.getByRole('heading', { level: 1 })).toHaveFocus()
+    expect(screen.getByText('Votre réponse · bonne réponse')).toBeInTheDocument()
+    expect(screen.queryByText('Bonne réponse', { selector: 'span' })).not.toBeInTheDocument()
+    expect(screen.queryByText('Votre réponse', { exact: true })).not.toBeInTheDocument()
   })
 
-  it('réponse fausse : verdict « Pas tout à fait », bonne réponse et réponse de l\'utilisateur', async () => {
+  it('réponse fausse : « Pas tout à fait » annoncé, bonne réponse et réponse de l\'utilisateur', async () => {
     const resume = makeResume(1500, 0)
     renderResumed(resume)
     await answer(false)
     expect(screen.getByRole('status')).toHaveTextContent('Pas tout à fait')
     // The answer is drawn at random: escape it, a parenthesis (question 56) broke the pattern
     const answerStart = resume.questions[0].answer.slice(0, 10).replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
-    // Correction : deux cartes de contenu (plus de radio désactivée, lue « non cochée » sur la bonne réponse)
+    // Correction : quatre cartes de contenu (plus de radio désactivée, lue « non cochée » sur la bonne réponse)
     expect(screen.queryByRole('radio')).not.toBeInTheDocument()
     expect(screen.getByText('Bonne réponse').closest('[data-state]')).toHaveTextContent(new RegExp(`Bonne réponse.*${answerStart}`))
     expect(screen.getByText('Votre réponse').closest('[data-state]')).toHaveAttribute('data-state', 'wrong')
     expect(screen.getByRole('heading', { level: 2, name: 'Pourquoi' })).toBeInTheDocument()
     expect(screen.getByText(resume.questions[0].explanation)).toBeInTheDocument()
+  })
+
+  it('correction : le thème et les 4 réponses restent à leur place, les deux autres en retrait', async () => {
+    const resume = makeResume(1500, 0)
+    renderResumed(resume)
+    const q = resume.questions[0]
+    const before = screen.getAllByRole('radio').map((r) => r.closest('label')!.textContent)
+    expect(screen.getByText(themeLabel(q.theme))).toBeInTheDocument()
+    await answer(false)
+    // Same theme pill, same order of the 4 choices
+    expect(screen.getByText(themeLabel(q.theme))).toBeInTheDocument()
+    const cards = Array.from(document.querySelectorAll('[data-state]')).filter((el) => el.tagName === 'DIV')
+    expect(cards).toHaveLength(4)
+    before.forEach((text, i) => expect(cards[i].textContent!.endsWith(text!.slice(1))).toBe(true))
+    expect(cards.map((c) => c.getAttribute('data-state')).sort()).toEqual(['correct', 'other', 'other', 'wrong'])
+    cards.filter((c) => c.getAttribute('data-state') === 'other').forEach((c) => expect(c).toHaveClass('opacity-65'))
+  })
+
+  it('correction : le verdict est un tampon hors du flux, masqué aux lecteurs d\'écran, qui disparaît seul', async () => {
+    localStorage.setItem('motion', 'on')
+    renderResumed(makeResume(1500, 0))
+    await answer(true)
+    const stamp = screen.getByTestId('verdict-stamp')
+    expect(stamp).toHaveTextContent('Bien joué')
+    expect(stamp).toHaveAttribute('aria-hidden', 'true')
+    expect(stamp).toHaveClass('fixed', 'pointer-events-none')
+    // Not a status of its own (the announcement is the screen-reader region) and not in the heading
+    expect(screen.getAllByRole('status')).toHaveLength(1)
+    await act(async () => { vi.advanceTimersByTime(1100) })
+    expect(screen.getByTestId('verdict-stamp')).toBeInTheDocument()
+    await act(async () => { vi.advanceTimersByTime(500) })
+    expect(screen.queryByTestId('verdict-stamp')).not.toBeInTheDocument()
+  })
+
+  it('correction, tampon d\'une mauvaise réponse : « Pas tout à fait »', async () => {
+    renderResumed(makeResume(1500, 0))
+    await answer(false)
+    expect(screen.getByTestId('verdict-stamp')).toHaveTextContent('Pas tout à fait')
+  })
+
+  it('une nouvelle correction retire le tampon précédent', async () => {
+    renderResumed(makeResume(1500, 0))
+    await answer(true)
+    await act(async () => { fireEvent.click(screen.getByRole('button', { name: 'Question suivante' })) })
+    expect(screen.queryByTestId('verdict-stamp')).not.toBeInTheDocument()
+    await answer(false)
+    expect(screen.getAllByTestId('verdict-stamp')).toHaveLength(1)
+    expect(screen.getByTestId('verdict-stamp')).toHaveTextContent('Pas tout à fait')
   })
 
   it('déplace le focus sur la question suivante après « Question suivante »', async () => {
@@ -720,13 +768,6 @@ describe('Examen — écrans de question et de correction', () => {
     expect(screen.getByRole('heading', { level: 1 }).className).toMatch(/\boutline-none\b/)
     await answer(false)
     expect(screen.getByRole('heading', { level: 1 }).className).toMatch(/\boutline-none\b/)
-  })
-
-  it('n\'affiche pas d\'anneau de focus sur le verdict de la correction, qui n\'est pas interactif', async () => {
-    renderResumed(makeResume(1500, 0))
-    await answer(true)
-    expect(screen.getByRole('status')).toHaveFocus()
-    expect(screen.getByRole('status').className).toMatch(/\boutline-none\b/)
   })
 
   it('ne déplace pas le focus à l\'arrivée sur la première question', () => {

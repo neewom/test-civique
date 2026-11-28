@@ -120,6 +120,44 @@ describe('AnswerCard', () => {
     expect(resultCard('Il est jugé comme tout citoyen').tagName).toBe('DIV')
   })
 
+  it('étiquette posée sur le bord, hors du flux : « Votre réponse · bonne réponse » si c\'est juste', () => {
+    render(
+      <AnswerCard letter="A" result="correct" chosen>
+        Texte
+      </AnswerCard>,
+    )
+    const tag = screen.getByText('Votre réponse · bonne réponse')
+    expect(tag).toHaveClass('absolute')
+    expect(tag.closest('[data-state]')).toHaveAttribute('data-state', 'correct')
+  })
+
+  it('une carte « autre » reste en place, avec sa lettre, en retrait et sans étiquette', () => {
+    render(
+      <AnswerCard letter="C" result="other">
+        Texte
+      </AnswerCard>,
+    )
+    const other = screen.getByText('Texte').closest('[data-state]')!
+    expect(other).toHaveAttribute('data-state', 'other')
+    expect(other).toHaveClass('opacity-65')
+    expect(other).toHaveTextContent('C')
+    expect(other.querySelector('svg')).toBeNull()
+    expect(other.querySelector('.absolute')).toBeNull()
+  })
+
+  it('la bonne réponse porte la coche animée, la mauvaise n\'a aucun tremblement', () => {
+    render(
+      <>
+        <AnswerCard letter="A" result="correct">Juste</AnswerCard>
+        <AnswerCard letter="B" result="wrong">Faux</AnswerCard>
+      </>,
+    )
+    expect(screen.getByText('Juste').closest('[data-state]')!.querySelector('.answer-mark-pop')).not.toBeNull()
+    const wrong = screen.getByText('Faux').closest('[data-state]')!
+    expect(wrong.querySelector('.answer-mark-pop')).toBeNull()
+    expect(wrong.className).not.toMatch(/animate|shake/)
+  })
+
   it('verrouille les cartes une fois la réponse validée', async () => {
     render(<Question disabled results={{ [ANSWERS[0]]: 'correct' }} />)
     screen.getAllByRole('radio').forEach((r) => expect(r).toBeDisabled())
