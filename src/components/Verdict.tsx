@@ -41,7 +41,7 @@ export function Verdict({ tone, size = 'default', decorative = false, className,
         // Radius = half the minimum height: a pill on one line, a rounded block when wrapped
         'inline-flex max-w-full items-center gap-2 py-1.5 pl-2 font-bold',
         stamp
-          ? 'min-h-14 rounded-[1.75rem] py-2.5 pr-[1.375rem] pl-2.5 text-[1.375rem]'
+          ? 'min-h-14 rounded-[1.75rem] py-2.5 pr-[1.375rem] pl-2.5 text-[1.3125rem]'
           : large
             ? 'min-h-11 rounded-[1.375rem] pr-[1.125rem] text-lg'
             : 'min-h-10 rounded-[1.25rem] pr-4 text-base',

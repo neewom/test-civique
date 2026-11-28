@@ -139,7 +139,7 @@ describe('AnswerCard', () => {
     )
     const other = screen.getByText('Texte').closest('[data-state]')!
     expect(other).toHaveAttribute('data-state', 'other')
-    expect(other).toHaveClass('opacity-45')
+    expect(other).toHaveClass('opacity-65')
     expect(other).toHaveTextContent('C')
     expect(other.querySelector('svg')).toBeNull()
     expect(other.querySelector('.absolute')).toBeNull()

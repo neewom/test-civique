@@ -718,7 +718,7 @@ describe('Examen — écrans de question et de correction', () => {
     expect(cards).toHaveLength(4)
     before.forEach((text, i) => expect(cards[i].textContent!.endsWith(text!.slice(1))).toBe(true))
     expect(cards.map((c) => c.getAttribute('data-state')).sort()).toEqual(['correct', 'other', 'other', 'wrong'])
-    cards.filter((c) => c.getAttribute('data-state') === 'other').forEach((c) => expect(c).toHaveClass('opacity-45'))
+    cards.filter((c) => c.getAttribute('data-state') === 'other').forEach((c) => expect(c).toHaveClass('opacity-65'))
   })
 
   it('correction : le verdict est un tampon hors du flux, masqué aux lecteurs d\'écran, qui disparaît seul', async () => {

@@ -48,7 +48,8 @@ export function VerdictStamp({ right }: VerdictStampProps) {
         size="stamp"
         tone={right ? 'success' : 'error'}
         className={[
-          'shadow-[0_10px_30px_rgba(0,0,0,0.18)]',
+          // Never wider than the screen minus a margin that also covers the tilt; the text may wrap
+          'max-w-[calc(100%-4rem)] shadow-[0_10px_30px_rgba(0,0,0,0.18)]',
           // The tilt is part of the keyframes when moving (a rotate utility would add to it)
           moving ? (step === 'in' ? 'verdict-stamp-in' : 'verdict-stamp-out') : '-rotate-6',
         ].join(' ')}

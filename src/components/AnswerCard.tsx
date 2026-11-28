@@ -59,15 +59,15 @@ export function AnswerCard({
       data-state={result ?? (checked ? 'selected' : 'idle')}
       className={cn(
         // 3px border on every state (transparent but on « wrong ») so that validating never
-        // moves the content; the padding is reduced by as much (box of the maquette: 10 / 16 / 10 / 10)
-        'relative flex min-h-15 items-center gap-3 rounded-xl border-3 border-transparent py-[7px] pr-[13px] pl-[7px] text-left text-base leading-[1.4]',
+        // moves the content; the padding is reduced by as much (top padding in rem: room for the tag laid on the edge, on two lines at 200 % too, in both phases)
+        'relative flex min-h-15 items-center gap-3 rounded-xl border-3 border-transparent pt-[1.125rem] pr-[13px] pb-[7px] pl-[7px] text-left text-base leading-[1.4]',
         'has-[:focus-visible]:outline-3 has-[:focus-visible]:outline-offset-2 has-[:focus-visible]:outline-ring has-[:focus-visible]:outline-solid',
         // Press: the card sinks slightly, then fills in softly (animations on only)
-        'transition-[transform,background-color,color,opacity] duration-150 ease-out',
+        'transition-[transform,scale,background-color,color,opacity] duration-150 ease-out',
         !result && !disabled && '[:root[data-motion=on]_&]:active:scale-[0.98]',
         disabled ? 'cursor-default' : 'cursor-pointer',
         (!result || result === 'other') && !checked && 'bg-card text-card-foreground',
-        result === 'other' && 'opacity-45',
+        result === 'other' && 'opacity-65',
         !result && !checked && !disabled && 'hover:bg-muted',
         // Forced colours (Windows high contrast) drop the background: the chosen card shows as the system highlight
         selected &&
@@ -92,7 +92,8 @@ export function AnswerCard({
         <span
           className={cn(
             // Tag laid on the top edge, out of the flow: the card never changes height
-            'absolute -top-[11px] right-3.5 rounded-full px-2.5 py-1 text-xs leading-none font-bold whitespace-nowrap',
+            // Centred on the top edge (rem only, it follows the enlarged text), may wrap, never wider than the card
+            'absolute top-0 right-3.5 max-w-[calc(100%-1.75rem)] -translate-y-1/2 rounded-full px-2.5 py-0.5 text-right text-xs leading-[1.15] font-bold whitespace-normal',
             result === 'correct' ? 'bg-foreground text-background' : 'bg-coral text-coral-foreground',
           )}
         >
