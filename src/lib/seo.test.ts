@@ -73,11 +73,11 @@ describe('source des métadonnées (src/lib/seo.ts)', () => {
 
 describe('bloc de balises', () => {
   it('titre, description, canonical et balises de partage de la même page', () => {
-    const html = renderSeoBlock(routeMeta('/regles'))
+    const html = renderSeoBlock(routeMeta('/examen-civique'))
     expect(titleOf(html)).toBe("L'examen civique 2026 : format et préparation · Futur Citoyen")
-    expect(canonicalOf(html)).toBe('https://futurcitoyen.fr/regles')
+    expect(canonicalOf(html)).toBe('https://futurcitoyen.fr/examen-civique')
     for (const [attr, name] of [['name', 'description'], ['property', 'og:description'], ['name', 'twitter:description']] as const) {
-      expect(metaContent(html, attr, name), name).toBe(routeMeta('/regles').description)
+      expect(metaContent(html, attr, name), name).toBe(routeMeta('/examen-civique').description)
     }
     expect(metaContent(html, 'property', 'og:title')).toBe(titleOf(html))
     expect(metaContent(html, 'name', 'twitter:title')).toBe(titleOf(html))

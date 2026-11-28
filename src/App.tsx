@@ -4,7 +4,7 @@ import Revision from '@/pages/Revision'
 import Examen from '@/pages/Examen'
 import ExamenDetail from '@/pages/ExamenDetail'
 import ExamenBlanc from '@/pages/ExamenBlanc'
-import Regles from '@/pages/Regles'
+import ExamenCivique from '@/pages/ExamenCivique'
 import Centres from '@/pages/Centres'
 import FicheTitre from '@/pages/FicheTitre'
 import TitreVise from '@/pages/TitreVise'
@@ -29,7 +29,8 @@ export default function App() {
                   <Route path="/examen" element={<Examen />} />
                   <Route path="/examen/:id" element={<ExamenDetail />} />
                   <Route path="/revision" element={<Revision />} />
-                  <Route path="/regles" element={<Regles />} />
+                  <Route path="/examen-civique" element={<ExamenCivique />} />
+                  <Route path="/regles" element={<Navigate to="/examen-civique" replace />} />
                   <Route path="/centres" element={<Centres />} />
                   <Route path="/titre" element={<TitreVise />} />
                   <Route path="/titres/:slug" element={<FicheTitre />} />

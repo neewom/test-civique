@@ -154,7 +154,7 @@ export default function ExamenBlanc() {
                 Commencer l'examen blanc
               </PillLink>
             )}
-            <Link to="/regles" className={secondaryClass}>
+            <Link to="/examen-civique" className={secondaryClass}>
               Tout savoir sur l'examen
             </Link>
           </div>

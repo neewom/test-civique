@@ -31,10 +31,6 @@ import { cn } from '@/lib/utils'
 
 export const OFFICIAL_SITE_URL = 'https://formation-civique.interieur.gouv.fr'
 
-// Journey steps that are not links (yet), as « Le jour J »: same pill shape, no interaction
-const staticStepClass =
-  'inline-flex min-h-12 max-w-full items-center gap-2.5 rounded-[1.5rem] px-[1.125rem] py-1.5 text-base font-bold'
-
 function minutesLeftLabel(seconds: number): string {
   const minutes = Math.max(1, Math.ceil(seconds / 60))
   return `${minutes} min ${minutes > 1 ? 'restantes' : 'restante'}`
@@ -230,23 +226,19 @@ export default function Home() {
         </li>
 
         <li className="flex max-w-full flex-col items-start">
-          {streak >= READY_GOAL ? (
-            <>
-              <span className={cn(staticStepClass, 'bg-goal text-goal-foreground')}>
-                4 · Le jour J
-                <span
-                  aria-hidden="true"
-                  className="flex min-h-10 min-w-10 shrink-0 items-center justify-center rounded-full bg-action-foreground text-action"
-                >
-                  <Check className="size-[1.125em]" strokeWidth={3} />
-                </span>
-              </span>
-              <p className="mt-1.5 max-w-[20rem] px-1 text-[0.9375rem] leading-snug font-bold">
-                Le jour J est à votre portée : {READY_GOAL} examens blancs réussis d'affilée.
-              </p>
-            </>
-          ) : (
-            <span className={cn(staticStepClass, 'bg-goal text-goal-foreground')}>4 · Le jour J</span>
+          <PillLink
+            to="/examen-civique"
+            tone="surface"
+            className="bg-goal text-goal-foreground hover:bg-goal/85"
+            end={streak >= READY_GOAL ? <Check strokeWidth={3} /> : <ArrowRight strokeWidth={2.6} />}
+            endClassName={streak >= READY_GOAL ? 'bg-action-foreground text-action' : undefined}
+          >
+            4 · Le jour J
+          </PillLink>
+          {streak >= READY_GOAL && (
+            <p className="mt-1.5 max-w-[20rem] px-1 text-[0.9375rem] leading-snug font-bold">
+              Le jour J est à votre portée : {READY_GOAL} examens blancs réussis d'affilée.
+            </p>
           )}
         </li>
       </ol>
@@ -280,7 +272,7 @@ export default function Home() {
 
   const rulesLink = (
     <Link
-      to="/regles"
+      to="/examen-civique"
       className={cn(
         'inline-flex min-h-11 items-center self-start rounded-sm text-[0.9375rem] font-bold underline underline-offset-4',
         // Phone: under the resume (2.5 gap instead of 3) or, without one, at the bottom of the page
