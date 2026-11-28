@@ -60,7 +60,7 @@ export function AnswerCard({
       className={cn(
         // 3px border on every state (transparent but on « wrong ») so that validating never
         // moves the content; the padding is reduced by as much (top padding in rem: room for the tag laid on the edge, on two lines at 200 % too, in both phases)
-        'relative flex min-h-15 items-center gap-3 rounded-xl border-3 border-transparent pt-[1.125rem] pr-[13px] pb-[7px] pl-[7px] text-left text-base leading-[1.4]',
+        'relative flex min-h-15 items-center gap-3 rounded-xl border-3 border-transparent py-[1.125rem] pr-[13px] pl-[7px] text-left text-base leading-[1.4]',
         'has-[:focus-visible]:outline-3 has-[:focus-visible]:outline-offset-2 has-[:focus-visible]:outline-ring has-[:focus-visible]:outline-solid',
         // Press: the card sinks slightly, then fills in softly (animations on only)
         'transition-[transform,scale,background-color,color,opacity] duration-150 ease-out',

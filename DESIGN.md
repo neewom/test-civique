@@ -236,7 +236,7 @@ components:
     textColor: "{colors.ink}"
     typography: "{typography.body}"
     rounded: "{rounded.card}"
-    padding: "18px 16px 7px 10px"
+    padding: "21px 16px 21px 10px"
     height: "60px"
   answer-card-selected:
     backgroundColor: "{colors.ink}"
@@ -446,7 +446,7 @@ Tactiles et francs : des pastilles pleines, en gras, qu'on vise sans y penser.
 - **Internal Padding :** 16 px en général, 12 à 14 px pour les encadrés compacts (« Pourquoi », chiffres clés).
 
 ### Inputs / Fields
-- **Réponse d'examen (AnswerCard) :** un vrai bouton radio caché, dessiné en carte de 60 px au moins (marge haute de 1,125rem, pour l'étiquette) avec un badge rond de 36 px portant la lettre ; 16 px entre les cartes. Repos : carte blanche, badge cerclé. Sélectionnée : fond encre, badge jaune, s'enfonce à l'appui (échelle 0,98). Correction : les 4 cartes restent à leur place, sans changer de hauteur, avec une **étiquette en pastille centrée sur le bord haut** (position absolue, tailles en rem, peut passer à la ligne) : validée juste : vert succès, coche, étiquette « Bonne réponse » (« Votre réponse · bonne réponse » si c'est le choix) ; fausse : contour corail, croix, étiquette « Votre réponse » ; les deux autres (état `other`) en retrait à 65 % d'opacité, sans étiquette.
+- **Réponse d'examen (AnswerCard) :** un vrai bouton radio caché, dessiné en carte de 60 px au moins (padding vertical de 1,125rem en haut comme en bas, pour la place de l'étiquette et un texte centré) avec un badge rond de 36 px portant la lettre ; 16 px entre les cartes. Repos : carte blanche, badge cerclé. Sélectionnée : fond encre, badge jaune, s'enfonce à l'appui (échelle 0,98). Correction : les 4 cartes restent à leur place, sans changer de hauteur, avec une **étiquette en pastille centrée sur le bord haut** (position absolue, tailles en rem, peut passer à la ligne) : validée juste : vert succès, coche, étiquette « Bonne réponse » (« Votre réponse · bonne réponse » si c'est le choix) ; fausse : contour corail, croix, étiquette « Votre réponse » ; les deux autres (état `other`) en retrait à 65 % d'opacité, sans étiquette.
 - **Case à cocher :** case native de 22 px colorée par `accent-color` (encre en clair, jaune en sombre).
 - **Focus :** anneau de 3 px autour de la carte quand le radio a le focus clavier.
 
